@@ -13,7 +13,7 @@ const apiResponseHandler = {
       const serverResponse = await submitAPITrigger({ body: {
         aTitle: `${data.eEmail} (${data.eFirstname} ${data.eLastname})`,
         
-        cRole: roleListAPIResponse.data.list._id,
+        cRole: roleListAPIResponse?.data?.list?._id,
 
         eFirstname: data.eFirstname,
         eLastname: data.eLastname,

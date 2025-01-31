@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 
 const databaseConnection = () => {
-  const DB_URL = "mongodb+srv://ApurvChatur:ApurvChatur@apurvchatur.ods89az.mongodb.net/";
+  const DB_URL = "mongodb+srv://ApurvChatur:ApurvChatur@cluster0.ohu59.mongodb.net/";
 
   mongoose.set("strictQuery", true);
   mongoose
