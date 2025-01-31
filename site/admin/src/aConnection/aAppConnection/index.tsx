@@ -82,12 +82,6 @@ const ProfileRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/o
 const ProfileUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/bUserAdministrationPage/eProfilePage/dUpdatePage"));
 const ProfileDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/bUserAdministrationPage/eProfilePage/eDeletePage"));
 
-const PolicyListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cMainPage/aPolicyPage/aListPage"));
-const PolicyCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cMainPage/aPolicyPage/bCreatePage"));
-const PolicyRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cMainPage/aPolicyPage/cRetrievePage"));
-const PolicyUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cMainPage/aPolicyPage/dUpdatePage"));
-const PolicyDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cMainPage/aPolicyPage/eDeletePage"));
-
 
 const AppConnection = () => {
   // JSX
@@ -151,13 +145,6 @@ const AppConnection = () => {
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministration.eProfileRoute.cRetrieveRoute}/:id`} element={<ProfileRetrievePage />} />
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministration.eProfileRoute.dUpdateRoute}/:id`} element={<ProfileUpdatePage />} />
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministration.eProfileRoute.eDeleteRoute}/:id`} element={<ProfileDeletePage />} />
-
-                {/* Policy Page */}
-                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cMainRoute.bPolicyRoute.aListRoute}`} element={<PolicyListPage />} />
-                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cMainRoute.bPolicyRoute.bCreateRoute}`} element={<PolicyCreatePage />} />
-                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cMainRoute.bPolicyRoute.cRetrieveRoute}/:id`} element={<PolicyRetrievePage />} />
-                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cMainRoute.bPolicyRoute.dUpdateRoute}/:id`} element={<PolicyUpdatePage />} />
-                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cMainRoute.bPolicyRoute.eDeleteRoute}/:id`} element={<PolicyDeletePage />} />
                 
                 {/* Components */}
                 <Route path="/dashboard" element={<DashboardOneComponent />} />

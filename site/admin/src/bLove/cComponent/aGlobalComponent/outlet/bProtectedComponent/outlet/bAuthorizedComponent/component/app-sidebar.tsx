@@ -159,12 +159,7 @@ const data = {
       url: "#",
       icon: TreePalmIcon,
       isActive: false,
-      items: [
-        {
-          title: "Policy",
-          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cMainRoute.bPolicyRoute.aListRoute,
-        },
-      ],
+      items: [],
     },
     {
       title: "User Administration",

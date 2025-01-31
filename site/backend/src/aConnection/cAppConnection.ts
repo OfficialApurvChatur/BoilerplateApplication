@@ -18,8 +18,6 @@ import { userAccountRouter } from '../bLove/aMCVR/dRoute/admin/bUserAdministrati
 import { userRouter } from '../bLove/aMCVR/dRoute/admin/bUserAdministration/dUserRoute';
 import { profileRouter } from '../bLove/aMCVR/dRoute/admin/bUserAdministration/eProfileRoute';
 
-import { policyRouter } from '../bLove/aMCVR/dRoute/admin/cMain/aPolicyRoute';
-
 
 const appConnection = express();
 
@@ -48,8 +46,6 @@ appConnection.use("/api/v1/user/auth/", userAuthRouter);
 appConnection.use("/api/v1/user/account/", userAccountRouter);
 appConnection.use("/api/v1/user/", userRouter);
 appConnection.use("/api/v1/profile/", profileRouter);
-
-appConnection.use("/api/v1/policy/", policyRouter);
 
 // Error Middleware
 appConnection.use(errorMiddleware)

@@ -61,13 +61,6 @@ const endpointRoute = {
           },
           cMainRoute: {
             aDashboardRoute: "dashboard",
-            bPolicyRoute: {
-              aListRoute: "policy-list",
-              bCreateRoute: "policy-create",
-              cRetrieveRoute: "policy-retrieve",
-              dUpdateRoute: "policy-update",
-              eDeleteRoute: "policy-delete",
-            }
           }
         }
       }
