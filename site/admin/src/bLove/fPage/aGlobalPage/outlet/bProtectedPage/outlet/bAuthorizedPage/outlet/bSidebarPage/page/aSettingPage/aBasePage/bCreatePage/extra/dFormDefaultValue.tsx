@@ -1,4 +1,5 @@
 const formDefaultValue = ({
+  aImage: "",
   aTitle: "",
 })
 

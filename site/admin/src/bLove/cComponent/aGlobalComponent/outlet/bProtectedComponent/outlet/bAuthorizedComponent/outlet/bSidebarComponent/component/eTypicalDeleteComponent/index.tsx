@@ -12,6 +12,7 @@ import LoaderComponent from "@/bLove/cComponent/aGlobalComponent/component/aLoad
 import ErrorComponent from "@/bLove/cComponent/aGlobalComponent/component/bErrorComponent";
 import TextReadComponent from "./component/aTextReadComponent";
 import RoleCheckboxReadComponent from "./component/bRoleCheckboxReadComponent";
+import ImageReadComponent from "./component/cImageReadComponent";
 
 
 type TypicalDeleteComponentType = {
@@ -131,6 +132,11 @@ const TypicalDeleteComponent = (props: TypicalDeleteComponentType) => {
                             {eachSection.fields.map((eachField: any, indexInput: any) => (
                               <React.Fragment>
     
+                                {/* For I/P Type: Image */}
+                                {((eachField.type === "image") && 
+                                  <ImageReadComponent key={indexInput} eachField={eachField} />
+                                )}
+
                                 {/* For I/P Type: Text, Email, Number */}
                                 {((eachField.type === "text" || eachField.type === "email" || eachField.type === "number" || eachField.type === "password") && 
                                   <TextReadComponent key={indexInput} eachField={eachField} />

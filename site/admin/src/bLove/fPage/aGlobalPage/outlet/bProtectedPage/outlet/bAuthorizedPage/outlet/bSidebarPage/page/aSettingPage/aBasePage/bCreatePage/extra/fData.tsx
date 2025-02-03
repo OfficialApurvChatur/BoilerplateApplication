@@ -5,6 +5,7 @@ const data = () => ([
     title: "Basic Information",
     subtitle: "This is just some subtitle for the basic information...",
     inputs: [
+      { name: "aImage", label: "Image", type: "image", folderName: "base" },
       { name: "aTitle", label: "Title", type: "text", placeholder: "Please enter title..." },
     ],  
   },

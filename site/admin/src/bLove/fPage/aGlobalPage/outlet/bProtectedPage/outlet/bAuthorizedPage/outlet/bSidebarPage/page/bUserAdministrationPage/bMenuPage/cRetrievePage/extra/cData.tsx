@@ -9,6 +9,7 @@ const data = ({ retrieveAPIResponse }: { retrieveAPIResponse: any }) => (
         title: "Basic Information",
         subtitle: "This is just some subtitle for the basic information...",
         fields: [
+          { label: "Image", type: "image", value: retrieveAPIResponse.data.retrieve.aImage },
           { label: "Title", type: "text", value: retrieveAPIResponse.data.retrieve.aTitle },
         ],  
       },

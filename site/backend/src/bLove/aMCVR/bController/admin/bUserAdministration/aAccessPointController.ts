@@ -1,4 +1,5 @@
 import express from 'express';
+import cloudinary from 'cloudinary';
 
 import { redisClient } from '../../../../../aConnection/dRedisConnection';
 import catchAsyncMiddleware from '../../../../../bLove/bMiddleware/bCatchAsyncMiddleware';
@@ -36,6 +37,7 @@ const accessPointController = (Model=AccessPointModel, Label="AccessPoint") => (
 
       // Create
       const create = await Model.create({
+        aImage: request.body.aImage,
         aTitle: request.body.aTitle,
         aSubtitle: request.body.aSubtitle,
       })
@@ -80,6 +82,7 @@ const accessPointController = (Model=AccessPointModel, Label="AccessPoint") => (
       // Update
       const update = await Model.findByIdAndUpdate(
         request.params.id, {
+          aImage: request.body.aImage,
           aTitle: request.body.aTitle,
           aSubtitle: request.body.aSubtitle,
         }, {
@@ -111,6 +114,12 @@ const accessPointController = (Model=AccessPointModel, Label="AccessPoint") => (
       // Delete
       const delete_object = await Model.findOneAndDelete({ _id: request.params.id })
 
+      // Delete Image
+      if (delete_object?.aImage) {
+        const publicId = (delete_object as any).aImage.split("/").pop().split(".")[0];
+        await cloudinary.v2.uploader.destroy(`${Label.toLowerCase()}/${publicId}`);
+      }
+      
       // Clear Cache
       await redisClient.del(`${Label.toLowerCase()}-list`, `${Label.toLowerCase()}-list-for-menu-create-and-update`, `${Label.toLowerCase()}-retrieve:${request.params.id}`)
       await redisClient.del("menu-list", "menu-list-for-role-create-and-update", ...(await redisClient.keys('menu-retrieve*')))

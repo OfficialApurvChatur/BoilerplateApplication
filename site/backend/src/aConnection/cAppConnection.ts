@@ -18,6 +18,8 @@ import { userAccountRouter } from '../bLove/aMCVR/dRoute/admin/bUserAdministrati
 import { userRouter } from '../bLove/aMCVR/dRoute/admin/bUserAdministration/dUserRoute';
 import { profileRouter } from '../bLove/aMCVR/dRoute/admin/bUserAdministration/eProfileRoute';
 
+import { singleImageRouter } from '../bLove/aMCVR/dRoute/admin/zFreestyleSample/aSingleImageRoute';
+
 
 const appConnection = express();
 
@@ -46,6 +48,8 @@ appConnection.use("/api/v1/user/auth/", userAuthRouter);
 appConnection.use("/api/v1/user/account/", userAccountRouter);
 appConnection.use("/api/v1/user/", userRouter);
 appConnection.use("/api/v1/profile/", profileRouter);
+
+appConnection.use('/api/v1/single-image/', singleImageRouter);
 
 // Error Middleware
 appConnection.use(errorMiddleware)

@@ -1,5 +1,5 @@
-import mongoose from 'mongoose';
 import express from 'express';
+import cloudinary from 'cloudinary';
 
 import { redisClient } from '../../../../../aConnection/dRedisConnection';
 import catchAsyncMiddleware from '../../../../../bLove/bMiddleware/bCatchAsyncMiddleware';
@@ -38,6 +38,7 @@ const userController = (Model=UserModel, Label="User") => ({
 
       // Create
       const create = await Model.create({
+        aImage: request.body.aImage,
         aTitle: request.body.aTitle,
         aSubtitle: request.body.aSubtitle,
 
@@ -110,6 +111,7 @@ const userController = (Model=UserModel, Label="User") => ({
       // Update
       const update = await Model.findByIdAndUpdate(
         request.params.id, {
+          aImage: request.body.aImage,
           aTitle: request.body.aTitle,
           aSubtitle: request.body.aSubtitle,
 
@@ -148,6 +150,12 @@ const userController = (Model=UserModel, Label="User") => ({
       
       // Delete
       const delete_object = await Model.findOneAndDelete({ _id: request.params.id })
+
+      // Delete Image
+      if (delete_object?.aImage) {
+        const publicId = (delete_object as any).aImage.split("/").pop().split(".")[0];
+        await cloudinary.v2.uploader.destroy(`${Label.toLowerCase()}/${publicId}`);
+      }
 
       // Clear Cache
       await redisClient.del(`${Label.toLowerCase()}-list`, `${Label.toLowerCase()}-list-for-profile-create-and-update`, `${Label.toLowerCase()}-retrieve:${request.params.id}`)

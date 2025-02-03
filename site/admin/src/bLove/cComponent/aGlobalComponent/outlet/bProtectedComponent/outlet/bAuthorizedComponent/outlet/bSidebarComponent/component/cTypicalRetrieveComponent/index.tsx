@@ -8,6 +8,7 @@ import LoaderComponent from "@/bLove/cComponent/aGlobalComponent/component/aLoad
 import ErrorComponent from "@/bLove/cComponent/aGlobalComponent/component/bErrorComponent";
 import TextReadComponent from "./component/aTextReadComponent";
 import RoleCheckboxReadComponent from "./component/bRoleCheckboxReadComponent";
+import ImageReadComponent from "./component/cImageReadComponent";
 
 
 type TypicalRetrieveComponentType = {
@@ -82,6 +83,11 @@ const TypicalRetrieveComponent = (props: TypicalRetrieveComponentType) => {
                           <div className="space-y-4 pt-4">
                             {eachSection.fields.map((eachField: any, indexInput: any) => (
                               <React.Fragment>
+    
+                                {/* For I/P Type: Image */}
+                                {((eachField.type === "image") && 
+                                  <ImageReadComponent key={indexInput} eachField={eachField} />
+                                )}
     
                                 {/* For I/P Type: Text, Email, Number */}
                                 {((eachField.type === "text" || eachField.type === "email" || eachField.type === "number" || eachField.type === "password") && 

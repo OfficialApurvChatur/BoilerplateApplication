@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { ColumnDef } from "@tanstack/react-table"
 
 import fullRoute from "@/bLove/gRoute/bFullRoute"
+import backgroundImage from "@/bLove/hAsset/defaultImage.png";
 import { DataTableColumnHeader } from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/component/aTypicalListComponent/components/data-table-column-header"
 import { ListSchema } from "./bSchema"
 
@@ -14,11 +15,28 @@ const columns: ColumnDef<ListSchema>[] = [
   {
     accessorKey: "_id",
     header: ({ column }) => (
-      <DataTableColumnHeader column={column} title="ID" />
+      <DataTableColumnHeader className="hidden" column={column} title="ID" />
     ),
-    cell: ({ row }) => <div className="w-[80px]">{row.getValue("_id")}</div>,
+    cell: ({ row }) => <div className="hidden">{row.getValue("_id")}</div>,
     enableSorting: false,
     enableHiding: false,
+  },
+  {
+    accessorKey: "aImage",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Image" />
+    ),
+    cell: ({ row }) => {
+      return (
+        <div className="rounded-md flex items-center justify-center w-14 h-14 overflow-hidden">
+          <img
+            src={row.getValue("aImage") || backgroundImage}
+            className="rounded-md object-cover w-full h-full"
+            alt="Uploaded Preview"
+          />
+        </div>
+      )
+    },
   },
   {
     accessorKey: "aTitle",

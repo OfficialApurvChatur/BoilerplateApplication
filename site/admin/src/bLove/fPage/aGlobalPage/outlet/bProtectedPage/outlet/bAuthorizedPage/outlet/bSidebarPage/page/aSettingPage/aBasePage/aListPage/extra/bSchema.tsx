@@ -3,6 +3,7 @@ import { z } from "zod"
 
 const listSchema = z.object({
   _id: z.string(),
+  aImage: z.string().optional(),
   aTitle: z.string(),
 })
 

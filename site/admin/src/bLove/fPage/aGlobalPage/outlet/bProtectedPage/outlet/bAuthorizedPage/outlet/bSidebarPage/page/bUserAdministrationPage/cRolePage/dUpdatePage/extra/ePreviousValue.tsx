@@ -27,6 +27,7 @@ const previousValue = (form: any, APICall: any) => {
     });
 
   return (
+    form.setValue("aImage", APICall.retrieveAPIResponse.data.retrieve?.aImage),
     form.setValue("aTitle", APICall.retrieveAPIResponse.data.retrieve?.aTitle),
 
     form.setValue("cMenu", cMenuUpdated)

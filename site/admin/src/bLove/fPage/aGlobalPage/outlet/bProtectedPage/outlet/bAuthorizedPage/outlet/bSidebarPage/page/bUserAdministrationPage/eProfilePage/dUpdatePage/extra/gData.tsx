@@ -9,6 +9,7 @@ const data = ({ retrieveAPIResponse, APICall }: { retrieveAPIResponse: any, APIC
         title: "Basic Information",
         subtitle: "This is just some subtitle for the basic information...",
         inputs: [
+          { name: "aImage", label: "Image", type: "image", folderName: "profile" },
           { name: "aTitle", label: "Title", type: "text", placeholder: "Please enter title..." },
         ],  
       },

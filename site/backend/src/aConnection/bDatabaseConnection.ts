@@ -6,7 +6,7 @@ const databaseConnection = () => {
 
   mongoose.set("strictQuery", true);
   mongoose
-    .connect(DB_URL, { dbName: "BoilerplatetApplication" })
+    .connect(DB_URL, { dbName: "BoilerplateApplication" })
     .then(response => {
       console.log(`Great... MongoDB connected on server ${response.connection.host} at ${response.connection.name}`);
     })

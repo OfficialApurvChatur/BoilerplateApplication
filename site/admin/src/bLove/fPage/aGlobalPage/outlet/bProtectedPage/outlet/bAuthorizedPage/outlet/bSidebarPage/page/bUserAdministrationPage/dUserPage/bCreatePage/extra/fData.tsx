@@ -5,6 +5,7 @@ const data = ({ APICall }: { APICall: any }) => ([
     title: "Basic Information",
     subtitle: "This is just some subtitle for the basic information...",
     inputs: [
+      { name: "aImage", label: "Image", type: "image", folderName: "user" },
       { name: "aTitle", label: "Title", type: "text", placeholder: "Please enter title..." },
     ],  
   },

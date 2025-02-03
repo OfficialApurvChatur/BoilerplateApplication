@@ -15,6 +15,7 @@ import NumberInputComponent from "./component/cNumberInputComponent"
 import CheckboxInputComponent from "./component/dCheckboxInputComponent"
 import RoleCheckboxInputComponent from "./component/eRoleCheckboxInputComponent"
 import RadioInputComponent from "./component/fRadioInputComponent"
+import ImageInputComponent from "./component/gImageInputComponent"
 
 
 type TypicalCreateComponentType = {
@@ -112,6 +113,11 @@ const TypicalCreateComponent = (props: TypicalCreateComponentType) => {
                     <div className="space-y-4 pt-4">
                       {eachSection.inputs.map((eachInput: any, indexInput: any) => (
                         <React.Fragment>
+
+                          {/* For I/P Type: Image */}
+                          {((eachInput.type === "image") && 
+                            <ImageInputComponent key={indexInput}  form={form} eachInput={eachInput} />
+                          )}
 
                           {/* For I/P Type: Text, Email, Number */}
                           {((eachInput.type === "text" || eachInput.type === "email" || eachInput.type === "password") && 

@@ -52,6 +52,7 @@ const apiResponseHandler = {
       const serverResponse = await updateAPITrigger({ 
         params: { _id: params.id },
         body: {
+          aImage: data.aImage,
           aTitle: data.aTitle,
 
           cRole: data.cRole,

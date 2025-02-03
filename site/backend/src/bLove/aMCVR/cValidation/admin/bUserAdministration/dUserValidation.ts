@@ -13,6 +13,8 @@ const userValidation = {
 
   // Create
   create: () => [
+    body("aImage")
+      .notEmpty().withMessage("Please select image"),
     body("aTitle")
       .notEmpty().withMessage("Please enter title")
       .isLength({ min: 3, max: 50 }).withMessage("Title must be 3 - 50 characters")
@@ -76,6 +78,8 @@ const userValidation = {
 
   // Update
   update: () => [
+    body("aImage")
+      .notEmpty().withMessage("Please select image"),
     body("aTitle")
       .notEmpty().withMessage("Please enter title")
       .isLength({ min: 3, max: 50 }).withMessage("Title must be 3 - 50 characters"),
