@@ -10,6 +10,7 @@ import {
   KeyRound,
   LogIn,
   LogOut,
+  MailIcon,
   Rat,
   User2,
   UserPen,
@@ -124,22 +125,27 @@ export function NavUser({ ReduxCall, APICall, submitHandler }: { ReduxCall: any,
               (ReduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && ReduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
                 <DropdownMenuGroup>
                   <DropdownMenuItem asChild >
-                    <Link to={"/"} >
+                    <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.aAccountRetrieveRoute} >
                       <Rat /> View Profile
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild >
-                    <Link to={"/"} >
+                    <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.bAccountUpdateRoute} >
                       <UserPen /> Edit Profile
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild >
-                    <Link to={"/"} >
+                    <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.cAccountEmailUpdateRoute} >
+                      <MailIcon /> Change Email
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild >
+                    <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.dAccountPasswordUpdateRoute} >
                       <FolderKey /> Change Password
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild >
-                    <Link to={"/"} >
+                    <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.eAccountDeleteRoute} >
                       <BookmarkX /> Delete Profile
                     </Link>
                   </DropdownMenuItem>

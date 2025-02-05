@@ -97,7 +97,7 @@ const profileController = (Model=ProfileModel, Label="Profile") => ({
 
       // Clear Cache
       await redisClient.del(`${Label.toLowerCase()}-list`, `${Label.toLowerCase()}-list-for-user-create-and-update`, `${Label.toLowerCase()}-retrieve:${request.params.id}`)
-      await redisClient.del("user-list", "user-list-for-profile-create-and-update", ...(await redisClient.keys('profile-retrieve*')))
+      await redisClient.del("user-list", "user-list-for-profile-create-and-update", ...(await redisClient.keys('user-retrieve*')))
       console.log("Cache cleared...")
       
       // Response
@@ -124,7 +124,7 @@ const profileController = (Model=ProfileModel, Label="Profile") => ({
 
       // Clear Cache
       await redisClient.del(`${Label.toLowerCase()}-list`, `${Label.toLowerCase()}-list-for-user-create-and-update`, `${Label.toLowerCase()}-retrieve:${request.params.id}`)
-      await redisClient.del("user-list", "user-list-for-profile-create-and-update", ...(await redisClient.keys('profile-retrieve*')))
+      await redisClient.del("user-list", "user-list-for-profile-create-and-update", ...(await redisClient.keys('user-retrieve*')))
       console.log("Cache cleared...")
       
       // Response

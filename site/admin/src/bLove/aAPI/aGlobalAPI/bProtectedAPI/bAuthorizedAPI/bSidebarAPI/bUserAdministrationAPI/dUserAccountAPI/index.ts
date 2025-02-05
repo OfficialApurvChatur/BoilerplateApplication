@@ -11,6 +11,14 @@ const userAccountAPIEndpoint = apiConnection.injectEndpoints({
       }),
     }),
 
+    userAccountUpdateAPI: builder.mutation({
+      query: (data) => ({
+        url: `user/account/update/`,
+        method: "PUT",
+        body: data.body
+      })
+    }),
+
   })
 })
 

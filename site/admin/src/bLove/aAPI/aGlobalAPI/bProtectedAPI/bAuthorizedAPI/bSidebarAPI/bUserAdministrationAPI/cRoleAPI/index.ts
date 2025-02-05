@@ -54,7 +54,8 @@ const roleAPIEndpoint = apiConnection.injectEndpoints({
         { type: "userList" },
         { type: "userListForProfileCreateAndUpdate" },
         { type: "roleRetrieve", id: data.params._id },
-        { type: "roleUpdateRetrieve", id: data.params._id }
+        { type: "roleUpdateRetrieve", id: data.params._id },
+        { type: "userRetrieve" }
       ]
     }),
 
@@ -70,7 +71,8 @@ const roleAPIEndpoint = apiConnection.injectEndpoints({
         { type: "userList" },
         { type: "userListForProfileCreateAndUpdate" },
         { type: "roleRetrieve", id: data.params._id },
-        { type: "roleUpdateRetrieve", id: data.params._id }
+        { type: "roleUpdateRetrieve", id: data.params._id },
+        { type: "userRetrieve" }
       ]
     }),
 

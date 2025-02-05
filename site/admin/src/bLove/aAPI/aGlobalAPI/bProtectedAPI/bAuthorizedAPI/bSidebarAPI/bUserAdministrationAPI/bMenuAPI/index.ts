@@ -42,7 +42,9 @@ const menuAPIEndpoint = apiConnection.injectEndpoints({
         { type: "menuListForRoleCreateAndUpdate" },
         { type: "roleList" },
         { type: "roleListForUserCreateAndUpdate" },
-        { type: "menuRetrieve", id: data.params._id }
+        { type: "menuRetrieve", id: data.params._id },
+        { type: "roleRetrieve" },
+        { type: "roleUpdateRetrieve" },
       ]
     }),
 
@@ -56,7 +58,9 @@ const menuAPIEndpoint = apiConnection.injectEndpoints({
         { type: "menuListForRoleCreateAndUpdate" },
         { type: "roleList" },
         { type: "roleListForUserCreateAndUpdate" },
-        { type: "menuRetrieve", id: data.params._id }
+        { type: "menuRetrieve", id: data.params._id },
+        { type: "roleRetrieve" },
+        { type: "roleUpdateRetrieve" },
       ]
     }),
 

@@ -42,7 +42,8 @@ const profileAPIEndpoint = apiConnection.injectEndpoints({
         { type: "profileListForUserCreateAndUpdate" },
         { type: "userList" },
         { type: "userListForProfileCreateAndUpdate" },
-        { type: "profileRetrieve", id: data.params._id }
+        { type: "profileRetrieve", id: data.params._id },
+        { type: "userRetrieve" }
       ]
     }),
 
@@ -56,7 +57,8 @@ const profileAPIEndpoint = apiConnection.injectEndpoints({
         { type: "profileListForUserCreateAndUpdate" },
         { type: "userList" },
         { type: "userListForProfileCreateAndUpdate" },
-        { type: "profileRetrieve", id: data.params._id }
+        { type: "profileRetrieve", id: data.params._id },
+        { type: "userRetrieve" }
       ]
     }),
 

@@ -18,4 +18,12 @@ router.route("/retrieve").get(
   userAccountController().retrieve
 )
 
+router.route("/update").put(
+  rateLimiterMiddleware("account-update", 60, 10), 
+  authenticationMiddleware,
+  userAccountValidation.update(), validatorMiddleware, 
+  userAccountController().update,
+);
+
+
 export const userAccountRouter = router

@@ -100,57 +100,6 @@ const ImageInputComponent = (props: any) => {
         />
       </div>
 
-      {/* <FileInputContainer>
-        <div style={{ display: "flex", flexDirection: "column", justifyContent: "center", alignItems: "center" }} >
-          {formData.dFileUploaded && !fileLoading && (
-            <>
-              {(formData.dFileUploaded as any).match(/\.(jpeg|jpg|png)$/i) ? (
-                <img
-                  style={{
-                    height: "70px",
-                    objectFit: "cover",
-                  }}
-                  src={formData.dFileUploaded}
-                  alt="Preview"
-                />
-              ) : <FileIcon size={"50px"} />}
-            </>                    
-          )}
-          {formData.dFileUploaded && <FileInputLabel htmlFor="fileUpdate">{fileLoading ? "Loading..." : "Change File"}</FileInputLabel>}
-          {formData.dFileUploaded && (
-            <FileInputLabel 
-              style={{ color: "tomato" }}
-              onClick={() => handleImageDeleteForObject("dFileUploaded", "dFileUploadedID", setFormData, setFileLoading, formData.dFileUploadedID)} 
-            >{fileLoading ? "Loading..." : "Remove File"}</FileInputLabel>
-          )}
-        </div>
-        {!formData.dFileUploaded && <FileInputLabel htmlFor="fileInput">{fileLoading ? "Loading..." : "Choose File"}</FileInputLabel>}
-        <FileInput
-          type="file"
-          id="fileInput"
-          disabled={fileLoading}
-          onChange={(event: any) => handleImageCreateForObject(event, "dFileUploaded", "dFileUploadedID", setFormData, setFileLoading)}
-          name="file"
-        />
-        <FileInput
-          type="file"
-          id="fileUpdate"
-          disabled={fileLoading}
-          onChange={(event: any) => handleImageUpdateForObject(event, "dFileUploaded", "dFileUploadedID", setFormData, setFileLoading, formData.dFileUploadedID)}
-          name="file"
-        />
-      </FileInputContainer>
-      {formData.dFileUploaded && <UploadedFile>Uploaded File: {(
-        <a
-          href={formData.dFileUploaded || '#'}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline"
-        >
-          {formData.dFileUploaded}
-        </a> 
-      )}</UploadedFile>} */}
-
     </React.Fragment>
   )
 }

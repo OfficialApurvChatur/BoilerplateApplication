@@ -60,7 +60,12 @@ const roleValidation = {
       .notEmpty().withMessage("Please select image"),
     body("aTitle")
       .notEmpty().withMessage("Please enter title")
-      .isLength({ min: 3, max: 50 }).withMessage("Title must be 3 - 50 characters"),
+      .isLength({ min: 3, max: 50 }).withMessage("Title must be 3 - 50 characters")
+      .custom(async (value: any, { req: request }: any) => {
+        const retrieve = await RoleModel.findOne({aTitle: value});
+        if (retrieve && String(retrieve?._id) !== request.params?.id) throw new ErrorUtility("Title already exists...", 401);
+        return true;
+      }),
     body("aSubtitle")
       .optional()
       .isLength({ min: 3, max: 100 }).withMessage("Subtitle must be 3 - 100 characters"),

@@ -6,7 +6,7 @@ import fullRoute from "@/bLove/gRoute/bFullRoute";
 
 import { AppSidebar } from "./component/app-sidebar";
 
-import { BookmarkX, FolderKey, KeyRound, LogIn, LogOut, Rat, User2, UserPen, UserPlus } from "lucide-react";
+import { BookmarkX, FolderKey, KeyRound, LogIn, LogOut, MailIcon, Rat, User2, UserPen, UserPlus } from "lucide-react";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/aConnection/bShadcnConnection/components/ui/sidebar";
 import { Separator } from "@/aConnection/bShadcnConnection/components/ui/separator";
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/aConnection/bShadcnConnection/components/ui/breadcrumb";
@@ -89,22 +89,27 @@ const AuthorizedComponent = ({ children, ReduxCall, APICall, submitHandler }: { 
                     (ReduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && ReduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
                       <DropdownMenuGroup>
                         <DropdownMenuItem asChild >
-                          <Link to={"/"} >
+                          <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.aAccountRetrieveRoute} >
                             <Rat /> View Profile
                           </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild >
-                          <Link to={"/"} >
+                          <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.bAccountUpdateRoute} >
                             <UserPen /> Edit Profile
                           </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild >
-                          <Link to={"/"} >
+                          <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.cAccountEmailUpdateRoute} >
+                            <MailIcon /> Change Email
+                          </Link>
+                        </DropdownMenuItem>
+                        <DropdownMenuItem asChild >
+                          <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.dAccountPasswordUpdateRoute} >
                             <FolderKey /> Change Password
                           </Link>
                         </DropdownMenuItem>
                         <DropdownMenuItem asChild >
-                          <Link to={"/"} >
+                          <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.eAccountDeleteRoute} >
                             <BookmarkX /> Delete Profile
                           </Link>
                         </DropdownMenuItem>

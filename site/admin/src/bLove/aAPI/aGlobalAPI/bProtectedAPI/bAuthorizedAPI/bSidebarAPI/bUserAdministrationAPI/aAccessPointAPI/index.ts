@@ -45,7 +45,10 @@ const accessPointAPIEndpoint = apiConnection.injectEndpoints({
         { type: "roleList" },
         { type: "roleListForUserCreateAndUpdate" },
         { type: "roleListForUserAuthSignUp" },
-        { type: "accessPointRetrieve", id: data.params._id }
+        { type: "accessPointRetrieve", id: data.params._id },
+        { type: "menuRetrieve" },
+        { type: "roleRetrieve" },
+        { type: "roleUpdateRetrieve" },
       ]
     }),
 
@@ -62,7 +65,10 @@ const accessPointAPIEndpoint = apiConnection.injectEndpoints({
         { type: "roleList" },
         { type: "roleListForUserCreateAndUpdate" },
         { type: "roleListForUserAuthSignUp" },
-        { type: "accessPointRetrieve", id: data.params._id }
+        { type: "accessPointRetrieve", id: data.params._id },
+        { type: "menuRetrieve" },
+        { type: "roleRetrieve" },
+        { type: "roleUpdateRetrieve" },
       ]
     }),
 

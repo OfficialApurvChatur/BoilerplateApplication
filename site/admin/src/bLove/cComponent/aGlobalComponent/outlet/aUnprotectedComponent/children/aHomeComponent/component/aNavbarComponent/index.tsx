@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { BookmarkX, FolderKey, KeyRound, LogIn, Menu, Rat, User2, UserPen, UserPlus } from "lucide-react";
+import { BookmarkX, FolderKey, KeyRound, LogIn, MailIcon, Menu, Rat, User2, UserPen, UserPlus } from "lucide-react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 import {
@@ -191,27 +191,32 @@ export const NavbarComponent = (props: NavbarComponentType) => {
                   (props.ReduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && props.ReduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
                     <DropdownMenuGroup>
                       <DropdownMenuItem asChild >
-                        <Link to={"/"} >
+                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.aAccountRetrieveRoute} >
                           <Rat /> View Profile
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild >
-                        <Link to={"/"} >
+                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.bAccountUpdateRoute} >
                           <UserPen /> Edit Profile
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild >
-                        <Link to={"/"} >
+                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.cAccountEmailUpdateRoute} >
+                          <MailIcon /> Change Email
+                        </Link>
+                      </DropdownMenuItem>
+                      <DropdownMenuItem asChild >
+                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.dAccountPasswordUpdateRoute} >
                           <FolderKey /> Change Password
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild >
-                        <Link to={"/"} >
+                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.eAccountDeleteRoute} >
                           <BookmarkX /> Delete Profile
                         </Link>
                       </DropdownMenuItem>
                       {/* <DropdownMenuItem asChild >
-                        <span onClick={() => apiResponseHandler.logoutAPIResponseHandler(APICall.logoutAPITrigger, navigate, props.ReduxCall)} >
+                        <span onClick={() => submitHandler(ReduxCall, APICall, navigate)} >
                           <LogOut /> Sign Out
                         </span>
                       </DropdownMenuItem> */}

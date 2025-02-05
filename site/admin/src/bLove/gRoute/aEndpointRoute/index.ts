@@ -11,7 +11,13 @@ const endpointRoute = {
         dResetPasswordRoute: "reset-password",
       },
       bAuthorizedRoute: {
-        aTopbarRoute: {},
+        aTopbarRoute: {
+          aAccountRetrieveRoute: "account-retrieve",
+          bAccountUpdateRoute: "account-update",
+          cAccountEmailUpdateRoute: "account-email-update",
+          dAccountPasswordUpdateRoute: "account-password-update",
+          eAccountDeleteRoute: "account-delete",
+        },
         bSidebarRoute: {
           aSettingRoute: {
             aBaseRoute: {
@@ -22,7 +28,7 @@ const endpointRoute = {
               eDeleteRoute: "base-delete",
             }
           },
-          bUserAdministration: {
+          bUserAdministrationRoute: {
             aAccessPointRoute: {
               aListRoute: "access-point-list",
               bCreateRoute: "access-point-create",

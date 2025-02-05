@@ -21,6 +21,11 @@ const userAccountController = (Model=UserModel, Label="User") => ({
           select: "aTitle cMenu",
           populate: {
             path: 'cMenu.menu',
+            select: "aTitle cAccessPoint",
+            populate: {
+              path: 'cAccessPoint',
+              select: 'aTitle',
+            },  
           }
         });
 
@@ -35,6 +40,55 @@ const userAccountController = (Model=UserModel, Label="User") => ({
       })
     }
   ),
+
+  // Update
+  update: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+    // // Retrieve
+    // let retrieve = await Model.findOne({_id: (request as any).user})
+    //   .populate("bCreatedBy", "eFirstname eLastname eEmail")
+    //   .populate("bUpdatedBy", "eFirstname eLastname eEmail")
+    //   .populate("cRole", "aTitle");
+
+    // // Not Found
+    // if (!retrieve) next(new ErrorUtility(`${Label} Not Found`, 404))
+  
+    // // Personal Info
+    // request.body.bUpdatedAt = new Date(Date.now()),
+    // request.body.bUpdatedBy = (request as any).user 
+
+
+    // Update
+    const update = await Model.findByIdAndUpdate(
+      (request as any).user,{
+        aImage: request.body.aImage,
+        aTitle: request.body.aTitle,
+        aSubtitle: request.body.aSubtitle,
+
+        // cRole: request.body.cRole,
+        // cProfile: request.body.cProfile,
+
+        eFirstname: request.body.eFirstname,
+        eLastname: request.body.eLastname,
+        // eEmail: request.body.eEmail,
+        eMobile: request.body.eMobile,
+        // ePassword: request.body.ePassword,  
+      }, {
+        new: true,
+        runValidators: true,
+        useFindAndModify: false
+      }
+    )
+
+    // Response
+    response.status(200).json({
+      success: true,
+      message: `${Label} Profile Updated Successfully`,
+      update: update
+    })
+  }),
+  
   
 })
 
