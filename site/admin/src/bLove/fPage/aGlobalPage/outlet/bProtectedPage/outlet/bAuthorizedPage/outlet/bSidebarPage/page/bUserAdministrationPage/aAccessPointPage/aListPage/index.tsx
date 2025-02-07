@@ -10,9 +10,13 @@ import header from "./extra/cHeader";
 import listSchema from "./extra/bSchema";
 import columns from "./extra/dColumns";
 
+import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
+import { useSocket } from "@/aConnection/fSocketConnection";
+
 
 const AccessPointListPage = () => {
   // Variable
+  const socket = useSocket();
   const listAPIResponse = accessPointAPIEndpoint.useAccessPointListAPIQuery(null);
 
   // API Call
@@ -20,6 +24,11 @@ const AccessPointListPage = () => {
     listAPIResponse
   }
 
+  // Listening Socket Events
+  useSocketEventHook(socket, {
+    ACCESSPOINT_LISTED: () => APICall.listAPIResponse.refetch()
+  })
+  
   // All Render
   // 1. Success Render
   useEffect(() => {

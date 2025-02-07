@@ -49,6 +49,13 @@ const menuController = (Model=MenuModel, Label="Menu") => ({
       await redisClient.del(`${Label.toLowerCase()}-list`, `${Label.toLowerCase()}-list-for-role-create-and-update`)
       await redisClient.del("role-list", "role-list-for-user-create-and-update", "role-list-for-user-auth-sign-up");
 
+      // Emit Event
+      const io = request.app.get("io");
+      if (create && io) {
+        io.emit(`${Label.toUpperCase()}_LISTED`, create)
+        io.emit(`ACTIVITY_LOG_LISTED`, { title: create.aTitle })
+      };
+  
       // Response
       response.status(200).json({
         success: true,
@@ -102,6 +109,14 @@ const menuController = (Model=MenuModel, Label="Menu") => ({
       await redisClient.del("role-list", "role-list-for-user-create-and-update", "role-list-for-user-auth-sign-up", ...(await redisClient.keys('role-retrieve*')), ...(await redisClient.keys('role-update-retrieve*')))
       console.log("Cache cleared...")
       
+      // Emit Event
+      const io = request.app.get("io");
+      if (update && io) {
+        io.emit(`${Label.toUpperCase()}_LISTED`, update)
+        io.emit(`${Label.toUpperCase()}_RETRIEVED:${update?._id}`, update)
+        io.emit(`ACTIVITY_LOG_LISTED`, { title: update.aTitle })
+      };      
+
       // Response
       response.status(201).json({
         success: true,
@@ -128,6 +143,14 @@ const menuController = (Model=MenuModel, Label="Menu") => ({
       await redisClient.del(`${Label.toLowerCase()}-list`, `${Label.toLowerCase()}-list-for-role-create-and-update`, `${Label.toLowerCase()}-retrieve:${request.params.id}`)
       await redisClient.del("role-list", "role-list-for-user-create-and-update", "role-list-for-user-auth-sign-up", ...(await redisClient.keys('role-retrieve*')), ...(await redisClient.keys('role-update-retrieve*')))
       console.log("Cache cleared...")
+      
+      // Emit Event
+      const io = request.app.get("io");
+      if (delete_object && io) {
+        io.emit(`${Label.toUpperCase()}_LISTED`, delete_object)
+        io.emit(`${Label.toUpperCase()}_RETRIEVED:${delete_object?._id}`, delete_object)
+        io.emit(`ACTIVITY_LOG_LISTED`, { title: delete_object.aTitle })
+      };      
       
       // Response
       response.status(200).json({

@@ -9,10 +9,14 @@ import apiResponseHandler from "./extra/aAPIResponseHandler";
 import data from "./extra/cData";
 import header from "./extra/bHeader";
 
+import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
+import { useSocket } from "@/aConnection/fSocketConnection";
+
 
 const RoleRetrievePage = () => {
   // Variable
   const { id } = useParams();
+  const socket = useSocket();
   const retrieveAPIResponse = roleAPIEndpoint.useRoleRetrieveAPIQuery({ params: { _id: id } });
 
   // API Call
@@ -20,6 +24,11 @@ const RoleRetrievePage = () => {
     retrieveAPIResponse
   }
 
+  // Listening Socket Events
+  useSocketEventHook(socket, {
+    [`ROLE_RETRIEVED:${id}`]: () => APICall.retrieveAPIResponse.refetch()
+  })
+  
   // All Render
   // 1. Success Render
   useEffect(() => {

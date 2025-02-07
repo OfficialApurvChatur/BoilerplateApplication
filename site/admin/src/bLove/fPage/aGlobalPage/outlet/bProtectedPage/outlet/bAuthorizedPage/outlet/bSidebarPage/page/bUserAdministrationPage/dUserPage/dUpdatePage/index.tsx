@@ -15,10 +15,14 @@ import data from "./extra/gData";
 import formDefaultValue from "./extra/dFormDefaultValue";
 import previousValue from "./extra/ePreviousValue";
 
+import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
+import { useSocket } from "@/aConnection/fSocketConnection";
+
 
 const UserUpdatePage = () => {
   // Variable
   const { id } = useParams();
+  const socket = useSocket();
   const retrieveAPIResponse = userAPIEndpoint.useUserRetrieveAPIQuery({ params: { _id: id } });
   const [ updateAPITrigger, updateAPIResponse ] = userAPIEndpoint.useUserUpdateAPIMutation();
   const roleListAPIResponse = roleAPIEndpoint.useRoleListForUserCreateAndUpdateAPIQuery(null);
@@ -32,6 +36,11 @@ const UserUpdatePage = () => {
     roleListAPIResponse,
     profileListAPIResponse,
   }
+
+  // Listening Socket Events
+  useSocketEventHook(socket, {
+    [`USER_RETRIEVED:${id}`]: () => APICall.retrieveAPIResponse.refetch()
+  })  
 
   // All Render
   // 1. Success Render

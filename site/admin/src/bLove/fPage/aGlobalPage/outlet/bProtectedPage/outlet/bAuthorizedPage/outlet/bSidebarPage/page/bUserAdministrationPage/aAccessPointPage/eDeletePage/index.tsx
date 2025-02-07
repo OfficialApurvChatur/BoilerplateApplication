@@ -10,10 +10,14 @@ import header from "./extra/cHeader";
 import data from "./extra/dData";
 import submitHandler from "./extra/bSubmitHandler";
 
+import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
+import { useSocket } from "@/aConnection/fSocketConnection";
+
 
 const AccessPointDeletePage = () => {
   // Variable
   const { id } = useParams();
+  const socket = useSocket();
   const retrieveAPIResponse = accessPointAPIEndpoint.useAccessPointRetrieveAPIQuery({ params: { _id: id } });
   const [ deleteAPITrigger, deleteAPIResponse ] = accessPointAPIEndpoint.useAccessPointDeleteAPIMutation();
 
@@ -24,6 +28,11 @@ const AccessPointDeletePage = () => {
     deleteAPIResponse
   }
 
+  // Listening Socket Events
+  useSocketEventHook(socket, {
+    [`ACCESSPOINT_RETRIEVED:${id}`]: () => APICall.retrieveAPIResponse.refetch()
+  })
+  
   // All Render
   // 1. Success Render
   useEffect(() => {

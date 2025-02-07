@@ -10,15 +10,24 @@ import header from "./extra/cHeader";
 import listSchema from "./extra/bSchema";
 import columns from "./extra/dColumns";
 
+import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
+import { useSocket } from "@/aConnection/fSocketConnection";
+
 
 const RoleListPage = () => {
   // Variable
+  const socket = useSocket();
   const listAPIResponse = roleAPIEndpoint.useRoleListAPIQuery(null);
 
   // API Call
   const APICall = {
     listAPIResponse
   }
+
+  // Listening Socket Events
+  useSocketEventHook(socket, {
+    ROLE_LISTED: () => APICall.listAPIResponse.refetch()
+  })
 
   // All Render
   // 1. Success Render

@@ -2,7 +2,7 @@ import { body, param } from "express-validator";
 import { isValidObjectId } from "mongoose";
 
 import ErrorUtility from "../../../../cUtility/aErrorUtility";
-import { BaseModel } from "../../../../aMCVR/aModel/admin/aSetting/cBaseModel";
+import { BaseModel } from "../../../aModel/admin/aSetting/aBaseModel";
 
 
 const baseValidation = {

@@ -7,8 +7,11 @@ import compressionMiddleware from 'compression';
 import morganMiddleware from 'morgan';
 
 import errorMiddleware from '../bLove/bMiddleware/aErrorMiddleware';
+import loggerMiddleware from '../bLove/bMiddleware/iLoggerMiddleware';
 
-import { baseRouter } from '../bLove/aMCVR/dRoute/admin/aSetting/cBaseRoute';
+import { baseRouter } from '../bLove/aMCVR/dRoute/admin/aSetting/aBaseRoute';
+import { activityLogRouter } from '../bLove/aMCVR/dRoute/admin/aSetting/bActivityLogRoute';
+import { apiLogRouter } from '../bLove/aMCVR/dRoute/admin/aSetting/cAPILogRoute';
 
 import { accessPointRouter } from '../bLove/aMCVR/dRoute/admin/bUserAdministration/aAccessPointRoute';
 import { menuRouter } from '../bLove/aMCVR/dRoute/admin/bUserAdministration/bMenuRoute';
@@ -24,7 +27,21 @@ import { singleImageRouter } from '../bLove/aMCVR/dRoute/admin/zFreestyleSample/
 const appConnection = express();
 
 // Third Party Middleware
-appConnection.use(morganMiddleware("dev"));
+appConnection.use(
+  morganMiddleware(":method :url :status :response-time ms", {
+    stream: {
+      write: (message) => {
+        const logObject = { 
+          method: message.split(" ")[0], 
+          url: message.split(" ")[1], 
+          status: message.split(" ")[2], 
+          responseTime: message.split(" ")[3] 
+        };
+        loggerMiddleware.info(JSON.stringify(logObject));
+      },
+    },
+  })
+);
 appConnection.use(corsMiddleware({ origin: 
   process.env.ENVIRONMENT === "Production" ? [ String(process.env.FRONTEND_URL) ] :
   process.env.ENVIRONMENT === "Testing" ?  [ String(process.env.FRONTEND_URL) ] :
@@ -40,6 +57,8 @@ appConnection.use(compressionMiddleware());
 // Routing Middleware
 appConnection.get("/", (_request, response) => { response.send(`Welcome to ${process.env.APPLICATION}`) })
 appConnection.use("/api/v1/base/", baseRouter);
+appConnection.use("/api/v1/activity-log/", activityLogRouter);
+appConnection.use("/api/v1/api-log/", apiLogRouter);
 
 appConnection.use("/api/v1/access-point/", accessPointRouter);
 appConnection.use("/api/v1/menu/", menuRouter);

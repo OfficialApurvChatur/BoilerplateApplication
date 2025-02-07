@@ -13,10 +13,14 @@ import data from "./extra/gData";
 import formDefaultValue from "./extra/dFormDefaultValue";
 import previousValue from "./extra/ePreviousValue";
 
+import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
+import { useSocket } from "@/aConnection/fSocketConnection";
+
 
 const AccessPointUpdatePage = () => {
   // Variable
   const { id } = useParams();
+  const socket = useSocket();
   const retrieveAPIResponse = accessPointAPIEndpoint.useAccessPointRetrieveAPIQuery({ params: { _id: id } });
   const [ updateAPITrigger, updateAPIResponse ] = accessPointAPIEndpoint.useAccessPointUpdateAPIMutation();
 
@@ -26,6 +30,11 @@ const AccessPointUpdatePage = () => {
     updateAPITrigger,
     updateAPIResponse
   }
+
+  // Listening Socket Events
+  useSocketEventHook(socket, {
+    [`ACCESSPOINT_RETRIEVED:${id}`]: () => APICall.retrieveAPIResponse.refetch()
+  })  
 
   // All Render
   // 1. Success Render

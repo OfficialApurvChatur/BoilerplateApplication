@@ -26,7 +26,21 @@ const endpointRoute = {
               cRetrieveRoute: "base-retrieve",
               dUpdateRoute: "base-update",
               eDeleteRoute: "base-delete",
-            }
+            },
+            bActivityLogRoute: {
+              aListRoute: "activity-log-list",
+              bCreateRoute: "activity-log-create",
+              cRetrieveRoute: "activity-log-retrieve",
+              dUpdateRoute: "activity-log-update",
+              eDeleteRoute: "activity-log-delete",
+            },
+            cAPILogRoute: {
+              aListRoute: "api-log-list",
+              bCreateRoute: "api-log-create",
+              cRetrieveRoute: "api-log-retrieve",
+              dUpdateRoute: "api-log-update",
+              eDeleteRoute: "api-log-delete",
+            },
           },
           bUserAdministrationRoute: {
             aAccessPointRoute: {

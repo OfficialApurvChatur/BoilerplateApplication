@@ -14,10 +14,14 @@ import data from "./extra/gData";
 import formDefaultValue from "./extra/dFormDefaultValue";
 import previousValue from "./extra/ePreviousValue";
 
+import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
+import { useSocket } from "@/aConnection/fSocketConnection";
+
 
 const MenuUpdatePage = () => {
   // Variable
   const { id } = useParams();
+  const socket = useSocket();
   const retrieveAPIResponse = menuAPIEndpoint.useMenuRetrieveAPIQuery({ params: { _id: id } });
   const [ updateAPITrigger, updateAPIResponse ] = menuAPIEndpoint.useMenuUpdateAPIMutation();
   const accessPointListAPIResponse = accessPointAPIEndpoint.useAccessPointListForMenuCreateAndUpdateAPIQuery(null);
@@ -29,6 +33,11 @@ const MenuUpdatePage = () => {
     updateAPIResponse,
     accessPointListAPIResponse,
   }
+
+  // Listening Socket Events
+  useSocketEventHook(socket, {
+    [`MENU_RETRIEVED:${id}`]: () => APICall.retrieveAPIResponse.refetch()
+  })  
 
   // All Render
   // 1. Success Render

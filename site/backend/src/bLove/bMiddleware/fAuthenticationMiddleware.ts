@@ -43,7 +43,7 @@ const authenticationMiddleware = catchAsyncMiddleware(
     // Save User ID in Request
     (request as any).user = user._id;
 
-    next();
+    return next();
   }
 );
 

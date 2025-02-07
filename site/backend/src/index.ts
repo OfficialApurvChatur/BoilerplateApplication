@@ -4,6 +4,7 @@ import environmentConnection from './aConnection/aEnvironmentConnection';
 import databaseConnection from './aConnection/bDatabaseConnection';
 import appConnection from './aConnection/cAppConnection';
 import redisConnection from './aConnection/dRedisConnection';
+import socketConnection from './aConnection/fSocketConnection';
 
 
 // Uncaught Exception
@@ -24,6 +25,9 @@ redisConnection()
 
 // Connect App
 const server = http.createServer(appConnection);
+
+// Connect Socket
+socketConnection(server, appConnection)
 
 // Connect Server
 server.listen(process.env.PORT, () => {

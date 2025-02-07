@@ -14,6 +14,8 @@ const apiConnection = createApi({
   }),
   tagTypes: [
     "baseList", "baseRetrieve",
+    "activityLogList", "activityLogRetrieve",
+    "apiLogList", "apiLogRetrieve",
 
     "accessPointList", "accessPointRetrieve", "accessPointListForMenuCreateAndUpdate",
     "menuList", "menuRetrieve", "menuListForRoleCreateAndUpdate",

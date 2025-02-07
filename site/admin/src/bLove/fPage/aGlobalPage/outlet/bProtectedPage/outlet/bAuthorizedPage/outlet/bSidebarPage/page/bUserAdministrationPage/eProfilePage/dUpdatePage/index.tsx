@@ -14,10 +14,14 @@ import data from "./extra/gData";
 import formDefaultValue from "./extra/dFormDefaultValue";
 import previousValue from "./extra/ePreviousValue";
 
+import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
+import { useSocket } from "@/aConnection/fSocketConnection";
+
 
 const ProfileUpdatePage = () => {
   // Variable
   const { id } = useParams();
+  const socket = useSocket();
   const retrieveAPIResponse = profileAPIEndpoint.useProfileRetrieveAPIQuery({ params: { _id: id } });
   const [ updateAPITrigger, updateAPIResponse ] = profileAPIEndpoint.useProfileUpdateAPIMutation();
   const userListAPIResponse = userAPIEndpoint.useUserListForProfileCreateAndUpdateAPIQuery(null);
@@ -29,6 +33,11 @@ const ProfileUpdatePage = () => {
     updateAPIResponse,
     userListAPIResponse,
   }
+
+  // Listening Socket Events
+  useSocketEventHook(socket, {
+    [`PROFILE_RETRIEVED:${id}`]: () => APICall.retrieveAPIResponse.refetch()
+  })  
 
   // All Render
   // 1. Success Render

@@ -10,10 +10,14 @@ import header from "./extra/cHeader";
 import data from "./extra/dData";
 import submitHandler from "./extra/bSubmitHandler";
 
+import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
+import { useSocket } from "@/aConnection/fSocketConnection";
+
 
 const RoleDeletePage = () => {
   // Variable
   const { id } = useParams();
+  const socket = useSocket();
   const retrieveAPIResponse = roleAPIEndpoint.useRoleRetrieveAPIQuery({ params: { _id: id } });
   const [ deleteAPITrigger, deleteAPIResponse ] = roleAPIEndpoint.useRoleDeleteAPIMutation();
 
@@ -24,6 +28,11 @@ const RoleDeletePage = () => {
     deleteAPIResponse
   }
 
+  // Listening Socket Events
+  useSocketEventHook(socket, {
+    [`ROLE_RETRIEVED:${id}`]: () => APICall.retrieveAPIResponse.refetch()
+  })
+  
   // All Render
   // 1. Success Render
   useEffect(() => {

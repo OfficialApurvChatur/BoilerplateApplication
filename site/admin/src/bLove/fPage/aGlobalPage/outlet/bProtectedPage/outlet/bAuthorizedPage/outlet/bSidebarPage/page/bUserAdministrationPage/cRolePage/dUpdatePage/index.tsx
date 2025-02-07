@@ -14,10 +14,14 @@ import data from "./extra/gData";
 import formDefaultValue from "./extra/dFormDefaultValue";
 import previousValue from "./extra/ePreviousValue";
 
+import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
+import { useSocket } from "@/aConnection/fSocketConnection";
+
 
 const RoleUpdatePage = () => {
   // Variable
   const { id } = useParams();
+  const socket = useSocket();
   const updateRetrieveAPIResponse = roleAPIEndpoint.useRoleUpdateRetrieveAPIQuery({ params: { _id: id } });
   const [ updateAPITrigger, updateAPIResponse ] = roleAPIEndpoint.useRoleUpdateAPIMutation();
   const menuListAPIResponse = menuAPIEndpoint.useMenuListForRoleCreateAndUpdateAPIQuery(null);
@@ -29,6 +33,11 @@ const RoleUpdatePage = () => {
     updateAPIResponse,
     menuListAPIResponse,
   }
+
+  // Listening Socket Events
+  useSocketEventHook(socket, {
+    [`ROLE_RETRIEVED:${id}`]: () => APICall.retrieveAPIResponse.refetch()
+  })  
 
   // All Render
   // 1. Success Render

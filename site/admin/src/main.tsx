@@ -9,22 +9,25 @@ import AppConnection from './aConnection/aAppConnection/index.tsx'
 import { Provider as ReduxProvider } from 'react-redux'
 import { HelmetProvider } from 'react-helmet-async'
 import { BrowserRouter }   from 'react-router-dom'
+import { ThemeProvider } from './aConnection/bShadcnConnection/components/theme-provider.tsx'
+import { SocketProvider } from './aConnection/fSocketConnection/index.tsx'
 
 // XXX XXXX XXXX
 import reduxConnection from './aConnection/dReduxConnection/index.ts'
-import { ThemeProvider } from './aConnection/bShadcnConnection/components/theme-provider.tsx'
 
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <ReduxProvider store={reduxConnection} >
-      <HelmetProvider>
-        <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
-          <BrowserRouter>
-            <AppConnection />
-          </BrowserRouter>
-        </ThemeProvider>
-      </HelmetProvider>
+      <SocketProvider>
+        <HelmetProvider>
+          <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+            <BrowserRouter>
+              <AppConnection />
+            </BrowserRouter>
+          </ThemeProvider>
+        </HelmetProvider>
+      </SocketProvider>
     </ReduxProvider>    
   </StrictMode>,
 )

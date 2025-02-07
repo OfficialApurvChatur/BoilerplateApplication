@@ -14,6 +14,7 @@ import { ModeToggle } from "@/aConnection/bShadcnConnection/components/mode-togg
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from "@/aConnection/bShadcnConnection/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/aConnection/bShadcnConnection/components/ui/avatar";
 import { Button } from "@/aConnection/bShadcnConnection/components/ui/button";
+import { NotificationComponent } from "./component/notification";
 
 
 const AuthorizedComponent = ({ children, ReduxCall, APICall, submitHandler }: { children: React.ReactNode, ReduxCall: any, APICall: any, submitHandler: any }) => {
@@ -48,6 +49,7 @@ const AuthorizedComponent = ({ children, ReduxCall, APICall, submitHandler }: { 
             </div>
             
             <div className="ml-auto px-3 flex gap-2">
+              <NotificationComponent />
               <ModeToggle />
 
               <DropdownMenu>
