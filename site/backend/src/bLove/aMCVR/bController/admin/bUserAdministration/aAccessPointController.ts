@@ -13,7 +13,10 @@ const accessPointController = (Model=AccessPointModel, Label="AccessPoint") => (
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
 
       // List
-      const list = await Model.find();
+      const list = await Model.find()
+        .select("aImage aTitle bCreatedAt bUpdatedAt")
+        .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail");
 
       // Set Cache
       await redisClient.setex(`${Label.toLowerCase()}-list`, 15*60, JSON.stringify(list));
@@ -40,6 +43,9 @@ const accessPointController = (Model=AccessPointModel, Label="AccessPoint") => (
         aImage: request.body.aImage,
         aTitle: request.body.aTitle,
         aSubtitle: request.body.aSubtitle,
+
+        bCreatedAt: request.body.bCreatedAt,
+        bCreatedBy: request.body.bCreatedBy,
       })
 
       // Clear Cache
@@ -68,7 +74,9 @@ const accessPointController = (Model=AccessPointModel, Label="AccessPoint") => (
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
 
       // Retrieve
-      const retrieve = await Model.findById(request.params.id);
+      const retrieve = await Model.findById(request.params.id)
+        .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail");
 
       // Set Cache
       await redisClient.setex(`${Label.toLowerCase()}-retrieve:${request.params.id}`, 15*60, JSON.stringify(retrieve))
@@ -92,6 +100,9 @@ const accessPointController = (Model=AccessPointModel, Label="AccessPoint") => (
           aImage: request.body.aImage,
           aTitle: request.body.aTitle,
           aSubtitle: request.body.aSubtitle,
+
+          bUpdatedAt: request.body.bUpdatedAt,
+          bUpdatedBy: request.body.bUpdatedBy,  
         }, {
           new: true,
           runValidators: true,

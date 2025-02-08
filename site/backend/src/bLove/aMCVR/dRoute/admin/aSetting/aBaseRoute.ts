@@ -4,6 +4,7 @@ import rateLimiterMiddleware from '../../../../bMiddleware/dRateLimiterMiddlewar
 import checkCacheMiddleware from '../../../../bMiddleware/eCheckCacheMiddleware';
 import validatorMiddleware from '../../../../bMiddleware/cValidationMiddleware';
 import authenticationMiddleware from '../../../../bMiddleware/fAuthenticationMiddleware';
+import personalInfoMiddleware from '../../../../bMiddleware/jPersonalInfoMiddleware';
 
 import baseValidation from '../../../cValidation/admin/aSetting/aBaseValidation';
 import baseController from '../../../bController/admin/aSetting/aBaseController';
@@ -23,6 +24,7 @@ router.route("/create").post(
   rateLimiterMiddleware("base-create", 60, 10),
   authenticationMiddleware,
   baseValidation.create(), validatorMiddleware,
+  personalInfoMiddleware("created"),
   baseController().create
 )
 
@@ -38,6 +40,7 @@ router.route("/update/:id").put(
   rateLimiterMiddleware("base-update", 60, 10), 
   authenticationMiddleware,
   baseValidation.update(), validatorMiddleware, 
+  personalInfoMiddleware("updated"),
   baseController().update
 )
 

@@ -4,6 +4,7 @@ import rateLimiterMiddleware from '../../../../bMiddleware/dRateLimiterMiddlewar
 import checkCacheMiddleware from '../../../../bMiddleware/eCheckCacheMiddleware';
 import validatorMiddleware from '../../../../bMiddleware/cValidationMiddleware';
 import authenticationMiddleware from '../../../../bMiddleware/fAuthenticationMiddleware';
+import personalInfoMiddleware from '../../../../bMiddleware/jPersonalInfoMiddleware';
 
 import menuValidation from '../../../cValidation/admin/bUserAdministration/bMenuValidation';
 import menuController from '../../../bController/admin/bUserAdministration/bMenuController';
@@ -23,6 +24,7 @@ router.route("/create").post(
   rateLimiterMiddleware("menu-create", 60, 10),
   authenticationMiddleware,
   menuValidation.create(), validatorMiddleware,
+  personalInfoMiddleware("created"),
   menuController().create
 )
 
@@ -38,6 +40,7 @@ router.route("/update/:id").put(
   rateLimiterMiddleware("menu-update", 60, 10), 
   authenticationMiddleware,
   menuValidation.update(), validatorMiddleware, 
+  personalInfoMiddleware("updated"),
   menuController().update
 )
 

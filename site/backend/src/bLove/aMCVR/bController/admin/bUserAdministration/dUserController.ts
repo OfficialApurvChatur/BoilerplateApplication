@@ -14,7 +14,11 @@ const userController = (Model=UserModel, Label="User") => ({
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
 
       // List
-      const list = await Model.find();
+      const list = await Model.find()
+        .select("aImage aTitle bCreatedAt bUpdatedAt")
+        .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("cRole", "aTitle");
 
       // Set Cache
       await redisClient.setex(`${Label.toLowerCase()}-list`, 15*60, JSON.stringify(list));
@@ -42,6 +46,9 @@ const userController = (Model=UserModel, Label="User") => ({
         aTitle: request.body.aTitle,
         aSubtitle: request.body.aSubtitle,
 
+        bCreatedAt: request.body.bCreatedAt,
+        bCreatedBy: request.body.bCreatedBy,
+
         cRole: request.body.cRole,
         // cProfile: request.body.cProfile,
 
@@ -58,6 +65,9 @@ const userController = (Model=UserModel, Label="User") => ({
         const createProfile = await ProfileModel.create({
           aTitle: `Profile for ${request.body.eEmail}`,
     
+          bCreatedAt: request.body.bCreatedAt,
+          bCreatedBy: request.body.bCreatedBy,
+  
           cUser: create._id,
         })    
         
@@ -97,7 +107,9 @@ const userController = (Model=UserModel, Label="User") => ({
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
 
       // Retrieve
-      const retrieve = await Model.findById(request.params.id);
+      const retrieve = await Model.findById(request.params.id)
+        .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail");
 
       // Set Cache
       await redisClient.setex(`${Label.toLowerCase()}-retrieve:${request.params.id}`, 15*60, JSON.stringify(retrieve))
@@ -121,6 +133,9 @@ const userController = (Model=UserModel, Label="User") => ({
           aImage: request.body.aImage,
           aTitle: request.body.aTitle,
           aSubtitle: request.body.aSubtitle,
+
+          bUpdatedAt: request.body.bUpdatedAt,
+          bUpdatedBy: request.body.bUpdatedBy,  
 
           cRole: request.body.cRole,
           cProfile: request.body.cProfile,

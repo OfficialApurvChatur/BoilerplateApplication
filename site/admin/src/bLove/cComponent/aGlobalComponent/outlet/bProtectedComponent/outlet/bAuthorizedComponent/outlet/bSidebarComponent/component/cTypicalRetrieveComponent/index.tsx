@@ -9,6 +9,8 @@ import ErrorComponent from "@/bLove/cComponent/aGlobalComponent/component/bError
 import TextReadComponent from "./component/aTextReadComponent";
 import RoleCheckboxReadComponent from "./component/bRoleCheckboxReadComponent";
 import ImageReadComponent from "./component/cImageReadComponent";
+import ByReadComponent from "./component/dByReadComponent";
+import AtReadComponent from "./component/eAtReadComponent";
 
 
 type TypicalRetrieveComponentType = {
@@ -97,6 +99,16 @@ const TypicalRetrieveComponent = (props: TypicalRetrieveComponentType) => {
                                 {/* For I/P Type: Role Checkbox */}
                                 {((eachField.type === "role-checkbox") && 
                                   <RoleCheckboxReadComponent key={indexInput} eachField={eachField} />
+                                )}
+    
+                                {/* For I/P Type: Created By & Updated By */}
+                                {((eachField.type === "by") && (eachField.value) &&
+                                  <ByReadComponent key={indexInput} eachField={eachField} />
+                                )}
+    
+                                {/* For I/P Type: Created At  Updated At */}
+                                {((eachField.type === "at") && (eachField.value) && 
+                                  <AtReadComponent key={indexInput} eachField={eachField} />
                                 )}
     
                               </React.Fragment>

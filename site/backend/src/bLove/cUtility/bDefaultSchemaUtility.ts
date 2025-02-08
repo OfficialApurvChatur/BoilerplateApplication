@@ -13,10 +13,8 @@ export type DefaultSchemaUtilityType = mongoose.Document & {
 
   bCreatedAt?: Date;
   bUpdatedAt?: Date;
-  // bCreatedBy?: mongoose.Types.ObjectId;
-  // bUpdatedBy?: mongoose.Types.ObjectId;
-  bCreatedBy?: string;
-  bUpdatedBy?: string;
+  bCreatedBy?: mongoose.Types.ObjectId;
+  bUpdatedBy?: mongoose.Types.ObjectId;
 }
 
 const schema = new mongoose.Schema<DefaultSchemaUtilityType>({
@@ -32,10 +30,8 @@ const schema = new mongoose.Schema<DefaultSchemaUtilityType>({
   // Personal Info
   bCreatedAt: { type: Date, default: timezone(Date.now()).tz("Asia/Kolkata") },
   bUpdatedAt: { type: Date },
-  // bCreatedBy: { type: mongoose.Schema.Types.ObjectId, ref: "UserModel" },
-  // bUpdatedBy: { type: mongoose.Schema.Types.ObjectId, ref: "UserModel" },
-  bCreatedBy: { type: String },
-  bUpdatedBy: { type: String }
+  bCreatedBy: { type: mongoose.Schema.Types.ObjectId, ref: "UserModel" },
+  bUpdatedBy: { type: mongoose.Schema.Types.ObjectId, ref: "UserModel" },
 })
 
 export const DefaultSchemaUtility = schema;

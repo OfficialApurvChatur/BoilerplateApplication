@@ -14,6 +14,9 @@ const menuController = (Model=MenuModel, Label="Menu") => ({
 
       // List
       const list = await Model.find()
+        .select("aImage aTitle bCreatedAt bUpdatedAt")
+        .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail")
         .populate("cAccessPoint", "aTitle");
 
       // Set Cache
@@ -41,6 +44,9 @@ const menuController = (Model=MenuModel, Label="Menu") => ({
         aImage: request.body.aImage,
         aTitle: request.body.aTitle,
         aSubtitle: request.body.aSubtitle,
+
+        bCreatedAt: request.body.bCreatedAt,
+        bCreatedBy: request.body.bCreatedBy,
 
         cAccessPoint: request.body.cAccessPoint,
       })
@@ -71,6 +77,8 @@ const menuController = (Model=MenuModel, Label="Menu") => ({
 
       // Retrieve
       const retrieve = await Model.findById(request.params.id)
+        .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail")
         .populate("cAccessPoint", "aTitle");
 
       // Set Cache
@@ -95,6 +103,9 @@ const menuController = (Model=MenuModel, Label="Menu") => ({
           aImage: request.body.aImage,
           aTitle: request.body.aTitle,
           aSubtitle: request.body.aSubtitle,
+
+          bUpdatedAt: request.body.bUpdatedAt,
+          bUpdatedBy: request.body.bUpdatedBy,  
 
           cAccessPoint: request.body.cAccessPoint,
         }, {

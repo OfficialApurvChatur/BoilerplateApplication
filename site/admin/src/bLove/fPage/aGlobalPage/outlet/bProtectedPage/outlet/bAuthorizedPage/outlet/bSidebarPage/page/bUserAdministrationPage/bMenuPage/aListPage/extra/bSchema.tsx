@@ -6,6 +6,11 @@ const listSchema = z.object({
   aImage: z.string().optional(),
   aTitle: z.string(),
 
+  bCreatedAt: z.string().optional(),
+  bCreatedBy: z.any().optional(),
+  bUpdatedAt: z.string().optional(),
+  bUpdatedBy: z.any().optional(),
+
   cAccessPoint: z.array(z.object({
     _id: z.string(),
     aTitle: z.string()

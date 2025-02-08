@@ -9,18 +9,10 @@ import { ListSchema } from "./bSchema"
 import { DotsHorizontalIcon } from "@radix-ui/react-icons"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/aConnection/bShadcnConnection/components/ui/dropdown-menu"
 import { Button } from "@/aConnection/bShadcnConnection/components/ui/button"
+import UserInfoComponent from "@/bLove/cComponent/aGlobalComponent/component/cUserInfoComponent";
 
 
 const columns: ColumnDef<ListSchema>[] = [
-  {
-    accessorKey: "_id",
-    header: ({ column }) => (
-      <DataTableColumnHeader className="hidden" column={column} title="ID" />
-    ),
-    cell: ({ row }) => <div className="hidden">{row.getValue("_id")}</div>,
-    enableSorting: false,
-    enableHiding: false,
-  },
   {
     accessorKey: "aImage",
     header: ({ column }) => (
@@ -47,11 +39,37 @@ const columns: ColumnDef<ListSchema>[] = [
       return (
         <div className="flex space-x-2">
           <span className="max-w-[450px] truncate font-normal hover:underline">
-            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.cRoleRoute.cRetrieveRoute}/${row.getValue("_id")}`} >
+            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.cRoleRoute.cRetrieveRoute}/${row.original._id}`} >
               {row.getValue("aTitle")}
             </Link>
           </span>
         </div>
+      )
+    },
+  },
+  {
+    accessorKey: "bCreatedBy",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Created" />
+    ),
+    cell: ({ row }) => {
+      return (
+        row.getValue("bCreatedBy") ? (
+          <UserInfoComponent user={row.getValue("bCreatedBy")} time={row.original?.bCreatedAt} />
+        ) : "-"
+      )
+    },
+  },
+  {
+    accessorKey: "bUpdatedBy",
+    header: ({ column }) => (
+      <DataTableColumnHeader column={column} title="Updated" />
+    ),
+    cell: ({ row }) => {
+      return (
+        row.getValue("bUpdatedBy") ? (
+          <UserInfoComponent user={row.getValue("bUpdatedBy")} time={row.original?.bUpdatedAt} />
+        ) : "-"
       )
     },
   },
@@ -67,18 +85,18 @@ const columns: ColumnDef<ListSchema>[] = [
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[160px]">
           <DropdownMenuItem asChild>
-            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.cRoleRoute.cRetrieveRoute}/${row.getValue("_id")}`} >
+            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.cRoleRoute.cRetrieveRoute}/${row.original._id}`} >
               Retrieve
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.cRoleRoute.dUpdateRoute}/${row.getValue("_id")}`} >
+            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.cRoleRoute.dUpdateRoute}/${row.original._id}`} >
               Update
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
-            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.cRoleRoute.eDeleteRoute}/${row.getValue("_id")}`} >
+            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.cRoleRoute.eDeleteRoute}/${row.original._id}`} >
               Delete
             </Link>
           </DropdownMenuItem>

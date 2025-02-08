@@ -16,6 +16,8 @@ import CheckboxInputComponent from "./component/dCheckboxInputComponent"
 import RoleCheckboxInputComponent from "./component/eRoleCheckboxInputComponent"
 import RadioInputComponent from "./component/fRadioInputComponent"
 import ImageInputComponent from "./component/gImageInputComponent"
+import ByReadComponent from "./component/zByReadComponent"
+import AtReadComponent from "./component/zAtReadComponent"
 
 
 type TypicalUpdateComponentType = {
@@ -158,6 +160,16 @@ const TypicalUpdateComponent = (props: TypicalUpdateComponentType) => {
                                   {/* For I/P Type: Radio */}
                                   {((eachInput.type === "radio") &&
                                     <RadioInputComponent key={indexInput}  form={form} eachInput={eachInput} />
+                                  )}
+
+                                  {/* For I/P Type: Created By & Updated By */}
+                                  {((eachInput.type === "by") && (eachInput.value) &&
+                                    <ByReadComponent key={indexInput} eachField={eachInput} />
+                                  )}
+      
+                                  {/* For I/P Type: Created At  Updated At */}
+                                  {((eachInput.type === "at") && (eachInput.value) && 
+                                    <AtReadComponent key={indexInput} eachField={eachInput} />
                                   )}
 
                                 </React.Fragment>
