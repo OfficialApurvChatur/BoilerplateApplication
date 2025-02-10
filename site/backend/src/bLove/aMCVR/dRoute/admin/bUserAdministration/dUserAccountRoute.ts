@@ -5,7 +5,7 @@ import checkCacheMiddleware from '../../../../bMiddleware/eCheckCacheMiddleware'
 import validatorMiddleware from '../../../../bMiddleware/cValidationMiddleware';
 import authenticationMiddleware from '../../../../bMiddleware/fAuthenticationMiddleware';
 
-import userAccountValidation from '../../../cValidation/admin/bUserAdministration/dUsrAccountValidation';
+import userAccountValidation from '../../../cValidation/admin/bUserAdministration/dUserAccountValidation';
 import userAccountController from '../../../bController/admin/bUserAdministration/dUserAccountController';
 
 
@@ -25,5 +25,18 @@ router.route("/update").put(
   userAccountController().update,
 );
 
+router.route("/email-update").put(
+  rateLimiterMiddleware("account-email-update", 60, 10), 
+  authenticationMiddleware,
+  userAccountValidation.emailUpdate(), validatorMiddleware, 
+  userAccountController().emailUpdate,
+);
+
+router.route("/password-update").put(
+  rateLimiterMiddleware("account-password-update", 60, 10), 
+  authenticationMiddleware,
+  userAccountValidation.passwordUpdate(), validatorMiddleware, 
+  userAccountController().passwordUpdate,
+);
 
 export const userAccountRouter = router

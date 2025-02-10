@@ -51,13 +51,7 @@ const apiResponseHandler = {
     try {
       const serverResponse = await updateAPITrigger({ 
         body: {
-          aImage: data.aImage,
-          aTitle: data.aTitle,
-
-          eImage: data.eImage,
-          eFirstname: data.eFirstname,
-          eLastname: data.eLastname,
-          eMobile: data.eMobile,
+          eEmail: data.eEmail,
         } 
       });
 

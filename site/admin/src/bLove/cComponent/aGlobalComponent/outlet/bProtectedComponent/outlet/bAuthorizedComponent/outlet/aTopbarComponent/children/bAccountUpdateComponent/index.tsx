@@ -9,11 +9,11 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/aCo
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/aConnection/bShadcnConnection/components/ui/form'
 import { toast } from '@/aConnection/bShadcnConnection/hooks/use-toast'
 import { Button } from '@/aConnection/bShadcnConnection/components/ui/button'
+import { Input } from '@/aConnection/bShadcnConnection/components/ui/input'
 
 import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent'
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent'
 import backgroundImage from "@/bLove/hAsset/defaultImage.png";
-import { Input } from '@/aConnection/bShadcnConnection/components/ui/input'
 import handleImageUpdateForObject from '@/bLove/dUtility/aImageForObject/bHandleImageUpdateForObject'
 import handleImageDeleteForObject from '@/bLove/dUtility/aImageForObject/cHandleImageDeleteForObject'
 import handleImageCreateForObject from '@/bLove/dUtility/aImageForObject/aHandleImageCreateForObject'
@@ -94,6 +94,79 @@ const AccountUpdateComponent = (props: AccountUpdateComponentType) => {
                     </CardHeader>
                     <CardContent>
                       <div className="space-y-4 pt-4">
+
+                        {/* Profile Image */}
+                        <div className="grid gap-3" >
+                          <FormField
+                            control={form.control}
+                            name="eImage"
+                            render={() => (
+                              <FormItem>
+                                <FormLabel>Profile Image :</FormLabel>
+                                <FormControl>
+                                  <div className="flex items-center gap-4 rounded-lg">
+                                    <div className="rounded-md flex items-center justify-center w-28 h-28 overflow-hidden">
+                                      {fileLoading ? <Loader2Icon className="w-10 h-10 animate-spin" /> : (
+                                        <img
+                                          src={form?.watch("eImage") || backgroundImage}
+                                          className="rounded-md object-cover w-full h-full"
+                                          alt="Uploaded Preview"
+                                        />
+                                      )}
+                                    </div>
+
+                                    <div className="flex flex-col gap-2">
+                                      {form.watch("eImage") ? (
+                                        <React.Fragment>
+                                          <Button
+                                            type="button"
+                                            onClick={() => document.getElementById(`profile-image-update`)?.click()}
+                                            className="bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-700"
+                                          >
+                                            Edit Image
+                                          </Button>
+                                          
+                                          <Input
+                                            id={`profile-image-update`}
+                                            type="file"
+                                            className="hidden"
+                                            onChange={(event: any) => handleImageUpdateForObject(event, { name: "eImage", folderName: "user" }, form, setFileLoading, form.watch("eImage"))} 
+                                          />
+
+                                          <Button
+                                            type="button"
+                                            onClick={() => handleImageDeleteForObject({ name: "eImage", folderName: "user" }, form, setFileLoading, form.watch("eImage"))} 
+                                            className="bg-rose-500 text-white px-4 py-2 rounded-md hover:bg-rose-600"
+                                          >
+                                            Remove Image
+                                          </Button>
+                                        </React.Fragment>
+                                      ) : (
+                                        <React.Fragment>
+                                          <Button
+                                            type="button"
+                                            onClick={() => document.getElementById(`image-create`)?.click()}
+                                            className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
+                                          >
+                                            Choose Image
+                                          </Button>
+                      
+                                          <Input
+                                            id={`image-create`}
+                                            type="file"
+                                            className="hidden"
+                                            onChange={(event: any) => handleImageCreateForObject(event, { name: "eImage", folderName: "user" }, form, setFileLoading)}
+                                          />
+                                        </React.Fragment>
+                                      )}                    
+                                    </div>
+                                  </div>              
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+                        </div>
 
                         {/* First Name */}
                         <div className="grid gap-3" >
@@ -180,14 +253,14 @@ const AccountUpdateComponent = (props: AccountUpdateComponentType) => {
                     <CardContent>
                       <div className="space-y-4 pt-4">
 
-                        {/* Image */}
+                        {/* Cover Image */}
                         <div className="grid gap-3" >
                           <FormField
                             control={form.control}
                             name="aImage"
                             render={() => (
                               <FormItem>
-                                <FormLabel>Image :</FormLabel>
+                                <FormLabel>Cover Image :</FormLabel>
                                 <FormControl>
                                   <div className="flex items-center gap-4 rounded-lg">
                                     <div className="rounded-md flex items-center justify-center w-28 h-28 overflow-hidden">

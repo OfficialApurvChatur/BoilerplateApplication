@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Helmet } from "react-helmet-async";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 import { Toaster } from "../bShadcnConnection/components/ui/toaster";
 
@@ -102,6 +102,16 @@ const ProfileDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/out
 
 
 const AppConnection = () => {
+  // Variable
+  const { pathname } = useLocation();
+  
+  // All Render
+  // 1. First Render
+  useEffect(() => {
+    const scrollElement = document.scrollingElement || document.documentElement;
+    scrollElement.scrollTop = 0;
+  }, [pathname]);
+
   // JSX
   return (
     <React.Fragment>

@@ -3,11 +3,13 @@ import { z } from "zod";
 
 const formSchema = z.object({
   aImage: z.string()
-    .min(3, { message: "Please select image" }),
+    .min(3, { message: "Please select cover image" }),
   aTitle: z.string()
     .min(3, { message: "Please enter atlest 3 characters" })
     .max(50, { message: "Please enter atmost 50 characters" }),
 
+  eImage: z.string()
+    .min(3, { message: "Please select profile image" }),
   eFirstname: z.string()
     .min(3, { message: "First name must be at least 3 characters long" })
     .max(50, { message: "First name must not exceed 50 characters" }),

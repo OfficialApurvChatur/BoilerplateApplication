@@ -2,6 +2,7 @@ const previousValue = (form: any, APICall: any) => (
   form.setValue("aImage", APICall.retrieveAPIResponse.data.user_account_retrieve?.aImage),
   form.setValue("aTitle", APICall.retrieveAPIResponse.data.user_account_retrieve?.aTitle),
 
+  form.setValue("eImage", APICall.retrieveAPIResponse.data.user_account_retrieve?.eImage),
   form.setValue("eFirstname", APICall.retrieveAPIResponse.data.user_account_retrieve?.eFirstname),
   form.setValue("eLastname", APICall.retrieveAPIResponse.data.user_account_retrieve?.eLastname),
   form.setValue("eEmail", APICall.retrieveAPIResponse.data.user_account_retrieve?.eEmail),

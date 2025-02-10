@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment';
 import { CheckCircle2 } from 'lucide-react';
 import { CrossCircledIcon } from '@radix-ui/react-icons';
 
@@ -6,9 +7,11 @@ import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoad
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent'
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/aConnection/bShadcnConnection/components/ui/card'
+import { Badge } from '@/aConnection/bShadcnConnection/components/ui/badge';
+import { Avatar, AvatarFallback, AvatarImage } from '@/aConnection/bShadcnConnection/components/ui/avatar';
 
 import backgroundImage from "@/bLove/hAsset/defaultImage.png";
-import { Badge } from '@/aConnection/bShadcnConnection/components/ui/badge';
+import getInitialsUtility from '@/bLove/dUtility/aGetInitialsUtility';
 
 
 type AccountRetrieveComponentType = {
@@ -70,6 +73,18 @@ const AccountRetrieveComponent = (props: AccountRetrieveComponentType) => {
                   <CardContent>
                     <div className="space-y-4 pt-4">
 
+                      {/* Profile Image */}
+                      <div className="grid text-sm gap-1" >
+                        <span className="font-medium" >Cover Image :</span>
+                        <div className="rounded-md flex items-center justify-center w-28 h-28 overflow-hidden">
+                          <img
+                            src={props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.eImage || backgroundImage}
+                            className="rounded-md object-cover w-full h-full"
+                            alt="Uploaded Preview"
+                          />
+                        </div>
+                      </div>
+
                       {/* First Name */}
                       <div className="grid text-sm gap-0.5" >
                         <span className="font-medium" >First Name :</span>
@@ -111,9 +126,9 @@ const AccountRetrieveComponent = (props: AccountRetrieveComponentType) => {
                   <CardContent>
                     <div className="space-y-4 pt-4">
 
-                      {/* Image */}
+                      {/* Cover Image */}
                       <div className="grid text-sm gap-1" >
-                        <span className="font-medium" >Image :</span>
+                        <span className="font-medium" >Profile Image :</span>
                         <div className="rounded-md flex items-center justify-center w-28 h-28 overflow-hidden">
                           <img
                             src={props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.aImage || backgroundImage}
@@ -202,6 +217,72 @@ const AccountRetrieveComponent = (props: AccountRetrieveComponentType) => {
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4 pt-4">
+
+                      {/* Created By */}
+                      <div className="grid text-sm gap-1" >
+                        <span className="font-medium" >Created By :</span>
+                        {props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bCreatedBy ? (
+                          <div className="flex items-center space-x-2">
+                            <Avatar>
+                              <AvatarImage src={props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bCreatedBy?.eImage} />
+                              <AvatarFallback>{getInitialsUtility(
+                                props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bCreatedBy?.eFirstname, 
+                                props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bCreatedBy?.eLastname
+                              )}</AvatarFallback>
+                            </Avatar>
+                            <div className='hidden sm:block' >
+                              <div className="flex items-center flex-1 gap-1">
+                                <p className="text-sm leading-none">{`
+                                  ${props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bCreatedBy?.eFirstname} 
+                                  ${props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bCreatedBy?.eLastname}
+                                `}</p>
+                              </div>
+                              <p className="text-xs text-muted-foreground">{props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bCreatedBy?.eEmail}</p>
+                            </div>
+                          </div>
+                        ) : "-"}
+                      </div>
+                      
+                      {/* Created At */}
+                      <div className="grid text-sm gap-1" >
+                        <div className="grid text-sm gap-0.5" >
+                          <span className="font-medium" >Created At :</span>
+                          <span>{props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bCreatedAt ? moment(props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bCreatedAt).format('MMM Do YYYY, h:mm:ss a') : "-"}</span>
+                        </div>
+                      </div>
+                      
+                      {/* Updated By */}
+                      <div className="grid text-sm gap-1" >
+                        <span className="font-medium" >Updated By :</span>
+                        {props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bUpdatedBy ? (
+                          <div className="flex items-center space-x-2">
+                            <Avatar>
+                              <AvatarImage src={props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bUpdatedBy?.eImage} />
+                              <AvatarFallback>{getInitialsUtility(
+                                props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bUpdatedBy?.eFirstname, 
+                                props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bUpdatedBy?.eLastname
+                              )}</AvatarFallback>
+                            </Avatar>
+                            <div className='hidden sm:block' >
+                              <div className="flex items-center flex-1 gap-1">
+                                <p className="text-sm leading-none">{`
+                                  ${props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bUpdatedBy?.eFirstname} 
+                                  ${props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bUpdatedBy?.eLastname}
+                                `}</p>
+                              </div>
+                              <p className="text-xs text-muted-foreground">{props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bUpdatedBy?.eEmail}</p>
+                            </div>
+                          </div>
+                        ) : "-"}
+                      </div>
+                      
+                      {/* Updated At */}
+                      <div className="grid text-sm gap-1" >
+                        <div className="grid text-sm gap-0.5" >
+                          <span className="font-medium" >Updated At :</span>
+                          <span>{props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bUpdatedAt ? moment(props.APICall.retrieveAPIResponse.data?.user_account_retrieve?.bUpdatedAt).format('MMM Do YYYY, h:mm:ss a') : "-"}</span>
+                        </div>
+                      </div>
 
                     </div>
                   </CardContent>

@@ -35,7 +35,7 @@ const userAccountController = (Model=UserModel, Label="User") => ({
       // Response
       response.status(200).json({ 
         success: true,
-        message: "User Account Retrieved Successfully",
+        message: `${Label} Account Updated Successfully`,
         user_account_retrieve: retrieve
       })
     }
@@ -45,51 +45,78 @@ const userAccountController = (Model=UserModel, Label="User") => ({
   update: catchAsyncMiddleware(
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
 
-    // // Retrieve
-    // let retrieve = await Model.findOne({_id: (request as any).user})
-    //   .populate("bCreatedBy", "eFirstname eLastname eEmail")
-    //   .populate("bUpdatedBy", "eFirstname eLastname eEmail")
-    //   .populate("cRole", "aTitle");
+      // Update
+      const update = await Model.findByIdAndUpdate(
+        (request as any).user,{
+          aImage: request.body.aImage,
+          aTitle: request.body.aTitle,
+          aSubtitle: request.body.aSubtitle,
 
-    // // Not Found
-    // if (!retrieve) next(new ErrorUtility(`${Label} Not Found`, 404))
+          // cRole: request.body.cRole,
+          // cProfile: request.body.cProfile,
+
+          eImage: request.body.eImage,
+          eFirstname: request.body.eFirstname,
+          eLastname: request.body.eLastname,
+          // eEmail: request.body.eEmail,
+          eMobile: request.body.eMobile,
+          // ePassword: request.body.ePassword,  
+        }, {
+          new: true,
+          runValidators: true,
+          useFindAndModify: false
+        }
+      )
+
+      // Response
+      response.status(200).json({
+        success: true,
+        message: `${Label} Account Updated Successfully`,
+        update: update
+      })
+    }
+  ),
   
-    // // Personal Info
-    // request.body.bUpdatedAt = new Date(Date.now()),
-    // request.body.bUpdatedBy = (request as any).user 
+  // Email Update
+  emailUpdate: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
 
+      // Update
+      const update = await Model.findByIdAndUpdate(
+        (request as any).user,{
+          eEmail: request.body.eEmail,
+        }, {
+          new: true,
+          runValidators: true,
+          useFindAndModify: false
+        }
+      )
 
-    // Update
-    const update = await Model.findByIdAndUpdate(
-      (request as any).user,{
-        aImage: request.body.aImage,
-        aTitle: request.body.aTitle,
-        aSubtitle: request.body.aSubtitle,
+      // Response
+      response.status(200).json({
+        success: true,
+        message: `${Label} Account Email Updated Successfully`,
+        update: update
+      })
+    }
+  ),
+    
+  // Password Update
+  passwordUpdate: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
 
-        // cRole: request.body.cRole,
-        // cProfile: request.body.cProfile,
+      // Retrieve
+      const retrieve = await UserModel.findById((request as any).user).select("+ePassword");
 
-        eFirstname: request.body.eFirstname,
-        eLastname: request.body.eLastname,
-        // eEmail: request.body.eEmail,
-        eMobile: request.body.eMobile,
-        // ePassword: request.body.ePassword,  
-      }, {
-        new: true,
-        runValidators: true,
-        useFindAndModify: false
-      }
-    )
+      // Save
+      (retrieve as any).ePassword = request.body.eNewPassword;
+      await (retrieve as any).save();
 
-    // Response
-    response.status(200).json({
-      success: true,
-      message: `${Label} Profile Updated Successfully`,
-      update: update
-    })
-  }),
-  
-  
+      // Response
+      generateCookieUtility(201, `${Label} Account Password Updated Successfully...`, `user_update`, retrieve, response)
+    }
+  ),
+    
 })
 
 export default userAccountController;
