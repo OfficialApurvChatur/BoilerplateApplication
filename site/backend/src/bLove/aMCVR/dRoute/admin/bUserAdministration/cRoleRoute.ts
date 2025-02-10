@@ -5,6 +5,7 @@ import checkCacheMiddleware from '../../../../bMiddleware/eCheckCacheMiddleware'
 import validatorMiddleware from '../../../../bMiddleware/cValidationMiddleware';
 import authenticationMiddleware from '../../../../bMiddleware/fAuthenticationMiddleware';
 import personalInfoMiddleware from '../../../../bMiddleware/jPersonalInfoMiddleware';
+import authorizationMiddleware from '../../../../bMiddleware/kAuthorizationMiddleware';
 
 import roleValidation from '../../../cValidation/admin/bUserAdministration/cRoleValidation';
 import roleController from '../../../bController/admin/bUserAdministration/cRoleController';
@@ -15,6 +16,7 @@ const router = express.Router();
 router.route("/list").get(
   rateLimiterMiddleware("role-list", 60, 10),
   authenticationMiddleware,
+  authorizationMiddleware({ menu: "Role", accessPoint: ["List"] }),
   checkCacheMiddleware("role-list", "Role", "List"), 
   roleValidation.list(), validatorMiddleware, 
   roleController().list
@@ -23,6 +25,7 @@ router.route("/list").get(
 router.route("/create").post(
   rateLimiterMiddleware("role-create", 60, 10),
   authenticationMiddleware,
+  authorizationMiddleware({ menu: "Role", accessPoint: ["Create"] }),
   roleValidation.create(), validatorMiddleware,
   personalInfoMiddleware("created"),
   roleController().create
@@ -31,6 +34,7 @@ router.route("/create").post(
 router.route("/retrieve/:id").get(
   rateLimiterMiddleware("role-retrieve", 60, 10), 
   authenticationMiddleware,
+  authorizationMiddleware({ menu: "Role", accessPoint: ["Retrieve"] }),
   checkCacheMiddleware("role-retrieve", "Role", "Retrieve"), 
   roleValidation.retrieve(), validatorMiddleware, 
   roleController().retrieve
@@ -39,6 +43,7 @@ router.route("/retrieve/:id").get(
 router.route("/update-retrieve/:id").get(
   rateLimiterMiddleware("role-update-retrieve", 60, 10), 
   authenticationMiddleware,
+  authorizationMiddleware({ menu: "Role", accessPoint: ["Retrieve"] }),
   checkCacheMiddleware("role-update-retrieve", "Role", "Retrieve", "Role Update Retrieved Successfully... From Backend Cache"), 
   roleValidation.updateRetrieve(), validatorMiddleware, 
   roleController().updateRetrieve
@@ -47,6 +52,7 @@ router.route("/update-retrieve/:id").get(
 router.route("/update/:id").put(
   rateLimiterMiddleware("role-update", 60, 10), 
   authenticationMiddleware,
+  authorizationMiddleware({ menu: "Role", accessPoint: ["Update"] }),
   roleValidation.update(), validatorMiddleware, 
   personalInfoMiddleware("updated"),
   roleController().update
@@ -55,6 +61,7 @@ router.route("/update/:id").put(
 router.route("/delete/:id").delete(
   rateLimiterMiddleware("role-delete", 60, 10), 
   authenticationMiddleware,
+  authorizationMiddleware({ menu: "Role", accessPoint: ["Delete"] }),
   roleValidation.delete(), validatorMiddleware, 
   roleController().delete
 )

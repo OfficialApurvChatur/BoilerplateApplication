@@ -105,6 +105,8 @@ const roleController = (Model=RoleModel, Label="Role") => ({
 
       // Retrieve
       const retrieve = await Model.findById(request.params.id)
+        .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail")
         .populate({
           path: 'cMenu.menu',
           select: 'aTitle',

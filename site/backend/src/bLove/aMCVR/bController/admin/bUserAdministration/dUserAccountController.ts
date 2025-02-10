@@ -35,7 +35,7 @@ const userAccountController = (Model=UserModel, Label="User") => ({
       // Response
       response.status(200).json({ 
         success: true,
-        message: `${Label} Account Updated Successfully`,
+        message: `${Label} Account Retrieved Successfully`,
         user_account_retrieve: retrieve
       })
     }

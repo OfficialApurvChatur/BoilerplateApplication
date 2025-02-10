@@ -70,10 +70,11 @@ const profileValidation = {
     body("cUser")
       .notEmpty().withMessage("Please select user")
       .isMongoId().withMessage("Invalid MongoDB ID format for User")
-      .custom(async (value: mongoose.ObjectId) => {
+      .custom(async (value: mongoose.ObjectId, { req: request }: any) => {
         const retrieve = await UserModel.findById(value);
+        const profile_retrieve = await ProfileModel.findById(request.params?.id);
         if (!retrieve) throw new ErrorUtility("Profile Not Found", 404)
-        if (retrieve.cProfile) throw new ErrorUtility("User is already associated with another profile", 400);
+        if (retrieve.cProfile && String(retrieve?._id) !== String(profile_retrieve?.cUser)) throw new ErrorUtility("User is already associated with another profile", 400);
         return true;
       }),
 

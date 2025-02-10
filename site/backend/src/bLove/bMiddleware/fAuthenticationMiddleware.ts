@@ -36,6 +36,7 @@ const authenticationMiddleware = catchAsyncMiddleware(
 
     // console.log("Helllo...", user)
 
+    // Not Found
     if (!user) {
       return next(new ErrorUtility("User is removed", 401));
     }
