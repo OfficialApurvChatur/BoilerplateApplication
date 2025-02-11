@@ -5,13 +5,31 @@ import { DefaultSchemaUtility, DefaultSchemaUtilityType } from "../../../../cUti
 
 
 export type APILogModelType = DefaultSchemaUtilityType & {
-  // Relation Info Type
+  // Extra Info Type
+  dIP?: string
+  dCity?: string
+  dCountry?: string
+  dMethod?: string
+  dURL?: string
+  dStatus?: string
+  dResponseTime?: string
+  dTimestamp?: string
+
 }
 
 const schema = new mongoose.Schema<APILogModelType>({
   ...DefaultSchemaUtility.obj,
 
-  // Relation Info
+  // Extra Info
+  dIP: { type: String },
+  dCity: { type: String },
+  dCountry: { type: String },
+  dMethod: { type: String },
+  dURL: { type: String },
+  dStatus: { type: String },
+  dResponseTime: { type: String },
+  dTimestamp: { type: String },
+
 } as mongoose.SchemaDefinition<APILogModelType> )
 
 // Pre Save

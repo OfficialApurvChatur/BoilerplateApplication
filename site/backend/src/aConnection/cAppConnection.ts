@@ -4,10 +4,9 @@ import bodyParserMiddleware from 'body-parser';
 import cookieParserMiddleware from 'cookie-parser';
 import corsMiddleware from 'cors';
 import compressionMiddleware from 'compression';
-import morganMiddleware from 'morgan';
 
 import errorMiddleware from '../bLove/bMiddleware/aErrorMiddleware';
-import loggerMiddleware from '../bLove/bMiddleware/iLoggerMiddleware';
+import morganMiddleware from '../bLove/bMiddleware/iMorganMiddleware';
 
 import { baseRouter } from '../bLove/aMCVR/dRoute/admin/aSetting/aBaseRoute';
 import { activityLogRouter } from '../bLove/aMCVR/dRoute/admin/aSetting/bActivityLogRoute';
@@ -27,21 +26,7 @@ import { singleImageRouter } from '../bLove/aMCVR/dRoute/admin/zFreestyleSample/
 const appConnection = express();
 
 // Third Party Middleware
-appConnection.use(
-  morganMiddleware(":method :url :status :response-time ms", {
-    stream: {
-      write: (message) => {
-        const logObject = { 
-          method: message.split(" ")[0], 
-          url: message.split(" ")[1], 
-          status: message.split(" ")[2], 
-          responseTime: message.split(" ")[3] 
-        };
-        loggerMiddleware.info(JSON.stringify(logObject));
-      },
-    },
-  })
-);
+appConnection.use(morganMiddleware);
 appConnection.use(corsMiddleware({ origin: 
   process.env.ENVIRONMENT === "Production" ? [ String(process.env.FRONTEND_URL) ] :
   process.env.ENVIRONMENT === "Testing" ?  [ String(process.env.FRONTEND_URL) ] :

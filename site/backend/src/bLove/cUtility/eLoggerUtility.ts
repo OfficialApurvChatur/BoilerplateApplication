@@ -1,8 +1,6 @@
 import { createLogger, format, transports } from "winston";
 
 
-const { combine, timestamp, json, colorize } = format;
-
 // Custom format for console logging with colors
 const consoleLogFormat = format.combine(
   format.colorize(),
@@ -12,13 +10,13 @@ const consoleLogFormat = format.combine(
 );
 
 // Create a Winston logger
-const loggerMiddleware = createLogger({
+const loggerUtility = createLogger({
   level: "info",
-  format: combine(colorize(), timestamp(), json()),
+  format: format.combine(format.colorize(), format.timestamp(), format.json()),
   transports: [
     new transports.Console({ format: consoleLogFormat }),
     new transports.File({ filename: "appConnection.log" }),
   ],
 });
 
-export default loggerMiddleware;
+export default loggerUtility;

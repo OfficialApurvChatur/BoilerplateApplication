@@ -5,6 +5,7 @@ import databaseConnection from './aConnection/bDatabaseConnection';
 import appConnection from './aConnection/cAppConnection';
 import redisConnection from './aConnection/dRedisConnection';
 import socketConnection from './aConnection/fSocketConnection';
+import cronConnection from './aConnection/gCronConnection';
 
 
 // Uncaught Exception
@@ -31,6 +32,9 @@ socketConnection(server, appConnection)
 
 // Connect Server
 server.listen(process.env.PORT, () => {
+  // Connect Cron
+  cronConnection();
+
   console.log(`Server is listening on ${process.env.BACKEND_URL}:${process.env.PORT} on worker service ${process.pid}`)
 });
 
