@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/aConnection/dReduxConnection";
+
+import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import baseAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/aSettingAPI/aBaseAPI";
 
@@ -16,6 +20,9 @@ import previousValue from "./extra/ePreviousValue";
 import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
 import { useSocket } from "@/aConnection/fSocketConnection";
 
+import isAllowedUtility, { isAllowedConstant } from "@/bLove/dUtility/bIsAllowdUtility";
+import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/component/dUnauthorizedAccessComponent";
+
 
 const BaseUpdatePage = () => {
   // Variable
@@ -24,6 +31,13 @@ const BaseUpdatePage = () => {
   const retrieveAPIResponse = baseAPIEndpoint.useBaseRetrieveAPIQuery({ params: { _id: id } });
   const [ updateAPITrigger, updateAPIResponse ] = baseAPIEndpoint.useBaseUpdateAPIMutation();
 
+  // Redux Call
+  const ReduxCall = {
+    state: useSelector((state: RootState) => state.globalSlice),
+    dispatch: useDispatch(),
+    action: globalSlice.actions
+  }
+  
   // API Call
   const APICall = {
     retrieveAPIResponse,
@@ -43,7 +57,7 @@ const BaseUpdatePage = () => {
   }, [APICall.retrieveAPIResponse])
   
   // JSX
-  return (
+  return (!isAllowedUtility(ReduxCall, isAllowedConstant.base, "Update") ? <UnauthorizedAccessComponent /> :
     <React.Fragment>
       {/* BaseUpdatePage */}
       <BaseUpdateComponent 

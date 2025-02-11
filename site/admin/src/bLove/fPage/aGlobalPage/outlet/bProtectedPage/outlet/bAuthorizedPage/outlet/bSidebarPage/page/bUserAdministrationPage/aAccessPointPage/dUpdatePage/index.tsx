@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/aConnection/dReduxConnection";
+
+import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import accessPointAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/aAccessPointAPI";
 
@@ -16,6 +20,9 @@ import previousValue from "./extra/ePreviousValue";
 import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
 import { useSocket } from "@/aConnection/fSocketConnection";
 
+import isAllowedUtility, { isAllowedConstant } from "@/bLove/dUtility/bIsAllowdUtility";
+import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/component/dUnauthorizedAccessComponent";
+
 
 const AccessPointUpdatePage = () => {
   // Variable
@@ -24,6 +31,13 @@ const AccessPointUpdatePage = () => {
   const retrieveAPIResponse = accessPointAPIEndpoint.useAccessPointRetrieveAPIQuery({ params: { _id: id } });
   const [ updateAPITrigger, updateAPIResponse ] = accessPointAPIEndpoint.useAccessPointUpdateAPIMutation();
 
+  // Redux Call
+  const ReduxCall = {
+    state: useSelector((state: RootState) => state.globalSlice),
+    dispatch: useDispatch(),
+    action: globalSlice.actions
+  }
+  
   // API Call
   const APICall = {
     retrieveAPIResponse,
@@ -43,7 +57,7 @@ const AccessPointUpdatePage = () => {
   }, [APICall.retrieveAPIResponse])
   
   // JSX
-  return (
+  return (!isAllowedUtility(ReduxCall, isAllowedConstant.accessPoint, "Update") ? <UnauthorizedAccessComponent /> :
     <React.Fragment>
       {/* AccessPointUpdatePage */}
       <AccessPointUpdateComponent 

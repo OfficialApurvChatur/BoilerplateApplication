@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/aConnection/dReduxConnection";
+
+import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import accessPointAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/aAccessPointAPI";
 
@@ -13,6 +17,9 @@ import submitHandler from "./extra/bSubmitHandler";
 import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
 import { useSocket } from "@/aConnection/fSocketConnection";
 
+import isAllowedUtility, { isAllowedConstant } from "@/bLove/dUtility/bIsAllowdUtility";
+import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/component/dUnauthorizedAccessComponent";
+
 
 const AccessPointDeletePage = () => {
   // Variable
@@ -21,6 +28,13 @@ const AccessPointDeletePage = () => {
   const retrieveAPIResponse = accessPointAPIEndpoint.useAccessPointRetrieveAPIQuery({ params: { _id: id } });
   const [ deleteAPITrigger, deleteAPIResponse ] = accessPointAPIEndpoint.useAccessPointDeleteAPIMutation();
 
+  // Redux Call
+  const ReduxCall = {
+    state: useSelector((state: RootState) => state.globalSlice),
+    dispatch: useDispatch(),
+    action: globalSlice.actions
+  }
+  
   // API Call
   const APICall = {
     retrieveAPIResponse,
@@ -40,7 +54,7 @@ const AccessPointDeletePage = () => {
   }, [APICall.retrieveAPIResponse])
   
   // JSX
-  return (
+  return (!isAllowedUtility(ReduxCall, isAllowedConstant.accessPoint, "Delete") ? <UnauthorizedAccessComponent /> :
     <React.Fragment>
       {/* AccessPointDeletePage */}
       <AccessPointDeleteComponent

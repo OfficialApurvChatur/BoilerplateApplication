@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/aConnection/dReduxConnection";
+
+import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import activityLogAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/aSettingAPI/bActivityLogAPI";
 
@@ -16,6 +20,9 @@ import previousValue from "./extra/ePreviousValue";
 import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
 import { useSocket } from "@/aConnection/fSocketConnection";
 
+import isAllowedUtility, { isAllowedConstant } from "@/bLove/dUtility/bIsAllowdUtility";
+import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/component/dUnauthorizedAccessComponent";
+
 
 const ActivityLogUpdatePage = () => {
   // Variable
@@ -23,6 +30,13 @@ const ActivityLogUpdatePage = () => {
   const socket = useSocket();
   const retrieveAPIResponse = activityLogAPIEndpoint.useActivityLogRetrieveAPIQuery({ params: { _id: id } });
   const [ updateAPITrigger, updateAPIResponse ] = activityLogAPIEndpoint.useActivityLogUpdateAPIMutation();
+
+  // Redux Call
+  const ReduxCall = {
+    state: useSelector((state: RootState) => state.globalSlice),
+    dispatch: useDispatch(),
+    action: globalSlice.actions
+  }
 
   // API Call
   const APICall = {
@@ -43,7 +57,7 @@ const ActivityLogUpdatePage = () => {
   }, [APICall.retrieveAPIResponse])
   
   // JSX
-  return (
+  return (!isAllowedUtility(ReduxCall, isAllowedConstant.activityLog, "Update") ? <UnauthorizedAccessComponent /> :
     <React.Fragment>
       {/* ActivityLogUpdatePage */}
       <ActivityLogUpdateComponent 

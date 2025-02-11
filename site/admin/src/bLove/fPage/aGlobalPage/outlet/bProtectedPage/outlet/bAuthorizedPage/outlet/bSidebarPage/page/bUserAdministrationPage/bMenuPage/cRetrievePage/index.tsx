@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/aConnection/dReduxConnection";
+
+import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import menuAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/bMenuAPI";
 
@@ -12,6 +16,9 @@ import header from "./extra/bHeader";
 import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
 import { useSocket } from "@/aConnection/fSocketConnection";
 
+import isAllowedUtility, { isAllowedConstant } from "@/bLove/dUtility/bIsAllowdUtility";
+import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/component/dUnauthorizedAccessComponent";
+
 
 const MenuRetrievePage = () => {
   // Variable
@@ -19,6 +26,13 @@ const MenuRetrievePage = () => {
   const socket = useSocket();
   const retrieveAPIResponse = menuAPIEndpoint.useMenuRetrieveAPIQuery({ params: { _id: id } });
 
+  // Redux Call
+  const ReduxCall = {
+    state: useSelector((state: RootState) => state.globalSlice),
+    dispatch: useDispatch(),
+    action: globalSlice.actions
+  }
+  
   // API Call
   const APICall = {
     retrieveAPIResponse
@@ -36,7 +50,7 @@ const MenuRetrievePage = () => {
   }, [APICall.retrieveAPIResponse])
   
   // JSX
-  return (
+  return (!isAllowedUtility(ReduxCall, isAllowedConstant.menu, "Retrieve") ? <UnauthorizedAccessComponent /> :
     <React.Fragment>
       {/* MenuRetrievePage */}
       <MenuRetrieveComponent 

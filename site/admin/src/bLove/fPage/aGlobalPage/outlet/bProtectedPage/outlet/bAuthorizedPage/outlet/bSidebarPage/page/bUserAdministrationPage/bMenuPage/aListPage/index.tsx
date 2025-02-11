@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
 import { z } from "zod";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/aConnection/dReduxConnection";
+
+import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import menuAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/bMenuAPI";
 
@@ -13,12 +17,22 @@ import columns from "./extra/dColumns";
 import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
 import { useSocket } from "@/aConnection/fSocketConnection";
 
+import isAllowedUtility, { isAllowedConstant } from "@/bLove/dUtility/bIsAllowdUtility";
+import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/component/dUnauthorizedAccessComponent";
+
 
 const MenuListPage = () => {
   // Variable
   const socket = useSocket();
   const listAPIResponse = menuAPIEndpoint.useMenuListAPIQuery(null);
 
+  // Redux Call
+  const ReduxCall = {
+    state: useSelector((state: RootState) => state.globalSlice),
+    dispatch: useDispatch(),
+    action: globalSlice.actions
+  }
+  
   // API Call
   const APICall = {
     listAPIResponse
@@ -36,7 +50,7 @@ const MenuListPage = () => {
   }, [APICall.listAPIResponse])
 
   // JSX
-  return (
+  return (!isAllowedUtility(ReduxCall, isAllowedConstant.menu, "List") ? <UnauthorizedAccessComponent /> :
     <React.Fragment>
       {/* MenuListPage */}
       <MenuListComponent 
