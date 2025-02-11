@@ -1,5 +1,7 @@
 "use client"
 
+import React from "react"
+
 import { ChevronRight, type LucideIcon } from "lucide-react"
 
 import {
@@ -29,9 +31,12 @@ export function NavMain({
     url: string
     icon?: LucideIcon
     isActive?: boolean
+    isCollapsible?: boolean
+    isHighlighted?: boolean
     items?: {
       title: string
       url: string
+      isBlue?: boolean
     }[]
   }[]
 }) {
@@ -47,26 +52,43 @@ export function NavMain({
             className="group/collapsible"
           >
             <SidebarMenuItem>
-              <CollapsibleTrigger asChild>
-                <SidebarMenuButton tooltip={item.title}>
-                  {item.icon && <item.icon />}
-                  <span>{item.title}</span>
-                  <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
-                </SidebarMenuButton>
-              </CollapsibleTrigger>
-              <CollapsibleContent>
-                <SidebarMenuSub>
-                  {item.items?.map((subItem) => (
-                    <SidebarMenuSubItem key={subItem.title}>
-                      <SidebarMenuSubButton asChild>
-                        <Link to={subItem.url}>
-                          <span>{subItem.title}</span>
-                        </Link>
-                      </SidebarMenuSubButton>
-                    </SidebarMenuSubItem>
-                  ))}
-                </SidebarMenuSub>
-              </CollapsibleContent>
+
+              { 
+                item.isCollapsible ? (
+                  <React.Fragment>
+                    <CollapsibleTrigger asChild>
+                      <SidebarMenuButton tooltip={item.title} className={item.isHighlighted ? "bg-blue-100 hover:bg-blue-100/80 dark:bg-slate-800 dark:hover:bg-slate-800/80" : ""} >
+                        {item.icon && <item.icon />}
+                        <span>{item.title}</span>
+                        <ChevronRight className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
+                      </SidebarMenuButton>
+                    </CollapsibleTrigger>
+                    <CollapsibleContent>
+                      <SidebarMenuSub>
+                        {item.items?.map((subItem) => (
+                          <SidebarMenuSubItem key={subItem.title}>
+                            <SidebarMenuSubButton asChild className={subItem.isBlue ? "bg-blue-100 hover:bg-blue-100/80 dark:bg-slate-800 dark:hover:bg-slate-800/80" : ""} >
+                              <Link to={subItem.url}>
+                                <span>{subItem.title}</span>
+                              </Link>
+                            </SidebarMenuSubButton>
+                          </SidebarMenuSubItem>
+                        ))}
+                      </SidebarMenuSub>
+                    </CollapsibleContent>
+                  </React.Fragment>
+                ) : (
+                  <React.Fragment>
+                    <SidebarMenuButton asChild className={item.isHighlighted ? "bg-blue-100 hover:bg-blue-100/80 dark:bg-slate-800 dark:hover:bg-slate-800/80" : ""} >
+                      <Link to={item.url}>
+                        {item.icon && <item.icon />}
+                        <span>{item.title}</span>
+                      </Link>
+                    </SidebarMenuButton>
+                  </React.Fragment>
+                ) 
+              }
+
             </SidebarMenuItem>
           </Collapsible>
         ))}

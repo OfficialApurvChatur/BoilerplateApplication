@@ -192,8 +192,11 @@ const AppConnection = () => {
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.eProfileRoute.dUpdateRoute}/:id`} element={<ProfileUpdatePage />} />
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.eProfileRoute.eDeleteRoute}/:id`} element={<ProfileDeletePage />} />
                 
+                {/* Dashboard */}
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cMainRoute.aDashboardRoute}`} element={<DashboardOneComponent />} />
+
                 {/* Components */}
-                <Route path="/dashboard" element={<DashboardOneComponent />} />
+                <Route path="/dashboard-one" element={<DashboardOneComponent />} />
 
                 <Route path="/area-chart" element={<AreaChartListComponent />} />
                 <Route path="/bar-chart" element={<BarChartListComponent />} />
