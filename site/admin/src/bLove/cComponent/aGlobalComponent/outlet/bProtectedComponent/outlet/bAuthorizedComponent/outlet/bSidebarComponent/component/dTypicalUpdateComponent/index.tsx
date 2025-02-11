@@ -91,16 +91,16 @@ const TypicalUpdateComponent = (props: TypicalUpdateComponentType) => {
           </div>
           <div className="flex items-center space-x-2">
             {props.header.actions.length > 0 && (
-              props.header.actions.map((each) => (
-                <Button onClick={each.onClick} >
+              props.header.actions.map((each, index) => (
+                <Button onClick={each.onClick} key={index} >
                   {each.icon && <each.icon />}
                   {each.text}
                 </Button>
               ))
             )}
             {props.header.links.length > 0 && (
-              props.header.links.map((each) => (
-                <Button asChild >
+              props.header.links.map((each, index) => (
+                <Button asChild key={index} >
                   <Link to={each.to} >
                     {each.icon && <each.icon />}
                     {each.text}

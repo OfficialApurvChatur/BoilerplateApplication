@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { Suspense, useEffect } from "react"
 import { Outlet } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/aConnection/dReduxConnection";
@@ -39,9 +39,15 @@ const GlobalLayout = () => {
     <React.Fragment>
       {/* GlobalLayout */}
 
-      <GlobalComponent>
-        <Outlet />
-      </GlobalComponent>
+      {APICall.userAccountRetrieveAPIResponse.isLoading ? (
+        <div className='min-h-screen flex justify-center items-center' >Checking Profile...</div>
+      ) : (
+        <Suspense fallback={<div className='min-h-screen flex justify-center items-center' >Loading Profile...</div>}>
+          <GlobalComponent>
+            <Outlet />
+          </GlobalComponent>
+        </Suspense>
+      )}
 
     </React.Fragment>
   )

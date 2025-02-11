@@ -134,8 +134,8 @@ const TypicalAuthFormComponent = (props: TypicalAuthFormComponentType) => {
 
                       <div className="flex flex-col flex-1 gap-2" >
                         {props.header.links.length > 0 && (
-                          props.header.links.map((each) => (
-                            <div className="text-center text-sm">
+                          props.header.links.map((each, index) => (
+                            <div className="text-center text-sm" key={index} >
                               {each?.note}{" "}
                               <Link to={each.to} className="underline underline-offset-4" >
                                 {each.text}
