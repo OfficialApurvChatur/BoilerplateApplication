@@ -45,6 +45,10 @@ const userController = (Model=UserModel, Label="User") => ({
         aImage: request.body.aImage,
         aTitle: request.body.aTitle,
         aSubtitle: request.body.aSubtitle,
+        aDescription: request.body.aDescription,
+        aDetail: request.body.aDetail,
+        aStatus: request.body.aStatus === "Active" ? true : false,
+        aState: request.body.aState,
 
         bCreatedAt: request.body.bCreatedAt,
         bCreatedBy: request.body.bCreatedBy,
@@ -133,6 +137,10 @@ const userController = (Model=UserModel, Label="User") => ({
           aImage: request.body.aImage,
           aTitle: request.body.aTitle,
           aSubtitle: request.body.aSubtitle,
+          aDescription: request.body.aDescription,
+          aDetail: request.body.aDetail,
+          aStatus: request.body.aStatus === "Active" ? true : false,
+          aState: request.body.aState,
 
           bUpdatedAt: request.body.bUpdatedAt,
           bUpdatedBy: request.body.bUpdatedBy,  

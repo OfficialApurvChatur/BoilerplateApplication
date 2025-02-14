@@ -9,6 +9,7 @@ export type DefaultSchemaUtilityType = mongoose.Document & {
   aDescription?: string;
   aDetail?: string;
   aStatus?: boolean;
+  aState?: string;
   aSlug?: string;
 
   bCreatedAt?: Date;
@@ -25,6 +26,7 @@ const schema = new mongoose.Schema<DefaultSchemaUtilityType>({
   aDescription: { type: String, trim: true }, // Max 3000
   aDetail: { type: String, trim: true }, // Max 5000
   aStatus: { type: Boolean, default: false }, // True or False
+  aState: { type: String, trim: true }, // State
   aSlug: { type: String, trim: true }, // Alternative ID
 
   // Personal Info

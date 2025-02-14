@@ -11,6 +11,12 @@ const data = ({ retrieveAPIResponse }: { retrieveAPIResponse: any }) => (
         fields: [
           { label: "Image", type: "image", value: retrieveAPIResponse.data.retrieve.aImage },
           { label: "Title", type: "text", value: retrieveAPIResponse.data.retrieve.aTitle },
+          { label: "Subtitle", type: "text", value: retrieveAPIResponse.data.retrieve.aSubtitle },
+          { label: "Description", type: "html", value: retrieveAPIResponse.data.retrieve.aDescription },
+          { label: "Detail", type: "html", value: retrieveAPIResponse.data.retrieve.aDetail },
+          { label: "Status", type: "badge", value: retrieveAPIResponse.data.retrieve.aStatus ? "Active" : "Inactive" },
+          { label: "State", type: "badge", value: retrieveAPIResponse.data.retrieve.aState },
+          { label: "Slug", type: "text", value: retrieveAPIResponse.data.retrieve.aSlug },
         ],  
       },
   

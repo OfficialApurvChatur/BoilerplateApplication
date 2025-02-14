@@ -15,6 +15,8 @@ import RoleCheckboxReadComponent from "./component/bRoleCheckboxReadComponent";
 import ImageReadComponent from "./component/cImageReadComponent";
 import ByReadComponent from "./component/dByReadComponent";
 import AtReadComponent from "./component/eAtReadComponent";
+import HTMLReadComponent from "./component/fHTMLReadComponent";
+import BadgeReadComponent from "./component/gBadgeReadComponent";
 
 
 type TypicalDeleteComponentType = {
@@ -144,6 +146,16 @@ const TypicalDeleteComponent = (props: TypicalDeleteComponentType) => {
                                   <TextReadComponent key={indexInput} eachField={eachField} />
                                 )}
     
+                                {/* For I/P Type: HTML */}
+                                {((eachField.type === "html") && 
+                                  <HTMLReadComponent key={indexInput} eachField={eachField} />
+                                )}
+    
+                                {/* For I/P Type: Badge */}
+                                {((eachField.type === "badge") && 
+                                  <BadgeReadComponent key={indexInput} eachField={eachField} />
+                                )}
+
                                 {/* For I/P Type: Role Checkbox */}
                                 {((eachField.type === "role-checkbox") && 
                                   <RoleCheckboxReadComponent key={indexInput} eachField={eachField} />

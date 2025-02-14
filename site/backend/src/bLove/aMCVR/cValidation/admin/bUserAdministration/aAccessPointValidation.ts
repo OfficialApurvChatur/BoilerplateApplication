@@ -12,7 +12,8 @@ const accessPointValidation = {
   // Create
   create: () => [
     body("aImage")
-      .notEmpty().withMessage("Please select image"),
+      .optional({ checkFalsy: true })
+      .isURL().withMessage("Please select image"),
     body("aTitle")
       .notEmpty().withMessage("Please enter title")
       .isLength({ min: 3, max: 50 }).withMessage("Title must be 3 - 50 characters")
@@ -22,8 +23,20 @@ const accessPointValidation = {
         return true;
       }),
     body("aSubtitle")
-      .optional()
-      .isLength({ min: 3, max: 100 }).withMessage("Subtitle must be 3 - 100 characters")
+      .optional({ checkFalsy: true })
+      .isLength({ min: 3, max: 250 }).withMessage("Subtitle must be 3 - 250 characters"),
+    body("aDescription")
+      .optional({ checkFalsy: true })
+      .isLength({ min: 3, max: 1000 }).withMessage("Description must be 3 - 1000 characters"),
+    body("aDetail")
+      .optional({ checkFalsy: true })
+      .isLength({ min: 3, max: 5000 }).withMessage("Detail must be 3 - 5000 characters"),
+    body("aStatus")
+      .optional({ checkFalsy: true })
+      .notEmpty().withMessage("Please select status"), 
+    body("aState")
+      .optional({ checkFalsy: true })
+      .notEmpty().withMessage("Please select state"),  
   ],
 
   // Retrieve
@@ -43,7 +56,8 @@ const accessPointValidation = {
   // Update
   update: () => [
     body("aImage")
-      .notEmpty().withMessage("Please select image"),
+      .optional({ checkFalsy: true })
+      .isURL().withMessage("Please select image"),
     body("aTitle")
       .notEmpty().withMessage("Please enter title")
       .isLength({ min: 3, max: 50 }).withMessage("Title must be 3 - 50 characters")
@@ -53,8 +67,20 @@ const accessPointValidation = {
         return true;
       }),
     body("aSubtitle")
-      .optional()
-      .isLength({ min: 3, max: 100 }).withMessage("Subtitle must be 3 - 100 characters"),
+      .optional({ checkFalsy: true })
+      .isLength({ min: 3, max: 250 }).withMessage("Subtitle must be 3 - 250 characters"),
+    body("aDescription")
+      .optional({ checkFalsy: true })
+      .isLength({ min: 3, max: 1000 }).withMessage("Description must be 3 - 1000 characters"),
+    body("aDetail")
+      .optional({ checkFalsy: true })
+      .isLength({ min: 3, max: 5000 }).withMessage("Detail must be 3 - 5000 characters"),
+    body("aStatus")
+      .optional({ checkFalsy: true })
+      .notEmpty().withMessage("Please select status"), 
+    body("aState")
+      .optional({ checkFalsy: true })
+      .notEmpty().withMessage("Please select state"),  
 
     param("id")
       .custom(value => {

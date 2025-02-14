@@ -16,6 +16,9 @@ import CheckboxInputComponent from "./component/dCheckboxInputComponent"
 import RoleCheckboxInputComponent from "./component/eRoleCheckboxInputComponent"
 import RadioInputComponent from "./component/fRadioInputComponent"
 import ImageInputComponent from "./component/gImageInputComponent"
+import TextAreaInputComponent from "./component/hTextAreaInputComponent"
+import SelectInputComponent from "./component/iSelectInputComponent"
+import RichTextEditorInputComponent from "./component/jRichTextEditorInpitComponent"
 
 
 type TypicalCreateComponentType = {
@@ -124,6 +127,16 @@ const TypicalCreateComponent = (props: TypicalCreateComponentType) => {
                             <TextInputComponent key={indexInput}  form={form} eachInput={eachInput} />
                           )}
 
+                          {/* For I/P Type: Text Area */}
+                          {((eachInput.type === "text-box") && 
+                            <TextAreaInputComponent key={indexInput}  form={form} eachInput={eachInput} />
+                          )}
+
+                          {/* For I/P Type: Rich Text Editor */}
+                          {((eachInput.type === "rich-text-editor") && 
+                            <RichTextEditorInputComponent key={indexInput}  form={form} eachInput={eachInput} />
+                          )}
+
                           {/* For I/P Type: Number */}
                           {((eachInput.type === "number") && 
                             <NumberInputComponent key={indexInput}  form={form} eachInput={eachInput} />
@@ -147,6 +160,11 @@ const TypicalCreateComponent = (props: TypicalCreateComponentType) => {
                           {/* For I/P Type: Radio */}
                           {((eachInput.type === "radio") &&
                             <RadioInputComponent key={indexInput}  form={form} eachInput={eachInput} />
+                          )}
+
+                          {/* For I/P Type: Select */}
+                          {((eachInput.type === "select") &&
+                            <SelectInputComponent key={indexInput}  form={form} eachInput={eachInput} />
                           )}
 
                         </React.Fragment>

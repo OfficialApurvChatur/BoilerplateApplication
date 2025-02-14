@@ -27,6 +27,7 @@ const isAllowedUtility = ( ReduxUltimate: any, model: string, route: string ): b
       };
     }) 
 
+  // Find Menu
   const selectedMenu = cMenu?.find((each: any) => {
     return each?.menu?.aTitle === model
   })
@@ -38,10 +39,7 @@ const isAllowedUtility = ( ReduxUltimate: any, model: string, route: string ): b
 
   // Access Denied
   // if (!selectedAccessPoint?.hasAccess) return next(new ErrorUtility('You are not authorized to access this route', 403));
-
-
-  console.log(selectedAccessPoint)
-
+  // console.log(selectedAccessPoint)
   
   return selectedAccessPoint?.hasAccess || false
 };

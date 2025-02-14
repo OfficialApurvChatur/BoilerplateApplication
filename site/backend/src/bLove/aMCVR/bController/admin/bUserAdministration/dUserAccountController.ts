@@ -51,6 +51,10 @@ const userAccountController = (Model=UserModel, Label="User") => ({
           aImage: request.body.aImage,
           aTitle: request.body.aTitle,
           aSubtitle: request.body.aSubtitle,
+          aDescription: request.body.aDescription,
+          aDetail: request.body.aDetail,
+          aStatus: request.body.aStatus === "Active" ? true : false,
+          aState: request.body.aState,
 
           // cRole: request.body.cRole,
           // cProfile: request.body.cProfile,

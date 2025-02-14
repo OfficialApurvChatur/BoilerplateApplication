@@ -18,6 +18,9 @@ import RadioInputComponent from "./component/fRadioInputComponent"
 import ImageInputComponent from "./component/gImageInputComponent"
 import ByReadComponent from "./component/zByReadComponent"
 import AtReadComponent from "./component/zAtReadComponent"
+import TextAreaInputComponent from "./component/hTextAreaInputComponent"
+import SelectInputComponent from "./component/iSelectInputComponent"
+import RichTextEditorInputComponent from "./component/jRichTextEditorInpitComponent"
 
 
 type TypicalUpdateComponentType = {
@@ -147,6 +150,16 @@ const TypicalUpdateComponent = (props: TypicalUpdateComponentType) => {
                                     <TextInputComponent key={indexInput}  form={form} eachInput={eachInput} />
                                   )}
 
+                                  {/* For I/P Type: Text Area */}
+                                  {((eachInput.type === "text-box") && 
+                                    <TextAreaInputComponent key={indexInput}  form={form} eachInput={eachInput} />
+                                  )}
+
+                                  {/* For I/P Type: Rich Text Editor */}
+                                  {((eachInput.type === "rich-text-editor") && 
+                                    <RichTextEditorInputComponent key={indexInput}  form={form} eachInput={eachInput} />
+                                  )}
+
                                   {/* For I/P Type: Checkbox */}
                                   {((eachInput.type === "checkbox") &&
                                     <CheckboxInputComponent key={indexInput}  form={form} eachInput={eachInput} />
@@ -170,6 +183,11 @@ const TypicalUpdateComponent = (props: TypicalUpdateComponentType) => {
                                   {/* For I/P Type: Created At  Updated At */}
                                   {((eachInput.type === "at") && (eachInput.value) && 
                                     <AtReadComponent key={indexInput} eachField={eachInput} />
+                                  )}
+
+                                  {/* For I/P Type: Select */}
+                                  {((eachInput.type === "select") &&
+                                    <SelectInputComponent key={indexInput}  form={form} eachInput={eachInput} />
                                   )}
 
                                 </React.Fragment>

@@ -7,8 +7,8 @@ import { redisClient } from '../../aConnection/dRedisConnection';
 
 const logFilePath = path.join(__dirname, "../../../appConnection.log");
 
-const apiLogJob = new CronJob("*/10 * * * * *", async () => {
-  console.log("Cronjob running every 10 seconds");
+const apiLogJob = new CronJob("*/15 * * * *", async () => {
+  console.log("Cronjob executing on every 15 minute");
 
   if (!fs.existsSync(logFilePath)) {
     console.log("Log file not found.");

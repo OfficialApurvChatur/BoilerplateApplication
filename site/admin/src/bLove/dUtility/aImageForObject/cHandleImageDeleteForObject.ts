@@ -20,7 +20,7 @@ const handleImageDeleteForObject = async (eachInput: any, form: any, setFileLoad
     );
 
     // console.log(response.data);
-    form.setValue(eachInput.name, null)
+    form.setValue(eachInput.name, "")
     return;
   } catch (error) {
     console.error(error);

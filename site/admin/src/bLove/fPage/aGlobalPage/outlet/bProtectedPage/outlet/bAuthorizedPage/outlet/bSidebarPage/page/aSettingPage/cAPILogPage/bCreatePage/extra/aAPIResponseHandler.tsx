@@ -13,6 +13,11 @@ const apiResponseHandler = {
       const serverResponse = await createAPITrigger({ body: {
         aImage: data.aImage,
         aTitle: data.aTitle,
+        aSubtitle: data.aSubtitle,
+        aDescription: data.aDescription,
+        aDetail: data.aDetail,
+        aStatus: data.aStatus,
+        aState: data.aState,
       } });
 
       // console.log(serverResponse)

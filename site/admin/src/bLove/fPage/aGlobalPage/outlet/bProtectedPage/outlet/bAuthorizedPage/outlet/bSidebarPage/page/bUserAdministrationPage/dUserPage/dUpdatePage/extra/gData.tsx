@@ -11,6 +11,22 @@ const data = ({ retrieveAPIResponse, APICall }: { retrieveAPIResponse: any, APIC
         inputs: [
           { name: "aImage", label: "Image", type: "image", folderName: "user" },
           { name: "aTitle", label: "Title", type: "text", placeholder: "Please enter title..." },
+          { name: "aSubtitle", label: "Subtitle", type: "text", placeholder: "Please enter subtitle..." },
+          { name: "aDescription", label: "Description", type: "text-box", placeholder: "Please enter description..." },
+          { name: "aDetail", label: "Detail", type: "rich-text-editor", placeholder: "Please enter detail..." },
+          { name: "aStatus", label: "Status", type: "radio",
+            options: [
+              { value: "Active", label: "Active" },
+              { value: "Inactive", label: "Inactive" },
+            ]
+          },
+          { name: "aState", label: "State", type: "select", placeholder: "Please select state...",
+            options: [
+              { value: "State 1", label: "State 1" },
+              { value: "State 2", label: "State 2" },
+              { value: "State 3", label: "State 3" },
+            ]
+          },    
         ],  
       },
 

@@ -11,6 +11,8 @@ import RoleCheckboxReadComponent from "./component/bRoleCheckboxReadComponent";
 import ImageReadComponent from "./component/cImageReadComponent";
 import ByReadComponent from "./component/dByReadComponent";
 import AtReadComponent from "./component/eAtReadComponent";
+import HTMLReadComponent from "./component/fHTMLReadComponent";
+import BadgeReadComponent from "./component/gBadgeReadComponent";
 
 
 type TypicalRetrieveComponentType = {
@@ -84,7 +86,7 @@ const TypicalRetrieveComponent = (props: TypicalRetrieveComponentType) => {
                         <CardContent>
                           <div className="space-y-4 pt-4">
                             {eachSection.fields.map((eachField: any, indexInput: any) => (
-                              <React.Fragment>
+                              <React.Fragment key={indexInput} >
     
                                 {/* For I/P Type: Image */}
                                 {((eachField.type === "image") && 
@@ -94,6 +96,16 @@ const TypicalRetrieveComponent = (props: TypicalRetrieveComponentType) => {
                                 {/* For I/P Type: Text, Email, Number */}
                                 {((eachField.type === "text" || eachField.type === "email" || eachField.type === "number" || eachField.type === "password") && 
                                   <TextReadComponent key={indexInput} eachField={eachField} />
+                                )}
+    
+                                {/* For I/P Type: HTML */}
+                                {((eachField.type === "html") && 
+                                  <HTMLReadComponent key={indexInput} eachField={eachField} />
+                                )}
+    
+                                {/* For I/P Type: Badge */}
+                                {((eachField.type === "badge") && 
+                                  <BadgeReadComponent key={indexInput} eachField={eachField} />
                                 )}
     
                                 {/* For I/P Type: Role Checkbox */}
