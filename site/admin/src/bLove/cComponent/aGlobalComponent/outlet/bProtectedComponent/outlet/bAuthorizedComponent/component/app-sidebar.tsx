@@ -12,11 +12,13 @@ import {
   List,
   Map,
   PieChart,
+  PresentationIcon,
+  ProjectorIcon,
   Settings2,
   SettingsIcon,
   SmileIcon,
   SquareTerminal,
-  TreePalmIcon
+  // TreePalmIcon
 } from "lucide-react"
 
 import { NavMain } from "./nav-main"
@@ -147,14 +149,72 @@ const data = {
       isHighlighted: pathname === fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cMainRoute.aDashboardRoute,
       items: [],
     },
+    // {
+    //   title: "Main",
+    //   url: "#",
+    //   icon: TreePalmIcon,
+    //   isActive: false,
+    //   isCollapsible: true,
+    //   // isHighlighted: null,
+    //   items: [],
+    // },
     {
-      title: "Main",
+      title: "Frontend Landing",
       url: "#",
-      icon: TreePalmIcon,
+      icon: ProjectorIcon,
       isActive: false,
       isCollapsible: true,
-      // isHighlighted: null,
-      items: [],
+      isHighlighted: (
+        pathname.startsWith("/hero-") ||
+        pathname.startsWith("/about-company-") ||
+        pathname.startsWith("/contact-form-")
+      ),
+      items: [
+        {
+          title: "Hero",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.aHeroRoute.aListRoute,
+          isBlue: pathname.startsWith("/hero-")
+        },
+        {
+          title: "About Company",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.bAboutCompanyRoute.aListRoute,
+          isBlue: pathname.startsWith("/about-company-")
+        },
+        {
+          title: "Contact Form",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.cContactFormRoute.aListRoute,
+          isBlue: pathname.startsWith("/contact-form-")
+        },
+      ],
+    },
+    {
+      title: "Admin Landing",
+      url: "#",
+      icon: PresentationIcon,
+      isActive: false,
+      isCollapsible: true,
+      isHighlighted: (
+        pathname.startsWith("/admin-hero-") ||
+        pathname.startsWith("/admin-about-company-") ||
+        pathname.startsWith("/admin-contact-form-")
+      ),
+      items: [
+        {
+          title: "Hero",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.aAdminHeroRoute.aListRoute,
+          isBlue: pathname.startsWith("/admin-hero-")
+        },
+        {
+          title: "About Company",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.bAdminAboutCompanyRoute.aListRoute,
+          isBlue: pathname.startsWith("/admin-about-company-")
+        },
+        {
+          title: "Contact Form",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.cAdminContactFormRoute.aListRoute,
+          isBlue: pathname.startsWith("/admin-contact-form-")
+        },
+      ],
     },
     {
       title: "User Administration",

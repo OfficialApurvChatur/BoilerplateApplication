@@ -20,6 +20,14 @@ import { userAccountRouter } from '../bLove/aMCVR/dRoute/admin/bUserAdministrati
 import { userRouter } from '../bLove/aMCVR/dRoute/admin/bUserAdministration/dUserRoute';
 import { profileRouter } from '../bLove/aMCVR/dRoute/admin/bUserAdministration/eProfileRoute';
 
+import { adminHeroRouter } from '../bLove/aMCVR/dRoute/admin/cAdminLanding/aAdminHeroRoute';
+import { adminAboutCompanyRouter } from '../bLove/aMCVR/dRoute/admin/cAdminLanding/bAdminAboutCompanyRoute';
+import { adminContactFormRouter } from '../bLove/aMCVR/dRoute/admin/cAdminLanding/cAdminContactFormRoute';
+
+import { heroRouter } from '../bLove/aMCVR/dRoute/admin/dFrontendLanding/aHeroRoute';
+import { aboutCompanyRouter } from '../bLove/aMCVR/dRoute/admin/dFrontendLanding/bAboutCompanyRoute';
+import { contactFormRouter } from '../bLove/aMCVR/dRoute/admin/dFrontendLanding/cContactFormRoute';
+
 import { singleImageRouter } from '../bLove/aMCVR/dRoute/admin/zFreestyleSample/aSingleImageRoute';
 
 
@@ -52,6 +60,14 @@ appConnection.use("/api/v1/user/auth/", userAuthRouter);
 appConnection.use("/api/v1/user/account/", userAccountRouter);
 appConnection.use("/api/v1/user/", userRouter);
 appConnection.use("/api/v1/profile/", profileRouter);
+
+appConnection.use("/api/v1/admin-hero/", adminHeroRouter);
+appConnection.use("/api/v1/admin-about-company/", adminAboutCompanyRouter);
+appConnection.use("/api/v1/admin-contact-form/", adminContactFormRouter);
+
+appConnection.use("/api/v1/hero/", heroRouter);
+appConnection.use("/api/v1/about-company/", aboutCompanyRouter);
+appConnection.use("/api/v1/contact-form/", contactFormRouter);
 
 appConnection.use('/api/v1/single-image/', singleImageRouter);
 

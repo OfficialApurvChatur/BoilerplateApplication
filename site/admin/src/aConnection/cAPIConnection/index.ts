@@ -22,6 +22,15 @@ const apiConnection = createApi({
     "roleList", "roleRetrieve", "roleListForUserCreateAndUpdate", "roleListForUserAuthSignUp", "roleUpdateRetrieve",
     "userList", "userRetrieve", "userListForProfileCreateAndUpdate",
     "profileList", "profileRetrieve", "profileListForUserCreateAndUpdate",
+
+    "adminHeroList", "adminHeroRetrieve",
+    "adminAboutCompanyList", "adminAboutCompanyRetrieve",
+    "adminContactFormList", "adminContactFormRetrieve",
+
+    "heroList", "heroRetrieve",
+    "aboutCompanyList", "aboutCompanyRetrieve",
+    "contactFormList", "contactFormRetrieve",
+
   ],
   endpoints: () => ({})
 })

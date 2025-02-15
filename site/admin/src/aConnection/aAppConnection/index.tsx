@@ -100,6 +100,42 @@ const ProfileRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/o
 const ProfileUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/bUserAdministrationPage/eProfilePage/dUpdatePage"));
 const ProfileDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/bUserAdministrationPage/eProfilePage/eDeletePage"));
 
+const AdminHeroListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/aAdminHeroPage/aListPage"));
+const AdminHeroCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/aAdminHeroPage/bCreatePage"));
+const AdminHeroRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/aAdminHeroPage/cRetrievePage"));
+const AdminHeroUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/aAdminHeroPage/dUpdatePage"));
+const AdminHeroDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/aAdminHeroPage/eDeletePage"));
+
+const AdminAboutCompanyListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/bAdminAboutCompanyPage/aListPage"));
+const AdminAboutCompanyCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/bAdminAboutCompanyPage/bCreatePage"));
+const AdminAboutCompanyRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/bAdminAboutCompanyPage/cRetrievePage"));
+const AdminAboutCompanyUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/bAdminAboutCompanyPage/dUpdatePage"));
+const AdminAboutCompanyDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/bAdminAboutCompanyPage/eDeletePage"));
+
+const AdminContactFormListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/cAdminContactFormPage/aListPage"));
+const AdminContactFormCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/cAdminContactFormPage/bCreatePage"));
+const AdminContactFormRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/cAdminContactFormPage/cRetrievePage"));
+const AdminContactFormUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/cAdminContactFormPage/dUpdatePage"));
+const AdminContactFormDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/cAdminLandingPage/cAdminContactFormPage/eDeletePage"));
+
+const HeroListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/aHeroPage/aListPage"));
+const HeroCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/aHeroPage/bCreatePage"));
+const HeroRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/aHeroPage/cRetrievePage"));
+const HeroUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/aHeroPage/dUpdatePage"));
+const HeroDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/aHeroPage/eDeletePage"));
+
+const AboutCompanyListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/bAboutCompanyPage/aListPage"));
+const AboutCompanyCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/bAboutCompanyPage/bCreatePage"));
+const AboutCompanyRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/bAboutCompanyPage/cRetrievePage"));
+const AboutCompanyUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/bAboutCompanyPage/dUpdatePage"));
+const AboutCompanyDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/bAboutCompanyPage/eDeletePage"));
+
+const ContactFormListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/cContactFormPage/aListPage"));
+const ContactFormCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/cContactFormPage/bCreatePage"));
+const ContactFormRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/cContactFormPage/cRetrievePage"));
+const ContactFormUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/cContactFormPage/dUpdatePage"));
+const ContactFormDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFrontendLandingPage/cContactFormPage/eDeletePage"));
+
 
 const AppConnection = () => {
   // Variable
@@ -191,6 +227,44 @@ const AppConnection = () => {
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.eProfileRoute.cRetrieveRoute}/:id`} element={<ProfileRetrievePage />} />
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.eProfileRoute.dUpdateRoute}/:id`} element={<ProfileUpdatePage />} />
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.bUserAdministrationRoute.eProfileRoute.eDeleteRoute}/:id`} element={<ProfileDeletePage />} />
+                
+                {/* Admin Landing */}
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.aAdminHeroRoute.aListRoute}`} element={<AdminHeroListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.aAdminHeroRoute.bCreateRoute}`} element={<AdminHeroCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.aAdminHeroRoute.cRetrieveRoute}/:id`} element={<AdminHeroRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.aAdminHeroRoute.dUpdateRoute}/:id`} element={<AdminHeroUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.aAdminHeroRoute.eDeleteRoute}/:id`} element={<AdminHeroDeletePage />} />
+                
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.bAdminAboutCompanyRoute.aListRoute}`} element={<AdminAboutCompanyListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.bAdminAboutCompanyRoute.bCreateRoute}`} element={<AdminAboutCompanyCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.bAdminAboutCompanyRoute.cRetrieveRoute}/:id`} element={<AdminAboutCompanyRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.bAdminAboutCompanyRoute.dUpdateRoute}/:id`} element={<AdminAboutCompanyUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.bAdminAboutCompanyRoute.eDeleteRoute}/:id`} element={<AdminAboutCompanyDeletePage />} />
+                
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.cAdminContactFormRoute.aListRoute}`} element={<AdminContactFormListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.cAdminContactFormRoute.bCreateRoute}`} element={<AdminContactFormCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.cAdminContactFormRoute.cRetrieveRoute}/:id`} element={<AdminContactFormRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.cAdminContactFormRoute.dUpdateRoute}/:id`} element={<AdminContactFormUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cAdminLanding.cAdminContactFormRoute.eDeleteRoute}/:id`} element={<AdminContactFormDeletePage />} />
+                
+                {/* Frontend Landing */}
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.aHeroRoute.aListRoute}`} element={<HeroListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.aHeroRoute.bCreateRoute}`} element={<HeroCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.aHeroRoute.cRetrieveRoute}/:id`} element={<HeroRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.aHeroRoute.dUpdateRoute}/:id`} element={<HeroUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.aHeroRoute.eDeleteRoute}/:id`} element={<HeroDeletePage />} />
+                
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.bAboutCompanyRoute.aListRoute}`} element={<AboutCompanyListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.bAboutCompanyRoute.bCreateRoute}`} element={<AboutCompanyCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.bAboutCompanyRoute.cRetrieveRoute}/:id`} element={<AboutCompanyRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.bAboutCompanyRoute.dUpdateRoute}/:id`} element={<AboutCompanyUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.bAboutCompanyRoute.eDeleteRoute}/:id`} element={<AboutCompanyDeletePage />} />
+                
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.cContactFormRoute.aListRoute}`} element={<ContactFormListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.cContactFormRoute.bCreateRoute}`} element={<ContactFormCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.cContactFormRoute.cRetrieveRoute}/:id`} element={<ContactFormRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.cContactFormRoute.dUpdateRoute}/:id`} element={<ContactFormUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFrontendLanding.cContactFormRoute.eDeleteRoute}/:id`} element={<ContactFormDeletePage />} />
                 
                 {/* Dashboard */}
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.cMainRoute.aDashboardRoute}`} element={<DashboardOneComponent />} />

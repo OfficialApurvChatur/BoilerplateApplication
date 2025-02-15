@@ -54,6 +54,14 @@ const isAllowedConstant = {
   role: "Role",
   user: "User",
   profile: "Profile",
+  
+  adminHero: "Admin Hero",
+  adminAboutCompany: "Admin About Company",
+  adminContactForm: "Admin Contact Form",
+
+  hero: "Hero",
+  aboutCompany: "About Company",
+  contactForm: "Contact Form",
 }
 
 export default isAllowedUtility;

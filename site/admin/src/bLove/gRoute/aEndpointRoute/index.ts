@@ -79,6 +79,52 @@ const endpointRoute = {
               eDeleteRoute: "profile-delete",
             },
           },
+          cAdminLanding: {
+            aAdminHeroRoute: {
+              aListRoute: "admin-hero-list",
+              bCreateRoute: "admin-hero-create",
+              cRetrieveRoute: "admin-hero-retrieve",
+              dUpdateRoute: "admin-hero-update",
+              eDeleteRoute: "admin-hero-delete",
+            },
+            bAdminAboutCompanyRoute: {
+              aListRoute: "admin-about-company-list",
+              bCreateRoute: "admin-about-company-create",
+              cRetrieveRoute: "admin-about-company-retrieve",
+              dUpdateRoute: "admin-about-company-update",
+              eDeleteRoute: "admin-about-company-delete",
+            },
+            cAdminContactFormRoute: {
+              aListRoute: "admin-contact-form-list",
+              bCreateRoute: "admin-contact-form-create",
+              cRetrieveRoute: "admin-contact-form-retrieve",
+              dUpdateRoute: "admin-contact-form-update",
+              eDeleteRoute: "admin-contact-form-delete",
+            },
+          },
+          dFrontendLanding: {
+            aHeroRoute: {
+              aListRoute: "hero-list",
+              bCreateRoute: "hero-create",
+              cRetrieveRoute: "hero-retrieve",
+              dUpdateRoute: "hero-update",
+              eDeleteRoute: "hero-delete",
+            },
+            bAboutCompanyRoute: {
+              aListRoute: "about-company-list",
+              bCreateRoute: "about-company-create",
+              cRetrieveRoute: "about-company-retrieve",
+              dUpdateRoute: "about-company-update",
+              eDeleteRoute: "about-company-delete",
+            },
+            cContactFormRoute: {
+              aListRoute: "contact-form-list",
+              bCreateRoute: "contact-form-create",
+              cRetrieveRoute: "contact-form-retrieve",
+              dUpdateRoute: "contact-form-update",
+              eDeleteRoute: "contact-form-delete",
+            },
+          },
           cMainRoute: {
             aDashboardRoute: "dashboard",
           }
