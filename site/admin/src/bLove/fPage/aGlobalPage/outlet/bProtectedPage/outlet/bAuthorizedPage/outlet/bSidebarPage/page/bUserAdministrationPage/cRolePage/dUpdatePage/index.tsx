@@ -7,6 +7,7 @@ import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import roleAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/cRoleAPI";
 import menuAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/bMenuAPI";
+import userAccountAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/aTopbarAPI/aUserAccountAPI";
 
 import RoleUpdateComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/bUserAdministrationComponent/cRoleComponent/dUpdateComponent";
 
@@ -32,6 +33,7 @@ const RoleUpdatePage = () => {
   const updateRetrieveAPIResponse = roleAPIEndpoint.useRoleUpdateRetrieveAPIQuery({ params: { _id: id } });
   const [ updateAPITrigger, updateAPIResponse ] = roleAPIEndpoint.useRoleUpdateAPIMutation();
   const menuListAPIResponse = menuAPIEndpoint.useMenuListForRoleCreateAndUpdateAPIQuery(null);
+  const [ userAccountRetrieveAPITrigger, userAccountRetrieveAPIResponse ] = userAccountAPIEndpoint.useLazyUserAccountRetrieveAPIQuery();
 
   // Redux Call
   const ReduxCall = {
@@ -46,6 +48,8 @@ const RoleUpdatePage = () => {
     updateAPITrigger,
     updateAPIResponse,
     menuListAPIResponse,
+    userAccountRetrieveAPITrigger,
+    userAccountRetrieveAPIResponse,
   }
 
   // Listening Socket Events
@@ -70,6 +74,7 @@ const RoleUpdatePage = () => {
         formDefaultValue={formDefaultValue}
         previousValue={previousValue}
         params={{ id: id }}
+        ReduxCall={ReduxCall}
         APICall={APICall}
         submitHandler={submitHandler} 
       />

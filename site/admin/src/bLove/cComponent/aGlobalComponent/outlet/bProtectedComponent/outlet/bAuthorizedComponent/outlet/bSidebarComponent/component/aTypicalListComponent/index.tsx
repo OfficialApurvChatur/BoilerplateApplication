@@ -15,10 +15,13 @@ type TypicalListComponentType = {
   },
   data: any,
   columns: any,
-  APICall: any,
+  apiCall: any,
 }
 
 const TypicalListComponent = (props: TypicalListComponentType) => {
+  // Destructure Props
+  const { header, data, columns, apiCall } = props;
+
   // JSX
   return (
     <React.Fragment>
@@ -27,20 +30,20 @@ const TypicalListComponent = (props: TypicalListComponentType) => {
       <div className="h-full flex-1 flex-col space-y-8 md:flex px-4">
         <div className="flex items-center justify-between space-y-2">
           <div>
-            <h2 className="text-2xl font-bold tracking-tight">{props.header.title}</h2>
-            <p className="text-muted-foreground">{props.header.subtitle}</p>
+            <h2 className="text-2xl font-bold tracking-tight">{header.title}</h2>
+            <p className="text-muted-foreground">{header.subtitle}</p>
           </div>
           <div className="flex items-center space-x-2">
-            {props.header.actions.length > 0 && (
-              props.header.actions.map((each, index) => (
+            {header.actions.length > 0 && (
+              header.actions.map((each, index) => (
                 <Button onClick={each.onClick} key={index} >
                   {each.icon && <each.icon />}
                   {each.text}
                 </Button>
               ))
             )}
-            {props.header.links.length > 0 && (
-              props.header.links.map((each, index) => (
+            {header.links.length > 0 && (
+              header.links.map((each, index) => (
                 <Button asChild key={index} >
                   <Link to={each.to} >
                     {each.icon && <each.icon />}
@@ -52,7 +55,7 @@ const TypicalListComponent = (props: TypicalListComponentType) => {
           </div>
         </div>
 
-        <DataTable data={props.data} columns={props.columns} APICall={props.APICall} />
+        <DataTable data={data} columns={columns} apiCall={apiCall} />
       </div>
     </React.Fragment>
   )

@@ -131,7 +131,7 @@ const apiResponseHandler = {
         })
         // form.reset();
 
-        ReduxCall.dispatch(
+        await ReduxCall.dispatch(
           ReduxCall.action.receivedObjectAction({
             AccountRetrieve: {
               ...ReduxCall.state.receivedObject?.AccountRetrieve,
@@ -140,7 +140,7 @@ const apiResponseHandler = {
           })
         )
   
-        return navigate(fullRoute.aGlobalRoute.aUnprotectedRoute.aHomeRoute)
+        return navigate(fullRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute)
       }
 
       return;

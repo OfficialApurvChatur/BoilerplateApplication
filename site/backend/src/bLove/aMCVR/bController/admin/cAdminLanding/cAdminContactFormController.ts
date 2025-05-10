@@ -54,7 +54,9 @@ const adminContactFormController = (Model=AdminContactFormModel, Label="AdminCon
 
       // Clear Cache
       await redisClient.del(`${Label.toLowerCase()}-list`)
-      
+      await redisClient.del(`adminhomepage-list`)
+      await redisClient.del(`adminaboutpage-list`)
+
       // Emit Event
       const io = request.app.get("io");
       if (create && io) {
@@ -118,6 +120,8 @@ const adminContactFormController = (Model=AdminContactFormModel, Label="AdminCon
 
       // Clear Cache
       await redisClient.del(`${Label.toLowerCase()}-list`, `${Label.toLowerCase()}-retrieve:${request.params.id}`)
+      await redisClient.del(`adminhomepage-list`)
+      await redisClient.del(`adminaboutpage-list`)
       console.log("Cache cleared...")
       
       // Emit Event
@@ -152,6 +156,8 @@ const adminContactFormController = (Model=AdminContactFormModel, Label="AdminCon
       
       // Clear Cache
       await redisClient.del(`${Label.toLowerCase()}-list`, `${Label.toLowerCase()}-retrieve:${request.params.id}`)
+      await redisClient.del(`adminhomepage-list`)
+      await redisClient.del(`adminaboutpage-list`)
       console.log("Cache cleared...")
       
       // Emit Event

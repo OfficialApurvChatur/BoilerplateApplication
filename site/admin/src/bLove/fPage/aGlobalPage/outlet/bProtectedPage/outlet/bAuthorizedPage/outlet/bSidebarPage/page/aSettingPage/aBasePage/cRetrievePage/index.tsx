@@ -27,37 +27,36 @@ const BaseRetrievePage = () => {
   const retrieveAPIResponse = baseAPIEndpoint.useBaseRetrieveAPIQuery({ params: { _id: id } });
 
   // Redux Call
-  const ReduxCall = {
+  const reduxCall = {
     state: useSelector((state: RootState) => state.globalSlice),
     dispatch: useDispatch(),
     action: globalSlice.actions
   }
   
   // API Call
-  const APICall = {
+  const apiCall = {
     retrieveAPIResponse
   }
 
   // Listening Socket Events
   useSocketEventHook(socket, {
-    [`BASE_RETRIEVED:${id}`]: () => APICall.retrieveAPIResponse.refetch()
+    [`BASE_RETRIEVED:${id}`]: () => apiCall.retrieveAPIResponse.refetch()
   })
   
   // All Render
   // 1. Success Render
   useEffect(() => {
-    apiResponseHandler.retrieveAPIResponseHandler(APICall.retrieveAPIResponse)
-  }, [APICall.retrieveAPIResponse])
+    apiResponseHandler.retrieveAPIResponseHandler(apiCall.retrieveAPIResponse)
+  }, [apiCall.retrieveAPIResponse])
   
   // JSX
-  return (!isAllowedUtility(ReduxCall, isAllowedConstant.base, "Retrieve") ? <UnauthorizedAccessComponent /> :
+  return (!isAllowedUtility(reduxCall, isAllowedConstant.base, "Retrieve") ? <UnauthorizedAccessComponent /> :
     <React.Fragment>
       {/* BaseRetrievePage */}
       <BaseRetrieveComponent 
-        header={header({ id: (id as string), retrieveAPIResponse: APICall.retrieveAPIResponse })} 
-        data={data({ retrieveAPIResponse: APICall.retrieveAPIResponse })} 
-        params={{ id: id }}
-        APICall={APICall} 
+        header={header({ id: (id as string), retrieveAPIResponse: apiCall.retrieveAPIResponse })} 
+        data={data({ retrieveAPIResponse: apiCall.retrieveAPIResponse })} 
+        apiCall={apiCall} 
       />
     </React.Fragment>
   )

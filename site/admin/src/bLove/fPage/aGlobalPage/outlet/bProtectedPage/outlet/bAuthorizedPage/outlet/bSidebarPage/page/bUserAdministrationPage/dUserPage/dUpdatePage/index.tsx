@@ -8,6 +8,7 @@ import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 import userAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/dUserAPI";
 import roleAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/cRoleAPI";
 import profileAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/eProfileAPI";
+import userAccountAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/aTopbarAPI/aUserAccountAPI";
 
 import UserUpdateComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/bUserAdministrationComponent/dUserComponent/dUpdateComponent";
 
@@ -34,6 +35,7 @@ const UserUpdatePage = () => {
   const [ updateAPITrigger, updateAPIResponse ] = userAPIEndpoint.useUserUpdateAPIMutation();
   const roleListAPIResponse = roleAPIEndpoint.useRoleListForUserCreateAndUpdateAPIQuery(null);
   const profileListAPIResponse = profileAPIEndpoint.useProfileListForUserCreateAndUpdateAPIQuery(null);
+  const [ userAccountRetrieveAPITrigger, userAccountRetrieveAPIResponse ] = userAccountAPIEndpoint.useLazyUserAccountRetrieveAPIQuery();
 
   // Redux Call
   const ReduxCall = {
@@ -49,6 +51,8 @@ const UserUpdatePage = () => {
     updateAPIResponse,
     roleListAPIResponse,
     profileListAPIResponse,
+    userAccountRetrieveAPITrigger,
+    userAccountRetrieveAPIResponse,
   }
 
   // Listening Socket Events
@@ -73,6 +77,7 @@ const UserUpdatePage = () => {
         formDefaultValue={formDefaultValue}
         previousValue={previousValue}
         params={{ id: id }}
+        ReduxCall={ReduxCall}
         APICall={APICall}
         submitHandler={submitHandler} 
       />

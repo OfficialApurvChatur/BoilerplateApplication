@@ -7,6 +7,7 @@ import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import menuAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/bMenuAPI";
 import accessPointAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/aAccessPointAPI";
+import userAccountAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/aTopbarAPI/aUserAccountAPI";
 
 import MenuUpdateComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/bUserAdministrationComponent/bMenuComponent/dUpdateComponent";
 
@@ -32,6 +33,7 @@ const MenuUpdatePage = () => {
   const retrieveAPIResponse = menuAPIEndpoint.useMenuRetrieveAPIQuery({ params: { _id: id } });
   const [ updateAPITrigger, updateAPIResponse ] = menuAPIEndpoint.useMenuUpdateAPIMutation();
   const accessPointListAPIResponse = accessPointAPIEndpoint.useAccessPointListForMenuCreateAndUpdateAPIQuery(null);
+  const [ userAccountRetrieveAPITrigger, userAccountRetrieveAPIResponse ] = userAccountAPIEndpoint.useLazyUserAccountRetrieveAPIQuery();
 
   // Redux Call
   const ReduxCall = {
@@ -46,6 +48,8 @@ const MenuUpdatePage = () => {
     updateAPITrigger,
     updateAPIResponse,
     accessPointListAPIResponse,
+    userAccountRetrieveAPITrigger,
+    userAccountRetrieveAPIResponse,
   }
 
   // Listening Socket Events
@@ -70,6 +74,7 @@ const MenuUpdatePage = () => {
         formDefaultValue={formDefaultValue}
         previousValue={previousValue}
         params={{ id: id }}
+        ReduxCall={ReduxCall}
         APICall={APICall}
         submitHandler={submitHandler} 
       />

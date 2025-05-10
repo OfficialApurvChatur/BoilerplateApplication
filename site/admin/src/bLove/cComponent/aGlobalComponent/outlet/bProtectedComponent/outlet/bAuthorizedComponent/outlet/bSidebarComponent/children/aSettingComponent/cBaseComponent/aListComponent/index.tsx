@@ -12,7 +12,7 @@ type BaseListComponentType = {
   },
   data: any,
   columns: any,
-  APICall: any
+  apiCall: any
 }
 
 const BaseListComponent = (props: BaseListComponentType) => {
@@ -24,7 +24,7 @@ const BaseListComponent = (props: BaseListComponentType) => {
         header={props.header} 
         data={props.data} 
         columns={props.columns} 
-        APICall={props.APICall} 
+        apiCall={props.apiCall} 
       />
     </React.Fragment>
   )

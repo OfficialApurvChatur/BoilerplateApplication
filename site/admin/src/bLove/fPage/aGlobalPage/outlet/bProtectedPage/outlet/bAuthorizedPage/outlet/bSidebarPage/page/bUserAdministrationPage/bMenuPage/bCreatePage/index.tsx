@@ -6,6 +6,7 @@ import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import menuAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/bMenuAPI";
 import accessPointAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/aAccessPointAPI";
+import userAccountAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/aTopbarAPI/aUserAccountAPI";
 
 import MenuCreateComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/bUserAdministrationComponent/bMenuComponent/bCreateComponent";
 
@@ -23,6 +24,7 @@ const MenuCreatePage = () => {
   // Variable
   const [ createAPITrigger, createAPIResponse ] = menuAPIEndpoint.useMenuCreateAPIMutation();
   const accessPointListAPIResponse = accessPointAPIEndpoint.useAccessPointListForMenuCreateAndUpdateAPIQuery(null);
+  const [ userAccountRetrieveAPITrigger, userAccountRetrieveAPIResponse ] = userAccountAPIEndpoint.useLazyUserAccountRetrieveAPIQuery();
 
   // Redux Call
   const ReduxCall = {
@@ -36,6 +38,8 @@ const MenuCreatePage = () => {
     createAPITrigger,
     createAPIResponse,
     accessPointListAPIResponse,
+    userAccountRetrieveAPITrigger,
+    userAccountRetrieveAPIResponse,
   }
 
   // JSX
@@ -47,6 +51,7 @@ const MenuCreatePage = () => {
         data={data({ APICall: APICall })} 
         formSchema={formSchema} 
         formDefaultValue={formDefaultValue}
+        ReduxCall={ReduxCall}
         APICall={APICall}
         submitHandler={submitHandler} 
       />

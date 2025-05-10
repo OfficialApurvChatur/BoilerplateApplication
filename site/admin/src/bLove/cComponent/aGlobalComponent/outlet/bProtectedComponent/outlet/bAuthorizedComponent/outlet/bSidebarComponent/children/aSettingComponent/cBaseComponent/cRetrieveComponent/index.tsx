@@ -11,8 +11,7 @@ type BaseRetrieveComponentType = {
     links: { text: string, icon?: any, to: string }[] 
   },
   data: any,
-  params: any,
-  APICall: any
+  apiCall: any
 }
 
 const BaseRetrieveComponent = (props: BaseRetrieveComponentType) => {
@@ -23,8 +22,7 @@ const BaseRetrieveComponent = (props: BaseRetrieveComponentType) => {
       <TypicalRetrieveComponent 
         header={props.header} 
         data={props.data}
-        params= {props.params}
-        APICall={props.APICall} 
+        apiCall={props.apiCall} 
       />
     </React.Fragment>
   )

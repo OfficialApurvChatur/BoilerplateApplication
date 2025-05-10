@@ -8,57 +8,63 @@ import formSchema from "./cFormSchema";
 
 
 const apiResponseHandler = {
-  createAPIResponseHandler: async (data: z.infer<typeof formSchema>, createAPITrigger: any, form: any, navigate: NavigateFunction) => {
-    try {
-      const serverResponse = await createAPITrigger({ body: {
-        aImage: data.aImage,
-        aTitle: data.aTitle,
-        aSubtitle: data.aSubtitle,
-        aDescription: data.aDescription,
-        aDetail: data.aDetail,
-        aStatus: data.aStatus,
-        aState: data.aState,
-      } });
+  createAPIResponseHandler: (
+    (createAPITrigger: any) => 
+    (navigate: NavigateFunction) => 
+    (form: any) => 
+    (data: z.infer<typeof formSchema>) => 
+    (async () => {
+      try {
+        const serverResponse = await createAPITrigger({ body: {
+          aImage: data.aImage,
+          aTitle: data.aTitle,
+          aSubtitle: data.aSubtitle,
+          aDescription: data.aDescription,
+          aDetail: data.aDetail,
+          aStatus: data.aStatus,
+          aState: data.aState,
+        } });
 
-      // console.log(serverResponse)
+        // console.log(serverResponse)
 
-      if (serverResponse.error && serverResponse.error.originalStatus === 404) {
+        if (serverResponse.error && serverResponse.error.originalStatus === 404) {
+          return toast({
+            variant: "destructive",
+            title: "Uh oh! Cannot connect with server.",
+            description: "There was a problem with server connection.",
+          })  
+        } 
+        
+        if (serverResponse.error && serverResponse.error?.data?.success === false) {
+          return toast({
+            variant: "destructive",
+            title: "Uh oh! Something went wrong.",
+            description: serverResponse.error.data.message || "There was an error occured.",
+          })  
+        }
+
+        if (serverResponse.data && serverResponse.data?.success === true) {
+          toast({
+            variant: "default",
+            title: "Yayy! Congratulations...",
+            description: serverResponse.data.message,
+          })
+          form.reset();
+
+          return navigate(fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.aSettingRoute.aBaseRoute.aListRoute)
+        }
+
+        return;
+
+      } catch (error: any) {
         return toast({
           variant: "destructive",
-          title: "Uh oh! Cannot connect with server.",
-          description: "There was a problem with server connection.",
-        })  
-      } 
-      
-      if (serverResponse.error && serverResponse.error?.data?.success === false) {
-        return toast({
-          variant: "destructive",
-          title: "Uh oh! Something went wrong.",
-          description: serverResponse.error.data.message || "There was an error occured.",
-        })  
-      }
-
-      if (serverResponse.data && serverResponse.data?.success === true) {
-        toast({
-          variant: "default",
-          title: "Yayy! Congratulations...",
-          description: serverResponse.data.message,
+          title: "Uh oh! Bad code... Bad code.",
+          description: "There was a problem with try block code",
         })
-        form.reset();
-
-        return navigate(fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.aSettingRoute.aBaseRoute.aListRoute)
       }
-
-      return;
-
-    } catch (error: any) {
-      return toast({
-        variant: "destructive",
-        title: "Uh oh! Bad code... Bad code.",
-        description: "There was a problem with try block code",
-      })
-    }
-  }
+    })()
+  )
 }
 
 export default apiResponseHandler;

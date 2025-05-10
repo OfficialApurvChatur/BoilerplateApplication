@@ -6,6 +6,7 @@ import { RootState } from "@/aConnection/dReduxConnection";
 import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import accessPointAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/aAccessPointAPI";
+import userAccountAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/aTopbarAPI/aUserAccountAPI";
 
 import AccessPointDeleteComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/bUserAdministrationComponent/aAccessPointComponent/eDeleteComponent";
 
@@ -27,6 +28,7 @@ const AccessPointDeletePage = () => {
   const socket = useSocket();
   const retrieveAPIResponse = accessPointAPIEndpoint.useAccessPointRetrieveAPIQuery({ params: { _id: id } });
   const [ deleteAPITrigger, deleteAPIResponse ] = accessPointAPIEndpoint.useAccessPointDeleteAPIMutation();
+  const [ userAccountRetrieveAPITrigger, userAccountRetrieveAPIResponse ] = userAccountAPIEndpoint.useLazyUserAccountRetrieveAPIQuery();
 
   // Redux Call
   const ReduxCall = {
@@ -39,7 +41,9 @@ const AccessPointDeletePage = () => {
   const APICall = {
     retrieveAPIResponse,
     deleteAPITrigger,
-    deleteAPIResponse
+    deleteAPIResponse,
+    userAccountRetrieveAPITrigger,
+    userAccountRetrieveAPIResponse,
   }
 
   // Listening Socket Events
@@ -61,6 +65,7 @@ const AccessPointDeletePage = () => {
         header={header()} 
         data={data({ retrieveAPIResponse: APICall.retrieveAPIResponse })} 
         params={{ id: id }}
+        ReduxCall={ReduxCall}
         APICall={APICall} 
         submitHandler={submitHandler} 
       />

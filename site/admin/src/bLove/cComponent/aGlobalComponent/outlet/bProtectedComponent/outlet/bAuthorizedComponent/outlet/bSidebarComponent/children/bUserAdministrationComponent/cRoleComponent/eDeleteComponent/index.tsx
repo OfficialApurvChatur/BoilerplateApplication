@@ -12,6 +12,7 @@ type RoleDeleteComponentType = {
   },
   data: any,
   params: any,
+  ReduxCall: any,
   APICall: any
   submitHandler: any
 }
@@ -25,6 +26,7 @@ const RoleDeleteComponent = (props: RoleDeleteComponentType) => {
         header={props.header} 
         data={props.data}
         params= {props.params}
+        ReduxCall={props.ReduxCall} 
         APICall= {props.APICall}
         submitHandler={props.submitHandler}
       />

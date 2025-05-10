@@ -1,7 +1,9 @@
 const endpointRoute = {
   aGlobalRoute: {
     aUnprotectedRoute: {
-      aHomeRoute: ""
+      aAdminHomePageRoute: "",
+      bAdminAboutPageRoute: "admin-about-page",
+      cAdminContactPageRoute: "admin-contact-page",
     },
     bProtectedRoute: {
       aAutheticatedRoute: {

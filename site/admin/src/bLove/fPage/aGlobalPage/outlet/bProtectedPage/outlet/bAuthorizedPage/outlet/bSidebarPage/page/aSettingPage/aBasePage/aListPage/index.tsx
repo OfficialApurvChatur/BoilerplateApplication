@@ -27,37 +27,37 @@ const BaseListPage = () => {
   const listAPIResponse = baseAPIEndpoint.useBaseListAPIQuery(null);
 
   // Redux Call
-  const ReduxCall = {
+  const reduxCall = {
     state: useSelector((state: RootState) => state.globalSlice),
     dispatch: useDispatch(),
     action: globalSlice.actions
   }
   
   // API Call
-  const APICall = {
+  const apiCall = {
     listAPIResponse
   }
   
   // Listening Socket Events
   useSocketEventHook(socket, {
-    BASE_LISTED: () => APICall.listAPIResponse.refetch()
+    BASE_LISTED: () => apiCall.listAPIResponse.refetch()
   })
 
   // All Render
   // 1. Success Render
   useEffect(() => {
-    apiResponseHandler.listAPIResponseHandler(APICall.listAPIResponse)
-  }, [APICall.listAPIResponse])
+    apiResponseHandler.listAPIResponseHandler(apiCall.listAPIResponse)
+  }, [apiCall.listAPIResponse])
 
   // JSX
-  return (!isAllowedUtility(ReduxCall, isAllowedConstant.base, "List") ? <UnauthorizedAccessComponent /> :
+  return (!isAllowedUtility(reduxCall, isAllowedConstant.base, "List") ? <UnauthorizedAccessComponent /> :
     <React.Fragment>
       {/* BaseListPage */}
       <BaseListComponent 
-        header={header({ listAPIResponse: APICall.listAPIResponse })} 
-        data={z.array(listSchema).parse(APICall.listAPIResponse?.data?.list || [])} 
+        header={header({ listAPIResponse: apiCall.listAPIResponse })} 
+        data={z.array(listSchema).parse(apiCall.listAPIResponse?.data?.list || [])} 
         columns={columns} 
-        APICall={APICall}
+        apiCall={apiCall}
       />
     </React.Fragment>
   )

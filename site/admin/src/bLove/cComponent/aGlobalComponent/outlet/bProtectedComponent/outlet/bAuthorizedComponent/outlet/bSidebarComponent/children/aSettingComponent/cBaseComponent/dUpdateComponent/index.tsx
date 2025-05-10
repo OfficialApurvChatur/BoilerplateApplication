@@ -14,8 +14,7 @@ type BaseUpdateComponentType = {
   formSchema: any,
   formDefaultValue: any,
   previousValue: any,
-  params: any,
-  APICall: any
+  apiCall: any
   submitHandler: any
 }
 
@@ -30,8 +29,7 @@ const BaseUpdateComponent = (props: BaseUpdateComponentType) => {
         formSchema={props.formSchema} 
         formDefaultValue={props.formDefaultValue} 
         previousValue= {props.previousValue}
-        params= {props.params}
-        APICall= {props.APICall}
+        apiCall= {props.apiCall}
         submitHandler={props.submitHandler}
       />
     </React.Fragment>

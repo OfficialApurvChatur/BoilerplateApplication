@@ -8,7 +8,6 @@ const personalInfoMiddleware = (type: "created" | "updated" = "created") => catc
 
     // Personal Info
     if (type === "created") {
-      console.log((request as any).user)
       request.body.bCreatedAt = new Date(Date.now());
       request.body.bCreatedBy = (request as any).user;
     } else if (type === "updated") {

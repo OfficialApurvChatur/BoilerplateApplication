@@ -13,7 +13,7 @@ type BaseCreateComponentType = {
   data: any,
   formSchema: any,
   formDefaultValue: any,
-  APICall: any,
+  apiCall: any,
   submitHandler: any
 }
 
@@ -27,7 +27,7 @@ const BaseCreateComponent = (props: BaseCreateComponentType) => {
         data={props.data} 
         formSchema={props.formSchema} 
         formDefaultValue={props.formDefaultValue}
-        APICall={props.APICall} 
+        apiCall={props.apiCall} 
         submitHandler={props.submitHandler}
       />
     </React.Fragment>

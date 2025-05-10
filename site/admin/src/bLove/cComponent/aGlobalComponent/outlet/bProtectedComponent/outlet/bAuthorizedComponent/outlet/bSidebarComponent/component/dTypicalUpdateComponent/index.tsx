@@ -1,5 +1,5 @@
 import React, { useEffect } from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -34,24 +34,23 @@ type TypicalUpdateComponentType = {
   formSchema: any,
   formDefaultValue: any,
   previousValue: any,
-  params: any,
-  APICall: any,
+  apiCall: any,
   submitHandler: any
 }
 
 const TypicalUpdateComponent = (props: TypicalUpdateComponentType) => {
-  // Variable
-  const navigate = useNavigate();
+  // Destructure Props
+  const { header, data, formSchema, formDefaultValue, previousValue, apiCall, submitHandler } = props;
 
   // Form
-  const form = useForm<z.infer<typeof props.formSchema>>({
-    resolver: zodResolver(props.formSchema),
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
     mode: "onChange",
-    defaultValues: props.formDefaultValue
+    defaultValues: formDefaultValue
   })
 
   // Submit Handler
-  const onSubmit = async (data: z.infer<typeof props.formSchema>) => {
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
     // console.log(data)
 
     toast({
@@ -63,20 +62,20 @@ const TypicalUpdateComponent = (props: TypicalUpdateComponentType) => {
       ),
     })
 
-    props.submitHandler(data, form, props.APICall, navigate, props.params)
+    submitHandler(form)(data)
   } 
 
   // All Render
   // 1. First Render
   useEffect(() => {
-    props.APICall.retrieveAPIResponse.isLoading ? null : 
-    props.APICall.retrieveAPIResponse.isError ? null :
-    props.APICall.retrieveAPIResponse.isSuccess ? (
-      props.APICall.retrieveAPIResponse.data.success ? (
-        props.previousValue(form, props.APICall)
+    apiCall.retrieveAPIResponse.isLoading ? null : 
+    apiCall.retrieveAPIResponse.isError ? null :
+    apiCall.retrieveAPIResponse.isSuccess ? (
+      apiCall.retrieveAPIResponse.data.success ? (
+        previousValue(form)
       ) : null
     ) : null
-  }, [props.APICall.retrieveAPIResponse])    
+  }, [apiCall.retrieveAPIResponse])    
  
   // JSX
   return (
@@ -87,22 +86,22 @@ const TypicalUpdateComponent = (props: TypicalUpdateComponentType) => {
         <div className="flex items-center justify-between space-y-2 mb-8" >
           <div>
             <h2 className="text-2xl font-bold tracking-tight">
-              {props.header.title} {" "}
-              <small className="text-sm font-normal tracking-wide italic" >({props.params.id})</small> 
+              {header.title} {" "}
+              <small className="text-sm font-normal tracking-wide italic" >({apiCall.retrieveAPIResponse?.data?.retrieve?._id || "XXXX XXXX XXXX XXXX"})</small> 
             </h2>
-            <p className="text-muted-foreground">{props.header.subtitle}</p>
+            <p className="text-muted-foreground">{header.subtitle}</p>
           </div>
           <div className="flex items-center space-x-2">
-            {props.header.actions.length > 0 && (
-              props.header.actions.map((each, index) => (
+            {header.actions.length > 0 && (
+              header.actions.map((each, index) => (
                 <Button onClick={each.onClick} key={index} >
                   {each.icon && <each.icon />}
                   {each.text}
                 </Button>
               ))
             )}
-            {props.header.links.length > 0 && (
-              props.header.links.map((each, index) => (
+            {header.links.length > 0 && (
+              header.links.map((each, index) => (
                 <Button asChild key={index} >
                   <Link to={each.to} >
                     {each.icon && <each.icon />}
@@ -115,16 +114,16 @@ const TypicalUpdateComponent = (props: TypicalUpdateComponentType) => {
         </div>
 
         {
-          (props.APICall.retrieveAPIResponse.isLoading || props.APICall.retrieveAPIResponse.isFetching) ? <LoaderComponent /> : 
-          (props.APICall.retrieveAPIResponse.isError) ? <ErrorComponent message="Error..." /> :
-          (props.APICall.retrieveAPIResponse.isSuccess) ? (
-            (props.APICall.retrieveAPIResponse.data.success) ? (
+          (apiCall.retrieveAPIResponse.isLoading || apiCall.retrieveAPIResponse.isFetching) ? <LoaderComponent /> : 
+          (apiCall.retrieveAPIResponse.isError) ? <ErrorComponent message="Error..." /> :
+          (apiCall.retrieveAPIResponse.isSuccess) ? (
+            (apiCall.retrieveAPIResponse.data.success) ? (
               <React.Fragment>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" noValidate >
 
                     {/* Section */}
-                    {props.data?.filter((eachSection: any) => eachSection.display)?.map((eachSection: any, indexSection: number) => eachSection.display && (
+                    {data?.filter((eachSection: any) => eachSection.display)?.map((eachSection: any, indexSection: number) => eachSection.display && (
                       <React.Fragment key={indexSection} >
                         <Card className="overflow-hidden" >
                           <CardHeader className="flex flex-row items-start bg-muted/50">
@@ -200,8 +199,8 @@ const TypicalUpdateComponent = (props: TypicalUpdateComponentType) => {
 
                     <Button 
                       type="submit"
-                      disabled={props.APICall.updateAPIResponse.isLoading}
-                    >{props.APICall.updateAPIResponse.isLoading ? "Loading..." : "Update"}</Button>
+                      disabled={apiCall.updateAPIResponse.isLoading}
+                    >{apiCall.updateAPIResponse.isLoading ? "Loading..." : "Update"}</Button>
                   </form>
                 </Form>
               </React.Fragment>

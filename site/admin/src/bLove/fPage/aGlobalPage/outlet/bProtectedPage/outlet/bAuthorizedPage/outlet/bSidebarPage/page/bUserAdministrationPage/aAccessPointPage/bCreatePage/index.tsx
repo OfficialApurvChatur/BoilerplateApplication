@@ -5,6 +5,7 @@ import { RootState } from "@/aConnection/dReduxConnection";
 import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import accessPointAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/aAccessPointAPI";
+import userAccountAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/aTopbarAPI/aUserAccountAPI";
 
 import AccessPointCreateComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/bUserAdministrationComponent/aAccessPointComponent/bCreateComponent";
 
@@ -21,7 +22,8 @@ import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/com
 const AccessPointCreatePage = () => {
   // Variable
   const [ createAPITrigger, createAPIResponse ] = accessPointAPIEndpoint.useAccessPointCreateAPIMutation();
-  
+  const [ userAccountRetrieveAPITrigger, userAccountRetrieveAPIResponse ] = userAccountAPIEndpoint.useLazyUserAccountRetrieveAPIQuery();
+
   // Redux Call
   const ReduxCall = {
     state: useSelector((state: RootState) => state.globalSlice),
@@ -33,6 +35,8 @@ const AccessPointCreatePage = () => {
   const APICall = {
     createAPITrigger,
     createAPIResponse,
+    userAccountRetrieveAPITrigger,
+    userAccountRetrieveAPIResponse,
   }
 
   // JSX
@@ -44,6 +48,7 @@ const AccessPointCreatePage = () => {
         data={data()} 
         formSchema={formSchema} 
         formDefaultValue={formDefaultValue}
+        ReduxCall={ReduxCall}
         APICall={APICall}
         submitHandler={submitHandler} 
       />

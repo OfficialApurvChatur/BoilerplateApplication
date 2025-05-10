@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/aConnection/dReduxConnection";
 
@@ -11,7 +11,6 @@ import BaseUpdateComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bPro
 
 import apiResponseHandler from "./extra/aAPIResponseHandler";
 import formSchema from "./extra/cFormSchema";
-import submitHandler from "./extra/bSubmitHandler";
 import header from "./extra/fHeader";
 import data from "./extra/gData";
 import formDefaultValue from "./extra/dFormDefaultValue";
@@ -28,18 +27,19 @@ const BaseUpdatePage = () => {
   // Variable
   const { id } = useParams();
   const socket = useSocket();
+  const navigate = useNavigate();
   const retrieveAPIResponse = baseAPIEndpoint.useBaseRetrieveAPIQuery({ params: { _id: id } });
   const [ updateAPITrigger, updateAPIResponse ] = baseAPIEndpoint.useBaseUpdateAPIMutation();
 
   // Redux Call
-  const ReduxCall = {
+  const reduxCall = {
     state: useSelector((state: RootState) => state.globalSlice),
     dispatch: useDispatch(),
     action: globalSlice.actions
   }
   
   // API Call
-  const APICall = {
+  const apiCall = {
     retrieveAPIResponse,
     updateAPITrigger,
     updateAPIResponse
@@ -47,28 +47,27 @@ const BaseUpdatePage = () => {
 
   // Listening Socket Events
   useSocketEventHook(socket, {
-    [`BASE_RETRIEVED:${id}`]: () => APICall.retrieveAPIResponse.refetch()
+    [`BASE_RETRIEVED:${id}`]: () => apiCall.retrieveAPIResponse.refetch()
   })  
 
   // All Render
   // 1. Success Render
   useEffect(() => {
-    apiResponseHandler.retrieveAPIResponseHandler(APICall.retrieveAPIResponse)
-  }, [APICall.retrieveAPIResponse])
+    apiResponseHandler.retrieveAPIResponseHandler(apiCall.retrieveAPIResponse)
+  }, [apiCall.retrieveAPIResponse])
   
   // JSX
-  return (!isAllowedUtility(ReduxCall, isAllowedConstant.base, "Update") ? <UnauthorizedAccessComponent /> :
+  return (!isAllowedUtility(reduxCall, isAllowedConstant.base, "Update") ? <UnauthorizedAccessComponent /> :
     <React.Fragment>
       {/* BaseUpdatePage */}
       <BaseUpdateComponent 
-        header={header({ id: (id as string), retrieveAPIResponse: APICall.retrieveAPIResponse })} 
-        data={data({ retrieveAPIResponse: APICall.retrieveAPIResponse })} 
+        header={header({ id: (id as string), retrieveAPIResponse: apiCall.retrieveAPIResponse })} 
+        data={data({ retrieveAPIResponse: apiCall.retrieveAPIResponse })} 
         formSchema={formSchema} 
         formDefaultValue={formDefaultValue}
-        previousValue={previousValue}
-        params={{ id: id }}
-        APICall={APICall}
-        submitHandler={submitHandler} 
+        previousValue={previousValue(apiCall)}
+        apiCall={apiCall}
+        submitHandler={apiResponseHandler.updateAPIResponseHandler(apiCall.updateAPITrigger)(navigate)({ id: id })} 
       />
     </React.Fragment>
   )

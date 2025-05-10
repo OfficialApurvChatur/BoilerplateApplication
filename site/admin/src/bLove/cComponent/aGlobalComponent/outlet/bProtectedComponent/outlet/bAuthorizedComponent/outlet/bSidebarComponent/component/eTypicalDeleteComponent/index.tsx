@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { Trash2Icon } from "lucide-react";
 
 import { Button, buttonVariants } from "@/aConnection/bShadcnConnection/components/ui/button";
@@ -27,14 +27,12 @@ type TypicalDeleteComponentType = {
     links: { text: string, icon?: any, to: string }[] 
   },
   data: any,
-  params: any,
-  APICall: any,
+  apiCall: any,
   submitHandler: any
 }
 
 const TypicalDeleteComponent = (props: TypicalDeleteComponentType) => {
-  // Variable
-  const navigate = useNavigate();
+  const { header, data, apiCall, submitHandler } = props;
 
   // JSX
   return (
@@ -45,22 +43,22 @@ const TypicalDeleteComponent = (props: TypicalDeleteComponentType) => {
         <div className="flex items-center justify-between space-y-2 mb-8" >
           <div>
             <h2 className="text-2xl font-bold tracking-tight">
-              {props.header.title} {" "}
-              <small className="text-sm font-normal tracking-wide italic" >({props.params.id})</small> 
+              {header.title} {" "}
+              <small className="text-sm font-normal tracking-wide italic" >({apiCall.retrieveAPIResponse?.data?.retrieve?._id || "XXXX XXXX XXXX XXXX"})</small> 
             </h2>
-            <p className="text-muted-foreground">{props.header.subtitle}</p>
+            <p className="text-muted-foreground">{header.subtitle}</p>
           </div>
           <div className="flex items-center space-x-2">
-            {props.header.actions.length > 0 && (
-              props.header.actions.map((each, index) => (
+            {header.actions.length > 0 && (
+              header.actions.map((each, index) => (
                 <Button onClick={each.onClick} key={index} >
                   {each.icon && <each.icon />}
                   {each.text}
                 </Button>
               ))
             )}
-            {props.header.links.length > 0 && (
-              props.header.links.map((each, index) => (
+            {header.links.length > 0 && (
+              header.links.map((each, index) => (
                 <Button asChild key={index} >
                   <Link to={each.to} >
                     {each.icon && <each.icon />}
@@ -74,10 +72,10 @@ const TypicalDeleteComponent = (props: TypicalDeleteComponentType) => {
 
         <div className="space-y-8">
           {
-            (props.APICall.retrieveAPIResponse.isLoading || props.APICall.retrieveAPIResponse.isFetching) ? <LoaderComponent /> : 
-            (props.APICall.retrieveAPIResponse.isError) ? <ErrorComponent message="Error..." /> :
-            (props.APICall.retrieveAPIResponse.isSuccess) ? (
-              (props.APICall.retrieveAPIResponse.data.success) ? (
+            (apiCall.retrieveAPIResponse.isLoading || apiCall.retrieveAPIResponse.isFetching) ? <LoaderComponent /> : 
+            (apiCall.retrieveAPIResponse.isError) ? <ErrorComponent message="Error..." /> :
+            (apiCall.retrieveAPIResponse.isSuccess) ? (
+              (apiCall.retrieveAPIResponse.data.success) ? (
                 <React.Fragment>
                   <div className="flex flex-col gap-2" >
                     <Alert className="bg-muted/50 flex flex-col flex-1 gap-2" >
@@ -88,8 +86,8 @@ const TypicalDeleteComponent = (props: TypicalDeleteComponentType) => {
                       </AlertDescription>
                       <AlertDialog>
                         <AlertDialogTrigger asChild>
-                          <Button disabled={props.APICall.deleteAPIResponse.isLoading} variant="destructive">
-                            {props.APICall.deleteAPIResponse.isLoading ? "Loading..." : "Sure Delete"}
+                          <Button disabled={apiCall.deleteAPIResponse.isLoading} variant="destructive">
+                            {apiCall.deleteAPIResponse.isLoading ? "Loading..." : "Sure Delete"}
                           </Button>
                         </AlertDialogTrigger>
                         <AlertDialogContent>
@@ -102,16 +100,14 @@ const TypicalDeleteComponent = (props: TypicalDeleteComponentType) => {
                           </AlertDialogHeader>
                           <AlertDialogFooter>
                             <AlertDialogCancel
-                              disabled={props.APICall.deleteAPIResponse.isLoading}
+                              disabled={apiCall.deleteAPIResponse.isLoading}
                             >Cancel</AlertDialogCancel>
                             <AlertDialogAction 
-                              disabled={props.APICall.deleteAPIResponse.isLoading}
+                              disabled={apiCall.deleteAPIResponse.isLoading}
                               className={cn(buttonVariants({ variant: "destructive" }))} 
-                              onClick={() => {
-                                props.submitHandler(props.APICall,navigate, props.params)
-                              }}
+                              onClick={submitHandler}
                             >
-                              {props.APICall.deleteAPIResponse.isLoading ? "Loading..." : "Sure Delete"}
+                              {apiCall.deleteAPIResponse.isLoading ? "Loading..." : "Sure Delete"}
                             </AlertDialogAction>
                           </AlertDialogFooter>
                         </AlertDialogContent>
@@ -120,7 +116,7 @@ const TypicalDeleteComponent = (props: TypicalDeleteComponentType) => {
                   </div>
 
                   {/* Section */}
-                  {props.data?.filter((eachSection: any) => eachSection.display)?.map((eachSection: any, indexSection: number) => eachSection.display && (
+                  {data?.filter((eachSection: any) => eachSection.display)?.map((eachSection: any, indexSection: number) => eachSection.display && (
                     <React.Fragment key={indexSection} >
                       <Card className="overflow-hidden" >
                         <CardHeader className="flex flex-row items-start bg-muted/50">

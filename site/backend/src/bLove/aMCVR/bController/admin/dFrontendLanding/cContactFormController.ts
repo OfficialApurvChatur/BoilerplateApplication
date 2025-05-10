@@ -54,7 +54,9 @@ const contactFormController = (Model=ContactFormModel, Label="ContactForm") => (
 
       // Clear Cache
       await redisClient.del(`${Label.toLowerCase()}-list`)
-      
+      await redisClient.del(`homepage-list`)
+      await redisClient.del(`aboutpage-list`)
+
       // Emit Event
       const io = request.app.get("io");
       if (create && io) {
@@ -118,6 +120,8 @@ const contactFormController = (Model=ContactFormModel, Label="ContactForm") => (
 
       // Clear Cache
       await redisClient.del(`${Label.toLowerCase()}-list`, `${Label.toLowerCase()}-retrieve:${request.params.id}`)
+      await redisClient.del(`homepage-list`)
+      await redisClient.del(`aboutpage-list`)
       console.log("Cache cleared...")
       
       // Emit Event
@@ -152,6 +156,8 @@ const contactFormController = (Model=ContactFormModel, Label="ContactForm") => (
       
       // Clear Cache
       await redisClient.del(`${Label.toLowerCase()}-list`, `${Label.toLowerCase()}-retrieve:${request.params.id}`)
+      await redisClient.del(`homepage-list`)
+      await redisClient.del(`aboutpage-list`)
       console.log("Cache cleared...")
       
       // Emit Event

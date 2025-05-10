@@ -6,6 +6,7 @@ import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import userAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/dUserAPI";
 import roleAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/cRoleAPI";
+import userAccountAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/aTopbarAPI/aUserAccountAPI";
 
 import UserCreateComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/bUserAdministrationComponent/dUserComponent/bCreateComponent";
 
@@ -23,6 +24,7 @@ const UserCreatePage = () => {
   // Variable
   const [ createAPITrigger, createAPIResponse ] = userAPIEndpoint.useUserCreateAPIMutation();
   const roleListAPIResponse = roleAPIEndpoint.useRoleListForUserCreateAndUpdateAPIQuery(null);
+  const [ userAccountRetrieveAPITrigger, userAccountRetrieveAPIResponse ] = userAccountAPIEndpoint.useLazyUserAccountRetrieveAPIQuery();
 
   // Redux Call
   const ReduxCall = {
@@ -36,6 +38,8 @@ const UserCreatePage = () => {
     createAPITrigger,
     createAPIResponse,
     roleListAPIResponse,
+    userAccountRetrieveAPITrigger,
+    userAccountRetrieveAPIResponse,
   }
 
   // JSX
@@ -47,6 +51,7 @@ const UserCreatePage = () => {
         data={data({ APICall: APICall })} 
         formSchema={formSchema} 
         formDefaultValue={formDefaultValue}
+        ReduxCall={ReduxCall}
         APICall={APICall}
         submitHandler={submitHandler} 
       />

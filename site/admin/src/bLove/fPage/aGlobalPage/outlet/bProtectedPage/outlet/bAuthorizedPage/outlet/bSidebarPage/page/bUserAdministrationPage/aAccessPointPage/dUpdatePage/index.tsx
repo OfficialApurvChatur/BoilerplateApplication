@@ -6,6 +6,7 @@ import { RootState } from "@/aConnection/dReduxConnection";
 import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import accessPointAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/aAccessPointAPI";
+import userAccountAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/aTopbarAPI/aUserAccountAPI";
 
 import AccessPointUpdateComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/bUserAdministrationComponent/aAccessPointComponent/dUpdateComponent";
 
@@ -30,6 +31,7 @@ const AccessPointUpdatePage = () => {
   const socket = useSocket();
   const retrieveAPIResponse = accessPointAPIEndpoint.useAccessPointRetrieveAPIQuery({ params: { _id: id } });
   const [ updateAPITrigger, updateAPIResponse ] = accessPointAPIEndpoint.useAccessPointUpdateAPIMutation();
+  const [ userAccountRetrieveAPITrigger, userAccountRetrieveAPIResponse ] = userAccountAPIEndpoint.useLazyUserAccountRetrieveAPIQuery();
 
   // Redux Call
   const ReduxCall = {
@@ -42,7 +44,9 @@ const AccessPointUpdatePage = () => {
   const APICall = {
     retrieveAPIResponse,
     updateAPITrigger,
-    updateAPIResponse
+    updateAPIResponse,
+    userAccountRetrieveAPITrigger,
+    userAccountRetrieveAPIResponse,
   }
 
   // Listening Socket Events
@@ -67,6 +71,7 @@ const AccessPointUpdatePage = () => {
         formDefaultValue={formDefaultValue}
         previousValue={previousValue}
         params={{ id: id }}
+        ReduxCall={ReduxCall}
         APICall={APICall}
         submitHandler={submitHandler} 
       />

@@ -6,6 +6,7 @@ import { RootState } from "@/aConnection/dReduxConnection";
 import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import roleAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/cRoleAPI";
+import userAccountAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/aTopbarAPI/aUserAccountAPI";
 
 import RoleDeleteComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/bUserAdministrationComponent/cRoleComponent/eDeleteComponent";
 
@@ -27,6 +28,7 @@ const RoleDeletePage = () => {
   const socket = useSocket();
   const retrieveAPIResponse = roleAPIEndpoint.useRoleRetrieveAPIQuery({ params: { _id: id } });
   const [ deleteAPITrigger, deleteAPIResponse ] = roleAPIEndpoint.useRoleDeleteAPIMutation();
+  const [ userAccountRetrieveAPITrigger, userAccountRetrieveAPIResponse ] = userAccountAPIEndpoint.useLazyUserAccountRetrieveAPIQuery();
 
   // Redux Call
   const ReduxCall = {
@@ -39,7 +41,9 @@ const RoleDeletePage = () => {
   const APICall = {
     retrieveAPIResponse,
     deleteAPITrigger,
-    deleteAPIResponse
+    deleteAPIResponse,
+    userAccountRetrieveAPITrigger,
+    userAccountRetrieveAPIResponse,
   }
 
   // Listening Socket Events
@@ -61,6 +65,7 @@ const RoleDeletePage = () => {
         header={header()} 
         data={data({ retrieveAPIResponse: APICall.retrieveAPIResponse })} 
         params={{ id: id }}
+        ReduxCall={ReduxCall}
         APICall={APICall} 
         submitHandler={submitHandler} 
       />

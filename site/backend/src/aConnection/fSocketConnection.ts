@@ -14,7 +14,12 @@ const socketConnection = (server: http.Server<typeof http.IncomingMessage, typeo
     // Socket 
     const io = new Server(server, {
       cors: { 
-        origin: "http://localhost:5173", 
+        origin: (
+          process.env.ENVIRONMENT === "Production" ? [ String(process.env.FRONTEND_URL) ] :
+          process.env.ENVIRONMENT === "Testing" ?  [ String(process.env.FRONTEND_URL) ] :
+          process.env.ENVIRONMENT === "Development" ?  [ "http://localhost:5173", "http://localhost:5174" ] : 
+          []
+        ), 
         credentials: true 
       }
     })

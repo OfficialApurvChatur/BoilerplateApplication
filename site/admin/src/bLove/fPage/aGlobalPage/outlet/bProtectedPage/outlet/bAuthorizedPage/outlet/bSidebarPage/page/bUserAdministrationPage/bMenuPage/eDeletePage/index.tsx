@@ -6,6 +6,7 @@ import { RootState } from "@/aConnection/dReduxConnection";
 import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import menuAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/bMenuAPI";
+import userAccountAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/aTopbarAPI/aUserAccountAPI";
 
 import MenuDeleteComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/bUserAdministrationComponent/bMenuComponent/eDeleteComponent";
 
@@ -27,6 +28,7 @@ const MenuDeletePage = () => {
   const socket = useSocket();
   const retrieveAPIResponse = menuAPIEndpoint.useMenuRetrieveAPIQuery({ params: { _id: id } });
   const [ deleteAPITrigger, deleteAPIResponse ] = menuAPIEndpoint.useMenuDeleteAPIMutation();
+  const [ userAccountRetrieveAPITrigger, userAccountRetrieveAPIResponse ] = userAccountAPIEndpoint.useLazyUserAccountRetrieveAPIQuery();
 
   // Redux Call
   const ReduxCall = {
@@ -39,7 +41,9 @@ const MenuDeletePage = () => {
   const APICall = {
     retrieveAPIResponse,
     deleteAPITrigger,
-    deleteAPIResponse
+    deleteAPIResponse,
+    userAccountRetrieveAPITrigger,
+    userAccountRetrieveAPIResponse,
   }
 
   // Listening Socket Events
@@ -61,6 +65,7 @@ const MenuDeletePage = () => {
         header={header()} 
         data={data({ retrieveAPIResponse: APICall.retrieveAPIResponse })} 
         params={{ id: id }}
+        ReduxCall={ReduxCall}
         APICall={APICall} 
         submitHandler={submitHandler} 
       />

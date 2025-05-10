@@ -13,6 +13,10 @@ const apiConnection = createApi({
     credentials: "include"
   }),
   tagTypes: [
+    "adminHomePageList", 
+    "adminAboutPageList", 
+    "adminContactPageCreate",
+
     "baseList", "baseRetrieve",
     "activityLogList", "activityLogRetrieve",
     "apiLogList", "apiLogRetrieve",

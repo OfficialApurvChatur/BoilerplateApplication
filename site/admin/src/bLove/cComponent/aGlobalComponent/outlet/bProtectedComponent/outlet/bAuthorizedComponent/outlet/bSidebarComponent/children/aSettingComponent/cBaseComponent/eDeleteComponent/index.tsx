@@ -11,8 +11,7 @@ type BaseDeleteComponentType = {
     links: { text: string, icon?: any, to: string }[] 
   },
   data: any,
-  params: any,
-  APICall: any
+  apiCall: any
   submitHandler: any
 }
 
@@ -24,8 +23,7 @@ const BaseDeleteComponent = (props: BaseDeleteComponentType) => {
       <TypicalDeleteComponent 
         header={props.header} 
         data={props.data}
-        params= {props.params}
-        APICall= {props.APICall}
+        apiCall= {props.apiCall}
         submitHandler={props.submitHandler}
       />
     </React.Fragment>

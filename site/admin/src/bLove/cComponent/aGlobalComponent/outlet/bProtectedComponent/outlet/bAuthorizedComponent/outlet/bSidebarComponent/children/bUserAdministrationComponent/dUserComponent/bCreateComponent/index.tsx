@@ -13,6 +13,7 @@ type UserCreateComponentType = {
   data: any,
   formSchema: any,
   formDefaultValue: any,
+  ReduxCall: any,
   APICall: any,
   submitHandler: any
 }
@@ -27,6 +28,7 @@ const UserCreateComponent = (props: UserCreateComponentType) => {
         data={props.data} 
         formSchema={props.formSchema} 
         formDefaultValue={props.formDefaultValue}
+        ReduxCall={props.ReduxCall} 
         APICall={props.APICall} 
         submitHandler={props.submitHandler}
       />

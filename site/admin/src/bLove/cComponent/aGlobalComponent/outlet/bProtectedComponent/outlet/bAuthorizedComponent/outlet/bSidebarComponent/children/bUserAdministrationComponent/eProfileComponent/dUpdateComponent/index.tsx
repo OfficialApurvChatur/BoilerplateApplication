@@ -15,6 +15,7 @@ type ProfileUpdateComponentType = {
   formDefaultValue: any,
   previousValue: any,
   params: any,
+  ReduxCall: any,
   APICall: any
   submitHandler: any
 }
@@ -31,6 +32,7 @@ const ProfileUpdateComponent = (props: ProfileUpdateComponentType) => {
         formDefaultValue={props.formDefaultValue} 
         previousValue= {props.previousValue}
         params= {props.params}
+        ReduxCall={props.ReduxCall} 
         APICall= {props.APICall}
         submitHandler={props.submitHandler}
       />

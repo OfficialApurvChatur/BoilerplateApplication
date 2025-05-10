@@ -4,7 +4,9 @@ import endpointRoute from "../aEndpointRoute";
 const fullRoute = {
   aGlobalRoute: {
     aUnprotectedRoute: {
-      aHomeRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.aHomeRoute}`,
+      aAdminHomePageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute}`,
+      bAdminAboutPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutPageRoute}`,
+      cAdminContactPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.cAdminContactPageRoute}`,
     },
     bProtectedRoute: {
       aAutheticatedRoute: {

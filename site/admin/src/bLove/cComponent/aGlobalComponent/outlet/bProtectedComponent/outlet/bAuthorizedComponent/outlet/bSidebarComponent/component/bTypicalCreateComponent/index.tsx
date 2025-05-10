@@ -1,5 +1,5 @@
 import React from "react"
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 import { useForm } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
@@ -31,23 +31,23 @@ type TypicalCreateComponentType = {
   data: any,
   formSchema: any,
   formDefaultValue: any,
-  APICall: any,
+  apiCall: any,
   submitHandler: any
 }
 
 const TypicalCreateComponent = (props: TypicalCreateComponentType) => {
-  // Variable
-  const navigate = useNavigate();
+  // Destructure Props
+  const { header, data, formSchema, formDefaultValue, apiCall, submitHandler } = props;
 
   // Form
-  const form = useForm<z.infer<typeof props.formSchema>>({
-    resolver: zodResolver(props.formSchema),
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
     mode: "onChange",
-    defaultValues: props.formDefaultValue
+    defaultValues: formDefaultValue
   })
 
   // Submit Handler
-  const onSubmit = async (data: z.infer<typeof props.formSchema>) => {
+  const onSubmit = async (data: z.infer<typeof formSchema>) => {
     // console.log(data)
 
     toast({
@@ -59,7 +59,7 @@ const TypicalCreateComponent = (props: TypicalCreateComponentType) => {
       ),
     })
 
-    props.submitHandler(data, form, props.APICall, navigate)
+    submitHandler(form)(data)
   } 
 
   // JSX
@@ -71,21 +71,21 @@ const TypicalCreateComponent = (props: TypicalCreateComponentType) => {
         <div className="flex items-center justify-between space-y-2 mb-8" >
           <div>
             <h2 className="text-2xl font-bold tracking-tight">
-              {props.header.title} {" "}
+              {header.title} {" "}
             </h2>
-            <p className="text-muted-foreground">{props.header.subtitle}</p>
+            <p className="text-muted-foreground">{header.subtitle}</p>
           </div>
           <div className="flex items-center space-x-2">
-            {props.header.actions.length > 0 && (
-              props.header.actions.map((each, index) => (
+            {header.actions.length > 0 && (
+              header.actions.map((each, index) => (
                 <Button onClick={each.onClick} key={index} >
                   {each.icon && <each.icon />}
                   {each.text}
                 </Button>
               ))
             )}
-            {props.header.links.length > 0 && (
-              props.header.links.map((each, index) => (
+            {header.links.length > 0 && (
+              header.links.map((each, index) => (
                 <Button asChild key={index} >
                   <Link to={each.to} >
                     {each.icon && <each.icon />}
@@ -101,7 +101,7 @@ const TypicalCreateComponent = (props: TypicalCreateComponentType) => {
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" noValidate >
 
             {/* Section */}
-            {props.data?.filter((eachSection: any) => eachSection.display)?.map((eachSection: any, indexSection: number) => eachSection.display && (
+            {data?.filter((eachSection: any) => eachSection.display)?.map((eachSection: any, indexSection: number) => eachSection.display && (
               <React.Fragment key={indexSection} >
                 <Card className="overflow-hidden" >
                   <CardHeader className="flex flex-row items-start bg-muted/50">
@@ -177,8 +177,8 @@ const TypicalCreateComponent = (props: TypicalCreateComponentType) => {
 
             <Button 
               type="submit"
-              disabled={props.APICall.createAPIResponse.isLoading}
-            >{props.APICall.createAPIResponse.isLoading ? "Loading..." : "Create"}</Button>
+              disabled={apiCall.createAPIResponse.isLoading}
+            >{apiCall.createAPIResponse.isLoading ? "Loading..." : "Create"}</Button>
           </form>
         </Form>
 

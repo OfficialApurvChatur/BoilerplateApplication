@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/aConnection/dReduxConnection";
 
@@ -12,7 +13,7 @@ import header from "./extra/eHeader";
 import data from "./extra/fData";
 import formSchema from "./extra/cFormSchema";
 import formDefaultValue from "./extra/dFormDefaultValue";
-import submitHandler from "./extra/bSubmitHandler";
+import apiResponseHandler from "./extra/aAPIResponseHandler";
 
 import isAllowedUtility, { isAllowedConstant } from "@/bLove/dUtility/bIsAllowdUtility";
 import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/component/dUnauthorizedAccessComponent";
@@ -20,23 +21,24 @@ import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/com
 
 const BaseCreatePage = () => {
   // Variable
+  const navigate = useNavigate();
   const [ createAPITrigger, createAPIResponse ] = baseAPIEndpoint.useBaseCreateAPIMutation();
   
   // Redux Call
-  const ReduxCall = {
+  const reduxCall = {
     state: useSelector((state: RootState) => state.globalSlice),
     dispatch: useDispatch(),
     action: globalSlice.actions
   }
 
   // API Call
-  const APICall = {
+  const apiCall = {
     createAPITrigger,
     createAPIResponse,
   }
 
   // JSX
-  return (!isAllowedUtility(ReduxCall, isAllowedConstant.base, "Create") ? <UnauthorizedAccessComponent /> :
+  return (!isAllowedUtility(reduxCall, isAllowedConstant.base, "Create") ? <UnauthorizedAccessComponent /> :
     <React.Fragment>
       {/* BaseCreatePage */}
       <BaseCreateComponent 
@@ -44,8 +46,8 @@ const BaseCreatePage = () => {
         data={data()} 
         formSchema={formSchema} 
         formDefaultValue={formDefaultValue}
-        APICall={APICall}
-        submitHandler={submitHandler} 
+        apiCall={apiCall}
+        submitHandler={apiResponseHandler.createAPIResponseHandler(apiCall.createAPITrigger)(navigate)} 
       />
     </React.Fragment>
   )

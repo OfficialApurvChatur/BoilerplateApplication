@@ -29,13 +29,13 @@ import { DataTableToolbar } from "./data-table-toolbar"
 interface DataTableProps<TData, TValue> {
   columns: ColumnDef<TData, TValue>[]
   data: TData[]
-  APICall: any
+  apiCall: any
 }
 
 export function DataTable<TData, TValue>({
   columns,
   data,
-  APICall
+  apiCall
 }: DataTableProps<TData, TValue>) {
   const [rowSelection, setRowSelection] = React.useState({})
   const [columnVisibility, setColumnVisibility] = React.useState<VisibilityState>({})
@@ -89,23 +89,23 @@ export function DataTable<TData, TValue>({
           </TableHeader>
           <TableBody>
             {
-              (APICall.listAPIResponse.isLoading || APICall.listAPIResponse.isFetching) ? (
+              (apiCall.listAPIResponse.isLoading || apiCall.listAPIResponse.isFetching) ? (
                 <TableRow>
                   <TableCell colSpan={columns.length} className="h-24 text-center" >
                     Loading...
                   </TableCell>
                 </TableRow>
               ) : 
-              (APICall.listAPIResponse.isError) ? (
+              (apiCall.listAPIResponse.isError) ? (
                 <TableRow>
                   <TableCell colSpan={columns.length} className="h-24 text-center" >
                     Error...
                   </TableCell>
                 </TableRow>
               ) : (
-                APICall.listAPIResponse.isSuccess ? (
-                  APICall.listAPIResponse.data.success ? (
-                    APICall.listAPIResponse.data.list.length > 0 ? (
+                apiCall.listAPIResponse.isSuccess ? (
+                  apiCall.listAPIResponse.data.success ? (
+                    apiCall.listAPIResponse.data.list.length > 0 ? (
                       <React.Fragment>
                         {table.getRowModel().rows?.length && (
                           table.getRowModel().rows.map((row) => (

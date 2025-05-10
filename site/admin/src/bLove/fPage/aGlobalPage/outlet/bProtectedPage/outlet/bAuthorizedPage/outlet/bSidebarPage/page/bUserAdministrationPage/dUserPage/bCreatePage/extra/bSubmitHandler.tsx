@@ -5,8 +5,8 @@ import apiResponseHandler from "./aAPIResponseHandler";
 import formSchema from "./cFormSchema";
 
 
-const submitHandler = (data: z.infer<typeof formSchema>, form: any, APICall: any, navigate: NavigateFunction) => {
-  apiResponseHandler.createAPIResponseHandler(data, APICall.createAPITrigger, form, navigate)
+const submitHandler = (data: z.infer<typeof formSchema>, form: any, APICall: any, navigate: NavigateFunction, ReduxCall: any) => {
+  apiResponseHandler.createAPIResponseHandler(data, ReduxCall, APICall.createAPITrigger, form, navigate, APICall.userAccountRetrieveAPITrigger)
 }
 
 export default submitHandler;

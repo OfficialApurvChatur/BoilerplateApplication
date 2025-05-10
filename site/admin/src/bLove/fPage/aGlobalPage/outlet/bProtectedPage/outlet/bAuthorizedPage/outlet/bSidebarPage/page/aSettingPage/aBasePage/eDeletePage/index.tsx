@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/aConnection/dReduxConnection";
 
@@ -12,7 +12,6 @@ import BaseDeleteComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bPro
 import apiResponseHandler from "./extra/aAPIResponseHandler";
 import header from "./extra/cHeader";
 import data from "./extra/dData";
-import submitHandler from "./extra/bSubmitHandler";
 
 import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
 import { useSocket } from "@/aConnection/fSocketConnection";
@@ -25,18 +24,19 @@ const BaseDeletePage = () => {
   // Variable
   const { id } = useParams();
   const socket = useSocket();
+  const navigate = useNavigate();
   const retrieveAPIResponse = baseAPIEndpoint.useBaseRetrieveAPIQuery({ params: { _id: id } });
   const [ deleteAPITrigger, deleteAPIResponse ] = baseAPIEndpoint.useBaseDeleteAPIMutation();
 
   // Redux Call
-  const ReduxCall = {
+  const reduxCall = {
     state: useSelector((state: RootState) => state.globalSlice),
     dispatch: useDispatch(),
     action: globalSlice.actions
   }
   
   // API Call
-  const APICall = {
+  const apiCall = {
     retrieveAPIResponse,
     deleteAPITrigger,
     deleteAPIResponse
@@ -44,25 +44,24 @@ const BaseDeletePage = () => {
 
   // Listening Socket Events
   useSocketEventHook(socket, {
-    [`BASE_RETRIEVED:${id}`]: () => APICall.retrieveAPIResponse.refetch()
+    [`BASE_RETRIEVED:${id}`]: () => apiCall.retrieveAPIResponse.refetch()
   })
   
   // All Render
   // 1. Success Render
   useEffect(() => {
-    apiResponseHandler.retrieveAPIResponseHandler(APICall.retrieveAPIResponse)
-  }, [APICall.retrieveAPIResponse])
+    apiResponseHandler.retrieveAPIResponseHandler(apiCall.retrieveAPIResponse)
+  }, [apiCall.retrieveAPIResponse])
   
   // JSX
-  return (!isAllowedUtility(ReduxCall, isAllowedConstant.base, "Delete") ? <UnauthorizedAccessComponent /> :
+  return (!isAllowedUtility(reduxCall, isAllowedConstant.base, "Delete") ? <UnauthorizedAccessComponent /> :
     <React.Fragment>
       {/* BaseDeletePage */}
       <BaseDeleteComponent
         header={header()} 
-        data={data({ retrieveAPIResponse: APICall.retrieveAPIResponse })} 
-        params={{ id: id }}
-        APICall={APICall} 
-        submitHandler={submitHandler} 
+        data={data({ retrieveAPIResponse: apiCall.retrieveAPIResponse })} 
+        apiCall={apiCall} 
+        submitHandler={apiResponseHandler.deleteAPIResponseHandler(apiCall.deleteAPITrigger)(navigate)({ id: id })} 
       />
     </React.Fragment>
   )

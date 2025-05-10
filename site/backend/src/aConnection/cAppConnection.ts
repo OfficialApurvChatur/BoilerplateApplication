@@ -28,6 +28,14 @@ import { heroRouter } from '../bLove/aMCVR/dRoute/admin/dFrontendLanding/aHeroRo
 import { aboutCompanyRouter } from '../bLove/aMCVR/dRoute/admin/dFrontendLanding/bAboutCompanyRoute';
 import { contactFormRouter } from '../bLove/aMCVR/dRoute/admin/dFrontendLanding/cContactFormRoute';
 
+import { adminHomePageRouter } from '../bLove/aMCVR/dRoute/adminNew/aAdminHomePageRoute';
+import { adminAboutPageRouter } from '../bLove/aMCVR/dRoute/adminNew/bAdminAboutPageRoute';
+import { adminContactPageRouter } from '../bLove/aMCVR/dRoute/adminNew/cAdminContactPageRoute';
+
+import { homePageRouter } from '../bLove/aMCVR/dRoute/frontendNew/aHomePageRoute';
+import { aboutPageRouter } from '../bLove/aMCVR/dRoute/frontendNew/bAboutPageRoute';
+import { contactPageRouter } from '../bLove/aMCVR/dRoute/frontendNew/cContactPageRoute';
+
 import { singleImageRouter } from '../bLove/aMCVR/dRoute/admin/zFreestyleSample/aSingleImageRoute';
 
 
@@ -35,11 +43,13 @@ const appConnection = express();
 
 // Third Party Middleware
 appConnection.use(morganMiddleware);
-appConnection.use(corsMiddleware({ origin: 
-  process.env.ENVIRONMENT === "Production" ? [ String(process.env.FRONTEND_URL) ] :
-  process.env.ENVIRONMENT === "Testing" ?  [ String(process.env.FRONTEND_URL) ] :
-  process.env.ENVIRONMENT === "Development" ?  [ "http://localhost:5173" ] : 
-  [ "http://localhost:5173" ],
+appConnection.use(corsMiddleware({ 
+  origin: (
+    process.env.ENVIRONMENT === "Production" ? [ String(process.env.FRONTEND_URL) ] :
+    process.env.ENVIRONMENT === "Testing" ?  [ String(process.env.FRONTEND_URL) ] :
+    process.env.ENVIRONMENT === "Development" ?  [ "http://localhost:5173", "http://localhost:5174" ] : 
+    []
+  ),
   credentials: true
 }));
 appConnection.use(bodyParserMiddleware.urlencoded({ extended: true }));
@@ -49,6 +59,7 @@ appConnection.use(compressionMiddleware());
 
 // Routing Middleware
 appConnection.get("/", (_request, response) => { response.send(`Welcome to ${process.env.APPLICATION}`) })
+
 appConnection.use("/api/v1/base/", baseRouter);
 appConnection.use("/api/v1/activity-log/", activityLogRouter);
 appConnection.use("/api/v1/api-log/", apiLogRouter);
@@ -68,6 +79,14 @@ appConnection.use("/api/v1/admin-contact-form/", adminContactFormRouter);
 appConnection.use("/api/v1/hero/", heroRouter);
 appConnection.use("/api/v1/about-company/", aboutCompanyRouter);
 appConnection.use("/api/v1/contact-form/", contactFormRouter);
+
+appConnection.use("/api/v1/admin-home-page/", adminHomePageRouter);
+appConnection.use("/api/v1/admin-about-page/", adminAboutPageRouter);
+appConnection.use("/api/v1/admin-contact-page/", adminContactPageRouter);
+
+appConnection.use("/api/v1/home-page/", homePageRouter);
+appConnection.use("/api/v1/about-page/", aboutPageRouter);
+appConnection.use("/api/v1/contact-page/", contactPageRouter);
 
 appConnection.use('/api/v1/single-image/', singleImageRouter);
 

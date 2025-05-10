@@ -1,6 +1,6 @@
-const isAllowedUtility = ( ReduxUltimate: any, model: string, route: string ): boolean => {
+const isAllowedUtility = ( reduxUltimate: any, model: string, route: string ): boolean => {
   
-  const cMenu = (ReduxUltimate.state.receivedObject as any)?.AccountRetrieve?.cRole?.cMenu
+  const cMenu = (reduxUltimate.state.receivedObject as any)?.AccountRetrieve?.cRole?.cMenu
     ?.filter((each: any) => each.menu)
     ?.map((each: any) => {
       let itsMenu;

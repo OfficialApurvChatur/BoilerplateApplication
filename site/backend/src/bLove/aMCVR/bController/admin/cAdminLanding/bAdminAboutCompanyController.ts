@@ -20,6 +20,8 @@ const adminAboutCompanyController = (Model=AdminAboutCompanyModel, Label="AdminA
 
       // Set Cache
       await redisClient.setex(`${Label.toLowerCase()}-list`, 15*60, JSON.stringify(list));
+      await redisClient.del(`adminhomepage-list`)
+      await redisClient.del(`adminaboutpage-list`)
 
       // Total
       const total = await Model.countDocuments();
@@ -118,6 +120,8 @@ const adminAboutCompanyController = (Model=AdminAboutCompanyModel, Label="AdminA
 
       // Clear Cache
       await redisClient.del(`${Label.toLowerCase()}-list`, `${Label.toLowerCase()}-retrieve:${request.params.id}`)
+      await redisClient.del(`adminhomepage-list`)
+      await redisClient.del(`adminaboutpage-list`)
       console.log("Cache cleared...")
       
       // Emit Event
@@ -152,6 +156,8 @@ const adminAboutCompanyController = (Model=AdminAboutCompanyModel, Label="AdminA
       
       // Clear Cache
       await redisClient.del(`${Label.toLowerCase()}-list`, `${Label.toLowerCase()}-retrieve:${request.params.id}`)
+      await redisClient.del(`adminhomepage-list`)
+      await redisClient.del(`adminaboutpage-list`)
       console.log("Cache cleared...")
       
       // Emit Event

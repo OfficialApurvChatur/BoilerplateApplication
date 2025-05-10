@@ -6,6 +6,7 @@ import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
 import profileAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/eProfileAPI";
 import userAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/bUserAdministrationAPI/dUserAPI";
+import userAccountAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/aTopbarAPI/aUserAccountAPI";
 
 import ProfileCreateComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/bUserAdministrationComponent/eProfileComponent/bCreateComponent";
 
@@ -23,6 +24,7 @@ const ProfileCreatePage = () => {
   // Variable
   const [ createAPITrigger, createAPIResponse ] = profileAPIEndpoint.useProfileCreateAPIMutation();
   const userListAPIResponse = userAPIEndpoint.useUserListForProfileCreateAndUpdateAPIQuery(null);
+  const [ userAccountRetrieveAPITrigger, userAccountRetrieveAPIResponse ] = userAccountAPIEndpoint.useLazyUserAccountRetrieveAPIQuery();
 
   // Redux Call
   const ReduxCall = {
@@ -36,6 +38,8 @@ const ProfileCreatePage = () => {
     createAPITrigger,
     createAPIResponse,
     userListAPIResponse,
+    userAccountRetrieveAPITrigger,
+    userAccountRetrieveAPIResponse,
   }
 
   // JSX
@@ -47,6 +51,7 @@ const ProfileCreatePage = () => {
         data={data({ APICall: APICall })} 
         formSchema={formSchema} 
         formDefaultValue={formDefaultValue}
+        ReduxCall={ReduxCall}
         APICall={APICall}
         submitHandler={submitHandler} 
       />

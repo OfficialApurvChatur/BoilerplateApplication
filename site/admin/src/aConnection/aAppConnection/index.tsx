@@ -44,7 +44,9 @@ const SignUpPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bPr
 const ForgotPasswordPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/aAuthenticatedPage/page/cForgotPasswordPage"));
 const ResetPasswordPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/aAuthenticatedPage/page/dResetPasswordPage"));
 
-const HomePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/aHomePage"));
+const AdminHomePagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/aAdminHomePagePage"));
+const AdminAboutPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/bAdminAboutPagePage"));
+const AdminContactPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/cAdminContactPagePage"));
 
 const AccountRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/aTopbarPage/page/aAccountRetrievePage"));
 const AccountUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/aTopbarPage/page/bAccountUpdatePage"));
@@ -153,13 +155,15 @@ const AppConnection = () => {
     <React.Fragment>
       {/* AppConnection */}
       
-      <Helmet><title>Boilerplate Application</title></Helmet>
+      <Helmet><title>Boilerplate</title></Helmet>
       <Toaster />
 
       <Routes>
         <Route element={<GlobalLayout />} >
           <Route element={<UnprotectedLayout />} >
-            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.aHomeRoute}`} element={<HomePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute}`} element={<AdminHomePagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutPageRoute}`} element={<AdminAboutPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.cAdminContactPageRoute}`} element={<AdminContactPagePage />} />
           </Route>
           <Route element={<ProtectedLayout />} >
             <Route element={<AuthenticatedLayout />} >
