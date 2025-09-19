@@ -32,6 +32,7 @@
     "cron": "^4.3.3",
     "dotenv": "^17.2.2",
     "express": "^5.1.0",
+    "express-validator": "^7.2.1",
     "ioredis": "^5.7.0",
     "moment-timezone": "^0.6.0",
     "mongoose": "^8.18.1",

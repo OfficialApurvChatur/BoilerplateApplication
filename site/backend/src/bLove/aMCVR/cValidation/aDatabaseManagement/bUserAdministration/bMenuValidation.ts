@@ -1,0 +1,38 @@
+﻿import validatorUtility from "../../../../cUtility/cValidatorUtility";
+import { MenuModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/bMenuModel';
+
+
+const menuValidation = {
+  list: () => [],
+
+  create: () => [
+    ...validatorUtility.aImage(),
+    ...validatorUtility.aTitle({ Model: MenuModel, label: "MenuModel", mode: "create" }),
+    ...validatorUtility.aSubtitle(),
+    ...validatorUtility.aDescription(),
+    ...validatorUtility.aDetail(),
+    ...validatorUtility.aStatus(),
+    ...validatorUtility.aState(),
+  ],
+
+  retrieve: () => [
+    ...validatorUtility.idParam({ Model: MenuModel, label: "MenuModel" })
+  ],
+
+  update: () => [
+    ...validatorUtility.aImage(),
+    ...validatorUtility.aTitle({ Model: MenuModel, label: "MenuModel", mode: "update" }),
+    ...validatorUtility.aSubtitle(),
+    ...validatorUtility.aDescription(),
+    ...validatorUtility.aDetail(),
+    ...validatorUtility.aStatus(),
+    ...validatorUtility.aState(),
+    ...validatorUtility.idParam({ Model: MenuModel, label: "MenuModel" })
+  ],
+
+  delete: () => [
+    ...validatorUtility.idParam({ Model: MenuModel, label: "MenuModel" })
+  ],
+};
+
+export default menuValidation;
