@@ -13,10 +13,10 @@ const morganMiddleware = morgan(
       ip,
       city: location.city,
       country: location.country,
-      method: tokens.method(req, res),
-      url: tokens.url(req, res),
-      status: tokens.status(req, res),
-      responseTime: `${tokens["response-time"](req, res)} ms`,
+      method: (tokens as any).method(req, res),
+      url: (tokens as any).url(req, res),
+      status: (tokens as any).status(req, res),
+      responseTime: `${(tokens as any)["response-time"](req, res)} ms`,
     };
 
     loggerUtility.info(JSON.stringify(logObject));
