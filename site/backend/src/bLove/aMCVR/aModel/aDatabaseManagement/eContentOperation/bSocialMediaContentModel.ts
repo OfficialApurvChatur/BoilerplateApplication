@@ -4,7 +4,7 @@ import slugify from "slugify";
 import defaultSchemaUtility, { DefaultSchemaUtilityType } from "../../../../cUtility/bDefaultSchemaUtility";
 
 
-export type SignUpModelType = DefaultSchemaUtilityType & {
+export type SocialMediaContentModelType = DefaultSchemaUtilityType & {
   // A. BasicInfo Type - Done
   // B. PersonalInfo Type - Done
   // C. RelationInfo Type
@@ -15,7 +15,7 @@ export type SignUpModelType = DefaultSchemaUtilityType & {
   // ..
 }
 
-const schema = new mongoose.Schema<SignUpModelType>({
+const schema = new mongoose.Schema<SocialMediaContentModelType>({
   // A. BasicInfo Schema - Done
   // B. PersonalInfo Schema - Done
   ...defaultSchemaUtility.obj,
@@ -49,4 +49,4 @@ schema.pre("findOneAndUpdate", function(next) {
   next();
 })
 
-export const SignUpModel = mongoose.model<SignUpModelType>("SignUpModel", schema);
+export const SocialMediaContentModel = mongoose.model<SocialMediaContentModelType>("SocialMediaContentModel", schema);

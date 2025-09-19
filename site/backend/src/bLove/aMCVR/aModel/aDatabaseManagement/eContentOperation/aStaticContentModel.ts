@@ -4,7 +4,7 @@ import slugify from "slugify";
 import defaultSchemaUtility, { DefaultSchemaUtilityType } from "../../../../cUtility/bDefaultSchemaUtility";
 
 
-export type SignInModelType = DefaultSchemaUtilityType & {
+export type StaticContentModelType = DefaultSchemaUtilityType & {
   // A. BasicInfo Type - Done
   // B. PersonalInfo Type - Done
   // C. RelationInfo Type
@@ -15,7 +15,7 @@ export type SignInModelType = DefaultSchemaUtilityType & {
   // ..
 }
 
-const schema = new mongoose.Schema<SignInModelType>({
+const schema = new mongoose.Schema<StaticContentModelType>({
   // A. BasicInfo Schema - Done
   // B. PersonalInfo Schema - Done
   ...defaultSchemaUtility.obj,
@@ -49,4 +49,4 @@ schema.pre("findOneAndUpdate", function(next) {
   next();
 })
 
-export const SignInModel = mongoose.model<SignInModelType>("SignInModel", schema);
+export const StaticContentModel = mongoose.model<StaticContentModelType>("StaticContentModel", schema);
