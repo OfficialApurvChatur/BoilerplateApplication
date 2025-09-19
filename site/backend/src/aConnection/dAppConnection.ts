@@ -1,5 +1,4 @@
 import express from "express";
-
 import bodyParserMiddleware from "body-parser";
 import cookieParserMiddleware from "cookie-parser";
 import corsMiddleware from "cors";
@@ -7,6 +6,8 @@ import compressionMiddleware from "compression";
 import morganMiddleware from "morgan";
 
 import loggerConnection from "./bLoggerConnection";
+
+import errorMiddleware from "../bLove/bMiddleware/aErrorMiddleware";
 
 
 loggerConnection().info({ 
@@ -27,5 +28,8 @@ appConnection.use(compressionMiddleware());
 appConnection.get("/", (_request: express.Request, response: express.Response) => {
   response.send(`Welcome to ${process.env.APPLICATION}`)
 })
+
+// Error Middleware
+appConnection.use(errorMiddleware)
 
 export default appConnection;
