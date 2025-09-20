@@ -8,6 +8,13 @@ export type PermissionModelType = DefaultSchemaUtilityType & {
   // A. BasicInfo Type - Done
   // B. PersonalInfo Type - Done
   // C. RelationInfo Type
+  cMenu?: {
+    menu: mongoose.Types.ObjectId;
+    access: {
+      accessPoint: mongoose.Types.ObjectId;
+      hasAccess: boolean;
+    };
+  }[];
   // ...
   // D. MoreInfo Type
   // ...
@@ -21,7 +28,15 @@ const schema = new mongoose.Schema<PermissionModelType>({
   ...defaultSchemaUtility.obj,
 
   // C. RelationInfo Schema
-  // ...
+  cMenu: {
+    type: [{
+      menu: { type: mongoose.Schema.Types.ObjectId, ref: "MenuModel", required: true },
+      access: [{
+        accessPoint: { type: mongoose.Schema.Types.ObjectId, ref: "AccessPointModel" },
+        hasAccess: Boolean,
+      }],
+    }],
+  }
 
   // D. MoreInfo Schema
   // ...
@@ -29,7 +44,7 @@ const schema = new mongoose.Schema<PermissionModelType>({
   // E. CriticalInfo Schema
   // ..
 
-})
+} as mongoose.SchemaDefinition<PermissionModelType> )
 
 // Pre Create
 schema.pre("save", function(next) {

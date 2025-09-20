@@ -8,7 +8,7 @@ export type RoleModelType = DefaultSchemaUtilityType & {
   // A. BasicInfo Type - Done
   // B. PersonalInfo Type - Done
   // C. RelationInfo Type
-  // ...
+  cPermission?: mongoose.Types.ObjectId; 
   // D. MoreInfo Type
   // ...
   // E. CriticalInfo Type
@@ -21,7 +21,7 @@ const schema = new mongoose.Schema<RoleModelType>({
   ...defaultSchemaUtility.obj,
 
   // C. RelationInfo Schema
-  // ...
+  cPermission: { type: mongoose.Schema.Types.ObjectId, ref: "RoleModel" },
 
   // D. MoreInfo Schema
   // ...

@@ -8,6 +8,7 @@ export type MenuModelType = DefaultSchemaUtilityType & {
   // A. BasicInfo Type - Done
   // B. PersonalInfo Type - Done
   // C. RelationInfo Type
+  cAccessPoint: {}[];
   // ...
   // D. MoreInfo Type
   // ...
@@ -21,7 +22,7 @@ const schema = new mongoose.Schema<MenuModelType>({
   ...defaultSchemaUtility.obj,
 
   // C. RelationInfo Schema
-  // ...
+  cAccessPoint : [{ type: mongoose.Schema.Types.ObjectId, ref: 'AccessPointModel' }],
 
   // D. MoreInfo Schema
   // ...
@@ -29,7 +30,7 @@ const schema = new mongoose.Schema<MenuModelType>({
   // E. CriticalInfo Schema
   // ..
 
-})
+} as mongoose.SchemaDefinition<MenuModelType> )
 
 // Pre Create
 schema.pre("save", function(next) {

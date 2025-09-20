@@ -8,7 +8,7 @@ export type ProfileModelType = DefaultSchemaUtilityType & {
   // A. BasicInfo Type - Done
   // B. PersonalInfo Type - Done
   // C. RelationInfo Type
-  // ...
+  cUser?: mongoose.Types.ObjectId; 
   // D. MoreInfo Type
   // ...
   // E. CriticalInfo Type
@@ -21,8 +21,8 @@ const schema = new mongoose.Schema<ProfileModelType>({
   ...defaultSchemaUtility.obj,
 
   // C. RelationInfo Schema
-  // ...
-
+  cUser: { type: mongoose.Schema.Types.ObjectId, ref: "UserModel", required: true },
+  
   // D. MoreInfo Schema
   // ...
 
