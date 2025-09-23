@@ -5,11 +5,14 @@ import { redisClient } from '../../../../../aConnection/eRedisConnection';
 import loggerConnection from '../../../../../aConnection/bLoggerConnection';
 import emailConnection from '../../../../../aConnection/hEmailConnection';
 import catchAsyncMiddleware from '../../../../../bLove/bMiddleware/bCatchAsyncMiddleware';
+import ErrorUtility from '../../../../cUtility/aErrorUtility';
+import generateCookieUtility from '../../../../cUtility/fGenerateCookieUtility';
 
 import { AccountModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/gAccountModel';
+import { UserModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/eUserModel';
 
 
-const accountController = (Model=AccountModel, Label="AccountModel") => ({
+const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=UserModel, ExtraLabel="UserModel") => ({
   // List Controller
   list: catchAsyncMiddleware(
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -296,6 +299,144 @@ const accountController = (Model=AccountModel, Label="AccountModel") => ({
       })
     }
   ),  
+
+  // Retrieve Account Controller
+  retrieveAccount: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // Retrieve
+      const retrieve = await ExtraModel.findOne({_id: (request as any).user})
+        .populate({
+          path: 'cRole',
+          select: "aTitle cMenu",
+          populate: {
+            path: 'cMenu.menu',
+            select: "aTitle cAccessPoint",
+            populate: {
+              path: 'cAccessPoint',
+              select: 'aTitle',
+            },  
+          }
+        });
+
+      // Not Found
+      if (!retrieve) next(new ErrorUtility(`${Label} Not Found`, 404))
+
+      // Response
+      response.status(200).json({ 
+        success: true,
+        message: `${ExtraLabel} Account Retrieved Successfully`,
+        user_account_retrieve: retrieve
+      })
+    }
+  ),
+
+  // Update Account Controller
+  updateAccount: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // Update
+      const update = await ExtraModel.findByIdAndUpdate(
+        (request as any).user,{
+          aImage: request.body.aImage,
+          aTitle: request.body.aTitle,
+          aSubtitle: request.body.aSubtitle,
+          aDescription: request.body.aDescription,
+          aDetail: request.body.aDetail,
+          aStatus: request.body.aStatus === "Active" ? true : false,
+          aState: request.body.aState,
+
+          // cRole: request.body.cRole,
+          // cProfile: request.body.cProfile,
+
+          eImage: request.body.eImage,
+          eFirstname: request.body.eFirstname,
+          eLastname: request.body.eLastname,
+          // eEmail: request.body.eEmail,
+          eMobile: request.body.eMobile,
+          // ePassword: request.body.ePassword,  
+        }, {
+          new: true,
+          runValidators: true,
+          useFindAndModify: false
+        }
+      )
+
+      // Response
+      response.status(200).json({
+        success: true,
+        message: `${ExtraLabel} Account Updated Successfully`,
+        update: update
+      })
+    }
+  ),
+  
+  // Email Update Account Controller
+  emailUpdateAccount: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // Update
+      const update = await ExtraModel.findByIdAndUpdate(
+        (request as any).user,{
+          eEmail: request.body.eEmail,
+        }, {
+          new: true,
+          runValidators: true,
+          useFindAndModify: false
+        }
+      )
+
+      // Response
+      response.status(200).json({
+        success: true,
+        message: `${ExtraLabel} Account Email Updated Successfully`,
+        update: update
+      })
+    }
+  ),
+    
+  // Password Update Account Controller
+  passwordUpdateAccount: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // Retrieve
+      const retrieve = await ExtraModel.findById((request as any).user).select("+ePassword");
+
+      // Save
+      (retrieve as any).ePassword = request.body.eNewPassword;
+      await (retrieve as any).save();
+
+      // Response
+      generateCookieUtility(201, `${ExtraLabel} Account Password Updated Successfully...`, `user_update`, retrieve, response)
+    }
+  ),
+
+  // Delete Account Controller
+  deleteAccount: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+      // Retrieve
+      let user = await ExtraModel.findById((request as any).user._id).populate({
+        path: 'cRole',
+        model: 'RoleModel',
+        populate: {
+          path: 'cMenus.menu',
+          model: 'MenuModel',
+        }
+      })
+
+      // Delete
+      if (user) {
+        await user.deleteOne({"_id": user._id})
+      }
+      
+      // Response
+      response.status(200).json({
+        success: true,
+        message: `${ExtraLabel} Profile Deleted Successfully`,
+        delete: user
+      })
+    }
+  ),
 })
 
 export default accountController;

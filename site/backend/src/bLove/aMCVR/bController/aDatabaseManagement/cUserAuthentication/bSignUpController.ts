@@ -5,11 +5,14 @@ import { redisClient } from '../../../../../aConnection/eRedisConnection';
 import loggerConnection from '../../../../../aConnection/bLoggerConnection';
 import emailConnection from '../../../../../aConnection/hEmailConnection';
 import catchAsyncMiddleware from '../../../../../bLove/bMiddleware/bCatchAsyncMiddleware';
+import generateCookieUtility from '../../../../cUtility/fGenerateCookieUtility';
 
 import { SignUpModel } from '../../../aModel/aDatabaseManagement/cUserAuthentication/bSignUpModel';
+import { UserModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/eUserModel';
+import { ProfileModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/fProfileModel';
 
 
-const signUpController = (Model=SignUpModel, Label="SignUpModel") => ({
+const signUpController = (Model=SignUpModel, Label="SignUpModel", ExtraModel=UserModel, ExtraLabel="UserModel", ExtraModel2=ProfileModel, ExtraLabel2="ProfileModel") => ({
   // List Controller
   list: catchAsyncMiddleware(
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -296,6 +299,54 @@ const signUpController = (Model=SignUpModel, Label="SignUpModel") => ({
       })
     }
   ),  
+
+  // Sign Up Controller
+  signUp: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // Create
+      const create = await ExtraModel.create({
+        aTitle: request.body.aTitle,
+        aSubtitle: request.body.aSubtitle,
+
+        cRole: request.body.cRole,
+        // cProfile: request.body.cProfile,
+
+        eFirstname: request.body.eFirstname,
+        eLastname: request.body.eLastname,
+        eEmail: request.body.eEmail,
+        eMobile: request.body.eMobile,
+        ePassword: request.body.ePassword,
+      })
+
+      // Create Profile & Update User
+      let update
+      if (create) {
+        const createProfile = await ExtraModel2.create({
+          aTitle: `Profile for ${request.body.eEmail}`,
+    
+          cUser: create._id,
+        })    
+        
+        update = await Model.findByIdAndUpdate(
+          create._id, {
+            cProfile: createProfile._id,
+          }, {
+            new: true,
+            runValidators: true,
+            useFindAndMidify: false
+          }
+        )
+      }
+      
+      // Clear Cache
+      await redisClient.del(`${ExtraLabel}-list`, `${Label}-list-for-profile-create-and-update`)
+      await redisClient.del("profile-list", "profile-list-for-user-create-and-update",);
+      
+      // Response
+      generateCookieUtility(201, `User Registered Successfully`, `user_sign_up`, create, response)
+    }
+  ),
 })
 
 export default signUpController;

@@ -18,7 +18,8 @@ const menuController = (Model=MenuModel, Label="MenuModel") => ({
       const list = await Model.find()
         .select("aImage aTitle bCreatedAt bUpdatedAt")
         .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
-        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail");
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("cAccessPoint", "aTitle");
 
       // Create Cache
       await redisClient.setex(`${Label}-list`, 15*60, JSON.stringify(list));
@@ -55,6 +56,8 @@ const menuController = (Model=MenuModel, Label="MenuModel") => ({
 
         bCreatedAt: request.body.bCreatedAt,
         bCreatedBy: request.body.bCreatedBy,
+
+        cAccessPoint: request.body.cAccessPoint,
       })
 
       // Delete Cache
@@ -123,7 +126,8 @@ const menuController = (Model=MenuModel, Label="MenuModel") => ({
       // Retrieve
       const retrieve = await Model.findById(request.params.id)
         .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
-        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail");
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("cAccessPoint", "aTitle");
 
       // Create Cache
       await redisClient.setex(`${Label}-retrieve:${request.params.id}`, 15*60, JSON.stringify(retrieve))
@@ -157,6 +161,8 @@ const menuController = (Model=MenuModel, Label="MenuModel") => ({
   
           bUpdatedAt: request.body.bUpdatedAt,
           bUpdatedBy: request.body.bUpdatedBy,  
+
+          cAccessPoint: request.body.cAccessPoint,
         }, {
           new: true,
           runValidators: true,
@@ -295,7 +301,32 @@ const menuController = (Model=MenuModel, Label="MenuModel") => ({
         delete_object: delete_object
       })
     }
-  ),  
+  ), 
+  
+  // List Mini
+  listMini: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // List
+      const list = await Model.find()
+        .select("aTitle cAccessPoint")
+        .populate("cAccessPoint", "aTitle");
+
+      // Set Cache
+      await redisClient.setex(`${Label}-list-mini`, 15*60, JSON.stringify(list));
+
+      // Total
+      const total = await Model.countDocuments();
+
+      // Response
+      response.status(200).json({
+        success: true,
+        message: `${Label} Listed Successfully (Mini)`,
+        total: total,
+        list: list,
+      })
+    }
+  ),
 })
 
 export default menuController;

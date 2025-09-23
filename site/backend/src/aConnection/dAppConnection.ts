@@ -66,40 +66,40 @@ appConnection.get("/", (_request: express.Request, response: express.Response) =
 })
 
 appConnection.use("/api/v1/base/", baseRoute);
-appConnection.use("/api/v1/activity-log/", activityLogRoute);
-appConnection.use("/api/v1/api-log/", apiLogRoute);
+// appConnection.use("/api/v1/activity-log/", activityLogRoute);
+// appConnection.use("/api/v1/api-log/", apiLogRoute);
 
-appConnection.use("/api/v1/access-point/", accessPointRoute);
-appConnection.use("/api/v1/menu/", menuRoute);
-appConnection.use("/api/v1/permission/", permissionRoute);
-appConnection.use("/api/v1/role/", roleRoute);
-appConnection.use("/api/v1/user/", userRoute);
-appConnection.use("/api/v1/profile/", profileRoute);
-appConnection.use("/api/v1/account/", accountRoute);
+// appConnection.use("/api/v1/access-point/", accessPointRoute);
+// appConnection.use("/api/v1/menu/", menuRoute);
+// appConnection.use("/api/v1/permission/", permissionRoute);
+// appConnection.use("/api/v1/role/", roleRoute);
+// appConnection.use("/api/v1/user/", userRoute);
+// appConnection.use("/api/v1/profile/", profileRoute);
+// appConnection.use("/api/v1/account/", accountRoute);
 
-appConnection.use("/api/v1/sign-in/", signInRoute);
-appConnection.use("/api/v1/sign-up/", signUpRoute);
-appConnection.use("/api/v1/sign-out/", signOutRoute);
-appConnection.use("/api/v1/forgot-password/", forgotPasswordRoute);
-appConnection.use("/api/v1/reset-password/", resetPasswordRoute);
+// appConnection.use("/api/v1/sign-in/", signInRoute);
+// appConnection.use("/api/v1/sign-up/", signUpRoute);
+// appConnection.use("/api/v1/sign-out/", signOutRoute);
+// appConnection.use("/api/v1/forgot-password/", forgotPasswordRoute);
+// appConnection.use("/api/v1/reset-password/", resetPasswordRoute);
 
-appConnection.use("/api/v1/image-storage/", imageStorageRoute);
-appConnection.use("/api/v1/video-storage/", videoStorageRoute);
+// appConnection.use("/api/v1/image-storage/", imageStorageRoute);
+// appConnection.use("/api/v1/video-storage/", videoStorageRoute);
 
-appConnection.use("/api/v1/static-content/", staticContentRoute);
-appConnection.use("/api/v1/social-media/", socialMediaContentRoute);
+// appConnection.use("/api/v1/static-content/", staticContentRoute);
+// appConnection.use("/api/v1/social-media/", socialMediaContentRoute);
 
-appConnection.use("/api/v1/admin-hero/", adminHeroRoute);
-appConnection.use("/api/v1/admin-about-company/", adminAboutCompanyRoute);
-appConnection.use("/api/v1/admin-about-application/", adminAboutApplicationRoute);
-appConnection.use("/api/v1/admin-contact-form/", adminContactFormRoute);
-appConnection.use("/api/v1/admin-contact-info/", adminContactInfoRoute);
+// appConnection.use("/api/v1/admin-hero/", adminHeroRoute);
+// appConnection.use("/api/v1/admin-about-company/", adminAboutCompanyRoute);
+// appConnection.use("/api/v1/admin-about-application/", adminAboutApplicationRoute);
+// appConnection.use("/api/v1/admin-contact-form/", adminContactFormRoute);
+// appConnection.use("/api/v1/admin-contact-info/", adminContactInfoRoute);
 
-appConnection.use("/api/v1/hero/", heroRoute);
-appConnection.use("/api/v1/about-company/", aboutCompanyRoute);
-appConnection.use("/api/v1/about-application/", aboutApplicationRoute);
-appConnection.use("/api/v1/contact-form/", contactFormRoute);
-appConnection.use("/api/v1/contact-info/", contactInfoRoute);
+// appConnection.use("/api/v1/hero/", heroRoute);
+// appConnection.use("/api/v1/about-company/", aboutCompanyRoute);
+// appConnection.use("/api/v1/about-application/", aboutApplicationRoute);
+// appConnection.use("/api/v1/contact-form/", contactFormRoute);
+// appConnection.use("/api/v1/contact-info/", contactInfoRoute);
 
 // Error Middleware
 appConnection.use(errorMiddleware)

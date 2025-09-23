@@ -296,6 +296,30 @@ const accessPointController = (Model=AccessPointModel, Label="AccessPointModel")
       })
     }
   ),  
+
+  // List Mini
+  listMini: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // List
+      const list = await Model.find()
+        .select("aTitle");
+
+      // Set Cache
+      await redisClient.setex(`${Label}-list-mini`, 15*60, JSON.stringify(list));
+
+      // Total
+      const total = await Model.countDocuments();
+
+      // Response
+      response.status(200).json({
+        success: true,
+        message: `${Label} Listed Successfully (Mini)`,
+        total: total,
+        list: list,
+      })
+    }
+  ),
 })
 
 export default accessPointController;

@@ -7,9 +7,10 @@ import emailConnection from '../../../../../aConnection/hEmailConnection';
 import catchAsyncMiddleware from '../../../../../bLove/bMiddleware/bCatchAsyncMiddleware';
 
 import { SignOutModel } from '../../../aModel/aDatabaseManagement/cUserAuthentication/cSignOutModel';
+import { UserModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/eUserModel';
 
 
-const signOutController = (Model=SignOutModel, Label="SignOutModel") => ({
+const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=UserModel, ExtraLabel="UserModel") => ({
   // List Controller
   list: catchAsyncMiddleware(
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -296,6 +297,30 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel") => ({
       })
     }
   ),  
+
+  // Sign Out Controller
+  signOut: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // Retrieve
+      const retrieve = await ExtraModel.findOne({_id: (request as any).user});
+
+      // Remove Token
+      const options: express.CookieOptions = {
+        expires: new Date(Date.now()),
+        httpOnly: true,
+        secure: true,
+        sameSite: "none"	
+      }    
+
+      // Response
+			response.status(200).cookie('MAIN_AUTHENTICATION_TOKEN', null, options).json({ 
+				success: true,
+				message: "User Logged Out Successfully",
+				user_logout: retrieve
+			})
+    }
+  ),
 })
 
 export default signOutController;

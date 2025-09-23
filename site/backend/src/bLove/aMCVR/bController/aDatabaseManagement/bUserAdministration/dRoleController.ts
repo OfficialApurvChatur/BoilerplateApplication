@@ -18,7 +18,8 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
       const list = await Model.find()
         .select("aImage aTitle bCreatedAt bUpdatedAt")
         .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
-        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail");
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("cPermission", "aTitle");
 
       // Create Cache
       await redisClient.setex(`${Label}-list`, 15*60, JSON.stringify(list));
@@ -55,6 +56,8 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
 
         bCreatedAt: request.body.bCreatedAt,
         bCreatedBy: request.body.bCreatedBy,
+
+        cPermission: request.body.cPermission,
       })
 
       // Delete Cache
@@ -157,6 +160,8 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
   
           bUpdatedAt: request.body.bUpdatedAt,
           bUpdatedBy: request.body.bUpdatedBy,  
+
+          cPermission: request.body.cPermission,
         }, {
           new: true,
           runValidators: true,
@@ -296,6 +301,30 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
       })
     }
   ),  
+
+  // List Mini
+  listMini: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // List
+      const list = await Model.find()
+        .select("aTitle");
+
+      // Set Cache
+      await redisClient.setex(`${Label}-list-mini`, 15*60, JSON.stringify(list));
+
+      // Total
+      const total = await Model.countDocuments();
+
+      // Response
+      response.status(200).json({
+        success: true,
+        message: `${Label} Listed Successfully (Mini)`,
+        total: total,
+        list: list,
+      })
+    }
+  ),
 })
 
 export default roleController;

@@ -55,6 +55,8 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
 
         bCreatedAt: request.body.bCreatedAt,
         bCreatedBy: request.body.bCreatedBy,
+
+        cMenu: request.body.cMenu,
       })
 
       // Delete Cache
@@ -123,7 +125,15 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
       // Retrieve
       const retrieve = await Model.findById(request.params.id)
         .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
-        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail");
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail")
+        .populate({
+          path: 'cMenu.menu',
+          select: 'aTitle',
+          populate: {
+            path: 'cAccessPoint',
+            select: 'aTitle',
+          },
+        });
 
       // Create Cache
       await redisClient.setex(`${Label}-retrieve:${request.params.id}`, 15*60, JSON.stringify(retrieve))
@@ -157,6 +167,8 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
   
           bUpdatedAt: request.body.bUpdatedAt,
           bUpdatedBy: request.body.bUpdatedBy,  
+
+          cMenu: request.body.cMenu,
         }, {
           new: true,
           runValidators: true,
@@ -295,7 +307,31 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
         delete_object: delete_object
       })
     }
-  ),  
+  ), 
+  
+    // List Mini
+  listMini: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // List
+      const list = await Model.find()
+        .select("aTitle");
+
+      // Set Cache
+      await redisClient.setex(`${Label}-list-mini`, 15*60, JSON.stringify(list));
+
+      // Total
+      const total = await Model.countDocuments();
+
+      // Response
+      response.status(200).json({
+        success: true,
+        message: `${Label} Listed Successfully (Mini)`,
+        total: total,
+        list: list,
+      })
+    },
+  ),
 })
 
 export default permissionController;

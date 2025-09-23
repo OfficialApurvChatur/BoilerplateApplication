@@ -7,9 +7,10 @@ import emailConnection from '../../../../../aConnection/hEmailConnection';
 import catchAsyncMiddleware from '../../../../../bLove/bMiddleware/bCatchAsyncMiddleware';
 
 import { UserModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/eUserModel';
+import { ProfileModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/fProfileModel';
 
 
-const userController = (Model=UserModel, Label="UserModel") => ({
+const userController = (Model=UserModel, Label="UserModel", ExtraModel=ProfileModel, ExtraLabel="ProfileModel") => ({
   // List Controller
   list: catchAsyncMiddleware(
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -18,7 +19,9 @@ const userController = (Model=UserModel, Label="UserModel") => ({
       const list = await Model.find()
         .select("aImage aTitle bCreatedAt bUpdatedAt")
         .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
-        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail");
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("cRole", "aTitle")
+        .populate("cProfile", "aTitle");
 
       // Create Cache
       await redisClient.setex(`${Label}-list`, 15*60, JSON.stringify(list));
@@ -55,7 +58,39 @@ const userController = (Model=UserModel, Label="UserModel") => ({
 
         bCreatedAt: request.body.bCreatedAt,
         bCreatedBy: request.body.bCreatedBy,
+
+        cRole: request.body.cRole,
+        // cProfile: request.body.cProfile, (Automatically Handled)
+
+        eFirstname: request.body.eFirstname,
+        eLastname: request.body.eLastname,
+        eEmail: request.body.eEmail,
+        eMobile: request.body.eMobile,
+        ePassword: request.body.ePassword,
       })
+
+      // Create Profile & Update User
+      let update
+      if (create) {
+        const createProfile = await ExtraModel.create({
+          aTitle: `Profile for ${request.body.eEmail}`,
+    
+          bCreatedAt: request.body.bCreatedAt,
+          bCreatedBy: request.body.bCreatedBy,
+  
+          cUser: create._id,
+        })    
+        
+        update = await Model.findByIdAndUpdate(
+          create._id, {
+            cProfile: createProfile._id,
+          }, {
+            new: true,
+            runValidators: true,
+            useFindAndMidify: false
+          }
+        )
+      }
 
       // Delete Cache
       await redisClient.del(`${Label}-list`)
@@ -110,7 +145,7 @@ const userController = (Model=UserModel, Label="UserModel") => ({
       // Response
       response.status(200).json({
         success: true,
-        message: `${Label} Created Successfully`,
+        message: `${ExtraLabel} Created & ${Label} Created and Updated Successfully`,
         create: create
       }) 
     }
@@ -157,6 +192,15 @@ const userController = (Model=UserModel, Label="UserModel") => ({
   
           bUpdatedAt: request.body.bUpdatedAt,
           bUpdatedBy: request.body.bUpdatedBy,  
+
+          cRole: request.body.cRole,
+          cProfile: request.body.cProfile,
+
+          eFirstname: request.body.eFirstname,
+          eLastname: request.body.eLastname,
+          // eEmail: request.body.eEmail,
+          eMobile: request.body.eMobile,
+          // ePassword: request.body.ePassword, 
         }, {
           new: true,
           runValidators: true,
@@ -296,6 +340,30 @@ const userController = (Model=UserModel, Label="UserModel") => ({
       })
     }
   ),  
+
+  // List Mini
+  listMini: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // List
+      const list = await Model.find()
+        .select("aTitle");
+
+      // Set Cache
+      await redisClient.setex(`${Label.toLowerCase()}-list-mini`, 15*60, JSON.stringify(list));
+
+      // Total
+      const total = await Model.countDocuments();
+
+      // Response
+      response.status(200).json({
+        success: true,
+        message: `${Label} Listed Successfully (Mini)`,
+        total: total,
+        list: list,
+      })
+    }
+  ),
 })
 
 export default userController;

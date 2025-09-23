@@ -5,11 +5,13 @@ import { redisClient } from '../../../../../aConnection/eRedisConnection';
 import loggerConnection from '../../../../../aConnection/bLoggerConnection';
 import emailConnection from '../../../../../aConnection/hEmailConnection';
 import catchAsyncMiddleware from '../../../../../bLove/bMiddleware/bCatchAsyncMiddleware';
+import generateCookieUtility from '../../../../cUtility/fGenerateCookieUtility';
 
 import { SignInModel } from '../../../aModel/aDatabaseManagement/cUserAuthentication/aSignInModel';
+import { UserModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/eUserModel';
 
 
-const signInController = (Model=SignInModel, Label="SignInModel") => ({
+const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=UserModel, ExtraLabel="UserModel") => ({
   // List Controller
   list: catchAsyncMiddleware(
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -296,6 +298,18 @@ const signInController = (Model=SignInModel, Label="SignInModel") => ({
       })
     }
   ),  
+
+  // Sign In Controller
+  signIn: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // Retrieve
+      const retrieve = await ExtraModel.findOne({eEmail: request.body.eEmail});
+
+      // Response
+			generateCookieUtility(200, "User Logged In Successfully", "user_sign_in", retrieve, response)
+    }
+  ),
 })
 
 export default signInController;
