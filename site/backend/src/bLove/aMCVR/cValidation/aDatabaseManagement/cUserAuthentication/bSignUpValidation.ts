@@ -1,5 +1,7 @@
 ﻿import validatorUtility from "../../../../cUtility/cValidatorUtility";
 import { SignUpModel } from '../../../aModel/aDatabaseManagement/cUserAuthentication/bSignUpModel';
+import { UserModel } from "../../../aModel/aDatabaseManagement/bUserAdministration/eUserModel";
+import { RoleModel } from "../../../aModel/aDatabaseManagement/bUserAdministration/dRoleModel";
 
 
 const signUpValidation = {
@@ -32,6 +34,17 @@ const signUpValidation = {
 
   delete: () => [
     ...validatorUtility.idParam({ Model: SignUpModel, label: "SignUpModel" })
+  ],
+
+  signUp: () => [
+    ...validatorUtility.aTitle({ Model: UserModel, label: "UserModel", mode: "update" }),
+    ...validatorUtility.cRole({ Model: RoleModel, label: "RoleModel" }),
+    ...validatorUtility.eFirstname(),
+    ...validatorUtility.eLastname(),
+    ...validatorUtility.eEmail({ Model: UserModel, label: "UserModel" }),
+    ...validatorUtility.eMobile(),
+    ...validatorUtility.ePassword(),
+    ...validatorUtility.eConfirmPassword(),
   ],
 };
 

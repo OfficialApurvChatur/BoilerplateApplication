@@ -1,4 +1,5 @@
 ﻿import validatorUtility from "../../../../cUtility/cValidatorUtility";
+import { UserModel } from "../../../aModel/aDatabaseManagement/bUserAdministration/eUserModel";
 import { ProfileModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/fProfileModel';
 
 
@@ -13,6 +14,7 @@ const profileValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.cUser({ Model: UserModel, label: "UserModel" }),
   ],
 
   retrieve: () => [
@@ -27,6 +29,7 @@ const profileValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.cUser({ Model: UserModel, label: "UserModel" }),
     ...validatorUtility.idParam({ Model: ProfileModel, label: "ProfileModel" })
   ],
 

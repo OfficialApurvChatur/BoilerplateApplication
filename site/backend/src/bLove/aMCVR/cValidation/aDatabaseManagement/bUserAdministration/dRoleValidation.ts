@@ -1,5 +1,6 @@
 ﻿import validatorUtility from "../../../../cUtility/cValidatorUtility";
 import { RoleModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/dRoleModel';
+import { PermissionModel } from "../../../aModel/aDatabaseManagement/bUserAdministration/cPermissionModel";
 
 
 const roleValidation = {
@@ -13,6 +14,7 @@ const roleValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.cPermission({ Model: PermissionModel, label: "PermissionModel" }),
   ],
 
   retrieve: () => [
@@ -27,12 +29,15 @@ const roleValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.cPermission({ Model: PermissionModel, label: "PermissionModel" }),
     ...validatorUtility.idParam({ Model: RoleModel, label: "RoleModel" })
   ],
 
   delete: () => [
     ...validatorUtility.idParam({ Model: RoleModel, label: "RoleModel" })
   ],
+
+  listMini: () => [],
 };
 
 export default roleValidation;

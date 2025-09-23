@@ -33,6 +33,8 @@ const accessPointValidation = {
   delete: () => [
     ...validatorUtility.idParam({ Model: AccessPointModel, label: "AccessPointModel" })
   ],
+
+  listMini: () => [],
 };
 
 export default accessPointValidation;

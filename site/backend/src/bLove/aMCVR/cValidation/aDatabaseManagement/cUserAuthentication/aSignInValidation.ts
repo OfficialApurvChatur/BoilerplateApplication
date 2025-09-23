@@ -1,5 +1,6 @@
 ﻿import validatorUtility from "../../../../cUtility/cValidatorUtility";
 import { SignInModel } from '../../../aModel/aDatabaseManagement/cUserAuthentication/aSignInModel';
+import { UserModel } from "../../../aModel/aDatabaseManagement/bUserAdministration/eUserModel";
 
 
 const signInValidation = {
@@ -32,6 +33,11 @@ const signInValidation = {
 
   delete: () => [
     ...validatorUtility.idParam({ Model: SignInModel, label: "SignInModel" })
+  ],
+
+  signIn: () => [
+    ...validatorUtility.eEmail({ Model: UserModel, label: "UserModel" }),
+    ...validatorUtility.ePassword(),
   ],
 };
 

@@ -1,5 +1,6 @@
 ﻿import validatorUtility from "../../../../cUtility/cValidatorUtility";
 import { MenuModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/bMenuModel';
+import { AccessPointModel } from "../../../aModel/aDatabaseManagement/bUserAdministration/aAccessPointModel";
 
 
 const menuValidation = {
@@ -13,6 +14,7 @@ const menuValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.cAccessPoint({ Model: AccessPointModel, label: "AccessPointModel" }),
   ],
 
   retrieve: () => [
@@ -27,12 +29,15 @@ const menuValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
-    ...validatorUtility.idParam({ Model: MenuModel, label: "MenuModel" })
+    ...validatorUtility.cAccessPoint({ Model: AccessPointModel, label: "AccessPointModel" }),
+    ...validatorUtility.idParam({ Model: MenuModel, label: "MenuModel" }),
   ],
 
   delete: () => [
     ...validatorUtility.idParam({ Model: MenuModel, label: "MenuModel" })
   ],
+
+  listMini: () => [],
 };
 
 export default menuValidation;

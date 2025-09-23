@@ -33,6 +33,8 @@ const signOutValidation = {
   delete: () => [
     ...validatorUtility.idParam({ Model: SignOutModel, label: "SignOutModel" })
   ],
+
+  signOut: () => []
 };
 
 export default signOutValidation;
