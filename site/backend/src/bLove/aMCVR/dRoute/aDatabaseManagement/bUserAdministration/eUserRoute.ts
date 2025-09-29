@@ -57,4 +57,12 @@ router.route("/delete/:id").delete(
   userContorller().delete
 )
 
+router.route("/list-mini").get(
+  rateLimiterMiddleware({ key:"UserModel-list-mini", time: 60, limit: 10 }),
+  authenticationMiddleware,
+  checkCacheMiddleware({ key:"UserModel-list-mini", label: "User", name: "List", customMessage: "UserModel Listed Successfully (Mini)... From Backend Cache" }), 
+  userValidation.listMini(), validatorMiddleware, 
+  userContorller().listMini
+)
+
 export const userRoute = router

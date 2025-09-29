@@ -57,4 +57,12 @@ router.route("/delete/:id").delete(
   roleContorller().delete
 )
 
+router.route("/list-mini").get(
+  rateLimiterMiddleware({ key:"RoleModel-list-mini", time: 60, limit: 10 }),
+  authenticationMiddleware,
+  checkCacheMiddleware({ key:"RoleModel-list-mini", label: "Role", name: "List", customMessage: "RoleModel Listed Successfully (Mini)... From Backend Cache" }), 
+  roleValidation.listMini(), validatorMiddleware, 
+  roleContorller().listMini
+)
+
 export const roleRoute = router

@@ -57,4 +57,12 @@ router.route("/delete/:id").delete(
   permissionContorller().delete
 )
 
+router.route("/list-mini").get(
+  rateLimiterMiddleware({ key:"PermissionModel-list-mini", time: 60, limit: 10 }),
+  authenticationMiddleware,
+  checkCacheMiddleware({ key:"PermissionModel-list-mini", label: "Permission", name: "List", customMessage: "PermissionModel Listed Successfully (Mini)... From Backend Cache" }), 
+  permissionValidation.listMini(), validatorMiddleware, 
+  permissionContorller().listMini
+)
+
 export const permissionRoute = router

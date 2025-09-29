@@ -57,4 +57,10 @@ router.route("/delete/:id").delete(
   signUpContorller().delete
 )
 
+router.route("/sign-up").post(
+  rateLimiterMiddleware({ key:"SignUpModel-sign-up", time: 60, limit: 10 }),
+  signUpValidation.signUp(), validatorMiddleware, 
+  signUpContorller().signUp
+)
+
 export const signUpRoute = router

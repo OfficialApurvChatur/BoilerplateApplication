@@ -160,6 +160,8 @@ const profileController = (Model=ProfileModel, Label="ProfileModel") => ({
   
           bUpdatedAt: request.body.bUpdatedAt,
           bUpdatedBy: request.body.bUpdatedBy,  
+
+          cUser: request.body.cUser,
         }, {
           new: true,
           runValidators: true,

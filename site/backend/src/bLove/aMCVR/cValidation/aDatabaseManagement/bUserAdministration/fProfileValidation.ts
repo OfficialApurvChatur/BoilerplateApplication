@@ -36,6 +36,8 @@ const profileValidation = {
   delete: () => [
     ...validatorUtility.idParam({ Model: ProfileModel, label: "ProfileModel" })
   ],
+
+  listMini: () => [],
 };
 
 export default profileValidation;

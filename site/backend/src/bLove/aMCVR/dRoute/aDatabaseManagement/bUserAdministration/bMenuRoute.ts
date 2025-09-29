@@ -57,4 +57,12 @@ router.route("/delete/:id").delete(
   menuContorller().delete
 )
 
+router.route("/list-mini").get(
+  rateLimiterMiddleware({ key:"MenuModel-list-mini", time: 60, limit: 10 }),
+  authenticationMiddleware,
+  checkCacheMiddleware({ key:"MenuModel-list-mini", label: "Menu", name: "List", customMessage: "MenuModel Listed Successfully (Mini)... From Backend Cache" }), 
+  menuValidation.listMini(), validatorMiddleware, 
+  menuContorller().listMini
+)
+
 export const menuRoute = router

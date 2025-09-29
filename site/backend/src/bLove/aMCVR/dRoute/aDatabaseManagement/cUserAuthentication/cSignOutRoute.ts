@@ -57,4 +57,10 @@ router.route("/delete/:id").delete(
   signOutContorller().delete
 )
 
+router.route("/sign-out").get(
+  rateLimiterMiddleware({ key:"SignOutModel-sign-out", time: 60, limit: 10 }),
+  signOutValidation.signOut(), validatorMiddleware, 
+  signOutContorller().signOut,
+);
+
 export const signOutRoute = router

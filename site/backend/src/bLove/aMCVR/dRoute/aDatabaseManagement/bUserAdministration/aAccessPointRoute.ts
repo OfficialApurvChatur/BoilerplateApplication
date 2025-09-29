@@ -57,4 +57,12 @@ router.route("/delete/:id").delete(
   accessPointContorller().delete
 )
 
+router.route("/list-mini").get(
+  rateLimiterMiddleware({ key:"AccessPointModel-list-mini", time: 60, limit: 10 }),
+  authenticationMiddleware,
+  checkCacheMiddleware({ key:"AccessPointModel-list-mini", label: "AccessPoint", name: "List", customMessage: "AccessPointModel Listed Successfully (Mini)... From Backend Cache" }), 
+  accessPointValidation.listMini(), validatorMiddleware, 
+  accessPointContorller().listMini
+)
+
 export const accessPointRoute = router
