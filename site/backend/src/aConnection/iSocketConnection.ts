@@ -9,7 +9,7 @@ const socketConnection = (server: http.Server<typeof http.IncomingMessage, typeo
     // Socket 
     const io = new Server(server, {
       cors: { 
-        origin: "*", 
+        origin: "http://localhost:5173", 
         credentials: true 
       }
     })
