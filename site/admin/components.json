@@ -17,5 +17,6 @@
     "ui": "@/aConnection/bShadcnConnection/components/ui",
     "lib": "@/aConnection/bShadcnConnection/lib",
     "hooks": "@/aConnection/bShadcnConnection/hooks"
-  }
+  },
+  "registries": {}
 }
