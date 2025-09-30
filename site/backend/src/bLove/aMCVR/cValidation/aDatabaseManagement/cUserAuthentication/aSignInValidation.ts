@@ -36,7 +36,7 @@ const signInValidation = {
   ],
 
   signIn: () => [
-    ...validatorUtility.eEmail({ Model: UserModel, label: "UserModel" }),
+    ...validatorUtility.eEmail({ Model: UserModel, label: "UserModel", mode: "sign-in" }),
     ...validatorUtility.ePassword(),
   ],
 };

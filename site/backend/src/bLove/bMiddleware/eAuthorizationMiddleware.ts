@@ -1,5 +1,4 @@
 import express from 'express';
-import jsonwebtoken, { JwtPayload } from 'jsonwebtoken';
 
 import catchAsyncMiddleware from './bCatchAsyncMiddleware';
 import ErrorUtility from '../cUtility/aErrorUtility';
@@ -14,17 +13,21 @@ const authorizationMiddleware = (props: { menu: string, accessPoint: string[]}) 
       const user = await UserModel.findById((request as any).user)
         .populate({
           path: 'cRole',
-          select: "aTitle cMenu",
+          select: 'aTitle cPermission',
           populate: {
-            path: 'cMenu.menu',
-            select: "aTitle cAccessPoint",
+            path: 'cPermission',
+            select: 'cMenu',
             populate: {
-              path: 'cAccessPoint',
-              select: 'aTitle',
-            },  
-          }
+              path: 'cMenu.menu',
+              select: 'aTitle cAccessPoint',
+              populate: {
+                path: 'cAccessPoint',
+                select: 'aTitle',
+              },
+            },
+          },
         });
-
+      
       // Not Found
       if (!user) {
         return next(new ErrorUtility("User is removed", 401));
@@ -36,7 +39,7 @@ const authorizationMiddleware = (props: { menu: string, accessPoint: string[]}) 
       }
             
       // Populate And Update Menu
-      const cMenu = ((user as any)?.cRole as any)?.cMenu?.
+      const cMenu = ((user as any)?.cRole as any)?.cPermission?.cMenu?.
         filter((each: any) => each.menu)?.
         map((each: any) => {
           let itsMenu;

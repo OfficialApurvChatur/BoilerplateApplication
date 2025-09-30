@@ -21,7 +21,7 @@ const schema = new mongoose.Schema<RoleModelType>({
   ...defaultSchemaUtility.obj,
 
   // C. RelationInfo Schema
-  cPermission: { type: mongoose.Schema.Types.ObjectId, ref: "RoleModel" },
+  cPermission: { type: mongoose.Schema.Types.ObjectId, ref: "PermissionModel" },
 
   // D. MoreInfo Schema
   // ...

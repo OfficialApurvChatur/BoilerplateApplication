@@ -11,6 +11,12 @@ type TTitleArgs = {
   mode?: "create" | "update";
 };
 
+type TEmailArgs = {
+  Model: mongoose.Model<any>;
+  label?: string;
+  mode?: "sign-in";
+};
+
 type TIdArgs = {
   Model: mongoose.Model<any>;
   label?: string;
@@ -236,7 +242,7 @@ const validatorUtility = {
       .withMessage("Please enter lastname"),
   ],
 
-  eEmail: ({ Model, label = "Record" }: TIdArgs) => [
+  eEmail: ({ Model, label = "Record", mode }: TEmailArgs) => [
     body("eEmail")
       .notEmpty()
       .withMessage("Please enter email")
@@ -244,7 +250,8 @@ const validatorUtility = {
       .withMessage("Please enter valid email")
       .custom(async (value) => {
         const retrieve = await Model.findOne({ eEmail: value });
-        if (retrieve) throw new ErrorUtility("User already exists...", 401);
+        if (!retrieve && mode === "sign-in") throw new ErrorUtility("Invalid Email or Password", 401);
+        if (retrieve && mode !== "sign-in") throw new ErrorUtility("User already exists...", 401);
         return true;
       }),
   ],

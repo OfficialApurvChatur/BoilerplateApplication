@@ -344,7 +344,7 @@ const signUpController = (Model=SignUpModel, Label="SignUpModel", ExtraModel=Use
       await redisClient.del("profile-list", "profile-list-for-user-create-and-update",);
       
       // Response
-      generateCookieUtility(201, `User Registered Successfully`, `user_sign_up`, update, response)
+      generateCookieUtility(201, `User Registered Successfully`, `user_sign_up`, create, response)
     }
   ),
 })
