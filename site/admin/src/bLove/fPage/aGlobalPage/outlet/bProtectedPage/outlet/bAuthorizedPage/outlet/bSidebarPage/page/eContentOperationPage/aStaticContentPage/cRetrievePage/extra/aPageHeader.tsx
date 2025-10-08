@@ -1,0 +1,17 @@
+import { RefreshCcw } from "lucide-react";
+import fullRoute from "@/bLove/gRoute/bFullRoute";
+
+
+const pageHeader = ({ id, retrieveAPIResponse }: { id: string, retrieveAPIResponse: any }) => ({
+  title: "Static Content Retrieve",
+  subtitle: "This is just some subtitle for the static content retrieve",
+  actions: [
+    { text: "Refetch", icon: RefreshCcw, onClick: retrieveAPIResponse.refetch },
+  ],
+  links: [
+    { text: "Update Static Content", to: `${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.eContentOperationRoute.aStaticContentRoute.dUpdateRoute}/${id}` },
+    { text: "Delete Static Content", to: `${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.eContentOperationRoute.aStaticContentRoute.eDeleteRoute}/${id}` },
+  ]
+})
+
+export default pageHeader;

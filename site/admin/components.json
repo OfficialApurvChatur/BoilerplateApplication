@@ -4,19 +4,18 @@
   "rsc": false,
   "tsx": true,
   "tailwind": {
-    "config": "",
+    "config": "tailwind.config.js",
     "css": "src/aConnection/bShadcnConnection/index.css",
     "baseColor": "slate",
     "cssVariables": true,
     "prefix": ""
   },
-  "iconLibrary": "lucide",
   "aliases": {
-    "components": "@/aConnection/bShadcnConnection/components",
+    "components": "@/components",
     "utils": "@/aConnection/bShadcnConnection/lib/utils",
     "ui": "@/aConnection/bShadcnConnection/components/ui",
     "lib": "@/aConnection/bShadcnConnection/lib",
     "hooks": "@/aConnection/bShadcnConnection/hooks"
   },
-  "registries": {}
+  "iconLibrary": "lucide"
 }

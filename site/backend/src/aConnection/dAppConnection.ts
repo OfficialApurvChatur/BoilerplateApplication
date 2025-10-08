@@ -55,7 +55,8 @@ const appConnection = express();
 // Third Party Middleware
 appConnection.use(morganMiddleware);
 appConnection.use(corsMiddleware({
-  origin: ["http://localhost:5173"]
+  origin: ["http://localhost:5173"],
+  credentials: true
 }));
 appConnection.use(bodyParserMiddleware.urlencoded({ extended: true }));
 appConnection.use(bodyParserMiddleware.json());
@@ -89,7 +90,7 @@ appConnection.use("/api/v1/image-storage/", imageStorageRoute);
 appConnection.use("/api/v1/video-storage/", videoStorageRoute);
 
 appConnection.use("/api/v1/static-content/", staticContentRoute);
-appConnection.use("/api/v1/social-media/", socialMediaContentRoute);
+appConnection.use("/api/v1/social-media-content/", socialMediaContentRoute);
 
 appConnection.use("/api/v1/admin-hero/", adminHeroRoute);
 appConnection.use("/api/v1/admin-about-company/", adminAboutCompanyRoute);

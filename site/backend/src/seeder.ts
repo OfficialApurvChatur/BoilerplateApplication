@@ -137,36 +137,146 @@ const seeder = async () => {
 
     // --- Create Multiple Users ---
     const userList = [
-      { eFirstname: "Ashlesha", eLastname: "Wase", eEmail: "ashlesha.wase@boilerplate.com" },
-      { eFirstname: "Anisha", eLastname: "Wase", eEmail: "anisha.wase@boilerplate.com" },
-      { eFirstname: "Kirti", eLastname: "Turkar", eEmail: "kirti.turkar@boilerplate.com" },
-      { eFirstname: "Rashi", eLastname: "Suryavanshi", eEmail: "rashi.suryavanshi@boilerplate.com" },
-      { eFirstname: "Shivani", eLastname: "Dangore", eEmail: "shivani.dangore@boilerplate.com" },
-      { eFirstname: "Priti", eLastname: "Bokade", eEmail: "priti.bokade@boilerplate.com" },
-      { eFirstname: "Sunaina", eLastname: "Jaiswal", eEmail: "sunaina.jaiswal@boilerplate.com" },
-      { eFirstname: "Sharanya", eLastname: "Palli", eEmail: "sharanya.palli@boilerplate.com" },
-      { eFirstname: "Mayuri", eLastname: "Sangidwar", eEmail: "mayuri.sangidwar@boilerplate.com" },
-      { eFirstname: "Mayuri", eLastname: "Dhurve", eEmail: "mayuri.dhurve@boilerplate.com" },
-      { eFirstname: "Saloni", eLastname: "Meshram", eEmail: "saloni.meshram@boilerplate.com" },
-      { eFirstname: "Rama", eLastname: "Mitkari", eEmail: "rama.mitkari@boilerplate.com" },
-      { eFirstname: "Anushree", eLastname: "Mandape", eEmail: "anushree.mandape@boilerplate.com" },
-      { eFirstname: "Neha", eLastname: "Chourasia", eEmail: "neha.chourasia@boilerplate.com" },
-      { eFirstname: "Geeta", eLastname: "Kulkarni", eEmail: "geeta.kulkarni@boilerplate.com" },
-      { eFirstname: "Nayan", eLastname: "Choudhari", eEmail: "nayan.choudhari@boilerplate.com" },
-      { eFirstname: "Golden", eLastname: "Bhringree", eEmail: "golden.bhringree@boilerplate.com" },
-      { eFirstname: "Hema", eLastname: "Kalsha", eEmail: "hema.kalsha@boilerplate.com" },
-      { eFirstname: "Ashi", eLastname: "Jain", eEmail: "ashi.jain@boilerplate.com" },
-      { eFirstname: "Kamini", eLastname: "Patel", eEmail: "kamini.patel@boilerplate.com" },
-      { eFirstname: "Kanak", eLastname: "Kshirsagar", eEmail: "kanak.kshirsagar@boilerplate.com" },
-      { eFirstname: "Rutuja", eLastname: "Bhoyar", eEmail: "rutuja.bhoyar@boilerplate.com" },
-      { eFirstname: "Dhruvika", eLastname: "Khinvasara", eEmail: "dhruvika.khinvasara@boilerplate.com" },
-
-      // Newly added users
-      { eFirstname: "Shilpa", eLastname: "Awale", eEmail: "shilpa.awale@boilerplate.com" },
-      { eFirstname: "Swati", eLastname: "Patil", eEmail: "swati.patil@boilerplate.com" },
-      { eFirstname: "Rutuja", eLastname: "Pethe", eEmail: "rutuja.pethe@boilerplate.com" },
-      { eFirstname: "Shruti", eLastname: "Gupta", eEmail: "shruti.gupta@boilerplate.com" },
-      { eFirstname: "Charushila", eLastname: "Sahare", eEmail: "charushila.sahare@boilerplate.com" },
+      { 
+        eFirstname: "Ashlesha", 
+        eLastname: "Wase", 
+        eEmail: "ashlesha.wase@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Anisha", 
+        eLastname: "Wase", 
+        eEmail: "anisha.wase@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Kirti", 
+        eLastname: "Turkar", 
+        eEmail: "kirti.turkar@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Rashi", 
+        eLastname: "Suryavanshi", 
+        eEmail: "rashi.suryavanshi@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Shivani", 
+        eLastname: "Dangore", 
+        eEmail: "shivani.dangore@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Priti", 
+        eLastname: "Bokade", 
+        eEmail: "priti.bokade@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Sunaina", 
+        eLastname: "Jaiswal", 
+        eEmail: "sunaina.jaiswal@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Sharanya", 
+        eLastname: "Palli", 
+        eEmail: "sharanya.palli@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Mayuri", 
+        eLastname: "Sangidwar", 
+        eEmail: "mayuri.sangidwar@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Mayuri", 
+        eLastname: "Dhurve", 
+        eEmail: "mayuri.dhurve@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Saloni", 
+        eLastname: "Meshram", 
+        eEmail: "saloni.meshram@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Rama", 
+        eLastname: "Mitkari", 
+        eEmail: "rama.mitkari@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Anushree", 
+        eLastname: "Mandape", 
+        eEmail: "anushree.mandape@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Neha", 
+        eLastname: "Chourasia", 
+        eEmail: "neha.chourasia@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Geeta", 
+        eLastname: "Kulkarni", 
+        eEmail: "geeta.kulkarni@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Nayan", 
+        eLastname: "Choudhari", 
+        eEmail: "nayan.choudhari@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Golden", 
+        eLastname: "Bhringree", 
+        eEmail: "golden.bhringree@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Hema", 
+        eLastname: "Kalsha", 
+        eEmail: "hema.kalsha@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Ashi", 
+        eLastname: "Jain", 
+        eEmail: "ashi.jain@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Kamini", 
+        eLastname: "Patel", 
+        eEmail: "kamini.patel@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Kanak", 
+        eLastname: "Kshirsagar", 
+        eEmail: "kanak.kshirsagar@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Rutuja", 
+        eLastname: "Bhoyar", 
+        eEmail: "rutuja.bhoyar@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Dhruvika", 
+        eLastname: "Khinvasara", 
+        eEmail: "dhruvika.khinvasara@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Shilpa", 
+        eLastname: "Awale", 
+        eEmail: "shilpa.awale@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Swati", 
+        eLastname: "Patil", 
+        eEmail: "swati.patil@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Rutuja", 
+        eLastname: "Pethe", 
+        eEmail: "rutuja.pethe@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Shruti", 
+        eLastname: "Gupta", 
+        eEmail: "shruti.gupta@boilerplate.com" 
+      },
+      { 
+        eFirstname: "Charushila", 
+        eLastname: "Sahare", 
+        eEmail: "charushila.sahare@boilerplate.com" 
+      },
     ];
 
     for (const u of userList) {

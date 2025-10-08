@@ -250,8 +250,8 @@ const validatorUtility = {
       .withMessage("Please enter valid email")
       .custom(async (value) => {
         const retrieve = await Model.findOne({ eEmail: value });
-        if (!retrieve && mode === "sign-in") throw new ErrorUtility("Invalid Email or Password", 401);
-        if (retrieve && mode !== "sign-in") throw new ErrorUtility("User already exists...", 401);
+        if (mode === "sign-in" && !retrieve) throw new ErrorUtility("Invalid Email or Password", 401);
+        if (mode !== "sign-in" && retrieve) throw new ErrorUtility("User already exists...", 401);
         return true;
       }),
   ],

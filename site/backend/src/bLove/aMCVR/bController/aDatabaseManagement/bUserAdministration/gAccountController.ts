@@ -308,15 +308,19 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
       const retrieve = await ExtraModel.findOne({_id: (request as any).user})
         .populate({
           path: 'cRole',
-          select: "aTitle cMenu",
+          select: 'aTitle cPermission',
           populate: {
-            path: 'cMenu.menu',
-            select: "aTitle cAccessPoint",
+            path: 'cPermission',
+            select: 'cMenu',
             populate: {
-              path: 'cAccessPoint',
-              select: 'aTitle',
-            },  
-          }
+              path: 'cMenu.menu',
+              select: 'aTitle cAccessPoint',
+              populate: {
+                path: 'cAccessPoint',
+                select: 'aTitle',
+              },
+            },
+          },
         });
 
       // Not Found

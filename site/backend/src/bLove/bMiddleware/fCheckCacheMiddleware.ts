@@ -17,8 +17,8 @@ const checkCacheMiddleware = ({ key, label, name, customMessage }: TCheckCacheOp
 
       // Check Cache
       const cacheKey = 
-        (key === `${label}-retrieve`) ? (`${label}-retrieve:${request.params.id}`) : 
-        (key);
+        (key === `${label}Model-retrieve`) ? (`${label}Model-retrieve:${request.params.id}`) : 
+        (`${key}Model`);
 
       const oldCache = await redisClient.get(cacheKey);
 
@@ -29,7 +29,7 @@ const checkCacheMiddleware = ({ key, label, name, customMessage }: TCheckCacheOp
         response.status(200).json({
           success: true,
           message: customMessage || `${label} ${name}ed Successfully... From Backend Cache`,
-          [name]: JSON.parse(oldCache),
+          [name.toLowerCase()]: JSON.parse(oldCache),
         });
 
         return;

@@ -57,29 +57,29 @@ router.route("/delete/:id").delete(
   accountContorller().delete
 )
 
-router.route("/retrieve").get(
-  rateLimiterMiddleware({ key:"AccountModel-account-retrieve", time: 60, limit: 10 }),
+router.route("/retrieve-primary").get(
+  rateLimiterMiddleware({ key:"AccountModel-retrieve-primary", time: 60, limit: 10 }),
   authenticationMiddleware,
   accountValidation.retrieveAccount(), validatorMiddleware, 
   accountContorller().retrieveAccount
 )
 
-router.route("/update").put(
-  rateLimiterMiddleware({ key:"AccountModel-account-update", time: 60, limit: 10 }),
+router.route("/update-primary").put(
+  rateLimiterMiddleware({ key:"AccountModel-update-primary", time: 60, limit: 10 }),
   authenticationMiddleware,
   accountValidation.updateAccount(), validatorMiddleware, 
   accountContorller().updateAccount,
 );
 
-router.route("/email-update").put(
-  rateLimiterMiddleware({ key:"AccountModel-account-email-update", time: 60, limit: 10 }),
+router.route("/email-update-primary").put(
+  rateLimiterMiddleware({ key:"AccountModel-email-update-primary", time: 60, limit: 10 }),
   authenticationMiddleware,
   accountValidation.emailUpdateAccount(), validatorMiddleware, 
   accountContorller().emailUpdateAccount,
 );
 
-router.route("/password-update").put(
-  rateLimiterMiddleware({ key:"AccountModel-account-password-update", time: 60, limit: 10 }),
+router.route("/password-update-primary").put(
+  rateLimiterMiddleware({ key:"AccountModel-password-update-primary", time: 60, limit: 10 }),
   authenticationMiddleware,
   accountValidation.passwordUpdateAccount(), validatorMiddleware, 
   accountContorller().passwordUpdateAccount,
