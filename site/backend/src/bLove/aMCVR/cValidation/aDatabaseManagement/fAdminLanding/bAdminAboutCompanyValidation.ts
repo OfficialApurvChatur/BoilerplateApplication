@@ -13,6 +13,7 @@ const adminAboutCompanyValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dTag2(),
   ],
 
   retrieve: () => [
@@ -27,6 +28,7 @@ const adminAboutCompanyValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dTag2(),
     ...validatorUtility.idParam({ Model: AdminAboutCompanyModel, label: "AdminAboutCompanyModel" })
   ],
 

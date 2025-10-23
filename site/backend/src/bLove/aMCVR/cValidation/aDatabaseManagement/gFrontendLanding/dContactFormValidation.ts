@@ -1,5 +1,5 @@
 ﻿import validatorUtility from "../../../../cUtility/cValidatorUtility";
-import { ContactFormModel } from '../../../aModel/aDatabaseManagement/gFrontendLanding/dContactFormModel';
+import { ContactFormModel } from "../../../aModel/aDatabaseManagement/gFrontendLanding/dContactFormModel";
 
 
 const contactFormValidation = {

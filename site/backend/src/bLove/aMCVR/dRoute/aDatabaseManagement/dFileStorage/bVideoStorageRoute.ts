@@ -57,4 +57,19 @@ router.route("/delete/:id").delete(
   videoStorageContorller().delete
 )
 
+router.route("/single-image-create").post(
+  authenticationMiddleware, 
+  videoStorageContorller().singleVideoCreate
+);
+
+router.route("/single-image-update").post(
+  authenticationMiddleware, 
+  videoStorageContorller().singleVideoUpdate
+);  
+
+router.route("/single-image-delete").post(
+  authenticationMiddleware, 
+  videoStorageContorller().singleVideoDelete
+);  
+
 export const videoStorageRoute = router

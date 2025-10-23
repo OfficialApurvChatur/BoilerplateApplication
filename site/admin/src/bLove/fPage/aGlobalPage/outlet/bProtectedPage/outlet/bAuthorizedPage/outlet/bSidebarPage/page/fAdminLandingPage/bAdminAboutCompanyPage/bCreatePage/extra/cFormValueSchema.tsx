@@ -27,6 +27,10 @@ const formValueSchema = z.object({
   aState: z.string()
     .optional()
     .refine(val => !val || val.trim().length > 0, { message: "Please select state" }),
+
+  dTag: z.string()
+    .optional()
+    .refine(val => !val || val.trim().length > 0, { message: "Please select tag" }),
 });
 
 export default formValueSchema;

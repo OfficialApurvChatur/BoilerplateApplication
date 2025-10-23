@@ -1,3 +1,5 @@
+import formValueDefault from "./dFormValueDefault";
+
 const formData = ({ retrieveAPIResponse }: { retrieveAPIResponse: any }) => (
   retrieveAPIResponse.isLoading ? null : 
   retrieveAPIResponse.isError ? null :
@@ -53,10 +55,87 @@ const formData = ({ retrieveAPIResponse }: { retrieveAPIResponse: any }) => (
 
       // More Information
       {
-        display: false,
+        display: true,
         title: "More Information",
         subtitle: "This is just some subtitle for the more information...",
-        inputs: [],  
+        inputs: [
+          { name: "dTag", label: "Tag", type: "text", placeholder: "Please enter tag..." },
+          {
+            label: "Social Links",
+            type: "dynamic-input",
+            name: "dSocialLinks",
+            children: {
+              label: "Social Links",
+              type: "object-array-input",
+              inputType: "text-input",
+              inputs: formValueDefault?.dSocialLinks,
+              // onChange: () => console.log("Handle Change"),
+              onAdd: ({ form, fieldName, inputs }: any) => {
+                const updated = [
+                  ...inputs,
+                  {
+                    aLinkTitle: "Instagra:X:Threads:Linkedin:Github",
+                    bLinkURL: "https://www.instagram.com/beehive.corporation/",
+                  },
+                ];
+                form.setValue(fieldName, updated, { shouldValidate: true });
+              },
+              onRemove: ({ form, fieldName, inputs, index }: any) => {
+                const updated = inputs.filter((_: any, i: number) => i !== index);
+                form.setValue(fieldName, updated, { shouldValidate: true });
+              },
+            }
+          },
+          {
+            label: "Web Links",
+            type: "dynamic-input",
+            name: "dWebLinks",
+            children: {
+              label: "Web Link",
+              type: "object-array-input",
+              inputType: "text-input",
+              inputs: formValueDefault?.dWebLinks,
+              // onChange: () => console.log("Handle Change"),
+              onAdd: ({ form, fieldName, inputs }: any) => {
+                const updated = [
+                  ...inputs,
+                  {
+                    aLinkTitle: "Visit Application",
+                    bLinkURL: "https://beehive-frontend.netlify.app/",
+                  }
+                ];
+                form.setValue(fieldName, updated, { shouldValidate: true });
+              },
+              onRemove: ({ form, fieldName, inputs, index }: any) => {
+                const updated = inputs.filter((_: any, i: number) => i !== index);
+                form.setValue(fieldName, updated, { shouldValidate: true });
+              },
+            }
+          },
+          {
+            label: "Gallery Images",
+            type: "dynamic-input",
+            name: "dGalleryImages",
+            children: {
+              label: "Gallery Image",
+              type: "string-array-input",
+              inputType: "image-input",
+              folderName: "project",
+              inputs: formValueDefault?.dGalleryImages,
+              // onChange: () => console.log("Handle Change"),
+              onAdd: ({ form, fieldName, inputs }: any) => {
+                const updated = [
+                  ...inputs, ""
+                ];
+                form.setValue(fieldName, updated, { shouldValidate: true });
+              },
+              onRemove: ({ form, fieldName, inputs, index }: any) => {
+                const updated = inputs.filter((_: any, i: number) => i !== index);
+                form.setValue(fieldName, updated, { shouldValidate: true });
+              },
+            }
+          },
+        ],  
       },
 
       // Critical Information

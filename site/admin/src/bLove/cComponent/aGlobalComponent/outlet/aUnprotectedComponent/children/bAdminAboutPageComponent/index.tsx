@@ -8,7 +8,7 @@ import { AboutComponent } from './component/dAboutComponent';
 
 type AdminAboutPageComponentType = {
   reduxCall: any,
-  apiCall: any,
+  // apiCall: any,
 }
 
 const AdminAboutPageComponent = (props: AdminAboutPageComponentType) => {
@@ -17,19 +17,19 @@ const AdminAboutPageComponent = (props: AdminAboutPageComponentType) => {
     <React.Fragment>
       {/* AdminAboutPageComponent */}
 
-      {
+      {/* {
         (props.apiCall.listAPIResponse.isLoading || props.apiCall.listAPIResponse.isFetching) ? <LoaderComponent /> : 
         (props.apiCall.listAPIResponse.isError) ? <ErrorComponent message="Error..." /> :
         (props.apiCall.listAPIResponse.isSuccess) ? (
-          (props.apiCall.listAPIResponse.data.success) ? (
+          (props.apiCall.listAPIResponse.data.success) ? ( */}
             <React.Fragment>
               <div className="overflow-hidden" >
-                <AboutComponent reduxCall={props.reduxCall} apiCall={props.apiCall} />
+                <AboutComponent reduxCall={props.reduxCall} />
               </div>
             </React.Fragment>
-          ) : []
+          {/* ) : []
         ) : []
-      }
+      } */}
 
     </React.Fragment>
   )

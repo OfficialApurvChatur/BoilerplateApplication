@@ -1,7 +1,7 @@
 import React from 'react'
 
-import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
-import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
+// import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
+// import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
 
 import { HeroComponent } from './component/aHeroComponent';
 import { GalleryComponent } from './component/nGalleryComponent';
@@ -17,6 +17,7 @@ import { TeamComponent } from './component/jTeamComponent';
 import { PricingComponent } from './component/kPricingComponent';
 import { NewsletterComponent } from './component/lNewsletterComponent';
 import { FAQComponent } from './component/mFAQComponent';
+import AboutCompanyComponent from './component/qAboutCompanyComponent';
 
 
 type AdminHomePageComponentType = {
@@ -24,7 +25,7 @@ type AdminHomePageComponentType = {
   // apiCall: any,
 }
 
-const AdminHomePageComponent = (props: AdminHomePageComponentType) => {
+const AdminHomePageComponent = (_props: AdminHomePageComponentType) => {
   // JSX
   return (
     <React.Fragment>
@@ -37,21 +38,23 @@ const AdminHomePageComponent = (props: AdminHomePageComponentType) => {
           (props.apiCall.listAPIResponse.data.success) ? ( */}
             <React.Fragment>
               <div className="overflow-hidden" >
-                {/* <HeroCosmponent reduxCall={props.reduxCall} apiCall={props.apiCall} /> */}
-                <GalleryComponent />
-                <TechnologyComponent />
-                <FeatureComponent />
-                <SponsorComponent />
-                <AboutComponent />
-                <HowItWorkComponent />
-                <FeatureComponent />
-                <ServiceComponent />
-                <CTAComponent />
-                <TestimonialComponent />
-                <TeamComponent />
-                <PricingComponent />
-                <NewsletterComponent />
-                <FAQComponent />
+                {/* <HeroComponent /> */}
+                {/* <GalleryComponent /> */}
+                {/* <AboutCompanyComponent /> */}
+                {/* <AboutComponent /> */}
+                {/* <AboutComponent /> */}
+                {/* <TechnologyComponent /> */}
+                {/* <HowItWorkComponent /> */}
+                {/* <FeatureComponent /> */}
+                {/* <SponsorComponent /> */}
+                {/* <FeatureComponent /> */}
+                {/* <ServiceComponent /> */}
+                {/* <CTAComponent /> */}
+                {/* <TestimonialComponent /> */}
+                {/* <TeamComponent /> */}
+                {/* <PricingComponent /> */}
+                {/* <NewsletterComponent /> */}
+                {/* <FAQComponent /> */}
               </div>
             </React.Fragment>
           {/* ) : []

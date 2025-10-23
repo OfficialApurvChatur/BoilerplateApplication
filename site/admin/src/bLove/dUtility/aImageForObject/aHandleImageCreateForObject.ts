@@ -17,7 +17,7 @@ const handleImageCreateForObject = async (event: any, eachInput: any, form: any,
 
   try {
     const response = await axios.post<{ create: { url: string, pid: string } }>(
-      `${baseURL}/single-image/create/`,
+      `${baseURL}/image-storage/single-image-create/`,
       formData,
       { 
         headers: { "Content-Type": "multipart/form-data" }, 

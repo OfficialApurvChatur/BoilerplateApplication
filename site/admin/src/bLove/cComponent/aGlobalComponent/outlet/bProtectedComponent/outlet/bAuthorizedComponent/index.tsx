@@ -11,7 +11,7 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/aConnection/bSh
 // import { Separator } from "@/aConnection/bShadcnConnection/components/ui/separator";
 // import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/aConnection/bShadcnConnection/components/ui/breadcrumb";
 import { ModeToggle } from "@/aConnection/bShadcnConnection/components/mode-toggle";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from "@/aConnection/bShadcnConnection/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/aConnection/bShadcnConnection/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/aConnection/bShadcnConnection/components/ui/avatar";
 import { Button } from "@/aConnection/bShadcnConnection/components/ui/button";
 // import { NotificationComponent } from "./component/notification";
@@ -45,7 +45,7 @@ const AuthorizedComponent = ({ children, reduxCall, apiHandler }: { children: Re
               </Breadcrumb> */}
             </div>
             
-            <div className="ml-auto px-3 flex gap-2">
+            <div className="ml-auto px-3 flex items-center gap-2">
               {/* <NotificationComponent /> */}
               <ModeToggle />
 
@@ -53,27 +53,15 @@ const AuthorizedComponent = ({ children, reduxCall, apiHandler }: { children: Re
                 <DropdownMenuTrigger asChild>
                   {
                     (reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
-                      <div className="flex items-center space-x-2">
+                      <Button variant="secondary" size="icon" className="rounded-full">
                         <Avatar>
-                          <AvatarImage src={"asdsadsad"} />
+                          <AvatarImage src={reduxCall.state.receivedObject?.AccountRetrieve?.aImage} />
                           <AvatarFallback>{getInitialsUtility(
                             reduxCall.state.receivedObject?.AccountRetrieve?.eFirstname, 
                             reduxCall.state.receivedObject?.AccountRetrieve?.eLastname
                           )}</AvatarFallback>
                         </Avatar>
-                        <div className='hidden sm:block' >
-                          <div className="flex items-center flex-1 gap-1">
-                            <p className="text-sm font-medium leading-none">{`
-                              ${reduxCall.state.receivedObject?.AccountRetrieve?.eFirstname} 
-                              ${reduxCall.state.receivedObject?.AccountRetrieve?.eLastname}
-                            `}</p>
-                            <p className="text-xs font-medium text-muted-foreground">
-                              ({reduxCall.state.receivedObject?.AccountRetrieve?.cRole?.aTitle})
-                            </p>
-                          </div>
-                          <p className="text-xs text-muted-foreground">{reduxCall.state.receivedObject?.AccountRetrieve?.eEmail}</p>
-                        </div>
-                      </div>
+                      </Button>
                     ) : 
                     (reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Not Verified" && !reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
                       <Button variant="secondary" size="icon" className="rounded-full">
@@ -86,7 +74,35 @@ const AuthorizedComponent = ({ children, reduxCall, apiHandler }: { children: Re
                 <DropdownMenuContent align="end">
                   {
                     (reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
+                      <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
+                        <Avatar className="h-8 w-8 rounded-lg">
+                          <AvatarImage src={"asdsadsad"} />
+                          <AvatarFallback className="rounded-lg">{getInitialsUtility(
+                            reduxCall.state.receivedObject?.AccountRetrieve?.eFirstname, 
+                            reduxCall.state.receivedObject?.AccountRetrieve?.eLastname
+                          )}</AvatarFallback>
+                        </Avatar>
+                        <div className="grid flex-1 text-left text-sm leading-tight">
+                          <span className="truncate font-semibold">{`
+                            ${reduxCall.state.receivedObject?.AccountRetrieve?.eFirstname} 
+                            ${reduxCall.state.receivedObject?.AccountRetrieve?.eLastname}
+                          `}</span>
+                          <span className="truncate text-xs">{reduxCall.state.receivedObject?.AccountRetrieve?.eEmail}</span>
+                        </div>
+                      </div>
+                    ) : 
+                    (reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Not Verified" && !reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
+                      <Button variant="secondary" size="icon" className="rounded-full">
+                        <User2 className="h-5 w-5" />
+                        <span className="sr-only">Toggle user menu</span>
+                      </Button>
+                    ) : null
+                  }
+
+                  {
+                    (reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
                       <DropdownMenuGroup>
+                        <DropdownMenuSeparator />
                         <DropdownMenuItem asChild >
                           <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.aAccountRetrieveRoute} >
                             <Rat /> View Profile
@@ -112,6 +128,7 @@ const AuthorizedComponent = ({ children, reduxCall, apiHandler }: { children: Re
                             <BookmarkX /> Delete Profile
                           </Link>
                         </DropdownMenuItem>
+                        <DropdownMenuSeparator />
                         <DropdownMenuItem asChild >
                           <span onClick={() => apiHandler()} >
                             <LogOut /> Sign Out

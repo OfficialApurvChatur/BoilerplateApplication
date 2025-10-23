@@ -19,7 +19,7 @@ const SelectInputComponent = (props: any) => {
           name={eachInput.name}
           render={({ field }) => (
             <FormItem>
-              <FormLabel>{eachInput.label} {field.value} :</FormLabel>
+              <FormLabel>{eachInput.label} :</FormLabel>
               <Select onValueChange={field.onChange} defaultValue={field.value} >
                 <FormControl>
                   <SelectTrigger>

@@ -224,12 +224,257 @@ const validatorUtility = {
       }),
   ],
 
+  cBranchGroups: ({ Model, label = "Record" }: TIdArgs) => [
+    body("cBranchGroups")
+      .optional()
+      .isArray({ min: 1 })
+      .withMessage("Please select at least one branch group")
+      .bail()
+      .custom(async (value: mongoose.ObjectId[]) => {
+        await Promise.all(
+          value.map(async (each) => {
+            const idAsString = each as unknown as string;
+
+            if (!mongoose.isValidObjectId(idAsString)) {
+              throw new ErrorUtility(`Invalid MongoDB ID format for ${label}`, 400);
+            }
+
+            const retrieve = await Model.findById(idAsString);
+            if (!retrieve) throw new ErrorUtility(`${label} Not Found`, 404);
+          })
+        );
+        return true;
+      }),
+  ],
+
+  cBranches: ({ Model, label = "Record" }: TIdArgs) => [
+    body("cBranches")
+      .optional()
+      .isArray({ min: 1 })
+      .withMessage("Please select at least one branch")
+      .bail()
+      .custom(async (value: mongoose.ObjectId[]) => {
+        await Promise.all(
+          value.map(async (each) => {
+            const idAsString = each as unknown as string;
+
+            if (!mongoose.isValidObjectId(idAsString)) {
+              throw new ErrorUtility(`Invalid MongoDB ID format for ${label}`, 400);
+            }
+
+            const retrieve = await Model.findById(idAsString);
+            if (!retrieve) throw new ErrorUtility(`${label} Not Found`, 404);
+          })
+        );
+        return true;
+      }),
+  ],
+
+  cProjectGroups: ({ Model, label = "Record" }: TIdArgs) => [
+    body("cProjectGroups")
+      .notEmpty()
+      .withMessage("Please select project group")
+      .custom(async (value: mongoose.ObjectId[]) => {
+        await Promise.all(
+          value.map(async (each) => {
+            const idAsString = each as unknown as string;
+
+            if (!mongoose.isValidObjectId(idAsString)) {
+              throw new ErrorUtility(`Invalid MongoDB ID format for ${label}`, 400);
+            }
+
+            const retrieve = await Model.findById(idAsString);
+            if (!retrieve) throw new ErrorUtility(`${label} Not Found`, 404);
+          })
+        );
+        return true;
+      }),
+  ],
+
+  cProjects: ({ Model, label = "Record" }: TIdArgs) => [
+    body("cProjects")
+      .notEmpty()
+      .withMessage("Please select project")
+      .custom(async (value: mongoose.ObjectId[]) => {
+        await Promise.all(
+          value.map(async (each) => {
+            const idAsString = each as unknown as string;
+
+            if (!mongoose.isValidObjectId(idAsString)) {
+              throw new ErrorUtility(`Invalid MongoDB ID format for ${label}`, 400);
+            }
+
+            const retrieve = await Model.findById(idAsString);
+            if (!retrieve) throw new ErrorUtility(`${label} Not Found`, 404);
+          })
+        );
+        return true;
+      }),
+  ],
+
+  dTag: () => [
+    body("dTag")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Tag must be a string")
+      .trim()
+      .isLength({ min: 1 })
+      .withMessage("Tag cannot be empty")
+  ],
+
+  dTag2: () => [
+    body("dTag")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Tag must be a string")
+      .isIn(["Truly", "Relatively"])
+      .withMessage("Tag must be one of: Truly, Relatively")
+      .trim(),
+  ],
+
+  dSocialLinks: () => [
+    body("dSocialLinks")
+      .optional({ checkFalsy: true })
+      .isArray({ min: 1 })
+      .withMessage("Social links must be an array with at least one item"),
+
+    body("dSocialLinks.*.aLinkTitle")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Social link title must be a string")
+      .trim()
+      .notEmpty()
+      .withMessage("Social link title cannot be empty"),
+
+    body("dSocialLinks.*.bLinkURL")
+      .optional({ checkFalsy: true })
+      .isURL()
+      .withMessage("Invalid social link URL format")
+      .trim()
+  ],
+
+  dWebLinks: () => [
+    body("dWebLinks")
+      .optional({ checkFalsy: true })
+      .isArray({ min: 1 })
+      .withMessage("Web links must be an array with at least one item"),
+
+    body("dWebLinks.*.aLinkTitle")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Web link title must be a string")
+      .trim()
+      .notEmpty()
+      .withMessage("Web link title cannot be empty"),
+
+    body("dWebLinks.*.bLinkURL")
+      .optional({ checkFalsy: true })
+      .isURL()
+      .withMessage("Invalid web link URL format")
+      .trim()
+  ],
+
+  dTechIcon: () => [
+    // Validate that dTechIcon is an array
+    body("dTechIcon")
+      .optional({ checkFalsy: true })
+      .isArray({ min: 1 })
+      .withMessage("Tech icon list must be an array with at least one item"),
+
+    // Validate each icon label
+    body("dTechIcon.*.aIconLabel")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Each tech icon label must be a string")
+      .trim()
+      .notEmpty()
+      .withMessage("Tech icon label cannot be empty"),
+
+    // Validate each icon value
+    body("dTechIcon.*.bIconValue")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Each tech icon value must be a string")
+      .trim()
+      .notEmpty()
+      .withMessage("Tech icon value cannot be empty"),
+  ],
+
+  dLinks: () => [
+    body("dLinks")
+      .optional({ checkFalsy: true })
+      .isArray()
+      .withMessage("dLinks must be an array of link objects"),
+
+    body("dLinks.*.aLinkTitle")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Each link title must be a string")
+      .trim()
+      .notEmpty()
+      .withMessage("Each link title cannot be empty"),
+
+    body("dLinks.*.bLinkURL")
+      .optional({ checkFalsy: true })
+      .isURL()
+      .withMessage("Each link URL must be a valid URL")
+      .trim()
+      .notEmpty()
+      .withMessage("Each link URL cannot be empty"),
+  ],
+
+  dIcon: () => [
+    body("dIcon")
+      .optional({ checkFalsy: true })
+      .isObject()
+      .withMessage("dIcon must be an object"),
+
+    body("dIcon.aIconLabel")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Icon label must be a string")
+      .trim()
+      .notEmpty()
+      .withMessage("Icon label cannot be empty"),
+
+    body("dIcon.bIconValue")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Icon value must be a string")
+      .trim()
+      .notEmpty()
+      .withMessage("Icon value cannot be empty"),
+  ],
+
+  dGalleryImages: () => [
+    body("dGalleryImages")
+      .optional({ checkFalsy: true })
+      .isArray()
+      .withMessage("dGalleryImages must be an array of image URLs"),
+
+    body("dGalleryImages.*")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Each gallery image must be a string")
+      .trim()
+      .isURL()
+      .withMessage("Each gallery image must be a valid URL"),
+  ],
+
+  dStorageURL: () => [
+    body("dStorageURL")
+      .optional({ checkFalsy: true })
+      .isURL()
+      .withMessage("Please enter storage url"),
+  ],
+
   eImage: () => [
     body("eImage")
       .optional({ checkFalsy: true })
       .isURL()
       .withMessage("Please select image"),
   ],
+
   eFirstname: () => [
     body("eFirstname")
       .notEmpty()

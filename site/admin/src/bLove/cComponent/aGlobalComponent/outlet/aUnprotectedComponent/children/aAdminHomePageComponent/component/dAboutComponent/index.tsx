@@ -1,4 +1,4 @@
-import pilot from "@/bLove/hAsset/pilot.png";
+import pilot from "@/bLove/hAsset/Ashlesha_Wase.png";
 import { StatisticComponent } from "./component/aStatisticComponent";
 
 
@@ -8,7 +8,7 @@ export const AboutComponent = () => {
       id="about"
       className="container py-24 sm:py-32"
     >
-      <div className="bg-muted/50 border rounded-lg py-12">
+      <div className="bg-muted relative overflow-hidden rounded-xl p-10 md:p-16">
         <div className="px-6 flex flex-col-reverse md:flex-row gap-8 md:gap-12">
           <img
             src={pilot}
@@ -23,7 +23,7 @@ export const AboutComponent = () => {
                 </span>
                 Company
               </h2>
-              <p className="text-xl text-muted-foreground mt-4">
+              <p className=" text-muted-foreground mt-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -35,6 +35,7 @@ export const AboutComponent = () => {
             <StatisticComponent />
           </div>
         </div>
+        <div className="pointer-events-none absolute -top-1 right-1 z-10 hidden h-full w-full bg-[linear-gradient(to_right,hsl(var(--muted-foreground))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--muted-foreground))_1px,transparent_1px)] bg-[size:80px_80px] opacity-15 [mask-image:linear-gradient(to_bottom_right,#000,transparent,transparent)] md:block"></div>
       </div>
     </section>
   );

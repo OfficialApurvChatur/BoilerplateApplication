@@ -1,5 +1,5 @@
 ﻿import validatorUtility from "../../../../cUtility/cValidatorUtility";
-import { ContactInfoModel } from '../../../aModel/aDatabaseManagement/gFrontendLanding/eContactInfoModel';
+import { ContactInfoModel } from "../../../aModel/aDatabaseManagement/gFrontendLanding/eContactInfoModel";
 
 
 const contactInfoValidation = {

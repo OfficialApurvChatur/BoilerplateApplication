@@ -1,3 +1,5 @@
+import formValueDefault from "./dFormValueDefault";
+
 const formData = ({ retrieveAPIResponse }: { retrieveAPIResponse: any }) => (
   retrieveAPIResponse.isLoading ? null : 
   retrieveAPIResponse.isError ? null :
@@ -56,7 +58,34 @@ const formData = ({ retrieveAPIResponse }: { retrieveAPIResponse: any }) => (
         display: false,
         title: "More Information",
         subtitle: "This is just some subtitle for the more information...",
-        inputs: [],  
+        inputs: [
+          {
+            label: "Tech Icon",
+            type: "dynamic-input",
+            name: "dTechIcon",
+            children: {
+              label: "Tech Icon",
+              type: "object-array-input",
+              inputType: "text-input",
+              inputs: formValueDefault?.dTechIcon,
+              // onChange: () => console.log("Handle Change"),
+              onAdd: ({ form, fieldName, inputs }: any) => {
+                const updated = [
+                  ...inputs,
+                  {
+                    aIconLabel: "MongoDBIcon:ExpressIcon:ReactIcon:NodeIcon",
+                    bIconValue: "MongoDB:Express.js:React.js:Node.js",
+                  },
+                ];
+                form.setValue(fieldName, updated, { shouldValidate: true });
+              },
+              onRemove: ({ form, fieldName, inputs, index }: any) => {
+                const updated = inputs.filter((_: any, i: number) => i !== index);
+                form.setValue(fieldName, updated, { shouldValidate: true });
+              },
+            }
+          },
+        ],  
       },
 
       // Critical Information

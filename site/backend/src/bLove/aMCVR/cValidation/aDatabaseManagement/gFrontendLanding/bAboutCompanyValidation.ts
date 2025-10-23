@@ -1,5 +1,5 @@
 ﻿import validatorUtility from "../../../../cUtility/cValidatorUtility";
-import { AboutCompanyModel } from '../../../aModel/aDatabaseManagement/gFrontendLanding/bAboutCompanyModel';
+import { AboutCompanyModel } from "../../../aModel/aDatabaseManagement/gFrontendLanding/bAboutCompanyModel";
 
 
 const aboutCompanyValidation = {
@@ -13,6 +13,7 @@ const aboutCompanyValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dTag2(),
   ],
 
   retrieve: () => [
@@ -27,6 +28,7 @@ const aboutCompanyValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dTag2(),
     ...validatorUtility.idParam({ Model: AboutCompanyModel, label: "AboutCompanyModel" })
   ],
 

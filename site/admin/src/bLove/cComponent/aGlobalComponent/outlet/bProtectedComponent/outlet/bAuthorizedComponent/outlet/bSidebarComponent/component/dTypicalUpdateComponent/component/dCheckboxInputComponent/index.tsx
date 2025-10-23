@@ -28,7 +28,6 @@ const CheckboxInputComponent = (props: any) => {
                   control={form.control}
                   name={eachInput.name}
                   render={({ field }) => {
-                    console.log(field)
                     return (
                       <FormItem
                         key={index}
@@ -36,7 +35,7 @@ const CheckboxInputComponent = (props: any) => {
                       >
                         <FormControl>
                           <Checkbox
-                            checked={field.value?.includes(each.value)}
+                            checked={field.value?.includes(each.value) || field.value?.some((item: any) => item._id === each.value)}
                             onCheckedChange={(checked) => {
                               return checked
                                 ? field.onChange(field.value ? [...field.value, each.value] : [each.value])

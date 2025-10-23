@@ -16,8 +16,8 @@ const handleImageCreateForList = async (event: any, index: any, preFieldName: an
 
   try {
     const response = await axios.post<{ create: { url: string, pid: string } }>(
-      // "http://localhost:8000/api/v1/single-image/create/",
-      `${baseURL}/single-image/create/`,
+      // "http://localhost:8000/api/v1image-storage/single-image-create/",
+      `${baseURL}/image-storage/single-image-create/`,
       formData,
       { 
         headers: { "Content-Type": "multipart/form-data" }, 

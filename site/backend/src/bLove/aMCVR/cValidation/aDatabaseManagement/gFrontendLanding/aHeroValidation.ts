@@ -1,5 +1,5 @@
 ﻿import validatorUtility from "../../../../cUtility/cValidatorUtility";
-import { HeroModel } from '../../../aModel/aDatabaseManagement/gFrontendLanding/aHeroModel';
+import { HeroModel } from "../../../aModel/aDatabaseManagement/gFrontendLanding/aHeroModel";
 
 
 const heroValidation = {
@@ -13,6 +13,9 @@ const heroValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dTag(),
+    ...validatorUtility.dSocialLinks(),
+    ...validatorUtility.dWebLinks(),
   ],
 
   retrieve: () => [
@@ -27,6 +30,9 @@ const heroValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dTag(),
+    ...validatorUtility.dSocialLinks(),
+    ...validatorUtility.dWebLinks(),
     ...validatorUtility.idParam({ Model: HeroModel, label: "HeroModel" })
   ],
 

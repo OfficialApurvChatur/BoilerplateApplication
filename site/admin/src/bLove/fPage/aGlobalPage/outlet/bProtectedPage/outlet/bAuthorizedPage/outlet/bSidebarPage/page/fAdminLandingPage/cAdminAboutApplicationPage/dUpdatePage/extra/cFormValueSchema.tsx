@@ -27,6 +27,25 @@ const formValueSchema = z.object({
   aState: z.string()
     .optional()
     .refine(val => !val || val.trim().length > 0, { message: "Please select state" }),
+
+  dTechIcon: z
+    .array(
+      z.object({
+        aIconLabel: z
+          .string()
+          .optional()
+          .refine(val => !val || val.trim().length > 0, {
+            message: "Icon Label cannot be empty",
+          }),
+        bIconValue: z
+          .string()
+          .optional()
+          .refine(val => !val || val.trim().length > 0, {
+            message: "Icon Value cannot be empty",
+          }),
+      })
+    )
+    .optional(),
 });
 
 export default formValueSchema;

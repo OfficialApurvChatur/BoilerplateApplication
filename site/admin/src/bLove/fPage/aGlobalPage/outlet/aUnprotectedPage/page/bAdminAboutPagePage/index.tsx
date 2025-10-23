@@ -4,14 +4,14 @@ import { RootState } from "@/aConnection/dReduxConnection";
 
 import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
-import adminAboutPageAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/aUnprotectedAPI/bAdminAboutPageAPI";
+// import adminAboutPageAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/aUnprotectedAPI/bAdminAboutPageAPI";
 
 import AdminAboutPageComponent from "@/bLove/cComponent/aGlobalComponent/outlet/aUnprotectedComponent/children/bAdminAboutPageComponent";
 
 
 const AdminAboutPagePage = () => { 
   // Variable
-  const listAPIResponse = adminAboutPageAPIEndpoint.useAdminAboutPageListAPIQuery(null);
+  // const listAPIResponse = adminAboutPageAPIEndpoint.useAdminAboutPageListAPIQuery(null);
  
   // Redux Call
   const reduxCall = {
@@ -22,7 +22,7 @@ const AdminAboutPagePage = () => {
 
   // API Call
   const apiCall = {
-    listAPIResponse,
+    // listAPIResponse,
   }    
 
   // JSX
@@ -31,7 +31,7 @@ const AdminAboutPagePage = () => {
       {/* AdminAboutPagePage */}
       <AdminAboutPageComponent
         reduxCall={reduxCall}
-        apiCall={apiCall}
+        // apiCall={apiCall}
       />
     </React.Fragment>
   )

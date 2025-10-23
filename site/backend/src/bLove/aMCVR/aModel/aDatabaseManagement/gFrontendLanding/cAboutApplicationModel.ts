@@ -10,7 +10,10 @@ export type AboutApplicationModelType = DefaultSchemaUtilityType & {
   // C. RelationInfo Type
   // ...
   // D. MoreInfo Type
-  // ...
+  dTech: {
+    aLabel: string;
+    bValue: string;
+  };
   // E. CriticalInfo Type
   // ..
 }
@@ -21,7 +24,40 @@ const schema = new mongoose.Schema<AboutApplicationModelType>({
   ...defaultSchemaUtility.obj,
 
   // C. RelationInfo Schema
-  // ...
+  dTechIcon: {
+    type: [
+      {
+        aIconLabel: { 
+          type: String,
+          trim: true,
+          default: 'XXXX Icon', // 👈 default label
+        },
+        bIconValue: { 
+          type: String,
+          trim: true,
+          default: 'XXXX Icon', // 👈 default value
+        },  
+      }
+    ],
+    default: [
+      {
+        aIconLabel: 'MongoDBIcon',
+        bIconValue: 'MongoDB',
+      },
+      {
+        aIconLabel: 'ExpressIcon',
+        bIconValue: 'Express.js',
+      },
+      {
+        aIconLabel: 'ReactIcon',
+        bIconValue: 'React.js',
+      },
+      {
+        aIconLabel: 'NodeIcon',
+        bIconValue: 'Node.js',
+      },
+    ], // 👈 default tech
+  },
 
   // D. MoreInfo Schema
   // ...
@@ -29,7 +65,7 @@ const schema = new mongoose.Schema<AboutApplicationModelType>({
   // E. CriticalInfo Schema
   // ..
 
-})
+} as mongoose.SchemaDefinition<AboutApplicationModelType> )
 
 // Pre Create
 schema.pre("save", function(next) {

@@ -29,7 +29,7 @@ const ImageInputComponent = (props: any) => {
           name={eachInput.name}
           render={() => (
             <FormItem>
-              <FormLabel>{eachInput.label} :</FormLabel>
+              {eachInput.label &&  <FormLabel>{eachInput.label} :</FormLabel> }
               <FormControl>
                 <div className="flex items-center gap-4 rounded-lg">
                   <div className="rounded-md flex items-center justify-center w-28 h-28 overflow-hidden">

@@ -47,6 +47,13 @@ const ResetPasswordPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/out
 const AdminHomePagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/aAdminHomePagePage"));
 const AdminAboutPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/bAdminAboutPagePage"));
 const AdminContactPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/cAdminContactPagePage"));
+const AdminServicePagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/dAdminServicePagePage"));
+const AdminBranchSectionPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/eAdminBranchSectionPagePage"));
+const AdminBranchGroupPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/fAdminBranchGroupPagePage"));
+const AdminBranchPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/gAdminBranchPagePage"));
+const AdminProjectSectionPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/hAdminProjectSectionPagePage"));
+const AdminProjectGroupPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/iAdminProjectGroupPagePage"));
+const AdminProjectPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/jAdminProjectPagePage"));
 
 const AccountRetrievePrimaryPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/aTopbarPage/page/aAccountRetrievePrimaryPage"));
 const AccountUpdatePrimaryPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/aTopbarPage/page/bAccountUpdatePrimaryPage"));
@@ -156,6 +163,12 @@ const VideoStorageRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalP
 const VideoStorageUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFileStoragePage/bVideoStoragePage/dUpdatePage"));
 const VideoStorageDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFileStoragePage/bVideoStoragePage/eDeletePage"));
 
+const AudioStorageListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFileStoragePage/cAudioStoragePage/aListPage"));
+const AudioStorageCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFileStoragePage/cAudioStoragePage/bCreatePage"));
+const AudioStorageRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFileStoragePage/cAudioStoragePage/cRetrievePage"));
+const AudioStorageUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFileStoragePage/cAudioStoragePage/dUpdatePage"));
+const AudioStorageDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/dFileStoragePage/cAudioStoragePage/eDeletePage"));
+
 const StaticContentListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/eContentOperationPage/aStaticContentPage/aListPage"));
 const StaticContentCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/eContentOperationPage/aStaticContentPage/bCreatePage"));
 const StaticContentRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/eContentOperationPage/aStaticContentPage/cRetrievePage"));
@@ -198,6 +211,54 @@ const AdminContactInfoRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlo
 const AdminContactInfoUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/eAdminContactInfoPage/dUpdatePage"));
 const AdminContactInfoDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/eAdminContactInfoPage/eDeletePage"));
 
+const AdminCounterListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/fAdminCounterPage/aListPage"));
+const AdminCounterCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/fAdminCounterPage/bCreatePage"));
+const AdminCounterRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/fAdminCounterPage/cRetrievePage"));
+const AdminCounterUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/fAdminCounterPage/dUpdatePage"));
+const AdminCounterDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/fAdminCounterPage/eDeletePage"));
+
+const AdminServiceListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/gAdminServicePage/aListPage"));
+const AdminServiceCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/gAdminServicePage/bCreatePage"));
+const AdminServiceRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/gAdminServicePage/cRetrievePage"));
+const AdminServiceUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/gAdminServicePage/dUpdatePage"));
+const AdminServiceDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/gAdminServicePage/eDeletePage"));
+
+const AdminBranchSectionListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/hAdminBranchSectionPage/aListPage"));
+const AdminBranchSectionCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/hAdminBranchSectionPage/bCreatePage"));
+const AdminBranchSectionRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/hAdminBranchSectionPage/cRetrievePage"));
+const AdminBranchSectionUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/hAdminBranchSectionPage/dUpdatePage"));
+const AdminBranchSectionDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/hAdminBranchSectionPage/eDeletePage"));
+
+const AdminBranchGroupListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/iAdminBranchGroupPage/aListPage"));
+const AdminBranchGroupCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/iAdminBranchGroupPage/bCreatePage"));
+const AdminBranchGroupRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/iAdminBranchGroupPage/cRetrievePage"));
+const AdminBranchGroupUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/iAdminBranchGroupPage/dUpdatePage"));
+const AdminBranchGroupDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/iAdminBranchGroupPage/eDeletePage"));
+
+const AdminBranchListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/jAdminBranchPage/aListPage"));
+const AdminBranchCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/jAdminBranchPage/bCreatePage"));
+const AdminBranchRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/jAdminBranchPage/cRetrievePage"));
+const AdminBranchUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/jAdminBranchPage/dUpdatePage"));
+const AdminBranchDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/jAdminBranchPage/eDeletePage"));
+
+const AdminProjectSectionListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/kAdminProjectSectionPage/aListPage"));
+const AdminProjectSectionCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/kAdminProjectSectionPage/bCreatePage"));
+const AdminProjectSectionRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/kAdminProjectSectionPage/cRetrievePage"));
+const AdminProjectSectionUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/kAdminProjectSectionPage/dUpdatePage"));
+const AdminProjectSectionDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/kAdminProjectSectionPage/eDeletePage"));
+
+const AdminProjectGroupListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/lAdminProjectGroupPage/aListPage"));
+const AdminProjectGroupCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/lAdminProjectGroupPage/bCreatePage"));
+const AdminProjectGroupRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/lAdminProjectGroupPage/cRetrievePage"));
+const AdminProjectGroupUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/lAdminProjectGroupPage/dUpdatePage"));
+const AdminProjectGroupDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/lAdminProjectGroupPage/eDeletePage"));
+
+const AdminProjectListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/mAdminProjectPage/aListPage"));
+const AdminProjectCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/mAdminProjectPage/bCreatePage"));
+const AdminProjectRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/mAdminProjectPage/cRetrievePage"));
+const AdminProjectUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/mAdminProjectPage/dUpdatePage"));
+const AdminProjectDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/fAdminLandingPage/mAdminProjectPage/eDeletePage"));
+
 const HeroListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/aHeroPage/aListPage"));
 const HeroCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/aHeroPage/bCreatePage"));
 const HeroRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/aHeroPage/cRetrievePage"));
@@ -228,6 +289,72 @@ const ContactInfoRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPa
 const ContactInfoUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/eContactInfoPage/dUpdatePage"));
 const ContactInfoDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/eContactInfoPage/eDeletePage"));
 
+const CounterListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/fCounterPage/aListPage"));
+const CounterCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/fCounterPage/bCreatePage"));
+const CounterRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/fCounterPage/cRetrievePage"));
+const CounterUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/fCounterPage/dUpdatePage"));
+const CounterDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/fCounterPage/eDeletePage"));
+
+const ServiceListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/gServicePage/aListPage"));
+const ServiceCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/gServicePage/bCreatePage"));
+const ServiceRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/gServicePage/cRetrievePage"));
+const ServiceUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/gServicePage/dUpdatePage"));
+const ServiceDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/gServicePage/eDeletePage"));
+
+const BranchSectionListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/hBranchSectionPage/aListPage"));
+const BranchSectionCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/hBranchSectionPage/bCreatePage"));
+const BranchSectionRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/hBranchSectionPage/cRetrievePage"));
+const BranchSectionUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/hBranchSectionPage/dUpdatePage"));
+const BranchSectionDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/hBranchSectionPage/eDeletePage"));
+
+const BranchGroupListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/iBranchGroupPage/aListPage"));
+const BranchGroupCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/iBranchGroupPage/bCreatePage"));
+const BranchGroupRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/iBranchGroupPage/cRetrievePage"));
+const BranchGroupUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/iBranchGroupPage/dUpdatePage"));
+const BranchGroupDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/iBranchGroupPage/eDeletePage"));
+
+const BranchListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/jBranchPage/aListPage"));
+const BranchCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/jBranchPage/bCreatePage"));
+const BranchRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/jBranchPage/cRetrievePage"));
+const BranchUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/jBranchPage/dUpdatePage"));
+const BranchDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/jBranchPage/eDeletePage"));
+
+const ProjectSectionListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/kProjectSectionPage/aListPage"));
+const ProjectSectionCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/kProjectSectionPage/bCreatePage"));
+const ProjectSectionRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/kProjectSectionPage/cRetrievePage"));
+const ProjectSectionUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/kProjectSectionPage/dUpdatePage"));
+const ProjectSectionDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/kProjectSectionPage/eDeletePage"));
+
+const ProjectGroupListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/lProjectGroupPage/aListPage"));
+const ProjectGroupCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/lProjectGroupPage/bCreatePage"));
+const ProjectGroupRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/lProjectGroupPage/cRetrievePage"));
+const ProjectGroupUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/lProjectGroupPage/dUpdatePage"));
+const ProjectGroupDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/lProjectGroupPage/eDeletePage"));
+
+const ProjectListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/mProjectPage/aListPage"));
+const ProjectCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/mProjectPage/bCreatePage"));
+const ProjectRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/mProjectPage/cRetrievePage"));
+const ProjectUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/mProjectPage/dUpdatePage"));
+const ProjectDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/gFrontendLandingPage/mProjectPage/eDeletePage"));
+
+const ChatListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/aChatPage/aListPage"));
+const ChatCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/aChatPage/bCreatePage"));
+const ChatRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/aChatPage/cRetrievePage"));
+const ChatUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/aChatPage/dUpdatePage"));
+const ChatDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/aChatPage/eDeletePage"));
+
+const MessageListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/bMessagePage/aListPage"));
+const MessageCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/bMessagePage/bCreatePage"));
+const MessageRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/bMessagePage/cRetrievePage"));
+const MessageUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/bMessagePage/dUpdatePage"));
+const MessageDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/bMessagePage/eDeletePage"));
+
+const RequestListPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/cRequestPage/aListPage"));
+const RequestCreatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/cRequestPage/bCreatePage"));
+const RequestRetrievePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/cRequestPage/cRetrievePage"));
+const RequestUpdatePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/cRequestPage/dUpdatePage"));
+const RequestDeletePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/bSidebarPage/page/hChatManagementPage/cRequestPage/eDeletePage"));
+
 
 const AppConnection = () => {
   // Variable
@@ -254,6 +381,13 @@ const AppConnection = () => {
             <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute}`} element={<AdminHomePagePage />} />
             <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutPageRoute}`} element={<AdminAboutPagePage />} />
             <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.cAdminContactPageRoute}`} element={<AdminContactPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.dAdminServicePageRoute}`} element={<AdminServicePagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.eAdminBranchSectionPageRoute}`} element={<AdminBranchSectionPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.fAdminBranchGroupPageRoute}`} element={<AdminBranchGroupPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.gAdminBranchPageRoute}`} element={<AdminBranchPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.hAdminProjectSectionPageRoute}`} element={<AdminProjectSectionPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.iAdminProjectGroupPageRoute}`} element={<AdminProjectGroupPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.jAdminProjectPageRoute}`} element={<AdminProjectPagePage />} />
           </Route>
           <Route element={<ProtectedLayout />} >
             <Route element={<AuthenticatedLayout />} >
@@ -378,6 +512,12 @@ const AppConnection = () => {
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFileStorageRoute.bVideoStorageRoute.dUpdateRoute}/:id`} element={<VideoStorageUpdatePage />} />
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFileStorageRoute.bVideoStorageRoute.eDeleteRoute}/:id`} element={<VideoStorageDeletePage />} />
 
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFileStorageRoute.cAudioStorageRoute.aListRoute}`} element={<AudioStorageListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFileStorageRoute.cAudioStorageRoute.bCreateRoute}`} element={<AudioStorageCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFileStorageRoute.cAudioStorageRoute.cRetrieveRoute}/:id`} element={<AudioStorageRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFileStorageRoute.cAudioStorageRoute.dUpdateRoute}/:id`} element={<AudioStorageUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFileStorageRoute.cAudioStorageRoute.eDeleteRoute}/:id`} element={<AudioStorageDeletePage />} />
+
                 {/* Content Operation */}
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.eContentOperationRoute.aStaticContentRoute.aListRoute}`} element={<StaticContentListPage />} />
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.eContentOperationRoute.aStaticContentRoute.bCreateRoute}`} element={<StaticContentCreatePage />} />
@@ -422,6 +562,54 @@ const AppConnection = () => {
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.eAdminContactInfoRoute.dUpdateRoute}/:id`} element={<AdminContactInfoUpdatePage />} />
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.eAdminContactInfoRoute.eDeleteRoute}/:id`} element={<AdminContactInfoDeletePage />} />
                 
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.fAdminCounterRoute.aListRoute}`} element={<AdminCounterListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.fAdminCounterRoute.bCreateRoute}`} element={<AdminCounterCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.fAdminCounterRoute.cRetrieveRoute}/:id`} element={<AdminCounterRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.fAdminCounterRoute.dUpdateRoute}/:id`} element={<AdminCounterUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.fAdminCounterRoute.eDeleteRoute}/:id`} element={<AdminCounterDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.gAdminServiceRoute.aListRoute}`} element={<AdminServiceListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.gAdminServiceRoute.bCreateRoute}`} element={<AdminServiceCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.gAdminServiceRoute.cRetrieveRoute}/:id`} element={<AdminServiceRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.gAdminServiceRoute.dUpdateRoute}/:id`} element={<AdminServiceUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.gAdminServiceRoute.eDeleteRoute}/:id`} element={<AdminServiceDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.hAdminBranchSectionRoute.aListRoute}`} element={<AdminBranchSectionListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.hAdminBranchSectionRoute.bCreateRoute}`} element={<AdminBranchSectionCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.hAdminBranchSectionRoute.cRetrieveRoute}/:id`} element={<AdminBranchSectionRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.hAdminBranchSectionRoute.dUpdateRoute}/:id`} element={<AdminBranchSectionUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.hAdminBranchSectionRoute.eDeleteRoute}/:id`} element={<AdminBranchSectionDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.iAdminBranchGroupRoute.aListRoute}`} element={<AdminBranchGroupListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.iAdminBranchGroupRoute.bCreateRoute}`} element={<AdminBranchGroupCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.iAdminBranchGroupRoute.cRetrieveRoute}/:id`} element={<AdminBranchGroupRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.iAdminBranchGroupRoute.dUpdateRoute}/:id`} element={<AdminBranchGroupUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.iAdminBranchGroupRoute.eDeleteRoute}/:id`} element={<AdminBranchGroupDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.jAdminBranchRoute.aListRoute}`} element={<AdminBranchListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.jAdminBranchRoute.bCreateRoute}`} element={<AdminBranchCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.jAdminBranchRoute.cRetrieveRoute}/:id`} element={<AdminBranchRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.jAdminBranchRoute.dUpdateRoute}/:id`} element={<AdminBranchUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.jAdminBranchRoute.eDeleteRoute}/:id`} element={<AdminBranchDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.kAdminProjectSectionRoute.aListRoute}`} element={<AdminProjectSectionListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.kAdminProjectSectionRoute.bCreateRoute}`} element={<AdminProjectSectionCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.kAdminProjectSectionRoute.cRetrieveRoute}/:id`} element={<AdminProjectSectionRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.kAdminProjectSectionRoute.dUpdateRoute}/:id`} element={<AdminProjectSectionUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.kAdminProjectSectionRoute.eDeleteRoute}/:id`} element={<AdminProjectSectionDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.lAdminProjectGroupRoute.aListRoute}`} element={<AdminProjectGroupListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.lAdminProjectGroupRoute.bCreateRoute}`} element={<AdminProjectGroupCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.lAdminProjectGroupRoute.cRetrieveRoute}/:id`} element={<AdminProjectGroupRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.lAdminProjectGroupRoute.dUpdateRoute}/:id`} element={<AdminProjectGroupUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.lAdminProjectGroupRoute.eDeleteRoute}/:id`} element={<AdminProjectGroupDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.mAdminProjectRoute.aListRoute}`} element={<AdminProjectListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.mAdminProjectRoute.bCreateRoute}`} element={<AdminProjectCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.mAdminProjectRoute.cRetrieveRoute}/:id`} element={<AdminProjectRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.mAdminProjectRoute.dUpdateRoute}/:id`} element={<AdminProjectUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.mAdminProjectRoute.eDeleteRoute}/:id`} element={<AdminProjectDeletePage />} />
+
                 {/* Frontend Landing */}
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.aHeroRoute.aListRoute}`} element={<HeroListPage />} />
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.aHeroRoute.bCreateRoute}`} element={<HeroCreatePage />} />
@@ -453,6 +641,73 @@ const AppConnection = () => {
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.eContactInfoRoute.dUpdateRoute}/:id`} element={<ContactInfoUpdatePage />} />
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.eContactInfoRoute.eDeleteRoute}/:id`} element={<ContactInfoDeletePage />} />
                 
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.fCounterRoute.aListRoute}`} element={<CounterListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.fCounterRoute.bCreateRoute}`} element={<CounterCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.fCounterRoute.cRetrieveRoute}/:id`} element={<CounterRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.fCounterRoute.dUpdateRoute}/:id`} element={<CounterUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.fCounterRoute.eDeleteRoute}/:id`} element={<CounterDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.gServiceRoute.aListRoute}`} element={<ServiceListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.gServiceRoute.bCreateRoute}`} element={<ServiceCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.gServiceRoute.cRetrieveRoute}/:id`} element={<ServiceRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.gServiceRoute.dUpdateRoute}/:id`} element={<ServiceUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.gServiceRoute.eDeleteRoute}/:id`} element={<ServiceDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.hBranchSectionRoute.aListRoute}`} element={<BranchSectionListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.hBranchSectionRoute.bCreateRoute}`} element={<BranchSectionCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.hBranchSectionRoute.cRetrieveRoute}/:id`} element={<BranchSectionRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.hBranchSectionRoute.dUpdateRoute}/:id`} element={<BranchSectionUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.hBranchSectionRoute.eDeleteRoute}/:id`} element={<BranchSectionDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.iBranchGroupRoute.aListRoute}`} element={<BranchGroupListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.iBranchGroupRoute.bCreateRoute}`} element={<BranchGroupCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.iBranchGroupRoute.cRetrieveRoute}/:id`} element={<BranchGroupRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.iBranchGroupRoute.dUpdateRoute}/:id`} element={<BranchGroupUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.iBranchGroupRoute.eDeleteRoute}/:id`} element={<BranchGroupDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.jBranchRoute.aListRoute}`} element={<BranchListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.jBranchRoute.bCreateRoute}`} element={<BranchCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.jBranchRoute.cRetrieveRoute}/:id`} element={<BranchRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.jBranchRoute.dUpdateRoute}/:id`} element={<BranchUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.jBranchRoute.eDeleteRoute}/:id`} element={<BranchDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.kProjectSectionRoute.aListRoute}`} element={<ProjectSectionListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.kProjectSectionRoute.bCreateRoute}`} element={<ProjectSectionCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.kProjectSectionRoute.cRetrieveRoute}/:id`} element={<ProjectSectionRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.kProjectSectionRoute.dUpdateRoute}/:id`} element={<ProjectSectionUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.kProjectSectionRoute.eDeleteRoute}/:id`} element={<ProjectSectionDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.lProjectGroupRoute.aListRoute}`} element={<ProjectGroupListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.lProjectGroupRoute.bCreateRoute}`} element={<ProjectGroupCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.lProjectGroupRoute.cRetrieveRoute}/:id`} element={<ProjectGroupRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.lProjectGroupRoute.dUpdateRoute}/:id`} element={<ProjectGroupUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.lProjectGroupRoute.eDeleteRoute}/:id`} element={<ProjectGroupDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.mProjectRoute.aListRoute}`} element={<ProjectListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.mProjectRoute.bCreateRoute}`} element={<ProjectCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.mProjectRoute.cRetrieveRoute}/:id`} element={<ProjectRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.mProjectRoute.dUpdateRoute}/:id`} element={<ProjectUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.mProjectRoute.eDeleteRoute}/:id`} element={<ProjectDeletePage />} />
+
+                {/* Chat Management */}
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.aChatRoute.aListRoute}`} element={<ChatListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.aChatRoute.bCreateRoute}`} element={<ChatCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.aChatRoute.cRetrieveRoute}/:id`} element={<ChatRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.aChatRoute.dUpdateRoute}/:id`} element={<ChatUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.aChatRoute.eDeleteRoute}/:id`} element={<ChatDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.bMessageRoute.aListRoute}`} element={<MessageListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.bMessageRoute.bCreateRoute}`} element={<MessageCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.bMessageRoute.cRetrieveRoute}/:id`} element={<MessageRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.bMessageRoute.dUpdateRoute}/:id`} element={<MessageUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.bMessageRoute.eDeleteRoute}/:id`} element={<MessageDeletePage />} />
+
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.cRequestRoute.aListRoute}`} element={<RequestListPage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.cRequestRoute.bCreateRoute}`} element={<RequestCreatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.cRequestRoute.cRetrieveRoute}/:id`} element={<RequestRetrievePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.cRequestRoute.dUpdateRoute}/:id`} element={<RequestUpdatePage />} />
+                <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.cRequestRoute.eDeleteRoute}/:id`} element={<RequestDeletePage />} />
+
                 {/* Dashboard */}
                 <Route path={`${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hMainRoute.aDashboardRoute}`} element={<DashboardOneComponent />} />
 

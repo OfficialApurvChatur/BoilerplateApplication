@@ -13,6 +13,7 @@ import ByReadComponent from "./component/dByReadComponent";
 import AtReadComponent from "./component/eAtReadComponent";
 import HTMLReadComponent from "./component/fHTMLReadComponent";
 import BadgeReadComponent from "./component/gBadgeReadComponent";
+import DynamicReadComponent from "./component/hDynamicReadComponent";
 
 
 type TypicalRetrieveComponentType = {
@@ -85,41 +86,46 @@ const TypicalRetrieveComponent = (props: TypicalRetrieveComponentType) => {
                             {eachSection.fields.map((eachField: any, indexInput: any) => (
                               <React.Fragment key={indexInput} >
     
-                                {/* For I/P Type: Image */}
+                                {/* For Read Type: Image */}
                                 {((eachField.type === "image") && 
                                   <ImageReadComponent key={indexInput} eachField={eachField} />
                                 )}
     
-                                {/* For I/P Type: Text, Email, Number */}
+                                {/* For Read Type: Text, Email, Number */}
                                 {((eachField.type === "text" || eachField.type === "email" || eachField.type === "number" || eachField.type === "password") && 
                                   <TextReadComponent key={indexInput} eachField={eachField} />
                                 )}
     
-                                {/* For I/P Type: HTML */}
+                                {/* For Read Type: HTML */}
                                 {((eachField.type === "html") && 
                                   <HTMLReadComponent key={indexInput} eachField={eachField} />
                                 )}
     
-                                {/* For I/P Type: Badge */}
+                                {/* For Read Type: Badge */}
                                 {((eachField.type === "badge") && 
                                   <BadgeReadComponent key={indexInput} eachField={eachField} />
                                 )}
     
-                                {/* For I/P Type: Role Checkbox */}
+                                {/* For Read Type: Role Checkbox */}
                                 {((eachField.type === "role-checkbox") && 
                                   <RoleCheckboxReadComponent key={indexInput} eachField={eachField} />
                                 )}
     
-                                {/* For I/P Type: Created By & Updated By */}
+                                {/* For Read Type: Created By & Updated By */}
                                 {((eachField.type === "by") && (eachField.value) &&
                                   <ByReadComponent key={indexInput} eachField={eachField} />
                                 )}
     
-                                {/* For I/P Type: Created At  Updated At */}
+                                {/* For Read Type: Created At  Updated At */}
                                 {((eachField.type === "at") && (eachField.value) && 
                                   <AtReadComponent key={indexInput} eachField={eachField} />
                                 )}
-    
+
+                                {/* For Read Type: Dynamic Read */}
+                                {((eachField.type === "dynamic-read") && 
+                                  <DynamicReadComponent key={indexInput} eachField={eachField} />
+                                )}
+
                               </React.Fragment>
                             ))}
                           </div>

@@ -1,5 +1,5 @@
 ﻿import validatorUtility from "../../../../cUtility/cValidatorUtility";
-import { AboutApplicationModel } from '../../../aModel/aDatabaseManagement/gFrontendLanding/cAboutApplicationModel';
+import { AboutApplicationModel } from "../../../aModel/aDatabaseManagement/gFrontendLanding/cAboutApplicationModel";
 
 
 const aboutApplicationValidation = {
@@ -13,6 +13,7 @@ const aboutApplicationValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dTechIcon(),
   ],
 
   retrieve: () => [
@@ -27,6 +28,7 @@ const aboutApplicationValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dTechIcon(),
     ...validatorUtility.idParam({ Model: AboutApplicationModel, label: "AboutApplicationModel" })
   ],
 

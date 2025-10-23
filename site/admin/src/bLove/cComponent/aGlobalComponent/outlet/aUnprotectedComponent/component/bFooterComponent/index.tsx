@@ -1,4 +1,5 @@
 import { LogoIcon } from "@/bLove/hAsset/Icons";
+import { Link } from "react-router-dom";
 
 
 export const FooterComponent = () => {
@@ -8,14 +9,17 @@ export const FooterComponent = () => {
 
       <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div className="col-span-full xl:col-span-2">
-          <a
-            rel="noreferrer noopener"
-            href="/"
-            className="font-bold text-xl flex"
+          <Link
+            to="/"
+            className="font-bold text-xl flex items-center gap-2"
           >
             <LogoIcon />
-            ShadcnUI/React
-          </a>
+            <div className="grid flex-1 text-left text-sm leading-tight">
+              <span className="truncate font-semibold">
+                {"Boilerplate Application"}
+              </span>
+            </div>
+          </Link>
         </div>
 
         <div className="flex flex-col gap-2">
@@ -153,14 +157,14 @@ export const FooterComponent = () => {
 
       <section className="container pb-14 text-center">
         <h3>
-          &copy; 2024 Landing page made by{" "}
+          &copy; 2025 Landing page made by{" "}
           <a
             rel="noreferrer noopener"
             target="_blank"
             href="https://www.linkedin.com/in/leopoldo-miranda/"
             className="text-primary transition-all border-primary hover:border-b-2"
           >
-            Leo Miranda
+            Beehive Corporation
           </a>
         </h3>
       </section>

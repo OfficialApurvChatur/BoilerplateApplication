@@ -9,8 +9,8 @@ const handleImageDeleteForList = async (index: any, preFieldName: any, fieldName
     const parts = fileID?.split("/");
 
     const response = await axios.post(
-      // "http://localhost:8000/api/v1/single-image/delete/",
-      `${baseURL}/single-image/delete/`,            
+      // "http://localhost:8000/api/v1image-storage/single-image-delete/",
+      `${baseURL}/image-storage/single-image-delete/`,            
       {
         folder: "folder",
         public_id: parts?.[parts.length - 1]

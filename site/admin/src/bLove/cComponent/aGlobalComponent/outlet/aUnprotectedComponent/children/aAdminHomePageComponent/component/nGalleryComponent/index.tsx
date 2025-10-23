@@ -1,5 +1,5 @@
 import { ArrowLeft, ArrowRight } from "lucide-react";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 
 import { Button } from "@/aConnection/bShadcnConnection/components/ui/button";
 import {
@@ -9,12 +9,25 @@ import {
   CarouselItem,
 } from "@/aConnection/bShadcnConnection/components/ui/carousel";
 
-import Gallery01 from '@/bLove/hAsset/gallery-01.jpg'
-import Gallery02 from '@/bLove/hAsset/gallery-02.jpg'
-import Gallery03 from '@/bLove/hAsset/gallery-03.jpg'
-import Gallery04 from '@/bLove/hAsset/gallery-04.jpg'
-import Gallery05 from '@/bLove/hAsset/gallery-05.jpg'
-import Gallery06 from '@/bLove/hAsset/gallery-06.jpg'
+import FancyPink_01 from '@/bLove/hAsset/fancy-pink-001.jpg'
+import FancyPink_02 from '@/bLove/hAsset/fancy-pink-002.jpg'
+import FancyPink_03 from '@/bLove/hAsset/fancy-pink-003.jpg'
+import FancyPink_04 from '@/bLove/hAsset/fancy-pink-004.jpg'
+import Navy_01 from '@/bLove/hAsset/navy-001.jpg'
+import Navy_02 from '@/bLove/hAsset/navy-002.jpg'
+import Navy_03 from '@/bLove/hAsset/navy-003.jpg'
+import FuchsiaRaspberry_01 from '@/bLove/hAsset/fuchsia-raspberry-001.jpg'
+import FuchsiaRaspberry_02 from '@/bLove/hAsset/fuchsia-raspberry-002.jpg'
+import FuchsiaRaspberry_03 from '@/bLove/hAsset/fuchsia-raspberry-003.jpg'
+import FuchsiaRaspberry_04 from '@/bLove/hAsset/fuchsia-raspberry-004.jpg'
+import FuchsiaRaspberry_05 from '@/bLove/hAsset/fuchsia-raspberry-005.jpg'
+import FuchsiaRaspberry_06 from '@/bLove/hAsset/fuchsia-raspberry-006.jpg'
+import FuchsiaRaspberry_07 from '@/bLove/hAsset/fuchsia-raspberry-007.jpg'
+import Camouflage_01 from '@/bLove/hAsset/camouflage-001.jpg'
+import Camouflage_02 from '@/bLove/hAsset/camouflage-002.jpg'
+import Camouflage_03 from '@/bLove/hAsset/camouflage-003.jpg'
+import Camouflage_04 from '@/bLove/hAsset/camouflage-004.jpg'
+import Camouflage_05 from '@/bLove/hAsset/camouflage-005.jpg'
 
 
 export interface GalleryComponentItem {
@@ -33,54 +46,167 @@ export interface GalleryComponentProps {
 
 const data = [
   {
-    id: "shadcn-ui",
-    title: "shadcn/ui: Building a Modern Component Library",
-    description:
-      "Explore how shadcn/ui revolutionized React component libraries by providing a unique approach to component distribution and customization, making it easier for developers to build beautiful, accessible applications.",
-    href: "https://ui.shadcn.com",
-    image: Gallery01,
+    id: "Fancy Pink Floral Print",
+    title: "Fancy Pink Floral Print",
+    description: "Enhanced Cut Triangle Top & Brazilian Cheeky Thong Bikini Bottom",
+    href: "https://teenyb.com/products/enhanced-cut-triangle-top-in-fancy-pink-floral-print",
+    image: FancyPink_01,
   },
   {
-    id: "tailwind",
-    title: "Tailwind CSS: The Utility-First Revolution",
-    description:
-      "Discover how Tailwind CSS transformed the way developers style their applications, offering a utility-first approach that speeds up development while maintaining complete design flexibility.",
-    href: "https://tailwindcss.com",
-    image: Gallery02
+    id: "Navy Floral",
+    title: "Navy Floral",
+    description: "Enhanced Cut Triangle Bikini Top & Cheeky Thong Bikini Bottom",
+    href: "https://teenyb.com/products/floral-navy-cheeky-thong-bikini-bottom",
+    image: Navy_01
   },
   {
-    id: "astro",
-    title: "Astro: The All-in-One Web Framework",
-    description:
-      "Learn how Astro's innovative 'Islands Architecture' and zero-JS-by-default approach is helping developers build faster websites while maintaining rich interactivity where needed.",
-    href: "https://astro.build",
-    image: Gallery03
+    id: "Camouflage",
+    title: "Camouflage",
+    description: "Black Enhanced Cut Triangle Bikini Top & Black Printed Mid Rise Cheeky Thong Bikini Bottom",
+    href: "https://teenyb.com/products/camouflage-print-with-black-thong-bikini-bottom",
+    image: Camouflage_01
   },
   {
-    id: "react",
-    title: "React: Pioneering Component-Based UI",
-    description:
-      "See how React continues to shape modern web development with its component-based architecture, enabling developers to build complex user interfaces with reusable, maintainable code.",
-    href: "https://react.dev",
-    image: Gallery04
+    id: "Fuchsia Raspberry",
+    title: "Fuchsia Raspberry",
+    description: "Enhanced Cut Triangle Top & Brazilian Cheeky Thong Bikini Bottom",
+    href: "https://teenyb.com/products/enhanced-cut-triangle-top-in-fancy-pink-floral-print",
+    image: FancyPink_01
+  },
+  // {
+  //   id: "nextjs",
+  //   title: "Next.js: The React Framework for Production",
+  //   description:
+  //     "Explore how Next.js has become the go-to framework for building full-stack React applications, offering features like server components, file-based routing, and automatic optimization.",
+  //   href: "https://nextjs.org",
+  //   image: FuchsiaRaspberry_05
+  // },
+  // {
+  //   id: "nextjss",
+  //   title: "Next.js: The React Framework for Production",
+  //   description:
+  //     "Explore how Next.js has become the go-to framework for building full-stack React applications, offering features like server components, file-based routing, and automatic optimization.",
+  //   href: "https://nextjs.org",
+  //   image: FuchsiaRaspberry_06
+  // },
+  // {
+  //   id: "nextjss",
+  //   title: "Next.js: The React Framework for Production",
+  //   description:
+  //     "Explore how Next.js has become the go-to framework for building full-stack React applications, offering features like server components, file-based routing, and automatic optimization.",
+  //   href: "https://nextjs.org",
+  //   image: FuchsiaRaspberry_07
+  // },
+];
+
+const slides1 = [
+  {
+    img: FancyPink_01,
+    quote: "Smooth, secure, and irresistible — logging in has never felt this good.",
+    author: "Veronica Blaze",
   },
   {
-    id: "nextjs",
-    title: "Next.js: The React Framework for Production",
-    description:
-      "Explore how Next.js has become the go-to framework for building full-stack React applications, offering features like server components, file-based routing, and automatic optimization.",
-    href: "https://nextjs.org",
-    image: Gallery05
+    img: FancyPink_02,
+    quote: "This design makes every click feel like a luxury experience.",
+    author: "Lola Monroe",
   },
   {
-    id: "nextjss",
-    title: "Next.js: The React Framework for Production",
-    description:
-      "Explore how Next.js has become the go-to framework for building full-stack React applications, offering features like server components, file-based routing, and automatic optimization.",
-    href: "https://nextjs.org",
-    image: Gallery06
+    img: FancyPink_03,
+    quote: "Strong security, stunning style — a perfect seduction of design.",
+    author: "Scarlett Vane",
+  },
+  {
+    img: FancyPink_04,
+    quote: "Strong security, stunning style — a perfect seduction of design.",
+    author: "Scarlett Vane",
   },
 ];
+
+const slides2 = [
+  {
+    img: Navy_01,
+    quote: "Smooth, secure, and irresistible — logging in has never felt this good.",
+    author: "Veronica Blaze",
+  },
+  {
+    img: Navy_02,
+    quote: "This design makes every click feel like a luxury experience.",
+    author: "Lola Monroe",
+  },
+  {
+    img: Navy_03,
+    quote: "Strong security, stunning style — a perfect seduction of design.",
+    author: "Scarlett Vane",
+  },
+];
+
+const slides3 = [
+  {
+    img: FuchsiaRaspberry_01,
+    quote: "Smooth, secure, and irresistible — logging in has never felt this good.",
+    author: "Veronica Blaze",
+  },
+  {
+    img: FuchsiaRaspberry_02,
+    quote: "This design makes every click feel like a luxury experience.",
+    author: "Lola Monroe",
+  },
+  {
+    img: FuchsiaRaspberry_03,
+    quote: "Strong security, stunning style — a perfect seduction of design.",
+    author: "Scarlett Vane",
+  },
+  {
+    img: FuchsiaRaspberry_04,
+    quote: "Confidence starts with the first screen. This one oozes charm and safety.",
+    author: "Carmen Noir",
+  },
+  {
+    img: FuchsiaRaspberry_05,
+    quote: "Seamless, sleek, and oh-so tempting — I could log in all day.",
+    author: "Isabella Rose",
+  },
+  {
+    img: FuchsiaRaspberry_06,
+    quote: "It’s not just a login… it’s an invitation you can’t resist.",
+    author: "Roxanne Wilde",
+  },
+  {
+    img: FuchsiaRaspberry_07,
+    quote: "Bold, beautiful, and secure — the kind of screen that turns heads.",
+    author: "Selena Storm",
+  },
+];
+
+
+const slides4 = [
+  {
+    img: Camouflage_01,
+    quote: "Smooth, secure, and irresistible — logging in has never felt this good.",
+    author: "Veronica Blaze",
+  },
+  {
+    img: Camouflage_02,
+    quote: "This design makes every click feel like a luxury experience.",
+    author: "Lola Monroe",
+  },
+  {
+    img: Camouflage_03,
+    quote: "Strong security, stunning style — a perfect seduction of design.",
+    author: "Scarlett Vane",
+  },
+  {
+    img: Camouflage_04,
+    quote: "Strong security, stunning style — a perfect seduction of design.",
+    author: "Scarlett Vane",
+  },
+  {
+    img: Camouflage_05,
+    quote: "Strong security, stunning style — a perfect seduction of design.",
+    author: "Scarlett Vane",
+  },
+];
+
 
 const GalleryComponent = ({
   title = "Our Gallery",
@@ -91,6 +217,14 @@ const GalleryComponent = ({
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIndex((prev) => (prev + 1) % slides2.length);
+    }, 5000); // switch every 5s
+    return () => clearInterval(interval);
+  }, []);
 
   useEffect(() => {
     if (!carouselApi) {
@@ -111,12 +245,12 @@ const GalleryComponent = ({
   return (
     <section className="py-32">
       <div className="container">
-        <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-16">
+        <div className="mb-8 flex items-end justify-between md:mb-14 lg:mb-10">
           <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl">
               {title}
             </h2>
-            <p className="max-w-lg text-muted-foreground">{description}</p>
+            {/* <p className="max-w-lg text-muted-foreground">{description}</p> */}
           </div>
           <div className="hidden shrink-0 gap-2 md:flex">
             <Button
@@ -144,6 +278,7 @@ const GalleryComponent = ({
           </div>
         </div>
       </div>
+
       <div className="w-full">
         <Carousel
           setApi={setCarouselApi}
@@ -163,11 +298,107 @@ const GalleryComponent = ({
               >
                 <a href={item.href} className="group rounded-xl">
                   <div className="group relative h-full min-h-[27rem] max-w-full overflow-hidden rounded-xl md:aspect-[5/4] lg:aspect-[16/9]">
-                    <img
+                    {/* <img
                       src={item.image}
                       alt={item.title}
                       className="absolute h-full w-full object-cover object-center transition-transform duration-300 group-hover:scale-105"
-                    />
+                    /> */}
+
+                    {
+                      item.title === "Fancy Pink Floral Print" ? (
+                        <React.Fragment>
+                          {slides1.map((slide, i) => (
+                            <img
+                              key={i}
+                              src={slide.img}
+                              alt={`slide-${i}`}
+                              className={`absolute h-full w-full object-cover object-center 
+                                transition-all duration-1000 ease-in-out 
+                                ${i === index ? "opacity-100 scale-100" : "opacity-0 scale-105"}`
+                              }
+                            />
+                            )
+                          )}
+                        </React.Fragment>
+                      ) : 
+                      item.title === "Navy Floral" ? (
+                        <React.Fragment>
+                          {slides2.map((slide, i) => (
+                            <img
+                              key={i}
+                              src={slide.img}
+                              alt={`slide-${i}`}
+                              className={`absolute h-full w-full object-cover object-center 
+                                transition-all duration-1000 ease-in-out 
+                                ${i === index ? "opacity-100 scale-100" : "opacity-0 scale-105"}`
+                              }
+                            />
+                            )
+                          )}
+                        </React.Fragment>
+                      ) :
+                      item.title === "Camouflage" ? (
+                        <React.Fragment>
+                          {slides3.map((slide, i) => (
+                            <img
+                              key={i}
+                              src={slide.img}
+                              alt={`slide-${i}`}
+                              className={`absolute h-full w-full object-cover object-center 
+                                transition-all duration-1000 ease-in-out 
+                                ${i === index ? "opacity-100 scale-100" : "opacity-0 scale-105"}`
+                              }
+                            />
+                            )
+                          )}
+                        </React.Fragment>
+                      ) :
+                      item.title === "Fuchsia Raspberry" ? (
+                        <React.Fragment>
+                          {slides4.map((slide, i) => (
+                            <img
+                              key={i}
+                              src={slide.img}
+                              alt={`slide-${i}`}
+                              className={`absolute h-full w-full object-cover object-center 
+                                transition-all duration-1000 ease-in-out 
+                                ${i === index ? "opacity-100 scale-100" : "opacity-0 scale-105"}`
+                              }
+                            />
+                            )
+                          )}
+                        </React.Fragment>
+                      ) : (
+                        <React.Fragment>
+                          {slides2.map((slide, i) => (
+                            <img
+                              key={i}
+                              src={slide.img}
+                              alt={`slide-${i}`}
+                              className={`absolute h-full w-full object-cover object-center 
+                                transition-all duration-1000 ease-in-out 
+                                ${i === index ? "opacity-100 scale-100" : "opacity-0 scale-105"}`
+                              }
+                            />
+                            )
+                          )}
+                        </React.Fragment>
+                      )
+                    }
+
+                    {/* {slides2.map((slide, i) => (
+                      <img
+                        key={i}
+                        src={slide.img}
+                        alt={`slide-${i}`}
+                        className={`absolute h-full w-full object-cover object-center 
+                          transition-all duration-1000 ease-in-out 
+                          ${i === index ? "opacity-100 scale-100" : "opacity-0 scale-105"}`
+                        }
+                      />
+                      )
+                    )} */}
+
                     <div className="absolute inset-0 h-full bg-[linear-gradient(hsl(var(--primary)/0),hsl(var(--primary)/0.4),hsl(var(--primary)/0.8)_100%)] mix-blend-multiply" />
                     <div className="absolute inset-x-0 bottom-0 flex flex-col items-start p-6 text-primary-foreground md:p-8">
                       <div className="mb-2 pt-4 text-xl font-semibold md:mb-3 md:pt-4 lg:pt-4">

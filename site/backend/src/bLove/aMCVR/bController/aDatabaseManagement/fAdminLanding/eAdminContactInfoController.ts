@@ -1,10 +1,16 @@
 ﻿import express from 'express';
-import cloudinary from 'cloudinary';
 
-import { redisClient } from '../../../../../aConnection/eRedisConnection';
-import loggerConnection from '../../../../../aConnection/bLoggerConnection';
-import emailConnection from '../../../../../aConnection/hEmailConnection';
 import catchAsyncMiddleware from '../../../../../bLove/bMiddleware/bCatchAsyncMiddleware';
+import cacheCreateMiddleware from '../../../../../bLove/bMiddleware/kCacheCreateMiddleware';
+import cacheDeleteMiddleware from '../../../../../bLove/bMiddleware/lCacheDeleteMiddleware';
+import deleteImageMiddleware from '../../../../../bLove/bMiddleware/pDeleteImageMiddleware';
+import eventCreateMiddleware from '../../../../../bLove/bMiddleware/mEventCreateMiddleware';
+import emailToCompanyMiddleware from '../../../../../bLove/bMiddleware/nEmailToCompanyMiddleware';
+import emailToUserMiddleware from '../../../../../bLove/bMiddleware/oEmailToUserMiddleware';
+import cacheVariable from '../../../../../bLove/eVariable/aCacheVariable';
+import eventVariable from '../../../../../bLove/eVariable/bEventVariable';
+import emailToCompanyVariable from '../../../../../bLove/eVariable/cEmailToCompanyVariable';
+import emailToUserVariable from '../../../../../bLove/eVariable/dEmailToUserVariable';
 
 import { AdminContactInfoModel } from '../../../aModel/aDatabaseManagement/fAdminLanding/eAdminContactInfoModel';
 
@@ -21,10 +27,12 @@ const adminContactInfoController = (Model=AdminContactInfoModel, Label="AdminCon
         .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail");
 
       // Create Cache
-      await redisClient.setex(`${Label}-list`, 15*60, JSON.stringify(list));
-      loggerConnection().debug({ 
-        message: "âœ… Cache Created Successfully",
-      });
+      cacheCreateMiddleware({ 
+        key: cacheVariable.adminContactInfoModel.list({ 
+          Label
+        }), 
+        data: list 
+      })(request, response, next);
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -58,54 +66,39 @@ const adminContactInfoController = (Model=AdminContactInfoModel, Label="AdminCon
       })
 
       // Delete Cache
-      await redisClient.del(`${Label}-list`)
-      loggerConnection().debug({ 
-        message: "âŒ Cache Deleted Successfully",
-      });
+      cacheDeleteMiddleware({ 
+        keyList: cacheVariable.adminContactInfoModel.create({ 
+          Label  
+        }), 
+      })(request, response, next);
 
       // Create Event
-      const io = request.app.get("io");
-      if (create && io) {
-        io.emit(`${Label}-Listed`, create)
-        io.emit(`ActivityLog-Listed`, { title: create.aTitle })
-
-        loggerConnection().debug({ 
-          message: "âœ… Event Created Successfully",
-        });
-      };
+      eventCreateMiddleware({
+        Label,
+        data: create,
+        eventList: eventVariable.adminContactInfoModel.create({
+          Label, 
+        }),
+      })(request, response, next);
 
       // Create Email
-      if (create) {
-        emailConnection.sendMail(
-          {
-            from: "official.apurv.chatur@gmail.com",
-            to: "official.apurv.chatur@gmail.com",
-            subject: `${Label} Created`,
-            text: `
-              We're verifying a recent sign-in for apurvchaturofficial@gmail.com:
-              Timestamp: 	2025-09-19 11:33:28 GMT
-              IP Address: 	103.176.135.230
-              You're receiving this message because of a successful sign-in from a device that we didnâ€™t recognize. If you believe that this sign-in is suspicious, please reset your password immediately.
-              If you're aware of this sign-in, please disregard this notice. This can happen when you use your browser's incognito or private browsing mode or clear your cookies.
-              Thanks,
-              Beehive Team
-            `
-          }, 
-          (error, _info) => {
-            if (error) {
-              console.log("Some Error")
-              loggerConnection().debug({ 
-                message: "âŒ Email Creation Error",
-              });
-            } else {
-              console.log("Success")
-              loggerConnection().debug({ 
-                message: "âœ… Email Created Successfully",
-              });
-            }
-          }
-        )
-      }
+      emailToCompanyMiddleware({
+        Label,
+        data: create,
+        textMessage: emailToCompanyVariable.adminContactInfoModel.create({
+          Label, 
+          request 
+        }),
+      })(request, response, next);
+
+      emailToUserMiddleware({
+        Label,
+        data: create,
+        textMessage: emailToUserVariable.adminContactInfoModel.create({
+          Label, 
+          request 
+        }),
+      })(request, response, next);
 
       // Response
       response.status(200).json({
@@ -126,10 +119,13 @@ const adminContactInfoController = (Model=AdminContactInfoModel, Label="AdminCon
         .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail");
 
       // Create Cache
-      await redisClient.setex(`${Label}-retrieve:${request.params.id}`, 15*60, JSON.stringify(retrieve))
-      loggerConnection().debug({ 
-        message: "âœ… Cache Created Successfully",
-      });
+      cacheCreateMiddleware({ 
+        key: cacheVariable.adminContactInfoModel.retrieve({ 
+          Label, 
+          request 
+        }), 
+        data: retrieve 
+      })(request, response, next);
 
       // Response
       response.status(200).json({
@@ -165,55 +161,41 @@ const adminContactInfoController = (Model=AdminContactInfoModel, Label="AdminCon
       )
 
       // Delete Cache
-      await redisClient.del(`${Label}-list`, `${Label}-retrieve:${request.params.id}`)
-      loggerConnection().debug({ 
-        message: "âŒ Cache Deleted Successfully",
-      });
-      
-      // Create Event
-      const io = request.app.get("io");
-      if (update && io) {
-        io.emit(`${Label}-Listed`, update)
-        io.emit(`${Label}-Retrieved:${update?._id}`, update)
-        io.emit(`ActivityLog-Listed`, { title: update.aTitle })
+      cacheDeleteMiddleware({ 
+        keyList: cacheVariable.adminContactInfoModel.update({ 
+          Label, 
+          request 
+        }), 
+      })(request, response, next);
 
-        loggerConnection().debug({ 
-          message: "âœ… Event Created Successfully",
-        });
-      };      
+      // Create Event
+      eventCreateMiddleware({
+        Label,
+        data: update,
+        eventList: eventVariable.adminContactInfoModel.update({
+          Label, 
+          request 
+        }),
+      })(request, response, next);
 
       // Create Email
-      if (update) {
-        emailConnection.sendMail(
-          {
-            from: "official.apurv.chatur@gmail.com",
-            to: "official.apurv.chatur@gmail.com",
-            subject: `${Label} Updated`,
-            text: `
-              We're verifying a recent sign-in for apurvchaturofficial@gmail.com:
-              Timestamp: 	2025-09-19 11:33:28 GMT
-              IP Address: 	103.176.135.230
-              You're receiving this message because of a successful sign-in from a device that we didnâ€™t recognize. If you believe that this sign-in is suspicious, please reset your password immediately.
-              If you're aware of this sign-in, please disregard this notice. This can happen when you use your browser's incognito or private browsing mode or clear your cookies.
-              Thanks,
-              Beehive Team
-            `
-          }, 
-          (error, _info) => {
-            if (error) {
-              console.log("Some Error")
-              loggerConnection().debug({ 
-                message: "âŒ Email Creation Error",
-              });
-            } else {
-              console.log("Success")
-              loggerConnection().debug({ 
-                message: "âœ… Email Created Successfully",
-              });
-            }
-          }
-        )
-      }
+      emailToCompanyMiddleware({
+        Label,
+        data: update,
+        textMessage: emailToCompanyVariable.adminContactInfoModel.update({
+          Label, 
+          request 
+        }),
+      })(request, response, next);
+
+      emailToUserMiddleware({
+        Label,
+        data: update,
+        textMessage: emailToUserVariable.adminContactInfoModel.update({
+          Label, 
+          request 
+        }),
+      })(request, response, next);
 
       // Response
       response.status(201).json({
@@ -232,61 +214,47 @@ const adminContactInfoController = (Model=AdminContactInfoModel, Label="AdminCon
       const delete_object = await Model.findOneAndDelete({ _id: request.params.id })
 
       // Delete Image
-      if (delete_object?.aImage) {
-        const publicId = (delete_object as any).aImage.split("/").pop().split(".")[0];
-        await cloudinary.v2.uploader.destroy(`${Label}/${publicId}`);
-      }
+      deleteImageMiddleware({
+        Label,
+        data: delete_object
+      })(request, response, next)
       
       // Delete Cache
-      await redisClient.del(`${Label}-list`, `${Label}-retrieve:${request.params.id}`)
-      loggerConnection().debug({ 
-        message: "âŒ Cache Deleted Successfully",
-      });
-
-      // Create Event
-      const io = request.app.get("io");
-      if (delete_object && io) {
-        io.emit(`${Label}-Listed`, delete_object)
-        io.emit(`${Label}-Retrieved:${delete_object?._id}`, delete_object)
-        io.emit(`ActivityLog-Listed`, { title: delete_object.aTitle })
-
-        loggerConnection().debug({ 
-          message: "âœ… Event Created Successfully",
-        });
-      };     
+      cacheDeleteMiddleware({ 
+        keyList: cacheVariable.adminContactInfoModel.delete({ 
+          Label, 
+          request 
+        }), 
+      })(request, response, next);
       
+      // Create Event
+      eventCreateMiddleware({
+        Label,
+        data: delete_object,
+        eventList: eventVariable.adminContactInfoModel.delete({
+          Label, 
+          request 
+        }),
+      })(request, response, next);
+
       // Create Email
-      if (delete_object) {
-        emailConnection.sendMail(
-          {
-            from: "official.apurv.chatur@gmail.com",
-            to: "official.apurv.chatur@gmail.com",
-            subject: `${Label} Deleted`,
-            text: `
-              We're verifying a recent sign-in for apurvchaturofficial@gmail.com:
-              Timestamp: 	2025-09-19 11:33:28 GMT
-              IP Address: 	103.176.135.230
-              You're receiving this message because of a successful sign-in from a device that we didnâ€™t recognize. If you believe that this sign-in is suspicious, please reset your password immediately.
-              If you're aware of this sign-in, please disregard this notice. This can happen when you use your browser's incognito or private browsing mode or clear your cookies.
-              Thanks,
-              Beehive Team
-            `
-          }, 
-          (error, _info) => {
-            if (error) {
-              console.log("Some Error")
-              loggerConnection().debug({ 
-                message: "âŒ Email Creation Error",
-              });
-            } else {
-              console.log("Success")
-              loggerConnection().debug({ 
-                message: "âœ… Email Created Successfully",
-              });
-            }
-          }
-        )
-      }
+      emailToCompanyMiddleware({
+        Label,
+        data: delete_object,
+        textMessage: emailToCompanyVariable.adminContactInfoModel.delete({
+          Label, 
+          request 
+        }),
+      })(request, response, next);
+
+      emailToUserMiddleware({
+        Label,
+        data: delete_object,
+        textMessage: emailToUserVariable.adminContactInfoModel.delete({
+          Label, 
+          request 
+        }),
+      })(request, response, next);
       
       // Response
       response.status(200).json({

@@ -57,4 +57,19 @@ router.route("/delete/:id").delete(
   imageStorageContorller().delete
 )
 
+router.route("/single-image-create").post(
+  authenticationMiddleware, 
+  imageStorageContorller().singleImageCreate
+);
+
+router.route("/single-image-update").post(
+  authenticationMiddleware, 
+  imageStorageContorller().singleImageUpdate
+);  
+
+router.route("/single-image-delete").post(
+  authenticationMiddleware, 
+  imageStorageContorller().singleImageDelete
+);  
+
 export const imageStorageRoute = router

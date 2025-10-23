@@ -13,7 +13,7 @@ const HTMLReadComponent = (props: any) => {
 
       <div className="grid text-sm gap-0.5" >
         <span className="font-medium" >{eachField.label} :</span>
-        <span>{htmlParsedUtility(eachField.value || "")}</span>
+        {eachField.value && <span>{htmlParsedUtility(eachField.value || "")}</span>}
       </div>
 
     </React.Fragment>

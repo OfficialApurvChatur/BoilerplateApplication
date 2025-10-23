@@ -10,7 +10,15 @@ export type HeroModelType = DefaultSchemaUtilityType & {
   // C. RelationInfo Type
   // ...
   // D. MoreInfo Type
-  // ...
+  dTag?: string;
+  dSocialLinks?: {
+    aLinkTitle?: string;
+    bLinkURL?: string;
+  }[];
+  dWebLinks?: {
+    aLinkTitle?: string;
+    bLinkURL?: string;
+  }[];
   // E. CriticalInfo Type
   // ..
 }
@@ -24,12 +32,80 @@ const schema = new mongoose.Schema<HeroModelType>({
   // ...
 
   // D. MoreInfo Schema
-  // ...
-
+  dTag: { 
+    type: String,
+    trim: true,
+    default: "αβγδεζηθικλμνξοπρστυφχψω"
+  },
+  dSocialLinks: {
+    type: [
+      {
+        aLinkTitle: {
+          type: String,
+          trim: true,
+          default: 'Instagra:X:Threads:Linkedin:Github', // 👈 default link tilte
+        },
+        bLinkURL: { 
+          type: String,
+          trim: true,
+          default: 'https://www.instagram.com/beehive.corporation/', // 👈 default link url
+        },  
+      }
+    ],
+    default: [
+      {
+        aLinkTitle: 'Instagram',
+        bLinkURL: 'https://www.instagram.com/beehive.corporation/',
+      },
+      {
+        aLinkTitle: 'X',
+        bLinkURL: 'https://x.com/beehive_corp',
+      },
+      {
+        aLinkTitle: 'Threads',
+        bLinkURL: 'https://www.threads.com/@beehive.corporation',
+      }, 
+      {
+        aLinkTitle: 'Linkedin',
+        bLinkURL: 'https://www.linkedin.com/in/beehive-corporation-74893b2a7/',
+      }, 
+      {
+        aLinkTitle: 'Github',
+        bLinkURL: 'https://github.com/ApurvChatur/ArionApplication?tab=readme-ov-file#administration-installation/',
+      }, 
+    ], // 👈 default social link
+  },
+  dWebLinks: {
+    type: [
+      {
+        aLinkTitle: {
+          type: String,
+          trim: true,
+          default: 'Visit XXX', // 👈 default link tilte
+        },
+        bLinkURL: {
+          type: String,
+          trim: true,
+          default: 'https://beehive-frontend.netlify.app/', // 👈 default link url
+        },  
+      }
+    ],
+    default: [
+      {
+        aLinkTitle: 'Visit Application',
+        bLinkURL: 'https://beehive-frontend.netlify.app/',
+      },
+      {
+        aLinkTitle: 'Visit Administration',
+        bLinkURL: 'https://beehive-admin.netlify.app/',
+      },
+    ], // 👈 default web link
+  },
+  
   // E. CriticalInfo Schema
   // ..
 
-})
+} as mongoose.SchemaDefinition<HeroModelType> )
 
 // Pre Create
 schema.pre("save", function(next) {

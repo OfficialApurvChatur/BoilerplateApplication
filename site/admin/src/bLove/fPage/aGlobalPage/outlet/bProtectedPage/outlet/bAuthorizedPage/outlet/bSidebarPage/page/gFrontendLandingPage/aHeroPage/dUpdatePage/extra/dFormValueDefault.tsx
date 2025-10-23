@@ -6,6 +6,11 @@ const formValueDefault = ({
   aDetail: "",
   aStatus: "",
   aState: "",
+  
+  dTag: "",
+  dSocialLinks: [],
+  dWebLinks: [],
+  dGalleryImages: []
 })
 
 export default formValueDefault;

@@ -28,7 +28,7 @@ const AdminHomePagePage = () => {
   // JSX
   return (
     <React.Fragment>
-      AdminHomePagePage
+      {/* AdminHomePagePage */}
       <AdminHomePageComponent
         reduxCall={reduxCall}
         // apiCall={apiCall}

@@ -30,8 +30,8 @@ const formValueSchema = z.object({
 
   cRole: z.string()
     .nonempty("Please select role"),
-  cProfile: z.string()
-    .nonempty("Please select profile"),
+  // cProfile: z.string()
+  //   .nonempty("Please select profile"),
 
   eFirstname: z.string()
     .min(3, { message: "First name must be at least 3 characters long" })

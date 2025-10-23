@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
 import { Link } from "react-router-dom"
-import { useForm } from "react-hook-form"
+import { useForm, useWatch } from "react-hook-form"
 import { z } from "zod"
 import { zodResolver } from "@hookform/resolvers/zod"
 
@@ -19,6 +19,7 @@ import ImageInputComponent from "./component/gImageInputComponent"
 import TextAreaInputComponent from "./component/hTextAreaInputComponent"
 import SelectInputComponent from "./component/iSelectInputComponent"
 // import RichTextEditorInputComponent from "./component/jRichTextEditorInpitComponent"
+import DynamicInputComponent from "./component/kDynamicInputComponent"
 
 
 type TypicalCreateComponentType = {
@@ -57,6 +58,13 @@ const TypicalCreateComponent = (props: TypicalCreateComponentType) => {
     apiHandler(form)(submittedData)
   } 
 
+  // Watch Values
+  const values = useWatch({ control: form.control })
+
+  useEffect(() => {
+    console.log("Form values:", values)
+  }, [values])
+  
   // JSX
   return (
     <React.Fragment>
@@ -161,6 +169,11 @@ const TypicalCreateComponent = (props: TypicalCreateComponentType) => {
                           {/* For I/P Type: Select */}
                           {((eachInput.type === "select") &&
                             <SelectInputComponent key={indexInput}  form={form} eachInput={eachInput} />
+                          )}
+
+                          {/* For I/P Type: Dynamic Input */}
+                          {((eachInput.type === "dynamic-input") && 
+                            <DynamicInputComponent key={indexInput}  form={form} eachInput={eachInput} />
                           )}
 
                         </React.Fragment>

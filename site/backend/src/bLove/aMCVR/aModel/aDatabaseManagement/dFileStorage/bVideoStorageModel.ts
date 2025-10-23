@@ -10,7 +10,7 @@ export type VideoStorageModelType = DefaultSchemaUtilityType & {
   // C. RelationInfo Type
   // ...
   // D. MoreInfo Type
-  // ...
+  dStorageURL?: string;
   // E. CriticalInfo Type
   // ..
 }
@@ -24,7 +24,11 @@ const schema = new mongoose.Schema<VideoStorageModelType>({
   // ...
 
   // D. MoreInfo Schema
-  // ...
+  dStorageURL: { 
+    type: String,
+    trim: true,
+    default: 'https://res.cloudinary.com/dxej7qj3m/image/upload/v1754566938/Hero/trnikcsrmkn3yxmelwze.pdf', // 👈 default storage url
+  },  
 
   // E. CriticalInfo Schema
   // ..

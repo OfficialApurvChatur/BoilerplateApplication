@@ -1,11 +1,19 @@
 import pilot from "@/bLove/hAsset/pilot.png";
 import { StatisticComponent } from "./component/aStatisticComponent";
+import { Typewriter } from "@/aConnection/bShadcnConnection/components/ui/typewriter";
 
 
 interface AboutComponentProps {
   reduxCall: any;
-  apiCall: any;
+  // apiCall: any;
 }
+
+const DEMO_TEXT = `Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+enim ad minim veniam, quis nostrud exercitation ullamco laboris
+nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit
+amet, consectetur adipiscing elit. 
+`;
 
 export const AboutComponent = (props: AboutComponentProps) => {
   return (
@@ -26,17 +34,17 @@ export const AboutComponent = (props: AboutComponentProps) => {
                 <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
                   About{" "}
                 </span>
-                Company {props.apiCall.listAPIResponse.data?.aTitle}
+                Company
               </h2>
-              <p className="text-xl text-muted-foreground mt-4">
+              {/* <p className="text-xl text-muted-foreground mt-4">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris
                 nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit
-                amet, consectetur adipiscing elit.
-              </p>
+                amet, consectetur adipiscing elit. 
+              </p> */}
+              <Typewriter text={DEMO_TEXT} renderMarkdown className="prose text-xl text-muted-foreground mt-4" />
             </div>
-
             <StatisticComponent />
           </div>
         </div>

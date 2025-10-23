@@ -9,7 +9,7 @@ const handleImageDeleteForObject = async (eachInput: any, form: any, setFileLoad
   try {
     // const response = 
     await axios.post(
-      `${baseURL}/single-image/delete/`,
+      `${baseURL}/image-storage/single-image-delete/`,
       {
         folder: eachInput.folderName,
         public_id: fileID.split("/").pop().split(".")[0]

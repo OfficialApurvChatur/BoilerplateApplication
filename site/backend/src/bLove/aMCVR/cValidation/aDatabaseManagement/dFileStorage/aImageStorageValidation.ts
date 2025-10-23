@@ -13,6 +13,7 @@ const imageStorageValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dStorageURL(),
   ],
 
   retrieve: () => [
@@ -27,12 +28,19 @@ const imageStorageValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dStorageURL(),
     ...validatorUtility.idParam({ Model: ImageStorageModel, label: "ImageStorageModel" })
   ],
 
   delete: () => [
     ...validatorUtility.idParam({ Model: ImageStorageModel, label: "ImageStorageModel" })
   ],
+
+  singleImageCreate: () => [],
+  
+  singleImageUpdate: () => [],
+
+  singleImageDelete: () => [],
 };
 
 export default imageStorageValidation;

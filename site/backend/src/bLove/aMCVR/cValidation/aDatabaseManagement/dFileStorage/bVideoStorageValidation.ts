@@ -13,6 +13,7 @@ const videoStorageValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dStorageURL(),
   ],
 
   retrieve: () => [
@@ -27,12 +28,20 @@ const videoStorageValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dStorageURL(),
     ...validatorUtility.idParam({ Model: VideoStorageModel, label: "VideoStorageModel" })
   ],
 
   delete: () => [
     ...validatorUtility.idParam({ Model: VideoStorageModel, label: "VideoStorageModel" })
   ],
+
+  
+  singleVideoCreate: () => [],
+  
+  singleVideoUpdate: () => [],
+
+  singleVideoDelete: () => [],
 };
 
 export default videoStorageValidation;

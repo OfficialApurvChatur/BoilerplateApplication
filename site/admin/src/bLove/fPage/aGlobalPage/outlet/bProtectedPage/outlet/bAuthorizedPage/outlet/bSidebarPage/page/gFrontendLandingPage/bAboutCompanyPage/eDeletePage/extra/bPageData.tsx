@@ -12,7 +12,7 @@ const pageData = ({ retrieveAPIResponse }: { retrieveAPIResponse: any }) => (
           { label: "Image", type: "image", value: retrieveAPIResponse.data.retrieve?.aImage },
           { label: "Title", type: "text", value: retrieveAPIResponse.data.retrieve?.aTitle },
           { label: "Subtitle", type: "text", value: retrieveAPIResponse.data.retrieve?.aSubtitle },
-          { label: "Description", type: "html", value: retrieveAPIResponse.data.retrieve?.aDescription },
+          { label: "Description", type: "text", value: retrieveAPIResponse.data.retrieve?.aDescription },
           { label: "Detail", type: "html", value: retrieveAPIResponse.data.retrieve?.aDetail },
           { label: "Status", type: "badge", value: retrieveAPIResponse.data.retrieve?.aStatus ? "Active" : "Inactive" },
           { label: "State", type: "badge", value: retrieveAPIResponse.data.retrieve?.aState },
@@ -43,10 +43,12 @@ const pageData = ({ retrieveAPIResponse }: { retrieveAPIResponse: any }) => (
   
       // More Information
       {
-        display: false,
+        display: true,
         title: "More Information",
         subtitle: "This is just some subtitle for the more information...",
-        fields: [],  
+        fields: [
+          { label: "Tag", type: "badge", value: retrieveAPIResponse.data.retrieve?.dTag },
+        ],  
       },
   
       // Critical Information

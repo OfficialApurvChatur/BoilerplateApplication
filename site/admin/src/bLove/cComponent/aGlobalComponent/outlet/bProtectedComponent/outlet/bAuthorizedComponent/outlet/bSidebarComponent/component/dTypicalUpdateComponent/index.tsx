@@ -20,6 +20,7 @@ import ByReadComponent from "./component/zByReadComponent"
 import AtReadComponent from "./component/zAtReadComponent"
 import TextAreaInputComponent from "./component/hTextAreaInputComponent"
 import SelectInputComponent from "./component/iSelectInputComponent"
+import DynamicInputComponent from "./component/kDynamicInputComponent"
 // import RichTextEditorInputComponent from "./component/jRichTextEditorInpitComponent"
 
 
@@ -183,6 +184,11 @@ const TypicalUpdateComponent = (props: TypicalUpdateComponentType) => {
                                   {/* For I/P Type: Select */}
                                   {((eachInput.type === "select") &&
                                     <SelectInputComponent key={indexInput}  form={form} eachInput={eachInput} />
+                                  )}
+
+                                  {/* For I/P Type: Dynamic Input */}
+                                  {((eachInput.type === "dynamic-input") && 
+                                    <DynamicInputComponent key={indexInput}  form={form} eachInput={eachInput} />
                                   )}
 
                                 </React.Fragment>

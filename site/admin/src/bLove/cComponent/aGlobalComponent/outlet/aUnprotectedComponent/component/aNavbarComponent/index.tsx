@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { BookmarkX, FolderKey, KeyRound, LogIn, LogOut, MailIcon, Menu, Rat, User2, UserPen, UserPlus } from "lucide-react";
+import { BookmarkX, ClapperboardIcon, FolderKey, GalleryVerticalEnd, GalleryVerticalEndIcon, KeyRound, LogIn, LogOut, MailIcon, Menu, Rat, ShieldCheckIcon, User2, UserPen, UserPlus } from "lucide-react";
 import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 import {
@@ -16,7 +16,7 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/aConnection/bShadcnConnection/components/ui/sheet";
-import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuTrigger } from "@/aConnection/bShadcnConnection/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/aConnection/bShadcnConnection/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/aConnection/bShadcnConnection/components/ui/avatar";
 import { ModeToggle } from "@/aConnection/bShadcnConnection/components/mode-toggle";
 import { Button, buttonVariants } from "@/aConnection/bShadcnConnection/components/ui/button";
@@ -24,6 +24,7 @@ import { Button, buttonVariants } from "@/aConnection/bShadcnConnection/componen
 import { LogoIcon } from "@/bLove/hAsset/Icons";
 import getInitialsUtility from "@/bLove/dUtility/aGetInitialsUtility";
 import fullRoute from "@/bLove/gRoute/bFullRoute";
+import { Separator } from "@/aConnection/bShadcnConnection/components/ui/separator";
 
 
 interface RouteProps {
@@ -33,12 +34,20 @@ interface RouteProps {
 
 const routeList: RouteProps[] = [
   {
-    href: "#features",
-    label: "Features",
+    href: fullRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute,
+    label: "Home",
   },
   {
-    href: "#testimonials",
-    label: "Testimonials",
+    href: fullRoute.aGlobalRoute.aUnprotectedRoute.hAdminProjectSectionPageRoute,
+    label: "Projects",
+  },
+  {
+    href: fullRoute.aGlobalRoute.aUnprotectedRoute.eAdminBranchSectionPageRoute,
+    label: "Branches",
+  },
+  {
+    href: fullRoute.aGlobalRoute.aUnprotectedRoute.dAdminServicePageRoute,
+    label: "Services",
   },
   {
     href: fullRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutPageRoute,
@@ -66,10 +75,14 @@ export const NavbarComponent = (props: NavbarComponentType) => {
             <Link
               rel="noreferrer noopener"
               to={fullRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute}
-              className="ml-2 font-bold text-xl flex"
+              className="ml-2 font-semibold text-xl flex items-center"
             >
               <LogoIcon />
-              Boilerplate
+              {/* <div className="grid flex-1 text-left text-sm leading-tight">
+                <span className="truncate font-semibold"> */}
+                  {"Boilerplate Application"}
+                {/* </span>
+              </div> */}
             </Link>
           </NavigationMenuItem>
 
@@ -93,13 +106,13 @@ export const NavbarComponent = (props: NavbarComponentType) => {
               <SheetContent side={"left"}>
                 <SheetHeader>
                   <SheetTitle className="font-bold text-xl">
-                    Shadcn/React
+                    Boilerplate Application
                   </SheetTitle>
                 </SheetHeader>
+                <Separator />
                 <nav className="flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }: RouteProps) => (
                     <Link
-                      rel="noreferrer noopener"
                       key={label}
                       to={href}
                       onClick={() => setIsOpen(false)}
@@ -108,17 +121,24 @@ export const NavbarComponent = (props: NavbarComponentType) => {
                       {label}
                     </Link>
                   ))}
-                  <a
-                    rel="noreferrer noopener"
-                    href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-                    target="_blank"
-                    className={`w-[110px] border ${buttonVariants({
+                  <Link
+                    to="/#"
+                    className={`border ${buttonVariants({
                       variant: "secondary",
                     })}`}
                   >
-                    <GitHubLogoIcon className="mr-2 w-5 h-5" />
-                    Github
-                  </a>
+                    <ClapperboardIcon className="w-5 h-5" />
+                    Visit Application
+                  </Link>
+                  <Link
+                    to="/dashboard"
+                    className={`border ${buttonVariants({
+                      variant: "secondary",
+                    })}`}
+                  >
+                    <ShieldCheckIcon className="w-5 h-5" />
+                    Get Started
+                  </Link>
                 </nav>
               </SheetContent>
             </Sheet>
@@ -128,7 +148,6 @@ export const NavbarComponent = (props: NavbarComponentType) => {
           <nav className="hidden md:flex gap-2">
             {routeList.map((route: RouteProps, i) => (
               <Link
-                rel="noreferrer noopener"
                 to={route.href}
                 key={i}
                 className={`text-[17px] ${buttonVariants({
@@ -140,16 +159,21 @@ export const NavbarComponent = (props: NavbarComponentType) => {
             ))}
           </nav>
 
-          <div className="hidden md:flex gap-2">
-            <a
-              rel="noreferrer noopener"
-              href="https://github.com/leoMirandaa/shadcn-landing-page.git"
-              target="_blank"
+          <div className="hidden md:flex items-center gap-2">
+            <Link
+              to="/#"
               className={`border ${buttonVariants({ variant: "secondary" })}`}
             >
-              <GitHubLogoIcon className="mr-2 w-5 h-5" />
-              Github
-            </a>
+              <ClapperboardIcon className="w-5 h-5" />
+              Visit Application
+            </Link>
+            <Link
+              to="/dashboard"
+              className={`border ${buttonVariants({ variant: "secondary" })}`}
+            >
+              <ShieldCheckIcon className="w-5 h-5" />
+              Get Started
+            </Link>
 
             <ModeToggle />
 
@@ -157,27 +181,15 @@ export const NavbarComponent = (props: NavbarComponentType) => {
               <DropdownMenuTrigger asChild>
                 {
                   (props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && props.reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
-                    <div className="flex items-center space-x-2">
+                    <Button variant="secondary" size="icon" className="rounded-full">
                       <Avatar>
-                        <AvatarImage src={"asdsadsad"} />
+                        <AvatarImage src={props.reduxCall.state.receivedObject?.AccountRetrieve?.aImage} />
                         <AvatarFallback>{getInitialsUtility(
                           props.reduxCall.state.receivedObject?.AccountRetrieve?.eFirstname, 
                           props.reduxCall.state.receivedObject?.AccountRetrieve?.eLastname
                         )}</AvatarFallback>
                       </Avatar>
-                      <div className='hidden sm:block' >
-                        <div className="flex items-center flex-1 gap-1">
-                          <p className="text-sm font-medium leading-none">{`
-                            ${props.reduxCall.state.receivedObject?.AccountRetrieve?.eFirstname} 
-                            ${props.reduxCall.state.receivedObject?.AccountRetrieve?.eLastname}
-                          `}</p>
-                          <p className="text-xs font-medium text-muted-foreground">
-                            ({props.reduxCall.state.receivedObject?.AccountRetrieve?.cRole?.aTitle})
-                          </p>
-                        </div>
-                        <p className="text-xs text-muted-foreground">{props.reduxCall.state.receivedObject?.AccountRetrieve?.eEmail}</p>
-                      </div>
-                    </div>
+                    </Button>
                   ) : 
                   (props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Not Verified" && !props.reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
                     <Button variant="secondary" size="icon" className="rounded-full">
@@ -190,7 +202,35 @@ export const NavbarComponent = (props: NavbarComponentType) => {
               <DropdownMenuContent align="end">
                 {
                   (props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && props.reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
+                    <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
+                      <Avatar className="h-8 w-8 rounded-lg">
+                        <AvatarImage src={"asdsadsad"} />
+                        <AvatarFallback className="rounded-lg">{getInitialsUtility(
+                          props.reduxCall.state.receivedObject?.AccountRetrieve?.eFirstname, 
+                          props.reduxCall.state.receivedObject?.AccountRetrieve?.eLastname
+                        )}</AvatarFallback>
+                      </Avatar>
+                      <div className="grid flex-1 text-left text-sm leading-tight">
+                        <span className="truncate font-semibold">{`
+                          ${props.reduxCall.state.receivedObject?.AccountRetrieve?.eFirstname} 
+                          ${props.reduxCall.state.receivedObject?.AccountRetrieve?.eLastname}
+                        `}</span>
+                        <span className="truncate text-xs">{props.reduxCall.state.receivedObject?.AccountRetrieve?.eEmail}</span>
+                      </div>
+                    </div>
+                  ) : 
+                  (props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Not Verified" && !props.reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
+                    <Button variant="secondary" size="icon" className="rounded-full">
+                      <User2 className="h-5 w-5" />
+                      <span className="sr-only">Toggle user menu</span>
+                    </Button>
+                  ) : null
+                }
+
+                {
+                  (props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && props.reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
                     <DropdownMenuGroup>
+                      <DropdownMenuSeparator />
                       <DropdownMenuItem asChild >
                         <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.aAccountRetrieveRoute} >
                           <Rat /> View Profile
@@ -216,6 +256,7 @@ export const NavbarComponent = (props: NavbarComponentType) => {
                           <BookmarkX /> Delete Profile
                         </Link>
                       </DropdownMenuItem>
+                      <DropdownMenuSeparator />
                       <DropdownMenuItem asChild >
                         <span onClick={() => props.apiHandler()} >
                           <LogOut /> Sign Out

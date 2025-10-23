@@ -16,13 +16,13 @@ import {
   List,
   Map,
   PieChart,
+  SendIcon,
   Settings2,
   SettingsIcon,
   Shield,
   SmileIcon,
   SquareTerminal,
   TableOfContentsIcon,
-  // TreePalmIcon
 } from "lucide-react"
 
 import { NavMain } from "./nav-main"
@@ -37,7 +37,6 @@ import fullRoute from "@/bLove/gRoute/bFullRoute"
 import { NavUser } from "./nav-user"
 import { TeamSwitcher } from "./team-switcher"
 
-// This is sample data.
 const data = {
   teams: [
     {
@@ -163,6 +162,35 @@ const data = {
     //   items: [],
     // },
     {
+      title: "Chat Management",
+      url: "#",
+      icon: SendIcon,
+      isActive: false,
+      isCollapsible: true,
+      isHighlighted: (
+        pathname.startsWith("/chat-") ||
+        pathname.startsWith("/message-") ||
+        pathname.startsWith("/request-")
+      ),
+      items: [
+        {
+          title: "Chat",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.aChatRoute.aListRoute,
+          isBlue: pathname.startsWith("/chat-")
+        },
+        {
+          title: "Message",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.bMessageRoute.aListRoute,
+          isBlue: pathname.startsWith("/message-")
+        },
+        {
+          title: "Request",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hChatManagementRoute.cRequestRoute.aListRoute,
+          isBlue: pathname.startsWith("/request-")
+        },
+      ],
+    },
+    {
       title: "Frontend Landing",
       url: "#",
       icon: AppWindowIcon,
@@ -173,7 +201,15 @@ const data = {
         pathname.startsWith("/about-company-") ||
         pathname.startsWith("/about-application-") ||
         pathname.startsWith("/contact-form-") ||
-        pathname.startsWith("/contact-info-")
+        pathname.startsWith("/contact-info-") ||
+        pathname.startsWith("/counter-") ||
+        pathname.startsWith("/service-") ||
+        pathname.startsWith("/branch-section-") ||
+        pathname.startsWith("/branch-group-") ||
+        pathname.startsWith("/branch-") ||
+        pathname.startsWith("/project-section-") ||
+        pathname.startsWith("/project-group-") ||
+        pathname.startsWith("/project-")
       ),
       items: [
         {
@@ -201,6 +237,46 @@ const data = {
           url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.eContactInfoRoute.aListRoute,
           isBlue: pathname.startsWith("/contact-info-")
         },
+        {
+          title: "Counter",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.fCounterRoute.aListRoute,
+          isBlue: pathname.startsWith("/counter-")
+        },
+        {
+          title: "Service",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.gServiceRoute.aListRoute,
+          isBlue: pathname.startsWith("/service-")
+        },
+        {
+          title: "Branch Section",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.hBranchSectionRoute.aListRoute,
+          isBlue: pathname.startsWith("/branch-section-")
+        },
+        {
+          title: "Branch Group",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.iBranchGroupRoute.aListRoute,
+          isBlue: pathname.startsWith("/branch-group-")
+        },
+        {
+          title: "Branch",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.jBranchRoute.aListRoute,
+          isBlue: pathname.startsWith("/branch-")
+        },
+        {
+          title: "Project Section",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.kProjectSectionRoute.aListRoute,
+          isBlue: pathname.startsWith("/project-section-")
+        },
+        {
+          title: "Project Group",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.lProjectGroupRoute.aListRoute,
+          isBlue: pathname.startsWith("/project-group-")
+        },
+        {
+          title: "Project",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.gFrontendLandingRoute.mProjectRoute.aListRoute,
+          isBlue: pathname.startsWith("/project-")
+        },
       ],
     },
     {
@@ -214,7 +290,15 @@ const data = {
         pathname.startsWith("/admin-about-company-") ||
         pathname.startsWith("/admin-about-application-") ||
         pathname.startsWith("/admin-contact-form-") ||
-        pathname.startsWith("/admin-contact-info-")
+        pathname.startsWith("/admin-contact-info-") ||
+        pathname.startsWith("/admin-counter-") ||
+        pathname.startsWith("/admin-service-") ||
+        pathname.startsWith("/admin-branch-section-") ||
+        pathname.startsWith("/admin-branch-group-") ||
+        pathname.startsWith("/admin-branch-") ||
+        pathname.startsWith("/admin-project-section-") ||
+        pathname.startsWith("/admin-project-group-") ||
+        pathname.startsWith("/admin-project-")
       ),
       items: [
         {
@@ -241,6 +325,46 @@ const data = {
           title: "Contact Info",
           url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.eAdminContactInfoRoute.aListRoute,
           isBlue: pathname.startsWith("/admin-contact-info-")
+        },
+        {
+          title: "Counter",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.fAdminCounterRoute.aListRoute,
+          isBlue: pathname.startsWith("/admin-counter-")
+        },
+        {
+          title: "Service",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.gAdminServiceRoute.aListRoute,
+          isBlue: pathname.startsWith("/admin-service-")
+        },
+        {
+          title: "Branch Section",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.hAdminBranchSectionRoute.aListRoute,
+          isBlue: pathname.startsWith("/admin-branch-section-")
+        },
+        {
+          title: "Branch Group",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.iAdminBranchGroupRoute.aListRoute,
+          isBlue: pathname.startsWith("/admin-branch-group-")
+        },
+        {
+          title: "Branch",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.jAdminBranchRoute.aListRoute,
+          isBlue: pathname.startsWith("/admin-branch-")
+        },
+        {
+          title: "Project Section",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.kAdminProjectSectionRoute.aListRoute,
+          isBlue: pathname.startsWith("/admin-project-section-")
+        },
+        {
+          title: "Project Group",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.lAdminProjectGroupRoute.aListRoute,
+          isBlue: pathname.startsWith("/admin-project-group-")
+        },
+        {
+          title: "Project",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.mAdminProjectRoute.aListRoute,
+          isBlue: pathname.startsWith("/admin-project-")
         },
       ],
     },
@@ -287,6 +411,11 @@ const data = {
           title: "Video Storage",
           url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFileStorageRoute.bVideoStorageRoute.aListRoute,
           isBlue: pathname.startsWith("/video-storage-")
+        },
+        {
+          title: "Audio Storage",
+          url: fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.dFileStorageRoute.cAudioStorageRoute.aListRoute,
+          isBlue: pathname.startsWith("/audio-storage-")
         },
       ],
     },

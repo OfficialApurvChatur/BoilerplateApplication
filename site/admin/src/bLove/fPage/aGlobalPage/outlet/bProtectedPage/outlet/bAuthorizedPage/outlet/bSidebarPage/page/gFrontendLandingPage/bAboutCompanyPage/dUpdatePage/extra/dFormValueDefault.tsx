@@ -6,6 +6,8 @@ const formValueDefault = ({
   aDetail: "",
   aStatus: "",
   aState: "",
+
+  dTag: "",
 })
 
 export default formValueDefault;

@@ -18,7 +18,7 @@ const handleImageUpdateForObject = async (event: any, eachInput: any, form: any,
 
   try {
     const response = await axios.post<{ update: { url: string, pid: string } }>(
-      `${baseURL}/single-image/update/`,
+      `${baseURL}/image-storage/single-image-update/`,
       formData,
       { 
         headers: { "Content-Type": "multipart/form-data" }, 

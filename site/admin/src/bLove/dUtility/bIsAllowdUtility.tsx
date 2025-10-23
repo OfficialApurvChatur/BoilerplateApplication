@@ -65,6 +65,7 @@ const isAllowedConstant = {
 
   imageStorage: "ImageStorage",
   videoStorage: "VideoStorage",
+  audioStorage: "AudioStorage",
   
   staticContent: "StaticContent",
   socialMediaContent: "SocialMediaContent",
@@ -74,12 +75,32 @@ const isAllowedConstant = {
   adminAboutApplication: "AdminAboutApplication",
   adminContactForm: "AdminContactForm",
   adminContactInfo: "AdminContactInfo",
+  adminCounter: "AdminCounter",
+  adminService: "AdminService",
+  adminBranchSection: "AdminBranchSection",
+  adminBranchGroup: "AdminBranchGroup",
+  adminBranch: "AdminBranch",
+  adminProjectSection: "AdminProjectSection",
+  adminProjectGroup: "AdminProjectGroup",
+  adminProject: "AdminProject",
 
   hero: "Hero",
   aboutCompany: "AboutCompany",
   aboutApplication: "AboutApplication",
   contactForm: "ContactForm",
   contactInfo: "ContactInfo",
+  counter: "Counter",
+  service: "Service",
+  branchSection: "BranchSection",
+  branchGroup: "BranchGroup",
+  branch: "Branch",
+  projectSection: "ProjectSection",
+  projectGroup: "ProjectGroup",
+  project: "Project",
+
+  chat: "Chat",
+  message: "Message",
+  request: "Request",
 }
 
 export default isAllowedUtility;

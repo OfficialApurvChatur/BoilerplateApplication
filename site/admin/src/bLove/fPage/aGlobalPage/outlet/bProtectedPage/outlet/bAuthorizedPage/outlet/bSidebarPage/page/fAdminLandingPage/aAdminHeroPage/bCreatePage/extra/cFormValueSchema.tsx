@@ -27,6 +27,57 @@ const formValueSchema = z.object({
   aState: z.string()
     .optional()
     .refine(val => !val || val.trim().length > 0, { message: "Please select state" }),
+
+  dTag: z.string()
+    .min(3, { message: "Please enter atlest 3 characters" })
+    .max(50, { message: "Please enter atmost 50 characters" }),
+  dSocialLinks: z
+    .array(
+      z.object({
+        aLinkTitle: z
+          .string()
+          .optional()
+          .refine(val => !val || val.trim().length > 0, {
+            message: "Title cannot be empty",
+          }),
+        bLinkURL: z
+          .string()
+          .optional()
+          .refine(val => !val || /^https?:\/\/.+/.test(val), {
+            message: "Please provide a valid URL (starting with http or https)",
+          }),
+      })
+    )
+    .optional(),
+  dWebLinks: z
+    .array(
+      z.object({
+        aLinkTitle: z
+          .string()
+          .optional()
+          .refine(val => !val || val.trim().length > 0, {
+            message: "Title cannot be empty",
+          }),
+        bLinkURL: z
+          .string()
+          .optional()
+          .refine(val => !val || /^https?:\/\/.+/.test(val), {
+            message: "Please provide a valid URL (starting with http or https)",
+          }),
+      })
+    )
+    .optional(),
+  dGalleryImages: z
+    .array(
+      z
+        .string()
+        .optional()
+        .refine(val => !val || /^https?:\/\/.+/.test(val), {
+          message: "Invalid image URL",
+        })
+    )
+    .optional()
+
 });
 
 export default formValueSchema;

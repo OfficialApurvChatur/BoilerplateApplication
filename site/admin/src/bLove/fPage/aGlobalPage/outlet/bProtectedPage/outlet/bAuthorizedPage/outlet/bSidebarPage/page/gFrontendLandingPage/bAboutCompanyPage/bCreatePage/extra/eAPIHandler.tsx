@@ -23,6 +23,8 @@ const apiHandler = {
           aDetail: submittedData.aDetail,
           aStatus: submittedData.aStatus,
           aState: submittedData.aState,
+
+          dTag: submittedData.dTag,
         } });
 
         // console.log(serverResponse)

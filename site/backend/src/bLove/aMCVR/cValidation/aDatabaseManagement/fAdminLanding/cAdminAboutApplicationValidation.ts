@@ -13,6 +13,7 @@ const adminAboutApplicationValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dTechIcon(),
   ],
 
   retrieve: () => [
@@ -27,6 +28,7 @@ const adminAboutApplicationValidation = {
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dTechIcon(),
     ...validatorUtility.idParam({ Model: AdminAboutApplicationModel, label: "AdminAboutApplicationModel" })
   ],
 

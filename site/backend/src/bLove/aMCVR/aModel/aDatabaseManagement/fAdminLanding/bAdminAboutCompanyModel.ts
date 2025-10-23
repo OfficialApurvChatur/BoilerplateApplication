@@ -10,7 +10,7 @@ export type AdminAboutCompanyModelType = DefaultSchemaUtilityType & {
   // C. RelationInfo Type
   // ...
   // D. MoreInfo Type
-  // ...
+  dTag?: string;
   // E. CriticalInfo Type
   // ..
 }
@@ -22,14 +22,18 @@ const schema = new mongoose.Schema<AdminAboutCompanyModelType>({
 
   // C. RelationInfo Schema
   // ...
-
+  
   // D. MoreInfo Schema
-  // ...
+  dTag: { 
+    type: String, 
+    enum: ['Truly', 'Relatively'],
+    default: "truely"  // 👈 default tag
+  },
 
   // E. CriticalInfo Schema
   // ..
 
-})
+} as mongoose.SchemaDefinition<AdminAboutCompanyModelType> )
 
 // Pre Create
 schema.pre("save", function(next) {

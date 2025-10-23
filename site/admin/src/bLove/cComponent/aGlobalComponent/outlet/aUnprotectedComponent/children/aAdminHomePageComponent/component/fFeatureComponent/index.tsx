@@ -6,9 +6,12 @@ import {
   CardHeader,
   CardTitle,
 } from "@/aConnection/bShadcnConnection/components/ui/card";
-import image from "@/bLove/hAsset/growth.png";
-import image3 from "@/bLove/hAsset/reflecting.png";
-import image4 from "@/bLove/hAsset/looking-ahead.png";
+import Sharanya_Palli from '@/bLove/hAsset/Avatar/Sharanya_Palli.png'
+import Shivani_Dangore from '@/bLove/hAsset/Avatar/Shivani_Dangore.png'
+import Shivani_Shendre from '@/bLove/hAsset/Avatar/Shivani_Shendre.png'
+import Shruti_Gupta from '@/bLove/hAsset/Avatar/Shruti_Gupta.png'
+import Shruti_Wankhede from '@/bLove/hAsset/Avatar/Shruti_Wankhede.png'
+import Snehal_Paes from '@/bLove/hAsset/Avatar/Snehal_Paes.png'
 
 
 interface FeatureProps {
@@ -22,19 +25,37 @@ const features: FeatureProps[] = [
     title: "Responsive Design",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    image: image4,
+    image: Sharanya_Palli,
   },
   {
     title: "Intuitive user interface",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    image: image3,
+    image: Shivani_Dangore,
   },
   {
     title: "AI-Powered insights",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
-    image: image,
+    image: Shivani_Shendre,
+  },
+  {
+    title: "Responsive Design",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+    image: Shruti_Gupta,
+  },
+  {
+    title: "Intuitive user interface",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+    image: Shruti_Wankhede,
+  },
+  {
+    title: "AI-Powered insights",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi nesciunt est nostrum omnis ab sapiente.",
+    image: Snehal_Paes,
   },
 ];
 

@@ -29,6 +29,7 @@ import { resetPasswordRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/cU
 
 import { imageStorageRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/dFileStorage/aImageStorageRoute";
 import { videoStorageRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/dFileStorage/bVideoStorageRoute";
+import { audioStorageRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/dFileStorage/cAudioStorageRoute";
 
 import { staticContentRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/eContentOperation/aStaticContentRoute";
 import { socialMediaContentRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/eContentOperation/bSocialMediaContentRoute";
@@ -38,12 +39,32 @@ import { adminAboutCompanyRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagemen
 import { adminAboutApplicationRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/fAdminLanding/cAdminAboutApplicationRoute";
 import { adminContactFormRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/fAdminLanding/dAdminContactFormRoute";
 import { adminContactInfoRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/fAdminLanding/eAdminContactInfoRoute";
+import { adminCounterRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/fAdminLanding/fAdminCounterRoute";
+import { adminServiceRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/fAdminLanding/gAdminServiceRoute";
+import { adminBranchSectionRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/fAdminLanding/hAdminBranchSectionRoute";
+import { adminBranchGroupRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/fAdminLanding/iAdminBranchGroupRoute";
+import { adminBranchRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/fAdminLanding/jAdminBranchRoute";
+import { adminProjectSectionRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/fAdminLanding/kAdminProjectSectionRoute";
+import { adminProjectGroupRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/fAdminLanding/lAdminProjectGroupRoute";
+import { adminProjectRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/fAdminLanding/mAdminProjectRoute";
 
 import { heroRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/aHeroRoute";
 import { aboutCompanyRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/bAboutCompanyRoute";
 import { aboutApplicationRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/cAboutApplicationRoute";
 import { contactFormRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/dContactFormRoute";
 import { contactInfoRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/eContactInfoRoute";
+import { counterRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/fCounterRoute";
+import { serviceRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/gServiceRoute";
+import { branchSectionRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/hBranchSectionRoute";
+import { branchGroupRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/iBranchGroupRoute";
+import { branchRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/jBranchRoute";
+import { projectSectionRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/kProjectSectionRoute";
+import { projectGroupRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/lProjectGroupRoute";
+import { projectRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/gFrontendLanding/mProjectRoute";
+
+import { chatRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/hChatManagement/aChatRoute";
+import { messageRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/hChatManagement/bMessageRoute";
+import { requestRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/hChatManagement/cRequestRoute";
 
 
 loggerConnection().info({ 
@@ -88,6 +109,7 @@ appConnection.use("/api/v1/reset-password/", resetPasswordRoute);
 
 appConnection.use("/api/v1/image-storage/", imageStorageRoute);
 appConnection.use("/api/v1/video-storage/", videoStorageRoute);
+appConnection.use("/api/v1/audio-storage/", audioStorageRoute);
 
 appConnection.use("/api/v1/static-content/", staticContentRoute);
 appConnection.use("/api/v1/social-media-content/", socialMediaContentRoute);
@@ -97,12 +119,33 @@ appConnection.use("/api/v1/admin-about-company/", adminAboutCompanyRoute);
 appConnection.use("/api/v1/admin-about-application/", adminAboutApplicationRoute);
 appConnection.use("/api/v1/admin-contact-form/", adminContactFormRoute);
 appConnection.use("/api/v1/admin-contact-info/", adminContactInfoRoute);
+appConnection.use("/api/v1/admin-counter/", adminCounterRoute);
+appConnection.use("/api/v1/admin-service/", adminServiceRoute);
+appConnection.use("/api/v1/admin-branch-section/", adminBranchSectionRoute);
+appConnection.use("/api/v1/admin-branch-group/", adminBranchGroupRoute);
+appConnection.use("/api/v1/admin-branch/", adminBranchRoute);
+appConnection.use("/api/v1/admin-project-section/", adminProjectSectionRoute);
+appConnection.use("/api/v1/admin-project-group/", adminProjectGroupRoute);
+appConnection.use("/api/v1/admin-project/", adminProjectRoute);
 
 appConnection.use("/api/v1/hero/", heroRoute);
 appConnection.use("/api/v1/about-company/", aboutCompanyRoute);
 appConnection.use("/api/v1/about-application/", aboutApplicationRoute);
 appConnection.use("/api/v1/contact-form/", contactFormRoute);
 appConnection.use("/api/v1/contact-info/", contactInfoRoute);
+appConnection.use("/api/v1/counter/", counterRoute);
+appConnection.use("/api/v1/service/", serviceRoute);
+appConnection.use("/api/v1/branch-section/", branchSectionRoute);
+appConnection.use("/api/v1/branch-group/", branchGroupRoute);
+appConnection.use("/api/v1/branch/", branchRoute);
+appConnection.use("/api/v1/project-section/", projectSectionRoute);
+appConnection.use("/api/v1/project-group/", projectGroupRoute);
+appConnection.use("/api/v1/project/", projectRoute);
+
+appConnection.use("/api/v1/chat/", chatRoute);
+appConnection.use("/api/v1/message/", messageRoute);
+appConnection.use("/api/v1/request/", requestRoute);
+
 
 // Error Middleware
 appConnection.use(errorMiddleware)

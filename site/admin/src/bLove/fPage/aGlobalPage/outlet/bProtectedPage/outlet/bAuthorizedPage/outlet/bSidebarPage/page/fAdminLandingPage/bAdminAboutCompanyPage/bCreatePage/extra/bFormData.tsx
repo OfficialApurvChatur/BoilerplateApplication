@@ -44,10 +44,18 @@ const formData = () => ([
 
   // More Information
   {
-    display: false,
+    display: true,
     title: "More Information",
     subtitle: "This is just some subtitle for the more information...",
-    inputs: [],  
+    inputs: [
+      { name: "dTag", label: "Tag", type: "select", placeholder: "Please select tag...",
+        options: [
+          { value: "Truly", label: "Truly" },
+          { value: "relativety", label: "Relatively" },
+        ]
+      },
+
+    ],  
   },
 
   // Critical Information
