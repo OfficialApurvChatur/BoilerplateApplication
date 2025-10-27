@@ -55,7 +55,7 @@ const formData = () => ([
         type: "dynamic-input",
         name: "dLinks",
         children: {
-          label: "Links",
+          label: "Link",
           type: "object-array-input",
           inputType: "text-input",
           inputs: formValueDefault?.dLinks,

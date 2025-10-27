@@ -10,9 +10,9 @@ export type AdminAboutApplicationModelType = DefaultSchemaUtilityType & {
   // C. RelationInfo Type
   // ...
   // D. MoreInfo Type
-  dTech: {
-    aLabel: string;
-    bValue: string;
+  dTechIcon: {
+    aIconLabel: string;
+    bIconValue: string;
   }[];
   // E. CriticalInfo Type
   // ..

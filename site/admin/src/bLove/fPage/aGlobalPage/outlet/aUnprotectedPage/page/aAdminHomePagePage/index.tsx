@@ -4,14 +4,14 @@ import { RootState } from "@/aConnection/dReduxConnection";
 
 import globalSlice from "@/bLove/bRedux/aGlobalSlice";
 
-// import adminHomePageAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/aUnprotectedAPI/aAdminHomePageAPI";
+import adminHomePageAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/aUnprotectedAPI/aAdminHomePageAPI";
 
 import AdminHomePageComponent from "@/bLove/cComponent/aGlobalComponent/outlet/aUnprotectedComponent/children/aAdminHomePageComponent";
 
 
 const AdminHomePagePage = () => {  
   // Variable
-  // const listAPIResponse = adminHomePageAPIEndpoint.useAdminHomePageListAPIQuery(null);
+  const retrieveAPIResponse = adminHomePageAPIEndpoint.useAdminHomePageRetrieveAPIQuery(null);
 
   // Redux Call
   const reduxCall = {
@@ -21,9 +21,9 @@ const AdminHomePagePage = () => {
   }
 
   // API Call
-  // const apiCall = {
-  //   listAPIResponse,
-  // }  
+  const apiCall = {
+    retrieveAPIResponse,
+  }  
 
   // JSX
   return (
@@ -31,7 +31,7 @@ const AdminHomePagePage = () => {
       {/* AdminHomePagePage */}
       <AdminHomePageComponent
         reduxCall={reduxCall}
-        // apiCall={apiCall}
+        apiCall={apiCall}
       />
     </React.Fragment>
   )

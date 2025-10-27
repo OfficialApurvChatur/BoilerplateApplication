@@ -5,15 +5,16 @@ const fullRoute = {
   aGlobalRoute: {
     aUnprotectedRoute: {
       aAdminHomePageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute}`,
-      bAdminAboutPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutPageRoute}`,
-      cAdminContactPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.cAdminContactPageRoute}`,
-      dAdminServicePageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.dAdminServicePageRoute}`,
-      eAdminBranchSectionPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.eAdminBranchSectionPageRoute}`,
-      fAdminBranchGroupPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.fAdminBranchGroupPageRoute}`,
-      gAdminBranchPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.gAdminBranchPageRoute}`,
-      hAdminProjectSectionPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.hAdminProjectSectionPageRoute}`,
-      iAdminProjectGroupPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.iAdminProjectGroupPageRoute}`,
-      jAdminProjectPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.jAdminProjectPageRoute}`,
+      bAdminAboutCompanyPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutCompanyPageRoute}`,
+      cAdminAboutApplicationPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.cAdminAboutApplicationPageRoute}`,
+      dAdminContactPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.dAdminContactPageRoute}`,
+      eAdminServicePageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.eAdminServicePageRoute}`,
+      fAdminBranchSectionPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.fAdminBranchSectionPageRoute}`,
+      gAdminBranchGroupPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.gAdminBranchGroupPageRoute}`,
+      hAdminBranchPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.hAdminBranchPageRoute}`,
+      iAdminProjectSectionPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.iAdminProjectSectionPageRoute}`,
+      jAdminProjectGroupPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.jAdminProjectGroupPageRoute}`,
+      kAdminProjectPageRoute: `/${endpointRoute.aGlobalRoute.aUnprotectedRoute.kAdminProjectPageRoute}`,
     },
     bProtectedRoute: {
       aAutheticatedRoute: {

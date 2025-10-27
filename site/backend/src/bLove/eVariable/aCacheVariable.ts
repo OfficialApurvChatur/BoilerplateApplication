@@ -998,6 +998,216 @@ const cacheVariable = {
       `${Label}::retrieve:${request.params.id}`
     ],
   },
+  adminHomePageModel: {
+    // list: ({ Label= "AdminHomePageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AdminHomePageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AdminHomePageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AdminHomePageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AdminHomePageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  adminAboutCompanyPageModel: {
+    // list: ({ Label= "AdminAboutCompanyPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AdminAboutCompanyPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AdminAboutCompanyPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AdminAboutCompanyPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AdminAboutCompanyPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  adminAboutApplicationPageModel: {
+    // list: ({ Label= "AdminAboutApplicationPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AdminAboutApplicationPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AdminAboutApplicationPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AdminAboutApplicationPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AdminAboutApplicationPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  adminContactPageModel: {
+    // list: ({ Label= "AdminContactPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AdminContactPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AdminContactPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AdminContactPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AdminContactPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  adminServicePageModel: {
+    // list: ({ Label= "AdminServicePageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AdminServicePageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AdminServicePageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AdminServicePageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AdminServicePageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  adminBranchSectionPageModel: {
+    // list: ({ Label= "AdminBranchSectionPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AdminBranchSectionPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AdminBranchSectionPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AdminBranchSectionPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AdminBranchSectionPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  adminBranchGroupPageModel: {
+    // list: ({ Label= "AdminBranchGroupPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AdminBranchGroupPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AdminBranchGroupPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AdminBranchGroupPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AdminBranchGroupPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  adminBranchPageModel: {
+    // list: ({ Label= "AdminBranchPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AdminBranchPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AdminBranchPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AdminBranchPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AdminBranchPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  adminProjectSectionPageModel: {
+    // list: ({ Label= "AdminProjectSectionPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AdminProjectSectionPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AdminProjectSectionPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AdminProjectSectionPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AdminProjectSectionPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  adminProjectGroupPageModel: {
+    // list: ({ Label= "AdminProjectGroupPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AdminProjectGroupPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AdminProjectGroupPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AdminProjectGroupPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AdminProjectGroupPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  adminProjectPageModel: {
+    // list: ({ Label= "AdminProjectPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AdminProjectPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AdminProjectPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AdminProjectPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AdminProjectPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+
 };
 
 export default cacheVariable;

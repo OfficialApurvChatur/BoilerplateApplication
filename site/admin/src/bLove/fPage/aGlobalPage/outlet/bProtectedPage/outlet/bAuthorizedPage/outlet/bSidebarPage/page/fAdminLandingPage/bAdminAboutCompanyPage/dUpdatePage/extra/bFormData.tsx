@@ -59,8 +59,8 @@ const formData = ({ retrieveAPIResponse }: { retrieveAPIResponse: any }) => (
         inputs: [
           { name: "dTag", label: "Tag", type: "select", placeholder: "Please select tag...",
             options: [
-              { value: "Truly", label: "Truly" },
-              { value: "Relatively", label: "Relatively" },
+              { value: "truly", label: "Truly" },
+              { value: "relatively", label: "Relatively" },
             ]
           },    
         ],  

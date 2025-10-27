@@ -10,6 +10,7 @@
     "cssVariables": true,
     "prefix": ""
   },
+  "iconLibrary": "lucide",
   "aliases": {
     "components": "@/components",
     "utils": "@/aConnection/bShadcnConnection/lib/utils",
@@ -17,5 +18,7 @@
     "lib": "@/aConnection/bShadcnConnection/lib",
     "hooks": "@/aConnection/bShadcnConnection/hooks"
   },
-  "iconLibrary": "lucide"
+  "registries": {
+    "@aceternity": "https://ui.aceternity.com/registry/{name}.json"
+  }
 }

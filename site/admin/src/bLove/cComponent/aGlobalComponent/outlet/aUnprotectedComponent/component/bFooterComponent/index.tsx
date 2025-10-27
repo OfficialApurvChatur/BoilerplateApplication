@@ -1,5 +1,6 @@
-import { LogoIcon } from "@/bLove/hAsset/Icons";
 import { Link } from "react-router-dom";
+import { LogoIcon } from "@/bLove/hAsset/Icons";
+import fullRoute from "@/bLove/gRoute/bFullRoute";
 
 
 export const FooterComponent = () => {
@@ -10,11 +11,11 @@ export const FooterComponent = () => {
       <section className="container py-20 grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
         <div className="col-span-full xl:col-span-2">
           <Link
-            to="/"
-            className="font-bold text-xl flex items-center gap-2"
+            to={fullRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute}
+            className="font-myPrimaryFont font-semibold text-xl flex items-center"
           >
             <LogoIcon />
-            <div className="grid flex-1 text-left text-sm leading-tight">
+            <div className="grid flex-1 text-left text-xl leading-tight">
               <span className="truncate font-semibold">
                 {"Boilerplate Application"}
               </span>
@@ -23,149 +24,136 @@ export const FooterComponent = () => {
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Follow US</h3>
+          <h3 className="font-myPrimaryFont font-bold text-lg">Follow</h3>
           <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+            <Link
+              to="#"
+              className="font-mySecondaryFont text-xs opacity-60 hover:opacity-100"
             >
               Github
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+            <Link
+              to="#"
+              className="font-mySecondaryFont text-xs opacity-60 hover:opacity-100"
             >
               Twitter
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+            <Link
+              to="#"
+              className="font-mySecondaryFont text-xs opacity-60 hover:opacity-100"
             >
               Dribbble
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Platforms</h3>
+          <h3 className="font-myPrimaryFont font-bold text-lg">Platforms</h3>
           <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+            <Link
+              to="#"
+              className="font-mySecondaryFont text-xs opacity-60 hover:opacity-100"
             >
               Web
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+            <Link
+              to="#"
+              className="font-mySecondaryFont text-xs opacity-60 hover:opacity-100"
             >
               Mobile
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+            <Link
+              to="#"
+              className="font-mySecondaryFont text-xs opacity-60 hover:opacity-100"
             >
               Desktop
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">About</h3>
+          <h3 className="font-myPrimaryFont font-bold text-lg">About</h3>
           <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+            <Link
+              to="#"
+              className="font-mySecondaryFont text-xs opacity-60 hover:opacity-100"
             >
               Features
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+            <Link
+              to="#"
+              className="font-mySecondaryFont text-xs opacity-60 hover:opacity-100"
             >
               Pricing
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+            <Link
+              to="#"
+              className="font-mySecondaryFont text-xs opacity-60 hover:opacity-100"
             >
               FAQ
-            </a>
+            </Link>
           </div>
         </div>
 
         <div className="flex flex-col gap-2">
-          <h3 className="font-bold text-lg">Community</h3>
+          <h3 className="font-myPrimaryFont font-bold text-lg">Community</h3>
           <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+            <Link
+              to="#"
+              className="font-mySecondaryFont text-xs opacity-60 hover:opacity-100"
             >
               Youtube
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+            <Link
+              to="#"
+              className="font-mySecondaryFont text-xs opacity-60 hover:opacity-100"
             >
               Discord
-            </a>
+            </Link>
           </div>
 
           <div>
-            <a
-              rel="noreferrer noopener"
-              href="#"
-              className="opacity-60 hover:opacity-100"
+            <Link
+              to="#"
+              className="font-mySecondaryFont text-xs opacity-60 hover:opacity-100"
             >
               Twitch
-            </a>
+            </Link>
           </div>
         </div>
       </section>
 
-      <section className="container pb-14 text-center">
+      <section className="font-mySecondaryFont text-xs container pb-14 text-center">
         <h3>
           &copy; 2025 Landing page made by{" "}
-          <a
-            rel="noreferrer noopener"
+          <Link
             target="_blank"
-            href="https://www.linkedin.com/in/leopoldo-miranda/"
+            to="https://www.linkedin.com/in/leopoldo-miranda/"
             className="text-primary transition-all border-primary hover:border-b-2"
           >
             Beehive Corporation
-          </a>
+          </Link>
         </h3>
       </section>
     </footer>

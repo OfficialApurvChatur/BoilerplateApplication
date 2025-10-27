@@ -66,6 +66,18 @@ import { chatRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/hChatManage
 import { messageRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/hChatManagement/bMessageRoute";
 import { requestRoute } from "../bLove/aMCVR/dRoute/aDatabaseManagement/hChatManagement/cRequestRoute";
 
+import { adminHomePageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/aAdminHomePageRoute";
+import { adminAboutCompanyPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/bAdminAboutCompanyPageRoute";
+import { adminAboutApplicationPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/cAdminAboutApplicationPageRoute";
+import { adminContactPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/dAdminContactPageRoute";
+import { adminServicePageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/eAdminServicePageRoute";
+import { adminBranchSectionPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/fAdminBranchSectionPageRoute";
+import { adminBranchGroupPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/gAdminBranchGroupPageRoute";
+import { adminBranchPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/hAdminBranchPageRoute";
+import { adminProjectSectionPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/iAdminProjectSectionPageRoute";
+import { adminProjectGroupPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/jAdminProjectGroupPageRoute";
+import { adminProjectPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/kAdminProjectPageRoute";
+
 
 loggerConnection().info({ 
   message: "✅ Great... App Connected",
@@ -87,6 +99,10 @@ appConnection.use(compressionMiddleware());
 // Routing Middleware
 appConnection.get("/", (_request: express.Request, response: express.Response) => {
   response.send(`Welcome to ${process.env.APPLICATION}`)
+})
+
+appConnection.get("/ping", (_request: express.Request, response: express.Response) => {
+  response.send("pong");
 })
 
 appConnection.use("/api/v1/base/", baseRoute);
@@ -146,6 +162,17 @@ appConnection.use("/api/v1/chat/", chatRoute);
 appConnection.use("/api/v1/message/", messageRoute);
 appConnection.use("/api/v1/request/", requestRoute);
 
+appConnection.use("/api/v1/admin-home-page/", adminHomePageRoute);
+appConnection.use("/api/v1/admin-about-company-page/", adminAboutCompanyPageRoute);
+appConnection.use("/api/v1/admin-about-application-page/", adminAboutApplicationPageRoute);
+appConnection.use("/api/v1/admin-contact-page/", adminContactPageRoute);
+appConnection.use("/api/v1/admin-service-page/", adminServicePageRoute);
+appConnection.use("/api/v1/admin-branch-section-page/", adminBranchSectionPageRoute);
+appConnection.use("/api/v1/admin-branch-group-page/", adminBranchGroupPageRoute);
+appConnection.use("/api/v1/admin-branch-page/", adminBranchPageRoute);
+appConnection.use("/api/v1/admin-project-section-page/", adminProjectSectionPageRoute);
+appConnection.use("/api/v1/admin-project-group-page/", adminProjectGroupPageRoute);
+appConnection.use("/api/v1/admin-project-page/", adminProjectPageRoute);
 
 // Error Middleware
 appConnection.use(errorMiddleware)

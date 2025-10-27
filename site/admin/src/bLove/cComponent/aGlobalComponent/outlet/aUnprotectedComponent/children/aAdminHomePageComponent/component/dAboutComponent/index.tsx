@@ -1,4 +1,4 @@
-import pilot from "@/bLove/hAsset/Ashlesha_Wase.png";
+import pilot from "@/bLove/hAsset/Avatar/Ashlesha_Wase.png";
 import { StatisticComponent } from "./component/aStatisticComponent";
 
 

@@ -2,15 +2,16 @@ const endpointRoute = {
   aGlobalRoute: {
     aUnprotectedRoute: {
       aAdminHomePageRoute: "",
-      bAdminAboutPageRoute: "admin-about-page",
-      cAdminContactPageRoute: "admin-contact-page",
-      dAdminServicePageRoute: "admin-service-page",
-      eAdminBranchSectionPageRoute: "admin-branch-section-page",
-      fAdminBranchGroupPageRoute: "admin-branch-group-page",
-      gAdminBranchPageRoute: "admin-branch-page",
-      hAdminProjectSectionPageRoute: "admin-project-section-page",
-      iAdminProjectGroupPageRoute: "admin-project-group-page",
-      jAdminProjectPageRoute: "admin-project-page",
+      bAdminAboutCompanyPageRoute: "admin-about-company-page",
+      cAdminAboutApplicationPageRoute: "admin-about-application-page",
+      dAdminContactPageRoute: "admin-contact-page",
+      eAdminServicePageRoute: "admin-service-page",
+      fAdminBranchSectionPageRoute: "admin-branch-section-page",
+      gAdminBranchGroupPageRoute: "admin-branch-group-page",
+      hAdminBranchPageRoute: "admin-branch-page",
+      iAdminProjectSectionPageRoute: "admin-project-section-page",
+      jAdminProjectGroupPageRoute: "admin-project-group-page",
+      kAdminProjectPageRoute: "admin-project-page",
     },
     bProtectedRoute: {
       aAutheticatedRoute: {

@@ -3,6 +3,10 @@ import { createRoot } from 'react-dom/client'
 
 // index.jsx & index.css
 import './aConnection/bShadcnConnection/index.css'
+import "@fontsource/lora/400.css";
+import "@fontsource/lora/700.css";
+import "@fontsource/libre-baskerville/400.css";
+import "@fontsource/libre-baskerville/700.css";
 import AppConnection from './aConnection/aAppConnection/index.tsx'
 
 //  Provider

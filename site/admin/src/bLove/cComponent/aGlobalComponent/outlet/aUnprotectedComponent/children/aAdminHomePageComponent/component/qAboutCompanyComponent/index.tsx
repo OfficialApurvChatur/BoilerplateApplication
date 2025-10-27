@@ -1,8 +1,8 @@
 import { Button } from "@/aConnection/bShadcnConnection/components/ui/button";
 
-import Navy_01 from '@/bLove/hAsset/Anisha_Wase.png'
-import Navy_02 from '@/bLove/hAsset/Rutuja_Bhoyar.png'
-import Navy_03 from '@/bLove/hAsset/Kanak_Kshirsagar.png'
+import Navy_01 from '@/bLove/hAsset/Avatar/Anisha_Wase.png'
+import Navy_02 from '@/bLove/hAsset/Avatar/Rutuja_Bhoyar.png'
+import Navy_03 from '@/bLove/hAsset/Avatar/Kanak_Kshirsagar.png'
 
 
 interface AboutCompanyComponentProps {

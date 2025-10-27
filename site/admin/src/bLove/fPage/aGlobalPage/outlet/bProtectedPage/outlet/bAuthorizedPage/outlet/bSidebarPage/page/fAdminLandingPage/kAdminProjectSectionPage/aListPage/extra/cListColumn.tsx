@@ -39,7 +39,7 @@ const listColumn: ColumnDef<ListSchema>[] = [
       return (
         <div className="flex space-x-2">
           <span className="max-w-[450px] truncate font-normal hover:underline">
-            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.lAdminProjectGroupRoute.cRetrieveRoute}/${row.original._id}`} >
+            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.kAdminProjectSectionRoute.cRetrieveRoute}/${row.original._id}`} >
               {row.getValue("aTitle")}
             </Link>
           </span>
@@ -85,18 +85,18 @@ const listColumn: ColumnDef<ListSchema>[] = [
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end" className="w-[160px]">
           <DropdownMenuItem asChild>
-            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.lAdminProjectGroupRoute.cRetrieveRoute}/${row.original._id}`} >
+            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.kAdminProjectSectionRoute.cRetrieveRoute}/${row.original._id}`} >
               Retrieve
             </Link>
           </DropdownMenuItem>
           <DropdownMenuItem asChild>
-            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.lAdminProjectGroupRoute.dUpdateRoute}/${row.original._id}`} >
+            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.kAdminProjectSectionRoute.dUpdateRoute}/${row.original._id}`} >
               Update
             </Link>
           </DropdownMenuItem>
           <DropdownMenuSeparator />
           <DropdownMenuItem asChild>
-            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.lAdminProjectGroupRoute.eDeleteRoute}/${row.original._id}`} >
+            <Link to={`${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.fAdminLandingRoute.kAdminProjectSectionRoute.eDeleteRoute}/${row.original._id}`} >
               Delete
             </Link>
           </DropdownMenuItem>

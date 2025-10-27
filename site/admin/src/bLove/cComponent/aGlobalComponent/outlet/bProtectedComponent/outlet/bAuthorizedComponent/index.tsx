@@ -76,7 +76,7 @@ const AuthorizedComponent = ({ children, reduxCall, apiHandler }: { children: Re
                     (reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
                       <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                         <Avatar className="h-8 w-8 rounded-lg">
-                          <AvatarImage src={"asdsadsad"} />
+                          <AvatarImage src={reduxCall.state.receivedObject?.AccountRetrieve?.eImage} />
                           <AvatarFallback className="rounded-lg">{getInitialsUtility(
                             reduxCall.state.receivedObject?.AccountRetrieve?.eFirstname, 
                             reduxCall.state.receivedObject?.AccountRetrieve?.eLastname

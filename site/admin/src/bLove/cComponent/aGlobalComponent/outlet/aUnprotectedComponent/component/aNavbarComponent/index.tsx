@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
-import { BookmarkX, ClapperboardIcon, FolderKey, GalleryVerticalEnd, GalleryVerticalEndIcon, KeyRound, LogIn, LogOut, MailIcon, Menu, Rat, ShieldCheckIcon, User2, UserPen, UserPlus } from "lucide-react";
-import { GitHubLogoIcon } from "@radix-ui/react-icons";
+import { BookmarkX, ClapperboardIcon, FolderKey, KeyRound, LogIn, LogOut, MailIcon, Menu, Rat, ShieldCheckIcon, User2, UserPen, UserPlus } from "lucide-react";
+// import { GitHubLogoIcon } from "@radix-ui/react-icons";
 
 import {
   NavigationMenu,
@@ -38,23 +38,27 @@ const routeList: RouteProps[] = [
     label: "Home",
   },
   {
-    href: fullRoute.aGlobalRoute.aUnprotectedRoute.hAdminProjectSectionPageRoute,
+    href: fullRoute.aGlobalRoute.aUnprotectedRoute.iAdminProjectSectionPageRoute,
     label: "Projects",
   },
   {
-    href: fullRoute.aGlobalRoute.aUnprotectedRoute.eAdminBranchSectionPageRoute,
+    href: fullRoute.aGlobalRoute.aUnprotectedRoute.fAdminBranchSectionPageRoute,
     label: "Branches",
   },
   {
-    href: fullRoute.aGlobalRoute.aUnprotectedRoute.dAdminServicePageRoute,
+    href: fullRoute.aGlobalRoute.aUnprotectedRoute.eAdminServicePageRoute,
     label: "Services",
   },
   {
-    href: fullRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutPageRoute,
-    label: "About",
+    href: fullRoute.aGlobalRoute.aUnprotectedRoute.cAdminAboutApplicationPageRoute,
+    label: "About Application",
   },
   {
-    href: fullRoute.aGlobalRoute.aUnprotectedRoute.cAdminContactPageRoute,
+    href: fullRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutCompanyPageRoute,
+    label: "About Company",
+  },
+  {
+    href: fullRoute.aGlobalRoute.aUnprotectedRoute.dAdminContactPageRoute,
     label: "Contact",
   },
 ];
@@ -75,19 +79,19 @@ export const NavbarComponent = (props: NavbarComponentType) => {
             <Link
               rel="noreferrer noopener"
               to={fullRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute}
-              className="ml-2 font-semibold text-xl flex items-center"
+              className="ml-2 font-myPrimaryFont font-semibold text-xl flex items-center"
             >
               <LogoIcon />
-              {/* <div className="grid flex-1 text-left text-sm leading-tight">
-                <span className="truncate font-semibold"> */}
+              <div className="grid flex-1 text-left text-xl leading-tight">
+                <span className="truncate font-semibold">
                   {"Boilerplate Application"}
-                {/* </span>
-              </div> */}
+                </span>
+              </div>
             </Link>
           </NavigationMenuItem>
 
           {/* mobile */}
-          <span className="flex md:hidden">
+          <span className="flex lg:hidden">
             <ModeToggle />
 
             <Sheet
@@ -96,7 +100,7 @@ export const NavbarComponent = (props: NavbarComponentType) => {
             >
               <SheetTrigger className="px-2">
                 <Menu
-                  className="flex md:hidden h-5 w-5"
+                  className="flex lg:hidden h-5 w-5"
                   onClick={() => setIsOpen(true)}
                 >
                   <span className="sr-only">Menu Icon</span>
@@ -105,12 +109,12 @@ export const NavbarComponent = (props: NavbarComponentType) => {
 
               <SheetContent side={"left"}>
                 <SheetHeader>
-                  <SheetTitle className="font-bold text-xl">
+                  <SheetTitle className="font-myPrimaryFont font-bold text-xl">
                     Boilerplate Application
                   </SheetTitle>
                 </SheetHeader>
                 <Separator />
-                <nav className="flex flex-col justify-center items-center gap-2 mt-4">
+                <nav className="font-mySecondaryFont text-sm flex flex-col justify-center items-center gap-2 mt-4">
                   {routeList.map(({ href, label }: RouteProps) => (
                     <Link
                       key={label}
@@ -131,7 +135,7 @@ export const NavbarComponent = (props: NavbarComponentType) => {
                     Visit Application
                   </Link>
                   <Link
-                    to="/dashboard"
+                    to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hMainRoute.aDashboardRoute}
                     className={`border ${buttonVariants({
                       variant: "secondary",
                     })}`}
@@ -145,12 +149,12 @@ export const NavbarComponent = (props: NavbarComponentType) => {
           </span>
 
           {/* desktop */}
-          <nav className="hidden md:flex gap-2">
+          <nav className="font-mySecondaryFont hidden lg:flex gap-2">
             {routeList.map((route: RouteProps, i) => (
               <Link
                 to={route.href}
                 key={i}
-                className={`text-[17px] ${buttonVariants({
+                className={`text-xs ${buttonVariants({
                   variant: "ghost",
                 })}`}
               >
@@ -159,20 +163,18 @@ export const NavbarComponent = (props: NavbarComponentType) => {
             ))}
           </nav>
 
-          <div className="hidden md:flex items-center gap-2">
+          <div className="hidden lg:flex items-center gap-2">
             <Link
               to="/#"
               className={`border ${buttonVariants({ variant: "secondary" })}`}
             >
               <ClapperboardIcon className="w-5 h-5" />
-              Visit Application
             </Link>
             <Link
-              to="/dashboard"
+              to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hMainRoute.aDashboardRoute}
               className={`border ${buttonVariants({ variant: "secondary" })}`}
             >
               <ShieldCheckIcon className="w-5 h-5" />
-              Get Started
             </Link>
 
             <ModeToggle />
@@ -204,7 +206,7 @@ export const NavbarComponent = (props: NavbarComponentType) => {
                   (props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && props.reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
                     <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                       <Avatar className="h-8 w-8 rounded-lg">
-                        <AvatarImage src={"asdsadsad"} />
+                        <AvatarImage src={props.reduxCall.state.receivedObject?.AccountRetrieve?.eImage} />
                         <AvatarFallback className="rounded-lg">{getInitialsUtility(
                           props.reduxCall.state.receivedObject?.AccountRetrieve?.eFirstname, 
                           props.reduxCall.state.receivedObject?.AccountRetrieve?.eLastname

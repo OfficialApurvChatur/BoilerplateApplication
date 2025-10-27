@@ -1,66 +1,267 @@
 import React from 'react'
 
-// import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
-// import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
+import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
+import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
 
-import { HeroComponent } from './component/aHeroComponent';
-import { GalleryComponent } from './component/nGalleryComponent';
-import { TechnologyComponent } from './component/pTechnologyComponent';
-import { FeatureComponent } from './component/fFeatureComponent';
-import { SponsorComponent } from './component/cSponsorComponent';
-import { AboutComponent } from './component/dAboutComponent';
-import { HowItWorkComponent } from './component/eHowItWorkComponent';
-import { ServiceComponent } from './component/gServiceComponent';
-import { CTAComponent } from './component/hCTAComponent';
-import { TestimonialComponent } from './component/iTestimonialComponent';
-import { TeamComponent } from './component/jTeamComponent';
-import { PricingComponent } from './component/kPricingComponent';
-import { NewsletterComponent } from './component/lNewsletterComponent';
-import { FAQComponent } from './component/mFAQComponent';
-import AboutCompanyComponent from './component/qAboutCompanyComponent';
+import { HeroComponent } from './component/new/aHeroComponent';
+import { AboutCompanyComponent } from './component/new/bAboutCompanyComponent';
+import { AboutApplicationComponent } from './component/new/cAboutApplicationComponent';
+import { ServiceComponent } from './component/new/dServiceComponent';
+import { CounterComponent } from './component/new/eCounterComponent';
+import { BranchSectionComponent } from './component/new/fBranchSectionComponent';
+import { ProjectSectionComponent } from './component/new/gProjectSectionComponent';
+import { ContactInfoComponent } from './component/new/hContactInfoComponent';
 
 
 type AdminHomePageComponentType = {
   reduxCall: any,
-  // apiCall: any,
+  apiCall: any,
 }
 
-const AdminHomePageComponent = (_props: AdminHomePageComponentType) => {
+export type HeroComponentDataType = {
+  aImage: string;
+  aTitle: string;
+  aSubtitle: string;
+  aDescription: string;
+  dTag: string;
+  dSocialLinks: {
+    aLinkTitle: string;
+    bLinkURL: string;
+  }[];
+  dWebLinks: {
+    aLinkTitle: string;
+    bLinkURL: string;
+  }[];
+  dGalleryImages: string[];
+};
+
+export type AboutCompanyComponentDataType = {
+  aImage: string;
+  aTitle: string;
+  aSubtitle: string;
+  aDescription: string;
+  dTag: string;
+};
+
+export type AboutApplicationComponentDataType = {
+  aImage: string;
+  aTitle: string;
+  aSubtitle: string;
+  aDescription: string;
+  dTechIcon: {
+    aIconLabel: string;
+    bIconValue: string;
+  }[];
+};
+
+export type ServiceComponentDataType = {
+  aImage: string;
+  aTitle: string;
+  aSubtitle: string;
+  aDescription: string;
+  dLinks: {
+    aLinkTitle: 'Instagram' | 'Twitter' | 'Linkedin' | 'Portfolio' | 'Other';
+    bLinkURL: string;
+  }[];
+  dIcon: {
+    aIconLabel: string;
+    bIconValue: string;
+  };
+};
+
+export type CounterComponentDataType = {
+  aImage: string;
+  aTitle: string;
+  aSubtitle: string;
+  aDescription: string;
+};
+
+export type BranchComponentDataType = {
+  aImage: string;
+  aTitle: string;
+  aSubtitle: string;
+  aDescription: string;
+  dSocialLinks: {
+    aLinkTitle: string;
+    bLinkURL: string;
+  }[];
+  dWebLinks: {
+    aLinkTitle: string;
+    bLinkURL: string;
+  }[];
+};
+
+export type BranchGroupComponentDataType = {
+  aImage: string;
+  aTitle: string;
+  aSubtitle: string;
+  aDescription: string;
+  cBranches: BranchComponentDataType[];
+};
+
+export type BranchSectionComponentDataType = {
+  aImage: string;
+  aTitle: string;
+  aSubtitle: string;
+  aDescription: string;
+  cBranchGroups: BranchGroupComponentDataType[];
+};
+
+export type ProjectComponentDataType = {
+  aImage: string;
+  aTitle: string;
+  aSubtitle: string;
+  aDescription: string;
+  dSocialLinks: {
+    aLinkTitle: string;
+    bLinkURL: string;
+  }[];
+  dWebLinks: {
+    aLinkTitle: string;
+    bLinkURL: string;
+  }[];
+};
+
+export type ProjectGroupComponentDataType = {
+  aImage: string;
+  aTitle: string;
+  aSubtitle: string;
+  aDescription: string;
+  cProjects: ProjectComponentDataType[];
+};
+
+export type ProjectSectionComponentDataType = {
+  aImage: string;
+  aTitle: string;
+  aSubtitle: string;
+  aDescription: string;
+  cProjectGroups: ProjectGroupComponentDataType[];
+};
+
+export type ContactInfoComponentDataType = {
+  aImage: string;
+  aTitle: string;
+  aSubtitle: string;
+  aDescription: string;
+};
+
+type AdminHomePageDataType = {
+  hero: HeroComponentDataType;
+  aboutCompany: {
+    truly: AboutCompanyComponentDataType;
+    relatively: AboutCompanyComponentDataType;
+  };
+  aboutApplication: AboutApplicationComponentDataType;
+  service: ServiceComponentDataType[];
+  counter: CounterComponentDataType[];
+  projectSection: ProjectSectionComponentDataType;
+  branchSection: BranchSectionComponentDataType;
+  contactInfo: ContactInfoComponentDataType;
+};
+
+const AdminHomePageComponent = (props: AdminHomePageComponentType) => {
+  // Destructure Props
+  const { reduxCall, apiCall } = props;
+
+  // Variables
+  let apiResponse: AdminHomePageDataType | null = null;
+  
+  if (apiCall.retrieveAPIResponse?.isLoading || apiCall.retrieveAPIResponse?.isFetching) {
+    return <LoaderComponent />;
+  }
+
+  if (apiCall.retrieveAPIResponse?.isError) {
+    return <ErrorComponent message="Error..." />;
+  }
+
+  if (
+    apiCall.retrieveAPIResponse?.isSuccess &&
+    apiCall.retrieveAPIResponse?.data?.success
+  ) {
+    apiResponse = apiCall.retrieveAPIResponse.data.retrieve;  
+  }
+  
   // JSX
   return (
     <React.Fragment>
       {/* AdminHomePageComponent */}
 
-      {/* {
-        (props.apiCall.listAPIResponse.isLoading || props.apiCall.listAPIResponse.isFetching) ? <LoaderComponent /> : 
-        (props.apiCall.listAPIResponse.isError) ? <ErrorComponent message="Error..." /> :
-        (props.apiCall.listAPIResponse.isSuccess) ? (
-          (props.apiCall.listAPIResponse.data.success) ? ( */}
+      {
+        (apiCall.retrieveAPIResponse.isLoading || apiCall.retrieveAPIResponse.isFetching) ? <LoaderComponent /> : 
+        (apiCall.retrieveAPIResponse.isError) ? <ErrorComponent message="Error..." /> :
+        (apiCall.retrieveAPIResponse.isSuccess) ? (
+          (apiCall.retrieveAPIResponse.data.success) ? (
             <React.Fragment>
               <div className="overflow-hidden" >
-                {/* <HeroComponent /> */}
-                {/* <GalleryComponent /> */}
-                {/* <AboutCompanyComponent /> */}
-                {/* <AboutComponent /> */}
-                {/* <AboutComponent /> */}
-                {/* <TechnologyComponent /> */}
-                {/* <HowItWorkComponent /> */}
-                {/* <FeatureComponent /> */}
-                {/* <SponsorComponent /> */}
-                {/* <FeatureComponent /> */}
-                {/* <ServiceComponent /> */}
-                {/* <CTAComponent /> */}
-                {/* <TestimonialComponent /> */}
-                {/* <TeamComponent /> */}
-                {/* <PricingComponent /> */}
-                {/* <NewsletterComponent /> */}
-                {/* <FAQComponent /> */}
+
+                {apiCall.retrieveAPIResponse.data.retrieve.hero && (
+                  <HeroComponent 
+                    reduxCall={reduxCall}
+                    apiResponse={apiResponse?.hero as HeroComponentDataType}
+                  />
+                )}
+                
+                {apiCall.retrieveAPIResponse.data.retrieve.aboutCompany && (
+                  apiCall.retrieveAPIResponse.data.retrieve.aboutCompany.truly &&
+                  apiCall.retrieveAPIResponse.data.retrieve.aboutCompany.relatively && (
+                    <AboutCompanyComponent 
+                      reduxCall={reduxCall}
+                      apiResponse={{
+                        truly: apiResponse?.aboutCompany?.truly as AboutCompanyComponentDataType,
+                        relatively: apiResponse?.aboutCompany?.relatively as AboutCompanyComponentDataType,
+                      }}
+                    />
+                  )
+                )}
+                
+                {apiCall.retrieveAPIResponse.data.retrieve.aboutApplication && (
+                  <AboutApplicationComponent 
+                    reduxCall={reduxCall}
+                    apiResponse={apiResponse?.aboutApplication as AboutApplicationComponentDataType}
+                  />
+                )}
+                
+                {apiCall.retrieveAPIResponse.data.retrieve.service && (
+                  <ServiceComponent 
+                    reduxCall={reduxCall}
+                    apiResponse={apiResponse?.service as ServiceComponentDataType[]}
+                  />
+                )}
+                                
+                {apiCall.retrieveAPIResponse.data.retrieve.counter && (
+                  <CounterComponent 
+                    reduxCall={reduxCall}
+                    apiResponse={apiResponse?.counter as CounterComponentDataType[]}
+                  />
+                )}
+                
+                {apiCall.retrieveAPIResponse.data.retrieve.branchSection && (
+                  <BranchSectionComponent 
+                    reduxCall={reduxCall}
+                    apiResponse={apiResponse?.branchSection as BranchSectionComponentDataType}
+                  />
+                )}
+                
+                {apiCall.retrieveAPIResponse.data.retrieve.projectSection && (
+                  <ProjectSectionComponent 
+                    reduxCall={reduxCall}
+                    apiResponse={apiResponse?.projectSection as ProjectSectionComponentDataType}
+                  />
+                )}
+                
+                {apiCall.retrieveAPIResponse.data.retrieve.contactInfo && (
+                  <ContactInfoComponent 
+                    reduxCall={reduxCall}
+                    apiResponse={apiResponse?.contactInfo as ContactInfoComponentDataType}
+                  />
+                )}
+
               </div>
             </React.Fragment>
-          {/* ) : []
-        ) : []
+          ) : null
+        ) : null
       }
- */}
+
     </React.Fragment>
   )
 }

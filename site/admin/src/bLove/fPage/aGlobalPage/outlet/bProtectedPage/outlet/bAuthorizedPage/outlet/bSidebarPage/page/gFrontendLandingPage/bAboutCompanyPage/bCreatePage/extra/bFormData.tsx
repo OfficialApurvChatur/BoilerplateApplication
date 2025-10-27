@@ -50,8 +50,8 @@ const formData = () => ([
     inputs: [
       { name: "dTag", label: "Tag", type: "select", placeholder: "Please select tag...",
         options: [
-          { value: "Truly", label: "Truly" },
-          { value: "relativety", label: "Relatively" },
+          { value: "truly", label: "Truly" },
+          { value: "relatively", label: "Relatively" },
         ]
       },
 

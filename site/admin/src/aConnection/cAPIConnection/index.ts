@@ -13,9 +13,17 @@ const apiConnection = createApi({
     credentials: "include"
   }),
   tagTypes: [
-    "adminHomePageList"        , 
-    "adminAboutPageList"       , 
-    "adminContactPageCreate"   ,
+    "adminHomePageRetrieve"               , 
+    "adminAboutCompanyPageRetrieve"       , 
+    "adminAboutApplicationPageRetrieve"   , 
+    "adminContactPageRetrieve"            , 
+    "adminServicePageRetrieve"            , 
+    "adminBranchSectionPageRetrieve"      , 
+    "adminBranchGroupPageRetrieve"        , 
+    "adminBranchPageRetrieve"             , 
+    "adminProjectSectionPageRetrieve"     , 
+    "adminProjectGroupPageRetrieve"       , 
+    "adminProjectPageRetrieve"            , 
 
     "baseList"                 , "baseRetrieve"                 ,
     "activityLogList"          , "activityLogRetrieve"          ,

@@ -5,7 +5,7 @@ import loggerConnection from './aConnection/bLoggerConnection';
 import databaseConnection from './aConnection/cDatabaseConnection';
 import appConnection from './aConnection/dAppConnection';
 import redisConnection from './aConnection/eRedisConnection';
-import cronConnection from './aConnection/gCronConnection';
+import cronjobConnection from './aConnection/gCronjobConnection';
 import socketConnection from './aConnection/iSocketConnection';
 
 
@@ -45,7 +45,7 @@ socketConnection(server, appConnection)
 // Connect App
 server.listen(process.env.PORT, () => {
   // Connect Cron
-  cronConnection();
+  cronjobConnection();
 
   loggerConnection().info({ 
     message: "✅ Great... Server Connected",

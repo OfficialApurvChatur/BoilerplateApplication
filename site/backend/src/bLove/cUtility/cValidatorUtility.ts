@@ -272,8 +272,10 @@ const validatorUtility = {
 
   cProjectGroups: ({ Model, label = "Record" }: TIdArgs) => [
     body("cProjectGroups")
-      .notEmpty()
-      .withMessage("Please select project group")
+      .optional()
+      .isArray({ min: 1 })
+      .withMessage("Please select at least one project group")
+      .bail()
       .custom(async (value: mongoose.ObjectId[]) => {
         await Promise.all(
           value.map(async (each) => {
@@ -293,8 +295,10 @@ const validatorUtility = {
 
   cProjects: ({ Model, label = "Record" }: TIdArgs) => [
     body("cProjects")
-      .notEmpty()
-      .withMessage("Please select project")
+      .optional()
+      .isArray({ min: 1 })
+      .withMessage("Please select at least one project")
+      .bail()
       .custom(async (value: mongoose.ObjectId[]) => {
         await Promise.all(
           value.map(async (each) => {
@@ -327,7 +331,7 @@ const validatorUtility = {
       .optional({ checkFalsy: true })
       .isString()
       .withMessage("Tag must be a string")
-      .isIn(["Truly", "Relatively"])
+      .isIn(["truly", "relatively"])
       .withMessage("Tag must be one of: Truly, Relatively")
       .trim(),
   ],

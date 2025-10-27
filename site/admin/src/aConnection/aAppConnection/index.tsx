@@ -45,15 +45,16 @@ const ForgotPasswordPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/ou
 const ResetPasswordPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/aAuthenticatedPage/page/dResetPasswordPage"));
 
 const AdminHomePagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/aAdminHomePagePage"));
-const AdminAboutPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/bAdminAboutPagePage"));
-const AdminContactPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/cAdminContactPagePage"));
-const AdminServicePagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/dAdminServicePagePage"));
-const AdminBranchSectionPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/eAdminBranchSectionPagePage"));
-const AdminBranchGroupPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/fAdminBranchGroupPagePage"));
-const AdminBranchPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/gAdminBranchPagePage"));
-const AdminProjectSectionPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/hAdminProjectSectionPagePage"));
-const AdminProjectGroupPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/iAdminProjectGroupPagePage"));
-const AdminProjectPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/jAdminProjectPagePage"));
+const AdminAboutCompanyPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/bAdminAboutCompanyPagePage"));
+const AdminAboutApplicationPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/cAdminAboutApplicationPagePage"));
+const AdminContactPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/dAdminContactPagePage"));
+const AdminServicePagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/eAdminServicePagePage"));
+const AdminBranchSectionPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/fAdminBranchSectionPagePage"));
+const AdminBranchGroupPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/gAdminBranchGroupPagePage"));
+const AdminBranchPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/hAdminBranchPagePage"));
+const AdminProjectSectionPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/iAdminProjectSectionPagePage"));
+const AdminProjectGroupPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/jAdminProjectGroupPagePage"));
+const AdminProjectPagePage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/aUnprotectedPage/page/kAdminProjectPagePage"));
 
 const AccountRetrievePrimaryPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/aTopbarPage/page/aAccountRetrievePrimaryPage"));
 const AccountUpdatePrimaryPage = React.lazy(() => import("@/bLove/fPage/aGlobalPage/outlet/bProtectedPage/outlet/bAuthorizedPage/outlet/aTopbarPage/page/bAccountUpdatePrimaryPage"));
@@ -379,15 +380,16 @@ const AppConnection = () => {
         <Route element={<GlobalLayout />} >
           <Route element={<UnprotectedLayout />} >
             <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute}`} element={<AdminHomePagePage />} />
-            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutPageRoute}`} element={<AdminAboutPagePage />} />
-            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.cAdminContactPageRoute}`} element={<AdminContactPagePage />} />
-            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.dAdminServicePageRoute}`} element={<AdminServicePagePage />} />
-            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.eAdminBranchSectionPageRoute}`} element={<AdminBranchSectionPagePage />} />
-            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.fAdminBranchGroupPageRoute}`} element={<AdminBranchGroupPagePage />} />
-            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.gAdminBranchPageRoute}`} element={<AdminBranchPagePage />} />
-            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.hAdminProjectSectionPageRoute}`} element={<AdminProjectSectionPagePage />} />
-            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.iAdminProjectGroupPageRoute}`} element={<AdminProjectGroupPagePage />} />
-            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.jAdminProjectPageRoute}`} element={<AdminProjectPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutCompanyPageRoute}`} element={<AdminAboutCompanyPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.cAdminAboutApplicationPageRoute}`} element={<AdminAboutApplicationPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.dAdminContactPageRoute}`} element={<AdminContactPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.eAdminServicePageRoute}`} element={<AdminServicePagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.fAdminBranchSectionPageRoute}`} element={<AdminBranchSectionPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.gAdminBranchGroupPageRoute}`} element={<AdminBranchGroupPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.hAdminBranchPageRoute}`} element={<AdminBranchPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.iAdminProjectSectionPageRoute}`} element={<AdminProjectSectionPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.jAdminProjectGroupPageRoute}`} element={<AdminProjectGroupPagePage />} />
+            <Route path={`${endpointRoute.aGlobalRoute.aUnprotectedRoute.kAdminProjectPageRoute}`} element={<AdminProjectPagePage />} />
           </Route>
           <Route element={<ProtectedLayout />} >
             <Route element={<AuthenticatedLayout />} >
