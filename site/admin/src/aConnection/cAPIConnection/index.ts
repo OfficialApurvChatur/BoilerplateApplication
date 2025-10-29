@@ -5,7 +5,7 @@ import brandConnection from "../eBrandConnection";
 const apiConnection = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: `${brandConnection.oBackendBaseURL}api/v1`,
+    baseUrl: `${brandConnection.oBackendBaseURL}/api/v1`,
     credentials: "include"
   }),
   tagTypes: [

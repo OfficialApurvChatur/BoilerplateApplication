@@ -23,16 +23,16 @@ const brandConnection = {
       ? this.qBackendProductionURL
       : this.pBackendLocalURL;
   },
-  pBackendLocalURL: "http://localhost:8000/",
-  qBackendProductionURL: "http://backend-for-boilerplate-application/",
+  pBackendLocalURL: "http://localhost:8000",
+  qBackendProductionURL: "http://backend-for-boilerplate-application",
 
   get rFrontendBaseURL() {
     return process.env.ENVIRONMENT === "Production"
       ? this.tFrontendProductionURL
       : this.sFrontendLocalURL;
   },
-  sFrontendLocalURL: "http://localhost:5173/",
-  tFrontendProductionURL: "http://boilerplate-frontend/",
+  sFrontendLocalURL: "http://localhost:5173",
+  tFrontendProductionURL: "http://boilerplate-frontend",
 
 }
 
