@@ -32,7 +32,7 @@ const brandConnection = {
       : this.sFrontendLocalURL;
   },
   sFrontendLocalURL: "http://localhost:5173",
-  tFrontendProductionURL: "https://boilerplate-frontend-new.netlify.app",
+  tFrontendProductionURL: "https://boilerplate-frontend-new.netlify.app/",
 
 }
 
