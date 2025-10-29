@@ -1,7 +1,7 @@
 import loggerConnection from "./bLoggerConnection";
 
 import pingPongServerCronjob from "../bLove/dCronjob/aPingPongServerCronjob";
-import apiLogUploadCronjob from "bLove/dCronjob/bAPILogUploadCronJob";
+import apiLogUploadCronjob from "../bLove/dCronjob/bAPILogUploadCronJob";
 
 
 const cronjobConnection = () => {

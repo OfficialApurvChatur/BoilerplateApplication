@@ -87,6 +87,12 @@ const productionFormat = winston.format.combine(
     ].join('\n');
   })
 );
+const consoleLogFormat = winston.format.combine(
+  winston.format.colorize(),
+  winston.format.printf(({ level, message, timestamp }) => {
+    return `${level}: ${message}`;
+  })
+);
 
 // Create a Winston logger
 const loggerUtility = winston.createLogger({
@@ -106,7 +112,13 @@ const loggerUtility = winston.createLogger({
   ),
   transports: [
     new winston.transports.Console(),
-    new winston.transports.File({ filename: "./src/bLove/dCronJob/appConnection.log" }),
+    new winston.transports.File({ 
+      filename: "./src/bLove/dCronJob/appConnection.log",
+      format: winston.format.combine(
+        winston.format.timestamp(), 
+        winston.format.json()
+      ) 
+    }),
   ],
 });
 
