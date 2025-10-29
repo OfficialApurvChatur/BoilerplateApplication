@@ -15,7 +15,7 @@ nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit
 amet, consectetur adipiscing elit. 
 `;
 
-export const AboutComponent = (props: AboutComponentProps) => {
+export const AboutComponent = (_props: AboutComponentProps) => {
   return (
     <section
       id="about"

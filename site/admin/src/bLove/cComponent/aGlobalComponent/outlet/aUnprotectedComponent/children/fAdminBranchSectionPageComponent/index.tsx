@@ -45,7 +45,7 @@ export type BranchSectionComponentDataType = {
 
 const AdminBranchSectionPageComponent = (props: AdminBranchSectionPageComponentType) => {
   // Destructure Props
-  const { reduxCall, apiCall } = props;
+  const { apiCall } = props;
 
   // Variables
   let apiResponse: BranchSectionComponentDataType | null = null;

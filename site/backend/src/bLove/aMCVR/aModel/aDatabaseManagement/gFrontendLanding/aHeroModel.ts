@@ -1,6 +1,7 @@
 ﻿import mongoose from "mongoose";
 import slugify from "slugify";
 
+import brandConnection from "../../../../../aConnection/jBrandConnection";
 import defaultSchemaUtility, { DefaultSchemaUtilityType } from "../../../../cUtility/bDefaultSchemaUtility";
 
 
@@ -48,30 +49,30 @@ const schema = new mongoose.Schema<HeroModelType>({
         bLinkURL: { 
           type: String,
           trim: true,
-          default: 'https://www.instagram.com/beehive.corporation/', // 👈 default link url
+          default: brandConnection.jInstagramURL, // 👈 default link url
         },  
       }
     ],
     default: [
       {
         aLinkTitle: 'Instagram',
-        bLinkURL: 'https://www.instagram.com/beehive.corporation/',
+        bLinkURL: brandConnection.jInstagramURL,
       },
       {
         aLinkTitle: 'X',
-        bLinkURL: 'https://x.com/beehive_corp',
+        bLinkURL: brandConnection.kXURL,
       },
       {
         aLinkTitle: 'Threads',
-        bLinkURL: 'https://www.threads.com/@beehive.corporation',
+        bLinkURL: brandConnection.lThreadsURL,
       }, 
       {
         aLinkTitle: 'Linkedin',
-        bLinkURL: 'https://www.linkedin.com/in/beehive-corporation-74893b2a7/',
+        bLinkURL: brandConnection.mLinkedinURL,
       }, 
       {
         aLinkTitle: 'Github',
-        bLinkURL: 'https://github.com/ApurvChatur/ArionApplication?tab=readme-ov-file#administration-installation/',
+        bLinkURL: brandConnection.nGithubURL,
       }, 
     ], // 👈 default social link
   },
@@ -86,18 +87,18 @@ const schema = new mongoose.Schema<HeroModelType>({
         bLinkURL: {
           type: String,
           trim: true,
-          default: 'https://beehive-frontend.netlify.app/', // 👈 default link url
+          default: brandConnection.fFrontendApplicationURL, // 👈 default link url
         },  
       }
     ],
     default: [
       {
         aLinkTitle: 'Visit Application',
-        bLinkURL: 'https://beehive-frontend.netlify.app/',
+        bLinkURL: brandConnection.fFrontendApplicationURL,
       },
       {
         aLinkTitle: 'Visit Administration',
-        bLinkURL: 'https://beehive-admin.netlify.app/',
+        bLinkURL: brandConnection.gAdminApplicationURL,
       },
     ], // 👈 default web link
   },

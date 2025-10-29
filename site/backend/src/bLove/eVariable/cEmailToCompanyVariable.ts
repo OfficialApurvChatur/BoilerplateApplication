@@ -1,4 +1,5 @@
 import express from "express";
+import brandConnection from "../../aConnection/jBrandConnection";
 
 
 type listType = {
@@ -44,7 +45,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -64,7 +65,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -84,7 +85,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -104,7 +105,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -124,7 +125,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -146,7 +147,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -166,7 +167,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -186,7 +187,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -206,7 +207,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -226,7 +227,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -248,7 +249,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -268,7 +269,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -288,7 +289,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -308,7 +309,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -328,7 +329,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -350,7 +351,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -370,7 +371,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -390,7 +391,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -410,7 +411,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -430,7 +431,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -452,7 +453,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -472,7 +473,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -492,7 +493,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -512,7 +513,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -532,7 +533,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -554,7 +555,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -574,7 +575,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -594,7 +595,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -614,7 +615,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -634,7 +635,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -656,7 +657,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -676,7 +677,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -696,7 +697,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -716,7 +717,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -736,7 +737,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -758,7 +759,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -778,7 +779,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -798,7 +799,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -818,7 +819,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -838,7 +839,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -860,7 +861,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -880,7 +881,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -900,7 +901,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -920,7 +921,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -940,7 +941,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -962,7 +963,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -982,7 +983,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1002,7 +1003,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1022,7 +1023,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1042,7 +1043,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1064,7 +1065,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1084,7 +1085,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1104,7 +1105,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1124,7 +1125,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1144,7 +1145,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1166,7 +1167,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1186,7 +1187,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1206,7 +1207,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1226,7 +1227,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1246,7 +1247,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1268,7 +1269,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1288,7 +1289,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1308,7 +1309,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1328,7 +1329,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1348,7 +1349,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1370,7 +1371,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1390,7 +1391,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1410,7 +1411,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1430,7 +1431,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1450,7 +1451,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1472,7 +1473,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1492,7 +1493,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1512,7 +1513,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1532,7 +1533,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1552,7 +1553,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1574,7 +1575,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1594,7 +1595,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1614,7 +1615,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1634,7 +1635,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1654,7 +1655,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1676,7 +1677,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1696,7 +1697,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1716,7 +1717,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1736,7 +1737,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1756,7 +1757,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1778,7 +1779,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1798,7 +1799,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1818,7 +1819,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1838,7 +1839,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1858,7 +1859,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1880,7 +1881,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1900,7 +1901,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1920,7 +1921,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1940,7 +1941,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1960,7 +1961,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -1982,7 +1983,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2002,7 +2003,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2022,7 +2023,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2042,7 +2043,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2062,7 +2063,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2084,7 +2085,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2104,7 +2105,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2124,7 +2125,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2144,7 +2145,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2164,7 +2165,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2186,7 +2187,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2206,7 +2207,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2226,7 +2227,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2246,7 +2247,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2266,7 +2267,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2288,7 +2289,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2308,7 +2309,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2328,7 +2329,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2348,7 +2349,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2368,7 +2369,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2390,7 +2391,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2410,7 +2411,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2430,7 +2431,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2450,7 +2451,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2470,7 +2471,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2492,7 +2493,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2512,7 +2513,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2532,7 +2533,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2552,7 +2553,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2572,7 +2573,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2594,7 +2595,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2614,7 +2615,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2634,7 +2635,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2654,7 +2655,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2674,7 +2675,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2696,7 +2697,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2716,7 +2717,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2736,7 +2737,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2756,7 +2757,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2776,7 +2777,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2798,7 +2799,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2818,7 +2819,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2838,7 +2839,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2858,7 +2859,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2878,7 +2879,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2900,7 +2901,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2920,7 +2921,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2940,7 +2941,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2960,7 +2961,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -2980,7 +2981,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3002,7 +3003,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3022,7 +3023,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3042,7 +3043,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3062,7 +3063,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3082,7 +3083,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3104,7 +3105,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3124,7 +3125,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3144,7 +3145,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3164,7 +3165,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3184,7 +3185,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3206,7 +3207,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3226,7 +3227,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3246,7 +3247,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3266,7 +3267,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3286,7 +3287,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3308,7 +3309,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3328,7 +3329,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3348,7 +3349,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3368,7 +3369,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3388,7 +3389,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3410,7 +3411,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3430,7 +3431,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3450,7 +3451,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3470,7 +3471,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3490,7 +3491,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3512,7 +3513,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3532,7 +3533,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3552,7 +3553,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3572,7 +3573,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3592,7 +3593,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3614,7 +3615,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3634,7 +3635,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3654,7 +3655,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3674,7 +3675,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3694,7 +3695,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3716,7 +3717,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3736,7 +3737,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3756,7 +3757,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3776,7 +3777,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3796,7 +3797,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3818,7 +3819,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3838,7 +3839,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3858,7 +3859,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3878,7 +3879,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3898,7 +3899,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3920,7 +3921,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3940,7 +3941,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3960,7 +3961,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -3980,7 +3981,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4000,7 +4001,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4022,7 +4023,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4042,7 +4043,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4062,7 +4063,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4082,7 +4083,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4102,7 +4103,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4124,7 +4125,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4144,7 +4145,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4164,7 +4165,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4184,7 +4185,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4204,7 +4205,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4226,7 +4227,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4246,7 +4247,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4266,7 +4267,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4286,7 +4287,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4306,7 +4307,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4328,7 +4329,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4348,7 +4349,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4368,7 +4369,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4388,7 +4389,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4408,7 +4409,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4430,7 +4431,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4450,7 +4451,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4470,7 +4471,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4490,7 +4491,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4510,7 +4511,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4532,7 +4533,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4552,7 +4553,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4572,7 +4573,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4592,7 +4593,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4612,7 +4613,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4634,7 +4635,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4654,7 +4655,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4674,7 +4675,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4694,7 +4695,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4714,7 +4715,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4736,7 +4737,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4756,7 +4757,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4776,7 +4777,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4796,7 +4797,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4816,7 +4817,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4838,7 +4839,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4858,7 +4859,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4878,7 +4879,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4898,7 +4899,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4918,7 +4919,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4940,7 +4941,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4960,7 +4961,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -4980,7 +4981,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -5000,7 +5001,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },
@@ -5020,7 +5021,7 @@ const emailToCompanyVariable = {
           If this was you, no action is needed.
           If not, please check your account activity.
 
-          — Beehive Team
+          — ${brandConnection.bBrandName} Team
         `.trim()
       )
     },

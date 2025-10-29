@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 
 import { Toaster } from "../bShadcnConnection/components/ui/toaster";
 
+import brandConnection from "../eBrandConnection";
 import endpointRoute from "@/bLove/gRoute/aEndpointRoute";
 
 // Component
@@ -373,7 +374,7 @@ const AppConnection = () => {
     <React.Fragment>
       {/* AppConnection */}
       
-      <Helmet><title>Boilerplate</title></Helmet>
+      <Helmet><title>{brandConnection.bBrandName}</title></Helmet>
       <Toaster />
 
       <Routes>

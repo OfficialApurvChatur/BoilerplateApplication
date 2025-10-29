@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
+
 import { LogoIcon } from "@/bLove/hAsset/Icons";
 import fullRoute from "@/bLove/gRoute/bFullRoute";
+
+import brandConnection from "@/aConnection/eBrandConnection";
 
 
 export const FooterComponent = () => {
@@ -17,7 +20,7 @@ export const FooterComponent = () => {
             <LogoIcon />
             <div className="grid flex-1 text-left text-xl leading-tight">
               <span className="truncate font-semibold">
-                {"Boilerplate Application"}
+                {brandConnection.bBrandName}
               </span>
             </div>
           </Link>
@@ -149,10 +152,10 @@ export const FooterComponent = () => {
           &copy; 2025 Landing page made by{" "}
           <Link
             target="_blank"
-            to="https://www.linkedin.com/in/leopoldo-miranda/"
+            to={brandConnection.mLinkedinURL}
             className="text-primary transition-all border-primary hover:border-b-2"
           >
-            Beehive Corporation
+            {brandConnection.bBrandName}
           </Link>
         </h3>
       </section>

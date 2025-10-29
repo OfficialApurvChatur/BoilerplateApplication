@@ -27,7 +27,7 @@ export type ServiceComponentDataType = {
 
 const AdminServicePageComponent = (props: AdminServicePageComponentType) => {
   // Destructure Props
-  const { reduxCall, apiCall } = props;
+  const { apiCall } = props;
 
   // Variables
   let apiResponse: ServiceComponentDataType[] | null = null;

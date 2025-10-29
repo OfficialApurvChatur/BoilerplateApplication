@@ -45,7 +45,7 @@ export type ProjectSectionComponentDataType = {
 
 const AdminProjectSectionPageComponent = (props: AdminProjectSectionPageComponentType) => {
   // Destructure Props
-  const { reduxCall, apiCall } = props;
+  const { apiCall } = props;
 
   // Variables
   let apiResponse: ProjectSectionComponentDataType | null = null;

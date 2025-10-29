@@ -9,7 +9,7 @@ type CounterComponentType = {
 
 const CounterComponent = (props: CounterComponentType) => {
   // Destructure Props
-  const { reduxCall, apiResponse } = props;
+  const { apiResponse } = props;
 
   // JSX
   return (

@@ -9,7 +9,7 @@ type BranchSectionComponentType = {
 
 const BranchSectionComponent = (props: BranchSectionComponentType) => {
   // Destructure Props
-  const { reduxCall, apiResponse } = props;
+  const { apiResponse } = props;
 
   // JSX
   return (

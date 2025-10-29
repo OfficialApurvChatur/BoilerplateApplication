@@ -37,32 +37,32 @@ interface AboutCompanyComponentProps {
   }>;
 }
 
-const defaultCompanies = [
-  {
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-1.svg",
-    alt: "Arc",
-  },
-  {
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-2.svg",
-    alt: "Descript",
-  },
-  {
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg",
-    alt: "Mercury",
-  },
-  {
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-4.svg",
-    alt: "Ramp",
-  },
-  {
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-5.svg",
-    alt: "Retool",
-  },
-  {
-    src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-6.svg",
-    alt: "Watershed",
-  },
-];
+// const defaultCompanies = [
+//   {
+//     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-1.svg",
+//     alt: "Arc",
+//   },
+//   {
+//     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-2.svg",
+//     alt: "Descript",
+//   },
+//   {
+//     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-3.svg",
+//     alt: "Mercury",
+//   },
+//   {
+//     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-4.svg",
+//     alt: "Ramp",
+//   },
+//   {
+//     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-5.svg",
+//     alt: "Retool",
+//   },
+//   {
+//     src: "https://deifkwefumgah.cloudfront.net/shadcnblocks/block/logos/company/fictional-company-logo-6.svg",
+//     alt: "Watershed",
+//   },
+// ];
 
 const defaultAchievements = [
   { label: "Companies Supported", value: "300+" },
@@ -91,8 +91,8 @@ const AboutCompanyComponent = ({
     buttonText: "Discover more",
     buttonUrl: "https://shadcnblocks.com",
   },
-  companiesTitle = "Valued by clients worldwide",
-  companies = defaultCompanies,
+  // companiesTitle = "Valued by clients worldwide",
+  // companies = defaultCompanies,
   achievementsTitle = "Our Achievements in Numbers",
   achievementsDescription = "Providing businesses with effective tools to improve workflows, boost efficiency, and encourage growth.",
   achievements = defaultAchievements,

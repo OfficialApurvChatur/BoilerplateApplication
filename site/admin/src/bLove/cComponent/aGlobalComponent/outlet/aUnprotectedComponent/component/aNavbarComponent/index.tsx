@@ -25,6 +25,7 @@ import { LogoIcon } from "@/bLove/hAsset/Icons";
 import getInitialsUtility from "@/bLove/dUtility/aGetInitialsUtility";
 import fullRoute from "@/bLove/gRoute/bFullRoute";
 import { Separator } from "@/aConnection/bShadcnConnection/components/ui/separator";
+import brandConnection from "@/aConnection/eBrandConnection";
 
 
 interface RouteProps {
@@ -84,7 +85,7 @@ export const NavbarComponent = (props: NavbarComponentType) => {
               <LogoIcon />
               <div className="grid flex-1 text-left text-xl leading-tight">
                 <span className="truncate font-semibold">
-                  {"Boilerplate Application"}
+                  {brandConnection.bBrandName}
                 </span>
               </div>
             </Link>
@@ -110,7 +111,7 @@ export const NavbarComponent = (props: NavbarComponentType) => {
               <SheetContent side={"left"}>
                 <SheetHeader>
                   <SheetTitle className="font-myPrimaryFont font-bold text-xl">
-                    Boilerplate Application
+                    {brandConnection.bBrandName}
                   </SheetTitle>
                 </SheetHeader>
                 <Separator />

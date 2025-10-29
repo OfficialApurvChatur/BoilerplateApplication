@@ -8,6 +8,8 @@ import { Button } from "@/aConnection/bShadcnConnection/components/ui/button";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/aConnection/bShadcnConnection/components/ui/tabs";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/aConnection/bShadcnConnection/components/ui/card";
 
+import brandConnection from "@/aConnection/eBrandConnection";
+
 
 const DashboardOneComponent = () => {
   // JSX
@@ -28,7 +30,7 @@ const DashboardOneComponent = () => {
         </div> */}
         <div className="flex-1 space-y-4">
           <div className="flex items-center justify-between space-y-2">
-            <h2 className="text-3xl font-bold tracking-tight">Boilerplate Dashboard</h2>
+            <h2 className="text-3xl font-bold tracking-tight">{brandConnection.bBrandName} Dashboard</h2>
             <div className="flex items-center space-x-2">
               <CalendarDateRangePicker />
               <Button>Download</Button>

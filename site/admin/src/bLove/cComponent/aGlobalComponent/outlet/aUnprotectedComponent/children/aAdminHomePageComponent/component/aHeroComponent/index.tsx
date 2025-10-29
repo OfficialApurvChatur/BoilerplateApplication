@@ -17,107 +17,107 @@ type HeroComponentType = {
   apiCall: any,
 }
 
-type Hero = {
-  aImage: string;
-  aTitle: string;
-  aSubtitle: string;
-  aDescription: string;
-  dTag: string;
-  dWebLinks?: {
-    aLinkLabel: string;
-    bLinkURL: string;
-  }[];
-  dSocialLinks?: {
-    aLinkLabel: string;
-    bLinkURL: string;
-  }[];
-  dGalleryImages?: string[];
-}
+// type Hero = {
+//   aImage: string;
+//   aTitle: string;
+//   aSubtitle: string;
+//   aDescription: string;
+//   dTag: string;
+//   dWebLinks?: {
+//     aLinkLabel: string;
+//     bLinkURL: string;
+//   }[];
+//   dSocialLinks?: {
+//     aLinkLabel: string;
+//     bLinkURL: string;
+//   }[];
+//   dGalleryImages?: string[];
+// }
 
-type AboutCompany = {
-  aImage: string;
-  aTitle: string;
-  aSubtitle: string;
-  aDescription: string;
-  aDetail: string;
-  dTag: string;
-}
+// type AboutCompany = {
+//   aImage: string;
+//   aTitle: string;
+//   aSubtitle: string;
+//   aDescription: string;
+//   aDetail: string;
+//   dTag: string;
+// }
 
-type AboutApplication = {
-  aTitle?: string;
-  aSubtitle?: string;
-  aDescription?: string;
-  [key: string]: any;
-}
+// type AboutApplication = {
+//   aTitle?: string;
+//   aSubtitle?: string;
+//   aDescription?: string;
+//   [key: string]: any;
+// }
 
-type ContactInfo = {
-  aImage: string;
-  aTitle: string;
-  aSubtitle: string;
-  dPhone: string;
-  dEmail: string;
-  dAddress: string;
-}
+// type ContactInfo = {
+//   aImage: string;
+//   aTitle: string;
+//   aSubtitle: string;
+//   dPhone: string;
+//   dEmail: string;
+//   dAddress: string;
+// }
 
-type Service = {
-  aImage: string;
-  aTitle: string;
-  aSubtitle: string;
-  aDescription: string;
-  aDetail: string;
-}
+// type Service = {
+//   aImage: string;
+//   aTitle: string;
+//   aSubtitle: string;
+//   aDescription: string;
+//   aDetail: string;
+// }
 
-type Counter = {
-  aImage: string;
-  aTitle: string;
-  aSubtitle: string;
-  aDescription: string;
-  aDetail: string;
-}
+// type Counter = {
+//   aImage: string;
+//   aTitle: string;
+//   aSubtitle: string;
+//   aDescription: string;
+//   aDetail: string;
+// }
 
-type Project = {
-  aImage: string;
-  aTitle: string;
-  aSubtitle: string;
-  aDescription: string;
-  dSocialLinks: string[];
-  dWebLinks: string[];
-}
+// type Project = {
+//   aImage: string;
+//   aTitle: string;
+//   aSubtitle: string;
+//   aDescription: string;
+//   dSocialLinks: string[];
+//   dWebLinks: string[];
+// }
 
-type ProjectGroup = {
-  aTitle: string;
-  aSubtitle: string;
-  aDescription: string;
-  cProjects: Project[];
-}
+// type ProjectGroup = {
+//   aTitle: string;
+//   aSubtitle: string;
+//   aDescription: string;
+//   cProjects: Project[];
+// }
 
-type ProjectSection = {
-  aTitle: string;
-  aSubtitle: string;
-  aDescription: string;
-  cProjectGroups: ProjectGroup[];
-}
+// type ProjectSection = {
+//   aTitle: string;
+//   aSubtitle: string;
+//   aDescription: string;
+//   cProjectGroups: ProjectGroup[];
+// }
 
-type BranchSection = {
-  aTitle: string;
-  aSubtitle: string;
-  aDescription: string;
-  cBranchGroups: ProjectGroup[];
-}
+// type BranchSection = {
+//   aTitle: string;
+//   aSubtitle: string;
+//   aDescription: string;
+//   cBranchGroups: ProjectGroup[];
+// }
 
-type HomePageData = {
-  hero: Hero;
-  aboutCompany: {
-    actually: AboutCompany;
-    comparative: AboutCompany;
-  };
-  aboutApplication: AboutApplication;
-  contactInfo: ContactInfo;
-  services: Service[];
-  counters: Counter[];
-  projectSections: ProjectSection;
-  branchSections: BranchSection;
-}
+// type HomePageData = {
+//   hero: Hero;
+//   aboutCompany: {
+//     actually: AboutCompany;
+//     comparative: AboutCompany;
+//   };
+//   aboutApplication: AboutApplication;
+//   contactInfo: ContactInfo;
+//   services: Service[];
+//   counters: Counter[];
+//   projectSections: ProjectSection;
+//   branchSections: BranchSection;
+// }
 
 // type DataType = {
 //   heroImage?: any;
@@ -143,16 +143,16 @@ type HomePageData = {
 //   };
 // }
 
-const HeroComponent = (props: HeroComponentType) => {
+const HeroComponent = (_props: HeroComponentType) => {
   // Destructure Props
-  const { apiCall } = props;
+  // const { apiCall } = props;
 
   // Destructure Data
   // const { hero, aboutCompa } = apiCall
 
   // const data: DataType = {
   //   heroImage: FuchsiaRaspberry_06,
-  //   heading: "Boilerplate Application",
+  //   heading: `${brandConnection.bBrandName}`,
   //   description: `We build full-stack web applications and maintain their brand identity — 
   //           merging innovation with timeless digital craftsmanship.`,
   //   buttons: {

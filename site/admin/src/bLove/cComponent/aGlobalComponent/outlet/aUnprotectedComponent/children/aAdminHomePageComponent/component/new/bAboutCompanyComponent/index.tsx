@@ -12,7 +12,7 @@ type AboutCompanyComponentType = {
 
 const AboutCompanyComponent = (props: AboutCompanyComponentType) => {
   // Destructure Props
-  const { reduxCall, apiResponse } = props;
+  const { apiResponse } = props;
 
   // JSX
   return (

@@ -36,23 +36,27 @@ import {
 import fullRoute from "@/bLove/gRoute/bFullRoute"
 import { NavUser } from "./nav-user"
 import { TeamSwitcher } from "./team-switcher"
+import brandConnection from "@/aConnection/eBrandConnection"
 
 const data = {
   teams: [
     {
-      name: "Boilerplate Inc",
+      name: brandConnection.cFrontendApplicationName,
       logo: GalleryVerticalEnd,
-      plan: "Enterprise",
+      plan: "Frontend",
+      url: brandConnection.fFrontendApplicationURL,
     },
     {
-      name: "Boilerplate Corp.",
+      name: brandConnection.dAdministrationApplicationName,
       logo: AudioWaveform,
-      plan: "Startup",
+      plan: "Administration",
+      url: fullRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute,
     },
     {
-      name: "Boilerplate Corp.",
+      name: brandConnection.eBackendApplicationName,
       logo: Command,
-      plan: "Free",
+      plan: "Backend",
+      url: brandConnection.hBackendApplicationURL,
     },
   ],
   navMain: [

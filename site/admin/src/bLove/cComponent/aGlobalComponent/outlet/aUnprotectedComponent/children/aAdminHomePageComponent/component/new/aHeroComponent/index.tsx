@@ -9,7 +9,7 @@ type HeroComponentType = {
 
 const HeroComponent = (props: HeroComponentType) => {
   // Destructure Props
-  const { reduxCall, apiResponse } = props;
+  const { apiResponse } = props;
 
   // JSX
   return (

@@ -9,7 +9,7 @@ type ServiceComponentType = {
 
 const ServiceComponent = (props: ServiceComponentType) => {
   // Destructure Props
-  const { reduxCall, apiResponse } = props;
+  const { apiResponse } = props;
 
   // JSX
   return (

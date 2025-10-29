@@ -9,7 +9,7 @@ type ContactInfoComponentType = {
 
 const ContactInfoComponent = (props: ContactInfoComponentType) => {
   // Destructure Props
-  const { reduxCall, apiResponse } = props;
+  const { apiResponse } = props;
 
   // JSX
   return (

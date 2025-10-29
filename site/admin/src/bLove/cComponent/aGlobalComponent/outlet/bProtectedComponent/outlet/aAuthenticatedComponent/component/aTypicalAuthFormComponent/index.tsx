@@ -1,7 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom';
 import { z } from 'zod';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
+import { GalleryVerticalEnd, RocketIcon } from 'lucide-react';
 
 import backgroundImage from "@/bLove/hAsset/auth-model.jpg";
 
@@ -10,10 +12,9 @@ import { Button } from "@/aConnection/bShadcnConnection/components/ui/button"
 import { Card, CardContent } from "@/aConnection/bShadcnConnection/components/ui/card"
 import { Input } from "@/aConnection/bShadcnConnection/components/ui/input"
 import { Alert, AlertDescription, AlertTitle } from '@/aConnection/bShadcnConnection/components/ui/alert';
-import { GalleryVerticalEnd, RocketIcon } from 'lucide-react';
-import { zodResolver } from '@hookform/resolvers/zod';
-// import { toast } from '@/aConnection/bShadcnConnection/hooks/use-toast';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/aConnection/bShadcnConnection/components/ui/form';
+
+import brandConnection from '@/aConnection/eBrandConnection';
 
 
 type TypicalAuthFormComponentType = {
@@ -63,7 +64,7 @@ const TypicalAuthFormComponent = (props: TypicalAuthFormComponentType) => {
             <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
               <GalleryVerticalEnd className="size-4" />
             </div>
-            Boilerplate
+            {brandConnection.dAdministrationApplicationName}
           </Link>
 
           <div className={cn("flex flex-col gap-6")}>
@@ -83,7 +84,7 @@ const TypicalAuthFormComponent = (props: TypicalAuthFormComponentType) => {
                             <RocketIcon className="h-4 w-4" />
                             <AlertTitle>Sample User!</AlertTitle>
                             <AlertDescription>
-                              <p><b>Email:</b> shraddha.kapoor@boilerplate.com</p> 
+                              <p><b>Email:</b> shraddha.kapoor@{brandConnection.aBrandID}.com</p> 
                               <p><b>Password:</b> Shraddha@123</p>
                               <p><b>Role:</b> Super Admin</p>
                             </AlertDescription>

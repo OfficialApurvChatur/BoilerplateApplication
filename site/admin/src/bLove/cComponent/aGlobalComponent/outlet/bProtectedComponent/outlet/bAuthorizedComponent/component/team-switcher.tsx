@@ -1,13 +1,14 @@
 import * as React from "react"
-import { ChevronsUpDown, Plus } from "lucide-react"
+import { useNavigate } from "react-router-dom"
+import { ChevronsUpDown } from "lucide-react"
 
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuLabel,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
+  // DropdownMenuSeparator,
+  // DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/aConnection/bShadcnConnection/components/ui/dropdown-menu"
 import {
@@ -17,17 +18,20 @@ import {
   useSidebar,
 } from "@/aConnection/bShadcnConnection/components/ui/sidebar"
 
+
 export function TeamSwitcher({
   teams,
 }: {
   teams: {
     name: string
     logo: React.ElementType
-    plan: string
+    plan: string,
+    url: string,
   }[]
 }) {
   const { isMobile } = useSidebar()
-  const [activeTeam, setActiveTeam] = React.useState(teams[0])
+  const navigate = useNavigate();
+  const [activeTeam] = React.useState(teams[1])
 
   return (
     <SidebarMenu>
@@ -51,34 +55,46 @@ export function TeamSwitcher({
             </SidebarMenuButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent
-            className="w-[--radix-dropdown-menu-trigger-width] min-w-56 rounded-lg"
+            className="w-[--radix-dropdown-menu-trigger-width] min-w-72 rounded-lg"
             align="start"
             side={isMobile ? "bottom" : "right"}
             sideOffset={4}
           >
             <DropdownMenuLabel className="text-xs text-muted-foreground">
-              Teams
+              Application
             </DropdownMenuLabel>
-            {teams.map((team, index) => (
+            {teams.map((team, _index) => (
               <DropdownMenuItem
                 key={team.name}
-                onClick={() => setActiveTeam(team)}
+                onClick={() => {
+                  if (!team.url) return;
+                  if (team.url.startsWith("http")) {
+                    const fullURL = team.url.startsWith("http")
+                      ? team.url
+                      : `https://${team.url}`;
+                    window.open(fullURL, "_blank", "noopener,noreferrer");
+                  }
+                  // Internal link → use navigate()
+                  else {
+                    navigate(team.url);
+                  }
+                }}
                 className="gap-2 p-2"
               >
                 <div className="flex size-6 items-center justify-center rounded-sm border">
                   <team.logo className="size-4 shrink-0" />
                 </div>
                 {team.name}
-                <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut>
+                {/* <DropdownMenuShortcut>⌘{index + 1}</DropdownMenuShortcut> */}
               </DropdownMenuItem>
             ))}
-            <DropdownMenuSeparator />
+            {/* <DropdownMenuSeparator />
             <DropdownMenuItem className="gap-2 p-2">
               <div className="flex size-6 items-center justify-center rounded-md border bg-background">
                 <Plus className="size-4" />
               </div>
               <div className="font-medium text-muted-foreground">Add team</div>
-            </DropdownMenuItem>
+            </DropdownMenuItem> */}
           </DropdownMenuContent>
         </DropdownMenu>
       </SidebarMenuItem>

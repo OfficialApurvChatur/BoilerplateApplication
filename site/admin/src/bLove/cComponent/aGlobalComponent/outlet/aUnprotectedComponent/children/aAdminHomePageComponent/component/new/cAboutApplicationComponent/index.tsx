@@ -9,7 +9,7 @@ type AboutApplicationComponentType = {
 
 const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
   // Destructure Props
-  const { reduxCall, apiResponse } = props;
+  const { apiResponse } = props;
 
   // JSX
   return (

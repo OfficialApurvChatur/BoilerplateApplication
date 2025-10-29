@@ -1,4 +1,5 @@
 import databaseConnection from "./aConnection/cDatabaseConnection";
+import brandConnection from "./aConnection/jBrandConnection";
 import { UserModel } from "./bLove/aMCVR/aModel/aDatabaseManagement/bUserAdministration/eUserModel";
 import { MenuModel } from "./bLove/aMCVR/aModel/aDatabaseManagement/bUserAdministration/bMenuModel";
 import { AccessPointModel } from "./bLove/aMCVR/aModel/aDatabaseManagement/bUserAdministration/aAccessPointModel";
@@ -21,7 +22,7 @@ const seeder = async () => {
     const user = await UserModel.create({
       eFirstname: "Lucky",
       eLastname: "Guy",
-      eEmail: "lucky.guy@boilerplate.com",
+      eEmail: `lucky.guy${brandConnection.iEmailName}`,
       ePassword: "Lucky@123",
     });
     console.log("✅ User 'Lucky Guy' created");
@@ -29,7 +30,7 @@ const seeder = async () => {
     const shraddha = await UserModel.create({
       eFirstname: "Shraddha",
       eLastname: "Kapoor",
-      eEmail: "shraddha.kapoor@boilerplate.com",
+      eEmail: `shraddha.kapoor${brandConnection.iEmailName}`,
       ePassword: "Shraddha@123",
     });
     console.log("✅ User 'Shraddha Kapoor' created");
@@ -124,12 +125,12 @@ const seeder = async () => {
 
     // --- Assign Admin role to users using findOneAndUpdate ---
     await UserModel.findOneAndUpdate(
-      { eEmail: "lucky.guy@boilerplate.com" },
+      { eEmail: `lucky.guy${brandConnection.iEmailName}` },
       { cRole: adminRole._id }
     );
 
     await UserModel.findOneAndUpdate(
-      { eEmail: "shraddha.kapoor@boilerplate.com" },
+      { eEmail: `shraddha.kapoor${brandConnection.iEmailName}` },
       { cRole: adminRole._id }
     );
 
@@ -140,142 +141,142 @@ const seeder = async () => {
       { 
         eFirstname: "Ashlesha", 
         eLastname: "Wase", 
-        eEmail: "ashlesha.wase@boilerplate.com" 
+        eEmail: `ashlesha.wase${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Anisha", 
         eLastname: "Wase", 
-        eEmail: "anisha.wase@boilerplate.com" 
+        eEmail: `anisha.wase${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Kirti", 
         eLastname: "Turkar", 
-        eEmail: "kirti.turkar@boilerplate.com" 
+        eEmail: `kirti.turkar${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Rashi", 
         eLastname: "Suryavanshi", 
-        eEmail: "rashi.suryavanshi@boilerplate.com" 
+        eEmail: `rashi.suryavanshi${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Shivani", 
         eLastname: "Dangore", 
-        eEmail: "shivani.dangore@boilerplate.com" 
+        eEmail: `shivani.dangore${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Priti", 
         eLastname: "Bokade", 
-        eEmail: "priti.bokade@boilerplate.com" 
+        eEmail: `priti.bokade${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Sunaina", 
         eLastname: "Jaiswal", 
-        eEmail: "sunaina.jaiswal@boilerplate.com" 
+        eEmail: `sunaina.jaiswal${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Sharanya", 
         eLastname: "Palli", 
-        eEmail: "sharanya.palli@boilerplate.com" 
+        eEmail: `sharanya.palli${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Mayuri", 
         eLastname: "Sangidwar", 
-        eEmail: "mayuri.sangidwar@boilerplate.com" 
+        eEmail: `mayuri.sangidwar${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Mayuri", 
         eLastname: "Dhurve", 
-        eEmail: "mayuri.dhurve@boilerplate.com" 
+        eEmail: `mayuri.dhurve${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Saloni", 
         eLastname: "Meshram", 
-        eEmail: "saloni.meshram@boilerplate.com" 
+        eEmail: `saloni.meshram${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Rama", 
         eLastname: "Mitkari", 
-        eEmail: "rama.mitkari@boilerplate.com" 
+        eEmail: `rama.mitkari${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Anushree", 
         eLastname: "Mandape", 
-        eEmail: "anushree.mandape@boilerplate.com" 
+        eEmail: `anushree.mandape${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Neha", 
         eLastname: "Chourasia", 
-        eEmail: "neha.chourasia@boilerplate.com" 
+        eEmail: `neha.chourasia${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Geeta", 
         eLastname: "Kulkarni", 
-        eEmail: "geeta.kulkarni@boilerplate.com" 
+        eEmail: `geeta.kulkarni${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Nayan", 
         eLastname: "Choudhari", 
-        eEmail: "nayan.choudhari@boilerplate.com" 
+        eEmail: `nayan.choudhari${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Golden", 
         eLastname: "Bhringree", 
-        eEmail: "golden.bhringree@boilerplate.com" 
+        eEmail: `golden.bhringree${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Hema", 
         eLastname: "Kalsha", 
-        eEmail: "hema.kalsha@boilerplate.com" 
+        eEmail: `hema.kalsha${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Ashi", 
         eLastname: "Jain", 
-        eEmail: "ashi.jain@boilerplate.com" 
+        eEmail: `ashi.jain${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Kamini", 
         eLastname: "Patel", 
-        eEmail: "kamini.patel@boilerplate.com" 
+        eEmail: `kamini.patel${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Kanak", 
         eLastname: "Kshirsagar", 
-        eEmail: "kanak.kshirsagar@boilerplate.com" 
+        eEmail: `kanak.kshirsagar${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Rutuja", 
         eLastname: "Bhoyar", 
-        eEmail: "rutuja.bhoyar@boilerplate.com" 
+        eEmail: `rutuja.bhoyar${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Dhruvika", 
         eLastname: "Khinvasara", 
-        eEmail: "dhruvika.khinvasara@boilerplate.com" 
+        eEmail: `dhruvika.khinvasara${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Shilpa", 
         eLastname: "Awale", 
-        eEmail: "shilpa.awale@boilerplate.com" 
+        eEmail: `shilpa.awale${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Swati", 
         eLastname: "Patil", 
-        eEmail: "swati.patil@boilerplate.com" 
+        eEmail: `swati.patil${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Rutuja", 
         eLastname: "Pethe", 
-        eEmail: "rutuja.pethe@boilerplate.com" 
+        eEmail: `rutuja.pethe${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Shruti", 
         eLastname: "Gupta", 
-        eEmail: "shruti.gupta@boilerplate.com" 
+        eEmail: `shruti.gupta${brandConnection.iEmailName}` 
       },
       { 
         eFirstname: "Charushila", 
         eLastname: "Sahare", 
-        eEmail: "charushila.sahare@boilerplate.com" 
+        eEmail: `charushila.sahare${brandConnection.iEmailName}` 
       },
     ];
 

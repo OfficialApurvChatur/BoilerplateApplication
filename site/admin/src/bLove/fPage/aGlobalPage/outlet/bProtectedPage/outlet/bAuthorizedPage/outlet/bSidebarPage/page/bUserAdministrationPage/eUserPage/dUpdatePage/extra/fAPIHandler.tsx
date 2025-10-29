@@ -69,7 +69,7 @@ const apiHandler = {
             aState: submittedData.aState,
     
             cRole: submittedData.cRole,
-            cProfile: submittedData.cProfile,
+            // cProfile: submittedData.cProfile,
 
             eFirstname: submittedData.eFirstname,
             eLastname: submittedData.eLastname,

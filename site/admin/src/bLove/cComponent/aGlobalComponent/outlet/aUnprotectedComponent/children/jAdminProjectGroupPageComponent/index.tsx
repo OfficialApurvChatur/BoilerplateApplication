@@ -6,7 +6,7 @@ type AdminProjectGroupPageComponentType = {
   // apiCall: any,
 }
 
-const AdminProjectGroupPageComponent = (props: AdminProjectGroupPageComponentType) => {
+const AdminProjectGroupPageComponent = (_props: AdminProjectGroupPageComponentType) => {
   // JSX
   return (
     <React.Fragment>

@@ -9,7 +9,7 @@ type ProjectSectionComponentType = {
 
 const ProjectSectionComponent = (props: ProjectSectionComponentType) => {
   // Destructure Props
-  const { reduxCall, apiResponse } = props;
+  const { apiResponse } = props;
 
   // JSX
   return (

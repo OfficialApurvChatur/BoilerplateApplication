@@ -3,7 +3,7 @@ import React from 'react'
 import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
 
-import { ContactFormComponent } from './component/aContactFormComponent';
+// import { ContactFormComponent } from './component/aContactFormComponent';
 
 
 type AdminContactPageComponentType = {
@@ -21,7 +21,7 @@ export type AdminContactPageDataType = {
 
 const AdminContactPageComponent = (props: AdminContactPageComponentType) => {
     // Destructure Props
-  const { reduxCall, apiCall } = props;
+  const { apiCall } = props;
 
   // Variables
   let apiResponse: AdminContactPageDataType | null = null;

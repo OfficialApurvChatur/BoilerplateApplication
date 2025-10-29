@@ -1,3 +1,4 @@
+import brandConnection from "@/aConnection/eBrandConnection";
 import formValueDefault from "./dFormValueDefault";
 
 const formData = () => ([
@@ -65,7 +66,7 @@ const formData = () => ([
               ...inputs,
               {
                 aLinkTitle: "Instagra:X:Threads:Linkedin:Github",
-                bLinkURL: "https://www.instagram.com/beehive.corporation/",
+                bLinkURL: brandConnection.jInstagramURL,
               },
             ];
             form.setValue(fieldName, updated, { shouldValidate: true });

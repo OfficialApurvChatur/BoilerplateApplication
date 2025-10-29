@@ -3,7 +3,7 @@ import React from 'react'
 import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
 
-import { AboutComponent } from './component/aAboutComponent';
+// import { AboutComponent } from './component/aAboutComponent';
 
 
 type AdminAboutCompanyPageComponentType = {
@@ -32,7 +32,7 @@ export type AboutCompanyComponentDataType = {
 
 const AdminAboutCompanyPageComponent = (props: AdminAboutCompanyPageComponentType) => {
   // Destructure Props
-  const { reduxCall, apiCall } = props;
+  const { apiCall } = props;
 
   // Variables
   let apiResponse: AboutCompanyComponentDataType | null = null;

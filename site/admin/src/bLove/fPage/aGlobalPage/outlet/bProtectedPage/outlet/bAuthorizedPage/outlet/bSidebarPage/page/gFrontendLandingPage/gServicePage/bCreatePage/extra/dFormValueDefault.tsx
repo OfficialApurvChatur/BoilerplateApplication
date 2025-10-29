@@ -1,3 +1,6 @@
+import brandConnection from "@/aConnection/eBrandConnection";
+
+
 const formValueDefault = ({
   aImage: "",
   aTitle: "",
@@ -10,23 +13,23 @@ const formValueDefault = ({
   dLinks: [
     {
       aLinkTitle: 'Instagram',
-      bLinkURL: 'https://www.instagram.com/beehive.corporation/',
+      bLinkURL: brandConnection.jInstagramURL,
     },
     {
       aLinkTitle: 'X',
-      bLinkURL: 'https://x.com/beehive_corp',
+      bLinkURL: brandConnection.kXURL,
     },
     {
       aLinkTitle: 'Threads',
-      bLinkURL: 'https://www.threads.com/@beehive.corporation',
+      bLinkURL: brandConnection.lThreadsURL,
     }, 
     {
       aLinkTitle: 'Linkedin',
-      bLinkURL: 'https://www.linkedin.com/in/beehive-corporation-74893b2a7/',
+      bLinkURL: brandConnection.mLinkedinURL,
     }, 
     {
       aLinkTitle: 'Github',
-      bLinkURL: 'https://github.com/ApurvChatur/ArionApplication?tab=readme-ov-file#administration-installation/',
+      bLinkURL: brandConnection.nGithubURL,
     }, 
   ],
 })

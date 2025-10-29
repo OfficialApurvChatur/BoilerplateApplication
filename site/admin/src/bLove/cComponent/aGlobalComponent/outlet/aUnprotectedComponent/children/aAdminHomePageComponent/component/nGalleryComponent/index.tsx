@@ -210,7 +210,7 @@ const slides4 = [
 
 const GalleryComponent = ({
   title = "Our Gallery",
-  description = "Discover how leading companies and developers are leveraging modern web technologies to build exceptional digital experiences. These case studies showcase real-world applications and success stories.",
+  // description = "Discover how leading companies and developers are leveraging modern web technologies to build exceptional digital experiences. These case studies showcase real-world applications and success stories.",
   items = data,
 }: GalleryComponentProps) => {
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
