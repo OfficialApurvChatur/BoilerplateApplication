@@ -90,10 +90,14 @@ const appConnection = express();
 appConnection.use(morganMiddleware);
 appConnection.use(corsMiddleware({
   origin: function (origin, callback) {
-    const allowedOrigins = [brandConnection.rFrontendBaseURL];
-    if (!origin || allowedOrigins.includes(origin)) {
+    const allowedOrigins = [
+      brandConnection.rFrontendBaseURL, // remove trailing slash
+    ];
+
+    if (!origin || allowedOrigins.includes(origin.replace(/\/$/, ""))) {
       callback(null, true);
     } else {
+      console.warn("🚫 Blocked by CORS:", origin);
       callback(new Error("Not allowed by CORS"));
     }
   },
