@@ -90,6 +90,7 @@ const appConnection = express();
 appConnection.use(morganMiddleware);
 appConnection.use(corsMiddleware({
   origin: [brandConnection.rFrontendBaseURL],
+  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
 appConnection.use(bodyParserMiddleware.urlencoded({ extended: true }));
