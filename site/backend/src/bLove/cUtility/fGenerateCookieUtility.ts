@@ -14,6 +14,7 @@ const generateCookieUtility = async (code: 200 | 201, message: string, key: stri
     httpOnly: true,
     secure: true,
     sameSite: "none",
+    partitioned: true,
   }
 
   // Response
