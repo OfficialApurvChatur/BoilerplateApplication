@@ -89,19 +89,7 @@ const appConnection = express();
 // Third Party Middleware
 appConnection.use(morganMiddleware);
 appConnection.use(corsMiddleware({
-  origin: function (origin, callback) {
-    const allowedOrigins = [
-      brandConnection.rFrontendBaseURL, // remove trailing slash
-    ];
-
-    if (!origin || allowedOrigins.includes(origin.replace(/\/$/, ""))) {
-      callback(null, true);
-    } else {
-      console.warn("🚫 Blocked by CORS:", origin);
-      callback(new Error("Not allowed by CORS"));
-    }
-  },
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: [brandConnection.rFrontendBaseURL],
   credentials: true
 }));
 appConnection.use(bodyParserMiddleware.urlencoded({ extended: true }));
