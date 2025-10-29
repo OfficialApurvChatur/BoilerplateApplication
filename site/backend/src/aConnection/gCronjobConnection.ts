@@ -1,7 +1,7 @@
 import loggerConnection from "./bLoggerConnection";
 
-import pingPongServerCronjob from "../bLove/dCronjob/aPingPongServerCronjob";
-import apiLogUploadCronjob from "../bLove/dCronjob/bAPILogUploadCronjob";
+// import pingPongServerCronjob from "../bLove/dCronjob/aPingPongServerCronjob";
+// import apiLogUploadCronjob from "../bLove/dCronjob/bAPILogUploadCronjob";
 
 
 const cronjobConnection = () => {
@@ -9,8 +9,8 @@ const cronjobConnection = () => {
     message: "✅ Great... Cronjob Connected",
   });
 
-  pingPongServerCronjob.start();
-  apiLogUploadCronjob.start();
+  // pingPongServerCronjob.start();
+  // apiLogUploadCronjob.start();
 }
 
 export default cronjobConnection;
