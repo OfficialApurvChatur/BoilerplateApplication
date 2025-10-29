@@ -1,6 +1,5 @@
 import axios from "axios";
-
-import baseURL from "@/bLove/hAsset/aBaseURl";
+import brandConnection from "@/aConnection/eBrandConnection";
 
 
 const handleImageDeleteForObject = async (eachInput: any, form: any, setFileLoading: any, fileID: any) => {
@@ -9,7 +8,7 @@ const handleImageDeleteForObject = async (eachInput: any, form: any, setFileLoad
   try {
     // const response = 
     await axios.post(
-      `${baseURL}/image-storage/single-image-delete/`,
+      `${brandConnection.oBackendBaseURL}/api/v1/image-storage/single-image-delete/`,
       {
         folder: eachInput.folderName,
         public_id: fileID.split("/").pop().split(".")[0]

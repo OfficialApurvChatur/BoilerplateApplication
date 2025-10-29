@@ -1,15 +1,11 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import brandConnection from "../eBrandConnection";
 
 
 const apiConnection = createApi({
   reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: (
-      import.meta.env.VITE_ENVIRONMENT === "Production" ? String(import.meta.env.VITE_BACKEND_URL) : 
-      import.meta.env.VITE_ENVIRONMENT === "Testing" ? String(import.meta.env.VITE_BACKEND_URL) :
-      import.meta.env.VITE_ENVIRONMENT === "Development" ? String(import.meta.env.VITE_BACKEND_URL) : 
-      String(import.meta.env.VITE_BACKEND_URL)
-    ),
+    baseUrl: `${brandConnection.oBackendBaseURL}/api/v1`,
     credentials: "include"
   }),
   tagTypes: [

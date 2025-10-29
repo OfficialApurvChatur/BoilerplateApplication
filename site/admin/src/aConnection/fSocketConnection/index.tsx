@@ -1,5 +1,6 @@
 import { createContext, useMemo, useContext, useEffect } from "react";
 import io, { Socket } from "socket.io-client";
+import brandConnection from "../eBrandConnection";
 
 
 const SocketContext = createContext<Socket | null>(null);
@@ -7,7 +8,7 @@ const useSocket = () => useContext(SocketContext)
 
 const SocketProvider = ({ children }: any) => {
   const socket = useMemo(() => {
-    return io(import.meta.env.VITE_ENVIRONMENT === "Production" ? "BASE_URL" : "http://localhost:8000", { withCredentials: true })
+    return io(brandConnection.oBackendBaseURL)
   }, []);
 
   useEffect(() => {

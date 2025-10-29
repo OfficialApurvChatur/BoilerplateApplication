@@ -1,5 +1,5 @@
-import baseURL from "@/bLove/hAsset/aBaseURl";
 import axios from "axios";
+import brandConnection from "@/aConnection/eBrandConnection";
 
 
 const handleImageUpdateForList = async (event: any, index: any, preFieldName: any, fieldName: any, fieldName2: any, setFormObject: any, setFileLoading: any, fileID: any) => {
@@ -19,8 +19,7 @@ const handleImageUpdateForList = async (event: any, index: any, preFieldName: an
 
   try {
     const response = await axios.post<{ update: { url: string, pid: string } }>(
-      // "http://localhost:8000/api/v1image-storage/single-image-update/",
-      `${baseURL}/image-storage/single-image-update/`,      
+      `${brandConnection.oBackendBaseURL}/api/v1/image-storage/single-image-update/`,      
       formData,
       { 
         headers: { "Content-Type": "multipart/form-data" }, 

@@ -1,6 +1,5 @@
 import axios from "axios";
-
-import baseURL from "@/bLove/hAsset/aBaseURl";
+import brandConnection from "@/aConnection/eBrandConnection";
 
 
 const handleImageCreateForObject = async (event: any, eachInput: any, form: any, setFileLoading: any) => {
@@ -17,7 +16,7 @@ const handleImageCreateForObject = async (event: any, eachInput: any, form: any,
 
   try {
     const response = await axios.post<{ create: { url: string, pid: string } }>(
-      `${baseURL}/image-storage/single-image-create/`,
+      `${brandConnection.oBackendBaseURL}/api/v1/image-storage/single-image-create/`,
       formData,
       { 
         headers: { "Content-Type": "multipart/form-data" }, 

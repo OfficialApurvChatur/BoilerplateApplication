@@ -77,6 +77,7 @@ import { adminBranchPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/hAd
 import { adminProjectSectionPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/iAdminProjectSectionPageRoute";
 import { adminProjectGroupPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/jAdminProjectGroupPageRoute";
 import { adminProjectPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/kAdminProjectPageRoute";
+import brandConnection from "./jBrandConnection";
 
 
 loggerConnection().info({ 
@@ -88,7 +89,7 @@ const appConnection = express();
 // Third Party Middleware
 appConnection.use(morganMiddleware);
 appConnection.use(corsMiddleware({
-  origin: ["http://localhost:5173"],
+  origin: [brandConnection.rFrontendBaseURL],
   credentials: true
 }));
 appConnection.use(bodyParserMiddleware.urlencoded({ extended: true }));

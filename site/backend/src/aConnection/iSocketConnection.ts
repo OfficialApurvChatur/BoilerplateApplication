@@ -2,6 +2,7 @@ import http from "http";
 import express from "express";
 import { Server } from "socket.io";
 import loggerConnection from "./bLoggerConnection";
+import brandConnection from "./jBrandConnection";
 
 
 const socketConnection = (server: http.Server<typeof http.IncomingMessage, typeof http.ServerResponse>, appConnection: express.Express) => {
@@ -9,7 +10,7 @@ const socketConnection = (server: http.Server<typeof http.IncomingMessage, typeo
     // Socket 
     const io = new Server(server, {
       cors: { 
-        origin: "http://localhost:5173", 
+        origin: brandConnection.rFrontendBaseURL, 
         credentials: true 
       }
     })
