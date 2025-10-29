@@ -24,7 +24,7 @@ const brandConnection = {
       : this.pBackendLocalURL;
   },
   pBackendLocalURL: "http://localhost:8000",
-  qBackendProductionURL: "http://backend-for-boilerplate-application",
+  qBackendProductionURL: "https://backend-for-boilerplate-application.onrender.com",
 
   get rFrontendBaseURL() {
     return import.meta.env.VITE_ENVIRONMENT === "Production"
@@ -32,7 +32,7 @@ const brandConnection = {
       : this.sFrontendLocalURL;
   },
   sFrontendLocalURL: "http://localhost:5173",
-  tFrontendProductionURL: "http://boilerplate-frontend",
+  tFrontendProductionURL: "https://boilerplate-frontend-new.netlify.app",
 
 }
 
