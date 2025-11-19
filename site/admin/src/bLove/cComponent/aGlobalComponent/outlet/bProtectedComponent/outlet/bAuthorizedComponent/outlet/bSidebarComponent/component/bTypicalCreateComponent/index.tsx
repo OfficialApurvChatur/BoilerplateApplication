@@ -20,6 +20,7 @@ import TextAreaInputComponent from "./component/hTextAreaInputComponent"
 import SelectInputComponent from "./component/iSelectInputComponent"
 // import RichTextEditorInputComponent from "./component/jRichTextEditorInpitComponent"
 import DynamicInputComponent from "./component/kDynamicInputComponent"
+import { toast } from "@/aConnection/bShadcnConnection/hooks/use-toast"
 
 
 type TypicalCreateComponentType = {
@@ -44,16 +45,16 @@ const TypicalCreateComponent = (props: TypicalCreateComponentType) => {
 
   // Submit Handler
   const onSubmit = async (submittedData: z.infer<typeof formValueSchema>) => {
-    // console.log(submittedData)
+    console.log(submittedData)
 
-    // toast({
-    //   title: "You submitted the following values:",
-    //   description: (
-    //     <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
-    //       <code className="text-white">{JSON.stringify(submittedData, null, 2)}</code>
-    //     </pre>
-    //   ),
-    // })
+    toast({
+      title: "You submitted the following values:",
+      description: (
+        <pre className="mt-2 w-[340px] rounded-md bg-slate-950 p-4">
+          <code className="text-white">{JSON.stringify(submittedData, null, 2)}</code>
+        </pre>
+      ),
+    })
 
     apiHandler(form)(submittedData)
   } 

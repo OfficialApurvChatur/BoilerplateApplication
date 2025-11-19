@@ -3,14 +3,14 @@ import React from 'react'
 import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
 
-import { HeroComponent } from './component/new/aHeroComponent';
-import { AboutCompanyComponent } from './component/new/bAboutCompanyComponent';
-import { AboutApplicationComponent } from './component/new/cAboutApplicationComponent';
-import { ServiceComponent } from './component/new/dServiceComponent';
-import { CounterComponent } from './component/new/eCounterComponent';
-import { BranchSectionComponent } from './component/new/fBranchSectionComponent';
-import { ProjectSectionComponent } from './component/new/gProjectSectionComponent';
-import { ContactInfoComponent } from './component/new/hContactInfoComponent';
+const HeroComponent = React.lazy(() => import("./component/aHeroComponent"));
+const AboutCompanyComponent = React.lazy(() => import("./component/bAboutCompanyComponent"));
+const AboutApplicationComponent = React.lazy(() => import("./component/cAboutApplicationComponent"));
+const ServiceComponent = React.lazy(() => import("./component/dServiceComponent"));
+const CounterComponent = React.lazy(() => import("./component/eCounterComponent"));
+const BranchSectionComponent = React.lazy(() => import("./component/fBranchSectionComponent"));
+const ProjectSectionComponent = React.lazy(() => import("./component/gProjectSectionComponent"));
+const ContactInfoComponent = React.lazy(() => import("./component/hContactInfoComponent"));
 
 
 type AdminHomePageComponentType = {
@@ -104,6 +104,7 @@ export type BranchSectionComponentDataType = {
   aTitle: string;
   aSubtitle: string;
   aDescription: string;
+  aSlug: string;
   cBranchGroups: BranchGroupComponentDataType[];
 };
 
@@ -221,14 +222,14 @@ const AdminHomePageComponent = (props: AdminHomePageComponentType) => {
                   />
                 )}
                 
-                {apiCall.retrieveAPIResponse.data.retrieve.service && (
+                {apiCall.retrieveAPIResponse.data.retrieve.service?.length > 0 && (
                   <ServiceComponent 
                     reduxCall={reduxCall}
                     apiResponse={apiResponse?.service as ServiceComponentDataType[]}
                   />
                 )}
                                 
-                {apiCall.retrieveAPIResponse.data.retrieve.counter && (
+                {apiCall.retrieveAPIResponse.data.retrieve.counter?.length > 0 && (
                   <CounterComponent 
                     reduxCall={reduxCall}
                     apiResponse={apiResponse?.counter as CounterComponentDataType[]}

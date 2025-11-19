@@ -6,9 +6,9 @@ const brandConnection = {
   dAdministrationApplicationName: "Boilerplate Administration",
   eBackendApplicationName: "Boilerplate Backend",
 
-  fFrontendApplicationURL: "beehive-frontend.netlify.app",
-  gAdminApplicationURL: "beehive-admin.netlify.app",
-  hBackendApplicationURL: "beehive-backend.netlify.app",
+  fFrontendApplicationURL: "https://beehive-frontend.netlify.app",
+  gAdminApplicationURL: "https://beehive-admin.netlify.app",
+  hBackendApplicationURL: "https://beehive-backend.netlify.app",
 
   iEmailName: "@boilerplate.com",
 

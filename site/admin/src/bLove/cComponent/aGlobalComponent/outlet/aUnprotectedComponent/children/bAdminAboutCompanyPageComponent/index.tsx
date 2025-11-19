@@ -3,7 +3,7 @@ import React from 'react'
 import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
 
-// import { AboutComponent } from './component/aAboutComponent';
+import { AboutComponent } from './component/aAboutComponent';
 
 
 type AdminAboutCompanyPageComponentType = {
@@ -112,9 +112,9 @@ const AdminAboutCompanyPageComponent = (props: AdminAboutCompanyPageComponentTyp
                 </p>
               </div>
 
-              {/* <div className="overflow-hidden" >
+              <div className="overflow-hidden" >
                 <AboutComponent reduxCall={props.reduxCall} />
-              </div> */}
+              </div>
             </React.Fragment>
           ) : []
         ) : []

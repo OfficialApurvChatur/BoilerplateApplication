@@ -1,8 +1,8 @@
 import React from "react"
 
-import { NavbarComponent } from "./component/aNavbarComponent";
 import { FooterComponent } from './component/bFooterComponent';
 import { ScrollToTopComponent } from './component/cScrollToTopComponent';
+import { ResizeableNavbarComponent } from "./component/dResizeableNavbarComponent";
 
 
 const UnprotectedComponent = ({ children, reduxCall, apiHandler }: { children: React.ReactNode, reduxCall: any, apiHandler: any }) => {
@@ -11,8 +11,8 @@ const UnprotectedComponent = ({ children, reduxCall, apiHandler }: { children: R
     <React.Fragment>
       {/* UnprotectedComponent */}
 
-      <div className="overflow-hidden" >
-        <NavbarComponent reduxCall={reduxCall} apiHandler={apiHandler} />
+      <div className="relative w-full" >
+        <ResizeableNavbarComponent reduxCall={reduxCall} apiHandler={apiHandler} />
         { children }
         <FooterComponent />
         <ScrollToTopComponent />

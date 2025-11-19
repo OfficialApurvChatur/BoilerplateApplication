@@ -10,6 +10,7 @@ import accountAPIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorize
 import GlobalComponent from "@/bLove/cComponent/aGlobalComponent";
 
 import apiHandler from "./extra/aAPIHandler";
+import { LoaderFive } from "@/aConnection/bShadcnConnection/components/ui/loader";
 
 
 const GlobalLayout = () => {
@@ -40,9 +41,18 @@ const GlobalLayout = () => {
       {/* GlobalLayout */}
 
       {apiCall.accountRetrievePrimaryAPIResponse.isLoading ? (
-        <div className='min-h-screen flex justify-center items-center' >Checking Profile...</div>
+        <React.Fragment>
+          {/* <div className='min-h-screen flex justify-center items-center' >Checkinadg Profile...</div> */}
+          <div className="flex justify-center items-center min-h-screen" >
+            <LoaderFive text="Profile Verification! Please wait..." />
+          </div>
+        </React.Fragment>
       ) : (
-        <Suspense fallback={<div className='min-h-screen flex justify-center items-center' >Loading Profile...</div>}>
+        <Suspense fallback={
+          <div className="flex justify-center items-center min-h-screen" >
+            <LoaderFive text="Profile Verification! Please wait..." />
+          </div>
+        }>
           <GlobalComponent>
             <Outlet />
           </GlobalComponent>

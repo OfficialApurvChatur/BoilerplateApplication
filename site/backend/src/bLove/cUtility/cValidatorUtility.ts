@@ -77,8 +77,8 @@ const validatorUtility = {
   aDetail: () => [
     body("aDetail")
       .optional({ checkFalsy: true })
-      .isLength({ min: 3, max: 5000 })
-      .withMessage("Detail must be 3 - 5000 characters"),
+      .isLength({ min: 3, max: 50000 })
+      .withMessage("Detail must be 3 - 50000 characters"),
   ],
 
   aStatus: () => [
@@ -227,9 +227,9 @@ const validatorUtility = {
   cBranchGroups: ({ Model, label = "Record" }: TIdArgs) => [
     body("cBranchGroups")
       .optional()
-      .isArray({ min: 1 })
-      .withMessage("Please select at least one branch group")
-      .bail()
+      // .isArray({ min: 1 })
+      // .withMessage("Please select at least one branch group")
+      // .bail()
       .custom(async (value: mongoose.ObjectId[]) => {
         await Promise.all(
           value.map(async (each) => {
@@ -250,9 +250,9 @@ const validatorUtility = {
   cBranches: ({ Model, label = "Record" }: TIdArgs) => [
     body("cBranches")
       .optional()
-      .isArray({ min: 1 })
-      .withMessage("Please select at least one branch")
-      .bail()
+      // .isArray({ min: 1 })
+      // .withMessage("Please select at least one branch")
+      // .bail()
       .custom(async (value: mongoose.ObjectId[]) => {
         await Promise.all(
           value.map(async (each) => {

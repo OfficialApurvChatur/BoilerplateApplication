@@ -21,7 +21,14 @@ const TextAreaInputComponent = (props: any) => {
             <FormItem>
               <FormLabel>{eachInput.label} :</FormLabel>
               <FormControl>
-                <Textarea className="min-h-24" placeholder={eachInput.placeholder} {...field} />
+                <Textarea 
+                  className={
+                    eachInput.type === "rich-text-editor"
+                      ? "min-h-96"
+                      : "min-h-48"
+                  }                  
+                  placeholder={eachInput.placeholder} {...field} 
+                />
               </FormControl>
               <FormMessage />
             </FormItem>

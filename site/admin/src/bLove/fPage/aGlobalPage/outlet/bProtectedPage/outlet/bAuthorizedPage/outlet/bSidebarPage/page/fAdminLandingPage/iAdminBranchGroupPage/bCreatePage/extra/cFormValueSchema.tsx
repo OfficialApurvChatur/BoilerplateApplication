@@ -20,7 +20,7 @@ const formValueSchema = z.object({
   aDetail: z.string()
     .optional()
     .refine(val => !val || val.length >= 3, { message: "Please enter at least 3 characters" })
-    .refine(val => !val || val.length <= 5000, { message: "Please enter at most 5000 characters" }),
+    .refine(val => !val || val.length <= 50000, { message: "Please enter at most 5000 characters" }),
   aStatus: z.string()
     .optional()
     .refine(val => !val || val.trim().length > 0, { message: "Please select status" }),
@@ -29,7 +29,7 @@ const formValueSchema = z.object({
     .refine(val => !val || val.trim().length > 0, { message: "Please select state" }),
 
   cBranches: z.array(z.string())
-    .nonempty("Please select atleast 1 branch.")
+    .optional()
 });
 
 export default formValueSchema;

@@ -1,4 +1,4 @@
-import pilot from "@/bLove/hAsset/pilot.png";
+import pilot from "@/bLove/hAsset/Avatar/Geeta_Kulkarni.png";
 import { StatisticComponent } from "./component/aStatisticComponent";
 import { Typewriter } from "@/aConnection/bShadcnConnection/components/ui/typewriter";
 
@@ -30,7 +30,7 @@ export const AboutComponent = (_props: AboutComponentProps) => {
           />
           <div className="bg-green-0 flex flex-col justify-between">
             <div className="pb-6">
-              <h2 className="text-3xl md:text-4xl font-bold">
+              <h2 className="font-myPrimaryFont text-4xl md:text-5xl font-bold">
                 <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
                   Truly{" "}
                 </span>
@@ -43,7 +43,7 @@ export const AboutComponent = (_props: AboutComponentProps) => {
                 nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit
                 amet, consectetur adipiscing elit. 
               </p> */}
-              <Typewriter text={DEMO_TEXT} renderMarkdown className="prose text-xl text-muted-foreground mt-4" />
+              <Typewriter text={DEMO_TEXT} renderMarkdown className="prose font-mySecondaryFont text-lg text-muted-foreground mt-4" />
             </div>
             <StatisticComponent />
           </div>

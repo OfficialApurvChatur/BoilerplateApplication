@@ -35,8 +35,10 @@ const CheckboxInputComponent = (props: any) => {
                       >
                         <FormControl>
                           <Checkbox
-                            checked={field.value?.includes(each.value) || field.value?.some((item: any) => item._id === each.value)}
+                            checked={field.value?.includes(each.value)}
                             onCheckedChange={(checked) => {
+                              console.log(each)
+                              console.log(field.value)
                               return checked
                                 ? field.onChange(field.value ? [...field.value, each.value] : [each.value])
                                 : field.onChange(

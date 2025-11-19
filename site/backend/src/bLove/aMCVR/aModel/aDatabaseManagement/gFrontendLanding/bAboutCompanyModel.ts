@@ -26,7 +26,7 @@ const schema = new mongoose.Schema<AboutCompanyModelType>({
   // D. MoreInfo Schema
   dTag: { 
     type: String, 
-    enum: ['Truly', 'Relatively'],
+    enum: ['truly', 'relatively'],
     default: "truly"  // 👈 default tag
   },
 
