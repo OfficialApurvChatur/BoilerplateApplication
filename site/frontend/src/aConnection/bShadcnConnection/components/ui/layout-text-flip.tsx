@@ -26,7 +26,7 @@ export const LayoutTextFlip = ({
     <>
       <motion.span
         layoutId="subtext"
-        className="font-myPrimaryFont text-4xl font-bold tracking-tight drop-shadow-lg md:text-5xl"
+        className="text-4xl font-bold tracking-tight drop-shadow-lg md:text-5xl"
       >
         {text}
       </motion.span>

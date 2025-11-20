@@ -1,13 +1,23 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import {
   motion,
   useScroll,
   useTransform,
   useSpring,
   MotionValue,
+  AnimatePresence,
+  useCycle,
 } from "motion/react";
 import { HeroComponentDataType } from "@/bLove/cComponent/aGlobalComponent/outlet/aUnprotectedComponent/children/aAdminHomePageComponent";
+import { LayoutTextFlip } from "./layout-text-flip";
+import { Button as MovingButton } from "./moving-border";
+import { FlipWords } from "./flip-words";
+import { TypewriterEffectSmooth } from "./typewriter-effect";
+import { HeroFloatingDockComponent } from "@/bLove/cComponent/aGlobalComponent/outlet/aUnprotectedComponent/children/aAdminHomePageComponent/component/aHeroComponent/component/eHeroFloatingDockComponent";
+import { EyeClosedIcon, LockKeyholeIcon, LockKeyholeOpenIcon } from "lucide-react";
+import { EyeOpenIcon } from "@radix-ui/react-icons";
+import { Button } from "./button";
 
 
 export const HeroParallax = ({
@@ -23,6 +33,15 @@ export const HeroParallax = ({
   reduxCall: any,
   apiResponse: HeroComponentDataType,
 }) => {
+  const [isOpen, toggleOpen] = useCycle(false, true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      toggleOpen();
+    }, 1500); // change every 1.5s
+    return () => clearInterval(interval);
+  }, [toggleOpen]);
+
   const firstRow = products.slice(0, 5);
   const secondRow = products.slice(5, 10);
   const thirdRow = products.slice(10, 15);
@@ -61,12 +80,100 @@ export const HeroParallax = ({
   return (
     <div
       ref={ref}
-      className="h-[500vh] py-40 overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
+      className="h-[400vh] overflow-hidden antialiased relative flex flex-col self-auto [perspective:1000px] [transform-style:preserve-3d]"
     >
       <Header 
         reduxCall={reduxCall}
         apiResponse={apiResponse}  
       />
+
+      <HeroFloatingDockComponent />
+
+      <motion.div
+        initial={{
+          opacity: 0,
+        }}
+        animate={{
+          opacity: 1,
+        }}
+        transition={{
+          duration: 0.3,
+          delay: 1,
+        }}
+        className="relative z-10 flex flex-wrap items-center justify-center gap-4"
+      >
+        <Button variant="secondary" size="lg" className="flex items-center gap-4 font-myPrimaryFont text-lg">
+          <AnimatePresence mode="wait" initial={false}>
+            {isOpen ? (
+              <motion.span
+                key="open"
+                initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                transition={{ duration: 0.25 }}
+              >
+                <EyeOpenIcon className="h-5 w-5" />
+              </motion.span>
+            ) : (
+              <motion.span
+                key="closed"
+                initial={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                transition={{ duration: 0.25 }}
+              >
+                <EyeClosedIcon className="h-5 w-5" />
+              </motion.span>
+            )}
+          </AnimatePresence>
+
+          <motion.span
+            key={isOpen ? "open-text" : "closed-text"}
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -5 }}
+            transition={{ duration: 0.3 }}
+          >
+            {isOpen ? "Visit Administration" : "Visit Administration"}
+          </motion.span>
+        </Button>
+        <Button variant="secondary" size="lg" className="flex items-center gap-4 font-myPrimaryFont text-lg">
+          <AnimatePresence mode="wait" initial={false}>
+            {isOpen ? (
+              <motion.span
+                key="open"
+                initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                transition={{ duration: 0.25 }}
+              >
+                <LockKeyholeOpenIcon className="h-5 w-5" />
+              </motion.span>
+            ) : (
+              <motion.span
+                key="closed"
+                initial={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                transition={{ duration: 0.25 }}
+              >
+                <LockKeyholeIcon className="h-5 w-5" />
+              </motion.span>
+            )}
+          </AnimatePresence>
+
+          <motion.span
+            key={isOpen ? "open-text" : "closed-text"}
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -5 }}
+            transition={{ duration: 0.3 }}
+          >
+            {"Go Back Home"}
+          </motion.span>
+        </Button>
+      </motion.div>
+
       <motion.div
         style={{
           rotateX,
@@ -115,16 +222,44 @@ type HeaderType = {
 
 export const Header = (props: HeaderType) => {
   return (
-    <div className="max-w-7xl relative mx-auto py-20 md:py-40 px-4 w-full left-0 top-0">
-      <p className="font-mySecondaryFont max-w-2xl text-base md:text-xl mb-8 dark:text-neutral-200">
+    <div className="max-w-7xl mx-auto py-20 md:py-40 px-4 w-ful flex flex-col items-center text-center gap-6">
+
+      {/* Tag */}
+      <MovingButton
+        borderRadius="1.75rem"
+        className="px-4 py-2 font-mySecondaryFont"
+      >
         {props.apiResponse.dTag}
-      </p>
-      <h1 className="font-myPrimaryFont text-2xl md:text-7xl font-bold dark:text-white">
-        Welcome to <br /> {props.apiResponse.aTitle}
-      </h1>
-      <p className="font-mySecondaryFont max-w-2xl text-base md:text-xl mt-8 dark:text-neutral-200">
-        {props.apiResponse.aDescription}
-      </p>
+      </MovingButton>
+
+      {/* Title */}
+      <motion.div className="relative mx-4 my-4 flex flex-col items-center justify-center gap-4 text-center sm:mx-0 sm:mb-0 sm:flex-row font-myPrimaryFont ">
+        <LayoutTextFlip
+          text="Welcome to "
+          words={[props.apiResponse.aTitle, "Beehive Administration", "The Sigma Cluster"]}
+        />
+      </motion.div>      
+      
+      {/* Subtitle */}
+      <TypewriterEffectSmooth
+        className="font-mySecondaryFont"
+        words={props.apiResponse.aSubtitle
+          .split(/\s+/)
+          .filter(Boolean)
+          .map((word, idx, arr) => ({
+            text: word,
+            className: idx === arr.length - 1 ? "text-blue-500 dark:text-blue-500" : undefined,
+          }))
+        } 
+      />
+
+      {/* Description */}
+      <div className="w-full md:w-2/3 font-mySecondaryFont text-xl mx-auto font-normal text-neutral-600 dark:text-neutral-400">
+        A proficient corporation specializing in the comprehensive lifecycle management of web applications, encompassing
+        <FlipWords words={["design", "development", "deployment", "maintenance", "scalable"]} /> <br />
+        solutions.
+      </div>
+
     </div>
   );
 };
