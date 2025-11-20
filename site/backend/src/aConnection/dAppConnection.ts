@@ -99,9 +99,10 @@ appConnection.use(cookieParserMiddleware());
 appConnection.use(compressionMiddleware());
 
 // Routing Middleware
-appConnection.get("/", (_request: express.Request, response: express.Response) => {
-  response.send(`Welcome to ${process.env.APPLICATION}`)
-})
+// appConnection.get("/", (_request: express.Request, response: express.Response) => {
+//   response.send(`Welcome to ${process.env.APPLICATION}`)
+// })
+appConnection.use(express.static("public"));
 
 appConnection.get("/ping", (_request: express.Request, response: express.Response) => {
   response.send("pong");
