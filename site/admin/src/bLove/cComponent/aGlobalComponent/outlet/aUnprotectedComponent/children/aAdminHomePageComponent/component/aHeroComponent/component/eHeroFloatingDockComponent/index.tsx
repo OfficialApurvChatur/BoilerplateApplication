@@ -1,72 +1,39 @@
 import { FloatingDock } from "@/aConnection/bShadcnConnection/components/ui/floating-dock";
 import {
   IconBrandGithub,
+  IconBrandInstagram,
+  IconBrandLinkedin,
+  IconBrandThreads,
   IconBrandX,
-  IconExchange,
   IconHome,
-  IconNewSection,
-  IconTerminal2,
 } from "@tabler/icons-react";
+import { HeroComponentDataType } from "../../../..";
 
-export function HeroFloatingDockComponent() {
-  const links = [
-    {
-      title: "Home",
-      icon: (
-        <IconHome className="h-full w-full" />
-      ),
-      href: "#",
-    },
 
-    {
-      title: "Products",
-      icon: (
-        <IconTerminal2 className="h-full w-full" />
-      ),
-      href: "#",
-    },
-    {
-      title: "Components",
-      icon: (
-        <IconNewSection className="h-full w-full" />
-      ),
-      href: "#",
-    },
-    {
-      title: "Aceternity UI",
-      icon: (
-        <img
-          src="https://assets.aceternity.com/logo-dark.png"
-          width={20}
-          height={20}
-          alt="Aceternity Logo"
-        />
-      ),
-      href: "#",
-    },
-    {
-      title: "Changelog",
-      icon: (
-        <IconExchange className="h-full w-full" />
-      ),
-      href: "#",
-    },
+type HeroFloatingDockComponentType = {
+  reduxCall: any,
+  apiResponse: HeroComponentDataType,
+}
 
-    {
-      title: "Twitter",
-      icon: (
-        <IconBrandX className="h-full w-full" />
-      ),
-      href: "#",
-    },
-    {
-      title: "GitHub",
-      icon: (
-        <IconBrandGithub className="h-full w-full" />
-      ),
-      href: "#",
-    },
-  ];
+export function HeroFloatingDockComponent(props: HeroFloatingDockComponentType) {
+
+  const iconMapping: Record<string, JSX.Element> = {
+    Instagram: <IconBrandInstagram className="h-full w-full" />,
+    "X (Twitter)": <IconBrandX className="h-full w-full" />,
+    Threads: <IconBrandThreads className="h-full w-full" />,
+    LinkedIn: <IconBrandLinkedin className="h-full w-full" />,
+    GitHub: <IconBrandGithub className="h-full w-full" />,
+
+    // fallback if title doesn't match
+    Default: <IconHome className="h-full w-full" />,
+  };
+
+  const links = props.apiResponse.dSocialLinks.map(each => ({
+    title: each.aLinkTitle,
+    icon: iconMapping[each.aLinkTitle] || iconMapping.Default,
+    href: each.bLinkURL,
+  }))
+
   return (
     <div className="flex items-center justify-center h-[12rem] w-full">
       <FloatingDock

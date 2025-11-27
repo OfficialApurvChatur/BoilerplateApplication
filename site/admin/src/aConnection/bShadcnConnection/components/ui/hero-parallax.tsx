@@ -77,6 +77,18 @@ export const HeroParallax = ({
     useTransform(scrollYProgress, [0, 0.2], [-700, 500]),
     springConfig
   );
+
+  const iconPairs: Record<number, { open: JSX.Element; closed: JSX.Element }> = {
+    0: {
+      open: <EyeOpenIcon className="h-5 w-5" />,
+      closed: <EyeClosedIcon className="h-5 w-5" />,
+    },
+    1: {
+      open: <LockKeyholeOpenIcon className="h-5 w-5" />,
+      closed: <LockKeyholeIcon className="h-5 w-5" />,
+    },
+  };
+
   return (
     <div
       ref={ref}
@@ -87,9 +99,12 @@ export const HeroParallax = ({
         apiResponse={apiResponse}  
       />
 
-      <HeroFloatingDockComponent />
+      <HeroFloatingDockComponent
+        reduxCall={reduxCall}
+        apiResponse={apiResponse}  
+      />
 
-      <motion.div
+      {/* <motion.div
         initial={{
           opacity: 0,
         }}
@@ -172,6 +187,94 @@ export const HeroParallax = ({
             {"Go Back Home"}
           </motion.span>
         </Button>
+      </motion.div> */}
+
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.3, delay: 1 }}
+        className="relative z-10 flex flex-wrap items-center justify-center gap-4"
+      >
+        {apiResponse.dWebLinks.map((link, index) => (
+          <Button
+            key={index}
+            variant="outline"
+            size="lg"
+            className="flex items-center gap-4 font-myPrimaryFont text-lg"
+            onClick={() => window.open(link.bLinkURL, "_blank")}
+          >
+            <AnimatePresence mode="wait" initial={false}>
+              {isOpen ? (
+                <motion.span
+                  key={`icon-open-${index}`}
+                  initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                  exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  {iconPairs[index]?.open ?? iconPairs[0].open}
+                </motion.span>
+              ) : (
+                <motion.span
+                  key={`icon-closed-${index}`}
+                  initial={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                  animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                  exit={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                  transition={{ duration: 0.25 }}
+                >
+                  {iconPairs[index]?.closed ?? iconPairs[0].closed}
+                </motion.span>
+              )}
+            </AnimatePresence>
+
+            <motion.span
+              key={`text-${index}-${isOpen ? "open" : "closed"}`}
+              initial={{ opacity: 0, y: 5 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -5 }}
+              transition={{ duration: 0.3 }}
+            >
+              {link.aLinkTitle}
+            </motion.span>
+          </Button>
+        ))}
+
+        <Button variant="outline" size="lg" className="flex items-center gap-4 font-myPrimaryFont text-lg">
+          <AnimatePresence mode="wait" initial={false}>
+            {isOpen ? (
+              <motion.span
+                key="open"
+                initial={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                transition={{ duration: 0.25 }}
+              >
+                <EyeOpenIcon className="h-5 w-5" />
+              </motion.span>
+            ) : (
+              <motion.span
+                key="closed"
+                initial={{ opacity: 0, rotate: 90, scale: 0.5 }}
+                animate={{ opacity: 1, rotate: 0, scale: 1 }}
+                exit={{ opacity: 0, rotate: -90, scale: 0.5 }}
+                transition={{ duration: 0.25 }}
+              >
+                <EyeClosedIcon className="h-5 w-5" />
+              </motion.span>
+            )}
+          </AnimatePresence>
+
+          <motion.span
+            key={isOpen ? "open-text" : "closed-text"}
+            initial={{ opacity: 0, y: 5 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -5 }}
+            transition={{ duration: 0.3 }}
+          >
+            {isOpen ? "Visit Administration" : "Visit Administration"}
+          </motion.span>
+        </Button>
+
       </motion.div>
 
       <motion.div
@@ -236,7 +339,7 @@ export const Header = (props: HeaderType) => {
       <motion.div className="relative mx-4 my-4 flex flex-col items-center justify-center gap-4 text-center sm:mx-0 sm:mb-0 sm:flex-row font-myPrimaryFont ">
         <LayoutTextFlip
           text="Welcome to "
-          words={[props.apiResponse.aTitle, "Beehive Administration", "The Sigma Cluster"]}
+          words={[props.apiResponse.aTitle]}
         />
       </motion.div>      
       

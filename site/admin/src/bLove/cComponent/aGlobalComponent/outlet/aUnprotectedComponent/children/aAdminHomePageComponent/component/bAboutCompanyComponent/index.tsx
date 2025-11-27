@@ -19,7 +19,8 @@ import Rutuja_Bhoyar from "@/bLove/hAsset/Avatar/Rutuja_Bhoyar.png";
 import { PointerHighlight } from '@/aConnection/bShadcnConnection/components/ui/pointer-highlight';
 import { AnimatedTestimonials } from '@/aConnection/bShadcnConnection/components/ui/animated-testimonials';
 import { GlowingEffect } from '@/aConnection/bShadcnConnection/components/ui/glowing-effect';
-
+import brandConnection from '@/aConnection/eBrandConnection';
+import { Typewriter } from '@/aConnection/bShadcnConnection/components/ui/typewriter';
 
 
 type AboutCompanyComponentType = {
@@ -30,121 +31,42 @@ type AboutCompanyComponentType = {
   },
 }
 
-const testimonials = [
-  {
-    quote:
-      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-    name: "Truly About Company",
-    designation: "Product Manager at TechFlow",
-    src: Anisha_Wase,
-  },
-  {
-    quote:
-      "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-    name: "Relatively About Company",
-    designation: "CTO at InnovateSphere",
-    src: Ashlesha_Wase,
-  },
-  {
-    quote:
-      "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-    name: "Truly About Company",
-    designation: "Operations Director at CloudScale",
-    src: Astha_Jain,
-  },
-  {
-    quote:
-      "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-    name: "Relatively About Company",
-    designation: "Engineering Lead at DataPro",
-    src: Avrutti_Hadke,
-  },
-  {
-    quote:
-      "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-    name: "Truly About Company",
-    designation: "VP of Technology at FutureNet",
-    src: Dhruvika_Khinvasara,
-  },
-  {
-    quote:
-      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-    name: "Relatively About Company",
-    designation: "Product Manager at TechFlow",
-    src: Geeta_Kulkarni,
-  },
-  {
-    quote:
-      "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-    name: "Truly About Company",
-    designation: "CTO at InnovateSphere",
-    src: Hema_Kalsha,
-  },
-  {
-    quote:
-      "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-    name: "Relatively About Company",
-    designation: "Operations Director at CloudScale",
-    src: Kanak_Kshirsagar,
-  },
-  {
-    quote:
-      "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-    name: "Truly About Company",
-    designation: "Engineering Lead at DataPro",
-    src: Kirti_Turkar,
-  },
-  {
-    quote:
-      "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-    name: "Relatively About Company",
-    designation: "VP of Technology at FutureNet",
-    src: Mayuri_Sangidwar,
-  },
-  {
-    quote:
-      "The attention to detail and innovative features have completely transformed our workflow. This is exactly what we've been looking for.",
-    name: "Truly About Company",
-    designation: "Product Manager at TechFlow",
-    src: Nayan_Choudhari,
-  },
-  {
-    quote:
-      "Implementation was seamless and the results exceeded our expectations. The platform's flexibility is remarkable.",
-    name: "Relatively About Company",
-    designation: "CTO at InnovateSphere",
-    src: Priti_Bokade,
-  },
-  {
-    quote:
-      "This solution has significantly improved our team's productivity. The intuitive interface makes complex tasks simple.",
-    name: "Truly About Company",
-    designation: "Operations Director at CloudScale",
-    src: Purva_Ukey,
-  },
-  {
-    quote:
-      "Outstanding support and robust features. It's rare to find a product that delivers on all its promises.",
-    name: "Relatively About Company",
-    designation: "Engineering Lead at DataPro",
-    src: Rashi_Suryawanshi,
-  },
-  {
-    quote:
-      "The scalability and performance have been game-changing for our organization. Highly recommend to any growing business.",
-    name: "Truly About Company",
-    designation: "VP of Technology at FutureNet",
-    src: Rutuja_Bhoyar,
-  },
-];
-
-const AboutCompanyComponent = (_props: AboutCompanyComponentType) => {
-  //"Relatively About Company
-  // const { reduxCall, apiResponse } = props;
-
-  const highlightWord = "Ecosystems";
-  const subtitle = "Building Digital Ecosystems That Thrive";
+const AboutCompanyComponent = (props: AboutCompanyComponentType) => {
+  const highlightWord = "Innovating";
+  const subtitle = "Innovating Today, Engineering Tomorrow.";
   const parts = subtitle.split(new RegExp(`(${highlightWord})`, "gi"));
+
+  const testimonialImages = [
+    Anisha_Wase,
+    Ashlesha_Wase,
+    Astha_Jain,
+    Avrutti_Hadke,
+    Dhruvika_Khinvasara,
+    Geeta_Kulkarni,
+    Hema_Kalsha,
+    Kanak_Kshirsagar,
+    Kirti_Turkar,
+    Mayuri_Sangidwar,
+    Nayan_Choudhari,
+    Priti_Bokade,
+    Purva_Ukey,
+    Rashi_Suryawanshi,
+    Rutuja_Bhoyar,
+  ];
+
+  const testimonials = testimonialImages.map((each, index) => {
+    const isTruly = index % 2 === 0;
+
+    const data = isTruly
+      ? props.apiResponse.truly
+      : props.apiResponse.relatively;
+
+    return {
+      quote: data.aDetail || "",
+      name: data.aTitle || "",
+      src: each,
+    };
+  });
 
   // JSX
   return (
@@ -209,12 +131,12 @@ const AboutCompanyComponent = (_props: AboutCompanyComponentType) => {
             <PointerHighlight>
               <h2 className="font-myPrimaryFont text-4xl md:text-5xl font-bold">
                 <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-                  {"About Beehive Corporation"}
+                  {`About ${brandConnection.bBrandName}`}
                 </span>
               </h2>     
             </PointerHighlight>
 
-            <div className="font-mySecondaryFont mx-auto mt-4 max-w-lg text-base font-bold tracking-tight md:text-base text-center">
+            <div className="font-mySecondaryFont mx-auto mt-4 max-w-lg text-lg font-bold tracking-tight md:text-lg text-center text-foreground">
               {parts.map((part, index) =>
                 part.toLowerCase() === highlightWord.toLowerCase() ? (
                   <PointerHighlight
@@ -231,19 +153,13 @@ const AboutCompanyComponent = (_props: AboutCompanyComponentType) => {
               )}
             </div>
 
-            {/* <Typewriter 
-              text="
-                At Beehive Corporation, we believe in crafting intelligent, interconnected solutions that empower brands, teams, and communities to grow together.
-                Our mission is to merge innovation with purpose, designing digital experiences that resonate beyond technology.
-                From visionary startups to enterprise-level collaborations, we cultivate a culture of creativity, integrity, and long-term impact—because real progress happens when every idea finds its hive.
-              " 
+            <Typewriter 
+              text="We are a forward-thinking technology company committed to building scalable, reliable, and user-centric digital solutions. With a strong focus on innovation, quality, and long-term value, we empower businesses to accelerate growth, enhance efficiency, and confidently navigate the digital landscape." 
               renderMarkdown 
               className="prose font-mySecondaryFont text-lg text-muted-foreground text-center" 
-            />  */}
+            /> 
             
-            <div className="w-full" >
-              <AnimatedTestimonials testimonials={testimonials} />
-            </div>
+            <AnimatedTestimonials testimonials={testimonials} />
 
           </div>
         </div>

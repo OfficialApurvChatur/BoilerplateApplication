@@ -652,21 +652,24 @@ This galaxy consists of three stars. These stars are:
     // --- Create Admin About Application ---
     await AdminAboutApplicationModel.create({
       aTitle: "About Backend Application",
-      aDetail: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminAboutApplicationModel.create({
       aTitle: "About Administration Application",
-      aDetail: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
     
     await AdminAboutApplicationModel.create({
       aTitle: "About Frontend Application",
-      aDetail: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -698,28 +701,28 @@ The Sigma Cluster can be reached through the following communication channels:
     // --- Create Admin Service ---
     await AdminServiceModel.create({
       aTitle: "Support and Maintenance",
-      aDetail: "Beyond the initial development phase, we provide comprehensive support and maintenance services to ensure the smooth operation and performance of clients' web applications. From troubleshooting technical issues to implementing software updates and security patches, our dedicated support team is available to address any concerns and keep clients' applications running smoothly and securely over time.",
+      aDescription: "Beyond the initial development phase, we provide comprehensive support and maintenance services to ensure the smooth operation and performance of clients' web applications. From troubleshooting technical issues to implementing software updates and security patches, our dedicated support team is available to address any concerns and keep clients' applications running smoothly and securely over time.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Collaborative Projects",
-      aDetail: "Collaborative Projects bring together the expertise and resources of our partner and Beehive Corporation to tackle complex challenges and deliver innovative solutions. By leveraging our complementary strengths and capabilities, we co-create transformative solutions that drive value for our clients and make a meaningful impact in the digital landscape. From developing cutting-edge technologies to implementing strategic initiatives, our collaborative approach fosters creativity, synergy, and shared success in every project we undertake.",
+      aDescription: "Collaborative Projects bring together the expertise and resources of our partner and Beehive Corporation to tackle complex challenges and deliver innovative solutions. By leveraging our complementary strengths and capabilities, we co-create transformative solutions that drive value for our clients and make a meaningful impact in the digital landscape. From developing cutting-edge technologies to implementing strategic initiatives, our collaborative approach fosters creativity, synergy, and shared success in every project we undertake.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Personal Innovation Projects",
-      aDetail: "Through our Personal Innovation Projects service, we empower individuals and teams to unleash their creativity, explore new ideas, and drive personal and professional growth. Our innovative workshops and training sessions provide practical techniques, tools, and frameworks to cultivate an innovative mindset, foster creative problem-solving skills, and inspire continuous learning and experimentation. Whether it's sparking new ideas, overcoming challenges, or embracing change, we support participants on their journey to personal innovation and success.",
+      aDescription: "Through our Personal Innovation Projects service, we empower individuals and teams to unleash their creativity, explore new ideas, and drive personal and professional growth. Our innovative workshops and training sessions provide practical techniques, tools, and frameworks to cultivate an innovative mindset, foster creative problem-solving skills, and inspire continuous learning and experimentation. Whether it's sparking new ideas, overcoming challenges, or embracing change, we support participants on their journey to personal innovation and success.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Client Projects",
-      aDetail: "Our Client Projects service focuses on developing bespoke web applications tailored to the specific needs and goals of our clients. From initial concept to final delivery, our expert team works closely with clients to understand their requirements, design intuitive user experiences, and build custom solutions that drive business growth and success. With a client-centric approach and a commitment to excellence, we strive to exceed our client's expectations and deliver exceptional results on every project.",
+      aDescription: "Our Client Projects service focuses on developing bespoke web applications tailored to the specific needs and goals of our clients. From initial concept to final delivery, our expert team works closely with clients to understand their requirements, design intuitive user experiences, and build custom solutions that drive business growth and success. With a client-centric approach and a commitment to excellence, we strive to exceed our client's expectations and deliver exceptional results on every project.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -730,7 +733,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "08+",
       aSubtitle: "Frontend Application Deployed",
-      aDetail: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
+      aDescription: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -738,7 +741,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "08+",
       aSubtitle: "Backend Applications Established",
-      aDetail: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
+      aDescription: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -746,7 +749,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "08+",
       aSubtitle: "Admin Applications Published",
-      aDetail: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
+      aDescription: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -1007,21 +1010,24 @@ This galaxy consists of three stars. These stars are:
     // --- Create About Application ---
     await AboutApplicationModel.create({
       aTitle: "About Backend Application",
-      aDetail: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AboutApplicationModel.create({
       aTitle: "About Administration Application",
-      aDetail: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
     
     await AboutApplicationModel.create({
       aTitle: "About Frontend Application",
-      aDetail: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -1053,28 +1059,28 @@ The Sigma Cluster can be reached through the following communication channels:
     // --- Create Service ---
     await ServiceModel.create({
       aTitle: "Support and Maintenance",
-      aDetail: "Beyond the initial development phase, we provide comprehensive support and maintenance services to ensure the smooth operation and performance of clients' web applications. From troubleshooting technical issues to implementing software updates and security patches, our dedicated support team is available to address any concerns and keep clients' applications running smoothly and securely over time.",
+      aDescription: "Beyond the initial development phase, we provide comprehensive support and maintenance services to ensure the smooth operation and performance of clients' web applications. From troubleshooting technical issues to implementing software updates and security patches, our dedicated support team is available to address any concerns and keep clients' applications running smoothly and securely over time.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Collaborative Projects",
-      aDetail: "Collaborative Projects bring together the expertise and resources of our partner and Beehive Corporation to tackle complex challenges and deliver innovative solutions. By leveraging our complementary strengths and capabilities, we co-create transformative solutions that drive value for our clients and make a meaningful impact in the digital landscape. From developing cutting-edge technologies to implementing strategic initiatives, our collaborative approach fosters creativity, synergy, and shared success in every project we undertake.",
+      aDescription: "Collaborative Projects bring together the expertise and resources of our partner and Beehive Corporation to tackle complex challenges and deliver innovative solutions. By leveraging our complementary strengths and capabilities, we co-create transformative solutions that drive value for our clients and make a meaningful impact in the digital landscape. From developing cutting-edge technologies to implementing strategic initiatives, our collaborative approach fosters creativity, synergy, and shared success in every project we undertake.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Personal Innovation Projects",
-      aDetail: "Through our Personal Innovation Projects service, we empower individuals and teams to unleash their creativity, explore new ideas, and drive personal and professional growth. Our innovative workshops and training sessions provide practical techniques, tools, and frameworks to cultivate an innovative mindset, foster creative problem-solving skills, and inspire continuous learning and experimentation. Whether it's sparking new ideas, overcoming challenges, or embracing change, we support participants on their journey to personal innovation and success.",
+      aDescription: "Through our Personal Innovation Projects service, we empower individuals and teams to unleash their creativity, explore new ideas, and drive personal and professional growth. Our innovative workshops and training sessions provide practical techniques, tools, and frameworks to cultivate an innovative mindset, foster creative problem-solving skills, and inspire continuous learning and experimentation. Whether it's sparking new ideas, overcoming challenges, or embracing change, we support participants on their journey to personal innovation and success.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Client Projects",
-      aDetail: "Our Client Projects service focuses on developing bespoke web applications tailored to the specific needs and goals of our clients. From initial concept to final delivery, our expert team works closely with clients to understand their requirements, design intuitive user experiences, and build custom solutions that drive business growth and success. With a client-centric approach and a commitment to excellence, we strive to exceed our client's expectations and deliver exceptional results on every project.",
+      aDescription: "Our Client Projects service focuses on developing bespoke web applications tailored to the specific needs and goals of our clients. From initial concept to final delivery, our expert team works closely with clients to understand their requirements, design intuitive user experiences, and build custom solutions that drive business growth and success. With a client-centric approach and a commitment to excellence, we strive to exceed our client's expectations and deliver exceptional results on every project.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -1085,7 +1091,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "08+",
       aSubtitle: "Frontend Application Deployed",
-      aDetail: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
+      aDescription: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -1093,7 +1099,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "08+",
       aSubtitle: "Backend Applications Established",
-      aDetail: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
+      aDescription: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -1101,7 +1107,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "08+",
       aSubtitle: "Admin Applications Published",
-      aDetail: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
+      aDescription: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });

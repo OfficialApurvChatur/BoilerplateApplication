@@ -29,6 +29,7 @@ import {
   Building2Icon,
   PhoneIcon,
 } from "lucide-react";
+import brandConnection from "@/aConnection/eBrandConnection";
 
 
 type NavbarComponentType = {
@@ -40,8 +41,8 @@ export function ResizeableNavbarComponent(props: NavbarComponentType) {
 const navItems = [
   { name: "Hero", link: "#", icon: <HomeIcon className="w-5 h-5" />,
     subItems: [
-      { name: "About Beehive Corporation", link: "#about-company", icon: <Code2Icon className="w-5 h-5" /> },
-      { name: "About Beehive Appliation", link: "#about-application", icon: <PaletteIcon className="w-5 h-5" /> },
+      { name: `About ${brandConnection.bBrandName}`, link: "#about-company", icon: <Code2Icon className="w-5 h-5" /> },
+      { name: `About ${brandConnection.dAdministrationApplicationName}`, link: "#about-application", icon: <PaletteIcon className="w-5 h-5" /> },
       { name: "Our Services", link: "#service", icon: <SearchIcon className="w-5 h-5" /> },
       { name: "Our Statistics", link: "#counter", icon: <StarIcon className="w-5 h-5" /> },
       { name: "Branches Section", link: "#branch-section", icon: <StarIcon className="w-5 h-5" /> },

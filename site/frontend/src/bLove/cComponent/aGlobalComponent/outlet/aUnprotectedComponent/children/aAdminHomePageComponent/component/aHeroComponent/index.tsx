@@ -55,10 +55,13 @@ const HeroComponent = (props: HeroComponentType) => {
           ))}
         </p>
       </div> */}
-      <HeroParallaxDemo 
-        reduxCall={props.reduxCall}
-        apiResponse={props.apiResponse}
-      />
+
+      <section id="hero" >
+        <HeroParallaxDemo 
+          reduxCall={props.reduxCall}
+          apiResponse={props.apiResponse}
+        />
+      </section>
     </React.Fragment>
   )
 }

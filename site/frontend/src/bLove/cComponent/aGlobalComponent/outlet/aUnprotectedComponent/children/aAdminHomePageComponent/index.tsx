@@ -40,6 +40,7 @@ export type AboutCompanyComponentDataType = {
   aTitle: string;
   aSubtitle: string;
   aDescription: string;
+  aDetail?: string;
   dTag: string;
 };
 

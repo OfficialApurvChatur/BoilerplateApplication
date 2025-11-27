@@ -656,21 +656,24 @@ This galaxy consists of nine stars. These stars are:
     // --- Create Admin About Application ---
     await AdminAboutApplicationModel.create({
       aTitle: "About Backend Application",
-      aDetail: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminAboutApplicationModel.create({
       aTitle: "About Administration Application",
-      aDetail: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
     
     await AdminAboutApplicationModel.create({
       aTitle: "About Frontend Application",
-      aDetail: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -702,14 +705,14 @@ The Sigma Cluster can be reached through the following communication channels:
     // --- Create Admin Service ---
     await AdminServiceModel.create({
       aTitle: "Optimal Digital Presence",
-      aDetail: "We are dedicated to establishing and enhancing the digital presence of Beehive Corporation, its organisations, and their associated enterprises through their landing web applications. This initiative focuses on crafting visually captivating and intuitive interfaces that effectively showcase the brand, products, or services offered, thereby bolstering online visibility and engagement.",
+      aDescription: "We are dedicated to establishing and enhancing the digital presence of Beehive Corporation, its organisations, and their associated enterprises through their landing web applications. This initiative focuses on crafting visually captivating and intuitive interfaces that effectively showcase the brand, products, or services offered, thereby bolstering online visibility and engagement.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Tailored Solutions",
-      aDetail: "We collaborate closely with Beehive Corporation, its organisations, and their enterprises to comprehend their unique needs, objectives, and target demographics. Leveraging this understanding, Pinwheel customizes its web application development process to deliver tailored solutions that precisely align with these requirements, ensuring optimal functionality and user experience.",
+      aDescription: "We collaborate closely with Beehive Corporation, its organisations, and their enterprises to comprehend their unique needs, objectives, and target demographics. Leveraging this understanding, Pinwheel customizes its web application development process to deliver tailored solutions that precisely align with these requirements, ensuring optimal functionality and user experience.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -720,7 +723,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "09+",
       aSubtitle: "Frontend Application Deployed",
-      aDetail: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
+      aDescription: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -728,7 +731,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "09+",
       aSubtitle: "Backend Applications Established",
-      aDetail: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
+      aDescription: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -736,7 +739,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "09+",
       aSubtitle: "Admin Applications Published",
-      aDetail: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
+      aDescription: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -835,21 +838,24 @@ This galaxy consists of nine stars. These stars are:
     // --- Create About Application ---
     await AboutApplicationModel.create({
       aTitle: "About Backend Application",
-      aDetail: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AboutApplicationModel.create({
       aTitle: "About Administration Application",
-      aDetail: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
     
     await AboutApplicationModel.create({
       aTitle: "About Frontend Application",
-      aDetail: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -881,14 +887,14 @@ The Sigma Cluster can be reached through the following communication channels:
     // --- Create Service ---
     await ServiceModel.create({
       aTitle: "Optimal Digital Presence",
-      aDetail: "We are dedicated to establishing and enhancing the digital presence of Beehive Corporation, its organisations, and their associated enterprises through their landing web applications. This initiative focuses on crafting visually captivating and intuitive interfaces that effectively showcase the brand, products, or services offered, thereby bolstering online visibility and engagement.",
+      aDescription: "We are dedicated to establishing and enhancing the digital presence of Beehive Corporation, its organisations, and their associated enterprises through their landing web applications. This initiative focuses on crafting visually captivating and intuitive interfaces that effectively showcase the brand, products, or services offered, thereby bolstering online visibility and engagement.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Tailored Solutions",
-      aDetail: "We collaborate closely with Beehive Corporation, its organisations, and their enterprises to comprehend their unique needs, objectives, and target demographics. Leveraging this understanding, Pinwheel customizes its web application development process to deliver tailored solutions that precisely align with these requirements, ensuring optimal functionality and user experience.",
+      aDescription: "We collaborate closely with Beehive Corporation, its organisations, and their enterprises to comprehend their unique needs, objectives, and target demographics. Leveraging this understanding, Pinwheel customizes its web application development process to deliver tailored solutions that precisely align with these requirements, ensuring optimal functionality and user experience.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -899,7 +905,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "09+",
       aSubtitle: "Frontend Application Deployed",
-      aDetail: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
+      aDescription: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -907,7 +913,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "09+",
       aSubtitle: "Backend Applications Established",
-      aDetail: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
+      aDescription: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -915,7 +921,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "09+",
       aSubtitle: "Admin Applications Published",
-      aDetail: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
+      aDescription: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });

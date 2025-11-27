@@ -652,21 +652,24 @@ This star consists of three planets around. These planets are:
     // --- Create Admin About Application ---
     await AdminAboutApplicationModel.create({
       aTitle: "About Backend Application",
-      aDetail: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminAboutApplicationModel.create({
       aTitle: "About Administration Application",
-      aDetail: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
     
     await AdminAboutApplicationModel.create({
       aTitle: "About Frontend Application",
-      aDetail: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -698,28 +701,28 @@ The Sigma Cluster can be reached through the following communication channels:
     // --- Create Admin Service ---
     await AdminServiceModel.create({
       aTitle: "NPM Package Development",
-      aDetail: "Acrux offers npm package development and management services to help clients extend the functionality of their web applications using third-party libraries and modules. Acrux develops custom npm packages tailored to the client's requirements, encapsulating reusable components, utilities, or integrations. Additionally, Acrux provides npm package management services, including versioning, dependency management, and package publishing, to ensure efficient and reliable usage of npm packages within the client's development ecosystem.",
+      aDescription: "Acrux offers npm package development and management services to help clients extend the functionality of their web applications using third-party libraries and modules. Acrux develops custom npm packages tailored to the client's requirements, encapsulating reusable components, utilities, or integrations. Additionally, Acrux provides npm package management services, including versioning, dependency management, and package publishing, to ensure efficient and reliable usage of npm packages within the client's development ecosystem.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Authentication System Integration",
-      aDetail: "Acrux specializes in integrating authentication systems into clients' web applications to ensure secure access control and user authentication. Leveraging industry-standard protocols and best practices, Acrux integrates authentication systems such as OAuth, OpenID Connect, or custom authentication mechanisms into the client's backend infrastructure. This ensures that only authorized users can access the application's resources while providing a seamless and user-friendly authentication experience.",
+      aDescription: "Acrux specializes in integrating authentication systems into clients' web applications to ensure secure access control and user authentication. Leveraging industry-standard protocols and best practices, Acrux integrates authentication systems such as OAuth, OpenID Connect, or custom authentication mechanisms into the client's backend infrastructure. This ensures that only authorized users can access the application's resources while providing a seamless and user-friendly authentication experience.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Backend Server Solutions",
-      aDetail: "Acrux offers backend server solutions designed to provide robust, scalable, and secure infrastructure for clients' web applications. These solutions include the development and deployment of backend servers using modern frameworks and technologies, ensuring high performance, reliability, and flexibility. Acrux configures and optimizes the backend servers to handle diverse workloads and integrate seamlessly with frontend components and third-party services.",
+      aDescription: "Acrux offers backend server solutions designed to provide robust, scalable, and secure infrastructure for clients' web applications. These solutions include the development and deployment of backend servers using modern frameworks and technologies, ensuring high performance, reliability, and flexibility. Acrux configures and optimizes the backend servers to handle diverse workloads and integrate seamlessly with frontend components and third-party services.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Administration Panel Development",
-      aDetail: "Acrux specializes in creating custom administration panels tailored to clients' specific needs. These panels provide intuitive user interfaces for managing various aspects of their web applications, such as content, users, permissions, and analytics. Acrux ensures that the administration panel aligns with the client's branding and workflow requirements while integrating seamlessly with their backend systems.",
+      aDescription: "Acrux specializes in creating custom administration panels tailored to clients' specific needs. These panels provide intuitive user interfaces for managing various aspects of their web applications, such as content, users, permissions, and analytics. Acrux ensures that the administration panel aligns with the client's branding and workflow requirements while integrating seamlessly with their backend systems.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -730,7 +733,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "03+",
       aSubtitle: "Frontend Application Deployed",
-      aDetail: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
+      aDescription: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -738,7 +741,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "03+",
       aSubtitle: "Backend Applications Established",
-      aDetail: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
+      aDescription: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -746,7 +749,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "03+",
       aSubtitle: "Admin Applications Published",
-      aDetail: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
+      aDescription: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -833,21 +836,24 @@ This star consists of three planets around. These planets are:
     // --- Create About Application ---
     await AboutApplicationModel.create({
       aTitle: "About Backend Application",
-      aDetail: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AboutApplicationModel.create({
       aTitle: "About Administration Application",
-      aDetail: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
     
     await AboutApplicationModel.create({
       aTitle: "About Frontend Application",
-      aDetail: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -879,28 +885,28 @@ The Sigma Cluster can be reached through the following communication channels:
     // --- Create Service ---
     await ServiceModel.create({
       aTitle: "NPM Package Development",
-      aDetail: "Acrux offers npm package development and management services to help clients extend the functionality of their web applications using third-party libraries and modules. Acrux develops custom npm packages tailored to the client's requirements, encapsulating reusable components, utilities, or integrations. Additionally, Acrux provides npm package management services, including versioning, dependency management, and package publishing, to ensure efficient and reliable usage of npm packages within the client's development ecosystem.",
+      aDescription: "Acrux offers npm package development and management services to help clients extend the functionality of their web applications using third-party libraries and modules. Acrux develops custom npm packages tailored to the client's requirements, encapsulating reusable components, utilities, or integrations. Additionally, Acrux provides npm package management services, including versioning, dependency management, and package publishing, to ensure efficient and reliable usage of npm packages within the client's development ecosystem.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Authentication System Integration",
-      aDetail: "Acrux specializes in integrating authentication systems into clients' web applications to ensure secure access control and user authentication. Leveraging industry-standard protocols and best practices, Acrux integrates authentication systems such as OAuth, OpenID Connect, or custom authentication mechanisms into the client's backend infrastructure. This ensures that only authorized users can access the application's resources while providing a seamless and user-friendly authentication experience.",
+      aDescription: "Acrux specializes in integrating authentication systems into clients' web applications to ensure secure access control and user authentication. Leveraging industry-standard protocols and best practices, Acrux integrates authentication systems such as OAuth, OpenID Connect, or custom authentication mechanisms into the client's backend infrastructure. This ensures that only authorized users can access the application's resources while providing a seamless and user-friendly authentication experience.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Backend Server Solutions",
-      aDetail: "Acrux offers backend server solutions designed to provide robust, scalable, and secure infrastructure for clients' web applications. These solutions include the development and deployment of backend servers using modern frameworks and technologies, ensuring high performance, reliability, and flexibility. Acrux configures and optimizes the backend servers to handle diverse workloads and integrate seamlessly with frontend components and third-party services.",
+      aDescription: "Acrux offers backend server solutions designed to provide robust, scalable, and secure infrastructure for clients' web applications. These solutions include the development and deployment of backend servers using modern frameworks and technologies, ensuring high performance, reliability, and flexibility. Acrux configures and optimizes the backend servers to handle diverse workloads and integrate seamlessly with frontend components and third-party services.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Administration Panel Development",
-      aDetail: "Acrux specializes in creating custom administration panels tailored to clients' specific needs. These panels provide intuitive user interfaces for managing various aspects of their web applications, such as content, users, permissions, and analytics. Acrux ensures that the administration panel aligns with the client's branding and workflow requirements while integrating seamlessly with their backend systems.",
+      aDescription: "Acrux specializes in creating custom administration panels tailored to clients' specific needs. These panels provide intuitive user interfaces for managing various aspects of their web applications, such as content, users, permissions, and analytics. Acrux ensures that the administration panel aligns with the client's branding and workflow requirements while integrating seamlessly with their backend systems.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -911,7 +917,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "03+",
       aSubtitle: "Frontend Application Deployed",
-      aDetail: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
+      aDescription: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -919,7 +925,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "03+",
       aSubtitle: "Backend Applications Established",
-      aDetail: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
+      aDescription: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -927,7 +933,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "03+",
       aSubtitle: "Admin Applications Published",
-      aDetail: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
+      aDescription: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });

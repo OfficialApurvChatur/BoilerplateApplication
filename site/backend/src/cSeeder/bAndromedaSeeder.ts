@@ -648,21 +648,24 @@ This galaxy consists of two stars. These stars are:
     // --- Create Admin About Application ---
     await AdminAboutApplicationModel.create({
       aTitle: "About Backend Application",
-      aDetail: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminAboutApplicationModel.create({
       aTitle: "About Administration Application",
-      aDetail: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
     
     await AdminAboutApplicationModel.create({
       aTitle: "About Frontend Application",
-      aDetail: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -694,28 +697,28 @@ The Sigma Cluster can be reached through the following communication channels:
     // --- Create Admin Service ---
     await AdminServiceModel.create({
       aTitle: "Consulting and Support",
-      aDetail: "Maximize the value of your technology investments with our consulting and support services. Our seasoned professionals offer strategic guidance, best practices, and technical expertise to help you optimize your web development processes, streamline your communication strategies, and overcome any obstacles you encounter along the way. With our ongoing support and maintenance services, you can rest assured that your tools and applications remain secure, reliable, and up-to-date, enabling you to focus on what you do best.",
+      aDescription: "Maximize the value of your technology investments with our consulting and support services. Our seasoned professionals offer strategic guidance, best practices, and technical expertise to help you optimize your web development processes, streamline your communication strategies, and overcome any obstacles you encounter along the way. With our ongoing support and maintenance services, you can rest assured that your tools and applications remain secure, reliable, and up-to-date, enabling you to focus on what you do best.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Custom Solutions",
-      aDetail: "Experience the power of bespoke software solutions tailored to your unique requirements. Our team of experts collaborates closely with you to understand your needs, goals, and challenges, crafting custom solutions that address your specific business objectives. Whether you need a custom web application, API integration, or specialized communication tool, we deliver innovative solutions that align perfectly with your vision and empower you to achieve success.",
+      aDescription: "Experience the power of bespoke software solutions tailored to your unique requirements. Our team of experts collaborates closely with you to understand your needs, goals, and challenges, crafting custom solutions that address your specific business objectives. Whether you need a custom web application, API integration, or specialized communication tool, we deliver innovative solutions that align perfectly with your vision and empower you to achieve success.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Communication Tools",
-      aDetail: "Elevate your online communication strategies with our tailored communication tools designed specifically for web applications. From real-time messaging systems to collaborative platforms and video conferencing solutions, our tools empower you to connect with your audience effectively, foster collaboration among team members, and enhance user engagement. Seamlessly integrated with your web applications, our communication tools provide the functionality and reliability you can trust.",
+      aDescription: "Elevate your online communication strategies with our tailored communication tools designed specifically for web applications. From real-time messaging systems to collaborative platforms and video conferencing solutions, our tools empower you to connect with your audience effectively, foster collaboration among team members, and enhance user engagement. Seamlessly integrated with your web applications, our communication tools provide the functionality and reliability you can trust.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Software Development Tools",
-      aDetail: "Unlock the full potential of your web development projects with our comprehensive suite of software development tools. From frontend frameworks to backend solutions, our tools are meticulously crafted to streamline the development process, enhance productivity, and deliver exceptional results. Whether you're building a simple website or a complex web application, our tools provide the flexibility, scalability, and performance you need to succeed.",
+      aDescription: "Unlock the full potential of your web development projects with our comprehensive suite of software development tools. From frontend frameworks to backend solutions, our tools are meticulously crafted to streamline the development process, enhance productivity, and deliver exceptional results. Whether you're building a simple website or a complex web application, our tools provide the flexibility, scalability, and performance you need to succeed.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -726,7 +729,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "05+",
       aSubtitle: "User Authentication Techniques",
-      aDetail: "Varied methods ensuring secure access. Diverse options to authenticate users, safeguarding accounts with reliable protocols.",
+      aDescription: "Varied methods ensuring secure access. Diverse options to authenticate users, safeguarding accounts with reliable protocols.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -734,7 +737,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "21+",
       aSubtitle: "Backend Applications Established",
-      aDetail: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
+      aDescription: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -742,7 +745,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "21+",
       aSubtitle: "Admin Applications Published",
-      aDetail: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
+      aDescription: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -959,21 +962,24 @@ This galaxy consists of two stars. These stars are:
     // --- Create About Application ---
     await AboutApplicationModel.create({
       aTitle: "About Backend Application",
-      aDetail: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AboutApplicationModel.create({
       aTitle: "About Administration Application",
-      aDetail: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
     
     await AboutApplicationModel.create({
       aTitle: "About Frontend Application",
-      aDetail: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -1005,28 +1011,28 @@ The Sigma Cluster can be reached through the following communication channels:
     // --- Create Service ---
     await ServiceModel.create({
       aTitle: "Consulting and Support",
-      aDetail: "Maximize the value of your technology investments with our consulting and support services. Our seasoned professionals offer strategic guidance, best practices, and technical expertise to help you optimize your web development processes, streamline your communication strategies, and overcome any obstacles you encounter along the way. With our ongoing support and maintenance services, you can rest assured that your tools and applications remain secure, reliable, and up-to-date, enabling you to focus on what you do best.",
+      aDescription: "Maximize the value of your technology investments with our consulting and support services. Our seasoned professionals offer strategic guidance, best practices, and technical expertise to help you optimize your web development processes, streamline your communication strategies, and overcome any obstacles you encounter along the way. With our ongoing support and maintenance services, you can rest assured that your tools and applications remain secure, reliable, and up-to-date, enabling you to focus on what you do best.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Custom Solutions",
-      aDetail: "Experience the power of bespoke software solutions tailored to your unique requirements. Our team of experts collaborates closely with you to understand your needs, goals, and challenges, crafting custom solutions that address your specific business objectives. Whether you need a custom web application, API integration, or specialized communication tool, we deliver innovative solutions that align perfectly with your vision and empower you to achieve success.",
+      aDescription: "Experience the power of bespoke software solutions tailored to your unique requirements. Our team of experts collaborates closely with you to understand your needs, goals, and challenges, crafting custom solutions that address your specific business objectives. Whether you need a custom web application, API integration, or specialized communication tool, we deliver innovative solutions that align perfectly with your vision and empower you to achieve success.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Communication Tools",
-      aDetail: "Elevate your online communication strategies with our tailored communication tools designed specifically for web applications. From real-time messaging systems to collaborative platforms and video conferencing solutions, our tools empower you to connect with your audience effectively, foster collaboration among team members, and enhance user engagement. Seamlessly integrated with your web applications, our communication tools provide the functionality and reliability you can trust.",
+      aDescription: "Elevate your online communication strategies with our tailored communication tools designed specifically for web applications. From real-time messaging systems to collaborative platforms and video conferencing solutions, our tools empower you to connect with your audience effectively, foster collaboration among team members, and enhance user engagement. Seamlessly integrated with your web applications, our communication tools provide the functionality and reliability you can trust.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Software Development Tools",
-      aDetail: "Unlock the full potential of your web development projects with our comprehensive suite of software development tools. From frontend frameworks to backend solutions, our tools are meticulously crafted to streamline the development process, enhance productivity, and deliver exceptional results. Whether you're building a simple website or a complex web application, our tools provide the flexibility, scalability, and performance you need to succeed.",
+      aDescription: "Unlock the full potential of your web development projects with our comprehensive suite of software development tools. From frontend frameworks to backend solutions, our tools are meticulously crafted to streamline the development process, enhance productivity, and deliver exceptional results. Whether you're building a simple website or a complex web application, our tools provide the flexibility, scalability, and performance you need to succeed.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -1037,7 +1043,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "05+",
       aSubtitle: "User Authentication Techniques",
-      aDetail: "Varied methods ensuring secure access. Diverse options to authenticate users, safeguarding accounts with reliable protocols.",
+      aDescription: "Varied methods ensuring secure access. Diverse options to authenticate users, safeguarding accounts with reliable protocols.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -1045,7 +1051,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "21+",
       aSubtitle: "Backend Applications Established",
-      aDetail: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
+      aDescription: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -1053,7 +1059,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "21+",
       aSubtitle: "Admin Applications Published",
-      aDetail: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
+      aDescription: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });

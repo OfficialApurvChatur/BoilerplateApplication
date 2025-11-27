@@ -84,7 +84,7 @@ const TypicalAuthFormComponent = (props: TypicalAuthFormComponentType) => {
                             <RocketIcon className="h-4 w-4" />
                             <AlertTitle>Sample User!</AlertTitle>
                             <AlertDescription>
-                              <p><b>Email:</b> shraddha.kapoor@{brandConnection.aBrandID}.com</p> 
+                              <p><b>Email:</b> shraddha.kapoor{brandConnection.iEmailName}</p> 
                               <p><b>Password:</b> Shraddha@123</p>
                               <p><b>Role:</b> Super Admin</p>
                             </AlertDescription>

@@ -1,55 +1,46 @@
-import { RocketIcon, UsersIcon, LightbulbIcon, GlobeIcon, TrophyIcon } from "lucide-react";
+import { RocketIcon, UsersIcon, LightbulbIcon } from "lucide-react";
 import { ReactNode } from "react";
+import { CounterComponentDataType } from "../../../..";
 
-export const StatisticComponent = () => {
+
+type StatisticComponentType = {
+  reduxCall: any,
+  apiResponse: CounterComponentDataType[],
+}
+
+export const StatisticComponent = (props: StatisticComponentType) => {
   interface statsProps {
     icon: ReactNode; // or ReactNode if you'll use icon components
-    quantity: string;
+    title: string;
+    subtitle: string;
     description: string;
   }
 
-  const stats: statsProps[] = [
-  {
-    icon: <RocketIcon color="#00ff80" />,
-    quantity: "120+",
-    description: "Projects Delivered",
-  },
-  {
-    icon: <UsersIcon color="#00bfff" />,
-    quantity: "75+",
-    description: "Global Clients",
-  },
-  {
-    icon: <LightbulbIcon color="#ffcc00" />,
-    quantity: "50+",
-    description: "Innovative Solutions",
-  },
-  {
-    icon: <GlobeIcon color="#ff6b6b" />,
-    quantity: "10+",
-    description: "Countries Served",
-  },
-  {
-    icon: <TrophyIcon color="#ff8c00" />,
-    quantity: "15+",
-    description: "Industry Recognitions",
-  },
-];
+  const stats: statsProps[] = props.apiResponse.map((each, index) => ({
+    icon: (
+      index === 0 ? <RocketIcon color="#00ff80" /> :
+      index === 1 ? <UsersIcon color="#00bfff" /> :
+      index === 2 ? <LightbulbIcon color="#ffcc00" /> :
+      <RocketIcon color="#00ff80" />
+    ),
+    title: each.aTitle,
+    subtitle: each.aSubtitle,
+    description: each.aDescription,
+  }));
 
   return (
-    <section id="statistics">
-      <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 items-center">
-        {stats.map(({ icon, quantity, description }: statsProps) => (
-          <div
-            key={description}
-            className="flex flex-col items-center justify-center text-center gap-2 space-y-2"
-          >
-            <h2 className="font-myPrimaryFont text-4xl sm:text-5xl font-bold ">{icon}</h2>
-            <p className="font-mySecondaryFont text-4xl text-muted-foreground">{quantity}</p>
-            <p className="font-mySecondaryFont text-base text-muted-foreground">{description}</p>
-          </div>
-        ))}
-      </div>
-    </section>
+    <div className="grid grid-cols-2 lg:grid-cols-3 gap-8 items-center">
+      {stats.map((each: statsProps) => (
+        <div
+          key={each.title}
+          className="flex flex-col items-center justify-center text-center gap-2 space-y-2"
+        >
+          <h2 className="font-myPrimaryFont text-4xl sm:text-5xl font-bold ">{each.icon}</h2>
+          <p className="font-mySecondaryFont text-4xl text-muted-foreground">{each.title}</p>
+          <p className="font-mySecondaryFont text-lg text-foreground">{each.subtitle}</p>
+          <p className="font-mySecondaryFont text-base text-muted-foreground">{each.description}</p>
+        </div>
+      ))}
+    </div>
   );
 };

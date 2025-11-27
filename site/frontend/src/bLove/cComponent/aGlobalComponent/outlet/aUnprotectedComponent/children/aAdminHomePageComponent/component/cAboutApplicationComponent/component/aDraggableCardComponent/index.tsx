@@ -16,69 +16,50 @@ import RandomModel_10 from "@/bLove/hAsset/RandomModel/pexels-soldiervip-2061732
 import RandomModel_11 from "@/bLove/hAsset/RandomModel/pexels-tugrulkurnaz-12730952.jpg";
 import RandomModel_12 from "@/bLove/hAsset/RandomModel/pexels-vanngo-ng-105653827-19284933.jpg";
 
-export function DraggableCardComponent() {
-  const items = [
-    {
-      title: "Achi Murusidze",
-      image: RandomModel_01,
-      className: "absolute top-10 left-[10%] rotate-[-6deg]",
-    },
-    {
-      title: "Airam D. Photo",
-      image: RandomModel_02,
-      className: "absolute top-28 left-[25%] rotate-[4deg]",
-    },
-    {
-      title: "Anthony D'Alessandro",
-      image: RandomModel_03,
-      className: "absolute top-5 left-[40%] rotate-[7deg]",
-    },
-    {
-      title: "Armin Rimoldi",
-      image: RandomModel_04,
-      className: "absolute top-36 left-[55%] rotate-[-8deg]",
-    },
-    {
-      title: "Edu Rawpro",
-      image: RandomModel_05,
-      className: "absolute top-16 left-[70%] rotate-[5deg]",
-    },
-    {
-      title: "Fran Bertucci",
-      image: RandomModel_06,
-      className: "absolute top-52 left-[15%] rotate-[9deg]",
-    },
-    {
-      title: "Larry Jenkins",
-      image: RandomModel_07,
-      className: "absolute top-72 left-[30%] rotate-[-5deg]",
-    },
-    {
-      title: "Omega Edicion",
-      image: RandomModel_08,
-      className: "absolute top-44 left-[50%] rotate-[3deg]",
-    },
-    {
-      title: "Omega Edicion II",
-      image: RandomModel_09,
-      className: "absolute top-64 left-[65%] rotate-[-4deg]",
-    },
-    {
-      title: "Soldier VIP",
-      image: RandomModel_10,
-      className: "absolute top-24 left-[80%] rotate-[6deg]",
-    },
-    {
-      title: "Tugrul Kurnaz",
-      image: RandomModel_11,
-      className: "absolute top-80 left-[40%] rotate-[-9deg]",
-    },
-    {
-      title: "Vanngo Ng",
-      image: RandomModel_12,
-      className: "absolute top-60 left-[10%] rotate-[8deg]",
-    },
+import { AboutApplicationComponentDataType } from "../../../..";
+
+
+type DraggableCardComponentType = {
+  reduxCall: any,
+  apiResponse: AboutApplicationComponentDataType,
+}
+
+export function DraggableCardComponent(props: DraggableCardComponentType) {
+  const positions = [
+    "absolute top-10 left-[10%] rotate-[-6deg]",
+    "absolute top-28 left-[25%] rotate-[4deg]",
+    "absolute top-5 left-[40%] rotate-[7deg]",
+    "absolute top-36 left-[55%] rotate-[-8deg]",
+    "absolute top-16 left-[70%] rotate-[5deg]",
+    "absolute top-52 left-[15%] rotate-[9deg]",
+    "absolute top-72 left-[30%] rotate-[-5deg]",
+    "absolute top-44 left-[50%] rotate-[3deg]",
+    "absolute top-64 left-[65%] rotate-[-4deg]",
+    "absolute top-24 left-[80%] rotate-[6deg]",
+    "absolute top-80 left-[40%] rotate-[-9deg]",
+    "absolute top-60 left-[10%] rotate-[8deg]",
   ];
+
+  const images = [
+    RandomModel_01,
+    RandomModel_02,
+    RandomModel_03,
+    RandomModel_04,
+    RandomModel_05,
+    RandomModel_06,
+    RandomModel_07,
+    RandomModel_08,
+    RandomModel_09,
+    RandomModel_10,
+    RandomModel_11,
+    RandomModel_12,
+  ];
+
+  const items = props.apiResponse.dTechIcon.map((each, index) => ({
+    title: each.bIconValue,
+    image: images[index % images.length],
+    className: positions[index % positions.length], 
+  }));
 
   return (
     <DraggableCardContainer className="relative flex min-h-screen w-full items-center justify-center overflow-clip">

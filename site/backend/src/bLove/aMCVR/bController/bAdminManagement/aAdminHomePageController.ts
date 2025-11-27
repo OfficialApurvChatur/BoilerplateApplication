@@ -28,13 +28,13 @@ const adminHomePageController = (Model= "AdminHomePageModel", Label= "AdminHomeP
       const aboutCompanyTruly = await AdminAboutCompanyModel
         .findOne({ dTag: "truly" })
         .sort({ createdAt: -1 })
-        .select("aImage aTitle aSubtitle aDescription dTag")
+        .select("aImage aTitle aSubtitle aDescription aDetail dTag")
         .lean();
 
       const aboutCompanyRelatively = await AdminAboutCompanyModel
         .findOne({ dTag: "relatively" })
         .sort({ createdAt: -1 })
-        .select("aImage aTitle aSubtitle aDescription dTag")
+        .select("aImage aTitle aSubtitle aDescription aDetail dTag")
         .lean();
 
       const aboutApplication = await AdminAboutApplicationModel

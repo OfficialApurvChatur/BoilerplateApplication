@@ -648,21 +648,24 @@ This star consists of two planets around. These planets are:
     // --- Create Admin About Application ---
     await AdminAboutApplicationModel.create({
       aTitle: "About Backend Application",
-      aDetail: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminAboutApplicationModel.create({
       aTitle: "About Administration Application",
-      aDetail: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
     
     await AdminAboutApplicationModel.create({
       aTitle: "About Frontend Application",
-      aDetail: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -694,28 +697,28 @@ The Sigma Cluster can be reached through the following communication channels:
     // --- Create Admin Service ---
     await AdminServiceModel.create({
       aTitle: "Open Source Code",
-      aDetail: "Open source code embodies the spirit of collaboration, transparency, and community-driven innovation. By embracing open source principles on a personal level, you have access to a wealth of shared knowledge, resources, and codebases that can enrich your digital projects. This service enables you to tap into a vibrant ecosystem of developers, enthusiasts, and contributors, empowering you to customize, extend, and improve upon existing software solutions to better suit your personal needs and preferences. It's about embracing the ethos of sharing and giving back, contributing to a collective pool of knowledge and creativity that benefits everyone involved in the digital community.",
+      aDescription: "Open source code embodies the spirit of collaboration, transparency, and community-driven innovation. By embracing open source principles on a personal level, you have access to a wealth of shared knowledge, resources, and codebases that can enrich your digital projects. This service enables you to tap into a vibrant ecosystem of developers, enthusiasts, and contributors, empowering you to customize, extend, and improve upon existing software solutions to better suit your personal needs and preferences. It's about embracing the ethos of sharing and giving back, contributing to a collective pool of knowledge and creativity that benefits everyone involved in the digital community.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "User-Centered Design",
-      aDetail: "At its core, user-centered design is about putting your own needs, preferences, and experiences front and center in the creation process. It's about designing digital interfaces and experiences that resonate with you on a personal level, making interactions intuitive, seamless, and satisfying. This service prioritizes your perspective and feedback, ensuring that every aspect of the web applications you use is crafted with your personal comfort, convenience, and enjoyment in mind.",
+      aDescription: "At its core, user-centered design is about putting your own needs, preferences, and experiences front and center in the creation process. It's about designing digital interfaces and experiences that resonate with you on a personal level, making interactions intuitive, seamless, and satisfying. This service prioritizes your perspective and feedback, ensuring that every aspect of the web applications you use is crafted with your personal comfort, convenience, and enjoyment in mind.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Innovation-Focused Approach",
-      aDetail: "Embracing an innovation-focused approach on a personal level means committing to continuous exploration and experimentation. It's about cultivating a mindset of curiosity and creativity, leveraging technology to push the boundaries of what's possible in your personal endeavors. This service empowers you to embark on a journey of self-discovery and invention, harnessing digital solutions to spark new ideas, solve problems, and uncover untapped opportunities in your personal projects and pursuits.",
+      aDescription: "Embracing an innovation-focused approach on a personal level means committing to continuous exploration and experimentation. It's about cultivating a mindset of curiosity and creativity, leveraging technology to push the boundaries of what's possible in your personal endeavors. This service empowers you to embark on a journey of self-discovery and invention, harnessing digital solutions to spark new ideas, solve problems, and uncover untapped opportunities in your personal projects and pursuits.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Custom Web Applications",
-      aDetail: "As a personal endeavor, crafting custom web applications involves tailoring digital solutions to your unique aspirations and needs. This service revolves around translating your individual vision into reality through the creation of personalized online tools and platforms. Whether you're envisioning a digital workspace to fuel your creative pursuits or a specialized application to streamline your daily activities, custom web application development is dedicated to bringing your personal projects to life in the digital realm.",
+      aDescription: "As a personal endeavor, crafting custom web applications involves tailoring digital solutions to your unique aspirations and needs. This service revolves around translating your individual vision into reality through the creation of personalized online tools and platforms. Whether you're envisioning a digital workspace to fuel your creative pursuits or a specialized application to streamline your daily activities, custom web application development is dedicated to bringing your personal projects to life in the digital realm.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -724,37 +727,25 @@ The Sigma Cluster can be reached through the following communication channels:
 
     // --- Create Admin Counter ---
     await AdminCounterModel.create({
-      aTitle: "21+",
-      aSubtitle: "Admin Applications Published",
-      aDetail: `
-Custom-made panels designed for effortless management.
-Tailored solutions to handle administrative tasks with precision.
-A trusted track record of dependable and successful deployments.
-      `,
+      aTitle: "08+",
+      aSubtitle: "Frontend Application Deployed",
+      aDescription: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminCounterModel.create({
-      aTitle: "21+",
+      aTitle: "08+",
       aSubtitle: "Backend Applications Established",
-      aDetail: `
-Robust backend systems built for efficient data processing.
-Time-tested backend solutions supporting core application functionality.
-Proven reliability throughout multiple real-world deployments.
-      `,
+      aDescription: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminCounterModel.create({
-      aTitle: "21+",
-      aSubtitle: "Frontend Applications Deployed",
-      aDetail: `
-User-friendly and intuitive interfaces for seamless interaction.
-Frontend applications crafted to engage, delight, and retain users.
-Demonstrated success through consistent and stable deployments.
-      `,
+      aTitle: "08+",
+      aSubtitle: "Admin Applications Published",
+      aDescription: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -839,21 +830,24 @@ This star consists of two planets around. These planets are:
     // --- Create About Application ---
     await AboutApplicationModel.create({
       aTitle: "About Backend Application",
-      aDetail: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AboutApplicationModel.create({
       aTitle: "About Administration Application",
-      aDetail: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
     
     await AboutApplicationModel.create({
       aTitle: "About Frontend Application",
-      aDetail: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -885,28 +879,28 @@ The Sigma Cluster can be reached through the following communication channels:
     // --- Create Service ---
     await ServiceModel.create({
       aTitle: "Open Source Code",
-      aDetail: "Open source code embodies the spirit of collaboration, transparency, and community-driven innovation. By embracing open source principles on a personal level, you have access to a wealth of shared knowledge, resources, and codebases that can enrich your digital projects. This service enables you to tap into a vibrant ecosystem of developers, enthusiasts, and contributors, empowering you to customize, extend, and improve upon existing software solutions to better suit your personal needs and preferences. It's about embracing the ethos of sharing and giving back, contributing to a collective pool of knowledge and creativity that benefits everyone involved in the digital community.",
+      aDescription: "Open source code embodies the spirit of collaboration, transparency, and community-driven innovation. By embracing open source principles on a personal level, you have access to a wealth of shared knowledge, resources, and codebases that can enrich your digital projects. This service enables you to tap into a vibrant ecosystem of developers, enthusiasts, and contributors, empowering you to customize, extend, and improve upon existing software solutions to better suit your personal needs and preferences. It's about embracing the ethos of sharing and giving back, contributing to a collective pool of knowledge and creativity that benefits everyone involved in the digital community.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "User-Centered Design",
-      aDetail: "At its core, user-centered design is about putting your own needs, preferences, and experiences front and center in the creation process. It's about designing digital interfaces and experiences that resonate with you on a personal level, making interactions intuitive, seamless, and satisfying. This service prioritizes your perspective and feedback, ensuring that every aspect of the web applications you use is crafted with your personal comfort, convenience, and enjoyment in mind.",
+      aDescription: "At its core, user-centered design is about putting your own needs, preferences, and experiences front and center in the creation process. It's about designing digital interfaces and experiences that resonate with you on a personal level, making interactions intuitive, seamless, and satisfying. This service prioritizes your perspective and feedback, ensuring that every aspect of the web applications you use is crafted with your personal comfort, convenience, and enjoyment in mind.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Innovation-Focused Approach",
-      aDetail: "Embracing an innovation-focused approach on a personal level means committing to continuous exploration and experimentation. It's about cultivating a mindset of curiosity and creativity, leveraging technology to push the boundaries of what's possible in your personal endeavors. This service empowers you to embark on a journey of self-discovery and invention, harnessing digital solutions to spark new ideas, solve problems, and uncover untapped opportunities in your personal projects and pursuits.",
+      aDescription: "Embracing an innovation-focused approach on a personal level means committing to continuous exploration and experimentation. It's about cultivating a mindset of curiosity and creativity, leveraging technology to push the boundaries of what's possible in your personal endeavors. This service empowers you to embark on a journey of self-discovery and invention, harnessing digital solutions to spark new ideas, solve problems, and uncover untapped opportunities in your personal projects and pursuits.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Custom Web Applications",
-      aDetail: "As a personal endeavor, crafting custom web applications involves tailoring digital solutions to your unique aspirations and needs. This service revolves around translating your individual vision into reality through the creation of personalized online tools and platforms. Whether you're envisioning a digital workspace to fuel your creative pursuits or a specialized application to streamline your daily activities, custom web application development is dedicated to bringing your personal projects to life in the digital realm.",
+      aDescription: "As a personal endeavor, crafting custom web applications involves tailoring digital solutions to your unique aspirations and needs. This service revolves around translating your individual vision into reality through the creation of personalized online tools and platforms. Whether you're envisioning a digital workspace to fuel your creative pursuits or a specialized application to streamline your daily activities, custom web application development is dedicated to bringing your personal projects to life in the digital realm.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -915,37 +909,25 @@ The Sigma Cluster can be reached through the following communication channels:
 
     // --- Create Counter ---
     await CounterModel.create({
-      aTitle: "21+",
-      aSubtitle: "Admin Applications Published",
-      aDetail: `
-Custom-made panels designed for effortless management.
-Tailored solutions to handle administrative tasks with precision.
-A trusted track record of dependable and successful deployments.
-      `,
+      aTitle: "08+",
+      aSubtitle: "Frontend Application Deployed",
+      aDescription: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await CounterModel.create({
-      aTitle: "21+",
+      aTitle: "08+",
       aSubtitle: "Backend Applications Established",
-      aDetail: `
-Robust backend systems built for efficient data processing.
-Time-tested backend solutions supporting core application functionality.
-Proven reliability throughout multiple real-world deployments.
-      `,
+      aDescription: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await CounterModel.create({
-      aTitle: "21+",
-      aSubtitle: "Frontend Applications Deployed",
-      aDetail: `
-User-friendly and intuitive interfaces for seamless interaction.
-Frontend applications crafted to engage, delight, and retain users.
-Demonstrated success through consistent and stable deployments.
-      `,
+      aTitle: "08+",
+      aSubtitle: "Admin Applications Published",
+      aDescription: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });

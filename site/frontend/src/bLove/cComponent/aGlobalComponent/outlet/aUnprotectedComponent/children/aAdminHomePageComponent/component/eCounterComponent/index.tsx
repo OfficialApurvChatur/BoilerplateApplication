@@ -22,10 +22,10 @@ const images = [
 
 const CounterComponent = (props: CounterComponentType) => {
   // Destructure Props
-  const { } = props;
+  const { reduxCall, apiResponse } = props;
 
-  const highlightWord = "Data";
-  const subtitle = "Driven by Data, Defined by Impact";
+  const highlightWord = "Measuring";
+  const subtitle = "Measuring Growth, Performance, and Excellence";
   const parts = subtitle.split(new RegExp(`(${highlightWord})`, "gi"));
 
   // JSX
@@ -72,7 +72,7 @@ const CounterComponent = (props: CounterComponentType) => {
             <PointerHighlight>
               <h2 className="font-myPrimaryFont text-4xl md:text-5xl font-bold">
                 <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-                  {"Our Numbers Speak for Themselves"}
+                  {"Our Statistics"}
                 </span>
               </h2>     
             </PointerHighlight>
@@ -95,16 +95,12 @@ const CounterComponent = (props: CounterComponentType) => {
             </div>
 
             <Typewriter 
-              text="
-                At Beehive Corporation, every milestone is a reflection of our commitment, innovation, and trust.
-                From transforming businesses to empowering digital ecosystems, our journey is backed by measurable growth and meaningful outcomes.
-                We don’t just build — we scale success, one metric at a time.              
-              " 
+              text="From client success to operational efficiency, our key metrics reflect our commitment to delivering high-value solutions. These numbers showcase our dedication to innovation, reliability, and consistent performance across every project we deliver." 
               renderMarkdown 
               className="prose font-mySecondaryFont text-lg text-muted-foreground text-center" 
             /> 
                         
-            <div className="bg-muted/50 border rounded-lg py-12 w-full">
+            <div className="py-12 w-full">
               <div className="px-6 flex flex-col gap-8 md:gap-12">
                 {/* <img
                   src={RandomModel1}
@@ -142,8 +138,11 @@ const CounterComponent = (props: CounterComponentType) => {
                   ))}
                 </div>
 
-                <div className="bg-green-0 flex flex-col justify-between">
-                  <StatisticComponent />
+                <div className="flex flex-col justify-between">
+                  <StatisticComponent 
+                    reduxCall={reduxCall}
+                    apiResponse={apiResponse}
+                  />
                 </div>
               </div>
             </div>
@@ -151,8 +150,6 @@ const CounterComponent = (props: CounterComponentType) => {
           </div>
         </div>
       </section>
-
-
     </React.Fragment>
   )
 }

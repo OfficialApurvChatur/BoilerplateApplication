@@ -648,21 +648,24 @@ This star consists of one planet around. That planets is
     // --- Create Admin About Application ---
     await AdminAboutApplicationModel.create({
       aTitle: "About Backend Application",
-      aDetail: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminAboutApplicationModel.create({
       aTitle: "About Administration Application",
-      aDetail: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
     
     await AdminAboutApplicationModel.create({
       aTitle: "About Frontend Application",
-      aDetail: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -694,28 +697,28 @@ The Sigma Cluster can be reached through the following communication channels:
     // --- Create Admin Service ---
     await AdminServiceModel.create({
       aTitle: "Live Streaming",
-      aDetail: "Live streaming services specialize in broadcasting real-time video and audio content over the internet. This includes streaming events, concerts, sports matches, gaming sessions, product launches, and other live experiences. Solutions provided involve capturing live video feeds, encoding them for online delivery, and distributing streams to viewers worldwide. Features such as real-time chat integration, audience interaction tools, and multi-platform distribution are often included to maximize reach and engagement. The aim of live streaming services is to deliver immersive and engaging live experiences, connecting content creators with their audiences in real-time.",
+      aDescription: "Live streaming services specialize in broadcasting real-time video and audio content over the internet. This includes streaming events, concerts, sports matches, gaming sessions, product launches, and other live experiences. Solutions provided involve capturing live video feeds, encoding them for online delivery, and distributing streams to viewers worldwide. Features such as real-time chat integration, audience interaction tools, and multi-platform distribution are often included to maximize reach and engagement. The aim of live streaming services is to deliver immersive and engaging live experiences, connecting content creators with their audiences in real-time.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Communication and Community",
-      aDetail: "Communication and community services focus on fostering connections and collaboration within web applications. These services provide tools for creating and managing online communities, including discussion forums, social networking features, and user-generated content platforms. Features may include user profiles, friend connections, group memberships, activity feeds, and content moderation tools. Additionally, community engagement features such as polls, surveys, events, and gamification elements may be offered to encourage interaction among users. The objective is to cultivate engagement, collaboration, and a sense of belonging within online communities.",
+      aDescription: "Communication and community services focus on fostering connections and collaboration within web applications. These services provide tools for creating and managing online communities, including discussion forums, social networking features, and user-generated content platforms. Features may include user profiles, friend connections, group memberships, activity feeds, and content moderation tools. Additionally, community engagement features such as polls, surveys, events, and gamification elements may be offered to encourage interaction among users. The objective is to cultivate engagement, collaboration, and a sense of belonging within online communities.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Offline Video Streaming",
-      aDetail: "Offline video streaming services allow users to access pre-recorded video content without an active internet connection. This enables users to download video content to their devices for later viewing, providing flexibility and convenience. Offline video streaming solutions typically involve the downloading and playback of videos within designated applications or platforms, ensuring seamless access to content even in offline environments.",
+      aDescription: "Offline video streaming services allow users to access pre-recorded video content without an active internet connection. This enables users to download video content to their devices for later viewing, providing flexibility and convenience. Offline video streaming solutions typically involve the downloading and playback of videos within designated applications or platforms, ensuring seamless access to content even in offline environments.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
       aTitle: "Chat Communication",
-      aDetail: "Chat communication services enable real-time text-based conversations within web applications. These services facilitate instant messaging, one-on-one chats, group chats, and chat rooms. Additionally, they may include features such as file sharing, emoji reactions, message threading, and presence indicators. Chatbots can also be integrated to automate responses, assist users, and provide information or support on various topics. Overall, chat communication services aim to facilitate efficient, interactive, and engaging communication between users within web-based platforms.",
+      aDescription: "Chat communication services enable real-time text-based conversations within web applications. These services facilitate instant messaging, one-on-one chats, group chats, and chat rooms. Additionally, they may include features such as file sharing, emoji reactions, message threading, and presence indicators. Chatbots can also be integrated to automate responses, assist users, and provide information or support on various topics. Overall, chat communication services aim to facilitate efficient, interactive, and engaging communication between users within web-based platforms.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -726,7 +729,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "00+",
       aSubtitle: "Frontend Application Deployed",
-      aDetail: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
+      aDescription: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -734,7 +737,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "00+",
       aSubtitle: "Admin Applications Published",
-      aDetail: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
+      aDescription: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -742,7 +745,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await AdminCounterModel.create({
       aTitle: "00+",
       aSubtitle: "Backend Applications Established",
-      aDetail: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
+      aDescription: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -827,21 +830,24 @@ This star consists of one planet around. That planets is
     // --- Create About Application ---
     await AboutApplicationModel.create({
       aTitle: "About Backend Application",
-      aDetail: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. This service exposes RESTful APIs, manages real-time events using Socket.io (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. It is designed for scalability, modularity, and high availability.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AboutApplicationModel.create({
       aTitle: "About Administration Application",
-      aDetail: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Administration Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
     
     await AboutApplicationModel.create({
       aTitle: "About Frontend Application",
-      aDetail: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
+      aSubtitle: "Discover the cutting-edge technologies powering this application.",
+      aDescription: "The Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. It focuses on delivering a polished experience to end-users across all devices.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -873,28 +879,28 @@ The Sigma Cluster can be reached through the following communication channels:
     // --- Create Service ---
     await ServiceModel.create({
       aTitle: "Live Streaming",
-      aDetail: "Live streaming services specialize in broadcasting real-time video and audio content over the internet. This includes streaming events, concerts, sports matches, gaming sessions, product launches, and other live experiences. Solutions provided involve capturing live video feeds, encoding them for online delivery, and distributing streams to viewers worldwide. Features such as real-time chat integration, audience interaction tools, and multi-platform distribution are often included to maximize reach and engagement. The aim of live streaming services is to deliver immersive and engaging live experiences, connecting content creators with their audiences in real-time.",
+      aDescription: "Live streaming services specialize in broadcasting real-time video and audio content over the internet. This includes streaming events, concerts, sports matches, gaming sessions, product launches, and other live experiences. Solutions provided involve capturing live video feeds, encoding them for online delivery, and distributing streams to viewers worldwide. Features such as real-time chat integration, audience interaction tools, and multi-platform distribution are often included to maximize reach and engagement. The aim of live streaming services is to deliver immersive and engaging live experiences, connecting content creators with their audiences in real-time.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Communication and Community",
-      aDetail: "Communication and community services focus on fostering connections and collaboration within web applications. These services provide tools for creating and managing online communities, including discussion forums, social networking features, and user-generated content platforms. Features may include user profiles, friend connections, group memberships, activity feeds, and content moderation tools. Additionally, community engagement features such as polls, surveys, events, and gamification elements may be offered to encourage interaction among users. The objective is to cultivate engagement, collaboration, and a sense of belonging within online communities.",
+      aDescription: "Communication and community services focus on fostering connections and collaboration within web applications. These services provide tools for creating and managing online communities, including discussion forums, social networking features, and user-generated content platforms. Features may include user profiles, friend connections, group memberships, activity feeds, and content moderation tools. Additionally, community engagement features such as polls, surveys, events, and gamification elements may be offered to encourage interaction among users. The objective is to cultivate engagement, collaboration, and a sense of belonging within online communities.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Offline Video Streaming",
-      aDetail: "Offline video streaming services allow users to access pre-recorded video content without an active internet connection. This enables users to download video content to their devices for later viewing, providing flexibility and convenience. Offline video streaming solutions typically involve the downloading and playback of videos within designated applications or platforms, ensuring seamless access to content even in offline environments.",
+      aDescription: "Offline video streaming services allow users to access pre-recorded video content without an active internet connection. This enables users to download video content to their devices for later viewing, providing flexibility and convenience. Offline video streaming solutions typically involve the downloading and playback of videos within designated applications or platforms, ensuring seamless access to content even in offline environments.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
       aTitle: "Chat Communication",
-      aDetail: "Chat communication services enable real-time text-based conversations within web applications. These services facilitate instant messaging, one-on-one chats, group chats, and chat rooms. Additionally, they may include features such as file sharing, emoji reactions, message threading, and presence indicators. Chatbots can also be integrated to automate responses, assist users, and provide information or support on various topics. Overall, chat communication services aim to facilitate efficient, interactive, and engaging communication between users within web-based platforms.",
+      aDescription: "Chat communication services enable real-time text-based conversations within web applications. These services facilitate instant messaging, one-on-one chats, group chats, and chat rooms. Additionally, they may include features such as file sharing, emoji reactions, message threading, and presence indicators. Chatbots can also be integrated to automate responses, assist users, and provide information or support on various topics. Overall, chat communication services aim to facilitate efficient, interactive, and engaging communication between users within web-based platforms.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -905,7 +911,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "00+",
       aSubtitle: "Frontend Application Deployed",
-      aDetail: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
+      aDescription: "User-friendly interfaces for seamless interaction. Deployed applications designed to engage and satisfy users. Demonstrated success in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -913,7 +919,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "00+",
       aSubtitle: "Admin Applications Published",
-      aDetail: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
+      aDescription: "Custom-made panels for easy management. Tailored solutions to handle tasks efficiently. Trusted track record in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -921,7 +927,7 @@ The Sigma Cluster can be reached through the following communication channels:
     await CounterModel.create({
       aTitle: "00+",
       aSubtitle: "Backend Applications Established",
-      aDetail: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
+      aDescription: "Robust systems for data processing. Established solutions to support your application's functionality. Proven reliability in deployment.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });

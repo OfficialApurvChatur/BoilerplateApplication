@@ -13,10 +13,10 @@ type AboutApplicationComponentType = {
 
 const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
   // Destructure Props
-  const {  } = props;
+  const { reduxCall, apiResponse } = props;
 
   const highlightWord = "modern applications connect";
-  const subtitle = "Where innovation meets architecture — redefining how modern applications connect, scale, and perform.";
+  const subtitle = apiResponse.aSubtitle || "";
   const parts = subtitle.split(new RegExp(`(${highlightWord})`, "gi"));
 
   // JSX
@@ -64,12 +64,12 @@ const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
             <PointerHighlight>
               <h2 className="font-myPrimaryFont text-4xl md:text-5xl font-bold">
                 <span className="bg-gradient-to-b from-primary/60 to-primary text-transparent bg-clip-text">
-                  {"The Technology That Powers Everything"}
+                  {apiResponse.aTitle}
                 </span>
               </h2>     
             </PointerHighlight>
 
-            <div className="font-mySecondaryFont mx-auto mt-4 max-w-lg text-base font-bold tracking-tight md:text-base text-center">
+            <div className="font-mySecondaryFont mx-auto mt-4 max-w-lg text-lg font-bold tracking-tight md:text-lg text-center">
               {parts.map((part, index) =>
                 part.toLowerCase() === highlightWord.toLowerCase() ? (
                   <PointerHighlight
@@ -87,16 +87,15 @@ const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
             </div>
 
             <Typewriter 
-              text="
-                Our application is built on a foundation of modular architecture, real-time connectivity, and AI-assisted scalability.
-                Every component, from the frontend interface to backend orchestration, is engineered for efficiency, transparency, and growth.
-                It’s not just technology — it’s a living ecosystem designed to evolve with your ambitions.
-              " 
+              text={apiResponse.aDescription || ""} 
               renderMarkdown 
               className="prose font-mySecondaryFont text-lg text-muted-foreground text-center" 
             /> 
 
-            <DraggableCardComponent />
+            <DraggableCardComponent
+              reduxCall={reduxCall}
+              apiResponse={apiResponse}
+            />
           </div>
         </div>
       </section>
