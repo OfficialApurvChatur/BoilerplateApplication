@@ -374,7 +374,7 @@ const AppConnection = () => {
     <React.Fragment>
       {/* AppConnection */}
       
-      <Helmet><title>{brandConnection.bBrandName}</title></Helmet>
+      <Helmet><title>{brandConnection.bBrandName} - {brandConnection.uTagName}</title></Helmet>
       <Toaster />
 
       <Routes>
