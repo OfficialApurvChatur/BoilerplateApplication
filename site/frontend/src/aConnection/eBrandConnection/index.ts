@@ -24,7 +24,7 @@ const brandConnection = {
       : this.pBackendLocalURL;
   },
   pBackendLocalURL: "http://localhost:8000",
-  qBackendProductionURL: "https://booooooring-beehive-backend.onrender.com",
+  qBackendProductionURL: "https://beehive-backend-dev.onrender.com",
 
   get rFrontendBaseURL() {
     return import.meta.env.VITE_ENVIRONMENT === "Production"
@@ -32,7 +32,7 @@ const brandConnection = {
       : this.sFrontendLocalURL;
   },
   sFrontendLocalURL: "http://localhost:5173",
-  tFrontendProductionURL: "https://beehive-corp-frontend.netlify.app",
+  tFrontendProductionURL: "https://beehive-admin-dev.netlify.app",
 
   uTagName: "Infinte Wonder Awaits",
 }
