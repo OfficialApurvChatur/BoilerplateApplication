@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
 import { ArrowUpToLine } from "lucide-react";
+
 import { Button } from "@/aConnection/bShadcnConnection/components/ui/button";
 
 
-export const ScrollToTopComponent = () => {
+const ScrollToTopComponent = () => {
   const [showTopBtn, setShowTopBtn] = useState(false);
 
   useEffect(() => {
@@ -37,3 +38,5 @@ export const ScrollToTopComponent = () => {
     </>
   );
 };
+
+export default ScrollToTopComponent;

@@ -17,8 +17,5 @@
     "ui": "@/aConnection/bShadcnConnection/components/ui",
     "lib": "@/aConnection/bShadcnConnection/lib",
     "hooks": "@/aConnection/bShadcnConnection/hooks"
-  },
-  "registries": {
-    "@aceternity": "https://ui.aceternity.com/registry/{name}.json"
   }
 }

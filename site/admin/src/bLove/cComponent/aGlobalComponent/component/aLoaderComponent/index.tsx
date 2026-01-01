@@ -1,5 +1,4 @@
 import React from 'react'
-import { LoaderFive } from '@/aConnection/bShadcnConnection/components/ui/loader';
 
 
 const LoaderComponent = () => {
@@ -8,7 +7,7 @@ const LoaderComponent = () => {
     <React.Fragment>
       {/* LoaderComponent */}
       <div className="flex justify-center items-center h-96" >
-        <LoaderFive text="Loading! Please wait..." />
+        <span>Loading! Please wait...</span>
       </div>
     </React.Fragment>
   )

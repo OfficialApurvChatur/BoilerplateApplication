@@ -1,6 +1,5 @@
 import React from 'react'
 import { HeroComponentDataType } from '../..';
-import { HeroParallaxDemo } from './component/cHeroParalaxComponent';
 
 
 type HeroComponentType = {
@@ -10,14 +9,14 @@ type HeroComponentType = {
 
 const HeroComponent = (props: HeroComponentType) => {
   // Destructure Props
-  const {  } = props;
+  const { apiResponse } = props;
 
   // JSX
   return (
     <React.Fragment>
       {/* HeroComponent */}
 
-      {/* <div className="py-8" >
+      <div className="py-8" >
         <p className="font-myPrimaryFont text-3xl" >
           Hero Section
         </p>
@@ -54,14 +53,7 @@ const HeroComponent = (props: HeroComponentType) => {
             <p className="px-4" >{`${index+1}) ${each})`}</p>
           ))}
         </p>
-      </div> */}
-
-      <section id="hero" >
-        <HeroParallaxDemo 
-          reduxCall={props.reduxCall}
-          apiResponse={props.apiResponse}
-        />
-      </section>
+      </div>
     </React.Fragment>
   )
 }

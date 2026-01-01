@@ -12,9 +12,8 @@ export default {
   	},
   	extend: {
 			fontFamily: {
-        myPrimaryFont: ["Lora", "serif"],
-        mySecondaryFont: ["Libre Baskerville", "serif"],
-      },  		
+				slab: ["Roboto Slab", "serif"],      
+			},  		
 			borderRadius: {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
