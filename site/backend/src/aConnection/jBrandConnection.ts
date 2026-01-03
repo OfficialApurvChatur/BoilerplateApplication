@@ -28,11 +28,13 @@ const brandConnection = {
 
   get rFrontendBaseURL() {
     return process.env.ENVIRONMENT === "Production"
-      ? this.tFrontendProductionURL
-      : this.sFrontendLocalURL;
+      ? [ this.tFrontendProductionURL1, this.tFrontendProductionURL2 ]
+      : [ this.sFrontendLocalURL1, this.sFrontendLocalURL2 ];
   },
-  sFrontendLocalURL: "http://localhost:5173",
-  tFrontendProductionURL: "https://beehive-admin-dev.netlify.app",
+  sFrontendLocalURL1: "http://localhost:5173",
+  sFrontendLocalURL2: "http://localhost:5174",
+  tFrontendProductionURL1: "https://beehive-admin-dev.netlify.app",
+  tFrontendProductionURL2: "https://beehive-frontend-dev.netlify.app",
 
   uTagName: "Infinte Wonder Awaits",
 }

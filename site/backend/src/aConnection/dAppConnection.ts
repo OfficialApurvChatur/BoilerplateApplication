@@ -89,7 +89,7 @@ const appConnection = express();
 // Third Party Middleware
 appConnection.use(morganMiddleware);
 appConnection.use(corsMiddleware({
-  origin: [brandConnection.rFrontendBaseURL],
+  origin: [...brandConnection.rFrontendBaseURL],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
@@ -176,6 +176,18 @@ appConnection.use("/api/v1/admin-branch-page/", adminBranchPageRoute);
 appConnection.use("/api/v1/admin-project-section-page/", adminProjectSectionPageRoute);
 appConnection.use("/api/v1/admin-project-group-page/", adminProjectGroupPageRoute);
 appConnection.use("/api/v1/admin-project-page/", adminProjectPageRoute);
+
+appConnection.use("/api/v1/home-page/", adminHomePageRoute);
+appConnection.use("/api/v1/about-company-page/", adminAboutCompanyPageRoute);
+appConnection.use("/api/v1/about-application-page/", adminAboutApplicationPageRoute);
+appConnection.use("/api/v1/contact-page/", adminContactPageRoute);
+appConnection.use("/api/v1/service-page/", adminServicePageRoute);
+appConnection.use("/api/v1/branch-section-page/", adminBranchSectionPageRoute);
+appConnection.use("/api/v1/branch-group-page/", adminBranchGroupPageRoute);
+appConnection.use("/api/v1/branch-page/", adminBranchPageRoute);
+appConnection.use("/api/v1/project-section-page/", adminProjectSectionPageRoute);
+appConnection.use("/api/v1/project-group-page/", adminProjectGroupPageRoute);
+appConnection.use("/api/v1/project-page/", adminProjectPageRoute);
 
 // Error Middleware
 appConnection.use(errorMiddleware)
