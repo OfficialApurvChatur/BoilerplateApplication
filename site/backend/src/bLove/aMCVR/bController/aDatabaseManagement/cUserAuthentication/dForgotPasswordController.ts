@@ -32,7 +32,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -70,7 +70,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
         keyList: cacheVariable.forgotPasswordModel.create({ 
           Label  
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -79,7 +79,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
         eventList: eventVariable.forgotPasswordModel.create({
           Label, 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -89,7 +89,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -98,7 +98,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -125,7 +125,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           request 
         }), 
         data: retrieve 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -166,7 +166,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -176,7 +176,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -186,7 +186,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -195,7 +195,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(201).json({
@@ -217,7 +217,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
       deleteImageMiddleware({
         Label,
         data: delete_object
-      })(request, response, next)
+      })
       
       // Delete Cache
       cacheDeleteMiddleware({ 
@@ -225,7 +225,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
       
       // Create Event
       eventCreateMiddleware({
@@ -235,7 +235,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -245,7 +245,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -254,7 +254,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
       
       // Response
       response.status(200).json({

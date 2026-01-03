@@ -14,16 +14,16 @@ import signUpContorller from '../../../bController/aDatabaseManagement/cUserAuth
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"SignUpModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SignUpModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SignUp", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"SignUpModel-list", label: "SignUp", name: "List" }), 
+  checkCacheMiddleware({ key:"SignUpModel::list", label: "SignUp", name: "List" }), 
   signUpValidation.list(), validatorMiddleware, 
   signUpContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"SignUpModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SignUpModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SignUp", accessPoint: ["Create"] }),
   signUpValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"SignUpModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SignUpModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SignUp", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"SignUpModel-retrieve", label: "SignUp", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"SignUpModel::retrieve", label: "SignUp", name: "Retrieve" }), 
   signUpValidation.retrieve(), validatorMiddleware, 
   signUpContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"SignUpModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SignUpModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SignUp", accessPoint: ["Update"] }),
   signUpValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"SignUpModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SignUpModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SignUp", accessPoint: ["Delete"] }),
   signUpValidation.delete(), validatorMiddleware, 

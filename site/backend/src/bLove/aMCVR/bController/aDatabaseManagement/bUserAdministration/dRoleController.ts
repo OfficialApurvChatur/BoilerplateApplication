@@ -33,7 +33,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -73,7 +73,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
         keyList: cacheVariable.roleModel.create({ 
           Label  
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -82,7 +82,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
         eventList: eventVariable.roleModel.create({
           Label, 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -92,7 +92,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -101,7 +101,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -128,7 +128,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           request 
         }), 
         data: retrieve 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -171,7 +171,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -181,7 +181,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -191,7 +191,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -200,7 +200,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(201).json({
@@ -222,7 +222,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
       deleteImageMiddleware({
         Label,
         data: delete_object
-      })(request, response, next)
+      })
       
       // Delete Cache
       cacheDeleteMiddleware({ 
@@ -230,7 +230,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
       
       // Create Event
       eventCreateMiddleware({
@@ -240,7 +240,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -250,7 +250,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -259,7 +259,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
       
       // Response
       response.status(200).json({
@@ -284,7 +284,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Total
       const total = await Model.countDocuments();

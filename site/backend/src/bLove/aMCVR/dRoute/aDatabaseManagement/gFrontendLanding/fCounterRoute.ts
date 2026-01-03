@@ -14,16 +14,16 @@ import adminCounterController from '../../../bController/aDatabaseManagement/fAd
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"AdminCounterModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminCounterModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminCounter", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"AdminCounterModel-list", label: "AdminCounter", name: "List" }), 
+  checkCacheMiddleware({ key:"AdminCounterModel::list", label: "AdminCounter", name: "List" }), 
   adminCounterValidation.list(), validatorMiddleware, 
   adminCounterController().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"AdminCounterModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminCounterModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminCounter", accessPoint: ["Create"] }),
   adminCounterValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"AdminCounterModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminCounterModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminCounter", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"AdminCounterModel-retrieve", label: "AdminCounter", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"AdminCounterModel::retrieve", label: "AdminCounter", name: "Retrieve" }), 
   adminCounterValidation.retrieve(), validatorMiddleware, 
   adminCounterController().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"AdminCounterModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminCounterModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminCounter", accessPoint: ["Update"] }),
   adminCounterValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"AdminCounterModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminCounterModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminCounter", accessPoint: ["Delete"] }),
   adminCounterValidation.delete(), validatorMiddleware, 

@@ -33,7 +33,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -73,7 +73,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
         keyList: cacheVariable.adminProjectGroupModel.create({ 
           Label  
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -82,7 +82,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
         eventList: eventVariable.adminProjectGroupModel.create({
           Label, 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -92,7 +92,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -101,7 +101,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -129,7 +129,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           request 
         }), 
         data: retrieve 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -172,7 +172,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -182,7 +182,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -192,7 +192,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -201,7 +201,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(201).json({
@@ -223,7 +223,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
       deleteImageMiddleware({
         Label,
         data: delete_object
-      })(request, response, next)
+      })
       
       // Delete Cache
       cacheDeleteMiddleware({ 
@@ -231,7 +231,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
       
       // Create Event
       eventCreateMiddleware({
@@ -241,7 +241,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -251,7 +251,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -260,7 +260,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
       
       // Response
       response.status(200).json({
@@ -285,7 +285,7 @@ const adminProjectGroupController = (Model=AdminProjectGroupModel, Label="AdminP
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Total
       const total = await Model.countDocuments();

@@ -32,7 +32,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -72,7 +72,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
         keyList: cacheVariable.permissionModel.create({ 
           Label  
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -81,7 +81,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
         eventList: eventVariable.permissionModel.create({
           Label, 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -91,7 +91,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -100,7 +100,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -135,7 +135,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           request 
         }), 
         data: retrieve 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -178,7 +178,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -188,7 +188,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -198,7 +198,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -207,7 +207,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(201).json({
@@ -229,7 +229,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
       deleteImageMiddleware({
         Label,
         data: delete_object
-      })(request, response, next)
+      })
       
       // Delete Cache
       cacheDeleteMiddleware({ 
@@ -237,7 +237,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
       
       // Create Event
       eventCreateMiddleware({
@@ -247,7 +247,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -257,7 +257,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -266,7 +266,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
       
       // Response
       response.status(200).json({
@@ -291,7 +291,7 @@ const permissionController = (Model=PermissionModel, Label="PermissionModel") =>
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Total
       const total = await Model.countDocuments();

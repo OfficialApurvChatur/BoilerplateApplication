@@ -33,7 +33,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -71,7 +71,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
         keyList: cacheVariable.signOutModel.create({ 
           Label  
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -80,7 +80,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
         eventList: eventVariable.signOutModel.create({
           Label, 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -90,7 +90,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -99,7 +99,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -126,7 +126,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           request 
         }), 
         data: retrieve 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -167,7 +167,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -177,7 +177,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -187,7 +187,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -196,7 +196,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(201).json({
@@ -218,7 +218,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
       deleteImageMiddleware({
         Label,
         data: delete_object
-      })(request, response, next)
+      })
       
       // Delete Cache
       cacheDeleteMiddleware({ 
@@ -226,7 +226,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
       
       // Create Event
       eventCreateMiddleware({
@@ -236,7 +236,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -246,7 +246,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -255,7 +255,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
       
       // Response
       response.status(200).json({

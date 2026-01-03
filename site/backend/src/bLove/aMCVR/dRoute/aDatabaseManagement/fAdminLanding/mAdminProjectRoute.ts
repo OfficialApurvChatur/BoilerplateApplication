@@ -14,16 +14,16 @@ import adminProjectController from '../../../bController/aDatabaseManagement/fAd
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"AdminProjectModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminProjectModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminProject", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"AdminProjectModel-list", label: "AdminProject", name: "List" }), 
+  checkCacheMiddleware({ key:"AdminProjectModel::list", label: "AdminProject", name: "List" }), 
   adminProjectValidation.list(), validatorMiddleware, 
   adminProjectController().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"AdminProjectModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminProjectModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminProject", accessPoint: ["Create"] }),
   adminProjectValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"AdminProjectModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminProjectModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminProject", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"AdminProjectModel-retrieve", label: "AdminProject", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"AdminProjectModel::retrieve", label: "AdminProject", name: "Retrieve" }), 
   adminProjectValidation.retrieve(), validatorMiddleware, 
   adminProjectController().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"AdminProjectModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminProjectModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminProject", accessPoint: ["Update"] }),
   adminProjectValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"AdminProjectModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminProjectModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminProject", accessPoint: ["Delete"] }),
   adminProjectValidation.delete(), validatorMiddleware, 

@@ -11,8 +11,8 @@ import adminServicePageController from '../../bController/bAdminManagement/eAdmi
 const router = express.Router();
 
 router.route("/retrieve").get(
-  rateLimiterMiddleware({ key:"AdminServicePageModel-retrieve", time: 60, limit: 10 }),
-  checkCacheMiddleware({ key:"AdminServicePageModel-retrieve", label: "AdminServicePage", name: "Retrieve" }), 
+  rateLimiterMiddleware({ key:"AdminServicePageModel::retrieve", time: 60, limit: 10 }),
+  checkCacheMiddleware({ key:"AdminServicePageModel::retrieve", label: "AdminServicePage", name: "Retrieve", skip: true }), 
   adminServicePageValidation.retrieve(), validatorMiddleware, 
   adminServicePageController().retrieve
 )

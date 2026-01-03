@@ -11,8 +11,8 @@ import adminAboutCompanyPageController from '../../bController/bAdminManagement/
 const router = express.Router();
 
 router.route("/retrieve").get(
-  rateLimiterMiddleware({ key:"AdminAboutCompanyPageModel-retrieve", time: 60, limit: 10 }),
-  checkCacheMiddleware({ key:"AdminAboutCompanyPageModel-retrieve", label: "AdminAboutCompanyPage", name: "Retrieve" }), 
+  rateLimiterMiddleware({ key:"AdminAboutCompanyPageModel::retrieve", time: 60, limit: 10 }),
+  checkCacheMiddleware({ key:"AdminAboutCompanyPageModel::retrieve", label: "AdminAboutCompanyPage", name: "Retrieve", skip: true }), 
   adminAboutCompanyPageValidation.retrieve(), validatorMiddleware, 
   adminAboutCompanyPageController().retrieve
 )

@@ -34,7 +34,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -75,7 +75,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
         keyList: cacheVariable.projectSectionModel.create({ 
           Label  
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -84,7 +84,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
         eventList: eventVariable.projectSectionModel.create({
           Label, 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -94,7 +94,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -103,7 +103,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -132,7 +132,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           request 
         }), 
         data: retrieve 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -176,7 +176,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -186,7 +186,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -196,7 +196,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -205,7 +205,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(201).json({
@@ -227,7 +227,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
       deleteImageMiddleware({
         Label,
         data: delete_object
-      })(request, response, next)
+      })
       
       // Delete Cache
       cacheDeleteMiddleware({ 
@@ -235,7 +235,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
       
       // Create Event
       eventCreateMiddleware({
@@ -245,7 +245,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -255,7 +255,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -264,7 +264,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
       
       // Response
       response.status(200).json({

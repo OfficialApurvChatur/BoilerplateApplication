@@ -14,16 +14,16 @@ import adminAboutApplicationContorller from '../../../bController/aDatabaseManag
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"AdminAboutApplicationModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminAboutApplicationModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminAboutApplication", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"AdminAboutApplicationModel-list", label: "AdminAboutApplication", name: "List" }), 
+  checkCacheMiddleware({ key:"AdminAboutApplicationModel::list", label: "AdminAboutApplication", name: "List" }), 
   adminAboutApplicationValidation.list(), validatorMiddleware, 
   adminAboutApplicationContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"AdminAboutApplicationModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminAboutApplicationModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminAboutApplication", accessPoint: ["Create"] }),
   adminAboutApplicationValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"AdminAboutApplicationModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminAboutApplicationModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminAboutApplication", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"AdminAboutApplicationModel-retrieve", label: "AdminAboutApplication", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"AdminAboutApplicationModel::retrieve", label: "AdminAboutApplication", name: "Retrieve" }), 
   adminAboutApplicationValidation.retrieve(), validatorMiddleware, 
   adminAboutApplicationContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"AdminAboutApplicationModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminAboutApplicationModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminAboutApplication", accessPoint: ["Update"] }),
   adminAboutApplicationValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"AdminAboutApplicationModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminAboutApplicationModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminAboutApplication", accessPoint: ["Delete"] }),
   adminAboutApplicationValidation.delete(), validatorMiddleware, 

@@ -44,7 +44,7 @@ const adminBranchSectionPageController = (Model= "AdminBranchSectionPageModel", 
           request 
         }), 
         data: responseData 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({

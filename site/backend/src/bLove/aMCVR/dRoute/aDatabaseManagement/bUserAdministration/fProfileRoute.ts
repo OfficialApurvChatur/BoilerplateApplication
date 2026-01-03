@@ -14,16 +14,16 @@ import profileContorller from '../../../bController/aDatabaseManagement/bUserAdm
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"ProfileModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ProfileModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Profile", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"ProfileModel-list", label: "Profile", name: "List" }), 
+  checkCacheMiddleware({ key:"ProfileModel::list", label: "Profile", name: "List" }), 
   profileValidation.list(), validatorMiddleware, 
   profileContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"ProfileModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ProfileModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Profile", accessPoint: ["Create"] }),
   profileValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"ProfileModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ProfileModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Profile", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"ProfileModel-retrieve", label: "Profile", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"ProfileModel::retrieve", label: "Profile", name: "Retrieve" }), 
   profileValidation.retrieve(), validatorMiddleware, 
   profileContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"ProfileModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ProfileModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Profile", accessPoint: ["Update"] }),
   profileValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"ProfileModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ProfileModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Profile", accessPoint: ["Delete"] }),
   profileValidation.delete(), validatorMiddleware, 

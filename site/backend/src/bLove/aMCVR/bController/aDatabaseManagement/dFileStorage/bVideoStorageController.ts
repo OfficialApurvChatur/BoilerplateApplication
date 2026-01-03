@@ -35,7 +35,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -75,7 +75,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
         keyList: cacheVariable.videoStorageModel.create({ 
           Label  
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -84,7 +84,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
         eventList: eventVariable.videoStorageModel.create({
           Label, 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -94,7 +94,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -103,7 +103,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -130,7 +130,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           request 
         }), 
         data: retrieve 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -173,7 +173,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -183,7 +183,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -193,7 +193,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -202,7 +202,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(201).json({
@@ -224,7 +224,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
       deleteImageMiddleware({
         Label,
         data: delete_object
-      })(request, response, next)
+      })
       
       // Delete Cache
       cacheDeleteMiddleware({ 
@@ -232,7 +232,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
       
       // Create Event
       eventCreateMiddleware({
@@ -242,7 +242,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -252,7 +252,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -261,7 +261,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
       
       // Response
       response.status(200).json({

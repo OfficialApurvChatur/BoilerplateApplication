@@ -32,7 +32,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -72,7 +72,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
         keyList: cacheVariable.aboutCompanyModel.create({ 
           Label  
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -81,7 +81,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
         eventList: eventVariable.aboutCompanyModel.create({
           Label, 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -91,7 +91,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -100,7 +100,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -127,7 +127,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
           request 
         }), 
         data: retrieve 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -170,7 +170,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -180,7 +180,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -190,7 +190,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -199,7 +199,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(201).json({
@@ -221,7 +221,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
       deleteImageMiddleware({
         Label,
         data: delete_object
-      })(request, response, next)
+      })
       
       // Delete Cache
       cacheDeleteMiddleware({ 
@@ -229,7 +229,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
       
       // Create Event
       eventCreateMiddleware({
@@ -239,7 +239,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -249,7 +249,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -258,7 +258,7 @@ const aboutCompanyController = (Model=AboutCompanyModel, Label="AboutCompanyMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
       
       // Response
       response.status(200).json({

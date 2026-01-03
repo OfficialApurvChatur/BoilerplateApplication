@@ -14,16 +14,16 @@ import branchSectionController from '../../../bController/aDatabaseManagement/gF
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"AdminBranchSectionModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminBranchSectionModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminBranchSection", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"AdminBranchSectionModel-list", label: "AdminBranchSection", name: "List" }), 
+  checkCacheMiddleware({ key:"AdminBranchSectionModel::list", label: "AdminBranchSection", name: "List" }), 
   branchSectionValidation.list(), validatorMiddleware, 
   branchSectionController().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"AdminBranchSectionModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminBranchSectionModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminBranchSection", accessPoint: ["Create"] }),
   branchSectionValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"AdminBranchSectionModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminBranchSectionModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminBranchSection", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"AdminBranchSectionModel-retrieve", label: "AdminBranchSection", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"AdminBranchSectionModel::retrieve", label: "AdminBranchSection", name: "Retrieve" }), 
   branchSectionValidation.retrieve(), validatorMiddleware, 
   branchSectionController().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"AdminBranchSectionModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminBranchSectionModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminBranchSection", accessPoint: ["Update"] }),
   branchSectionValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"AdminBranchSectionModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminBranchSectionModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminBranchSection", accessPoint: ["Delete"] }),
   branchSectionValidation.delete(), validatorMiddleware, 

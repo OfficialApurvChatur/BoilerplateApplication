@@ -14,16 +14,16 @@ import permissionContorller from '../../../bController/aDatabaseManagement/bUser
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"PermissionModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"PermissionModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Permission", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"PermissionModel-list", label: "Permission", name: "List" }), 
+  checkCacheMiddleware({ key:"PermissionModel::list", label: "Permission", name: "List" }), 
   permissionValidation.list(), validatorMiddleware, 
   permissionContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"PermissionModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"PermissionModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Permission", accessPoint: ["Create"] }),
   permissionValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"PermissionModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"PermissionModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Permission", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"PermissionModel-retrieve", label: "Permission", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"PermissionModel::retrieve", label: "Permission", name: "Retrieve" }), 
   permissionValidation.retrieve(), validatorMiddleware, 
   permissionContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"PermissionModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"PermissionModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Permission", accessPoint: ["Update"] }),
   permissionValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"PermissionModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"PermissionModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Permission", accessPoint: ["Delete"] }),
   permissionValidation.delete(), validatorMiddleware, 

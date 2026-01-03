@@ -11,8 +11,8 @@ import adminProjectSectionPageController from '../../bController/bAdminManagemen
 const router = express.Router();
 
 router.route("/retrieve").get(
-  rateLimiterMiddleware({ key:"AdminProjectSectionPageModel-retrieve", time: 60, limit: 10 }),
-  checkCacheMiddleware({ key:"AdminProjectSectionPageModel-retrieve", label: "AdminProjectSectionPage", name: "Retrieve" }), 
+  rateLimiterMiddleware({ key:"AdminProjectSectionPageModel::retrieve", time: 60, limit: 10 }),
+  checkCacheMiddleware({ key:"AdminProjectSectionPageModel::retrieve", label: "AdminProjectSectionPage", name: "Retrieve", skip: true }), 
   adminProjectSectionPageValidation.retrieve(), validatorMiddleware, 
   adminProjectSectionPageController().retrieve
 )

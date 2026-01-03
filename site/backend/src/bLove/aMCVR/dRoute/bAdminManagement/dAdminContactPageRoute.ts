@@ -11,8 +11,8 @@ import adminContactPageController from '../../bController/bAdminManagement/dAdmi
 const router = express.Router();
 
 router.route("/retrieve").get(
-  rateLimiterMiddleware({ key:"AdminContactPageModel-retrieve", time: 60, limit: 10 }),
-  checkCacheMiddleware({ key:"AdminContactPageModel-retrieve", label: "AdminContactPage", name: "Retrieve" }), 
+  rateLimiterMiddleware({ key:"AdminContactPageModel::retrieve", time: 60, limit: 10 }),
+  checkCacheMiddleware({ key:"AdminContactPageModel::retrieve", label: "AdminContactPage", name: "Retrieve", skip: true }), 
   adminContactPageValidation.retrieve(), validatorMiddleware, 
   adminContactPageController().retrieve
 )

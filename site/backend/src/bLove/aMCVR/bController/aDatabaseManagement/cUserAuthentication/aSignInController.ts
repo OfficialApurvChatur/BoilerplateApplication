@@ -34,7 +34,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -72,7 +72,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
         keyList: cacheVariable.signInModel.create({ 
           Label  
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -81,7 +81,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
         eventList: eventVariable.signInModel.create({
           Label, 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -91,7 +91,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -100,7 +100,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -127,7 +127,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
           request 
         }), 
         data: retrieve 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -168,7 +168,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -178,7 +178,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -188,7 +188,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -197,7 +197,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(201).json({
@@ -219,7 +219,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
       deleteImageMiddleware({
         Label,
         data: delete_object
-      })(request, response, next)
+      })
       
       // Delete Cache
       cacheDeleteMiddleware({ 
@@ -227,7 +227,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
       
       // Create Event
       eventCreateMiddleware({
@@ -237,7 +237,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -247,7 +247,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -256,7 +256,7 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
       
       // Response
       response.status(200).json({

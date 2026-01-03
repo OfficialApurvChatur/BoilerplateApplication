@@ -8,17 +8,19 @@ type TCheckCacheOptions = {
   label: string;
   name: string;
   customMessage?: string;
+  skip?: boolean;
 };
 
-const checkCacheMiddleware = ({ key, label, name, customMessage }: TCheckCacheOptions) => (
+const checkCacheMiddleware = ({ key, label, name, customMessage, skip }: TCheckCacheOptions) => (
   catchAsyncMiddleware(
     // Returning Function
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
 
       // Check Cache
       const cacheKey = 
-        (key === `${label}Model-retrieve`) ? (`${label}Model-retrieve:${request.params.id}`) : 
-        (`${key}Model`);
+        (key === `${label}Model::retrieve` && !skip) ? `${label}Model::retrieve:${request.params.id}` : 
+        (key === `${label}Model::retrieve` && skip) ? key : 
+        key;
 
       const oldCache = await redisClient.get(cacheKey);
 

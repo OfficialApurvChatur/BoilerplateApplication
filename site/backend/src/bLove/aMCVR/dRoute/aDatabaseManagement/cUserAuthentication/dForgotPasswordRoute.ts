@@ -14,16 +14,16 @@ import forgotPasswordContorller from '../../../bController/aDatabaseManagement/c
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"ForgotPasswordModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ForgotPasswordModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ForgotPassword", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"ForgotPasswordModel-list", label: "ForgotPassword", name: "List" }), 
+  checkCacheMiddleware({ key:"ForgotPasswordModel::list", label: "ForgotPassword", name: "List" }), 
   forgotPasswordValidation.list(), validatorMiddleware, 
   forgotPasswordContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"ForgotPasswordModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ForgotPasswordModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ForgotPassword", accessPoint: ["Create"] }),
   forgotPasswordValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"ForgotPasswordModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ForgotPasswordModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ForgotPassword", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"ForgotPasswordModel-retrieve", label: "ForgotPassword", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"ForgotPasswordModel::retrieve", label: "ForgotPassword", name: "Retrieve" }), 
   forgotPasswordValidation.retrieve(), validatorMiddleware, 
   forgotPasswordContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"ForgotPasswordModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ForgotPasswordModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ForgotPassword", accessPoint: ["Update"] }),
   forgotPasswordValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"ForgotPasswordModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ForgotPasswordModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ForgotPassword", accessPoint: ["Delete"] }),
   forgotPasswordValidation.delete(), validatorMiddleware, 

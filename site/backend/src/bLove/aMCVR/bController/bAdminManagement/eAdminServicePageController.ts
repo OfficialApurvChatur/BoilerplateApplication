@@ -45,7 +45,7 @@ const adminServicePageController = (Model= "AdminServicePageModel", Label= "Admi
           request 
         }), 
         data: responseData 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({

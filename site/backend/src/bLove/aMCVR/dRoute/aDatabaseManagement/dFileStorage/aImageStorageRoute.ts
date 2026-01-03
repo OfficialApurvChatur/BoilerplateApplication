@@ -14,16 +14,16 @@ import imageStorageContorller from '../../../bController/aDatabaseManagement/dFi
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"ImageStorageModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ImageStorageModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ImageStorage", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"ImageStorageModel-list", label: "ImageStorage", name: "List" }), 
+  checkCacheMiddleware({ key:"ImageStorageModel::list", label: "ImageStorage", name: "List" }), 
   imageStorageValidation.list(), validatorMiddleware, 
   imageStorageContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"ImageStorageModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ImageStorageModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ImageStorage", accessPoint: ["Create"] }),
   imageStorageValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"ImageStorageModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ImageStorageModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ImageStorage", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"ImageStorageModel-retrieve", label: "ImageStorage", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"ImageStorageModel::retrieve", label: "ImageStorage", name: "Retrieve" }), 
   imageStorageValidation.retrieve(), validatorMiddleware, 
   imageStorageContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"ImageStorageModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ImageStorageModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ImageStorage", accessPoint: ["Update"] }),
   imageStorageValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"ImageStorageModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ImageStorageModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ImageStorage", accessPoint: ["Delete"] }),
   imageStorageValidation.delete(), validatorMiddleware, 

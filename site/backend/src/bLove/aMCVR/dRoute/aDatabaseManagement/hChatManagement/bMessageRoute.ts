@@ -14,16 +14,16 @@ import messageController from '../../../bController/aDatabaseManagement/hChatMan
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"MessageModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"MessageModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Message", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"MessageModel-list", label: "Message", name: "List" }), 
+  checkCacheMiddleware({ key:"MessageModel::list", label: "Message", name: "List" }), 
   messageValidation.list(), validatorMiddleware, 
   messageController().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"MessageModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"MessageModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Message", accessPoint: ["Create"] }),
   messageValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"MessageModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"MessageModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Message", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"MessageModel-retrieve", label: "Message", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"MessageModel::retrieve", label: "Message", name: "Retrieve" }), 
   messageValidation.retrieve(), validatorMiddleware, 
   messageController().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"MessageModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"MessageModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Message", accessPoint: ["Update"] }),
   messageValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"MessageModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"MessageModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Message", accessPoint: ["Delete"] }),
   messageValidation.delete(), validatorMiddleware, 

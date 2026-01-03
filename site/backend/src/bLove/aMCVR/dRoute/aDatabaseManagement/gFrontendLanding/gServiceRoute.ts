@@ -14,16 +14,16 @@ import serviceController from '../../../bController/aDatabaseManagement/gFronten
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"ServiceModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ServiceModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Service", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"ServiceModel-list", label: "Service", name: "List" }), 
+  checkCacheMiddleware({ key:"ServiceModel::list", label: "Service", name: "List" }), 
   serviceValidation.list(), validatorMiddleware, 
   serviceController().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"ServiceModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ServiceModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Service", accessPoint: ["Create"] }),
   serviceValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"ServiceModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ServiceModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Service", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"ServiceModel-retrieve", label: "Service", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"ServiceModel::retrieve", label: "Service", name: "Retrieve" }), 
   serviceValidation.retrieve(), validatorMiddleware, 
   serviceController().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"ServiceModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ServiceModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Service", accessPoint: ["Update"] }),
   serviceValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"ServiceModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ServiceModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Service", accessPoint: ["Delete"] }),
   serviceValidation.delete(), validatorMiddleware, 

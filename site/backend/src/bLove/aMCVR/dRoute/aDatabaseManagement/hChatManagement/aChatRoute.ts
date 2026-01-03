@@ -14,16 +14,16 @@ import chatController from '../../../bController/aDatabaseManagement/hChatManage
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"ChatModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ChatModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Chat", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"ChatModel-list", label: "Chat", name: "List" }), 
+  checkCacheMiddleware({ key:"ChatModel::list", label: "Chat", name: "List" }), 
   chatValidation.list(), validatorMiddleware, 
   chatController().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"ChatModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ChatModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Chat", accessPoint: ["Create"] }),
   chatValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"ChatModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ChatModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Chat", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"ChatModel-retrieve", label: "Chat", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"ChatModel::retrieve", label: "Chat", name: "Retrieve" }), 
   chatValidation.retrieve(), validatorMiddleware, 
   chatController().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"ChatModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ChatModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Chat", accessPoint: ["Update"] }),
   chatValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"ChatModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ChatModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Chat", accessPoint: ["Delete"] }),
   chatValidation.delete(), validatorMiddleware, 

@@ -14,16 +14,16 @@ import adminProjectSectionController from '../../../bController/aDatabaseManagem
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"AdminProjectSectionModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminProjectSectionModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminProjectSection", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"AdminProjectSectionModel-list", label: "AdminProjectSection", name: "List" }), 
+  checkCacheMiddleware({ key:"AdminProjectSectionModel::list", label: "AdminProjectSection", name: "List" }), 
   adminProjectSectionValidation.list(), validatorMiddleware, 
   adminProjectSectionController().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"AdminProjectSectionModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminProjectSectionModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminProjectSection", accessPoint: ["Create"] }),
   adminProjectSectionValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"AdminProjectSectionModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminProjectSectionModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminProjectSection", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"AdminProjectSectionModel-retrieve", label: "AdminProjectSection", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"AdminProjectSectionModel::retrieve", label: "AdminProjectSection", name: "Retrieve" }), 
   adminProjectSectionValidation.retrieve(), validatorMiddleware, 
   adminProjectSectionController().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"AdminProjectSectionModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminProjectSectionModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminProjectSection", accessPoint: ["Update"] }),
   adminProjectSectionValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"AdminProjectSectionModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminProjectSectionModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminProjectSection", accessPoint: ["Delete"] }),
   adminProjectSectionValidation.delete(), validatorMiddleware, 

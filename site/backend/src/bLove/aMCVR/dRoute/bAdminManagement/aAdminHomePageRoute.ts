@@ -11,8 +11,8 @@ import adminHomePageController from '../../bController/bAdminManagement/aAdminHo
 const router = express.Router();
 
 router.route("/retrieve").get(
-  rateLimiterMiddleware({ key:"AdminHomePageModel-retrieve", time: 60, limit: 10 }),
-  checkCacheMiddleware({ key:"AdminHomePageModel-retrieve", label: "AdminHomePage", name: "Retrieve" }), 
+  rateLimiterMiddleware({ key:"AdminHomePageModel::retrieve", time: 60, limit: 10 }),
+  checkCacheMiddleware({ key:"AdminHomePageModel::retrieve", label: "AdminHomePage", name: "Retrieve", skip: true }), 
   adminHomePageValidation.retrieve(), validatorMiddleware, 
   adminHomePageController().retrieve
 )

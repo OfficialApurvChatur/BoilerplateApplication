@@ -14,16 +14,16 @@ import adminBranchController from '../../../bController/aDatabaseManagement/fAdm
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"AdminBranchModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminBranchModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminBranch", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"AdminBranchModel-list", label: "AdminBranch", name: "List" }), 
+  checkCacheMiddleware({ key:"AdminBranchModel::list", label: "AdminBranch", name: "List" }), 
   adminBranchValidation.list(), validatorMiddleware, 
   adminBranchController().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"AdminBranchModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminBranchModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminBranch", accessPoint: ["Create"] }),
   adminBranchValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"AdminBranchModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminBranchModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminBranch", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"AdminBranchModel-retrieve", label: "AdminBranch", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"AdminBranchModel::retrieve", label: "AdminBranch", name: "Retrieve" }), 
   adminBranchValidation.retrieve(), validatorMiddleware, 
   adminBranchController().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"AdminBranchModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminBranchModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminBranch", accessPoint: ["Update"] }),
   adminBranchValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"AdminBranchModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminBranchModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminBranch", accessPoint: ["Delete"] }),
   adminBranchValidation.delete(), validatorMiddleware, 

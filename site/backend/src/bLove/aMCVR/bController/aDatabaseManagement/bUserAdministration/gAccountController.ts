@@ -35,7 +35,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -73,7 +73,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
         keyList: cacheVariable.accountModel.create({ 
           Label  
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -82,7 +82,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
         eventList: eventVariable.accountModel.create({
           Label, 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -92,7 +92,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -101,7 +101,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -128,7 +128,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
           request 
         }), 
         data: retrieve 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -169,7 +169,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -179,7 +179,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -189,7 +189,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -198,7 +198,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(201).json({
@@ -220,7 +220,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
       deleteImageMiddleware({
         Label,
         data: delete_object
-      })(request, response, next)
+      })
       
       // Delete Cache
       cacheDeleteMiddleware({ 
@@ -228,7 +228,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
       
       // Create Event
       eventCreateMiddleware({
@@ -238,7 +238,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -248,7 +248,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -257,7 +257,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
       
       // Response
       response.status(200).json({

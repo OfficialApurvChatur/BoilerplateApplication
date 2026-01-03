@@ -32,7 +32,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -74,7 +74,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
         keyList: cacheVariable.branchModel.create({ 
           Label  
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -83,7 +83,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
         eventList: eventVariable.branchModel.create({
           Label, 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -93,7 +93,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -102,7 +102,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -129,7 +129,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           request 
         }), 
         data: retrieve 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -174,7 +174,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -184,7 +184,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -194,7 +194,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -203,7 +203,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(201).json({
@@ -225,7 +225,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
       deleteImageMiddleware({
         Label,
         data: delete_object
-      })(request, response, next)
+      })
       
       // Delete Cache
       cacheDeleteMiddleware({ 
@@ -233,7 +233,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
       
       // Create Event
       eventCreateMiddleware({
@@ -243,7 +243,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -253,7 +253,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -262,7 +262,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
       
       // Response
       response.status(200).json({
@@ -287,7 +287,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Total
       const total = await Model.countDocuments();

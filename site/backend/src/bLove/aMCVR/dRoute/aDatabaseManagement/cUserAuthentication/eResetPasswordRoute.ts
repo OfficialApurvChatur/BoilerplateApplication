@@ -14,16 +14,16 @@ import resetPasswordContorller from '../../../bController/aDatabaseManagement/cU
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"ResetPasswordModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ResetPasswordModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ResetPassword", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"ResetPasswordModel-list", label: "ResetPassword", name: "List" }), 
+  checkCacheMiddleware({ key:"ResetPasswordModel::list", label: "ResetPassword", name: "List" }), 
   resetPasswordValidation.list(), validatorMiddleware, 
   resetPasswordContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"ResetPasswordModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ResetPasswordModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ResetPassword", accessPoint: ["Create"] }),
   resetPasswordValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"ResetPasswordModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ResetPasswordModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ResetPassword", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"ResetPasswordModel-retrieve", label: "ResetPassword", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"ResetPasswordModel::retrieve", label: "ResetPassword", name: "Retrieve" }), 
   resetPasswordValidation.retrieve(), validatorMiddleware, 
   resetPasswordContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"ResetPasswordModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ResetPasswordModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ResetPassword", accessPoint: ["Update"] }),
   resetPasswordValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"ResetPasswordModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ResetPasswordModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ResetPassword", accessPoint: ["Delete"] }),
   resetPasswordValidation.delete(), validatorMiddleware, 

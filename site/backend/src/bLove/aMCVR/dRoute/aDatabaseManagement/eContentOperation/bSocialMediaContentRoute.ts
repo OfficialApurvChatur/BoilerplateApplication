@@ -14,16 +14,16 @@ import socialMediaContentContorller from '../../../bController/aDatabaseManageme
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"SocialMediaContentModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SocialMediaContentModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SocialMediaContent", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"SocialMediaContentModel-list", label: "SocialMediaContent", name: "List" }), 
+  checkCacheMiddleware({ key:"SocialMediaContentModel::list", label: "SocialMediaContent", name: "List" }), 
   socialMediaContentValidation.list(), validatorMiddleware, 
   socialMediaContentContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"SocialMediaContentModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SocialMediaContentModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SocialMediaContent", accessPoint: ["Create"] }),
   socialMediaContentValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"SocialMediaContentModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SocialMediaContentModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SocialMediaContent", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"SocialMediaContentModel-retrieve", label: "SocialMediaContent", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"SocialMediaContentModel::retrieve", label: "SocialMediaContent", name: "Retrieve" }), 
   socialMediaContentValidation.retrieve(), validatorMiddleware, 
   socialMediaContentContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"SocialMediaContentModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SocialMediaContentModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SocialMediaContent", accessPoint: ["Update"] }),
   socialMediaContentValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"SocialMediaContentModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SocialMediaContentModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SocialMediaContent", accessPoint: ["Delete"] }),
   socialMediaContentValidation.delete(), validatorMiddleware, 

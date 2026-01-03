@@ -14,16 +14,16 @@ import branchGroupController from '../../../bController/aDatabaseManagement/gFro
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"BranchGroupModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BranchGroupModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "BranchGroup", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"BranchGroupModel-list", label: "BranchGroup", name: "List" }), 
+  checkCacheMiddleware({ key:"BranchGroupModel::list", label: "BranchGroup", name: "List" }), 
   branchGroupValidation.list(), validatorMiddleware, 
   branchGroupController().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"BranchGroupModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BranchGroupModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "BranchGroup", accessPoint: ["Create"] }),
   branchGroupValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"BranchGroupModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BranchGroupModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "BranchGroup", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"BranchGroupModel-retrieve", label: "BranchGroup", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"BranchGroupModel::retrieve", label: "BranchGroup", name: "Retrieve" }), 
   branchGroupValidation.retrieve(), validatorMiddleware, 
   branchGroupController().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"BranchGroupModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BranchGroupModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "BranchGroup", accessPoint: ["Update"] }),
   branchGroupValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"BranchGroupModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BranchGroupModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "BranchGroup", accessPoint: ["Delete"] }),
   branchGroupValidation.delete(), validatorMiddleware, 

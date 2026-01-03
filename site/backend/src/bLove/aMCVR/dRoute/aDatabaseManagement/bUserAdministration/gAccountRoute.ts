@@ -14,16 +14,16 @@ import accountContorller from '../../../bController/aDatabaseManagement/bUserAdm
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"AccountModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AccountModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Account", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"AccountModel-list", label: "Account", name: "List" }), 
+  checkCacheMiddleware({ key:"AccountModel::list", label: "Account", name: "List" }), 
   accountValidation.list(), validatorMiddleware, 
   accountContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"AccountModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AccountModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Account", accessPoint: ["Create"] }),
   accountValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"AccountModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AccountModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Account", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"AccountModel-retrieve", label: "Account", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"AccountModel::retrieve", label: "Account", name: "Retrieve" }), 
   accountValidation.retrieve(), validatorMiddleware, 
   accountContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"AccountModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AccountModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Account", accessPoint: ["Update"] }),
   accountValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"AccountModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AccountModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Account", accessPoint: ["Delete"] }),
   accountValidation.delete(), validatorMiddleware, 

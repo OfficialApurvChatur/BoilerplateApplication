@@ -14,16 +14,16 @@ import menuContorller from '../../../bController/aDatabaseManagement/bUserAdmini
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"MenuModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"MenuModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Menu", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"MenuModel-list", label: "Menu", name: "List" }), 
+  checkCacheMiddleware({ key:"MenuModel::list", label: "Menu", name: "List" }), 
   menuValidation.list(), validatorMiddleware, 
   menuContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"MenuModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"MenuModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Menu", accessPoint: ["Create"] }),
   menuValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"MenuModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"MenuModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Menu", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"MenuModel-retrieve", label: "Menu", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"MenuModel::retrieve", label: "Menu", name: "Retrieve" }), 
   menuValidation.retrieve(), validatorMiddleware, 
   menuContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"MenuModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"MenuModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Menu", accessPoint: ["Update"] }),
   menuValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"MenuModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"MenuModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Menu", accessPoint: ["Delete"] }),
   menuValidation.delete(), validatorMiddleware, 

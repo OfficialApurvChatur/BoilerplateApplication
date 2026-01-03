@@ -14,16 +14,16 @@ import baseContorller from '../../../bController/aDatabaseManagement/aSetting/aB
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"BaseModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BaseModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Base", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"BaseModel-list", label: "Base", name: "List" }), 
+  checkCacheMiddleware({ key:"BaseModel::list", label: "Base", name: "List" }), 
   baseValidation.list(), validatorMiddleware, 
   baseContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"BaseModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BaseModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Base", accessPoint: ["Create"] }),
   baseValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"BaseModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BaseModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Base", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"BaseModel-retrieve", label: "Base", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"BaseModel::retrieve", label: "Base", name: "Retrieve" }), 
   baseValidation.retrieve(), validatorMiddleware, 
   baseContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"BaseModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BaseModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Base", accessPoint: ["Update"] }),
   baseValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"BaseModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BaseModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Base", accessPoint: ["Delete"] }),
   baseValidation.delete(), validatorMiddleware, 

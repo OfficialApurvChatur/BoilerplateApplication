@@ -44,7 +44,7 @@ const adminBranchGroupPageController = (Model= "AdminBranchGroupPageModel", Labe
           request 
         }), 
         data: responseData 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({

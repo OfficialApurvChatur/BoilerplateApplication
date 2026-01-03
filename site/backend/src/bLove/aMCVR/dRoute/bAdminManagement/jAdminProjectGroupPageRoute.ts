@@ -11,8 +11,8 @@ import adminProjectGroupPageController from '../../bController/bAdminManagement/
 const router = express.Router();
 
 router.route("/retrieve").get(
-  rateLimiterMiddleware({ key:"AdminProjectGroupPageModel-retrieve", time: 60, limit: 10 }),
-  checkCacheMiddleware({ key:"AdminProjectGroupPageModel-retrieve", label: "AdminProjectGroupPage", name: "Retrieve" }), 
+  rateLimiterMiddleware({ key:"AdminProjectGroupPageModel::retrieve", time: 60, limit: 10 }),
+  checkCacheMiddleware({ key:"AdminProjectGroupPageModel::retrieve", label: "AdminProjectGroupPage", name: "Retrieve", skip: true }), 
   adminProjectGroupPageValidation.retrieve(), validatorMiddleware, 
   adminProjectGroupPageController().retrieve
 )

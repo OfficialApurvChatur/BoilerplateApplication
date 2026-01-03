@@ -14,16 +14,16 @@ import projectGroupController from '../../../bController/aDatabaseManagement/gFr
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"ProjectGroupModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ProjectGroupModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ProjectGroup", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"ProjectGroupModel-list", label: "ProjectGroup", name: "List" }), 
+  checkCacheMiddleware({ key:"ProjectGroupModel::list", label: "ProjectGroup", name: "List" }), 
   projectGroupValidation.list(), validatorMiddleware, 
   projectGroupController().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"ProjectGroupModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ProjectGroupModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ProjectGroup", accessPoint: ["Create"] }),
   projectGroupValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"ProjectGroupModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ProjectGroupModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ProjectGroup", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"ProjectGroupModel-retrieve", label: "ProjectGroup", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"ProjectGroupModel::retrieve", label: "ProjectGroup", name: "Retrieve" }), 
   projectGroupValidation.retrieve(), validatorMiddleware, 
   projectGroupController().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"ProjectGroupModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ProjectGroupModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ProjectGroup", accessPoint: ["Update"] }),
   projectGroupValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"ProjectGroupModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ProjectGroupModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ProjectGroup", accessPoint: ["Delete"] }),
   projectGroupValidation.delete(), validatorMiddleware, 

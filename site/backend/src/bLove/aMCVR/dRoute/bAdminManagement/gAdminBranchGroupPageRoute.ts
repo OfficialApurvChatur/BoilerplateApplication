@@ -11,8 +11,8 @@ import adminBranchGroupPageController from '../../bController/bAdminManagement/g
 const router = express.Router();
 
 router.route("/retrieve").get(
-  rateLimiterMiddleware({ key:"AdminBranchGroupPageModel-retrieve", time: 60, limit: 10 }),
-  checkCacheMiddleware({ key:"AdminBranchGroupPageModel-retrieve", label: "AdminBranchGroupPage", name: "Retrieve" }), 
+  rateLimiterMiddleware({ key:"AdminBranchGroupPageModel::retrieve", time: 60, limit: 10 }),
+  checkCacheMiddleware({ key:"AdminBranchGroupPageModel::retrieve", label: "AdminBranchGroupPage", name: "Retrieve", skip: true }), 
   adminBranchGroupPageValidation.retrieve(), validatorMiddleware, 
   adminBranchGroupPageController().retrieve
 )

@@ -32,7 +32,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
           Label
         }), 
         data: list 
-      })(request, response, next);
+      });
 
       // Retrieve Total Documents
       const total = await Model.countDocuments();
@@ -73,7 +73,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
         keyList: cacheVariable.adminServiceModel.create({ 
           Label  
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -82,7 +82,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
         eventList: eventVariable.adminServiceModel.create({
           Label, 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -92,7 +92,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -101,7 +101,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -128,7 +128,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
           request 
         }), 
         data: retrieve 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({
@@ -172,7 +172,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
 
       // Create Event
       eventCreateMiddleware({
@@ -182,7 +182,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -192,7 +192,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -201,7 +201,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Response
       response.status(201).json({
@@ -223,7 +223,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
       deleteImageMiddleware({
         Label,
         data: delete_object
-      })(request, response, next)
+      })
       
       // Delete Cache
       cacheDeleteMiddleware({ 
@@ -231,7 +231,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
           Label, 
           request 
         }), 
-      })(request, response, next);
+      });
       
       // Create Event
       eventCreateMiddleware({
@@ -241,7 +241,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       // Create Email
       emailToCompanyMiddleware({
@@ -251,7 +251,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
 
       emailToUserMiddleware({
         Label,
@@ -260,7 +260,7 @@ const adminServiceController = (Model=AdminServiceModel, Label="AdminServiceMode
           Label, 
           request 
         }),
-      })(request, response, next);
+      });
       
       // Response
       response.status(200).json({

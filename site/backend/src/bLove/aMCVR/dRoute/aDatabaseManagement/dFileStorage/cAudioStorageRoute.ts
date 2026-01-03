@@ -14,16 +14,16 @@ import audioStorageController from '../../../bController/aDatabaseManagement/dFi
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"AudioStorageModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AudioStorageModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AudioStorage", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"AudioStorageModel-list", label: "AudioStorage", name: "List" }), 
+  checkCacheMiddleware({ key:"AudioStorageModel::list", label: "AudioStorage", name: "List" }), 
   audioStorageValidation.list(), validatorMiddleware, 
   audioStorageController().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"AudioStorageModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AudioStorageModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AudioStorage", accessPoint: ["Create"] }),
   audioStorageValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"AudioStorageModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AudioStorageModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AudioStorage", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"AudioStorageModel-retrieve", label: "AudioStorage", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"AudioStorageModel::retrieve", label: "AudioStorage", name: "Retrieve" }), 
   audioStorageValidation.retrieve(), validatorMiddleware, 
   audioStorageController().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"AudioStorageModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AudioStorageModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AudioStorage", accessPoint: ["Update"] }),
   audioStorageValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"AudioStorageModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AudioStorageModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AudioStorage", accessPoint: ["Delete"] }),
   audioStorageValidation.delete(), validatorMiddleware, 

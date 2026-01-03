@@ -11,8 +11,8 @@ import adminBranchSectionPageController from '../../bController/bAdminManagement
 const router = express.Router();
 
 router.route("/retrieve").get(
-  rateLimiterMiddleware({ key:"AdminBranchSectionPageModel-retrieve", time: 60, limit: 10 }),
-  checkCacheMiddleware({ key:"AdminBranchSectionPageModel-retrieve", label: "AdminBranchSectionPage", name: "Retrieve" }), 
+  rateLimiterMiddleware({ key:"AdminBranchSectionPageModel::retrieve", time: 60, limit: 10 }),
+  checkCacheMiddleware({ key:"AdminBranchSectionPageModel::retrieve", label: "AdminBranchSectionPage", name: "Retrieve", skip: true }), 
   adminBranchSectionPageValidation.retrieve(), validatorMiddleware, 
   adminBranchSectionPageController().retrieve
 )

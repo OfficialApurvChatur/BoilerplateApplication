@@ -44,7 +44,7 @@ const adminBranchPageController = (Model= "AdminBranchPageModel", Label= "AdminB
           request 
         }), 
         data: responseData 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({

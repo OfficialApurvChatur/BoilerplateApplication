@@ -14,16 +14,16 @@ import roleContorller from '../../../bController/aDatabaseManagement/bUserAdmini
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"RoleModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"RoleModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Role", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"RoleModel-list", label: "Role", name: "List" }), 
+  checkCacheMiddleware({ key:"RoleModel::list", label: "Role", name: "List" }), 
   roleValidation.list(), validatorMiddleware, 
   roleContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"RoleModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"RoleModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Role", accessPoint: ["Create"] }),
   roleValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"RoleModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"RoleModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Role", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"RoleModel-retrieve", label: "Role", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"RoleModel::retrieve", label: "Role", name: "Retrieve" }), 
   roleValidation.retrieve(), validatorMiddleware, 
   roleContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"RoleModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"RoleModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Role", accessPoint: ["Update"] }),
   roleValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"RoleModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"RoleModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Role", accessPoint: ["Delete"] }),
   roleValidation.delete(), validatorMiddleware, 

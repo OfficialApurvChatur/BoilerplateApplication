@@ -44,7 +44,7 @@ const adminProjectSectionPageController = (Model= "AdminProjectSectionPageModel"
           request 
         }), 
         data: responseData 
-      })(request, response, next);
+      });
 
       // Response
       response.status(200).json({

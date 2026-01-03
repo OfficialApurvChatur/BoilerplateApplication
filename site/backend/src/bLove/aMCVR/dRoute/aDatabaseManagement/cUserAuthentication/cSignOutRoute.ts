@@ -14,16 +14,16 @@ import signOutContorller from '../../../bController/aDatabaseManagement/cUserAut
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"SignOutModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SignOutModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SignOut", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"SignOutModel-list", label: "SignOut", name: "List" }), 
+  checkCacheMiddleware({ key:"SignOutModel::list", label: "SignOut", name: "List" }), 
   signOutValidation.list(), validatorMiddleware, 
   signOutContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"SignOutModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SignOutModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SignOut", accessPoint: ["Create"] }),
   signOutValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"SignOutModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SignOutModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SignOut", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"SignOutModel-retrieve", label: "SignOut", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"SignOutModel::retrieve", label: "SignOut", name: "Retrieve" }), 
   signOutValidation.retrieve(), validatorMiddleware, 
   signOutContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"SignOutModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SignOutModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SignOut", accessPoint: ["Update"] }),
   signOutValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"SignOutModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"SignOutModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "SignOut", accessPoint: ["Delete"] }),
   signOutValidation.delete(), validatorMiddleware, 

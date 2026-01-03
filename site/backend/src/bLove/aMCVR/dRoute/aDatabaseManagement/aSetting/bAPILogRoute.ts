@@ -14,16 +14,16 @@ import apiLogContorller from '../../../bController/aDatabaseManagement/aSetting/
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"APILogModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"APILogModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "APILog", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"APILogModel-list", label: "APILog", name: "List" }), 
+  checkCacheMiddleware({ key:"APILogModel::list", label: "APILog", name: "List" }), 
   apiLogValidation.list(), validatorMiddleware, 
   apiLogContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"APILogModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"APILogModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "APILog", accessPoint: ["Create"] }),
   apiLogValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"APILogModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"APILogModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "APILog", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"APILogModel-retrieve", label: "APILog", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"APILogModel::retrieve", label: "APILog", name: "Retrieve" }), 
   apiLogValidation.retrieve(), validatorMiddleware, 
   apiLogContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"APILogModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"APILogModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "APILog", accessPoint: ["Update"] }),
   apiLogValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"APILogModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"APILogModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "APILog", accessPoint: ["Delete"] }),
   apiLogValidation.delete(), validatorMiddleware, 

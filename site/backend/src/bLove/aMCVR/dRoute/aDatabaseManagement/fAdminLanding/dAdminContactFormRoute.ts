@@ -14,16 +14,16 @@ import adminContactFormContorller from '../../../bController/aDatabaseManagement
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"AdminContactFormModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminContactFormModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminContactForm", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"AdminContactFormModel-list", label: "AdminContactForm", name: "List" }), 
+  checkCacheMiddleware({ key:"AdminContactFormModel::list", label: "AdminContactForm", name: "List" }), 
   adminContactFormValidation.list(), validatorMiddleware, 
   adminContactFormContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"AdminContactFormModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminContactFormModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminContactForm", accessPoint: ["Create"] }),
   adminContactFormValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"AdminContactFormModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminContactFormModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminContactForm", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"AdminContactFormModel-retrieve", label: "AdminContactForm", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"AdminContactFormModel::retrieve", label: "AdminContactForm", name: "Retrieve" }), 
   adminContactFormValidation.retrieve(), validatorMiddleware, 
   adminContactFormContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"AdminContactFormModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminContactFormModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminContactForm", accessPoint: ["Update"] }),
   adminContactFormValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"AdminContactFormModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AdminContactFormModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AdminContactForm", accessPoint: ["Delete"] }),
   adminContactFormValidation.delete(), validatorMiddleware, 

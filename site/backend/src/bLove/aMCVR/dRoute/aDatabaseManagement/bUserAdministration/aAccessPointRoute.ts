@@ -14,16 +14,16 @@ import accessPointContorller from '../../../bController/aDatabaseManagement/bUse
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"AccessPointModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AccessPointModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AccessPoint", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"AccessPointModel-list", label: "AccessPoint", name: "List" }), 
+  checkCacheMiddleware({ key:"AccessPointModel::list", label: "AccessPoint", name: "List" }), 
   accessPointValidation.list(), validatorMiddleware, 
   accessPointContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"AccessPointModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AccessPointModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AccessPoint", accessPoint: ["Create"] }),
   accessPointValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"AccessPointModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AccessPointModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AccessPoint", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"AccessPointModel-retrieve", label: "AccessPoint", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"AccessPointModel::retrieve", label: "AccessPoint", name: "Retrieve" }), 
   accessPointValidation.retrieve(), validatorMiddleware, 
   accessPointContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"AccessPointModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AccessPointModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AccessPoint", accessPoint: ["Update"] }),
   accessPointValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"AccessPointModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"AccessPointModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "AccessPoint", accessPoint: ["Delete"] }),
   accessPointValidation.delete(), validatorMiddleware, 

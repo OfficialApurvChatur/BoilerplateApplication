@@ -14,16 +14,16 @@ import activityLogContorller from '../../../bController/aDatabaseManagement/aSet
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"ActivityLogModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ActivityLogModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ActivityLog", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"ActivityLogModel-list", label: "ActivityLog", name: "List" }), 
+  checkCacheMiddleware({ key:"ActivityLogModel::list", label: "ActivityLog", name: "List" }), 
   activityLogValidation.list(), validatorMiddleware, 
   activityLogContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"ActivityLogModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ActivityLogModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ActivityLog", accessPoint: ["Create"] }),
   activityLogValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"ActivityLogModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ActivityLogModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ActivityLog", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"ActivityLogModel-retrieve", label: "ActivityLog", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"ActivityLogModel::retrieve", label: "ActivityLog", name: "Retrieve" }), 
   activityLogValidation.retrieve(), validatorMiddleware, 
   activityLogContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"ActivityLogModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ActivityLogModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ActivityLog", accessPoint: ["Update"] }),
   activityLogValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"ActivityLogModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"ActivityLogModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "ActivityLog", accessPoint: ["Delete"] }),
   activityLogValidation.delete(), validatorMiddleware, 

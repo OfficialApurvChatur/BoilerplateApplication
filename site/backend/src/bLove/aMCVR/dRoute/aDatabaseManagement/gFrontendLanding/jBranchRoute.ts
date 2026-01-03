@@ -14,16 +14,16 @@ import branchController from '../../../bController/aDatabaseManagement/gFrontend
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"BranchModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BranchModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Branch", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"BranchModel-list", label: "Branch", name: "List" }), 
+  checkCacheMiddleware({ key:"BranchModel::list", label: "Branch", name: "List" }), 
   branchValidation.list(), validatorMiddleware, 
   branchController().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"BranchModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BranchModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Branch", accessPoint: ["Create"] }),
   branchValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"BranchModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BranchModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Branch", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"BranchModel-retrieve", label: "Branch", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"BranchModel::retrieve", label: "Branch", name: "Retrieve" }), 
   branchValidation.retrieve(), validatorMiddleware, 
   branchController().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"BranchModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BranchModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Branch", accessPoint: ["Update"] }),
   branchValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"BranchModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"BranchModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Branch", accessPoint: ["Delete"] }),
   branchValidation.delete(), validatorMiddleware, 

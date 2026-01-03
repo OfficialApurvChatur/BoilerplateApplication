@@ -14,16 +14,16 @@ import userContorller from '../../../bController/aDatabaseManagement/bUserAdmini
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"UserModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"UserModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "User", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"UserModel-list", label: "User", name: "List" }), 
+  checkCacheMiddleware({ key:"UserModel::list", label: "User", name: "List" }), 
   userValidation.list(), validatorMiddleware, 
   userContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"UserModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"UserModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "User", accessPoint: ["Create"] }),
   userValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"UserModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"UserModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "User", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"UserModel-retrieve", label: "User", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"UserModel::retrieve", label: "User", name: "Retrieve" }), 
   userValidation.retrieve(), validatorMiddleware, 
   userContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"UserModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"UserModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "User", accessPoint: ["Update"] }),
   userValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"UserModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"UserModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "User", accessPoint: ["Delete"] }),
   userValidation.delete(), validatorMiddleware, 

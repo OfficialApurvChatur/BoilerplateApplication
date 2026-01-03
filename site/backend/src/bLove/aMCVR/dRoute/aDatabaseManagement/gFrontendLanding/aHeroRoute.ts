@@ -14,16 +14,16 @@ import heroContorller from '../../../bController/aDatabaseManagement/gFrontendLa
 const router = express.Router();
 
 router.route("/list").get(
-  rateLimiterMiddleware({ key:"HeroModel-list", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"HeroModel::list", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Hero", accessPoint: ["List"] }),
-  checkCacheMiddleware({ key:"HeroModel-list", label: "Hero", name: "List" }), 
+  checkCacheMiddleware({ key:"HeroModel::list", label: "Hero", name: "List" }), 
   heroValidation.list(), validatorMiddleware, 
   heroContorller().list
 )
 
 router.route("/create").post(
-  rateLimiterMiddleware({ key:"HeroModel-create", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"HeroModel::create", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Hero", accessPoint: ["Create"] }),
   heroValidation.create(), validatorMiddleware,
@@ -32,16 +32,16 @@ router.route("/create").post(
 )
 
 router.route("/retrieve/:id").get(
-  rateLimiterMiddleware({ key:"HeroModel-retrieve", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"HeroModel::retrieve", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Hero", accessPoint: ["Retrieve"] }),
-  checkCacheMiddleware({ key:"HeroModel-retrieve", label: "Hero", name: "Retrieve" }), 
+  checkCacheMiddleware({ key:"HeroModel::retrieve", label: "Hero", name: "Retrieve" }), 
   heroValidation.retrieve(), validatorMiddleware, 
   heroContorller().retrieve
 )
 
 router.route("/update/:id").put(
-  rateLimiterMiddleware({ key:"HeroModel-update", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"HeroModel::update", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Hero", accessPoint: ["Update"] }),
   heroValidation.update(), validatorMiddleware, 
@@ -50,7 +50,7 @@ router.route("/update/:id").put(
 )
 
 router.route("/delete/:id").delete(
-  rateLimiterMiddleware({ key:"HeroModel-delete", time: 60, limit: 10 }),
+  rateLimiterMiddleware({ key:"HeroModel::delete", time: 60, limit: 10 }),
   authenticationMiddleware,
   authorizationMiddleware({ menu: "Hero", accessPoint: ["Delete"] }),
   heroValidation.delete(), validatorMiddleware, 
