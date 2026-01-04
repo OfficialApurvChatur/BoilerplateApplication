@@ -84,6 +84,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
         eventList: eventVariable.videoStorageModel.create({
           Label, 
         }),
+        request
       });
 
       // Create Email
@@ -103,6 +104,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -183,6 +185,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -202,6 +205,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -242,6 +246,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -261,6 +266,7 @@ const videoStorageController = (Model=VideoStorageModel, Label="VideoStorageMode
           Label, 
           request 
         }),
+        request
       });
       
       // Response

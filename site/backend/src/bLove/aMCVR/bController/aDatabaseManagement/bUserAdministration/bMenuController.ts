@@ -82,6 +82,7 @@ const menuController = (Model=MenuModel, Label="MenuModel") => ({
         eventList: eventVariable.menuModel.create({
           Label, 
         }),
+        request
       });
 
       // Create Email
@@ -101,6 +102,7 @@ const menuController = (Model=MenuModel, Label="MenuModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -182,6 +184,7 @@ const menuController = (Model=MenuModel, Label="MenuModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -201,6 +204,7 @@ const menuController = (Model=MenuModel, Label="MenuModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -241,6 +245,7 @@ const menuController = (Model=MenuModel, Label="MenuModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -260,6 +265,7 @@ const menuController = (Model=MenuModel, Label="MenuModel") => ({
           Label, 
           request 
         }),
+        request
       });
       
       // Response

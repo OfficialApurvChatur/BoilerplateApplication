@@ -80,6 +80,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
         eventList: eventVariable.signOutModel.create({
           Label, 
         }),
+        request
       });
 
       // Create Email
@@ -99,6 +100,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -177,6 +179,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -196,6 +199,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -236,6 +240,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -255,6 +260,7 @@ const signOutController = (Model=SignOutModel, Label="SignOutModel", ExtraModel=
           Label, 
           request 
         }),
+        request
       });
       
       // Response

@@ -82,6 +82,7 @@ const signUpController = (Model=SignUpModel, Label="SignUpModel", ExtraModel=Use
         eventList: eventVariable.signUpModel.create({
           Label, 
         }),
+        request
       });
 
       // Create Email
@@ -101,6 +102,7 @@ const signUpController = (Model=SignUpModel, Label="SignUpModel", ExtraModel=Use
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -179,6 +181,7 @@ const signUpController = (Model=SignUpModel, Label="SignUpModel", ExtraModel=Use
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -198,6 +201,7 @@ const signUpController = (Model=SignUpModel, Label="SignUpModel", ExtraModel=Use
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -238,6 +242,7 @@ const signUpController = (Model=SignUpModel, Label="SignUpModel", ExtraModel=Use
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -257,6 +262,7 @@ const signUpController = (Model=SignUpModel, Label="SignUpModel", ExtraModel=Use
           Label, 
           request 
         }),
+        request
       });
       
       // Response

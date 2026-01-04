@@ -82,6 +82,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
         eventList: eventVariable.roleModel.create({
           Label, 
         }),
+        request
       });
 
       // Create Email
@@ -101,6 +102,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -181,6 +183,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -200,6 +203,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -240,6 +244,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -259,6 +264,7 @@ const roleController = (Model=RoleModel, Label="RoleModel") => ({
           Label, 
           request 
         }),
+        request
       });
       
       // Response

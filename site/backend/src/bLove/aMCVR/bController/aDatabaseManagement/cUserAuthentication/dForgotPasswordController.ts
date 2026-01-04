@@ -79,6 +79,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
         eventList: eventVariable.forgotPasswordModel.create({
           Label, 
         }),
+        request
       });
 
       // Create Email
@@ -98,6 +99,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -176,6 +178,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -195,6 +198,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -235,6 +239,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -254,6 +259,7 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
           Label, 
           request 
         }),
+        request
       });
       
       // Response

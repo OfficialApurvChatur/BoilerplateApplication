@@ -79,6 +79,7 @@ const apiLogController = (Model=APILogModel, Label="APILogModel") => ({
         eventList: eventVariable.apiLogModel.create({
           Label, 
         }),
+        request
       });
 
       // Create Email
@@ -98,6 +99,7 @@ const apiLogController = (Model=APILogModel, Label="APILogModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -176,6 +178,7 @@ const apiLogController = (Model=APILogModel, Label="APILogModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -195,6 +198,7 @@ const apiLogController = (Model=APILogModel, Label="APILogModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -235,6 +239,7 @@ const apiLogController = (Model=APILogModel, Label="APILogModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -254,6 +259,7 @@ const apiLogController = (Model=APILogModel, Label="APILogModel") => ({
           Label, 
           request 
         }),
+        request
       });
       
       // Response

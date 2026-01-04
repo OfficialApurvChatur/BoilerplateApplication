@@ -82,6 +82,7 @@ const serviceController = (Model=ServiceModel, Label="ServiceModel") => ({
         eventList: eventVariable.serviceModel.create({
           Label, 
         }),
+        request
       });
 
       // Create Email
@@ -101,6 +102,7 @@ const serviceController = (Model=ServiceModel, Label="ServiceModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -182,6 +184,7 @@ const serviceController = (Model=ServiceModel, Label="ServiceModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -201,6 +204,7 @@ const serviceController = (Model=ServiceModel, Label="ServiceModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -241,6 +245,7 @@ const serviceController = (Model=ServiceModel, Label="ServiceModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -260,6 +265,7 @@ const serviceController = (Model=ServiceModel, Label="ServiceModel") => ({
           Label, 
           request 
         }),
+        request
       });
       
       // Response

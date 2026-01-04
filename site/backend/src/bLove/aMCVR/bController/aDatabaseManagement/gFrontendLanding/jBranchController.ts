@@ -83,6 +83,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
         eventList: eventVariable.branchModel.create({
           Label, 
         }),
+        request
       });
 
       // Create Email
@@ -102,6 +103,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -184,6 +186,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -203,6 +206,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -243,6 +247,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -262,6 +267,7 @@ const branchController = (Model=BranchModel, Label="BranchModel") => ({
           Label, 
           request 
         }),
+        request
       });
       
       // Response

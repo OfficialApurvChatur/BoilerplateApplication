@@ -84,6 +84,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
         eventList: eventVariable.projectSectionModel.create({
           Label, 
         }),
+        request
       });
 
       // Create Email
@@ -103,6 +104,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -186,6 +188,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -205,6 +208,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
+        request
       });
 
       // Response
@@ -245,6 +249,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
+        request
       });
 
       // Create Email
@@ -264,6 +269,7 @@ const projectSectionController = (Model=ProjectSectionModel, Label="ProjectSecti
           Label, 
           request 
         }),
+        request
       });
       
       // Response
