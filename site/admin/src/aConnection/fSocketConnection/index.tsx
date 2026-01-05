@@ -8,7 +8,12 @@ const useSocket = () => useContext(SocketContext)
 
 const SocketProvider = ({ children }: any) => {
   const socket = useMemo(() => {
-    return io(brandConnection.oBackendBaseURL)
+    return io(
+      brandConnection.oBackendBaseURL, 
+      { 
+        withCredentials: true 
+      }
+    )
   }, []);
 
   useEffect(() => {

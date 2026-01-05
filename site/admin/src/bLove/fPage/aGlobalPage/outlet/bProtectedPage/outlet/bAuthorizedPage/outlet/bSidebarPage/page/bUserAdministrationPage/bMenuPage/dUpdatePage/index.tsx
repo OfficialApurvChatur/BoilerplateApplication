@@ -20,6 +20,7 @@ import apiHandler from "./extra/fAPIHandler";
 
 import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
 import { useSocket } from "@/aConnection/fSocketConnection";
+import eventVariable from "@/bLove/jVariable/aEventVariable";
 
 import isAllowedUtility, { isAllowedConstant } from "@/bLove/dUtility/bIsAllowdUtility";
 import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/component/dUnauthorizedAccessComponent";
@@ -54,7 +55,7 @@ const MenuUpdatePage = () => {
 
   // Listening Socket Events
   useSocketEventHook(socket, {
-    [`MENU_RETRIEVED:${id}`]: () => apiCall.retrieveAPIResponse.refetch()
+    [eventVariable.menuModel.retrieve({id})]: () => apiCall.retrieveAPIResponse.refetch()
   })  
 
   // All Render

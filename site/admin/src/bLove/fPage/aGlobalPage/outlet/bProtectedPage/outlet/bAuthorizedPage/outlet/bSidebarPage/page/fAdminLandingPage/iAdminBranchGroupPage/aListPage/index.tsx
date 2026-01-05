@@ -16,6 +16,7 @@ import apiHandler from "./extra/dAPIHandler";
 
 import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
 import { useSocket } from "@/aConnection/fSocketConnection";
+import eventVariable from "@/bLove/jVariable/aEventVariable";
 
 import isAllowedUtility, { isAllowedConstant } from "@/bLove/dUtility/bIsAllowdUtility";
 import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/component/dUnauthorizedAccessComponent";
@@ -40,7 +41,7 @@ const AdminBranchGroupListPage = () => {
   
   // Listening Socket Events
   useSocketEventHook(socket, {
-    ADMINBRANCHGROUP_LISTED: () => apiCall.listAPIResponse.refetch()
+    [eventVariable.adminBranchGroupModel.list()]: () => apiCall.listAPIResponse.refetch()
   })
 
   // All Render

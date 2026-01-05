@@ -15,6 +15,7 @@ import apiHandler from "./extra/cAPIHandler";
 
 import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
 import { useSocket } from "@/aConnection/fSocketConnection";
+import eventVariable from "@/bLove/jVariable/aEventVariable";
 
 import isAllowedUtility, { isAllowedConstant } from "@/bLove/dUtility/bIsAllowdUtility";
 import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/component/dUnauthorizedAccessComponent";
@@ -44,7 +45,7 @@ const CounterDeletePage = () => {
 
   // Listening Socket Events
   useSocketEventHook(socket, {
-    [`COUNTER_RETRIEVED:${id}`]: () => apiCall.retrieveAPIResponse.refetch()
+    [eventVariable.counterModel.retrieve({id})]: () => apiCall.retrieveAPIResponse.refetch()
   })
   
   // All Render
