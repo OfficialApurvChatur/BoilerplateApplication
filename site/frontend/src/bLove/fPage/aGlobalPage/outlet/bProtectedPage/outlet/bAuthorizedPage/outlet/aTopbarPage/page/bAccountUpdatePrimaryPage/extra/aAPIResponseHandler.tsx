@@ -140,7 +140,7 @@ const apiResponseHandler = {
           })
         )
   
-        return navigate(fullRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute)
+        return navigate(fullRoute.aGlobalRoute.aUnprotectedRoute.aHomePageRoute)
       }
 
       return;

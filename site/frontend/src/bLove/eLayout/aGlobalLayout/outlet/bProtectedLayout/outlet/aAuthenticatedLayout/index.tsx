@@ -31,7 +31,7 @@ const AuthenticatedLayout = () => {
       (reduxCall.state.receivedObject as any)?.AccountRetrieve?.eAccountStatus === "Verified" && 
       (reduxCall.state.receivedObject as any)?.AccountRetrieve?._id
     ) ? (
-      navigate(fullRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute)
+      navigate(fullRoute.aGlobalRoute.aUnprotectedRoute.aHomePageRoute)
     ) :
     (
       (reduxCall.state.receivedObject as any)?.AccountRetrieve?.eAccountStatus === "Not Verified" && 

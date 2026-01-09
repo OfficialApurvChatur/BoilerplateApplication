@@ -1,5 +1,4 @@
 import React from 'react';
-import { Editor } from '@tinymce/tinymce-react';
 
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/aConnection/bShadcnConnection/components/ui/form";
 
@@ -17,7 +16,7 @@ const RichTextEditorInputComponent = (props: any) => {
         <FormField
           control={form.control}
           name={eachInput.name}
-          render={({ field }) => (
+          render={() => (
             <FormItem>
               <FormLabel>{eachInput.label} :</FormLabel>
               <FormControl>
@@ -42,7 +41,7 @@ const RichTextEditorInputComponent = (props: any) => {
                   }}
                   initialValue="Welcome to TinyMCE!"
                 /> */}
-                <Editor
+                {/* <Editor
                   apiKey='pfe2htbpjrhkl6wcbxzv026a35zae7va5ht0tpuwmbmvpjro'
                   value={field.value} // Ensure value is controlled
                   onEditorChange={(newValue) => field.onChange(newValue)} // Bind field.onChange
@@ -63,7 +62,7 @@ const RichTextEditorInputComponent = (props: any) => {
                     //   respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
                   }}
                   initialValue="Welcome to TinyMCE!"
-                />
+                /> */}
               </FormControl>
               <FormMessage />
             </FormItem>

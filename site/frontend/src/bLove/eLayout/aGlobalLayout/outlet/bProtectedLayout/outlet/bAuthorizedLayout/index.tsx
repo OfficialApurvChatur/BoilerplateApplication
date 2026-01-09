@@ -50,7 +50,7 @@ const AuthorizedLayout = () => {
         !pathname.startsWith(fullRoute.aGlobalRoute.bProtectedRoute.aAutheticatedRoute.dResetPasswordRoute)
       ) ?
         navigate(pathname) :
-      navigate(fullRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute)
+      navigate(fullRoute.aGlobalRoute.aUnprotectedRoute.aHomePageRoute)
 
     ) :
     (

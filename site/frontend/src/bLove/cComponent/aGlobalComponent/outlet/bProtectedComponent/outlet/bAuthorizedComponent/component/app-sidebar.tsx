@@ -50,7 +50,7 @@ const data = {
       name: brandConnection.dAdministrationApplicationName,
       logo: AudioWaveform,
       plan: "Administration",
-      url: fullRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute,
+      url: fullRoute.aGlobalRoute.aUnprotectedRoute.aHomePageRoute,
     },
     {
       name: brandConnection.eBackendApplicationName,
