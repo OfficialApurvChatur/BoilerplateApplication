@@ -79,10 +79,10 @@ const NavbarComponent = (props: NavbarComponentType) => {
             />
 
             <div className="hidden md:flex flex-col leading-none">
-              <span className="text-lg font-bold uppercase">
+              <span className="text-lg font-bold uppercase leading-tight">
                 {brandConnection.bBrandName.split(" ")[0]}
               </span>
-              <span className="text-lg font-bold uppercase -mt-2">
+              <span className="text-lg font-bold uppercase leading-tight">
                 {brandConnection.bBrandName.split(" ")[1]}
               </span>
             </div>
@@ -130,10 +130,10 @@ const NavbarComponent = (props: NavbarComponentType) => {
                   />
 
                   <div className="flex flex-col leading-none">
-                    <span className="text-lg font-bold uppercase">
+                    <span className="text-lg font-bold uppercase leading-tight">
                       {brandConnection.bBrandName.split(" ")[0]}
                     </span>
-                    <span className="text-lg font-bold uppercase -mt-2">
+                    <span className="text-lg font-bold uppercase leading-tight">
                       {brandConnection.bBrandName.split(" ")[1]}
                     </span>
                   </div>
