@@ -1,22 +1,22 @@
 const brandConnection = {
-  aBrandID: "beehive-corporation",
-  bBrandName: "Beehive Corporation",
+  aBrandID: "boilerplate",
+  bBrandName: "Boilerplate",
 
-  cFrontendApplicationName: "Beehive Frontend",
-  dAdministrationApplicationName: "Beehive Administration",
-  eBackendApplicationName: "Beehive Backend",
+  cFrontendApplicationName: "Boilerplate Frontend",
+  dAdministrationApplicationName: "Boilerplate Administration",
+  eBackendApplicationName: "Boilerplate Backend",
 
-  fFrontendApplicationURL: "https://beehive-frontend.netlify.app",
-  gAdminApplicationURL: "https://beehive-admin.netlify.app",
-  hBackendApplicationURL: "https://beehive-backend.netlify.app",
+  fFrontendApplicationURL: "https://boilerplate-frontend-v02.netlify.app",
+  gAdminApplicationURL: "https://boilerplate-admin-v02.netlify.app",
+  hBackendApplicationURL: "https://boilerplate-backend-v02.netlify.app",
 
-  iEmailName: "@beehive.com",
+  iEmailName: "@boilerplate.com",
 
-  jInstagramURL: "https://www.instagram.com/beehive.corporation/",
-  kXURL: "https://x.com/beehive_corp",
-  lThreadsURL: "https://www.threads.com/@beehive.corporation",
-  mLinkedinURL: "https://www.linkedin.com/in/beehive-corporation-74893b2a7/",
-  nGithubURL: "https://github.com/ApurvChatur/ArionApplication?tab=readme-ov-file#administration-installation/",
+  jInstagramURL: "https://www.google.com/",
+  kXURL: "https://www.google.com/",
+  lThreadsURL: "https://www.google.com/",
+  mLinkedinURL: "https://www.google.com/",
+  nGithubURL: "https://www.google.com/",
 
   get oBackendBaseURL() {
     return process.env.ENVIRONMENT === "Production"
@@ -54,7 +54,7 @@ const brandConnection = {
   tFrontendProductionURL1: "https://boilerplate-admin-v02.netlify.app",
   tFrontendProductionURL2: "https://boilerplate-frontend-v02.netlify.app",
 
-  uTagName: "Infinte Wonder Awaits",
+  uTagName: "Skip setup. Start building.",
 }
 
 export default brandConnection;
