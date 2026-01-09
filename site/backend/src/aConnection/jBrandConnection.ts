@@ -27,14 +27,32 @@ const brandConnection = {
   qBackendProductionURL: "https://beehive-backend-dev.onrender.com",
 
   get rFrontendBaseURL() {
-    return process.env.ENVIRONMENT === "Production"
-      ? [ this.tFrontendProductionURL1, this.tFrontendProductionURL2 ]
-      : [ this.sFrontendLocalURL1, this.sFrontendLocalURL2 ];
+    return process.env.ENVIRONMENT === "Production" ? [ 
+      this.tFrontendProductionURL1, 
+      this.tFrontendProductionURL2, 
+    ] : [ 
+      this.sFrontendLocalURL1, 
+      this.sFrontendLocalURL2,
+      this.sFrontendLocalURL3,
+      this.sFrontendLocalURL4,
+      this.sFrontendLocalURL5,
+      this.sFrontendLocalURL6,
+      this.sFrontendLocalURL7,
+      this.sFrontendLocalURL8,
+      this.sFrontendLocalURL9,
+    ];
   },
   sFrontendLocalURL1: "http://localhost:5173",
   sFrontendLocalURL2: "http://localhost:5174",
-  tFrontendProductionURL1: "https://beehive-admin-dev.netlify.app",
-  tFrontendProductionURL2: "https://beehive-frontend-dev.netlify.app",
+  sFrontendLocalURL3: "http://localhost:5175",
+  sFrontendLocalURL4: "http://localhost:5176",
+  sFrontendLocalURL5: "http://localhost:5177",
+  sFrontendLocalURL6: "http://localhost:5178",
+  sFrontendLocalURL7: "http://localhost:5179",
+  sFrontendLocalURL8: "http://localhost:5180",
+  sFrontendLocalURL9: "http://localhost:5181",
+  tFrontendProductionURL1: "https://boilerplate-admin-v02.netlify.app",
+  tFrontendProductionURL2: "https://boilerplate-frontend-v02.netlify.app",
 
   uTagName: "Infinte Wonder Awaits",
 }
