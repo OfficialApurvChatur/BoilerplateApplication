@@ -1,20 +1,20 @@
 import React from "react"
 import { Link } from "react-router-dom";
 
-import getInitialsUtility from "@/bLove/dUtility/aGetInitialsUtility";
-import fullRoute from "@/bLove/gRoute/bFullRoute";
-
-import { AppSidebar } from "./component/app-sidebar";
-
-import { BookmarkX, FolderKey, KeyRound, LogIn, LogOut, MailIcon, Rat, User2, UserPen, UserPlus } from "lucide-react";
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@/aConnection/bShadcnConnection/components/ui/sidebar";
-// import { Separator } from "@/aConnection/bShadcnConnection/components/ui/separator";
-// import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from "@/aConnection/bShadcnConnection/components/ui/breadcrumb";
-import { ModeToggle } from "@/aConnection/bShadcnConnection/components/mode-toggle";
+
+import { BookmarkX, ClapperboardIcon, FolderKey, HomeIcon, KeyRound, LogIn, LogOut, MailIcon, Rat, User2, UserPen, UserPlus } from "lucide-react";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/aConnection/bShadcnConnection/components/ui/dropdown-menu";
 import { Avatar, AvatarFallback, AvatarImage } from "@/aConnection/bShadcnConnection/components/ui/avatar";
 import { Button } from "@/aConnection/bShadcnConnection/components/ui/button";
-// import { NotificationComponent } from "./component/notification";
+import { ModeToggle } from "@/aConnection/bShadcnConnection/components/mode-toggle";
+
+import getInitialsUtility from "@/bLove/dUtility/aGetInitialsUtility";
+import brandConnection from "@/aConnection/eBrandConnection";
+import fullRoute from "@/bLove/gRoute/bFullRoute";
+
+import { AppSidebar } from "./component/app-sidebar";
+import { NotificationComponent } from "./component/notification";
 
 
 const AuthorizedComponent = ({ children, reduxCall, apiHandler }: { children: React.ReactNode, reduxCall: any, apiHandler: any }) => {
@@ -45,9 +45,26 @@ const AuthorizedComponent = ({ children, reduxCall, apiHandler }: { children: Re
               </Breadcrumb> */}
             </div>
             
-            <div className="ml-auto px-3 flex items-center gap-2">
-              {/* <NotificationComponent /> */}
+            <div className="ml-auto px-2 flex items-center gap-2">
               <ModeToggle />
+
+              <Button asChild size="icon" variant="outline" >
+                <Link to={brandConnection.rFrontendBaseURL[1]} target="_blank" rel="noopener noreferrer" >
+                  <ClapperboardIcon />
+                </Link>
+              </Button>
+
+              <Button asChild size="icon" variant="outline" >
+                <Link to={fullRoute.aGlobalRoute.aUnprotectedRoute.aHomePageRoute} >
+                  <HomeIcon />
+                </Link>
+              </Button>
+
+              {
+                reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && 
+                reduxCall.state.receivedObject?.AccountRetrieve?._id && 
+                <NotificationComponent />
+              }
 
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>

@@ -3,13 +3,15 @@ import { Link } from "react-router-dom";
 
 import { ModeToggle } from "@/aConnection/bShadcnConnection/components/mode-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/aConnection/bShadcnConnection/components/ui/avatar";
-import { Button, buttonVariants } from "@/aConnection/bShadcnConnection/components/ui/button";
+import { Button } from "@/aConnection/bShadcnConnection/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/aConnection/bShadcnConnection/components/ui/dropdown-menu";
 import { BookmarkX, ClapperboardIcon, FolderKey, KeyRound, LogIn, LogOut, MailIcon, Rat, ShieldCheckIcon, User2, UserPen, UserPlus } from "lucide-react";
 
 import fullRoute from "@/bLove/gRoute/bFullRoute";
 import LOGO from "@/bLove/hAsset/HeroBanner/Logo.png";
 import getInitialsUtility from "@/bLove/dUtility/aGetInitialsUtility";
+import brandConnection from "@/aConnection/eBrandConnection";
+import NotificationComponent from "./component/aNotificationComponent";
 
 
 // interface RouteProps {
@@ -69,21 +71,22 @@ const NavbarComponent = (props: NavbarComponentType) => {
       <header className="flex shadow-md py-4 px-4 sm:px-10 bg-muted min-h-[70px] tracking-wide relative z-50">
         <div className="flex flex-wrap items-center justify-between gap-5 w-full">
           {/* Logo */}
-          <div className="flex items-center gap-3 shrink-0">
-            <a href="javascript:void(0)" className="flex items-center gap-3">
-              <img
-                src={LOGO}
-                alt="logo"
-                className="h-10 w-auto object-contain"
-              />
+          <a href={brandConnection.rFrontendBaseURL[0]} className="flex items-center gap-3 shrink-0">
+            <img
+              src={LOGO}
+              alt="logo"
+              className="h-10 w-auto object-contain"
+            />
 
-              <div className="flex flex-col leading-none">
-                <span className="text-lg font-bold uppercase">
-                  Beehive
-                </span>
-              </div>
-            </a>
-          </div>
+            <div className="hidden md:flex flex-col leading-none">
+              <span className="text-lg font-bold uppercase -mb-2">
+                Beehive
+              </span>
+              <span className="text-lg font-bold uppercase">
+                Corporation
+              </span>
+            </div>
+          </a>
 
           <div 
             className={`
@@ -119,85 +122,96 @@ const NavbarComponent = (props: NavbarComponentType) => {
             >
               {/* Logo */}
               <li className="mb-6 hidden max-lg:block">
-                <a href="javascript:void(0)"><img src="https://readymadeui.com/readymadeui.svg" alt="logo" className="w-36" />
+                <a href={brandConnection.rFrontendBaseURL[0]} className="flex items-center gap-3 shrink-0" >
+                  <img 
+                    src={LOGO} 
+                    alt="logo" 
+                    className="h-10 w-auto object-contain" 
+                  />
+
+                  <div className="flex flex-col leading-none">
+                    <span className="text-lg font-bold uppercase -mb-2">
+                      Beehive
+                    </span>
+                    <span className="text-lg font-bold uppercase">
+                      Corporation
+                    </span>
+                  </div>
                 </a>
               </li>
-
-
 
               {/* Items */}
               <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
-                <a href='javascript:void(0)'
-                  className="hover:text-foreground text-foreground block font-medium text-[15px]">
+                <Link 
+                  to={fullRoute.aGlobalRoute.aUnprotectedRoute.aHomePageRoute}
+                  className="hover:text-foreground text-foreground block font-medium text-[15px]"
+                >
                   Home
-                </a>
+                </Link>
               </li>
               <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
-                <a 
-                  href='javascript:void(0)'
+                <Link 
+                  to={fullRoute.aGlobalRoute.aUnprotectedRoute.bAboutCompanyPageRoute}
                   className="hover:text-foreground text-muted-foreground block font-medium text-[15px]"
                 >
                   About
-                </a>
+                </Link>
               </li>
               <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
-                <a 
-                  href='javascript:void(0)'
-                  className="hover:text-foreground text-muted-foreground block font-medium text-[15px]"
-                >
-                  Statstic
-                </a>
-              </li>
-              <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
-                <a 
-                  href='javascript:void(0)'
+                <Link 
+                  to={fullRoute.aGlobalRoute.aUnprotectedRoute.eServicePageRoute}
                   className="hover:text-foreground text-muted-foreground block font-medium text-[15px]"
                 >
                   Service
-                </a>
+                </Link>
               </li>
               <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
-                <a 
-                  href='javascript:void(0)'
+                <Link 
+                  to={fullRoute.aGlobalRoute.aUnprotectedRoute.fBranchSectionPageRoute}
                   className="hover:text-foreground text-muted-foreground block font-medium text-[15px]"
                 >
                   Branch
-                </a>
+                </Link>
               </li>
               <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
-                <a 
-                  href='javascript:void(0)'
+                <Link 
+                  to={fullRoute.aGlobalRoute.aUnprotectedRoute.gBranchGroupPageRoute}
                   className="hover:text-foreground text-muted-foreground block font-medium text-[15px]"
                 >
                   Project
-                </a>
+                </Link>
               </li>
               <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
-                <a 
-                  href='javascript:void(0)'
+                <Link 
+                  to={fullRoute.aGlobalRoute.aUnprotectedRoute.dContactPageRoute}
                   className="hover:text-foreground text-muted-foreground block font-medium text-[15px]"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
 
-          <div className="flex max-lg:ml-auto space-x-4">
-            <Link
-              to="/#"
-              className={`${buttonVariants({ variant: "secondary", size: "icon" })}`}
-            >
-              <ClapperboardIcon />
-            </Link>
-            <Link
-              to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hMainRoute.aDashboardRoute}
-              className={`${buttonVariants({ variant: "secondary", size: "icon" })}`}
-            >
-              <ShieldCheckIcon />
-            </Link>
-            
+          <div className="flex max-lg:ml-auto space-x-2">
             <ModeToggle />
+
+            <Button asChild size="icon" variant="outline" >
+              <Link to={brandConnection.rFrontendBaseURL[1]} target="_blank" rel="noopener noreferrer" >
+                <ClapperboardIcon />
+              </Link>
+            </Button>
+
+            <Button asChild size="icon" variant="outline" >
+              <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hMainRoute.aDashboardRoute} >
+                <ShieldCheckIcon />
+              </Link>
+            </Button>
+            
+            {
+              props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && 
+              props.reduxCall.state.receivedObject?.AccountRetrieve?._id && 
+              <NotificationComponent />
+            }
 
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
