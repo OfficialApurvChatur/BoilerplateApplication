@@ -24,7 +24,7 @@ const brandConnection = {
       : this.pBackendLocalURL;
   },
   pBackendLocalURL: "http://localhost:8000",
-  qBackendProductionURL: "https://beehive-backend-v02.onrender.com",
+  qBackendProductionURL: "https://boilerplate-backend-v02.onrender.com",
 
   get rFrontendBaseURL() {
     return import.meta.env.VITE_ENVIRONMENT === "Production" ? [ 
