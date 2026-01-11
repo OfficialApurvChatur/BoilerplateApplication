@@ -73,7 +73,7 @@ const AboutCompanyComponent = (props: AboutCompanyComponentType) => {
               <h2 className="text-foreground text-4xl font-bold !leading-tight">Let's Talk About Company</h2>
             </div>
             <div className="mt-12">
-              <p className="text-muted-foreground text-base">Try using our templates to quickly create professional pages without starting from scratch. Save time, stay consistent, and customize designs to fit your brand perfectly.</p>
+              <p className="text-muted-foreground text-base leading-relaxed">Try using our templates to quickly create professional pages without starting from scratch. Save time, stay consistent, and customize designs to fit your brand perfectly.</p>
             </div>
 
             {/* <div className="flex max-sm:flex-col justify-center gap-6 mt-12 max-w-xs mx-auto">
@@ -123,8 +123,8 @@ const AboutCompanyComponent = (props: AboutCompanyComponentType) => {
                 <p className="text-sm text-muted-foreground mt-10">
                   <article 
                     className="
-                      prose max-w-none dark:prose-invert prose-headings:font-bold 
-                      prose-li:marker:text-blue-500 leading-normal
+                      prose max-w-none dark:prose-invert prose-headings:font-bold text-sm 
+                      prose-li:marker:text-foreground leading-normal text-muted-foreground
                     "
                   >
                     <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
@@ -143,17 +143,17 @@ const AboutCompanyComponent = (props: AboutCompanyComponentType) => {
                 </button> */}
               </div>
             </div>
-          </div>
+          </div>  
           
           {/* Relatively */}
           <div className="bg-muted relative lg:max-w-6xl max-w-3xl mx-auto rounded-sm mt-20">
             <div className="grid lg:grid-cols-2 w-full h-full">
               <div 
                 className="
-                  flex flex-col items-end justify-center text-right px-8 py-8 
-                  relative bg-background/60 rounded-tl-[206px] z-20 
-                  before:absolute before:inset-0 before:!left-auto 
-                  before:bg-background/50 before:w-2/3 before:rounded-bl-[206px] before:-z-10
+                  flex flex-col items-start justify-center text-left px-8 py-8
+                  relative bg-background/60 rounded-tr-[206px] z-20 
+                  before:absolute before:inset-0 before:!right-auto 
+                  before:bg-background/50 before:w-2/3 before:rounded-br-[206px] before:-z-10
                 "
               >
                 <h3 className="font-bold md:text-3xl text-2xl text-foreground">
@@ -162,8 +162,8 @@ const AboutCompanyComponent = (props: AboutCompanyComponentType) => {
                 <p className="text-sm text-muted-foreground mt-10">
                   <article 
                     className="
-                      prose max-w-none dark:prose-invert prose-headings:font-bold 
-                      prose-li:marker:text-blue-500 leading-normal
+                      prose max-w-none dark:prose-invert prose-headings:font-bold text-sm 
+                      prose-li:marker:text-foreground leading-normal text-muted-foreground
                     "
                   >
                     <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >

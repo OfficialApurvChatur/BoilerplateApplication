@@ -65,15 +65,13 @@ const HeroComponent = (props: HeroComponentType) => {
               <div className="grid lg:grid-cols-2 justify-center items-center gap-x-12 gap-y-16">
                 <div>
                   <div className="max-w-3xl max-lg:mx-auto max-lg:text-center">
-                    <p className="mb-2 font-medium text-muted-foreground">
-                      <span className="rotate-90 inline-block mr-2">|</span> 
+                    <p className="mb-8 font-medium text-muted-foreground">
                       {apiResponse.dTag}
-                      <span className="rotate-90 inline-block ml-3">|</span> 
                     </p>
-                    <h1 className="md:text-5xl text-4xl font-bold !leading-relaxed uppercase">
+                    <h1 className="md:text-5xl text-4xl font-bold leading-tight uppercase">
                       {apiResponse.aTitle}
                     </h1>
-                    <h2 className="md:text-2xl text-xl text-muted-foreground leading-relaxed tracking-wide mt-2">
+                    <h2 className="md:text-2xl text-xl text-foreground leading-relaxed tracking-wide mt-2">
                       {apiResponse.aSubtitle}
                     </h2>
                     <p className="text-muted-foreground text-base leading-relaxed mt-6">
@@ -154,19 +152,19 @@ const HeroComponent = (props: HeroComponentType) => {
                 </div>
 
                 <div className="columns-2 space-y-4">
-                  <div className="break-inside-avoid">
+                  <div className="break-inside-avoid p-1 bg-muted-foreground rounded-lg">
                     <img src="https://picsum.photos/200/300.webp?random=1" alt="img-1"
                       className="w-full h-full object-cover object-top rounded-lg max-h-[360px]" />
                   </div>
-                  <div className="break-inside-avoid">
+                  <div className="break-inside-avoid p-1 bg-muted-foreground rounded-lg">
                     <img src="https://picsum.photos/200/300.webp?random=2" alt="img-2"
                       className="w-full h-full object-cover object-top rounded-lg max-h-[360px]" />
                   </div>
-                  <div className="break-inside-avoid">
+                  <div className="break-inside-avoid p-1 bg-muted-foreground rounded-lg">
                     <img src="https://picsum.photos/200/300.webp?random=3" alt="img-3"
                       className="w-full h-full object-cover object-top rounded-lg max-h-[360px]" />
                   </div>
-                  <div className="break-inside-avoid">
+                  <div className="break-inside-avoid p-1 bg-muted-foreground rounded-lg">
                     <img src="https://picsum.photos/200/300.webp?random=4" alt="img-4"
                       className="w-full h-full object-cover object-top rounded-lg max-h-[360px]" />
                   </div>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { AboutApplicationComponentDataType } from '../..';
+import brandConnection from '@/aConnection/eBrandConnection';
 
 
 type AboutApplicationComponentType = {
@@ -59,10 +60,10 @@ const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
           {/* Header */}
           <div className="max-w-xl mx-auto text-center py-20">
             <div className="relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-foreground after:left-0 after:right-0 after:mx-auto after:rounded-full">
-              <h2 className="text-foreground text-4xl font-bold !leading-tight">Discover Beehive Application</h2>
+              <h2 className="text-foreground text-4xl font-bold !leading-tight">Discover {brandConnection.bBrandName.split(" ")[0]} Application</h2>
             </div>
             <div className="mt-12">
-              <p className="text-muted-foreground text-base">Try using our templates to quickly create professional pages without starting from scratch. Save time, stay consistent, and customize designs to fit your brand perfectly.</p>
+              <p className="text-muted-foreground text-base leading-relaxed">Try using our templates to quickly create professional pages without starting from scratch. Save time, stay consistent, and customize designs to fit your brand perfectly.</p>
             </div>
 
             {/* <div className="flex max-sm:flex-col justify-center gap-6 mt-12 max-w-xs mx-auto">
@@ -92,32 +93,67 @@ const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
 
           {/* Blog */}
           <div className="p-8 tracking-wide max-w-7xl max-lg:max-w-2xl max-lg:mx-auto">
-            <div className="grid items-center grid-cols-1 lg:grid-cols-5 gap-8">
-              <div className="lg:col-span-3">
-                <div className="grid sm:grid-cols-3 gap-2 text-center">
-                  <div className="sm:col-span-2 bg-muted-foreground p-4 flex items-center rounded-sm">
-                    <img src="https://picsum.photos/200/300.webp?random=45" alt="Product" className="w-full aspect-[5/4] object-contain object-top" />
+            <div className="grid items-center grid-cols-1 lg:grid-cols-2 gap-8">
+              <div className="lg:col-span-1">
+                <div className="columns-2 md:columns-3 lg:columns-4 space-y-4">
+                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
+                    <img src="https://readymadeui.com/images/gallery-img-1.webp" alt="img-1"
+                      className="h-auto max-w-full object-cover object-top rounded-lg " />
                   </div>
-
-                  <div className="sm:space-y-2 w-full h-full max-sm:grid max-sm:grid-cols-2 max-sm:gap-2">
-                    <div className="bg-muted-foreground p-4 flex items-center rounded-sm w-full h-[140px] sm:h-[200px]">
-                      <img src="https://picsum.photos/200/300.webp?random=46" alt="Product" className="w-full max-h-full object-contain object-top" />
-                    </div>
-
-                    <div className="bg-muted-foreground p-4 flex items-center rounded-sm w-full h-[140px] sm:h-[200px]">
-                      <img src="https://picsum.photos/200/300.webp?random=47" alt="Product" className="w-full max-h-full object-contain object-top" />
-                    </div>
+                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
+                    <img src="https://readymadeui.com/images/gallery-img-2.webp" alt="img-2"
+                      className="h-auto max-w-full object-cover object-top rounded-lg " />
+                  </div>
+                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
+                    <img src="https://readymadeui.com/images/dark-green-tshirt-1.webp" alt="img-3"
+                      className="h-auto max-w-full object-cover object-top rounded-lg " />
+                  </div>
+                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
+                    <img src="https://readymadeui.com/images/body-motion-category.webp" alt="img-4"
+                      className="h-auto max-w-full object-cover object-top rounded-lg " />
+                  </div>
+                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
+                    <img src="https://readymadeui.com/images/gallery-img-5.webp" alt="img-5"
+                      className="h-auto max-w-full object-cover object-top rounded-lg " />
+                  </div>
+                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
+                    <img src="https://readymadeui.com/images/gallery-img-6.webp" alt="img-6"
+                      className="h-auto max-w-full object-cover object-top rounded-lg " />
+                  </div>
+                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
+                    <img src="https://readymadeui.com/images/gallery-img-7.webp" alt="img-7"
+                      className="h-auto max-w-full object-cover object-top rounded-lg " />
+                  </div>
+                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
+                    <img src="https://readymadeui.com/images/gallery-img-8.webp" alt="img-8"
+                      className="h-auto max-w-full object-cover object-top rounded-lg " />
+                  </div>
+                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
+                    <img src="https://readymadeui.com/images/sunscreen-img-3.webp" alt="img-9"
+                      className="h-auto max-w-full object-cover object-top rounded-lg " />
+                  </div>
+                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
+                    <img src="https://readymadeui.com/images/face-body-cream-img-2.webp" alt="img-9"
+                      className="h-auto max-w-full object-cover object-top rounded-lg " />
+                  </div>
+                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
+                    <img src="https://readymadeui.com/images/gallery-img-9.webp" alt="img-9"
+                      className="h-auto max-w-full object-cover object-top rounded-lg " />
+                  </div>
+                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
+                    <img src="https://readymadeui.com/images/gallery-img-3.webp" alt="img-9"
+                      className="h-auto max-w-full object-cover object-top rounded-lg " />
                   </div>
                 </div>
               </div>
 
-              <div className="w-full lg:col-span-2">
+              <div className="w-full lg:col-span-1">
                 <div className="mt-8">
-                  <h3 className="text-lg font-semibold text-foreground">
-                    🧱 The Three Pillars of Beehive
+                  <h3 className="text-2xl font-semibold text-foreground">
+                    🧱 The Three Pillars of {brandConnection.bBrandName.split(" ")[0]} Application
                   </h3>
-                  <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-                    Beehive Corporation is structured around three core applications:
+                  <p className="text-muted-foreground text-sm mt-4 leading-relaxed">
+                    {brandConnection.bBrandName} is structured around three core applications:
                   </p>
 
                   <ul className="space-y-2 list-disc my-2 pl-4 text-sm text-muted-foreground">
@@ -158,7 +194,7 @@ const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
                 {selectedTab === "frontend" && (
                   <div id="frontend-application" >
                     <div className="mt-8">
-                      <h3 className="text-lg font-semibold text-foreground">Frontend Application</h3>
+                      <h3 className="text-2xl font-semibold text-foreground">Frontend Application</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed mt-4">Step up your footwear game with our premium men's shoes. Designed for comfort and crafted with a contemporary aesthetic, these versatile shoes are a must-have addition to your wardrobe. The supple and breathable materials ensure all-day comfort, making them perfect for everyday wear.</p>
                     </div>
 
@@ -174,7 +210,7 @@ const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
                 {selectedTab === "admin" && (
                   <div id="admin-application" >
                     <div className="mt-8">
-                      <h3 className="text-lg font-semibold text-foreground">Admin Application</h3>
+                      <h3 className="text-2xl font-semibold text-foreground">Admin Application</h3>
                       <p className="text-sm text-muted-foreground leading-relaxed mt-4">Step up your footwear game with our premium men's shoes. Designed for comfort and crafted with a contemporary aesthetic, these versatile shoes are a must-have addition to your wardrobe. The supple and breathable materials ensure all-day comfort, making them perfect for everyday wear.</p>
                     </div>
 
@@ -190,7 +226,7 @@ const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
                 {selectedTab === "backend" && (
                   <div id="backend-application" >
                       <div className="mt-8">
-                        <h3 className="text-lg font-semibold text-foreground">Backend Application</h3>
+                        <h3 className="text-2xl font-semibold text-foreground">Backend Application</h3>
                         <p className="text-sm text-muted-foreground leading-relaxed mt-4">Step up your footwear game with our premium men's shoes. Designed for comfort and crafted with a contemporary aesthetic, these versatile shoes are a must-have addition to your wardrobe. The supple and breathable materials ensure all-day comfort, making them perfect for everyday wear.</p>
                       </div>
 

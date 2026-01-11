@@ -121,9 +121,11 @@ const ServiceComponent = (props: ServiceComponentType) => {
                   </svg>
 
                   <h3 className="text-foreground text-lg font-semibold mb-3">AI Automation</h3>
-                  <p className="text-[15px] leading-relaxed text-muted-foreground">Let our AI handle repetitive tasks so you can focus on
-                    creative work that matters.</p>
-                  <a href="javascript:void(0);" className="text-[15px] inline-flex items-center font-medium hover:text-blue-700 mt-12">
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    Let our AI handle repetitive tasks so you can focus on
+                    creative work that matters.
+                  </p>
+                  <a href="javascript:void(0);" className="text-sm inline-flex items-center font-medium hover:text-muted-foreground mt-12">
                     Learn more<svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1.5 fill-current" viewBox="0 0 24 24"><path d="m23.564 11.235-7.56-7.56a1.08 1.08 0 0 0-1.528 1.528l5.717 5.716H1.2a1.08 1.08 0 0 0 0 2.16h18.993l-5.717 5.716a1.08 1.08 0 1 0 1.528 1.528l7.56-7.56a1.08 1.08 0 0 0 0-1.528z" data-original="#000000"></path></svg>
                   </a>
                 </div>
@@ -179,9 +181,9 @@ const ServiceComponent = (props: ServiceComponentType) => {
                   </svg>
 
                   <h3 className="text-foreground text-lg font-semibold mb-3">Advanced Analytics</h3>
-                  <p className="text-[15px] leading-relaxed text-muted-foreground">Get real-time insights and data visualizations to
+                  <p className="text-sm leading-relaxed text-muted-foreground">Get real-time insights and data visualizations to
                     track productivity.</p>
-                  <a href="javascript:void(0);" className="text-[15px] inline-flex items-center font-medium hover:text-blue-700 mt-12">
+                  <a href="javascript:void(0);" className="text-sm inline-flex items-center font-medium hover:text-muted-foreground mt-12">
                     Learn more<svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1.5 fill-current" viewBox="0 0 24 24"><path d="m23.564 11.235-7.56-7.56a1.08 1.08 0 0 0-1.528 1.528l5.717 5.716H1.2a1.08 1.08 0 0 0 0 2.16h18.993l-5.717 5.716a1.08 1.08 0 1 0 1.528 1.528l7.56-7.56a1.08 1.08 0 0 0 0-1.528z" data-original="#000000"></path></svg>
                   </a>
                 </div>
@@ -263,9 +265,9 @@ const ServiceComponent = (props: ServiceComponentType) => {
                   </svg>
 
                   <h3 className="text-foreground text-lg font-semibold mb-3">Team Collaboration</h3>
-                  <p className="text-[15px] leading-relaxed text-muted-foreground">Seamlessly work with your team with shared projects
+                  <p className="text-sm leading-relaxed text-muted-foreground">Seamlessly work with your team with shared projects
                     and real-time updates.</p>
-                  <a href="javascript:void(0);" className="text-[15px] inline-flex items-center font-medium hover:text-blue-700 mt-12">
+                  <a href="javascript:void(0);" className="text-sm inline-flex items-center font-medium hover:text-muted-foreground mt-12">
                     Learn more<svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1.5 fill-current" viewBox="0 0 24 24"><path d="m23.564 11.235-7.56-7.56a1.08 1.08 0 0 0-1.528 1.528l5.717 5.716H1.2a1.08 1.08 0 0 0 0 2.16h18.993l-5.717 5.716a1.08 1.08 0 1 0 1.528 1.528l7.56-7.56a1.08 1.08 0 0 0 0-1.528z" data-original="#000000"></path></svg>
                   </a>
                 </div>
@@ -295,9 +297,9 @@ const ServiceComponent = (props: ServiceComponentType) => {
                   </svg>
 
                   <h3 className="text-foreground text-lg font-semibold mb-3">Smart Scheduling</h3>
-                  <p className="text-[15px] leading-relaxed text-muted-foreground">Automatically optimize your calendar based on
+                  <p className="text-sm leading-relaxed text-muted-foreground">Automatically optimize your calendar based on
                     priorities and energy levels.</p>
-                  <a href="javascript:void(0);" className="text-[15px] inline-flex items-center font-medium hover:text-blue-700 mt-12">
+                  <a href="javascript:void(0);" className="text-sm inline-flex items-center font-medium hover:text-muted-foreground mt-12">
                     Learn more<svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1.5 fill-current" viewBox="0 0 24 24"><path d="m23.564 11.235-7.56-7.56a1.08 1.08 0 0 0-1.528 1.528l5.717 5.716H1.2a1.08 1.08 0 0 0 0 2.16h18.993l-5.717 5.716a1.08 1.08 0 1 0 1.528 1.528l7.56-7.56a1.08 1.08 0 0 0 0-1.528z" data-original="#000000"></path></svg>
                   </a>
                 </div>
@@ -317,9 +319,9 @@ const ServiceComponent = (props: ServiceComponentType) => {
                   </svg>
 
                   <h3 className="text-foreground text-lg font-semibold mb-3">Enterprise Security</h3>
-                  <p className="text-[15px] leading-relaxed text-muted-foreground">Bank-level encryption and compliance to keep your data
+                  <p className="text-sm leading-relaxed text-muted-foreground">Bank-level encryption and compliance to keep your data
                     safe and secure.</p>
-                  <a href="javascript:void(0);" className="text-[15px] inline-flex items-center font-medium hover:text-blue-700 mt-12">
+                  <a href="javascript:void(0);" className="text-sm inline-flex items-center font-medium hover:text-muted-foreground mt-12">
                     Learn more<svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1.5 fill-current" viewBox="0 0 24 24"><path d="m23.564 11.235-7.56-7.56a1.08 1.08 0 0 0-1.528 1.528l5.717 5.716H1.2a1.08 1.08 0 0 0 0 2.16h18.993l-5.717 5.716a1.08 1.08 0 1 0 1.528 1.528l7.56-7.56a1.08 1.08 0 0 0 0-1.528z" data-original="#000000"></path></svg>
                   </a>
                 </div>
@@ -342,9 +344,9 @@ const ServiceComponent = (props: ServiceComponentType) => {
                   </svg>
 
                   <h3 className="text-foreground text-lg font-semibold mb-3">100+ Integrations</h3>
-                  <p className="text-[15px] leading-relaxed text-muted-foreground">Connect with all your favorite tools to create a
+                  <p className="text-sm leading-relaxed text-muted-foreground">Connect with all your favorite tools to create a
                     seamless workflow.</p>
-                  <a href="javascript:void(0);" className="text-[15px] inline-flex items-center font-medium hover:text-blue-700 mt-12">
+                  <a href="javascript:void(0);" className="text-sm inline-flex items-center font-medium hover:text-muted-foreground mt-12">
                     Learn more<svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1.5 fill-current" viewBox="0 0 24 24"><path d="m23.564 11.235-7.56-7.56a1.08 1.08 0 0 0-1.528 1.528l5.717 5.716H1.2a1.08 1.08 0 0 0 0 2.16h18.993l-5.717 5.716a1.08 1.08 0 1 0 1.528 1.528l7.56-7.56a1.08 1.08 0 0 0 0-1.528z" data-original="#000000"></path></svg>
                   </a>
                 </div>
