@@ -41,7 +41,7 @@ import { ProjectModel } from "../bLove/aMCVR/aModel/aDatabaseManagement/gFronten
 
 const markdownPath = path.join(
   process.cwd(),
-  "src/cSeeder/g-auila-static-content.md"
+  "src/cSeeder/g-aquila-static-content.md"
 );
 
 const seeder = async () => {
