@@ -75,32 +75,125 @@
 ### About Application Section
 
 <details>
-  <summary><strong>Backend Instance</strong></summary>
+  <summary><strong>Aquila Application</strong></summary>
 
   - **Title :** 
-    About Backend Application  
-  - **Subtitle :** 
-    The brain powering logic, data, and communication 
-  - **Description :** 
-    🧱 The Three Pillars of Aquila Application
-    
-    Aquila Application is structured around three core applications:
-    - Frontend Application – The public-facing experience
-    - Admin Application – Internal control, content, and operations
-    - Backend Application – The brain powering logic, data, and communication
-    
-    Each app is independently deployable, yet designed to feel like one organism.
-
+    About Aquila Application  
   - **Detail :** 
     
+    Aquila Application is a project aims to develop a dynamic landing page application for Aquila Enterprise, mainly using MERN stack, TypeScript and SocketIO. 
+    Key features include a dedicated admin panel for content management, real-time interaction via SocketIO, and a custom role-based authentication system. 
+    The application will effectively showcase Aquila Enterprise's identity, projects, and more, enhancing user engagement and administrative efficiency. 
     Backend Application - The brain powering logic, data, and communication
+
+    The Power Ingredients of Aquila Application 
+    Aquila Application is crafted with these few technologies: 
+    1. Core Technologies — MongoDB, ExpressJS, ReactJS, NodeJS, TypeScript, SocketIO
+    2. Other Technologies — ReduxJS, RedisDB, Tailwind CSS, Shadcn UI, Axios, JSON Web Token, Cookie Parser, Cloudinary, Node Mailer, CORS
+    
+    The Three Pillars of Aquila Application
+    Aquila Application is structured around three core applications: 
+    1. Frontend Application — The public-facing experience
+    2. Admin Application — Internal control, content, and operations
+    3. Backend Application — The brain powering logic, data, and communication 
+    
+    Each app is independently deployable, yet designed to feel like one organism. 
+</details>
+
+<details>
+  <summary><strong>Aquila Application (Frontend)</strong></summary>
+
+  - **Title :** 
+    About Aquila Application (Frontend)  
+  - **Subtitle :** 
+    The public-facing experience 
+  - **Detail :** 
+    
+    Frontend Application — The public-facing experience
+
+    Aquila Frontend Application is the user-facing interface developed with ReactJS, providing a seamless, dynamic, and responsive experience. 
+    It integrates clean UI/UX design, optimized routing, and state management to render content fetched from the backend APIs. 
+    This application supports Progressive Web App (PWA) capabilities, offers fast load times through code splitting and caching strategies, and ensures smooth interactions with features like form validations, animations, and real-time updates. 
+    It focuses on delivering a polished experience to end-users across all devices. 
     
     🔧 Tech Stack
-    - Node.js + TypeScript
+    - React 18 + TypeScript
+    - Vite for lightning-fast builds
+    - Tailwind CSS
+    - Shadcn UI (accessible, headless UI components)
+    - Redux Toolkit for state and cache management
+    - React Router v7
+    - SocketIO Client for real-time features
+    - Zod + React Hook Form for validation
+    -   React Helmet Async for SEO
+
+    ✨ Key Features
+    - ⚡ High-performance UI with Vite
+    - 🎨 Consistent design system using Shadcn + Tailwind
+    - 🔐 Secure form handling and validation
+    - 🔄 Real-time updates via WebSockets
+    - 🧠 SEO-friendly metadata handling
+    - 📱 Fully responsive, mobile-first design
+</details>
+
+<details>
+  <summary><strong>Aquila Application (Admin)</strong></summary>
+
+  - **Title :** 
+    About Aquila Application (Admin)
+  - **Subtitle :** 
+    Internal control, content, and operations  
+  - **Detail :** 
+
+    Admin Application — Internal control, content, and operations
+
+    Aquila Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations. 
+    This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows. 
+    Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface. 
+    The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+
+    🔧 Tech Stack
+    - React 18 + TypeScript
+    - Vite for lightning-fast builds
+    - Tailwind CSS
+    - Shadcn UI (accessible, headless UI components)
+    - Redux Toolkit for state and cache management
+    - React Router v7
+    - Zod + React Hook Form for validation
+    - SocketIO Client for real-time features
+
+    ✨ Key Features
+    - 👥 User & role management
+    - 📝 Content & data CRUD operations
+    - 📊 Admin-level analytics dashboards
+    - 🔔 Real-time system notifications
+    - 🧩 Reusable, scalable UI components
+    - 🛡️ Secure access-controlled routes
+    - ⚙️ Configuration-driven layouts
+</details>
+
+<details>
+  <summary><strong>Aquila Application (Backend)</strong></summary>
+
+  - **Title :** 
+    About Aquila Application (Backend)
+  - **Subtitle :** 
+    The brain powering logic, data, and communication   
+  - **Detail :** 
+    
+    Backend Application — The brain powering logic, data, and communication 
+
+    Aquila Backend Application is built using NodeJS and ExpressJS, forming the core API layer of the MERN stack system. 
+    It handles business logic, authentication, authorization, database interactions, and secure communication with the frontend. 
+    This service exposes RESTful APIs, manages real-time events using SocketIO (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. 
+    It is designed for scalability, modularity, and high availability. 
+
+    🔧 Tech Stack
+    - NodeJS + TypeScript
     - Express 5
     - MongoDB + Mongoose
     - Redis (ioredis) for caching
-    - Socket.io for real-time events
+    - SocketIO for real-time events
     - JWT Authentication
     - Winston for logging
     - Cloudinary for media handling
@@ -113,101 +206,12 @@
     - 🔐 Secure authentication & authorization
     - 🧠 Centralized business logic
     - ⚡ Redis-based caching for performance
-    - 🔄 Real-time data sync with Socket.io
+    - 🔄 Real-time data sync with SocketIO
     - 🗂️ Scalable MongoDB schema design
     - 📩 Email & notification services
     - 🕒 Scheduled background jobs
     - 📜 Structured logging & monitoring
     - 🌍 Geo-aware request handling
-
-</details>
-
-<details>
-  <summary><strong>Adminstration Instance</strong></summary>
-
-  - **Title :** 
-    About Admin Application 
-  - **Subtitle :** 
-    Internal control, content, and operations  
-  - **Description :** 
-    🧱 The Three Pillars of Aquila Application
-    
-    Aquila Application is structured around three core applications:
-    - Frontend Application – The public-facing experience
-    - Admin Application – Internal control, content, and operations
-    - Backend Application – The brain powering logic, data, and communication
-    
-    Each app is independently deployable, yet designed to feel like one organism.
-
-  - **Detail :** 
-
-    The Admin project is a powerful internal dashboard built to manage content, users, data, and system behavior.
-
-    🔧 Tech Stack
-    - React 18 + TypeScript
-    - Vite
-    - Tailwind CSS
-    - Radix UI
-    - Redux Toolkit
-    - TanStack React Table (advanced data grids)
-    - React Hook Form + Zod
-    - Socket.io Client
-    - Framer Motion
-    
-    ✨ Key Features
-    - 👥 User & role management
-    - 📝 Content & data CRUD operations
-    - 📊 Admin-level analytics dashboards
-    - 🔔 Real-time system notifications
-    - 🧩 Reusable, scalable UI components
-    - 🛡️ Secure access-controlled routes
-    - ⚙️ Configuration-driven layouts
-
-</details>
-
-<details>
-  <summary><strong>Frontend Instance</strong></summary>
-
-  - **Title :** 
-    About Frontend Application  
-  - **Subtitle :** 
-    The public-facing experience  
-  - **Description :** 
-    🧱 The Three Pillars of Aquila Application
-    
-    Aquila Application is structured around three core applications:
-    - Frontend Application – The public-facing experience
-    - Admin Application – Internal control, content, and operations
-    - Backend Application – The brain powering logic, data, and communication
-    
-    Each app is independently deployable, yet designed to feel like one organism.
-    
-  - **Detail :** 
-    
-    The Frontend is responsible for delivering a fast, interactive, and visually polished user experience.
-
-    🔧 Tech Stack
-    - React 18 + TypeScript
-    - Vite for lightning-fast builds
-    - Tailwind CSS + tailwind-merge
-    - Radix UI (accessible, headless UI components)
-    - Redux Toolkit for state management
-    - React Router v7
-    - Framer Motion for animations
-    - Socket.io Client for real-time features
-    - Zod + React Hook Form for validation
-    - Recharts for data visualization
-    - React Helmet Async for SEO
-    
-    ✨ Key Features
-    - ⚡ High-performance UI with Vite
-    - 🎨 Consistent design system using Radix + Tailwind
-    - 🔐 Secure form handling and validation
-    - 🔄 Real-time updates via WebSockets
-    - 📊 Interactive charts and analytics
-    - 🧠 SEO-friendly metadata handling
-    - 📱 Fully responsive, mobile-first design
-
 </details>
 
 ---
