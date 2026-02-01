@@ -3,7 +3,7 @@ import React from 'react'
 
 type AdminProjectPageComponentType = {
   reduxCall: any,
-  // apiCall: any,
+  apiCall: any,
 }
 
 const AdminProjectPageComponent = (_props: AdminProjectPageComponentType) => {
@@ -14,6 +14,7 @@ const AdminProjectPageComponent = (_props: AdminProjectPageComponentType) => {
 
       <div className="overflow-hidden" >
       </div>
+      
     </React.Fragment>
   )
 }

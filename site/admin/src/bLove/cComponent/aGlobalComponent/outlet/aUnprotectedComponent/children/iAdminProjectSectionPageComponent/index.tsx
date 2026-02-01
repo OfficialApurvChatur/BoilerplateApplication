@@ -3,6 +3,8 @@ import React from 'react'
 import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
 
+import { ProjectSectionComponent } from './component/aProjectSectionComponent';
+
 
 type AdminProjectSectionPageComponentType = {
   reduxCall: any,
@@ -77,7 +79,7 @@ const AdminProjectSectionPageComponent = (props: AdminProjectSectionPageComponen
           (apiCall.retrieveAPIResponse.data.success) ? (
             <React.Fragment>
 
-              <div className="py-8" >
+              {/* <div className="py-8" >
                 <p className="font-myPrimaryFont text-2xl" >
                   Project Section Section
                 </p>
@@ -142,10 +144,14 @@ const AdminProjectSectionPageComponent = (props: AdminProjectSectionPageComponen
 
                   ))}
                 </div>
-              </div>
-
-              {/* <div className="overflow-hidden" >
               </div> */}
+
+              <div className="overflow-hidden" >
+                <ProjectSectionComponent
+                  reduxCall={props.reduxCall}
+                  apiResponse={apiResponse as ProjectSectionComponentDataType}
+                />
+              </div>
 
             </React.Fragment>
           ) : null

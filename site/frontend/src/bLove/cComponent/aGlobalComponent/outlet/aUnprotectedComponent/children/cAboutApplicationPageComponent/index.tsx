@@ -3,7 +3,7 @@ import React from 'react'
 import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
 
-// import { AboutComponent } from './component/dAboutComponent';
+import { AboutApplicationComponent } from './component/aAboutApplicationComponent';
 
 
 type AboutApplicationPageComponentType = {
@@ -16,11 +16,12 @@ export type AboutApplicationComponentDataType = {
   aTitle: string;
   aSubtitle: string;
   aDescription: string;
+  aDetail?: string;
   dTechIcon: {
     aIconLabel: string;
     bIconValue: string;
   }[];
-};
+}[];
 
 const AboutApplicationPageComponent = (props: AboutApplicationPageComponentType) => {
   // Destructure Props
@@ -56,7 +57,7 @@ const AboutApplicationPageComponent = (props: AboutApplicationPageComponentType)
           (props.apiCall.retrieveAPIResponse.data.success) ? (
             <React.Fragment>
 
-              <div className="py-8" >
+              {/* <div className="py-8" >
                 <p className="font-myPrimaryFont text-2xl" >
                   About Application
                 </p>
@@ -78,11 +79,15 @@ const AboutApplicationPageComponent = (props: AboutApplicationPageComponentType)
                     <p className="px-4" >{`${index+1}) ${each?.aIconLabel} (${each?.bIconValue})`}</p>
                   ))}
                 </p>
-              </div>
-
-              {/* <div className="overflow-hidden" >
-                <AboutComponent reduxCall={props.reduxCall} />
               </div> */}
+
+              <div className="overflow-hidden" >
+                <AboutApplicationComponent 
+                  reduxCall={props.reduxCall} 
+                  apiResponse={apiResponse as AboutApplicationComponentDataType} 
+                />
+              </div>
+              
             </React.Fragment>
           ) : []
         ) : []

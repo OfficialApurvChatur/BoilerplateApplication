@@ -55,6 +55,11 @@ const brandConnection = {
   tFrontendProductionURL2: "https://boilerplate-frontend-v02.netlify.app",
 
   uTagName: "Skip setup. Start building.",
+
+  vMainApplication: "Boilerplate Application",
+  vFrontendApplication: "Boilerplate Application (Frontend)",
+  vAdminApplication: "Boilerplate Application (Admin)",
+  vBackendApplication: "Boilerplate Application (Backend)",
 }
 
 export default brandConnection;

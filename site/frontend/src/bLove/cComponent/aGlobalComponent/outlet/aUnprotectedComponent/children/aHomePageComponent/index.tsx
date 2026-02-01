@@ -49,11 +49,12 @@ export type AboutApplicationComponentDataType = {
   aTitle: string;
   aSubtitle: string;
   aDescription: string;
+  aDetail?: string;
   dTechIcon: {
     aIconLabel: string;
     bIconValue: string;
   }[];
-};
+}[];
 
 export type ServiceComponentDataType = {
   aImage: string;
@@ -61,7 +62,7 @@ export type ServiceComponentDataType = {
   aSubtitle: string;
   aDescription: string;
   dLinks: {
-    aLinkTitle: 'Instagram' | 'Twitter' | 'Linkedin' | 'Portfolio' | 'Other';
+    aLinkTitle: 'Instagram' | 'X' | 'Linkedin' | 'Github' | 'Threads';
     bLinkURL: string;
   }[];
   dIcon: {
@@ -145,6 +146,7 @@ export type ContactInfoComponentDataType = {
   aTitle: string;
   aSubtitle: string;
   aDescription: string;
+  aDetail?: string;
 };
 
 type AdminHomePageDataType = {

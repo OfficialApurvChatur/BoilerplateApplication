@@ -3,6 +3,8 @@ import React from 'react'
 import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
 
+import { ServiceComponent } from './component/aServiceComponent';
+
 
 type AdminServicePageComponentType = {
   reduxCall: any,
@@ -16,7 +18,7 @@ export type ServiceComponentDataType = {
   aDescription: string;
   aDetail: string;
   dLinks: {
-    aLinkTitle: 'Instagram' | 'Twitter' | 'Linkedin' | 'Portfolio' | 'Other';
+    aLinkTitle: 'Instagram' | 'X' | 'Linkedin' | 'Github' | 'Threads';
     bLinkURL: string;
   }[];
   dIcon: {
@@ -59,7 +61,7 @@ const AdminServicePageComponent = (props: AdminServicePageComponentType) => {
           (apiCall.retrieveAPIResponse.data.success) ? (
             <React.Fragment>
               
-              <div className="py-8" >
+              {/* <div className="py-8" >
                 <p className="font-myPrimaryFont text-2xl" >
                   Service Section
                 </p>
@@ -93,10 +95,15 @@ const AdminServicePageComponent = (props: AdminServicePageComponentType) => {
                     </p>
                   </div>
                 ))}
-              </div>
-
-              {/* <div className="overflow-hidden" >
               </div> */}
+
+              <div className="overflow-hidden" >
+                <ServiceComponent
+                  reduxCall={props.reduxCall}
+                  apiResponse={apiResponse as ServiceComponentDataType[]}
+                />
+              </div>
+              
             </React.Fragment>
           ) : null
         ) : null

@@ -38,9 +38,10 @@ const adminHomePageController = (Model= "AdminHomePageModel", Label= "AdminHomeP
         .lean();
 
       const aboutApplication = await AdminAboutApplicationModel
-        .findOne()
+        .find()
         .sort({ createdAt: -1 })
-        .select("aImage aTitle aSubtitle aDescription dTechIcon")
+        .select("aImage aTitle aSubtitle aDescription aDetail dTechIcon")
+        .limit(4)
         .lean();
 
       const contactInfo = await AdminContactInfoModel

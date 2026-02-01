@@ -3,7 +3,7 @@ import React from 'react'
 import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
 
-import { AboutComponent } from './component/aAboutComponent';
+import { AboutCompanyComponent } from './component/aAboutCompanyComponent';
 
 
 type AdminAboutCompanyPageComponentType = {
@@ -64,7 +64,7 @@ const AdminAboutCompanyPageComponent = (props: AdminAboutCompanyPageComponentTyp
           (props.apiCall.retrieveAPIResponse.data.success) ? (
             <React.Fragment>
               
-              <div className="py-8" >
+              {/* <div className="py-8" >
                 <p className="font-myPrimaryFont text-2xl" >
                   Truly About Company
                 </p>
@@ -110,11 +110,15 @@ const AdminAboutCompanyPageComponent = (props: AdminAboutCompanyPageComponentTyp
                 <p className="font-mySecondaryFont text-sm" >
                   Tag: {apiResponse?.relatively?.dTag}
                 </p>
-              </div>
+              </div> */}
 
               <div className="overflow-hidden" >
-                <AboutComponent reduxCall={props.reduxCall} />
+                <AboutCompanyComponent 
+                  reduxCall={props.reduxCall} 
+                  apiResponse={apiResponse as AboutCompanyComponentDataType} 
+                />
               </div>
+              
             </React.Fragment>
           ) : []
         ) : []

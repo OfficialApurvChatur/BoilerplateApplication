@@ -3,6 +3,8 @@ import React from 'react'
 import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
 
+import { BranchSectionComponent } from './component/aBranchSectionComponent';
+
 
 type BranchSectionPageComponentType = {
   reduxCall: any,
@@ -77,7 +79,7 @@ const BranchSectionPageComponent = (props: BranchSectionPageComponentType) => {
           (apiCall.retrieveAPIResponse.data.success) ? (
             <React.Fragment>
 
-              <div className="py-8" >
+              {/* <div className="py-8" >
                 <p className="font-myPrimaryFont text-2xl" >
                   Branch Section Section
                 </p>
@@ -142,10 +144,14 @@ const BranchSectionPageComponent = (props: BranchSectionPageComponentType) => {
 
                   ))}
                 </div>
-              </div>
-
-              {/* <div className="overflow-hidden" >
               </div> */}
+
+              <div className="overflow-hidden" >
+                <BranchSectionComponent
+                  reduxCall={props.reduxCall}
+                  apiResponse={apiResponse as BranchSectionComponentDataType}
+                />
+              </div>
 
             </React.Fragment>
           ) : null

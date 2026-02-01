@@ -1,7 +1,7 @@
 import React from 'react'
+import { Link } from 'react-router-dom';
 import { HeroComponentDataType } from '../..';
 import { GitHubLogoIcon, InstagramLogoIcon, LinkedInLogoIcon, ThreadsLogoIcon, TwitterLogoIcon } from '@/bLove/hAsset/Icons';
-import { Link } from 'react-router-dom';
 import fullRoute from '@/bLove/gRoute/bFullRoute';
 
 
@@ -65,7 +65,12 @@ const HeroComponent = (props: HeroComponentType) => {
               <div className="grid lg:grid-cols-2 justify-center items-center gap-x-12 gap-y-16">
                 <div>
                   <div className="max-w-3xl max-lg:mx-auto max-lg:text-center">
-                    <p className="mb-8 font-medium text-muted-foreground">
+                    <img
+                      src={apiResponse.aImage || "https://picsum.photos/200/300.webp?random=1"}
+                      alt="Logo"
+                      className="max-lg:mx-auto lg:ml-6 mb-4 h-32 w-auto object-contain"
+                    />
+                    <p className="mb-4 font-medium text-muted-foreground">
                       {apiResponse.dTag}
                     </p>
                     <h1 className="md:text-5xl text-4xl font-bold leading-tight uppercase">
@@ -95,38 +100,49 @@ const HeroComponent = (props: HeroComponentType) => {
                         </Link>
                       ))}
 
-                      <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hMainRoute.aDashboardRoute} >
-                        <button 
-                          type='button'
-                          className="
-                            bg-background hover:bg-background/50 
-                            border border-muted-foreground hover:border-muted-foreground/50 transition-all 
-                            text-base text-muted-foreground font-medium 
-                            rounded-lg px-5 py-3 cursor-pointer outline-0
-                          "
-                        >
-                          Explore Features
-                        </button>
-                      </Link>
+
+                      {
+                        (
+                          props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && 
+                          props.reduxCall.state.receivedObject?.AccountRetrieve?._id
+                        ) ? (
+                          <Link to={fullRoute.aGlobalRoute.aUnprotectedRoute.iProjectSectionPageRoute} >
+                            <button 
+                              type='button'
+                              className="
+                                bg-background hover:bg-background/50 
+                                border border-muted-foreground hover:border-muted-foreground/50 transition-all 
+                                text-base text-muted-foreground font-medium 
+                                rounded-lg px-5 py-3 cursor-pointer outline-0
+                              "
+                            >
+                              Explore Projects
+                            </button>
+                          </Link>
+                        ) : (
+                          props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Not Verified" && 
+                          !props.reduxCall.state.receivedObject?.AccountRetrieve?._id
+                        ) ? (
+                          <Link to={fullRoute.aGlobalRoute.bProtectedRoute.aAutheticatedRoute.bSignUpRoute} >
+                            <button 
+                              type='button'
+                              className="
+                                bg-background hover:bg-background/50 
+                                border border-muted-foreground hover:border-muted-foreground/50 transition-all 
+                                text-base text-muted-foreground font-medium 
+                                rounded-lg px-5 py-3 cursor-pointer outline-0
+                              "
+                            >
+                              Join Us
+                            </button>
+                          </Link>
+                        ) : (
+                          null
+                        )
+                      }
+
                     </div>
                   </div>
-
-                  {/* <div className="mt-12">
-                    <div className="grid sm:grid-cols-3 gap-x-4 gap-y-6 max-lg:text-center">
-                      <div className="flex flex-col">
-                        <h5 className="text-muted-foreground font-semibold text-2xl mb-2">10+</h5>
-                        <p className="text-base text-foreground font-medium">Years Experience</p>
-                      </div>
-                      <div className="flex flex-col">
-                        <h5 className="text-muted-foreground font-semibold text-2xl mb-2">890</h5>
-                        <p className="text-base text-foreground font-medium">Cases Solved</p>
-                      </div>
-                      <div className="flex flex-col">
-                        <h5 className="text-muted-foreground font-semibold text-2xl mb-2">250</h5>
-                        <p className="text-base text-foreground font-medium">Business Partners</p>
-                      </div>
-                    </div>
-                  </div> */}
 
                   <div className="mt-12">
                     <p className="text-base text-muted-foreground text-center lg:text-left">Follow us for the latest updates:</p>
@@ -151,23 +167,34 @@ const HeroComponent = (props: HeroComponentType) => {
                   </div>
                 </div>
 
-                <div className="columns-2 space-y-4">
-                  <div className="break-inside-avoid p-1 bg-muted-foreground rounded-lg">
-                    <img src="https://picsum.photos/200/300.webp?random=1" alt="img-1"
-                      className="w-full h-full object-cover object-top rounded-lg max-h-[360px]" />
-                  </div>
-                  <div className="break-inside-avoid p-1 bg-muted-foreground rounded-lg">
-                    <img src="https://picsum.photos/200/300.webp?random=2" alt="img-2"
-                      className="w-full h-full object-cover object-top rounded-lg max-h-[360px]" />
-                  </div>
-                  <div className="break-inside-avoid p-1 bg-muted-foreground rounded-lg">
-                    <img src="https://picsum.photos/200/300.webp?random=3" alt="img-3"
-                      className="w-full h-full object-cover object-top rounded-lg max-h-[360px]" />
-                  </div>
-                  <div className="break-inside-avoid p-1 bg-muted-foreground rounded-lg">
-                    <img src="https://picsum.photos/200/300.webp?random=4" alt="img-4"
-                      className="w-full h-full object-cover object-top rounded-lg max-h-[360px]" />
-                  </div>
+                <div className="columns-3 space-y-4">
+                  {apiResponse.dGalleryImages?.map((each, index) => (
+                    <div
+                      key={each}
+                      className="
+                        break-inside-avoid p-1 bg-muted rounded-xl
+                        border-2 border-muted-foreground
+                        shadow-foreground shadow-sm hover:shadow-xl 
+                        transition-all duration-300 hover:-translate-y-1
+                      "
+                    >
+                      <div className="relative w-full aspect-square rounded-xl overflow-hidden">
+                        <img
+                          src={each || "https://picsum.photos/200/300.webp?random=1"}
+                          alt={`img-${index}`}
+                          className="w-full h-full object-cover object-top p-6"
+                        />
+
+                        <div
+                          className="
+                            pointer-events-none absolute inset-0
+                            bg-gradient-to-t
+                            from-current/80 via-transparent to-transparent
+                          "
+                        />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

@@ -1,5 +1,10 @@
 import React, { useState } from 'react'
 import { AboutApplicationComponentDataType } from '../..';
+
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+import rehypeRaw from "rehype-raw";
+
 import brandConnection from '@/aConnection/eBrandConnection';
 
 
@@ -10,11 +15,22 @@ type AboutApplicationComponentType = {
 
 const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
   // Destructure Props
-  const {} = props;
+  const { apiResponse } = props;
+
+  // Variable
+  const mainApplication = `About ${brandConnection.vMainApplication}`;
+  const frontendApplication = `About ${brandConnection.vFrontendApplication}`;
+  const adminApplication = `About ${brandConnection.vAdminApplication}`;
+  const backendApplication = `About ${brandConnection.vBackendApplication}`;
+
+  const aboutMainApplication = apiResponse.find((each) => each.aTitle === mainApplication);
+  const aboutFrontendApplication = apiResponse.find((each) => each.aTitle === frontendApplication);
+  const aboutAdminApplication = apiResponse.find((each) => each.aTitle === adminApplication);
+  const aboutBackendApplication = apiResponse.find((each) => each.aTitle === backendApplication);
 
   // State Variable
-  type TabKey = "frontend" | "admin" | "backend";
-  const [selectedTab, setSelectedTab] = useState<TabKey>("frontend");
+  type TabKey = typeof frontendApplication | typeof adminApplication | typeof backendApplication;
+  const [selectedTab, setSelectedTab] = useState<TabKey>(frontendApplication);
 
   // Samll Utility
   const tabClass = (tab: TabKey) =>`
@@ -55,188 +71,144 @@ const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
         </p>
       </div> */}
 
-      <section id="about-company" >
+      <section id="about-application" >
         <div className="bg-gradient-to-tl from-muted/60 via-muted/60 to-muted/20 p-6 sm:p-8">
           {/* Header */}
           <div className="max-w-xl mx-auto text-center py-20">
             <div className="relative after:absolute after:-bottom-5 after:h-1 after:w-1/2 after:bg-foreground after:left-0 after:right-0 after:mx-auto after:rounded-full">
-              <h2 className="text-foreground text-4xl font-bold !leading-tight">Discover {brandConnection.bBrandName.split(" ")[0]} Application</h2>
+              <h2 className="text-foreground text-4xl font-bold !leading-tight uppercase">About Application</h2>
             </div>
             <div className="mt-12">
-              <p className="text-muted-foreground text-base leading-relaxed">Try using our templates to quickly create professional pages without starting from scratch. Save time, stay consistent, and customize designs to fit your brand perfectly.</p>
+              <p className="text-muted-foreground text-base leading-relaxed">
+                This section gives a clear introduction to the application, explaining 
+                what it does, how it works, and the value it delivers to users.
+              </p>
             </div>
-
-            {/* <div className="flex max-sm:flex-col justify-center gap-6 mt-12 max-w-xs mx-auto">
-              <button 
-                type="button"
-                className="
-                  min-w-[140px] rounded-sm cursor-pointer px-4 py-2.5 
-                  text-sm tracking-wider font-medium outline-none border 
-                  text-background border-foreground bg-foreground hover:bg-transparent hover:text-foreground 
-                  transition-all duration-300
-                "
-              >
-                Try now
-              </button>
-              <button 
-                type="button"
-                className="
-                  min-w-[140px] rounded-sm cursor-pointer px-4 py-2.5 
-                  text-sm tracking-wider font-medium outline-none border 
-                  text-foreground hover:text-background border-foreground hover:bg-foreground 
-                  transition-all duration-300"
-              >
-                Cancel
-              </button>
-            </div> */}
           </div>
 
           {/* Blog */}
           <div className="p-8 tracking-wide max-w-7xl max-lg:max-w-2xl max-lg:mx-auto">
-            <div className="grid items-center grid-cols-1 lg:grid-cols-2 gap-8">
+            <div className="grid items-start grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="lg:col-span-1">
-                <div className="columns-2 md:columns-3 lg:columns-4 space-y-4">
-                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
-                    <img src="https://readymadeui.com/images/gallery-img-1.webp" alt="img-1"
-                      className="h-auto max-w-full object-cover object-top rounded-lg " />
-                  </div>
-                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
-                    <img src="https://readymadeui.com/images/gallery-img-2.webp" alt="img-2"
-                      className="h-auto max-w-full object-cover object-top rounded-lg " />
-                  </div>
-                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
-                    <img src="https://readymadeui.com/images/dark-green-tshirt-1.webp" alt="img-3"
-                      className="h-auto max-w-full object-cover object-top rounded-lg " />
-                  </div>
-                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
-                    <img src="https://readymadeui.com/images/body-motion-category.webp" alt="img-4"
-                      className="h-auto max-w-full object-cover object-top rounded-lg " />
-                  </div>
-                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
-                    <img src="https://readymadeui.com/images/gallery-img-5.webp" alt="img-5"
-                      className="h-auto max-w-full object-cover object-top rounded-lg " />
-                  </div>
-                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
-                    <img src="https://readymadeui.com/images/gallery-img-6.webp" alt="img-6"
-                      className="h-auto max-w-full object-cover object-top rounded-lg " />
-                  </div>
-                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
-                    <img src="https://readymadeui.com/images/gallery-img-7.webp" alt="img-7"
-                      className="h-auto max-w-full object-cover object-top rounded-lg " />
-                  </div>
-                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
-                    <img src="https://readymadeui.com/images/gallery-img-8.webp" alt="img-8"
-                      className="h-auto max-w-full object-cover object-top rounded-lg " />
-                  </div>
-                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
-                    <img src="https://readymadeui.com/images/sunscreen-img-3.webp" alt="img-9"
-                      className="h-auto max-w-full object-cover object-top rounded-lg " />
-                  </div>
-                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
-                    <img src="https://readymadeui.com/images/face-body-cream-img-2.webp" alt="img-9"
-                      className="h-auto max-w-full object-cover object-top rounded-lg " />
-                  </div>
-                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
-                    <img src="https://readymadeui.com/images/gallery-img-9.webp" alt="img-9"
-                      className="h-auto max-w-full object-cover object-top rounded-lg " />
-                  </div>
-                  <div className=" bg-muted-foreground p-1 rounded-lg overflow-hidden">
-                    <img src="https://readymadeui.com/images/gallery-img-3.webp" alt="img-9"
-                      className="h-auto max-w-full object-cover object-top rounded-lg " />
-                  </div>
+                <div className="columns-3 lg:columns-4 space-y-4">
+                  {aboutMainApplication?.dTechIcon?.map((each, index) => (
+                    <div
+                      key={each.aIconLabel}
+                      className="
+                        break-inside-avoid p-[2px] bg-muted rounded-xl
+                        border-2 border-muted-foreground
+                        shadow-foreground shadow-sm hover:shadow-xl 
+                        transition-all duration-300 hover:-translate-y-1
+                      "
+                    >
+                      <div className="relative w-full aspect-square rounded-xl overflow-hidden">
+                        <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
+                          <img
+                            src={each.bIconValue || "https://picsum.photos/200/300.webp?random=1"}
+                            alt={`img-${index}`}
+                            className="max-w-full max-h-full object-contain"
+                          />
+                        </div>
+                        <div
+                          className="
+                            pointer-events-none absolute inset-0
+                            bg-gradient-to-t
+                            from-current/80 via-transparent to-transparent
+                          "
+                        />
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
 
               <div className="w-full lg:col-span-1">
-                <div className="mt-8">
-                  <h3 className="text-2xl font-semibold text-foreground">
-                    🧱 The Three Pillars of {brandConnection.bBrandName.split(" ")[0]} Application
-                  </h3>
-                  <p className="text-muted-foreground text-sm mt-4 leading-relaxed">
-                    {brandConnection.bBrandName} is structured around three core applications:
-                  </p>
-
-                  <ul className="space-y-2 list-disc my-2 pl-4 text-sm text-muted-foreground">
-                    <li>Frontend Application – The public-facing experience</li>
-                    <li>Admin Application – Internal control, content, and operations</li>
-                    <li>Backend Application – The brain powering logic, data, and communication</li>
-                  </ul>
-                    
-                  <p className="text-muted-foreground text-sm mt-1 leading-relaxed">
-                    Each app is independently deployable, yet designed to feel like one organism.
-                  </p>
-                </div>
+                <p className="text-sm text-muted-foreground">
+                  <article 
+                    className="
+                      prose max-w-none dark:prose-invert prose-headings:font-bold text-sm
+                      prose-li:marker:text-foreground leading-normal text-muted-foreground
+                    "
+                  >
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
+                      {aboutMainApplication?.aDetail}
+                    </ReactMarkdown>
+                  </article>
+                </p>
               </div>
             </div>
 
             <div className="mt-12 w-full lg:w-11/13">
               <ul className="flex flex-col lg:flex-row border-b border-muted-foreground">
                 <li
-                  className={tabClass("frontend")}
-                  onClick={() => setSelectedTab("frontend")}
+                  className={tabClass(frontendApplication)}
+                  onClick={() => setSelectedTab(frontendApplication)}
                 >
                   🌐 Frontend Application
                 </li>
                 <li 
-                  className={tabClass("admin")}
-                  onClick={() => setSelectedTab("admin")}
+                  className={tabClass(adminApplication)}
+                  onClick={() => setSelectedTab(adminApplication)}
                 >
                   🧠 Admin Application
                 </li>
                 <li 
-                  className={tabClass("backend")}
-                  onClick={() => setSelectedTab("backend")}
+                  className={tabClass(backendApplication)}
+                  onClick={() => setSelectedTab(backendApplication)}
                 >
                   🧩 Backend Application
                 </li>
               </ul>
 
-                {selectedTab === "frontend" && (
+                {selectedTab === frontendApplication && (
                   <div id="frontend-application" >
-                    <div className="mt-8">
-                      <h3 className="text-2xl font-semibold text-foreground">Frontend Application</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mt-4">Step up your footwear game with our premium men's shoes. Designed for comfort and crafted with a contemporary aesthetic, these versatile shoes are a must-have addition to your wardrobe. The supple and breathable materials ensure all-day comfort, making them perfect for everyday wear.</p>
-                    </div>
-
-                    <ul className="space-y-3 list-disc mt-6 pl-4 text-sm text-muted-foreground">
-                      <li>A pair of gray shoes is a wardrobe essential due to its versatility.</li>
-                      <li>Available in a wide range of sizes, from extra small to extra large, and even in tall and petite sizes.</li>
-                      <li>Easy to maintain, they can be machine-washed and dried on low heat.</li>
-                      <li>Personalize them with your own designs, patterns, or embellishments to make them uniquely yours.</li>
-                    </ul>
+                    <p className="text-sm text-muted-foreground mt-8">
+                      <article 
+                        className="
+                          prose max-w-none dark:prose-invert prose-headings:font-bold text-sm
+                          prose-li:marker:text-foreground leading-normal text-muted-foreground
+                        "
+                      >
+                        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
+                          {aboutFrontendApplication?.aDetail}
+                        </ReactMarkdown>
+                      </article>
+                    </p>
                   </div>
                 )}
                             
-                {selectedTab === "admin" && (
+                {selectedTab === adminApplication && (
                   <div id="admin-application" >
-                    <div className="mt-8">
-                      <h3 className="text-2xl font-semibold text-foreground">Admin Application</h3>
-                      <p className="text-sm text-muted-foreground leading-relaxed mt-4">Step up your footwear game with our premium men's shoes. Designed for comfort and crafted with a contemporary aesthetic, these versatile shoes are a must-have addition to your wardrobe. The supple and breathable materials ensure all-day comfort, making them perfect for everyday wear.</p>
-                    </div>
-
-                    <ul className="space-y-3 list-disc mt-6 pl-4 text-sm text-muted-foreground">
-                      <li>A pair of gray shoes is a wardrobe essential due to its versatility.</li>
-                      <li>Available in a wide range of sizes, from extra small to extra large, and even in tall and petite sizes.</li>
-                      <li>Easy to maintain, they can be machine-washed and dried on low heat.</li>
-                      <li>Personalize them with your own designs, patterns, or embellishments to make them uniquely yours.</li>
-                    </ul>
+                    <p className="text-sm text-muted-foreground mt-8">
+                      <article 
+                        className="
+                          prose max-w-none dark:prose-invert prose-headings:font-bold text-sm
+                          prose-li:marker:text-foreground leading-normal text-muted-foreground
+                        "
+                      >
+                        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
+                          {aboutAdminApplication?.aDetail}
+                        </ReactMarkdown>
+                      </article>
+                    </p>
                   </div>
                 )}
                             
-                {selectedTab === "backend" && (
+                {selectedTab === backendApplication && (
                   <div id="backend-application" >
-                      <div className="mt-8">
-                        <h3 className="text-2xl font-semibold text-foreground">Backend Application</h3>
-                        <p className="text-sm text-muted-foreground leading-relaxed mt-4">Step up your footwear game with our premium men's shoes. Designed for comfort and crafted with a contemporary aesthetic, these versatile shoes are a must-have addition to your wardrobe. The supple and breathable materials ensure all-day comfort, making them perfect for everyday wear.</p>
-                      </div>
-
-                      <ul className="space-y-3 list-disc mt-6 pl-4 text-sm text-muted-foreground">
-                        <li>A pair of gray shoes is a wardrobe essential due to its versatility.</li>
-                        <li>Available in a wide range of sizes, from extra small to extra large, and even in tall and petite sizes.</li>
-                        <li>Easy to maintain, they can be machine-washed and dried on low heat.</li>
-                        <li>Personalize them with your own designs, patterns, or embellishments to make them uniquely yours.</li>
-                      </ul>
-                    </div>
+                    <p className="text-sm text-muted-foreground mt-8">
+                      <article 
+                        className="
+                          prose max-w-none dark:prose-invert prose-headings:font-bold text-sm
+                          prose-li:marker:text-foreground leading-normal text-muted-foreground
+                        "
+                      >
+                        <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
+                          {aboutBackendApplication?.aDetail}
+                        </ReactMarkdown>
+                      </article>
+                    </p>
+                  </div>
                   )}
                             
             </div>

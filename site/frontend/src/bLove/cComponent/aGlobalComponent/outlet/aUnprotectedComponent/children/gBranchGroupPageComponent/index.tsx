@@ -3,7 +3,7 @@ import React from 'react'
 
 type BranchGroupPageComponentType = {
   reduxCall: any,
-  // apiCall: any,
+  apiCall: any,
 }
 
 const BranchGroupPageComponent = (_props: BranchGroupPageComponentType) => {
@@ -14,6 +14,7 @@ const BranchGroupPageComponent = (_props: BranchGroupPageComponentType) => {
 
       <div className="overflow-hidden" >
       </div>
+      
     </React.Fragment>
   )
 }

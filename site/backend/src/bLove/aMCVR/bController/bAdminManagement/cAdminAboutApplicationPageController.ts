@@ -20,9 +20,10 @@ const adminAboutApplicationPageController = (Model= "AdminAboutApplicationPageMo
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
 
       const aboutApplication = await AdminAboutApplicationModel
-        .findOne()
+        .find()
         .sort({ createdAt: -1 })
-        .select("aImage aTitle aSubtitle aDescription dTechIcon")
+        .select("aImage aTitle aSubtitle aDescription aDetail dTechIcon")
+        .limit(4)
         .lean();
 
       const responseData = {

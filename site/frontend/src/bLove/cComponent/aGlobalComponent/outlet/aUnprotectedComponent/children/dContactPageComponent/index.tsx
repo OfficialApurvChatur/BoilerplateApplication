@@ -3,7 +3,7 @@ import React from 'react'
 import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent';
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent';
 
-// import { ContactFormComponent } from './component/aContactFormComponent';
+import { ContactComponent } from './component/aContactComponent';
 
 
 type ContactPageComponentType = {
@@ -11,7 +11,7 @@ type ContactPageComponentType = {
   apiCall: any,
 }
 
-export type AdminContactPageDataType = {
+export type ContactComponentDataType = {
   aImage: string;
   aTitle: string;
   aSubtitle: string;
@@ -24,7 +24,7 @@ const ContactPageComponent = (props: ContactPageComponentType) => {
   const { apiCall } = props;
 
   // Variables
-  let apiResponse: AdminContactPageDataType | null = null;
+  let apiResponse: ContactComponentDataType | null = null;
   
   if (apiCall.retrieveAPIResponse?.isLoading || apiCall.retrieveAPIResponse?.isFetching) {
     return <LoaderComponent />;
@@ -53,7 +53,7 @@ const ContactPageComponent = (props: ContactPageComponentType) => {
           (apiCall.retrieveAPIResponse.data.success) ? (
             <React.Fragment>
 
-              <div className="py-8" >
+              {/* <div className="py-8" >
                 <p className="font-myPrimaryFont text-2xl" >
                   Contact Info
                 </p>
@@ -72,11 +72,15 @@ const ContactPageComponent = (props: ContactPageComponentType) => {
                 <p className="font-mySecondaryFont text-sm" >
                   Detail: {apiResponse?.aDetail}
                 </p>
-              </div>
-
-              {/* <div className="overflow-hidden" >
-                <ContactFormComponent />
               </div> */}
+
+              <div className="overflow-hidden" >
+                <ContactComponent
+                  reduxCall={props.reduxCall}
+                  apiResponse={apiResponse as ContactComponentDataType}
+                />
+              </div>
+              
             </React.Fragment>
           ) : null
         ) : null
