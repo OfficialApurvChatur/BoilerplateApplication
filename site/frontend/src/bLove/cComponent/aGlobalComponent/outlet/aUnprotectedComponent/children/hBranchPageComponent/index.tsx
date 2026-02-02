@@ -3,7 +3,7 @@ import React from 'react'
 
 type BranchPageComponentType = {
   reduxCall: any,
-  apiCall: any,
+  // apiCall: any,
 }
 
 const BranchPageComponent = (_props: BranchPageComponentType) => {

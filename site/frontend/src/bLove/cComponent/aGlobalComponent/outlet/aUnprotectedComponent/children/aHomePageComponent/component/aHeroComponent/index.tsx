@@ -70,10 +70,10 @@ const HeroComponent = (props: HeroComponentType) => {
                       alt="Logo"
                       className="max-lg:mx-auto lg:ml-6 mb-4 h-32 w-auto object-contain"
                     />
-                    <p className="mb-4 font-medium text-muted-foreground">
+                    <span className="bg-muted-foreground px-2 py-1 font-medium text-muted rounded">
                       {apiResponse.dTag}
-                    </p>
-                    <h1 className="md:text-5xl text-4xl font-bold leading-tight uppercase">
+                    </span>
+                    <h1 className="mt-8 md:text-5xl text-4xl font-bold leading-tight uppercase">
                       {apiResponse.aTitle}
                     </h1>
                     <h2 className="md:text-2xl text-xl text-foreground leading-relaxed tracking-wide mt-2">

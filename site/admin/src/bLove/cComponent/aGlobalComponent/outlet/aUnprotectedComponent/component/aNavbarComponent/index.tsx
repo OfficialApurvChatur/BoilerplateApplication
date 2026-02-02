@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 import { ModeToggle } from "@/aConnection/bShadcnConnection/components/mode-toggle";
 import { Avatar, AvatarFallback, AvatarImage } from "@/aConnection/bShadcnConnection/components/ui/avatar";
 import { Button } from "@/aConnection/bShadcnConnection/components/ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuSeparator, DropdownMenuTrigger } from "@/aConnection/bShadcnConnection/components/ui/dropdown-menu";
-import { BookmarkX, ClapperboardIcon, FolderKey, KeyRound, LogIn, LogOut, MailIcon, Rat, ShieldCheckIcon, User2, UserPen, UserPlus } from "lucide-react";
+import { BookmarkX, ClapperboardIcon, FolderKey, KeyRound, LogIn, LogOut, MailIcon, Rat, User2, UserPen, UserPlus } from "lucide-react";
 
 import fullRoute from "@/bLove/gRoute/bFullRoute";
-import LOGO from "@/bLove/hAsset/HeroBanner/Logo.png";
+import Logo from "@/bLove/hAsset/HeroBanner/Logo.png";
 import getInitialsUtility from "@/bLove/dUtility/aGetInitialsUtility";
 import brandConnection from "@/aConnection/eBrandConnection";
 import NotificationComponent from "./component/aNotificationComponent";
@@ -59,6 +59,9 @@ const NavbarComponent = (props: NavbarComponentType) => {
   // State Variable
   const [ isOpen, setIsOpen ] = useState(false)
 
+  // Variable
+  const { pathname } = useLocation();
+
   // JSX
   return (
     <React.Fragment>
@@ -73,7 +76,7 @@ const NavbarComponent = (props: NavbarComponentType) => {
           {/* Logo */}
           <a href={brandConnection.rFrontendBaseURL[0]} className="flex items-center gap-3 shrink-0">
             <img
-              src={LOGO}
+              src={Logo}
               alt="logo"
               className="h-10 w-auto object-contain"
             />
@@ -124,7 +127,7 @@ const NavbarComponent = (props: NavbarComponentType) => {
               <li className="mb-6 hidden max-lg:block">
                 <a href={brandConnection.rFrontendBaseURL[0]} className="flex items-center gap-3 shrink-0" >
                   <img 
-                    src={LOGO} 
+                    src={Logo} 
                     alt="logo" 
                     className="h-10 w-auto object-contain" 
                   />
@@ -141,26 +144,92 @@ const NavbarComponent = (props: NavbarComponentType) => {
               </li>
 
               {/* Items */}
+              {
+                props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && 
+                props.reduxCall.state.receivedObject?.AccountRetrieve?._id && (
+                  <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
+                    <Link 
+                      to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hMainRoute.aDashboardRoute}
+                      className="hover:text-foreground text-muted-foreground block font-medium text-[15px]"
+                    >
+                      Dashboard
+                    </Link>
+                  </li>
+                )
+              }
+
               <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
                 <Link 
                   to={fullRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute}
-                  className="hover:text-foreground text-foreground block font-medium text-[15px]"
+                  className={`
+                    hover:text-foreground block font-medium text-[15px]
+                    ${pathname === fullRoute.aGlobalRoute.aUnprotectedRoute.aAdminHomePageRoute ? "text-foreground" : "text-muted-foreground"}
+                  `}
                 >
                   Home
                 </Link>
               </li>
-              <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
-                <Link 
-                  to={fullRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutCompanyPageRoute}
-                  className="hover:text-foreground text-muted-foreground block font-medium text-[15px]"
+              <li className="max-lg:border-b max-lg:border-muted-foreground group max-lg:px-3 max-lg:py-3 relative">
+                <span 
+                  className={`
+                    hover:cursor-default hover:text-foreground block font-medium text-[15px]
+                    ${(
+                      pathname === fullRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutCompanyPageRoute ||
+                      pathname === fullRoute.aGlobalRoute.aUnprotectedRoute.cAdminAboutApplicationPageRoute
+                    ) ? "text-foreground" : "text-muted-foreground"}
+                  `}
                 >
                   About
-                </Link>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg" 
+                    width="16px" 
+                    height="16px" 
+                    className="ml-1 inline-block fill-current"
+                    viewBox="0 0 24 24"
+                  >
+                    <path
+                      d="M12 16a1 1 0 0 1-.71-.29l-6-6a1 1 0 0 1 1.42-1.42l5.29 5.3 5.29-5.29a1 1 0 0 1 1.41 1.41l-6 6a1 1 0 0 1-.7.29z"
+                      data-name="16" data-original="#000000" 
+                    />
+                  </svg>
+                </span>
+                <div className="absolute lg:top-8 max-lg:top-10 z-50 flex shadow-lg bg-muted-foreground max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-[700px] px-8 group-hover:pb-8 group-hover:pt-6 transition-all duration-500">
+                  <div className="lg:min-w-[180px] max-lg:min-w-[140px]">
+                    <h6 className="text-base text-background font-medium">About</h6>
+                    <ul className="mt-3 pt-3 border-t border-background space-y-3">
+                      <li className="py-1">
+                        <Link 
+                          to={fullRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutCompanyPageRoute} 
+                          className={`
+                            hover:font-medium hover:text-background text-[15px] block
+                            ${pathname === fullRoute.aGlobalRoute.aUnprotectedRoute.bAdminAboutCompanyPageRoute ? "text-background font-bold" : "text-muted font-normal"}
+                          `} 
+                        >
+                          About Company
+                        </Link>
+                      </li>
+                      <li className="py-1">
+                        <Link 
+                          to={fullRoute.aGlobalRoute.aUnprotectedRoute.cAdminAboutApplicationPageRoute} 
+                          className={`
+                            hover:font-medium hover:text-background text-[15px] block
+                            ${pathname === fullRoute.aGlobalRoute.aUnprotectedRoute.cAdminAboutApplicationPageRoute ? "text-background font-bold" : "text-muted font-normal"}
+                          `} 
+                        >
+                          About Application
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
               </li>
               <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
                 <Link 
                   to={fullRoute.aGlobalRoute.aUnprotectedRoute.eAdminServicePageRoute}
-                  className="hover:text-foreground text-muted-foreground block font-medium text-[15px]"
+                  className={`
+                    hover:text-foreground block font-medium text-[15px]
+                    ${pathname === fullRoute.aGlobalRoute.aUnprotectedRoute.eAdminServicePageRoute ? "text-foreground" : "text-muted-foreground"}
+                  `}
                 >
                   Service
                 </Link>
@@ -168,15 +237,21 @@ const NavbarComponent = (props: NavbarComponentType) => {
               <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
                 <Link 
                   to={fullRoute.aGlobalRoute.aUnprotectedRoute.fAdminBranchSectionPageRoute}
-                  className="hover:text-foreground text-muted-foreground block font-medium text-[15px]"
+                  className={`
+                    hover:text-foreground block font-medium text-[15px]
+                    ${pathname === fullRoute.aGlobalRoute.aUnprotectedRoute.fAdminBranchSectionPageRoute ? "text-foreground" : "text-muted-foreground"}
+                  `}
                 >
                   Branch
                 </Link>
               </li>
               <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
                 <Link 
-                  to={fullRoute.aGlobalRoute.aUnprotectedRoute.gAdminBranchGroupPageRoute}
-                  className="hover:text-foreground text-muted-foreground block font-medium text-[15px]"
+                  to={fullRoute.aGlobalRoute.aUnprotectedRoute.iAdminProjectSectionPageRoute}
+                  className={`
+                    hover:text-foreground block font-medium text-[15px]
+                    ${pathname === fullRoute.aGlobalRoute.aUnprotectedRoute.iAdminProjectSectionPageRoute ? "text-foreground" : "text-muted-foreground"}
+                  `}
                 >
                   Project
                 </Link>
@@ -184,7 +259,10 @@ const NavbarComponent = (props: NavbarComponentType) => {
               <li className="max-lg:border-b max-lg:border-muted-foreground max-lg:py-3 px-3">
                 <Link 
                   to={fullRoute.aGlobalRoute.aUnprotectedRoute.dAdminContactPageRoute}
-                  className="hover:text-foreground text-muted-foreground block font-medium text-[15px]"
+                  className={`
+                    hover:text-foreground block font-medium text-[15px]
+                    ${pathname === fullRoute.aGlobalRoute.aUnprotectedRoute.dAdminContactPageRoute ? "text-foreground" : "text-muted-foreground"}
+                  `}
                 >
                   Contact
                 </Link>
@@ -196,21 +274,15 @@ const NavbarComponent = (props: NavbarComponentType) => {
             <ModeToggle />
 
             <Button asChild size="icon" variant="outline" >
-              <Link to={brandConnection.rFrontendBaseURL[1]} target="_blank" rel="noopener noreferrer" >
+              <Link to={brandConnection.fFrontendApplicationURL} target="_blank" rel="noopener noreferrer" >
                 <ClapperboardIcon />
               </Link>
             </Button>
-
-            <Button asChild size="icon" variant="outline" >
-              <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.hMainRoute.aDashboardRoute} >
-                <ShieldCheckIcon />
-              </Link>
-            </Button>
-            
+                  
             {
               props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && 
               props.reduxCall.state.receivedObject?.AccountRetrieve?._id && 
-              <NotificationComponent />
+                <NotificationComponent />
             }
 
             <DropdownMenu>

@@ -90,7 +90,7 @@ const ServiceComponent = (props: ServiceComponentType) => {
                         {each.aDescription}
                       </p>
     
-                      <Link to={fullRoute.aGlobalRoute.aUnprotectedRoute.eServicePageRoute} className="text-sm inline-flex items-center font-medium hover:text-muted-foreground mt-6">
+                      <Link to={fullRoute.aGlobalRoute.aUnprotectedRoute.eAdminServicePageRoute} className="text-sm inline-flex items-center font-medium hover:text-muted-foreground mt-6">
                         Learn more<svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 ml-1.5 fill-current" viewBox="0 0 24 24"><path d="m23.564 11.235-7.56-7.56a1.08 1.08 0 0 0-1.528 1.528l5.717 5.716H1.2a1.08 1.08 0 0 0 0 2.16h18.993l-5.717 5.716a1.08 1.08 0 1 0 1.528 1.528l7.56-7.56a1.08 1.08 0 0 0 0-1.528z" data-original="#000000"></path></svg>
                       </Link>
 

@@ -11,6 +11,8 @@ import GlobalComponent from "@/bLove/cComponent/aGlobalComponent";
 
 import apiHandler from "./extra/aAPIHandler";
 
+import LoaderComponent from "@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent";
+
 
 const GlobalLayout = () => {
   // Variable
@@ -40,18 +42,9 @@ const GlobalLayout = () => {
       {/* GlobalLayout */}
 
       {apiCall.accountRetrievePrimaryAPIResponse.isLoading ? (
-        <React.Fragment>
-          {/* <div className='min-h-screen flex justify-center items-center' >Checkinadg Profile...</div> */}
-          <div className="flex justify-center items-center min-h-screen" >
-            Profile Verification! Please wait...
-          </div>
-        </React.Fragment>
+        <LoaderComponent message="Profile Verification! Please wait..." />
       ) : (
-        <Suspense fallback={
-          <div className="flex justify-center items-center min-h-screen" >
-            Profile Verification! Please wait...
-          </div>
-        }>
+        <Suspense fallback={<LoaderComponent message="Suspense Loading..." />}>
           <GlobalComponent>
             <Outlet />
           </GlobalComponent>

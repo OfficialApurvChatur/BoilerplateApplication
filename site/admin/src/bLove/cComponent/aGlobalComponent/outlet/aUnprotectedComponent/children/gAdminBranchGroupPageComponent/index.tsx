@@ -3,7 +3,7 @@ import React from 'react'
 
 type AdminBranchGroupPageComponentType = {
   reduxCall: any,
-  apiCall: any,
+  // apiCall: any,
 }
 
 const AdminBranchGroupPageComponent = (_props: AdminBranchGroupPageComponentType) => {
