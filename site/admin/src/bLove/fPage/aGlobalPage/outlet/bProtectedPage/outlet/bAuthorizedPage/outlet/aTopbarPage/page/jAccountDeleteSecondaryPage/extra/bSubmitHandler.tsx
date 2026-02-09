@@ -5,7 +5,7 @@ import apiResponseHandler from "./aAPIResponseHandler";
 
 
 const submitHandler = (reduxCall: any, apiCall: any, navigate: NavigateFunction) => {
-  apiResponseHandler.deleteAPIResponseHandler(reduxCall, apiCall.deleteAPITrigger, navigate, apiCall.userAccountRetrieveAPITrigger)
+  apiResponseHandler.deleteAPIResponseHandler(reduxCall, apiCall.deleteAPITrigger, navigate)
 }
 
 export default submitHandler;
