@@ -13,9 +13,10 @@ import emailToCompanyVariable from '../../../../../bLove/eVariable/cEmailToCompa
 import emailToUserVariable from '../../../../../bLove/eVariable/dEmailToUserVariable';
 
 import { ForgotPasswordModel } from '../../../aModel/aDatabaseManagement/cUserAuthentication/dForgotPasswordModel';
+import { UserModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/eUserModel';
 
 
-const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswordModel") => ({
+const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswordModel", ExtraModel=UserModel, ExtraLabel="UserModel") => ({
   // List Controller
   list: catchAsyncMiddleware(
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -270,6 +271,33 @@ const forgotPasswordController = (Model=ForgotPasswordModel, Label="ForgotPasswo
       })
     }
   ),  
+
+  // Forgot Password Controller
+  forgotPassword: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // Retrieve
+      const retrieve = await ExtraModel.findOne({eEmail: request.body.eEmail});
+
+      // Get Reset Password Token
+			const resetPasswordToken = await retrieve?.fGetResetPasswordTokenMethod();
+
+      // Save 
+			await retrieve?.save({ validateBeforeSave: false });
+
+      // Message
+			const textMessage = `Reset Password Token: ${resetPasswordToken}`;
+
+      // Response
+      response.status(200).json({
+        success: true,
+        message: `Reset Password Token Sent Successfully`,
+        retrieve: retrieve,
+        textMessage,
+        resetPasswordToken
+      })
+    }
+  ),
 })
 
 export default forgotPasswordController;

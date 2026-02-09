@@ -1,4 +1,5 @@
 ﻿import express from 'express';
+import crypto from 'crypto';
 
 import catchAsyncMiddleware from '../../../../../bLove/bMiddleware/bCatchAsyncMiddleware';
 import cacheCreateMiddleware from '../../../../../bLove/bMiddleware/kCacheCreateMiddleware';
@@ -11,11 +12,14 @@ import cacheVariable from '../../../../../bLove/eVariable/aCacheVariable';
 import eventVariable from '../../../../../bLove/eVariable/bEventVariable';
 import emailToCompanyVariable from '../../../../../bLove/eVariable/cEmailToCompanyVariable';
 import emailToUserVariable from '../../../../../bLove/eVariable/dEmailToUserVariable';
+import generateCookieUtility from '../../../../cUtility/fGenerateCookieUtility';
+import ErrorUtility from "../../../../cUtility/aErrorUtility";
 
 import { ResetPasswordModel } from '../../../aModel/aDatabaseManagement/cUserAuthentication/eResetPasswordModel';
+import { UserModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/eUserModel';
 
 
-const resetPasswordController = (Model=ResetPasswordModel, Label="ResetPasswordModel") => ({
+const resetPasswordController = (Model=ResetPasswordModel, Label="ResetPasswordModel", ExtraModel=UserModel, ExtraLabel="UserModel") => ({
   // List Controller
   list: catchAsyncMiddleware(
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
@@ -269,7 +273,39 @@ const resetPasswordController = (Model=ResetPasswordModel, Label="ResetPasswordM
         delete_object: delete_object
       })
     }
-  ),  
+  ), 
+  
+  // Reset Password Controller
+  resetPassword: catchAsyncMiddleware(
+    async (request: express.Request, response: express.Response, next: express.NextFunction) => {
+
+      // Hash Token
+			const resetPasswordToken = crypto
+        .createHash("sha256")
+        .update((request.params as any).token)
+        .digest("hex");
+
+      // Retrieve
+      const retrieve = await ExtraModel.findOne({
+        eResetPasswordToken: resetPasswordToken, 
+        eResetPasswordTokenExpire: { $gt: Date.now() }
+      });
+
+			// Not Found
+			if (!retrieve) return next(new ErrorUtility("Reset password link is invalid or has been expired", 400));
+
+      // Save
+      if (retrieve) {
+        retrieve.ePassword = request.body.ePassword;
+        retrieve.eResetPasswordToken = undefined as unknown as string;
+        retrieve.eResetPasswordTokenExpire = undefined as unknown as Date;        
+        await retrieve.save({ validateBeforeSave: false });
+      }
+
+      // Response
+			generateCookieUtility(201, `Password Recovered Successfully`, `user_reset_password`, retrieve, response)    
+    }
+  ),
 })
 
 export default resetPasswordController;

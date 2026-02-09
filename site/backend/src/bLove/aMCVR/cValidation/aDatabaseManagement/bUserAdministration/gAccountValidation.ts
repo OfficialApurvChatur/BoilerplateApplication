@@ -41,12 +41,14 @@ const accountValidation = {
 
   updateAccount: () => [
     ...validatorUtility.aImage(),
-    ...validatorUtility.aTitle({ Model: UserModel, label: "UserModel", mode: "update" }),
+    ...validatorUtility.aTitle({ Model: UserModel, label: "UserModel", mode: "update-account" }),
     ...validatorUtility.aSubtitle(),
     ...validatorUtility.aDescription(),
     ...validatorUtility.aDetail(),
     ...validatorUtility.aStatus(),
     ...validatorUtility.aState(),
+    ...validatorUtility.dAddress(),
+    ...validatorUtility.dLinks(),
     ...validatorUtility.eImage(),
     ...validatorUtility.eFirstname(),
     ...validatorUtility.eLastname(),
@@ -64,7 +66,9 @@ const accountValidation = {
     ...validatorUtility.ePassword(),
     ...validatorUtility.eConfirmPassword(),
     ...validatorUtility.validateUserExists({ Model: UserModel, label: "UserModel" })
-  ]
+  ],
+
+  deleteAccount: () => [],
 };
 
 export default accountValidation;

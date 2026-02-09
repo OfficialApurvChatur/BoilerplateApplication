@@ -33,6 +33,12 @@ const resetPasswordValidation = {
   delete: () => [
     ...validatorUtility.idParam({ Model: ResetPasswordModel, label: "ResetPasswordModel" })
   ],
+
+  resetPassword: () => [
+    ...validatorUtility.ePassword(),
+    ...validatorUtility.eConfirmPassword(),
+    ...validatorUtility.tokenParam()
+  ],
 };
 
 export default resetPasswordValidation;

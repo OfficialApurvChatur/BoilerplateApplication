@@ -25,6 +25,8 @@ const formValueDefault = ({
       bIconValue: 'Node.js',
     },
   ],
+  dWebLinks: [],
+  dGalleryImages: []
 })
 
 export default formValueDefault;

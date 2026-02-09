@@ -1207,6 +1207,215 @@ const cacheVariable = {
     //   `${Label}::retrieve:${request.params.id}`
     // ],
   },
+  homePageModel: {
+    // list: ({ Label= "HomePageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "HomePageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "HomePageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "HomePageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "HomePageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  aboutCompanyPageModel: {
+    // list: ({ Label= "AboutCompanyPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AboutCompanyPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AboutCompanyPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AboutCompanyPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AboutCompanyPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  aboutApplicationPageModel: {
+    // list: ({ Label= "AboutApplicationPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "AboutApplicationPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "AboutApplicationPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "AboutApplicationPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "AboutApplicationPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  contactPageModel: {
+    // list: ({ Label= "ContactPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "ContactPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "ContactPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "ContactPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "ContactPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  servicePageModel: {
+    // list: ({ Label= "ServicePageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "ServicePageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "ServicePageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "ServicePageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "ServicePageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  branchSectionPageModel: {
+    // list: ({ Label= "BranchSectionPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "BranchSectionPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "BranchSectionPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "BranchSectionPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "BranchSectionPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  branchGroupPageModel: {
+    // list: ({ Label= "BranchGroupPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "BranchGroupPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "BranchGroupPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "BranchGroupPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "BranchGroupPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  branchPageModel: {
+    // list: ({ Label= "BranchPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "BranchPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "BranchPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "BranchPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "BranchPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  projectSectionPageModel: {
+    // list: ({ Label= "ProjectSectionPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "ProjectSectionPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "ProjectSectionPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "ProjectSectionPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "ProjectSectionPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  projectGroupPageModel: {
+    // list: ({ Label= "ProjectGroupPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "ProjectGroupPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "ProjectGroupPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "ProjectGroupPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "ProjectGroupPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
+  projectPageModel: {
+    // list: ({ Label= "ProjectPageModel" }: listType) => (
+    //  `${Label}::list`
+    // ),
+    // create: ({ Label= "ProjectPageModel" }: createType) => [ 
+    //   `${Label}::list`
+    // ],
+    retrieve: ({ Label= "ProjectPageModel", request }: retrieveType) => (
+      `${Label}::retrieve`
+    ),
+    // update: ({ Label= "ProjectPageModel", request }: updateType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+    // delete: ({ Label= "ProjectPageModel", request }: deleteType) => [ 
+    //   `${Label}::list`, 
+    //   `${Label}::retrieve:${request.params.id}`
+    // ],
+  },
 
 };
 

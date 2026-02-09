@@ -12,6 +12,7 @@ import eventVariable from '../../../../../bLove/eVariable/bEventVariable';
 import emailToCompanyVariable from '../../../../../bLove/eVariable/cEmailToCompanyVariable';
 import emailToUserVariable from '../../../../../bLove/eVariable/dEmailToUserVariable';
 import generateCookieUtility from '../../../../cUtility/fGenerateCookieUtility';
+import ErrorUtility from "../../../../cUtility/aErrorUtility";
 
 import { SignInModel } from '../../../aModel/aDatabaseManagement/cUserAuthentication/aSignInModel';
 import { UserModel } from '../../../aModel/aDatabaseManagement/bUserAdministration/eUserModel';
@@ -278,7 +279,13 @@ const signInController = (Model=SignInModel, Label="SignInModel", ExtraModel=Use
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
 
       // Retrieve
-      const retrieve = await ExtraModel.findOne({eEmail: request.body.eEmail});
+      const retrieve = await ExtraModel.findOne({eEmail: request.body.eEmail}).select("+ePassword");
+
+      // Match Password
+			const isPasswordMatched = await retrieve?.fComparePasswordMethod(request.body.ePassword)
+
+      // Not Found
+			if (!isPasswordMatched) return next(new ErrorUtility("Invalid email or password", 400));
 
       // Response
 			generateCookieUtility(200, "User Logged In Successfully", "user_sign_in", retrieve, response)

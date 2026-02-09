@@ -35,6 +35,13 @@ const accountAPIEndpoint = apiConnection.injectEndpoints({
       })
     }),
 
+    accountDeletePrimaryAPI: builder.mutation({
+      query: () => ({
+        url: `/account/delete-primary/`,
+        method: "DELETE",
+      })
+    }),
+
   })
 })
 

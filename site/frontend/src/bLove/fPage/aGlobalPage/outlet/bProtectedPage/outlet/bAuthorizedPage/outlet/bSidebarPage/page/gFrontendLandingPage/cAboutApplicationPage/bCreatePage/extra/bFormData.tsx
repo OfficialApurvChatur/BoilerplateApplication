@@ -1,3 +1,4 @@
+import brandConnection from "@/aConnection/eBrandConnection";
 import formValueDefault from "./dFormValueDefault";
 
 const formData = () => ([
@@ -67,6 +68,55 @@ const formData = () => ([
                 aIconLabel: "MongoDBIcon:ExpressIcon:ReactIcon:NodeIcon",
                 bIconValue: "MongoDB:Express.js:React.js:Node.js",
               },
+            ];
+            form.setValue(fieldName, updated, { shouldValidate: true });
+          },
+          onRemove: ({ form, fieldName, inputs, index }: any) => {
+            const updated = inputs.filter((_: any, i: number) => i !== index);
+            form.setValue(fieldName, updated, { shouldValidate: true });
+          },
+        }
+      },
+      {
+        label: "Web Links",
+        type: "dynamic-input",
+        name: "dWebLinks",
+        children: {
+          label: "Web Link",
+          type: "object-array-input",
+          inputType: "text-input",
+          inputs: formValueDefault?.dWebLinks,
+          // onChange: () => console.log("Handle Change"),
+          onAdd: ({ form, fieldName, inputs }: any) => {
+            const updated = [
+              ...inputs,
+              {
+                aLinkTitle: "Visit Administration",
+                bLinkURL: brandConnection.gAdminApplicationURL,
+              }
+            ];
+            form.setValue(fieldName, updated, { shouldValidate: true });
+          },
+          onRemove: ({ form, fieldName, inputs, index }: any) => {
+            const updated = inputs.filter((_: any, i: number) => i !== index);
+            form.setValue(fieldName, updated, { shouldValidate: true });
+          },
+        }
+      },
+      {
+        label: "Gallery Images",
+        type: "dynamic-input",
+        name: "dGalleryImages",
+        children: {
+          label: "Gallery Image",
+          type: "string-array-input",
+          inputType: "image-input",
+          folderName: "adminproject",
+          inputs: formValueDefault?.dGalleryImages,
+          // onChange: () => console.log("Handle Change"),
+          onAdd: ({ form, fieldName, inputs }: any) => {
+            const updated = [
+              ...inputs, ""
             ];
             form.setValue(fieldName, updated, { shouldValidate: true });
           },

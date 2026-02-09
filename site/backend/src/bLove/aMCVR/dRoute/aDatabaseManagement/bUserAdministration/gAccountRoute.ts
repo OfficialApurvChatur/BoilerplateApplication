@@ -85,4 +85,11 @@ router.route("/password-update-primary").put(
   accountContorller().passwordUpdateAccount,
 );
 
+router.route("/delete-primary").delete(
+  rateLimiterMiddleware({ key:"AccountModel-delete-primary", time: 60, limit: 10 }),
+  authenticationMiddleware,
+  accountValidation.deleteAccount(), validatorMiddleware, 
+  accountContorller().deleteAccount,
+);
+
 export const accountRoute = router

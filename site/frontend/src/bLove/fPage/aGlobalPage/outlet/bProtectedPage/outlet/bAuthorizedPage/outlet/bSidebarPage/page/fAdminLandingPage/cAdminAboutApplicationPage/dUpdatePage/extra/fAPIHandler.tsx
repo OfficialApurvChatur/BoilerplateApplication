@@ -67,6 +67,8 @@ const apiHandler = {
             aState: submittedData.aState,  
 
             dTechIcon: submittedData.dTechIcon,  
+            dWebLinks: submittedData.dWebLinks,  
+            dGalleryImages: submittedData.dGalleryImages,  
           } 
         });
 

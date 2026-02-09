@@ -337,27 +337,27 @@ const NavbarComponent = (props: NavbarComponentType) => {
                     <DropdownMenuGroup>
                       <DropdownMenuSeparator />
                       <DropdownMenuItem asChild >
-                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.aAccountRetrieveRoute} >
+                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.fAccountRetrieveSecondaryRoute} >
                           <Rat /> View Profile
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild >
-                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.bAccountUpdateRoute} >
+                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.gAccountUpdateSecondaryRoute} >
                           <UserPen /> Edit Profile
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild >
-                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.cAccountEmailUpdateRoute} >
+                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.hAccountEmailUpdateSecondaryRoute} >
                           <MailIcon /> Change Email
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild >
-                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.dAccountPasswordUpdateRoute} >
+                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.iAccountPasswordUpdateSecondaryRoute} >
                           <FolderKey /> Change Password
                         </Link>
                       </DropdownMenuItem>
                       <DropdownMenuItem asChild >
-                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.eAccountDeleteRoute} >
+                        <Link to={fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.jAccountDeleteSecondaryRoute} >
                           <BookmarkX /> Delete Profile
                         </Link>
                       </DropdownMenuItem>

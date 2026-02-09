@@ -21,6 +21,11 @@ export type AboutApplicationComponentDataType = {
     aIconLabel: string;
     bIconValue: string;
   }[];
+  dWebLinks: {
+    aLinkTitle: string;
+    bLinkURL: string;
+  }[];
+  dGalleryImages: string[];
 }[];
 
 const AdminAboutApplicationPageComponent = (props: AdminAboutApplicationPageComponentType) => {

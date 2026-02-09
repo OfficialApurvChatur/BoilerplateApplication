@@ -280,6 +280,8 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
 
       // Retrieve
       const retrieve = await ExtraModel.findOne({_id: (request as any).user})
+        .populate("bCreatedBy", "eImage eFirstname eLastname eEmail")
+        .populate("bUpdatedBy", "eImage eFirstname eLastname eEmail")
         .populate({
           path: 'cRole',
           select: 'aTitle cPermission',
@@ -326,6 +328,9 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
 
           // cRole: request.body.cRole,
           // cProfile: request.body.cProfile,
+
+          dAddress: request.body.dAddress,
+          dLinks: request.body.dLinks,
 
           eImage: request.body.eImage,
           eFirstname: request.body.eFirstname,
@@ -381,7 +386,7 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
       const retrieve = await ExtraModel.findById((request as any).user).select("+ePassword");
 
       // Save
-      (retrieve as any).ePassword = request.body.eNewPassword;
+      (retrieve as any).ePassword = request.body.ePassword;
       await (retrieve as any).save();
 
       // Response
@@ -393,25 +398,18 @@ const accountController = (Model=AccountModel, Label="AccountModel", ExtraModel=
   deleteAccount: catchAsyncMiddleware(
     async (request: express.Request, response: express.Response, next: express.NextFunction) => {
       // Retrieve
-      let user = await ExtraModel.findById((request as any).user._id).populate({
-        path: 'cRole',
-        model: 'RoleModel',
-        populate: {
-          path: 'cMenus.menu',
-          model: 'MenuModel',
-        }
-      })
+      let retrieve = await ExtraModel.findById((request as any).user._id);
 
       // Delete
-      if (user) {
-        await user.deleteOne({"_id": user._id})
+      if (retrieve) {
+        await retrieve.deleteOne({"_id": retrieve._id})
       }
       
       // Response
       response.status(200).json({
         success: true,
         message: `${ExtraLabel} Profile Deleted Successfully`,
-        delete: user
+        delete: retrieve
       })
     }
   ),

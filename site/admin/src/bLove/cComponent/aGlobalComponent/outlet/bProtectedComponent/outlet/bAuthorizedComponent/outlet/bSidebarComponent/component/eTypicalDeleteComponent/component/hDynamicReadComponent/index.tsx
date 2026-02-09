@@ -47,9 +47,17 @@ const DynamicReadComponent = (props: any) => {
             {eachField.children?.type === "object-array-read" && (
               <div className="flex flex-col mx-6 my-2" >
 
-                {/* Text Read */}
+                {/* URL Read */}
                 {eachField.children?.readType === "url-read" && (
                   <URLReadComponent eachField={{
+                    label: `${index+1}. ${each[eachField.children.label]}`,
+                    value: each[eachField.children.value],
+                  }}/>
+                )}
+
+                {/* Text Read */}
+                {eachField.children?.readType === "text-read" && (
+                  <TextReadComponent eachField={{
                     label: `${index+1}. ${each[eachField.children.label]}`,
                     value: each[eachField.children.value],
                   }}/>

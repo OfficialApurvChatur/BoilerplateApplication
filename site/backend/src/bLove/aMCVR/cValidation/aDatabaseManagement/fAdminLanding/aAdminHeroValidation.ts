@@ -16,6 +16,7 @@ const adminHeroValidation = {
     ...validatorUtility.dTag(),
     ...validatorUtility.dSocialLinks(),
     ...validatorUtility.dWebLinks(),
+    ...validatorUtility.dGalleryImages(),
   ],
 
   retrieve: () => [
@@ -33,6 +34,7 @@ const adminHeroValidation = {
     ...validatorUtility.dTag(),
     ...validatorUtility.dSocialLinks(),
     ...validatorUtility.dWebLinks(),
+    ...validatorUtility.dGalleryImages(),
     ...validatorUtility.idParam({ Model: AdminHeroModel, label: "AdminHeroModel" })
   ],
 

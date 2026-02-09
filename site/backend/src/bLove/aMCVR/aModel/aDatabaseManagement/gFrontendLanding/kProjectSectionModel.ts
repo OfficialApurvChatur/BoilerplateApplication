@@ -26,7 +26,7 @@ const schema = new mongoose.Schema<ProjectSectionModelType>({
     type: [
       { 
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'AdminProjectGroupModel' 
+        ref: 'ProjectGroupModel' 
       }
     ],
     default: [] // 👈 default project groups
@@ -35,7 +35,7 @@ const schema = new mongoose.Schema<ProjectSectionModelType>({
     type: [
       { 
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'AdminProjectModel' 
+        ref: 'ProjectModel' 
       }
     ],
     default: [] // 👈 default projects

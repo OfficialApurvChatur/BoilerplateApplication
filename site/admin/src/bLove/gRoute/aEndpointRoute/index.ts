@@ -27,6 +27,12 @@ const endpointRoute = {
           cAccountEmailUpdateRoute: "account-email-update-primary",
           dAccountPasswordUpdateRoute: "account-password-update-primary",
           eAccountDeleteRoute: "account-delete-primary",
+
+          fAccountRetrieveSecondaryRoute: "account-retrieve-secondary",
+          gAccountUpdateSecondaryRoute: "account-update-secondary",
+          hAccountEmailUpdateSecondaryRoute: "account-email-update-secondary",
+          iAccountPasswordUpdateSecondaryRoute: "account-password-update-secondary",
+          jAccountDeleteSecondaryRoute: "account-delete-secondary",
         },
         bSidebarRoute: {
           aSettingRoute: {

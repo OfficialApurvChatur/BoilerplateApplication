@@ -8,13 +8,13 @@ import ErrorUtility from "./aErrorUtility";
 type TTitleArgs = {
   Model: mongoose.Model<any>;
   label?: string;
-  mode?: "create" | "update";
+  mode?: "create" | "update" | "update-account";
 };
 
 type TEmailArgs = {
   Model: mongoose.Model<any>;
   label?: string;
-  mode?: "sign-in";
+  mode?: "sign-in" | "forgot-password";
 };
 
 type TIdArgs = {
@@ -404,6 +404,61 @@ const validatorUtility = {
       .withMessage("Tech icon value cannot be empty"),
   ],
 
+  dAddress: () => [
+    body("dAddress")
+      .optional({ checkFalsy: true })
+      .isObject()
+      .withMessage("dAddress must be an object"),
+
+    body("dAddress.aLane")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Lane must be a string")
+      .trim()
+      .notEmpty()
+      .withMessage("Lane cannot be empty"),
+
+    body("dAddress.bStreet")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Street must be a string")
+      .trim()
+      .notEmpty()
+      .withMessage("Street cannot be empty"),
+
+    body("dAddress.cCity")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("City must be a string")
+      .trim()
+      .notEmpty()
+      .withMessage("City cannot be empty"),
+
+    body("dAddress.dState")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("State must be a string")
+      .trim()
+      .notEmpty()
+      .withMessage("State cannot be empty"),
+
+    body("dAddress.eCountry")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Country must be a string")
+      .trim()
+      .notEmpty()
+      .withMessage("Country cannot be empty"),
+
+    body("dAddress.fPinCode")
+      .optional({ checkFalsy: true })
+      .isString()
+      .withMessage("Pin code must be a string")
+      .trim()
+      .matches(/^[0-9]{4,10}$/)
+      .withMessage("Pin code must be numeric and between 4 to 10 digits"),
+  ],
+
   dLinks: () => [
     body("dLinks")
       .optional({ checkFalsy: true })
@@ -500,7 +555,8 @@ const validatorUtility = {
       .custom(async (value) => {
         const retrieve = await Model.findOne({ eEmail: value });
         if (mode === "sign-in" && !retrieve) throw new ErrorUtility("Invalid Email or Password", 401);
-        if (mode !== "sign-in" && retrieve) throw new ErrorUtility("User already exists...", 401);
+        if (mode === "forgot-password" && !retrieve) throw new ErrorUtility("Invalid Email", 401);
+        if (mode !== "sign-in" && mode !== "forgot-password" && retrieve) throw new ErrorUtility("User already exists...", 401);
         return true;
       }),
   ],
@@ -549,6 +605,12 @@ const validatorUtility = {
 
         return true;
       }),
+  ],
+
+  tokenParam: () => [
+    param("token")
+      .notEmpty()
+      .withMessage("Token is required"),
   ],
 
   idParam: ({ Model, label = "Record" }: TIdArgs) => [

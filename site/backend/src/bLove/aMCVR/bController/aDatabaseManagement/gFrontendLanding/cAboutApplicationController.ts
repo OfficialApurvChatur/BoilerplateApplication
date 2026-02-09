@@ -65,6 +65,8 @@ const aboutApplicationController = (Model=AboutApplicationModel, Label="AboutApp
         bCreatedBy: request.body.bCreatedBy,
 
         dTechIcon: request.body.dTechIcon,
+        dWebLinks: request.body.dWebLinks,
+        dGalleryImages: request.body.dGalleryImages,
       })
 
       // Delete Cache
@@ -159,6 +161,8 @@ const aboutApplicationController = (Model=AboutApplicationModel, Label="AboutApp
           bUpdatedBy: request.body.bUpdatedBy, 
           
           dTechIcon: request.body.dTechIcon,
+          dWebLinks: request.body.dWebLinks,
+          dGalleryImages: request.body.dGalleryImages,
         }, {
           new: true,
           runValidators: true,

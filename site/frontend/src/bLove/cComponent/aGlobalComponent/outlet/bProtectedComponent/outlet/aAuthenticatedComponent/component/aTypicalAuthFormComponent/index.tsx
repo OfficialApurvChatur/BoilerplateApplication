@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import { z } from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
-import { GalleryVerticalEnd, RocketIcon } from 'lucide-react';
+import { RocketIcon } from 'lucide-react';
 
-import backgroundImage from "@/bLove/hAsset/auth-model.jpg";
+import backgroundImage from "@/bLove/hAsset/auth-model.jpeg";
+import Logo from "@/bLove/hAsset/HeroBanner/Logo.png";
 
 import { cn } from "@/aConnection/bShadcnConnection/lib/utils"
 import { Button } from "@/aConnection/bShadcnConnection/components/ui/button"
@@ -58,13 +59,26 @@ const TypicalAuthFormComponent = (props: TypicalAuthFormComponentType) => {
     <React.Fragment>
       {/* TypicalAuthFormComponent */}
 
-      <div className="flex min-h-svh flex-col items-center justify-center bg-muted p-6 md:p-10">
+      <style>
+        {`
+          @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+          .protected-authenticated-scope,
+          .protected-authenticated-scope * {
+            font-family: 'Roboto Slab', serif;
+          }
+        `}
+      </style>
+
+      <div className="flex min-h-svh flex-col items-center justify-center bg-muted p-6 md:p-10 protected-authenticated-scope">
         <div className="flex w-full max-w-sm md:max-w-3xl flex-col gap-6">
           <Link to="/" className="flex items-center gap-2 self-center font-medium">
-            <div className="flex h-6 w-6 items-center justify-center rounded-md bg-primary text-primary-foreground">
-              <GalleryVerticalEnd className="size-4" />
-            </div>
-            {brandConnection.dAdministrationApplicationName}
+            <img
+              src={Logo}
+              alt="logo"
+              className="h-8 w-auto object-contain"
+            />
+            {brandConnection.bBrandName}
           </Link>
 
           <div className={cn("flex flex-col gap-6")}>
@@ -82,7 +96,7 @@ const TypicalAuthFormComponent = (props: TypicalAuthFormComponentType) => {
                         <div>
                           <Alert>
                             <RocketIcon className="h-4 w-4" />
-                            <AlertTitle>Sample User!</AlertTitle>
+                            <AlertTitle className="font-bold" >Sample User!</AlertTitle>
                             <AlertDescription>
                               <p><b>Email:</b> shraddha.kapoor{brandConnection.iEmailName}</p> 
                               <p><b>Password:</b> Shraddha@123</p>

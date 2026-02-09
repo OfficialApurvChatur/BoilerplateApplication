@@ -7,7 +7,9 @@ const formValuePrevious = (apiCall: any) => (form: any) => (
   form.setValue("aStatus", apiCall.retrieveAPIResponse.data.retrieve?.aStatus ? "Active" : "Inactive"),
   form.setValue("aState", apiCall.retrieveAPIResponse.data.retrieve?.aState),
 
-  form.setValue("dTechIcon", apiCall.retrieveAPIResponse.data.retrieve?.dTechIcon)
+  form.setValue("dTechIcon", apiCall.retrieveAPIResponse.data.retrieve?.dTechIcon),
+  form.setValue("dWebLinks", apiCall.retrieveAPIResponse.data.retrieve?.dWebLinks),
+  form.setValue("dGalleryImages", apiCall.retrieveAPIResponse.data.retrieve?.dGalleryImages)
 )
 
 export default formValuePrevious;

@@ -67,9 +67,9 @@ export const AboutApplicationComponent = (props: AboutApplicationComponentProps)
             <div className="grid items-start grid-cols-1 lg:grid-cols-2 gap-8">
               <div className="lg:col-span-1">
                 <div className="columns-3 lg:columns-4 space-y-4">
-                  {aboutMainApplication?.dTechIcon?.map((each, index) => (
+                  {aboutMainApplication?.dGalleryImages?.map((each, index) => (
                     <div
-                      key={each.aIconLabel}
+                      key={index}
                       className="
                         break-inside-avoid p-[2px] bg-muted rounded-xl
                         border-2 border-muted-foreground
@@ -80,7 +80,7 @@ export const AboutApplicationComponent = (props: AboutApplicationComponentProps)
                       <div className="relative w-full aspect-square rounded-xl overflow-hidden">
                         <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-6">
                           <img
-                            src={each.bIconValue || "https://picsum.photos/200/300.webp?random=1"}
+                            src={each || "https://picsum.photos/200/300.webp?random=1"}
                             alt={`img-${index}`}
                             className="max-w-full max-h-full object-contain"
                           />

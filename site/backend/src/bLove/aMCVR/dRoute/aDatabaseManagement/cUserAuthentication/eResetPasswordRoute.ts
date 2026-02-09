@@ -57,4 +57,10 @@ router.route("/delete/:id").delete(
   resetPasswordContorller().delete
 )
 
+router.route("/primary/:token").post(
+  rateLimiterMiddleware({ key:"ResetPasswordModel-primary", time: 60, limit: 10 }),
+  resetPasswordValidation.resetPassword(), validatorMiddleware, 
+  resetPasswordContorller().resetPassword
+)
+
 export const resetPasswordRoute = router

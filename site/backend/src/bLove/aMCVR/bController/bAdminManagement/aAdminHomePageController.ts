@@ -40,7 +40,7 @@ const adminHomePageController = (Model= "AdminHomePageModel", Label= "AdminHomeP
       const aboutApplication = await AdminAboutApplicationModel
         .find()
         .sort({ createdAt: -1 })
-        .select("aImage aTitle aSubtitle aDescription aDetail dTechIcon")
+        .select("aImage aTitle aSubtitle aDescription aDetail dTechIcon dWebLinks dGalleryImages")
         .limit(4)
         .lean();
 

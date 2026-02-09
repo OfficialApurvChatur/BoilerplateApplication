@@ -20,6 +20,7 @@ export type AdminHeroModelType = DefaultSchemaUtilityType & {
     aLinkTitle?: string;
     bLinkURL?: string;
   }[];
+  dGalleryImages: string[];
   // E. CriticalInfo Type
   // ..
 }
@@ -102,7 +103,16 @@ const schema = new mongoose.Schema<AdminHeroModelType>({
       },
     ], // 👈 default web link
   },
-  
+  dGalleryImages: {
+    type: [
+      { 
+        type: String, 
+        trim: true 
+      }
+    ],
+    default: [], // 👈 default gallery images
+  },
+
   // E. CriticalInfo Schema
   // ..
 

@@ -16,6 +16,7 @@ const heroValidation = {
     ...validatorUtility.dTag(),
     ...validatorUtility.dSocialLinks(),
     ...validatorUtility.dWebLinks(),
+    ...validatorUtility.dGalleryImages(),
   ],
 
   retrieve: () => [
@@ -33,6 +34,7 @@ const heroValidation = {
     ...validatorUtility.dTag(),
     ...validatorUtility.dSocialLinks(),
     ...validatorUtility.dWebLinks(),
+    ...validatorUtility.dGalleryImages(),
     ...validatorUtility.idParam({ Model: HeroModel, label: "HeroModel" })
   ],
 

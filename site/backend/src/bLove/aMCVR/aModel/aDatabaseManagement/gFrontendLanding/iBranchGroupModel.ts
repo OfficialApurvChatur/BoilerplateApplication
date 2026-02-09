@@ -25,7 +25,7 @@ const schema = new mongoose.Schema<BranchGroupModelType>({
     type: [
       { 
         type: mongoose.Schema.Types.ObjectId, 
-        ref: 'AdminBranchModel' 
+        ref: 'BranchModel' 
       }
     ],
     default: [] // 👈 default branch

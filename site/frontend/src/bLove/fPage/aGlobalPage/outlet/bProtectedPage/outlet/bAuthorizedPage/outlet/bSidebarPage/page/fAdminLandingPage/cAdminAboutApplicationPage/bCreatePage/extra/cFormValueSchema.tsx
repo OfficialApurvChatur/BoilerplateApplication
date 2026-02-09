@@ -46,6 +46,34 @@ const formValueSchema = z.object({
       })
     )
     .optional(),
+  dWebLinks: z
+    .array(
+      z.object({
+        aLinkTitle: z
+          .string()
+          .optional()
+          .refine(val => !val || val.trim().length > 0, {
+            message: "Title cannot be empty",
+          }),
+        bLinkURL: z
+          .string()
+          .optional()
+          .refine(val => !val || /^https?:\/\/.+/.test(val), {
+            message: "Please provide a valid URL (starting with http or https)",
+          }),
+      })
+    )
+    .optional(),
+  dGalleryImages: z
+    .array(
+      z
+        .string()
+        .optional()
+        .refine(val => !val || /^https?:\/\/.+/.test(val), {
+          message: "Invalid image URL",
+        })
+    )
+    .optional()
 });
 
 export default formValueSchema;

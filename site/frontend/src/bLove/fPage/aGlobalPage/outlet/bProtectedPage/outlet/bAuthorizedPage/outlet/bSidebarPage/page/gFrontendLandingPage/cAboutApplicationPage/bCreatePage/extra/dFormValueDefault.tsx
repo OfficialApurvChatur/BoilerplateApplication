@@ -1,3 +1,5 @@
+import brandConnection from "@/aConnection/eBrandConnection";
+
 const formValueDefault = ({
   aImage: "",
   aTitle: "",
@@ -25,6 +27,21 @@ const formValueDefault = ({
       bIconValue: 'Node.js',
     },
   ],
+  dWebLinks: [
+    {
+      aLinkTitle: "Visit Application",
+      bLinkURL: brandConnection.fFrontendApplicationURL,
+    },
+    {
+      aLinkTitle: "Visit Administration",
+      bLinkURL: brandConnection.gAdminApplicationURL,
+    },
+    {
+      aLinkTitle: "Visit Codebase",
+      bLinkURL: brandConnection.nGithubURL
+    },
+  ],
+  dGalleryImages: [""],
 })
 
 export default formValueDefault;

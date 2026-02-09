@@ -16,16 +16,16 @@ export type UserModelType = DefaultSchemaUtilityType & {
   cProfile: mongoose.Types.ObjectId; 
   // D. MoreInfo Type
   dAddress?: {
-    lane?: string;
-    street?: string;
-    city?: string;
-    state?: string;
-    country?: string;
-    pinCode?: string;
+    aLane?: string;
+    bStreet?: string;
+    cCity?: string;
+    dState?: string;
+    eCountry?: string;
+    fPinCode?: string;
   };
   dLinks?: {
-    title?: string;
-    url?: string;
+    aLinkTitle?: string;
+    bLinkURL?: string;
   }[];
   // E. CriticalInfo Type
   eFirstname?: string;
@@ -53,16 +53,16 @@ const schema = new mongoose.Schema<UserModelType>({
 
   // D. MoreInfo Schema
   dAddress: {
-    lane: { type: String },
-    street: { type: String },  
-    city: { type: String },  
-    state: { type: String },  
-    country: { type: String },  
-    pinCode: { type: String },    
+    aLane: { type: String },
+    bStreet: { type: String },  
+    cCity: { type: String },  
+    dState: { type: String },  
+    eCountry: { type: String },  
+    fPinCode: { type: String },    
   },
   dLinks: [{
-    title: { type: String },
-    url: { type: String },  
+    aLinkTitle: { type: String },
+    bLinkURL: { type: String },  
   }],
 
   // E. CriticalInfo Schema

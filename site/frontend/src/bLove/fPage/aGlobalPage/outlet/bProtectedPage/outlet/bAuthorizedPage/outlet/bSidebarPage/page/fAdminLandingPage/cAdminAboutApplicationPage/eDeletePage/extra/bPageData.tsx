@@ -58,6 +58,28 @@ const pageData = ({ retrieveAPIResponse }: { retrieveAPIResponse: any }) => (
               value: "bIconValue",
             }
           },
+          { 
+            label: "Web Links", 
+            type: "dynamic-read", 
+            value: retrieveAPIResponse.data.retrieve?.dWebLinks,
+            children: {
+              type: "object-array-read",
+              readType: "url-read",
+              label: "aLinkTitle",
+              value: "bLinkURL",
+            }
+
+          },
+          { 
+            label: "Gallery Images", 
+            type: "dynamic-read", 
+            value: retrieveAPIResponse.data.retrieve?.dGalleryImages,
+            children: {
+              label: "Gallery Image",
+              type: "string-array-read",
+              readType: "image-read",
+            }
+          },
         ],  
       },
   

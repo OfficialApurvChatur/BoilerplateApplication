@@ -1,5 +1,6 @@
 ﻿import validatorUtility from "../../../../cUtility/cValidatorUtility";
 import { ForgotPasswordModel } from '../../../aModel/aDatabaseManagement/cUserAuthentication/dForgotPasswordModel';
+import { UserModel } from "../../../aModel/aDatabaseManagement/bUserAdministration/eUserModel";
 
 
 const forgotPasswordValidation = {
@@ -32,6 +33,10 @@ const forgotPasswordValidation = {
 
   delete: () => [
     ...validatorUtility.idParam({ Model: ForgotPasswordModel, label: "ForgotPasswordModel" })
+  ],
+
+  forgotPassword: () => [
+    ...validatorUtility.eEmail({ Model: UserModel, label: "UserModel", mode: "forgot-password" }),
   ],
 };
 

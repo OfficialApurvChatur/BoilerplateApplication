@@ -30,6 +30,12 @@ const fullRoute = {
           cAccountEmailUpdateRoute: `/${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.cAccountEmailUpdateRoute}`,
           dAccountPasswordUpdateRoute: `/${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.dAccountPasswordUpdateRoute}`,
           eAccountDeleteRoute: `/${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.eAccountDeleteRoute}`,
+          
+          fAccountRetrieveSecondaryRoute: `/${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.fAccountRetrieveSecondaryRoute}`,
+          gAccountUpdateSecondaryRoute: `/${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.gAccountUpdateSecondaryRoute}`,
+          hAccountEmailUpdateSecondaryRoute: `/${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.hAccountEmailUpdateSecondaryRoute}`,
+          iAccountPasswordUpdateSecondaryRoute: `/${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.iAccountPasswordUpdateSecondaryRoute}`,
+          jAccountDeleteSecondaryRoute: `/${endpointRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.aTopbarRoute.jAccountDeleteSecondaryRoute}`,
         },
         bSidebarRoute: {
           aSettingRoute: {

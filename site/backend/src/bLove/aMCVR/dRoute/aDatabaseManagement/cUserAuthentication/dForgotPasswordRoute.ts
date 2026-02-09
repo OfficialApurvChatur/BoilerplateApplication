@@ -57,4 +57,10 @@ router.route("/delete/:id").delete(
   forgotPasswordContorller().delete
 )
 
+router.route("/primary").post(
+  rateLimiterMiddleware({ key:"ForgotPasswordModel-primary", time: 60, limit: 10 }),
+  forgotPasswordValidation.forgotPassword(), validatorMiddleware, 
+  forgotPasswordContorller().forgotPassword
+)
+
 export const forgotPasswordRoute = router

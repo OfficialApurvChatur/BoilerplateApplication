@@ -5,6 +5,7 @@ import corsMiddleware from "cors";
 import compressionMiddleware from "compression";
 
 import loggerConnection from "./bLoggerConnection";
+import brandConnection from "./jBrandConnection";
 
 import errorMiddleware from "../bLove/bMiddleware/aErrorMiddleware";
 import morganMiddleware from "../bLove/bMiddleware/jMorganMiddleware";
@@ -77,7 +78,18 @@ import { adminBranchPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/hAd
 import { adminProjectSectionPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/iAdminProjectSectionPageRoute";
 import { adminProjectGroupPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/jAdminProjectGroupPageRoute";
 import { adminProjectPageRoute } from "../bLove/aMCVR/dRoute/bAdminManagement/kAdminProjectPageRoute";
-import brandConnection from "./jBrandConnection";
+
+import { homePageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/aHomePageRoute";
+import { aboutCompanyPageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/bAboutCompanyPageRoute";
+import { aboutApplicationPageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/cAboutApplicationPageRoute";
+import { contactPageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/dContactPageRoute";
+import { servicePageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/eServicePageRoute";
+import { branchSectionPageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/fBranchSectionPageRoute";
+import { branchGroupPageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/gBranchGroupPageRoute";
+import { branchPageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/hBranchPageRoute";
+import { projectSectionPageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/iProjectSectionPageRoute";
+import { projectGroupPageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/jProjectGroupPageRoute";
+import { projectPageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/kProjectPageRoute";
 
 
 loggerConnection().info({ 
@@ -177,17 +189,17 @@ appConnection.use("/api/v1/admin-project-section-page/", adminProjectSectionPage
 appConnection.use("/api/v1/admin-project-group-page/", adminProjectGroupPageRoute);
 appConnection.use("/api/v1/admin-project-page/", adminProjectPageRoute);
 
-appConnection.use("/api/v1/home-page/", adminHomePageRoute);
-appConnection.use("/api/v1/about-company-page/", adminAboutCompanyPageRoute);
-appConnection.use("/api/v1/about-application-page/", adminAboutApplicationPageRoute);
-appConnection.use("/api/v1/contact-page/", adminContactPageRoute);
-appConnection.use("/api/v1/service-page/", adminServicePageRoute);
-appConnection.use("/api/v1/branch-section-page/", adminBranchSectionPageRoute);
-appConnection.use("/api/v1/branch-group-page/", adminBranchGroupPageRoute);
-appConnection.use("/api/v1/branch-page/", adminBranchPageRoute);
-appConnection.use("/api/v1/project-section-page/", adminProjectSectionPageRoute);
-appConnection.use("/api/v1/project-group-page/", adminProjectGroupPageRoute);
-appConnection.use("/api/v1/project-page/", adminProjectPageRoute);
+appConnection.use("/api/v1/home-page/", homePageRoute);
+appConnection.use("/api/v1/about-company-page/", aboutCompanyPageRoute);
+appConnection.use("/api/v1/about-application-page/", aboutApplicationPageRoute);
+appConnection.use("/api/v1/contact-page/", contactPageRoute);
+appConnection.use("/api/v1/service-page/", servicePageRoute);
+appConnection.use("/api/v1/branch-section-page/", branchSectionPageRoute);
+appConnection.use("/api/v1/branch-group-page/", branchGroupPageRoute);
+appConnection.use("/api/v1/branch-page/", branchPageRoute);
+appConnection.use("/api/v1/project-section-page/", projectSectionPageRoute);
+appConnection.use("/api/v1/project-group-page/", projectGroupPageRoute);
+appConnection.use("/api/v1/project-page/", projectPageRoute);
 
 // Error Middleware
 appConnection.use(errorMiddleware)

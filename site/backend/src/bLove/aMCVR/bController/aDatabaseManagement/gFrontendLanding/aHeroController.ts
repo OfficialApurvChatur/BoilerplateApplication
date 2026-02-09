@@ -67,6 +67,7 @@ const heroController = (Model=HeroModel, Label="HeroModel") => ({
         dTag: request.body.dTag,
         dSocialLinks: request.body.dSocialLinks,
         dWebLinks: request.body.dWebLinks,
+        dGalleryImages: request.body.dGalleryImages,
       })
 
       // Delete Cache
@@ -163,6 +164,7 @@ const heroController = (Model=HeroModel, Label="HeroModel") => ({
           dTag: request.body.dTag,
           dSocialLinks: request.body.dSocialLinks,
           dWebLinks: request.body.dWebLinks,
+          dGalleryImages: request.body.dGalleryImages,
         }, {
           new: true,
           runValidators: true,

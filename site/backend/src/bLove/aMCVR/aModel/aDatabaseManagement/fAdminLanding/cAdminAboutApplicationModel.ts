@@ -1,6 +1,7 @@
 ﻿import mongoose from "mongoose";
 import slugify from "slugify";
 
+import brandConnection from "../../../../../aConnection/jBrandConnection";
 import defaultSchemaUtility, { DefaultSchemaUtilityType } from "../../../../cUtility/bDefaultSchemaUtility";
 
 
@@ -14,6 +15,11 @@ export type AdminAboutApplicationModelType = DefaultSchemaUtilityType & {
     aIconLabel: string;
     bIconValue: string;
   }[];
+  dWebLinks?: {
+    aLinkTitle?: string;
+    bLinkURL?: string;
+  }[];
+  dGalleryImages: string[];
   // E. CriticalInfo Type
   // ..
 }
@@ -57,6 +63,46 @@ const schema = new mongoose.Schema<AdminAboutApplicationModelType>({
         bIconValue: 'Node.js',
       },
     ], // 👈 default tech
+  },
+  dWebLinks: {
+    type: [
+      {
+        aLinkTitle: {
+          type: String,
+          trim: true,
+          default: 'Visit XXX', // 👈 default link tilte
+        },
+        bLinkURL: {
+          type: String,
+          trim: true,
+          default: brandConnection.gAdminApplicationURL, // 👈 default link url
+        },  
+      }
+    ],
+    default: [
+      {
+        aLinkTitle: 'Visit Application',
+        bLinkURL: brandConnection.fFrontendApplicationURL,
+      },
+      {
+        aLinkTitle: 'Visit Administration',
+        bLinkURL: brandConnection.gAdminApplicationURL,
+      },
+      {
+        aLinkTitle: 'Visit Codebase',
+        bLinkURL: 'https://github.com/OfficialApurvChatur/',
+      },
+
+    ], // 👈 default example link
+  },
+  dGalleryImages: {
+    type: [
+      { 
+        type: String, 
+        trim: true 
+      }
+    ],
+    default: [], // 👈 default gallery images
   },
 
   // D. MoreInfo Schema

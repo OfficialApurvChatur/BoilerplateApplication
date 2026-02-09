@@ -54,6 +54,11 @@ export type AboutApplicationComponentDataType = {
     aIconLabel: string;
     bIconValue: string;
   }[];
+  dWebLinks: {
+    aLinkTitle: string;
+    bLinkURL: string;
+  }[];
+  dGalleryImages: string[];
 }[];
 
 export type ServiceComponentDataType = {
