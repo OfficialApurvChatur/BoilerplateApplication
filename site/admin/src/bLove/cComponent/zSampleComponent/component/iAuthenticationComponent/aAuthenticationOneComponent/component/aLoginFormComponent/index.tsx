@@ -1,4 +1,4 @@
-import backgroundImage from "@/bLove/hAsset/auth-model.jpg";
+import backgroundImage from "@/bLove/hAsset/auth-model.jpeg";
 
 import { cn } from "@/aConnection/bShadcnConnection/lib/utils"
 import { Button } from "@/aConnection/bShadcnConnection/components/ui/button"
