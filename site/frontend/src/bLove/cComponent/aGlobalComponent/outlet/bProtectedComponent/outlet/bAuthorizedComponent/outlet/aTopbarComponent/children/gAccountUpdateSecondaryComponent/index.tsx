@@ -18,7 +18,8 @@ import handleImageUpdateForObject from '@/bLove/dUtility/aImageForObject/bHandle
 import handleImageDeleteForObject from '@/bLove/dUtility/aImageForObject/cHandleImageDeleteForObject'
 import handleImageCreateForObject from '@/bLove/dUtility/aImageForObject/aHandleImageCreateForObject'
 
-import backgroundImage from "@/bLove/hAsset/defaultImage.png";
+import profileImage from "@/bLove/hAsset/defaultImage.png";
+import coverImage from "@/bLove/hAsset/default-landscape.png";
 import brandConnection from '@/aConnection/eBrandConnection'
 
 
@@ -110,7 +111,7 @@ const AccountUpdateSecondaryComponent = (props: AccountUpdateSecondaryComponentT
                     <img 
                       src={
                         props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.eImage || 
-                        "https://readymadeui.com/cardImg.webp"
+                        coverImage
                       } 
                       alt="Banner Image" 
                       className="w-full h-full object-cover" 
@@ -177,14 +178,14 @@ const AccountUpdateSecondaryComponent = (props: AccountUpdateSecondaryComponentT
                                 render={() => (
                                   <FormItem>
                                     <FormLabel className="text-foreground text-sm font-medium block mb-2">
-                                      Cover Picture :
+                                      Cover Image :
                                     </FormLabel>
                                     <FormControl>
                                       <div className="flex items-center gap-4 rounded-lg">
-                                        <div className="rounded-md flex items-center justify-center w-28 h-28 overflow-hidden">
+                                        <div className="rounded-md flex items-center justify-center w-52 h-28 overflow-hidden">
                                           {fileLoading ? <Loader2Icon className="w-10 h-10 animate-spin" /> : (
                                             <img
-                                              src={form?.watch("eImage") || backgroundImage}
+                                              src={form?.watch("eImage") || coverImage}
                                               className="rounded-md object-cover w-full h-full"
                                               alt="Uploaded Preview"
                                             />
@@ -196,14 +197,14 @@ const AccountUpdateSecondaryComponent = (props: AccountUpdateSecondaryComponentT
                                             <React.Fragment>
                                               <Button
                                                 type="button"
-                                                onClick={() => document.getElementById(`profile-image-update`)?.click()}
+                                                onClick={() => document.getElementById(`cover-picture-update`)?.click()}
                                                 className="bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-700"
                                               >
                                                 Edit Image
                                               </Button>
                                               
                                               <Input
-                                                id={`profile-image-update`}
+                                                id={`cover-picture-update`}
                                                 type="file"
                                                 className="hidden"
                                                 onChange={(event: any) => handleImageUpdateForObject(event, { name: "eImage", folderName: "user" }, form, setFileLoading, form.watch("eImage"))} 
@@ -221,14 +222,14 @@ const AccountUpdateSecondaryComponent = (props: AccountUpdateSecondaryComponentT
                                             <React.Fragment>
                                               <Button
                                                 type="button"
-                                                onClick={() => document.getElementById(`image-create`)?.click()}
+                                                onClick={() => document.getElementById(`cover-picture-create`)?.click()}
                                                 className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
                                               >
                                                 Choose Image
                                               </Button>
                           
                                               <Input
-                                                id={`image-create`}
+                                                id={`cover-picture-create`}
                                                 type="file"
                                                 className="hidden"
                                                 onChange={(event: any) => handleImageCreateForObject(event, { name: "eImage", folderName: "user" }, form, setFileLoading)}
@@ -345,14 +346,14 @@ const AccountUpdateSecondaryComponent = (props: AccountUpdateSecondaryComponentT
                                 render={() => (
                                   <FormItem>
                                     <FormLabel className="text-foreground text-sm font-medium block mb-2">
-                                      Cover Image :
+                                      Profile Image :
                                     </FormLabel>
                                     <FormControl>
                                       <div className="flex items-center gap-4 rounded-lg">
                                         <div className="rounded-md flex items-center justify-center w-28 h-28 overflow-hidden">
                                           {fileLoading ? <Loader2Icon className="w-10 h-10 animate-spin" /> : (
                                             <img
-                                              src={form?.watch("aImage") || backgroundImage}
+                                              src={form?.watch("aImage") || profileImage}
                                               className="rounded-md object-cover w-full h-full"
                                               alt="Uploaded Preview"
                                             />
@@ -364,14 +365,14 @@ const AccountUpdateSecondaryComponent = (props: AccountUpdateSecondaryComponentT
                                             <React.Fragment>
                                               <Button
                                                 type="button"
-                                                onClick={() => document.getElementById(`cover-image-update`)?.click()}
+                                                onClick={() => document.getElementById(`profile-image-update`)?.click()}
                                                 className="bg-amber-600 text-white px-4 py-2 rounded-md hover:bg-amber-700"
                                               >
                                                 Edit Image
                                               </Button>
                                               
                                               <Input
-                                                id={`cover-image-update`}
+                                                id={`profile-image-update`}
                                                 type="file"
                                                 className="hidden"
                                                 onChange={(event: any) => handleImageUpdateForObject(event, { name: "aImage", folderName: "user" }, form, setFileLoading, form.watch("aImage"))} 
@@ -389,14 +390,14 @@ const AccountUpdateSecondaryComponent = (props: AccountUpdateSecondaryComponentT
                                             <React.Fragment>
                                               <Button
                                                 type="button"
-                                                onClick={() => document.getElementById(`image-create`)?.click()}
+                                                onClick={() => document.getElementById(`profile-image-create`)?.click()}
                                                 className="bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600"
                                               >
                                                 Choose Image
                                               </Button>
                           
                                               <Input
-                                                id={`image-create`}
+                                                id={`profile-image-create`}
                                                 type="file"
                                                 className="hidden"
                                                 onChange={(event: any) => handleImageCreateForObject(event, { name: "aImage", folderName: "user" }, form, setFileLoading)}

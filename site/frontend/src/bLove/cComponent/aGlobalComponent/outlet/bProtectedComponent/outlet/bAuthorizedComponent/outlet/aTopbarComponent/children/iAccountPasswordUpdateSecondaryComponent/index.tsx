@@ -12,6 +12,8 @@ import { Input } from '@/aConnection/bShadcnConnection/components/ui/input'
 import LoaderComponent from '@/bLove/cComponent/aGlobalComponent/component/aLoaderComponent'
 import ErrorComponent from '@/bLove/cComponent/aGlobalComponent/component/bErrorComponent'
 
+import coverImage from "@/bLove/hAsset/default-landscape.png";
+
 
 type AccountPasswordUpdateSecondaryComponentType = {
   formSchema: any,
@@ -78,7 +80,7 @@ const AccountPasswordUpdateSecondaryComponent = (props: AccountPasswordUpdateSec
                     <img 
                       src={
                         props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.eImage || 
-                        "https://readymadeui.com/cardImg.webp"
+                        coverImage
                       } 
                       alt="Banner Image" 
                       className="w-full h-full object-cover" 

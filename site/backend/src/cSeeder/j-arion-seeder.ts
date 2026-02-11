@@ -91,12 +91,37 @@ const seeder = async () => {
     // --- Create Initial User ---
     const shraddha = await UserModel.create({
       aTitle: "Shraddha Kapoor",
-      aSubtitle: "I'm using this application",
+      aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+      aDescription: "Dreamer. Coffee lover. Believer in kindness and late-night conversations. Trying to collect moments, not things. If you love dogs and good food, we’ll get along just fine.",
+      aDetail: "I’m a 25-year-old professional currently working in the marketing field and based in Mumbai. I consider myself friendly, optimistic, and family-oriented. In my free time, I enjoy reading, traveling, trying new cafés, and spending quality time with close friends. I value honesty, kindness, and meaningful conversations. I’m looking for someone mature, understanding, and ambitious, who believes in mutual respect and growing together in life.",
       bCreatedAt: new Date(Date.now()),
+      dAddress: {
+        aLane: "5th Cross Lane",
+        bStreet: "MG Road",
+        cCity: "Mumbai",
+        dState: "Maharashtra",
+        eCountry: "India",
+        fPinCode: "400069",
+      },
+      dLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.instagram.com/shraddhakapoor/",
+        },
+        {
+          aLinkTitle: "X",
+          bLinkURL: "https://x.com/ShraddhaKapoor",
+        },
+        {
+          aLinkTitle: "Linkedin",
+          bLinkURL: "https://www.linkedin.com/posts/shraddha-kapoor-6a9228380_for-a-while-now-ive-felt-the-urge-to-share-activity-7365306712066560000-iKZR/?utm_source=chatgpt.com",
+        }
+      ],
       eFirstname: "Shraddha",
       eLastname: "Kapoor",
       eEmail: `shraddha.kapoor${brandConnection.iEmailName}`,
       ePassword: "Shraddha@123",
+      eMobile: "9146504664"
     });
 
     if (shraddha) {
@@ -225,255 +250,831 @@ const seeder = async () => {
       aTitle: string;
       aSubtitle: string;
       aDescription: string;
+
+      aDetail: string;
+
+      dAddress: {
+        aLane: string;
+        bStreet: string;
+        cCity: string;
+        dState: string;
+        eCountry: string;
+        fPinCode: string;
+      };
+
+      dLinks: {
+        aLinkTitle: string;
+        bLinkURL: string;
+      }[];
     }
 
     const userList: IUser[] = [
       { 
         eFirstname: "Aarav", eLastname: "Sharma", eEmail: `aarav.sharma${brandConnection.iEmailName}`,
         aTitle: "Welcome Aarav",
-        aSubtitle: "Getting started with your workspace",
-        aDescription: "Aarav is exploring the core features of the platform and setting up his personalized workspace for daily productivity."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Aarav is exploring the core features of the platform and setting up his personalized workspace for daily productivity.",
+        aDetail: "I’m a working professional who enjoys maintaining a healthy balance between career and personal life. I value sincerity, open communication, and continuous self-improvement. In my free time, I like exploring new places, reading, and staying active. I’m looking for someone kind, grounded, and supportive to share meaningful experiences with.",
+        dAddress: {
+          aLane: "Sector 18",
+          bStreet: "Noida Main Road",
+          cCity: "Noida",
+          dState: "Uttar Pradesh",
+          eCountry: "India",
+          fPinCode: "201301",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/taylorswift/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/taylorswift13" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/taylor-swift/" }
+        ],
       },
       { 
         eFirstname: "Vivaan", eLastname: "Mehta", eEmail: `vivaan.mehta${brandConnection.iEmailName}`,
         aTitle: "Vivaan’s Dashboard",
-        aSubtitle: "Overview of recent activity",
-        aDescription: "Vivaan’s dashboard provides insights into recent actions, updates, and performance indicators across modules."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Vivaan’s dashboard provides insights into recent actions, updates, and performance indicators across modules.",
+        aDetail: "I consider myself easygoing, practical, and focused on personal growth. I enjoy simple pleasures like good conversations, music, and outdoor activities. Family and close friendships mean a lot to me. I’m hoping to meet someone genuine, understanding, and positive-minded for a long-term connection.",
+        dAddress: {
+          aLane: "Park Street",
+          bStreet: "Camac Road",
+          cCity: "Kolkata",
+          dState: "West Bengal",
+          eCountry: "India",
+          fPinCode: "700016",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/selenagomez/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/selenagomez" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/selena-gomez/" }
+        ],
       },
       { 
         eFirstname: "Aditya", eLastname: "Verma", eEmail: `aditya.verma${brandConnection.iEmailName}`,
         aTitle: "Aditya’s Profile Setup",
-        aSubtitle: "Complete your personal details",
-        aDescription: "Aditya is completing profile information to unlock advanced features and personalized recommendations."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Aditya is completing profile information to unlock advanced features and personalized recommendations.",
+        aDetail: "I am a curious and ambitious individual who believes in learning something new every day. I enjoy traveling, trying different cuisines, and spending time in nature. I value honesty and mutual respect and would love to connect with someone who shares similar outlooks on life.",
+        dAddress: {
+          aLane: "Indiranagar 2nd Stage",
+          bStreet: "100 Feet Road",
+          cCity: "Bengaluru",
+          dState: "Karnataka",
+          eCountry: "India",
+          fPinCode: "560038",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/arianagrande/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/ArianaGrande" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/ariana-grande/" }
+        ],
       },
       { 
         eFirstname: "Krishna", eLastname: "Iyer", eEmail: `krishna.iyer${brandConnection.iEmailName}`,
         aTitle: "Krishna’s First Login",
-        aSubtitle: "Welcome to the ecosystem",
-        aDescription: "Krishna has successfully logged in and is familiarizing himself with navigation, tools, and system workflows."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Krishna has successfully logged in and is familiarizing himself with navigation, tools, and system workflows.",
+        aDetail: "I’m a calm and optimistic person who values stability and meaningful relationships. My interests include fitness, movies, and exploring creative hobbies. I believe in supporting each other’s dreams and growing together. Looking for someone thoughtful and mature to build a future with.",
+        dAddress: {
+          aLane: "Anna Nagar",
+          bStreet: "2nd Avenue",
+          cCity: "Chennai",
+          dState: "Tamil Nadu",
+          eCountry: "India",
+          fPinCode: "600040",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/beyonce/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/Beyonce" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/beyonce/" }
+        ],
       },
       { 
         eFirstname: "Arjun", eLastname: "Patel", eEmail: `arjun.patel${brandConnection.iEmailName}`,
         aTitle: "Arjun’s Activity Feed",
-        aSubtitle: "Tracking progress in real time",
-        aDescription: "Arjun’s activity feed displays real-time updates and helps monitor ongoing tasks and engagements."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Arjun’s activity feed displays real-time updates and helps monitor ongoing tasks and engagements.",
+        aDetail: "I enjoy living a balanced lifestyle that includes work, hobbies, and quality time with loved ones. I appreciate good humor, kindness, and authenticity. I’m hoping to meet someone responsible, caring, and open-minded who believes in partnership and teamwork.",
+        dAddress: {
+          aLane: "Banjara Hills",
+          bStreet: "Road No 12",
+          cCity: "Hyderabad",
+          dState: "Telangana",
+          eCountry: "India",
+          fPinCode: "500034",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/kimkardashian/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/KimKardashian" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/kim-kardashian/" }
+        ],
       },
 
       { 
         eFirstname: "Ishaan", eLastname: "Kapoor", eEmail: `ishaan.kapoor${brandConnection.iEmailName}`,
         aTitle: "Ishaan’s Preferences",
-        aSubtitle: "Customize your experience",
-        aDescription: "Ishaan is adjusting preferences to tailor notifications, themes, and visibility settings."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Ishaan is adjusting preferences to tailor notifications, themes, and visibility settings.",
+        aDetail: "I am passionate about my career while also making time for personal interests like reading, music, and travel. I believe in treating people with respect and empathy. I’m looking for a genuine person who values trust, understanding, and meaningful companionship.",
+        dAddress: {
+          aLane: "Viman Nagar",
+          bStreet: "Nagar Road",
+          cCity: "Pune",
+          dState: "Maharashtra",
+          eCountry: "India",
+          fPinCode: "411014",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/aliaabhatt/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/aliaa08" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/alia-bhatt/" }
+        ],
       },
       { 
         eFirstname: "Rohan", eLastname: "Malhotra", eEmail: `rohan.malhotra${brandConnection.iEmailName}`,
         aTitle: "Rohan’s Workspace",
-        aSubtitle: "Organized and efficient",
-        aDescription: "Rohan’s workspace focuses on clarity and structure to enhance task execution and collaboration."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Rohan’s workspace focuses on clarity and structure to enhance task execution and collaboration.",
+        aDetail: "I would describe myself as practical, family-oriented, and emotionally mature. I enjoy peaceful weekends, exploring new cafés, and engaging in thoughtful conversations. I hope to meet someone supportive and grounded who believes in mutual growth.",
+        dAddress: {
+          aLane: "Ashram Road",
+          bStreet: "Ellis Bridge",
+          cCity: "Ahmedabad",
+          dState: "Gujarat",
+          eCountry: "India",
+          fPinCode: "380009",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/priyankachopra/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/priyankachopra" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/priyanka-chopra/" }
+        ],
       },
       { 
         eFirstname: "Kunal", eLastname: "Joshi", eEmail: `kunal.joshi${brandConnection.iEmailName}`,
         aTitle: "Kunal’s Recent Actions",
-        aSubtitle: "Review system usage",
-        aDescription: "Kunal’s recent actions log helps track interactions and maintain transparency within the system."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Kunal’s recent actions log helps track interactions and maintain transparency within the system.",
+        aDetail: "I’m someone who values simplicity, honesty, and positivity. I enjoy learning new skills and meeting new people. I believe relationships thrive on communication and respect. I’m looking for a like-minded individual to build a happy and balanced life with.",
+        dAddress: {
+          aLane: "Civil Lines",
+          bStreet: "Mall Road",
+          cCity: "Delhi",
+          dState: "Delhi",
+          eCountry: "India",
+          fPinCode: "110054",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/deepikapadukone/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/deepikapadukone" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/deepika-padukone/" }
+        ],
       },
       { 
         eFirstname: "Siddharth", eLastname: "Bansal", eEmail: `siddharth.bansal${brandConnection.iEmailName}`,
         aTitle: "Siddharth’s Overview",
-        aSubtitle: "Everything at a glance",
-        aDescription: "Siddharth uses the overview panel to quickly assess system status, alerts, and upcoming priorities."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Siddharth uses the overview panel to quickly assess system status, alerts, and upcoming priorities.",
+        aDetail: "I have a cheerful personality and a curious mind. I like staying active, discovering new hobbies, and spending time with family. I value loyalty and kindness and hope to connect with someone who shares similar principles and life goals.",
+        dAddress: {
+          aLane: "Model Town",
+          bStreet: "GT Road",
+          cCity: "Amritsar",
+          dState: "Punjab",
+          eCountry: "India",
+          fPinCode: "143001",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/kyliejenner/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/KylieJenner" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/kylie-jenner/" }
+        ],
       },
       { 
         eFirstname: "Manav", eLastname: "Chauhan", eEmail: `manav.chauhan${brandConnection.iEmailName}`,
         aTitle: "Manav’s Task Board",
-        aSubtitle: "Managing daily goals",
-        aDescription: "Manav organizes tasks using the board to ensure timely completion and clear accountability."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Manav organizes tasks using the board to ensure timely completion and clear accountability.",
+        aDetail: "I believe in leading a meaningful and responsible life. I enjoy traveling, photography, and spending time with close friends. I’m looking for someone mature, understanding, and emotionally available for a serious and respectful relationship.",
+        dAddress: {
+          aLane: "Lalbagh Road",
+          bStreet: "Ashoka Circle",
+          cCity: "Mysuru",
+          dState: "Karnataka",
+          eCountry: "India",
+          fPinCode: "570001",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/katyperry/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/katyperry" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/katy-perry/" }
+        ],
       },
 
       { 
         eFirstname: "Ananya", eLastname: "Agarwal", eEmail: `ananya.agarwal${brandConnection.iEmailName}`,
         aTitle: "Ananya’s Insights",
-        aSubtitle: "Understanding your data",
-        aDescription: "Ananya reviews analytical insights to make informed decisions and optimize workflows."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Ananya reviews analytical insights to make informed decisions and optimize workflows.",
+        aDetail: "I’m an independent and career-focused person who also enjoys relaxing with good books and movies. I value deep conversations and genuine connections. I hope to meet someone who is compassionate, confident, and ready for a committed partnership.",
+        dAddress: {
+          aLane: "Salt Lake Sector 5",
+          bStreet: "IT Park Road",
+          cCity: "Kolkata",
+          dState: "West Bengal",
+          eCountry: "India",
+          fPinCode: "700091",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/ladygaga/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/ladygaga" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/lady-gaga/" }
+        ],
       },
       { 
         eFirstname: "Aditi", eLastname: "Kulkarni", eEmail: `aditi.kulkarni${brandConnection.iEmailName}`,
         aTitle: "Aditi’s Notifications",
-        aSubtitle: "Stay informed",
-        aDescription: "Aditi monitors notifications to stay updated on system events and important messages."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Aditi monitors notifications to stay updated on system events and important messages.",
+        aDetail: "I enjoy a balanced lifestyle filled with work, family time, and personal hobbies. I appreciate honesty, patience, and a good sense of humor. I’m looking for a partner who believes in shared values and mutual encouragement.",
+        dAddress: {
+          aLane: "Alkapuri",
+          bStreet: "RC Dutt Road",
+          cCity: "Vadodara",
+          dState: "Gujarat",
+          eCountry: "India",
+          fPinCode: "390007",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/emmawatson/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/EmmaWatson" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/emma-watson/" }
+        ],
       },
       { 
         eFirstname: "Pooja", eLastname: "Deshmukh", eEmail: `pooja.deshmukh${brandConnection.iEmailName}`,
         aTitle: "Pooja’s Activity Summary",
-        aSubtitle: "A snapshot of engagement",
-        aDescription: "Pooja’s summary highlights recent participation, changes, and interactions within the platform."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Pooja’s summary highlights recent participation, changes, and interactions within the platform.",
+        aDetail: "I consider myself thoughtful and optimistic with a love for learning and exploring. I enjoy music, road trips, and quiet evenings at home. I’m hoping to meet someone sincere and respectful who believes in long-term commitment.",
+        dAddress: {
+          aLane: "Hazratganj",
+          bStreet: "Vidhan Sabha Marg",
+          cCity: "Lucknow",
+          dState: "Uttar Pradesh",
+          eCountry: "India",
+          fPinCode: "226001",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/gal_gadot/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/GalGadot" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/gal-gadot/" }
+        ],
       },
       { 
         eFirstname: "Sneha", eLastname: "Rao", eEmail: `sneha.rao${brandConnection.iEmailName}`,
         aTitle: "Sneha’s Dashboard",
-        aSubtitle: "Clarity and control",
-        aDescription: "Sneha relies on the dashboard to maintain control over her tasks and system interactions."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Sneha relies on the dashboard to maintain control over her tasks and system interactions.",
+        aDetail: "I’m a responsible and fun-loving individual who values relationships and personal growth. I enjoy cooking, traveling, and meeting new people. I’m seeking someone kind-hearted and understanding to build a strong future together.",
+        dAddress: {
+          aLane: "Whitefield",
+          bStreet: "ITPL Main Road",
+          cCity: "Bengaluru",
+          dState: "Karnataka",
+          eCountry: "India",
+          fPinCode: "560066",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/scarlettjohanssonworld/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/Scarlett_Jo" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/scarlett-johansson/" }
+        ],
       },
       { 
         eFirstname: "Kavya", eLastname: "Nair", eEmail: `kavya.nair${brandConnection.iEmailName}`,
         aTitle: "Kavya’s Workspace Setup",
-        aSubtitle: "Building a productive flow",
-        aDescription: "Kavya structures her workspace to align with her daily workflow and priorities."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Kavya structures her workspace to align with her daily workflow and priorities.",
+        aDetail: "I’m someone who believes in kindness, hard work, and positivity. I enjoy spending time with family, staying active, and exploring new interests. I’m looking for a supportive and mature person who values companionship and trust.",
+        dAddress: {
+          aLane: "Thane West",
+          bStreet: "Ghodbunder Road",
+          cCity: "Thane",
+          dState: "Maharashtra",
+          eCountry: "India",
+          fPinCode: "400607",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/emiliaclarke/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/emiliaclarke" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/emilia-clarke/" }
+        ],
       },
 
       { 
         eFirstname: "Neha", eLastname: "Singh", eEmail: `neha.singh${brandConnection.iEmailName}`,
         aTitle: "Neha’s System Access",
-        aSubtitle: "Permissions and roles",
-        aDescription: "Neha reviews her assigned roles and permissions to ensure proper access to platform features."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Neha reviews her assigned roles and permissions to ensure proper access to platform features.",
+        aDetail: "I lead a simple and fulfilling life centered around career goals and close relationships. I enjoy reading, fitness, and learning new things. I hope to find someone genuine and emotionally grounded to share life’s journey with.",
+        dAddress: {
+          aLane: "Gomti Nagar",
+          bStreet: "Patrakar Puram",
+          cCity: "Lucknow",
+          dState: "Uttar Pradesh",
+          eCountry: "India",
+          fPinCode: "226010",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/zendaya/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/Zendaya" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/zendaya/" }
+        ],
       },
       { 
         eFirstname: "Riya", eLastname: "Mishra", eEmail: `riya.mishra${brandConnection.iEmailName}`,
         aTitle: "Riya’s Onboarding",
-        aSubtitle: "Starting the journey",
-        aDescription: "Riya is completing onboarding steps to understand system capabilities and best practices."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Riya is completing onboarding steps to understand system capabilities and best practices.",
+        aDetail: "I’m an easygoing person who loves meaningful conversations and new experiences. I value integrity and emotional maturity. I’m hoping to connect with someone who believes in partnership, respect, and personal growth.",
+        dAddress: {
+          aLane: "Raja Park",
+          bStreet: "Jawahar Nagar Road",
+          cCity: "Jaipur",
+          dState: "Rajasthan",
+          eCountry: "India",
+          fPinCode: "302004",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/dualipa/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/DUALIPA" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/dua-lipa/" }
+        ],
       },
       { 
         eFirstname: "Tanvi", eLastname: "Gokhale", eEmail: `tanvi.gokhale${brandConnection.iEmailName}`,
         aTitle: "Tanvi’s Settings",
-        aSubtitle: "Fine-tuning controls",
-        aDescription: "Tanvi configures system settings to enhance usability and streamline daily interactions."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Tanvi configures system settings to enhance usability and streamline daily interactions.",
+        aDetail: "I enjoy staying productive and positive while also making time for relaxation and hobbies. I appreciate honesty and clear communication. I’m looking for a partner who is thoughtful, ambitious, and family-oriented.",
+        dAddress: {
+          aLane: "Marine Drive",
+          bStreet: "Netaji Subhash Road",
+          cCity: "Kochi",
+          dState: "Kerala",
+          eCountry: "India",
+          fPinCode: "682031",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/billieeilish/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/billieeilish" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/billie-eilish/" }
+        ],
       },
       { 
         eFirstname: "Sakshi", eLastname: "Jadhav", eEmail: `sakshi.jadhav${brandConnection.iEmailName}`,
         aTitle: "Sakshi’s Activity Log",
-        aSubtitle: "Maintaining transparency",
-        aDescription: "Sakshi uses the activity log to review actions and maintain accountability."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Sakshi uses the activity log to review actions and maintain accountability.",
+        aDetail: "I believe in living life with purpose and gratitude. I enjoy creative activities, exploring new destinations, and spending time with loved ones. I hope to meet someone who is kind, supportive, and shares similar values.",
+        dAddress: {
+          aLane: "DLF Phase 3",
+          bStreet: "Cyber City Road",
+          cCity: "Gurgaon",
+          dState: "Haryana",
+          eCountry: "India",
+          fPinCode: "122002",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/mileycyrus/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/MileyCyrus" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/miley-cyrus/" }
+        ],
       },
       { 
         eFirstname: "Isha", eLastname: "Pandey", eEmail: `isha.pandey${brandConnection.iEmailName}`,
         aTitle: "Isha’s Overview Panel",
-        aSubtitle: "Quick system insights",
-        aDescription: "Isha checks the overview panel for a quick understanding of current system status."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Isha checks the overview panel for a quick understanding of current system status.",
+        aDetail: "I’m a calm and practical individual who enjoys a mix of adventure and routine. I value meaningful relationships and open communication. I’m seeking someone respectful and understanding for a long-term connection.",
+        dAddress: {
+          aLane: "Kalyani Nagar",
+          bStreet: "North Avenue",
+          cCity: "Pune",
+          dState: "Maharashtra",
+          eCountry: "India",
+          fPinCode: "411006",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/shakira/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/shakira" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/shakira/" }
+        ],
       },
 
       { 
         eFirstname: "Rahul", eLastname: "Yadav", eEmail: `rahul.yadav${brandConnection.iEmailName}`,
         aTitle: "Rahul’s Workflow",
-        aSubtitle: "Optimizing performance",
-        aDescription: "Rahul optimizes workflows to improve efficiency and reduce operational friction."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Rahul optimizes workflows to improve efficiency and reduce operational friction.",
+        aDetail: "I would describe myself as friendly, patient, and goal-oriented. I enjoy reading, music, and spending time outdoors. I’m looking for someone sincere and emotionally mature to build a stable and happy future.",
+        dAddress: {
+          aLane: "Dwarka Sector 10",
+          bStreet: "Central Market Road",
+          cCity: "Delhi",
+          dState: "Delhi",
+          eCountry: "India",
+          fPinCode: "110075",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/adele/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/Adele" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/adele/" }
+        ],
       },
       { 
         eFirstname: "Amit", eLastname: "Kumar", eEmail: `amit.kumar${brandConnection.iEmailName}`,
         aTitle: "Amit’s Daily Tasks",
-        aSubtitle: "Focused execution",
-        aDescription: "Amit tracks daily tasks to ensure consistent progress and clear outcomes."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Amit tracks daily tasks to ensure consistent progress and clear outcomes.",
+        aDetail: "I enjoy keeping a positive outlook on life and focusing on personal development. I value trust and mutual respect in relationships. I hope to meet someone who is compassionate, responsible, and supportive.",
+        dAddress: {
+          aLane: "Shivaji Nagar",
+          bStreet: "FC Road",
+          cCity: "Pune",
+          dState: "Maharashtra",
+          eCountry: "India",
+          fPinCode: "411005",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/natalieportman/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/NataliePortman" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/natalie-portman/" }
+        ],
       },
       { 
         eFirstname: "Nikhil", eLastname: "Rastogi", eEmail: `nikhil.rastogi${brandConnection.iEmailName}`,
         aTitle: "Nikhil’s Reports",
-        aSubtitle: "Analyzing results",
-        aDescription: "Nikhil reviews reports to evaluate performance metrics and identify improvement areas."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Nikhil reviews reports to evaluate performance metrics and identify improvement areas.",
+        aDetail: "I’m a hardworking and optimistic person who enjoys balancing career and personal interests. I appreciate honesty and loyalty. I’m looking for someone genuine and understanding to share life experiences with.",
+        dAddress: {
+          aLane: "Malviya Nagar",
+          bStreet: "Main Market Road",
+          cCity: "Jaipur",
+          dState: "Rajasthan",
+          eCountry: "India",
+          fPinCode: "302017",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/reesewitherspoon/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/ReeseW" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/reese-witherspoon/" }
+        ],
       },
       { 
         eFirstname: "Saurabh", eLastname: "Tripathi", eEmail: `saurabh.tripathi${brandConnection.iEmailName}`,
         aTitle: "Saurabh’s Insights",
-        aSubtitle: "Data-driven decisions",
-        aDescription: "Saurabh uses insights to support strategic planning and informed decision-making."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Saurabh uses insights to support strategic planning and informed decision-making.",
+        aDetail: "I like living a simple and organized life filled with meaningful connections. My interests include travel, fitness, and learning new skills. I hope to find someone kind and ambitious for a long-term relationship.",
+        dAddress: {
+          aLane: "Koramangala",
+          bStreet: "7th Block Road",
+          cCity: "Bengaluru",
+          dState: "Karnataka",
+          eCountry: "India",
+          fPinCode: "560095",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/jenniferaniston/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/JenniferAnnistn" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/jennifer-aniston/" }
+        ],
       },
       { 
         eFirstname: "Deepak", eLastname: "Rawat", eEmail: `deepak.rawat${brandConnection.iEmailName}`,
         aTitle: "Deepak’s Activity Review",
-        aSubtitle: "Monitoring engagement",
-        aDescription: "Deepak reviews engagement data to understand usage patterns and system adoption."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Deepak reviews engagement data to understand usage patterns and system adoption.",
+        aDetail: "I’m a thoughtful and independent person who values family and friendships. I enjoy exploring new places and having good conversations. I’m looking for a mature and caring partner who believes in mutual growth.",
+        dAddress: {
+          aLane: "Bandra West",
+          bStreet: "Hill Road",
+          cCity: "Mumbai",
+          dState: "Maharashtra",
+          eCountry: "India",
+          fPinCode: "400050",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/oprah/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/Oprah" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/oprahwinfrey/" }
+        ],
       },
 
       { 
         eFirstname: "Priya", eLastname: "Bhatt", eEmail: `priya.bhatt${brandConnection.iEmailName}`,
         aTitle: "Priya’s Dashboard",
-        aSubtitle: "Balanced and intuitive",
-        aDescription: "Priya’s dashboard presents information in a balanced layout for easy comprehension."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Priya’s dashboard presents information in a balanced layout for easy comprehension.",
+        aDetail: "I enjoy a balanced lifestyle with a mix of work, hobbies, and relaxation. I value transparency and emotional stability. I’m hoping to meet someone positive-minded and respectful to build a future together.",
+        dAddress: {
+          aLane: "Saket",
+          bStreet: "PVR Complex Road",
+          cCity: "Delhi",
+          dState: "Delhi",
+          eCountry: "India",
+          fPinCode: "110017",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/gigihadid/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/GiGiHadid" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/gigi-hadid/" }
+        ],
       },
       { 
         eFirstname: "Nisha", eLastname: "Khandelwal", eEmail: `nisha.khandelwal${brandConnection.iEmailName}`,
         aTitle: "Nisha’s Profile Update",
-        aSubtitle: "Keeping information current",
-        aDescription: "Nisha updates profile details to ensure accuracy and consistency across the platform."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Nisha updates profile details to ensure accuracy and consistency across the platform.",
+        aDetail: "I’m a practical and cheerful individual who believes in kindness and hard work. I enjoy spending time with loved ones and trying new activities. I’m looking for someone supportive and genuine for a meaningful connection.",
+        dAddress: {
+          aLane: "RS Puram",
+          bStreet: "DB Road",
+          cCity: "Coimbatore",
+          dState: "Tamil Nadu",
+          eCountry: "India",
+          fPinCode: "641002",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/kendalljenner/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/KendallJenner" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/kendall-jenner/" }
+        ],
       },
       { 
         eFirstname: "Megha", eLastname: "Saxena", eEmail: `megha.saxena${brandConnection.iEmailName}`,
         aTitle: "Megha’s Workspace",
-        aSubtitle: "Designed for clarity",
-        aDescription: "Megha’s workspace emphasizes simplicity and clarity for focused work."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Megha’s workspace emphasizes simplicity and clarity for focused work.",
+        aDetail: "I like staying curious and open to new experiences. I value honesty, patience, and good communication. I’m hoping to meet someone who is understanding, ambitious, and ready for a serious relationship.",
+        dAddress: {
+          aLane: "Patliputra Colony",
+          bStreet: "Boring Road",
+          cCity: "Patna",
+          dState: "Bihar",
+          eCountry: "India",
+          fPinCode: "800013",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/chrissyteigen/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/chrissyteigen" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/chrissy-teigen/" }
+        ],
       },
       { 
         eFirstname: "Pallavi", eLastname: "Kulshrestha", eEmail: `pallavi.kulshrestha${brandConnection.iEmailName}`,
         aTitle: "Pallavi’s System Overview",
-        aSubtitle: "Tracking key metrics",
-        aDescription: "Pallavi monitors system metrics to stay aligned with performance goals."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Pallavi monitors system metrics to stay aligned with performance goals.",
+        aDetail: "I’m a career-oriented person who also enjoys relaxing weekends and creative hobbies. I believe relationships should be built on trust and mutual respect. I’m looking for a like-minded and caring partner.",
+        dAddress: {
+          aLane: "City Center",
+          bStreet: "MG Road",
+          cCity: "Indore",
+          dState: "Madhya Pradesh",
+          eCountry: "India",
+          fPinCode: "452001",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/nicki_minaj/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/NICKIMINAJ" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/nicki-minaj/" }
+        ],
       },
       { 
         eFirstname: "Ritika", eLastname: "Mathur", eEmail: `ritika.mathur${brandConnection.iEmailName}`,
         aTitle: "Ritika’s Task Flow",
-        aSubtitle: "Structured execution",
-        aDescription: "Ritika follows a structured task flow to manage responsibilities effectively."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Ritika follows a structured task flow to manage responsibilities effectively.",
+        aDetail: "I enjoy living a peaceful and purposeful life. My interests include reading, traveling, and spending time with family. I’m hoping to connect with someone sincere and emotionally mature for a lasting bond.",
+        dAddress: {
+          aLane: "Gachibowli",
+          bStreet: "Financial District Road",
+          cCity: "Hyderabad",
+          dState: "Telangana",
+          eCountry: "India",
+          fPinCode: "500032",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/ritaora/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/RitaOra" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/rita-ora/" }
+        ],
       },
 
       { 
         eFirstname: "Varun", eLastname: "Khanna", eEmail: `varun.khanna${brandConnection.iEmailName}`,
         aTitle: "Varun’s Activity Stream",
-        aSubtitle: "Live system updates",
-        aDescription: "Varun uses the activity stream to stay aware of ongoing changes and events."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Varun uses the activity stream to stay aware of ongoing changes and events.",
+        aDetail: "I’m someone who believes in continuous learning and personal development. I enjoy meaningful conversations and simple joys of life. I’m looking for a partner who is kind, honest, and supportive.",
+        dAddress: {
+          aLane: "Bistupur",
+          bStreet: "Main Road",
+          cCity: "Jamshedpur",
+          dState: "Jharkhand",
+          eCountry: "India",
+          fPinCode: "831001",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/annehathaway/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/AnneHathaway" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/anne-hathaway/" }
+        ],
       },
       { 
         eFirstname: "Mohit", eLastname: "Arora", eEmail: `mohit.arora${brandConnection.iEmailName}`,
         aTitle: "Mohit’s Preferences",
-        aSubtitle: "Personalized controls",
-        aDescription: "Mohit personalizes controls to match his working style and preferences."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Mohit personalizes controls to match his working style and preferences.",
+        aDetail: "I consider myself calm, responsible, and optimistic. I enjoy fitness, movies, and exploring new cultures. I’m hoping to meet someone grounded and understanding who values companionship.",
+        dAddress: {
+          aLane: "Kankurgachi",
+          bStreet: "VIP Road",
+          cCity: "Kolkata",
+          dState: "West Bengal",
+          eCountry: "India",
+          fPinCode: "700054",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/margotrobbie/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/MargotRobbie" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/margot-robbie/" }
+        ],
       },
       { 
         eFirstname: "Harsh", eLastname: "Vardhan", eEmail: `harsh.vardhan${brandConnection.iEmailName}`,
         aTitle: "Harsh’s Performance",
-        aSubtitle: "Measuring effectiveness",
-        aDescription: "Harsh reviews performance indicators to assess productivity and efficiency."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Harsh reviews performance indicators to assess productivity and efficiency.",
+        aDetail: "I like maintaining a healthy balance between work and personal life. I value empathy, respect, and clear communication. I’m looking for someone mature and genuine to share a happy future with.",
+        dAddress: {
+          aLane: "Panampilly Nagar",
+          bStreet: "Main Avenue",
+          cCity: "Kochi",
+          dState: "Kerala",
+          eCountry: "India",
+          fPinCode: "682036",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/halleberry/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/halleberry" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/halle-berry/" }
+        ],
       },
       { 
         eFirstname: "Akash", eLastname: "Soni", eEmail: `akash.soni${brandConnection.iEmailName}`,
         aTitle: "Akash’s Workspace",
-        aSubtitle: "Built for focus",
-        aDescription: "Akash structures his workspace to minimize distractions and enhance focus."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Akash structures his workspace to minimize distractions and enhance focus.",
+        aDetail: "I enjoy learning new things and spending quality time with close people. I believe in honesty and mutual understanding. I hope to find someone caring and dependable for a meaningful relationship.",
+        dAddress: {
+          aLane: "BHEL Township",
+          bStreet: "Lingampally Road",
+          cCity: "Hyderabad",
+          dState: "Telangana",
+          eCountry: "India",
+          fPinCode: "502032",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/demilovato/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/ddlovato" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/demi-lovato/" }
+        ],
       },
       { 
         eFirstname: "Rakesh", eLastname: "Lal", eEmail: `rakesh.lal${brandConnection.iEmailName}`,
         aTitle: "Rakesh’s Activity Summary",
-        aSubtitle: "Clear and concise",
-        aDescription: "Rakesh’s summary presents essential activity information in a concise format."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Rakesh’s summary presents essential activity information in a concise format.",
+        aDetail: "I’m an optimistic and practical person who values relationships and personal goals. I enjoy traveling, music, and good conversations. I’m looking for a partner who believes in trust and teamwork.",
+        dAddress: {
+          aLane: "Shastri Nagar",
+          bStreet: "Main Bazaar Road",
+          cCity: "Jodhpur",
+          dState: "Rajasthan",
+          eCountry: "India",
+          fPinCode: "342003",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/meganfox/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/meganfox" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/megan-fox/" }
+        ],
       },
 
       { 
         eFirstname: "Simran", eLastname: "Kaur", eEmail: `simran.kaur${brandConnection.iEmailName}`,
         aTitle: "Simran’s Dashboard",
-        aSubtitle: "Simple and effective",
-        aDescription: "Simran uses a clean dashboard layout to stay organized and productive."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Simran uses a clean dashboard layout to stay organized and productive.",
+        aDetail: "I believe in leading a balanced and respectful life. I enjoy outdoor activities, reading, and spending time with family. I hope to meet someone sincere and kind-hearted for a long-term connection.",
+        dAddress: {
+          aLane: "Andheri East",
+          bStreet: "Chakala Road",
+          cCity: "Mumbai",
+          dState: "Maharashtra",
+          eCountry: "India",
+          fPinCode: "400093",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/angelinajolie/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/angelinajolie" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/angelina-jolie/" }
+        ],
       },
       { 
         eFirstname: "Navneet", eLastname: "Gill", eEmail: `navneet.gill${brandConnection.iEmailName}`,
         aTitle: "Navneet’s Insights",
-        aSubtitle: "Understanding engagement",
-        aDescription: "Navneet analyzes engagement data to improve collaboration and usage."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Navneet analyzes engagement data to improve collaboration and usage.",
+        aDetail: "I’m a positive and open-minded individual who enjoys new experiences and challenges. I value emotional maturity and loyalty. I’m seeking someone who is understanding and ready for commitment.",
+        dAddress: {
+          aLane: "Navrangpura",
+          bStreet: "CG Road",
+          cCity: "Ahmedabad",
+          dState: "Gujarat",
+          eCountry: "India",
+          fPinCode: "380009",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/camila_cabello/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/Camila_Cabello" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/camila-cabello/" }
+        ],
       },
       { 
         eFirstname: "Jaspreet", eLastname: "Sandhu", eEmail: `jaspreet.sandhu${brandConnection.iEmailName}`,
         aTitle: "Jaspreet’s Overview",
-        aSubtitle: "Monitoring progress",
-        aDescription: "Jaspreet monitors progress through system overviews and task updates."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Jaspreet monitors progress through system overviews and task updates.",
+        aDetail: "I enjoy a simple lifestyle focused on growth and meaningful relationships. I appreciate honesty and thoughtful communication. I’m looking for someone supportive and responsible to share life with.",
+        dAddress: {
+          aLane: "KPHB Colony",
+          bStreet: "Main Road",
+          cCity: "Hyderabad",
+          dState: "Telangana",
+          eCountry: "India",
+          fPinCode: "500085",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/kristenstewartx/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/KStewartNews" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/kristen-stewart/" }
+        ],
       },
       { 
         eFirstname: "Gurpreet", eLastname: "Brar", eEmail: `gurpreet.brar${brandConnection.iEmailName}`,
         aTitle: "Gurpreet’s Workflow",
-        aSubtitle: "Efficient execution",
-        aDescription: "Gurpreet refines workflows to ensure efficient execution and smooth operations."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Gurpreet refines workflows to ensure efficient execution and smooth operations.",
+        aDetail: "I’m a friendly and goal-driven person who enjoys staying active and learning new skills. I value trust and mutual encouragement. I hope to meet someone genuine and caring for a lasting relationship.",
+        dAddress: {
+          aLane: "Lajpat Nagar",
+          bStreet: "Central Market",
+          cCity: "Delhi",
+          dState: "Delhi",
+          eCountry: "India",
+          fPinCode: "110024",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/haileybieber/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/haileybieber" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/hailey-bieber/" }
+        ],
       },
       { 
         eFirstname: "Harleen", eLastname: "Sidhu", eEmail: `harleen.sidhu${brandConnection.iEmailName}`,
         aTitle: "Harleen’s System Setup",
-        aSubtitle: "Ready to begin",
-        aDescription: "Harleen completes system setup to begin productive engagement with platform tools."
+        aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
+        aDescription: "Harleen completes system setup to begin productive engagement with platform tools.",
+        aDetail: "I believe in kindness, balance, and lifelong learning. I enjoy exploring new places, meeting people, and spending time with family. I’m looking for a partner who is respectful, mature, and ready to grow together.",
+        dAddress: {
+          aLane: "Electronic City Phase 1",
+          bStreet: "Hosur Road",
+          cCity: "Bengaluru",
+          dState: "Karnataka",
+          eCountry: "India",
+          fPinCode: "560100",
+        },
+        dLinks: [
+          { aLinkTitle: "Instagram", bLinkURL: "https://www.instagram.com/sofiavergara/" },
+          { aLinkTitle: "X", bLinkURL: "https://x.com/SofiaVergara" },
+          { aLinkTitle: "Linkedin", bLinkURL: "https://www.linkedin.com/in/sofia-vergara/" }
+        ]
       },
     ];
 

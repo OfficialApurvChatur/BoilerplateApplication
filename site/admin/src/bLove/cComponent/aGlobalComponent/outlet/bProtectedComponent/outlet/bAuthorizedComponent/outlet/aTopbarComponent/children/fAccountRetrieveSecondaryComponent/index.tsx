@@ -10,6 +10,8 @@ import { Avatar, AvatarFallback, AvatarImage } from '@/aConnection/bShadcnConnec
 import { GitHubLogoIcon, InstagramLogoIcon, LinkedInLogoIcon, ThreadsLogoIcon, TwitterLogoIcon } from '@/bLove/hAsset/Icons';
 
 import getInitialsUtility from '@/bLove/dUtility/aGetInitialsUtility'
+import profileImage from "@/bLove/hAsset/defaultImage.png";
+import coverImage from "@/bLove/hAsset/default-landscape.png";
 
 
 type AccountRetrieveSecondaryComponentType = {
@@ -78,7 +80,7 @@ const AccountRetrieveSecondaryComponent = (props: AccountRetrieveSecondaryCompon
                     <img 
                       src={
                         props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.eImage || 
-                        "https://readymadeui.com/cardImg.webp"
+                        coverImage
                       } 
                       alt="Banner Image" 
                       className="w-full h-full object-cover" 
@@ -92,14 +94,14 @@ const AccountRetrieveSecondaryComponent = (props: AccountRetrieveSecondaryCompon
                       
                       <div className="grid md:grid-cols-2 items-center gap-12 max-w-5xl max-md:max-w-md mx-auto p-4 mb-4">
                         <div className="bg-muted-foreground rounded-md">
-                          <img src={props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.aImage} className="w-full aspect-[7/7] object-contain rounded-md" />
+                          <img src={props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.aImage || profileImage} className="w-full aspect-[7/7] object-contain rounded-md" />
                         </div>
 
                         <div>
                           <h2 className="text-2xl font-semibold text-foreground !leading-tight uppercase">
                             {props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.aTitle}
                           </h2>
-                          <p className="mt-2 text-md text-muted-foreground font-medium leading-relaxed uppercase">
+                          <p className="mt-2 text-md text-foreground font-medium leading-relaxed">
                             {props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.aSubtitle}
                           </p>
                           <p className="mt-6 text-md text-muted-foreground font-medium leading-relaxed">
@@ -141,10 +143,10 @@ const AccountRetrieveSecondaryComponent = (props: AccountRetrieveSecondaryCompon
                                 <h3 className="text-lg font-bold text-foreground uppercase">Critical Information</h3>
 
                                 <div>
-                                  <h3 className="text-foreground text-sm font-semibold">Profile Image:</h3>
-                                  <div className="w-32 h-32 rounded-md overflow-hidden bg-foreground inline-block mt-2">
+                                  <h3 className="text-foreground text-sm font-semibold">Cover Image:</h3>
+                                  <div className="w-56 h-32 rounded-md overflow-hidden bg-foreground inline-block mt-2">
                                     <img 
-                                      src={props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.eImage} 
+                                      src={props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.eImage || coverImage} 
                                       className="w-full h-full object-cover border border-foreground rounded-md" 
                                     />
                                   </div>
@@ -185,10 +187,10 @@ const AccountRetrieveSecondaryComponent = (props: AccountRetrieveSecondaryCompon
                                 <h3 className="text-lg font-bold text-foreground uppercase">Basic Information</h3>
 
                                 <div>
-                                  <h3 className="text-foreground text-sm font-semibold">Cover Image:</h3>
+                                  <h3 className="text-foreground text-sm font-semibold">Profile Image:</h3>
                                   <div className="w-32 h-32 rounded-md overflow-hidden bg-foreground inline-block mt-2">
                                     <img 
-                                      src={props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.aImage} 
+                                      src={props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.aImage || profileImage} 
                                       className="w-full h-full object-cover border border-foreground rounded-md" 
                                     />
                                   </div>
