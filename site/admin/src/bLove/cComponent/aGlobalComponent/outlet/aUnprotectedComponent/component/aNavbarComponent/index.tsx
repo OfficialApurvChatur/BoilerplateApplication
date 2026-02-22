@@ -312,7 +312,7 @@ const NavbarComponent = (props: NavbarComponentType) => {
                   (props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && props.reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
                     <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                       <Avatar className="h-8 w-8 rounded-lg">
-                        <AvatarImage src={props.reduxCall.state.receivedObject?.AccountRetrieve?.eImage} />
+                        <AvatarImage src={props.reduxCall.state.receivedObject?.AccountRetrieve?.aImage} className="object-cover" />
                         <AvatarFallback className="rounded-lg">{getInitialsUtility(
                           props.reduxCall.state.receivedObject?.AccountRetrieve?.eFirstname, 
                           props.reduxCall.state.receivedObject?.AccountRetrieve?.eLastname

@@ -70,7 +70,7 @@ const HeroComponent = (props: HeroComponentType) => {
                       alt="Logo"
                       className="max-lg:mx-auto lg:ml-6 mb-4 h-32 w-auto object-contain"
                     />
-                    <span className="bg-muted-foreground px-2 py-1 font-medium text-muted rounded">
+                    <span className="bg-foreground px-2 py-1 font-medium text-muted rounded">
                       {apiResponse.dTag}
                     </span>
                     <h1 className="mt-8 md:text-5xl text-4xl font-bold leading-tight uppercase">
@@ -85,7 +85,12 @@ const HeroComponent = (props: HeroComponentType) => {
 
                     <div className="mt-8 flex flex-wrap gap-6 max-lg:justify-center">
                       {apiResponse?.dWebLinks?.map((each) => (
-                        <Link key={each.aLinkTitle} to={each.bLinkURL} >
+                        <a 
+                          key={each.aLinkTitle} 
+                          href={each.bLinkURL} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                        >
                           <button 
                             type='button'
                             className="
@@ -97,7 +102,7 @@ const HeroComponent = (props: HeroComponentType) => {
                           >
                             {each?.aLinkTitle}
                           </button>
-                        </Link>
+                        </a>
                       ))}
 
 

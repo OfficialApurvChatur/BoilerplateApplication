@@ -74,7 +74,7 @@ const NavbarComponent = (props: NavbarComponentType) => {
       <header className="flex shadow-md py-4 px-4 sm:px-10 bg-muted min-h-[70px] tracking-wide relative z-50">
         <div className="flex flex-wrap items-center justify-between gap-5 w-full">
           {/* Logo */}
-          <a href={brandConnection.rFrontendBaseURL[0]} className="flex items-center gap-3 shrink-0">
+          <a href={brandConnection.rFrontendBaseURL[1]} className="flex items-center gap-3 shrink-0">
             <img
               src={Logo}
               alt="logo"
@@ -125,7 +125,7 @@ const NavbarComponent = (props: NavbarComponentType) => {
             >
               {/* Logo */}
               <li className="mb-6 hidden max-lg:block">
-                <a href={brandConnection.rFrontendBaseURL[0]} className="flex items-center gap-3 shrink-0" >
+                <a href={brandConnection.rFrontendBaseURL[1]} className="flex items-center gap-3 shrink-0" >
                   <img 
                     src={Logo} 
                     alt="logo" 
@@ -313,7 +313,7 @@ const NavbarComponent = (props: NavbarComponentType) => {
                   (props.reduxCall.state.receivedObject?.AccountRetrieve?.eAccountStatus === "Verified" && props.reduxCall.state.receivedObject?.AccountRetrieve?._id) ? (
                     <div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
                       <Avatar className="h-8 w-8 rounded-lg">
-                        <AvatarImage src={props.reduxCall.state.receivedObject?.AccountRetrieve?.eImage} />
+                        <AvatarImage src={props.reduxCall.state.receivedObject?.AccountRetrieve?.aImage} className="object-cover" />
                         <AvatarFallback className="rounded-lg">{getInitialsUtility(
                           props.reduxCall.state.receivedObject?.AccountRetrieve?.eFirstname, 
                           props.reduxCall.state.receivedObject?.AccountRetrieve?.eLastname

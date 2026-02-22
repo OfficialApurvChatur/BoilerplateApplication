@@ -13,7 +13,7 @@ const UserInfoComponent = (props: { user: any, time: any }) => {
       {/* UserInfoComponent */}
       <div className="flex items-center space-x-2">
         <Avatar>
-          <AvatarImage src={props?.user?.eImage} />
+          <AvatarImage src={props?.user?.eImage} className="object-cover" />
           <AvatarFallback>{getInitialsUtility(
             props?.user?.eFirstname, 
             props?.user?.eLastname

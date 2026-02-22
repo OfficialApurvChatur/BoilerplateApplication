@@ -128,6 +128,7 @@ const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
                     className="
                       prose max-w-none dark:prose-invert prose-headings:font-bold text-sm
                       prose-li:marker:text-foreground leading-normal text-muted-foreground
+                      prose-headings:text-foreground prose-a:text-muted-foreground prose-strong:text-muted-foreground 
                     "
                   >
                     <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
@@ -167,6 +168,7 @@ const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
                         className="
                           prose max-w-none dark:prose-invert prose-headings:font-bold text-sm
                           prose-li:marker:text-foreground leading-normal text-muted-foreground
+                          prose-headings:text-foreground prose-a:text-muted-foreground prose-strong:text-muted-foreground 
                         "
                       >
                         <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
@@ -184,6 +186,7 @@ const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
                         className="
                           prose max-w-none dark:prose-invert prose-headings:font-bold text-sm
                           prose-li:marker:text-foreground leading-normal text-muted-foreground
+                          prose-headings:text-foreground prose-a:text-muted-foreground prose-strong:text-muted-foreground 
                         "
                       >
                         <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >
@@ -201,6 +204,7 @@ const AboutApplicationComponent = (props: AboutApplicationComponentType) => {
                         className="
                           prose max-w-none dark:prose-invert prose-headings:font-bold text-sm
                           prose-li:marker:text-foreground leading-normal text-muted-foreground
+                          prose-headings:text-foreground prose-a:text-muted-foreground prose-strong:text-muted-foreground 
                         "
                       >
                         <ReactMarkdown remarkPlugins={[remarkGfm]} rehypePlugins={[rehypeRaw]} >

@@ -127,7 +127,7 @@ export const ProjectSectionComponent = (props: ProjectSectionComponentProps) => 
                         {each.cProjects.map(each => (
                           <div className="bg-background cursor-pointer rounded-md overflow-hidden [box-shadow:0_2px_10px_-3px_rgba(14,14,14,0.3)] relative top-0 hover:-top-2 transition-all duration-300">
                             <div className="bg-muted-foreground p-1 aspect-[23/15]">
-                              <img src={each.aImage || "https://readymadeui.com/Imagination.webp"} alt="Blog Post 1" className="w-full h-full object-cover object-top rounded-md" />
+                              <img src={each.aImage || "https://readymadeui.com/Imagination.webp"} alt="Blog Post 1" className="w-full h-full object-cover rounded-md" />
                             </div>
                             <div className="p-6">
                               <span className="text-sm block text-muted-foreground mb-2">10 FEB 2023 | BY SHRADDHA KAPOOR</span>

@@ -76,7 +76,7 @@ const AccountEmailUpdateSecondaryComponent = (props: AccountEmailUpdateSecondary
             (props.apiCall.retrieveAPIResponse.data.success) ? (
               <React.Fragment>
                 <div>
-                  <div className="bg-gradient-to-r from-muted to-muted-foreground w-full h-60">
+                  <div className="bg-gradient-to-r from-muted to-muted-foreground w-full h-72">
                     <img 
                       src={
                         props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.eImage || 

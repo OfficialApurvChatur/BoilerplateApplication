@@ -82,7 +82,7 @@ const AccountDeleteSecondaryComponent = (props: AccountDeleteSecondaryComponentT
             (props.apiCall.retrieveAPIResponse.data.success) ? (
               <React.Fragment>
                 <div>
-                  <div className="bg-gradient-to-r from-muted to-muted-foreground w-full h-60">
+                  <div className="bg-gradient-to-r from-muted to-muted-foreground w-full h-72">
                     <img 
                       src={
                         props.apiCall.retrieveAPIResponse.data?.user_account_retrieve?.eImage || 
@@ -100,7 +100,7 @@ const AccountDeleteSecondaryComponent = (props: AccountDeleteSecondaryComponentT
                       
 
                       <div className="mx-2 p-4 flex flex-col gap-6 col-span-full">
-                        <div className="bg-background flex min-h-[60px] text-destructive border-2 border-destructive rounded-lg overflow-hidden relative" role="alert">
+                        <div className="bg-muted-foreground flex min-h-[60px] text-destructive border-2 border-destructive rounded-lg overflow-hidden relative" role="alert">
                           <div className="bg-destructive w-14 shrink-0 flex items-center justify-center">
                             <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 fill-white" viewBox="0 0 32 32">
                               <path

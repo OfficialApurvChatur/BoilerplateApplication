@@ -1398,13 +1398,13 @@ Beehive Contact Information
 The Sigma Cluster can be reached through the following communication channels:
 
 1) **Email (Primary Channel)**  
-   contact@beehive.corp  
+   soup.beehive.corporation@gmail.com  
 
 2) **Phone (Direct Line)**  
-   +91 98765 43210  
+   +91 83298 84344  
 
 3) **Headquarters (Physical Address)**  
-   Beehive Sigma Tower, Sector 9, Tech Valley, India
+   Pune, Maharashtra, India
       `,
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
@@ -2183,13 +2183,13 @@ Beehive Contact Information
 The Sigma Cluster can be reached through the following communication channels:
 
 1) **Email (Primary Channel)**  
-   contact@beehive.corp  
+   soup.beehive.corporation@gmail.com  
 
 2) **Phone (Direct Line)**  
-   +91 98765 43210  
+   +91 83298 84344  
 
 3) **Headquarters (Physical Address)**  
-   Beehive Sigma Tower, Sector 9, Tech Valley, India
+   Pune, Maharashtra, India
       `,
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
