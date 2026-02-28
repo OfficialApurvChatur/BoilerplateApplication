@@ -1354,11 +1354,11 @@ It is designed for scalability, modularity, and high availability.
     await AdminContactInfoModel.create({
       aTitle: "Contact Us",
       aDetail: `
-Beehive Contact Information  
-The Sigma Cluster can be reached through the following communication channels:
+Andromeda Contact Information  
+The Alpha Galaxy can be reached through the following communication channels:
 
 1) **Email (Primary Channel)**  
-   soup.beehive.corporation@gmail.com  
+   andromeda.organisation@gmail.com  
 
 2) **Phone (Direct Line)**  
    +91 83298 84344  
@@ -1374,29 +1374,29 @@ The Sigma Cluster can be reached through the following communication channels:
 
     // --- Create Admin Service ---
     await AdminServiceModel.create({
-      aTitle: "Open Source Code",
-      aDescription: "Transparency and flexibility are at the core of our philosophy, which is why we provide open-source code for all our web applications. By granting you access to the source code, we empower you to customize, extend, and modify your applications to suit your evolving needs. Whether you're a developer looking to fine-tune the code or a business owner seeking greater control over your digital assets, our commitment to open-source ensures that you have the freedom and flexibility to shape your online presence according to your vision.",
+      aTitle: "Software Development Tools",
+      aDescription: "Unlock the full potential of your web development projects with our comprehensive suite of software development tools. From frontend frameworks to backend solutions, our tools are meticulously crafted to streamline the development process, enhance productivity, and deliver exceptional results. Whether you're building a simple website or a complex web application, our tools provide the flexibility, scalability, and performance you need to succeed.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
-      aTitle: "Strong Backend Support",
-      aDescription: "Behind every successful web application lies a robust and reliable backend infrastructure, and that's where we excel. Our team of experienced developers is committed to delivering top-notch backend support to ensure the seamless operation and performance of your applications. From designing scalable architectures to implementing advanced security measures and optimizing for speed and efficiency, we've got you covered. With our unwavering backend support, you can trust that your applications are in capable hands, allowing you to focus on innovation and growth.",
+      aTitle: "Communication Tools",
+      aDescription: "Elevate your online communication strategies with our tailored communication tools designed specifically for web applications. From real-time messaging systems to collaborative platforms and video conferencing solutions, our tools empower you to connect with your audience effectively, foster collaboration among team members, and enhance user engagement. Seamlessly integrated with your web applications, our communication tools provide the functionality and reliability you can trust.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
-      aTitle: "Free Administration Panel",
-      aDescription: "Simplify the management of your web applications with our intuitive and user-friendly administration panel, provided to you at no additional cost. Our panel empowers you to effortlessly oversee various aspects of your application, from content updates and user management to analytics and performance monitoring. With its streamlined interface and powerful features, you can stay in control of your online presence without the hassle, enabling you to focus on what matters most—growing your business.",
+      aTitle: "Custom Solutions",
+      aDescription: "Experience the power of bespoke software solutions tailored to your unique requirements. Our team of experts collaborates closely with you to understand your needs, goals, and challenges, crafting custom solutions that address your specific business objectives. Whether you need a custom web application, API integration, or specialized communication tool, we deliver innovative solutions that align perfectly with your vision and empower you to achieve success.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await AdminServiceModel.create({
-      aTitle: "Custom Web Applications",
-      aDescription: "Our team specializes in crafting bespoke web applications tailored to your unique needs and requirements. From conceptualization to deployment, we work closely with you to understand your vision and deliver a fully customized solution that aligns perfectly with your business objectives. Whether you need an e-commerce platform, a customer relationship management (CRM) system, or a complex data analytics tool, we have the expertise to bring your ideas to life with precision and creativity.",
+      aTitle: "Consulting and Support",
+      aDescription: "Maximize the value of your technology investments with our consulting and support services. Our seasoned professionals offer strategic guidance, best practices, and technical expertise to help you optimize your web development processes, streamline your communication strategies, and overcome any obstacles you encounter along the way. With our ongoing support and maintenance services, you can rest assured that your tools and applications remain secure, reliable, and up-to-date, enabling you to focus on what you do best.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -1431,219 +1431,16 @@ The Sigma Cluster can be reached through the following communication channels:
     console.log("✅ Admin Counter Created");
 
     // --- Create Admin Branch ---
-    const adminBranchInstance1 = await AdminBranchModel.create({
+    console.log("❌ None Admin Branch Created");
+
+    // --- Create Admin Branch Group ---
+    const adminBranchGroupInstance1 = await AdminBranchGroupModel.create({
       aTitle: "Acrux Enterprise",
       aSubtitle: "Feeling Ambitions, Igniting Growth",
       aDescription: "A proficient enterprise specializing in crafting sophisticated development tools tailored for diverse web applications, under Beehive Corporation.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
-      dSocialLinks: [
-        {
-          aLinkTitle: "Instagram",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "X (Twitter)",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Threads",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "LinkedIn",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "GitHub",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-      dWebLinks: [
-        {
-          aLinkTitle: "Visit Administration",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Visit Application",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-    });
-
-    const adminBranchInstance2 = await AdminBranchModel.create({
-      aTitle: "Anser Enterprise",
-      aSubtitle: "Building Bridges, Creating Values",
-      aDescription: "A proficient enterprise specializing in crafting sophisticated communication tools tailored for diverse web applications, under Beehive Corporation.",
-      bCreatedAt: new Date(Date.now()),
-      bCreatedBy: shraddha._id,
-      dSocialLinks: [
-        {
-          aLinkTitle: "Instagram",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "X (Twitter)",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Threads",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "LinkedIn",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "GitHub",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-      dWebLinks: [
-        {
-          aLinkTitle: "Visit Administration",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Visit Application",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-    });
-
-    const adminBranchInstance3 = await AdminBranchModel.create({
-      aTitle: "Aquila Enterprise",
-      aSubtitle: "Elevating Success Together",
-      aDescription: "A proficient organization specializing in developing bespoke web applications for clients with Beehive Corporation.",
-      bCreatedAt: new Date(Date.now()),
-      bCreatedBy: shraddha._id,
-      dSocialLinks: [
-        {
-          aLinkTitle: "Instagram",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "X (Twitter)",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Threads",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "LinkedIn",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "GitHub",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-      dWebLinks: [
-        {
-          aLinkTitle: "Visit Administration",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Visit Application",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-    });
-
-    const adminBranchInstance4 = await AdminBranchModel.create({
-      aTitle: "Bellatrix Enterprise",
-      aSubtitle: "Navigating Beyond Horizon",
-      aDescription: "A proficient organization specializing in developing bespoke web applications for fostering personal innovation with Beehive Corporation.",
-      bCreatedAt: new Date(Date.now()),
-      bCreatedBy: shraddha._id,
-      dSocialLinks: [
-        {
-          aLinkTitle: "Instagram",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "X (Twitter)",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Threads",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "LinkedIn",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "GitHub",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-      dWebLinks: [
-        {
-          aLinkTitle: "Visit Administration",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Visit Application",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-    });
-
-    const adminBranchInstance5 = await AdminBranchModel.create({
-      aTitle: "Capella Enterprise",
-      aSubtitle: "Innovating Bright Stars",
-      aDescription: "A proficient organization specializing in developing bespoke web applications for engaging in collaborative projects with Beehive Corporation.",
-      bCreatedAt: new Date(Date.now()),
-      bCreatedBy: shraddha._id,
-      dSocialLinks: [
-        {
-          aLinkTitle: "Instagram",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "X (Twitter)",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Threads",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "LinkedIn",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "GitHub",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-      dWebLinks: [
-        {
-          aLinkTitle: "Visit Administration",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Visit Application",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-    });
-
-    console.log("✅ Admin Branch Created");
-
-    // --- Create Admin Branch Group ---
-    const adminBranchGroupInstance1 = await AdminBranchGroupModel.create({
-      aTitle: "Andromeda Organisation",
-      aSubtitle: "Where Vision Meets Velocity",
-      aDescription: "A proficient organization specializing in crafting sophisticated development and communication tools tailored for diverse web applications, under Beehive Corporation.",
-      bCreatedAt: new Date(Date.now()),
-      bCreatedBy: shraddha._id,
-      cBranches: [
-        adminBranchInstance1._id,
-        adminBranchInstance2._id,
-      ],
+      cBranches: [],
       dSocialLinks: [
         {
           aLinkTitle: "Instagram",
@@ -1679,57 +1476,12 @@ The Sigma Cluster can be reached through the following communication channels:
     });
 
     const adminBranchGroupInstance2 = await AdminBranchGroupModel.create({
-      aTitle: "Pinwheel Organisation",
-      aSubtitle: "Turning Compassion Into Action",
-      aDescription: "A proficient organization specializing in crafting landing web applications tailored for Beehive Corporation, its affiliates, and their enterprises, ensuring optimal digital presence and functionality.",
+      aTitle: "Anser Enterprise",
+      aSubtitle: "Building Bridges, Creating Values",
+      aDescription: "A proficient enterprise specializing in crafting sophisticated communication tools tailored for diverse web applications, under Beehive Corporation.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
-      cBranches: [  ],
-      dSocialLinks: [
-        {
-          aLinkTitle: "Instagram",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "X (Twitter)",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Threads",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "LinkedIn",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "GitHub",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-      dWebLinks: [
-        {
-          aLinkTitle: "Visit Administration",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Visit Application",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-    });
-
-    const adminBranchGroupInstance3 = await AdminBranchGroupModel.create({
-      aTitle: "Tadpole Organisation",
-      aSubtitle: "Where Vision Meets Velocity",
-      aDescription: "A proficient organization specializing in developing bespoke web applications for clients, fostering personal innovation, and engaging in collaborative projects with Beehive Corporation.",
-      bCreatedAt: new Date(Date.now()),
-      bCreatedBy: shraddha._id,
-      cBranches: [
-        adminBranchInstance3._id,
-        adminBranchInstance4._id,
-        adminBranchInstance5._id,
-      ],
+      cBranches: [],
       dSocialLinks: [
         {
           aLinkTitle: "Instagram",
@@ -1768,15 +1520,14 @@ The Sigma Cluster can be reached through the following communication channels:
     
     // --- Create Admin Branch Section ---
     await AdminBranchSectionModel.create({
-      aTitle: "Beehive Corporation",
-      aSubtitle: "Infinite Wonder Awaits",
-      aDescription: "A proficient corporation specializing in the comprehensive lifecycle management of web applications, encompassing design, development, deployment, maintenance, and scalable solutions.",
+      aTitle: "Andromeda Organisation",
+      aSubtitle: "Where Vision Meets Velocity",
+      aDescription: "A proficient organization specializing in crafting sophisticated development and communication tools tailored for diverse web applications, under Beehive Corporation.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
       cBranchGroups: [
         adminBranchGroupInstance1._id,
         adminBranchGroupInstance2._id,
-        adminBranchGroupInstance3._id,
       ],
       dSocialLinks: [
         {
@@ -2411,11 +2162,11 @@ It is designed for scalability, modularity, and high availability.
     await ContactInfoModel.create({
       aTitle: "Contact Us",
       aDetail: `
-Beehive Contact Information  
-The Sigma Cluster can be reached through the following communication channels:
+Andromeda Contact Information  
+The Alpha Galaxy can be reached through the following communication channels:
 
 1) **Email (Primary Channel)**  
-   soup.beehive.corporation@gmail.com  
+   andromeda.organisation@gmail.com  
 
 2) **Phone (Direct Line)**  
    +91 83298 84344  
@@ -2431,29 +2182,29 @@ The Sigma Cluster can be reached through the following communication channels:
 
     // --- Create Service ---
     await ServiceModel.create({
-      aTitle: "Open Source Code",
-      aDescription: "Transparency and flexibility are at the core of our philosophy, which is why we provide open-source code for all our web applications. By granting you access to the source code, we empower you to customize, extend, and modify your applications to suit your evolving needs. Whether you're a developer looking to fine-tune the code or a business owner seeking greater control over your digital assets, our commitment to open-source ensures that you have the freedom and flexibility to shape your online presence according to your vision.",
+      aTitle: "Software Development Tools",
+      aDescription: "Unlock the full potential of your web development projects with our comprehensive suite of software development tools. From frontend frameworks to backend solutions, our tools are meticulously crafted to streamline the development process, enhance productivity, and deliver exceptional results. Whether you're building a simple website or a complex web application, our tools provide the flexibility, scalability, and performance you need to succeed.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
-      aTitle: "Strong Backend Support",
-      aDescription: "Behind every successful web application lies a robust and reliable backend infrastructure, and that's where we excel. Our team of experienced developers is committed to delivering top-notch backend support to ensure the seamless operation and performance of your applications. From designing scalable architectures to implementing advanced security measures and optimizing for speed and efficiency, we've got you covered. With our unwavering backend support, you can trust that your applications are in capable hands, allowing you to focus on innovation and growth.",
+      aTitle: "Communication Tools",
+      aDescription: "Elevate your online communication strategies with our tailored communication tools designed specifically for web applications. From real-time messaging systems to collaborative platforms and video conferencing solutions, our tools empower you to connect with your audience effectively, foster collaboration among team members, and enhance user engagement. Seamlessly integrated with your web applications, our communication tools provide the functionality and reliability you can trust.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
-      aTitle: "Free Administration Panel",
-      aDescription: "Simplify the management of your web applications with our intuitive and user-friendly administration panel, provided to you at no additional cost. Our panel empowers you to effortlessly oversee various aspects of your application, from content updates and user management to analytics and performance monitoring. With its streamlined interface and powerful features, you can stay in control of your online presence without the hassle, enabling you to focus on what matters most—growing your business.",
+      aTitle: "Custom Solutions",
+      aDescription: "Experience the power of bespoke software solutions tailored to your unique requirements. Our team of experts collaborates closely with you to understand your needs, goals, and challenges, crafting custom solutions that address your specific business objectives. Whether you need a custom web application, API integration, or specialized communication tool, we deliver innovative solutions that align perfectly with your vision and empower you to achieve success.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
 
     await ServiceModel.create({
-      aTitle: "Custom Web Applications",
-      aDescription: "Our team specializes in crafting bespoke web applications tailored to your unique needs and requirements. From conceptualization to deployment, we work closely with you to understand your vision and deliver a fully customized solution that aligns perfectly with your business objectives. Whether you need an e-commerce platform, a customer relationship management (CRM) system, or a complex data analytics tool, we have the expertise to bring your ideas to life with precision and creativity.",
+      aTitle: "Consulting and Support",
+      aDescription: "Maximize the value of your technology investments with our consulting and support services. Our seasoned professionals offer strategic guidance, best practices, and technical expertise to help you optimize your web development processes, streamline your communication strategies, and overcome any obstacles you encounter along the way. With our ongoing support and maintenance services, you can rest assured that your tools and applications remain secure, reliable, and up-to-date, enabling you to focus on what you do best.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -2488,219 +2239,16 @@ The Sigma Cluster can be reached through the following communication channels:
     console.log("✅ Counter Created");
 
     // --- Create Branch ---
-    const branchInstance1 = await BranchModel.create({
+    console.log("❌ None Branch Created");
+
+    // --- Create Branch Group ---
+    const branchGroupInstance1 = await BranchGroupModel.create({
       aTitle: "Acrux Enterprise",
       aSubtitle: "Feeling Ambitions, Igniting Growth",
       aDescription: "A proficient enterprise specializing in crafting sophisticated development tools tailored for diverse web applications, under Beehive Corporation.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
-      dSocialLinks: [
-        {
-          aLinkTitle: "Instagram",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "X (Twitter)",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Threads",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "LinkedIn",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "GitHub",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-      dWebLinks: [
-        {
-          aLinkTitle: "Visit Administration",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Visit Application",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-    });
-
-    const branchInstance2 = await BranchModel.create({
-      aTitle: "Anser Enterprise",
-      aSubtitle: "Building Bridges, Creating Values",
-      aDescription: "A proficient enterprise specializing in crafting sophisticated communication tools tailored for diverse web applications, under Beehive Corporation.",
-      bCreatedAt: new Date(Date.now()),
-      bCreatedBy: shraddha._id,
-      dSocialLinks: [
-        {
-          aLinkTitle: "Instagram",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "X (Twitter)",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Threads",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "LinkedIn",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "GitHub",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-      dWebLinks: [
-        {
-          aLinkTitle: "Visit Administration",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Visit Application",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-    });
-
-    const branchInstance3 = await BranchModel.create({
-      aTitle: "Aquila Enterprise",
-      aSubtitle: "Elevating Success Together",
-      aDescription: "A proficient organization specializing in developing bespoke web applications for clients with Beehive Corporation.",
-      bCreatedAt: new Date(Date.now()),
-      bCreatedBy: shraddha._id,
-      dSocialLinks: [
-        {
-          aLinkTitle: "Instagram",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "X (Twitter)",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Threads",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "LinkedIn",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "GitHub",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-      dWebLinks: [
-        {
-          aLinkTitle: "Visit Administration",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Visit Application",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-    });
-
-    const branchInstance4 = await BranchModel.create({
-      aTitle: "Bellatrix Enterprise",
-      aSubtitle: "Navigating Beyond Horizon",
-      aDescription: "A proficient organization specializing in developing bespoke web applications for fostering personal innovation with Beehive Corporation.",
-      bCreatedAt: new Date(Date.now()),
-      bCreatedBy: shraddha._id,
-      dSocialLinks: [
-        {
-          aLinkTitle: "Instagram",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "X (Twitter)",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Threads",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "LinkedIn",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "GitHub",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-      dWebLinks: [
-        {
-          aLinkTitle: "Visit Administration",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Visit Application",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-    });
-
-    const branchInstance5 = await BranchModel.create({
-      aTitle: "Capella Enterprise",
-      aSubtitle: "Innovating Bright Stars",
-      aDescription: "A proficient organization specializing in developing bespoke web applications for engaging in collaborative projects with Beehive Corporation.",
-      bCreatedAt: new Date(Date.now()),
-      bCreatedBy: shraddha._id,
-      dSocialLinks: [
-        {
-          aLinkTitle: "Instagram",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "X (Twitter)",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Threads",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "LinkedIn",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "GitHub",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-      dWebLinks: [
-        {
-          aLinkTitle: "Visit Administration",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Visit Application",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-    });
-
-    console.log("✅ Branch Created");
-
-    // --- Create Branch Group ---
-    const branchGroupInstance1 = await BranchGroupModel.create({
-      aTitle: "Andromeda Organisation",
-      aSubtitle: "Where Vision Meets Velocity",
-      aDescription: "A proficient organization specializing in crafting sophisticated development and communication tools tailored for diverse web applications, under Beehive Corporation.",
-      bCreatedAt: new Date(Date.now()),
-      bCreatedBy: shraddha._id,
-      cBranches: [
-        branchInstance1._id,
-        branchInstance2._id,
-      ],
+      cBranches: [],
       dSocialLinks: [
         {
           aLinkTitle: "Instagram",
@@ -2736,57 +2284,12 @@ The Sigma Cluster can be reached through the following communication channels:
     });
 
     const branchGroupInstance2 = await BranchGroupModel.create({
-      aTitle: "Pinwheel Organisation",
-      aSubtitle: "Turning Compassion Into Action",
-      aDescription: "A proficient organization specializing in crafting landing web applications tailored for Beehive Corporation, its affiliates, and their enterprises, ensuring optimal digital presence and functionality.",
+      aTitle: "Anser Enterprise",
+      aSubtitle: "Building Bridges, Creating Values",
+      aDescription: "A proficient enterprise specializing in crafting sophisticated communication tools tailored for diverse web applications, under Beehive Corporation.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
-      cBranches: [  ],
-      dSocialLinks: [
-        {
-          aLinkTitle: "Instagram",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "X (Twitter)",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Threads",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "LinkedIn",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "GitHub",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-      dWebLinks: [
-        {
-          aLinkTitle: "Visit Administration",
-          bLinkURL: "https://www.google.com/"
-        },
-        {
-          aLinkTitle: "Visit Application",
-          bLinkURL: "https://www.google.com/"
-        }
-      ],
-    });
-
-    const branchGroupInstance3 = await BranchGroupModel.create({
-      aTitle: "Tadpole Organisation",
-      aSubtitle: "Where Vision Meets Velocity",
-      aDescription: "A proficient organization specializing in developing bespoke web applications for clients, fostering personal innovation, and engaging in collaborative projects with Beehive Corporation.",
-      bCreatedAt: new Date(Date.now()),
-      bCreatedBy: shraddha._id,
-      cBranches: [
-        branchInstance3._id,
-        branchInstance4._id,
-        branchInstance5._id,
-      ],
+      cBranches: [],
       dSocialLinks: [
         {
           aLinkTitle: "Instagram",
@@ -2825,15 +2328,14 @@ The Sigma Cluster can be reached through the following communication channels:
     
     // --- Create Branch Section ---
     await BranchSectionModel.create({
-      aTitle: "Beehive Corporation",
-      aSubtitle: "Infinite Wonder Awaits",
-      aDescription: "A proficient corporation specializing in the comprehensive lifecycle management of web applications, encompassing design, development, deployment, maintenance, and scalable solutions.",
+      aTitle: "Andromeda Organisation",
+      aSubtitle: "Where Vision Meets Velocity",
+      aDescription: "A proficient organization specializing in crafting sophisticated development and communication tools tailored for diverse web applications, under Beehive Corporation.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
       cBranchGroups: [
         branchGroupInstance1._id,
         branchGroupInstance2._id,
-        branchGroupInstance3._id,
       ],
       dSocialLinks: [
         {

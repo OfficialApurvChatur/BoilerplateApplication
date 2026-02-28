@@ -7,7 +7,7 @@
     "build": "NODE_OPTIONS='--max_old_space_size=1024' tsc -b",
     "dev": "nodemon --legacy-watch",
     "start": "node --max-old-space-size=1024 dist/index.js",
-    "seed": "ts-node src/cSeeder/a-beehive-seeder.ts"
+    "seed": "ts-node src/cSeeder/m-boilerplate-seeder.ts"
   },
   "keywords": [],
   "author": "",
