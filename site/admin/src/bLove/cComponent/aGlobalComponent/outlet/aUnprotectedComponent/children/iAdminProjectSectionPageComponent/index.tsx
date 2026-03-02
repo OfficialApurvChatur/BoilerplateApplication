@@ -43,6 +43,7 @@ export type ProjectSectionComponentDataType = {
   aDescription: string;
   aDetail: string;
   cProjectGroups: ProjectGroupComponentDataType[];
+  cProjects?: ProjectComponentDataType[];
 };
 
 const AdminProjectSectionPageComponent = (props: AdminProjectSectionPageComponentType) => {

@@ -28,9 +28,33 @@ const adminBranchSectionPageController = (Model= "AdminBranchSectionPageModel", 
           select: "aTitle aSubtitle aDescription cBranches",
           populate: {
             path: "cBranches",
-            select: "aImage aTitle aSubtitle aDescription dSocialLinks dWebLinks"
+            select: "aImage aTitle aSubtitle aDescription dSocialLinks dWebLinks",
+            populate: [
+              {
+                path: "bCreatedBy",
+                select: "eImage eFirstname eLastname eEmail"
+              },
+              {
+                path: "bUpdatedBy",
+                select: "eImage eFirstname eLastname eEmail"
+              }
+            ]
           }
-        })        
+        })  
+        .populate({
+          path: "cBranches",
+          select: "aImage aTitle aSubtitle aDescription dSocialLinks dWebLinks",
+          populate: [
+            {
+              path: "bCreatedBy",
+              select: "eImage eFirstname eLastname eEmail"
+            },
+            {
+              path: "bUpdatedBy",
+              select: "eImage eFirstname eLastname eEmail"
+            }
+          ]
+        })              
         .lean();
 
       const responseData = {

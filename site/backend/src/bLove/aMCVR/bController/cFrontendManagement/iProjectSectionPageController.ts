@@ -28,9 +28,33 @@ const projectSectionPageController = (Model= "ProjectSectionPageModel", Label= "
           select: "aTitle aSubtitle aDescription cProjects",
           populate: {
             path: "cProjects",
-            select: "aImage aTitle aSubtitle aDescription dSocialLinks dWebLinks"
+            select: "aImage aTitle aSubtitle aDescription dSocialLinks dWebLinks",
+            populate: [
+              {
+                path: "bCreatedBy",
+                select: "eImage eFirstname eLastname eEmail"
+              },
+              {
+                path: "bUpdatedBy",
+                select: "eImage eFirstname eLastname eEmail"
+              }
+            ]
           }
         })
+        .populate({
+          path: "cProjects",
+          select: "aImage aTitle aSubtitle aDescription dSocialLinks dWebLinks",
+          populate: [
+            {
+              path: "bCreatedBy",
+              select: "eImage eFirstname eLastname eEmail"
+            },
+            {
+              path: "bUpdatedBy",
+              select: "eImage eFirstname eLastname eEmail"
+            }
+          ]
+        })        
         .lean();
 
       const responseData = {

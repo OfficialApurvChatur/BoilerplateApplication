@@ -43,6 +43,7 @@ export type BranchSectionComponentDataType = {
   aDescription: string;
   aDetail: string;
   cBranchGroups: BranchGroupComponentDataType[];
+  cBranches?: BranchComponentDataType[];
 };
 
 const AdminBranchSectionPageComponent = (props: AdminBranchSectionPageComponentType) => {

@@ -113,6 +113,7 @@ export type BranchSectionComponentDataType = {
   aDescription: string;
   aSlug: string;
   cBranchGroups: BranchGroupComponentDataType[];
+  cBranches?: BranchComponentDataType[];
 };
 
 export type ProjectComponentDataType = {
@@ -144,6 +145,7 @@ export type ProjectSectionComponentDataType = {
   aSubtitle: string;
   aDescription: string;
   cProjectGroups: ProjectGroupComponentDataType[];
+  cProjects?: ProjectComponentDataType[];
 };
 
 export type ContactInfoComponentDataType = {
