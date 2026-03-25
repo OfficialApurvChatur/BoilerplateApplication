@@ -1,7 +1,10 @@
 import fs from "fs/promises";
 import path from "path";
+import cloudinary from "cloudinary";
 
 import databaseConnection from "../aConnection/cDatabaseConnection";
+import redisConnection, { redisClient } from '../aConnection/eRedisConnection';
+import fileStorageConnection from "../aConnection/fFileStorageConnection";
 import brandConnection from "../aConnection/jBrandConnection";
 
 import { UserModel } from "../bLove/aMCVR/aModel/aDatabaseManagement/bUserAdministration/eUserModel";
@@ -44,9 +47,35 @@ const markdownPath = path.join(
   "src/cSeeder/g-aquila-static-content.md"
 );
 
+const uploadImage = async (filePath: string, folder: string) => {
+  const result = await cloudinary.v2.uploader.upload(filePath, {
+    folder,
+    resource_type: "image",
+  });
+
+  console.log(`✅ Image Uploaded on ${folder}`);
+
+  return {
+    url: result.secure_url,
+    pid: result.public_id,
+  };
+};
+
 const seeder = async () => {
   try {
+    await fileStorageConnection();
     await databaseConnection();
+    await redisConnection();
+
+    // --- Clear previous images ---
+    await cloudinary.v2.api.delete_all_resources();
+
+    console.log("🗑️ Cleared Cloudinary");
+
+    // --- Clear RedisDB ---
+    await redisClient.flushdb();
+
+    console.log("🗑️ Cleared RedisDB");
 
     // --- Clear previous data ---
     await AccessPointModel.deleteMany({});
@@ -88,8 +117,71 @@ const seeder = async () => {
 
     console.log("🗑️ Cleared DB");
 
+    // --- Prepare Image ---
+    const shraddhaProfileImage = await uploadImage("C:/Users/LENOVO/Downloads/Avatar/Anushree_Mandape.png", "user");
+    const shraddhaCoverImage = await uploadImage("C:/Users/LENOVO/Downloads/Cover_Images/01.jpg", "user");
+    
+    const adminHeroLogoImage = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Andromeda_Logo.png", "adminhero");
+    const adminHeroSideImage1 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Beehive_Logo.png", "adminproject");
+    const adminHeroSideImage2 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Andromeda_Logo.png", "adminproject");
+    const adminHeroSideImage3 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Pinwheel_Logo.png", "adminproject");
+    const adminHeroSideImage4 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Tadpole_Logo.png", "adminproject");
+    const adminHeroSideImage5 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Acrux_Logo.png", "adminproject");
+    const adminHeroSideImage6 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Anser_Logo.png", "adminproject");
+    const adminHeroSideImage7 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Aquila_Logo.png", "adminproject");
+    const adminHeroSideImage8 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Bellatrix_Logo.png", "adminproject");
+    const adminHeroSideImage9 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Capella_Logo.png", "adminproject");
+    
+    const adminApplicationImage01 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/MongoDB_Logo.png", "adminproject");
+    const adminApplicationImage02 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/ExpressJS_Logo.png", "adminproject");
+    const adminApplicationImage03 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/ReactJS_Logo.png", "adminproject");
+    const adminApplicationImage04 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/NodeJS_Logo.png", "adminproject");
+    const adminApplicationImage05 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/TypeScript_Logo.png", "adminproject");
+    const adminApplicationImage06 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/SocketIO_Logo.png", "adminproject");
+    const adminApplicationImage07 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Redux_Logo.png", "adminproject");
+    const adminApplicationImage08 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Redis_Logo.png", "adminproject");
+    const adminApplicationImage09 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Tailwind_Logo.png", "adminproject");
+    const adminApplicationImage10 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Shadcn_Logo.png", "adminproject");
+    const adminApplicationImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Axios_Logo.png", "adminproject");
+    const adminApplicationImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/JWT_Logo.png", "adminproject");
+    const adminApplicationImage13 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Cloudinary_Logo.png", "adminproject");
+    const adminApplicationImage14 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/NodeMailer_Logo.png", "adminproject");
+    const adminApplicationImage15 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Netlify_Logo.png", "adminproject");
+    const adminApplicationImage16 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Render_Logo.png", "adminproject");
+
+    const heroLogoImage = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Andromeda_Logo.png", "hero");
+    const heroSideImage1 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Beehive_Logo.png", "project");
+    const heroSideImage2 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Andromeda_Logo.png", "project");
+    const heroSideImage3 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Pinwheel_Logo.png", "project");
+    const heroSideImage4 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Tadpole_Logo.png", "project");
+    const heroSideImage5 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Acrux_Logo.png", "project");
+    const heroSideImage6 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Anser_Logo.png", "project");
+    const heroSideImage7 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Aquila_Logo.png", "project");
+    const heroSideImage8 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Bellatrix_Logo.png", "project");
+    const heroSideImage9 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Capella_Logo.png", "project");
+
+    const applicationImage01 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/MongoDB_Logo.png", "project");
+    const applicationImage02 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/ExpressJS_Logo.png", "project");
+    const applicationImage03 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/ReactJS_Logo.png", "project");
+    const applicationImage04 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/NodeJS_Logo.png", "project");
+    const applicationImage05 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/TypeScript_Logo.png", "project");
+    const applicationImage06 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/SocketIO_Logo.png", "project");
+    const applicationImage07 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Redux_Logo.png", "project");
+    const applicationImage08 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Redis_Logo.png", "project");
+    const applicationImage09 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Tailwind_Logo.png", "project");
+    const applicationImage10 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Shadcn_Logo.png", "project");
+    const applicationImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Axios_Logo.png", "project");
+    const applicationImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/JWT_Logo.png", "project");
+    const applicationImage13 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Cloudinary_Logo.png", "project");
+    const applicationImage14 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/NodeMailer_Logo.png", "project");
+    const applicationImage15 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Netlify_Logo.png", "project");
+    const applicationImage16 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Render_Logo.png", "project");
+
+    console.log("✅ Images Prepared");
+
     // --- Create Initial User ---
     const shraddha = await UserModel.create({
+      aImage: shraddhaProfileImage.url,
       aTitle: "Shraddha Kapoor",
       aSubtitle: `I'm using ${brandConnection.bBrandName.split(" ")[0]} application`,
       aDescription: "Dreamer. Coffee lover. Believer in kindness and late-night conversations. Trying to collect moments, not things. If you love dogs and good food, we’ll get along just fine.",
@@ -117,6 +209,7 @@ const seeder = async () => {
           bLinkURL: "https://www.linkedin.com/posts/shraddha-kapoor-6a9228380_for-a-while-now-ive-felt-the-urge-to-share-activity-7365306712066560000-iKZR/?utm_source=chatgpt.com",
         }
       ],
+      eImage: shraddhaCoverImage.url,
       eFirstname: "Shraddha",
       eLastname: "Kapoor",
       eEmail: `shraddha.kapoor${brandConnection.iEmailName}`,
@@ -1121,6 +1214,7 @@ const seeder = async () => {
 
     // --- Create Admin Hero ---
     await AdminHeroModel.create({
+      aImage: adminHeroLogoImage.url, 
       aTitle: "Aquila Enterprise",
       aSubtitle: "Elevating Success Together",
       aDescription: "A proficient enterprise specializing in developing bespoke web applications for clients with Beehive Corporation.",
@@ -1158,7 +1252,17 @@ const seeder = async () => {
           bLinkURL: "https://aquila-backend-v02.netlify.app/"
         }
       ],
-      dGalleryImages: [],
+      dGalleryImages: [
+        adminHeroSideImage1.url,
+        adminHeroSideImage2.url,
+        adminHeroSideImage3.url,
+        adminHeroSideImage4.url,
+        adminHeroSideImage5.url,
+        adminHeroSideImage6.url,
+        adminHeroSideImage7.url,
+        adminHeroSideImage8.url,
+        adminHeroSideImage9.url,
+      ],
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -1224,6 +1328,24 @@ Each app is independently deployable, yet designed to feel like one organism.
       `,
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
+      dGalleryImages: [
+        adminApplicationImage01.url,
+        adminApplicationImage02.url,
+        adminApplicationImage03.url,
+        adminApplicationImage04.url,
+        adminApplicationImage05.url,
+        adminApplicationImage06.url,
+        adminApplicationImage07.url,
+        adminApplicationImage08.url,
+        adminApplicationImage09.url,
+        adminApplicationImage10.url,
+        adminApplicationImage11.url,
+        adminApplicationImage12.url,
+        adminApplicationImage13.url,
+        adminApplicationImage14.url,
+        adminApplicationImage15.url,
+        adminApplicationImage16.url,
+      ]
     });
 
     await AdminAboutApplicationModel.create({
@@ -1486,6 +1608,7 @@ The Alpha Star can be reached through the following communication channels:
 
     // --- Create Hero ---
     await HeroModel.create({
+      aImage: heroLogoImage.url,
       aTitle: "Aquila Enterprise",
       aSubtitle: "Elevating Success Together",
       aDescription: "A proficient enterprise specializing in developing bespoke web applications for clients with Beehive Corporation.",
@@ -1523,7 +1646,17 @@ The Alpha Star can be reached through the following communication channels:
           bLinkURL: "https://aquila-backend-v02.netlify.app/"
         }
       ],
-      dGalleryImages: [],
+      dGalleryImages: [
+        heroSideImage1.url,
+        heroSideImage2.url,
+        heroSideImage3.url,
+        heroSideImage4.url,
+        heroSideImage5.url,
+        heroSideImage6.url,
+        heroSideImage7.url,
+        heroSideImage8.url,
+        heroSideImage9.url,
+      ],
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
     });
@@ -1589,6 +1722,24 @@ Each app is independently deployable, yet designed to feel like one organism.
       `,
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
+      dGalleryImages: [
+        applicationImage01.url,
+        applicationImage02.url,
+        applicationImage03.url,
+        applicationImage04.url,
+        applicationImage05.url,
+        applicationImage06.url,
+        applicationImage07.url,
+        applicationImage08.url,
+        applicationImage09.url,
+        applicationImage10.url,
+        applicationImage11.url,
+        applicationImage12.url,
+        applicationImage13.url,
+        applicationImage14.url,
+        applicationImage15.url,
+        applicationImage16.url,
+      ]
     });
 
     await AboutApplicationModel.create({
