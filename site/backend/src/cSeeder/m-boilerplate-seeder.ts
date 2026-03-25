@@ -1202,7 +1202,6 @@ Till now, this planet consists of only one moon around. That moon is:
 Boilerplate Application is a project aims to develop a dynamic landing page application for Boilerplate, mainly using MERN stack, TypeScript and SocketIO. 
 Key features include a dedicated admin panel for content management, real-time interaction via SocketIO, and a custom role-based authentication system. 
 The application will effectively showcase Boilerplate's identity, projects, and more, enhancing user engagement and administrative efficiency. 
-Backend Application - The brain powering logic, data, and communication
 
 ### THE POWER INGREDIENTS OF BOILERPLATE APPLICATION 
 Boilerplate Application is crafted with these few technologies: 
@@ -1539,7 +1538,6 @@ Till now, this planet consists of only one moon around. That moon is:
 Boilerplate Application is a project aims to develop a dynamic landing page application for Boilerplate, mainly using MERN stack, TypeScript and SocketIO. 
 Key features include a dedicated admin panel for content management, real-time interaction via SocketIO, and a custom role-based authentication system. 
 The application will effectively showcase Boilerplate's identity, projects, and more, enhancing user engagement and administrative efficiency. 
-Backend Application - The brain powering logic, data, and communication
 
 ### THE POWER INGREDIENTS OF BOILERPLATE APPLICATION 
 Boilerplate Application is crafted with these few technologies: 

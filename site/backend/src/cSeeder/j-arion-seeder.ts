@@ -1244,7 +1244,6 @@ Till now, this planet consists of twenty-two moons around. These moons are:
 Arion Application is a project aims to develop a dynamic landing page application for Arion, mainly using MERN stack, TypeScript and SocketIO. 
 Key features include a dedicated admin panel for content management, real-time interaction via SocketIO, and a custom role-based authentication system. 
 The application will effectively showcase Arion's identity, projects, and more, enhancing user engagement and administrative efficiency. 
-Backend Application - The brain powering logic, data, and communication
 
 ### THE POWER INGREDIENTS OF ARION APPLICATION 
 Arion Application is crafted with these few technologies: 
@@ -1623,7 +1622,6 @@ Till now, this planet consists of twenty-two moons around. These moons are:
 Arion Application is a project aims to develop a dynamic landing page application for Arion, mainly using MERN stack, TypeScript and SocketIO. 
 Key features include a dedicated admin panel for content management, real-time interaction via SocketIO, and a custom role-based authentication system. 
 The application will effectively showcase Arion's identity, projects, and more, enhancing user engagement and administrative efficiency. 
-Backend Application - The brain powering logic, data, and communication
 
 ### THE POWER INGREDIENTS OF ARION APPLICATION 
 Arion Application is crafted with these few technologies: 

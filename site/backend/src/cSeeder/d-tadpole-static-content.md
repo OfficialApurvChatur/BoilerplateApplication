@@ -89,8 +89,7 @@
     
     Tadpole Application is a project aims to develop a dynamic landing page application for Tadpole Organisation, mainly using MERN stack, TypeScript and SocketIO. 
     Key features include a dedicated admin panel for content management, real-time interaction via SocketIO, and a custom role-based authentication system. 
-    The application will effectively showcase Tadpole Organisation's identity, projects, and more, enhancing user engagement and administrative efficiency. 
-    Backend Application - The brain powering logic, data, and communication
+    The application will effectively showcase Tadpole Organisation's identity, projects, and more, enhancing user engagement and administrative efficiency.
 
     The Power Ingredients of Tadpole Application 
     Tadpole Application is crafted with these few technologies: 
