@@ -118,8 +118,8 @@ const seeder = async () => {
     console.log("🗑️ Cleared DB");
 
     // --- Prepare Image ---
-    const shraddhaProfileImage = await uploadImage("C:/Users/LENOVO/Downloads/Avatar/Anushree_Mandape.png", "user");
-    const shraddhaCoverImage = await uploadImage("C:/Users/LENOVO/Downloads/Cover_Images/01.jpg", "user");
+    const shraddhaProfileImage = await uploadImage("C:/Users/LENOVO/Downloads/Avatar/Ashlesha_Wase.png", "user");
+    const shraddhaCoverImage = await uploadImage("C:/Users/LENOVO/Downloads/Cover_Images/02.jpg", "user");
     
     const adminHeroLogoImage = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Andromeda_Logo.png", "adminhero");
     const adminHeroSideImage1 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Beehive_Logo.png", "adminproject");

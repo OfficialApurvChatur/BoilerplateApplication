@@ -118,10 +118,10 @@ const seeder = async () => {
     console.log("🗑️ Cleared DB");
 
     // --- Prepare Image ---
-    const shraddhaProfileImage = await uploadImage("C:/Users/LENOVO/Downloads/Avatar/Anushree_Mandape.png", "user");
-    const shraddhaCoverImage = await uploadImage("C:/Users/LENOVO/Downloads/Cover_Images/01.jpg", "user");
+    const shraddhaProfileImage = await uploadImage("C:/Users/LENOVO/Downloads/Avatar/Saloni_Meshram.png", "user");
+    const shraddhaCoverImage = await uploadImage("C:/Users/LENOVO/Downloads/Cover_Images/12.jpg", "user");
     
-    const adminHeroLogoImage = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Andromeda_Logo.png", "adminhero");
+    const adminHeroLogoImage = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Abol_Logo.png", "adminhero");
     const adminHeroSideImage1 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Beehive_Logo.png", "adminproject");
     const adminHeroSideImage2 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Andromeda_Logo.png", "adminproject");
     const adminHeroSideImage3 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Pinwheel_Logo.png", "adminproject");
@@ -149,7 +149,7 @@ const seeder = async () => {
     const adminApplicationImage15 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Netlify_Logo.png", "adminproject");
     const adminApplicationImage16 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Render_Logo.png", "adminproject");
 
-    const heroLogoImage = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Andromeda_Logo.png", "hero");
+    const heroLogoImage = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Abol_Logo.png", "hero");
     const heroSideImage1 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Beehive_Logo.png", "project");
     const heroSideImage2 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Andromeda_Logo.png", "project");
     const heroSideImage3 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Pinwheel_Logo.png", "project");
