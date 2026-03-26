@@ -177,6 +177,12 @@ const seeder = async () => {
     const applicationImage15 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Netlify_Logo.png", "project");
     const applicationImage16 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Render_Logo.png", "project");
 
+    const adminProjectImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Boilerplate/2.png", "adminproject");
+    const adminProjectImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Chattrix/2.png", "adminproject");
+
+    const projectImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Boilerplate/2.png", "project");
+    const projectImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Chattrix/2.png", "project");
+
     console.log("✅ Images Prepared");
 
     // --- Create Initial User ---
@@ -1562,6 +1568,7 @@ The Beta Star can be reached through the following communication channels:
     
     // --- Create Admin Project ---
     const adminProjectInstance13 = await AdminProjectModel.create({
+      aImage: adminProjectImage11.url,
       aTitle: "Boilerplate Application",
       aSubtitle: "boilerplate-frontend-v02.netlify.app",
       aDescription: `
@@ -1606,6 +1613,7 @@ The application will effectively showcase Boilerplate's identity, projects, and 
     });
 
     const adminProjectInstance14 = await AdminProjectModel.create({
+      aImage: adminProjectImage12.url,
       aTitle: "Chattrix Application",
       aSubtitle: "chattrix-frontend-v02.netlify.app",
       aDescription: `
@@ -2052,6 +2060,7 @@ The Beta Star can be reached through the following communication channels:
 
     // --- Create Project ---
     const projectInstance13 = await ProjectModel.create({
+      aImage: projectImage11.url,
       aTitle: "Boilerplate Application",
       aSubtitle: "boilerplate-frontend-v02.netlify.app",
       aDescription: `
@@ -2096,6 +2105,7 @@ The application will effectively showcase Boilerplate's identity, projects, and 
     });
 
     const projectInstance14 = await ProjectModel.create({
+      aImage: projectImage12.url,
       aTitle: "Chattrix Application",
       aSubtitle: "chattrix-frontend-v02.netlify.app",
       aDescription: `

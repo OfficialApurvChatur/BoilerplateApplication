@@ -177,6 +177,26 @@ const seeder = async () => {
     const applicationImage15 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Netlify_Logo.png", "project");
     const applicationImage16 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Render_Logo.png", "project");
 
+    const adminProjectImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Beehive/2.png", "adminproject");
+    const adminProjectImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Andromeda/2.png", "adminproject");
+    const adminProjectImage13 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Pinwheel/2.png", "adminproject");
+    const adminProjectImage14 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Tadpole/2.png", "adminproject");
+    const adminProjectImage15 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Acrux/2.png", "adminproject");
+    const adminProjectImage16 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Anser/2.png", "adminproject");
+    const adminProjectImage17 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Aquila/2.png", "adminproject");
+    const adminProjectImage18 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Bellatrix/2.png", "adminproject");
+    const adminProjectImage19 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Capella/2.png", "adminproject");
+
+    const projectImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Beehive/2.png", "project");
+    const projectImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Andromeda/2.png", "project");
+    const projectImage13 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Pinwheel/2.png", "project");
+    const projectImage14 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Tadpole/2.png", "project");
+    const projectImage15 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Acrux/2.png", "project");
+    const projectImage16 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Anser/2.png", "project");
+    const projectImage17 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Aquila/2.png", "project");
+    const projectImage18 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Bellatrix/2.png", "project");
+    const projectImage19 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Capella/2.png", "project");
+
     console.log("✅ Images Prepared");
 
     // --- Create Initial User ---
@@ -1562,6 +1582,7 @@ The Beta Galaxy can be reached through the following communication channels:
 
     // --- Create Admin Project ---
     const adminProjectInstance01 = await AdminProjectModel.create({
+      aImage: adminProjectImage11.url,
       aTitle: "Beehive Application",
       aSubtitle: "beehive-frontend-v02.netlify.app",
       aDescription: `
@@ -1606,6 +1627,7 @@ The application will effectively showcase Beehive Corporation's identity, projec
     });
 
     const adminProjectInstance02 = await AdminProjectModel.create({
+      aImage: adminProjectImage12.url,
       aTitle: "Andromeda Application",
       aSubtitle: "andromeda-frontend-v02.netlify.app",
       aDescription: `
@@ -1650,6 +1672,7 @@ The application will effectively showcase Andromeda Organisation's identity, pro
     });
 
     const adminProjectInstance03 = await AdminProjectModel.create({
+      aImage: adminProjectImage13.url,
       aTitle: "Pinwheel Application",
       aSubtitle: "pinwheel-frontend-v02.netlify.app",
       aDescription: `
@@ -1694,6 +1717,7 @@ The application will effectively showcase Pinwheel Organisation's identity, proj
     });
 
     const adminProjectInstance04 = await AdminProjectModel.create({
+      aImage: adminProjectImage14.url,
       aTitle: "Tadpole Application",
       aSubtitle: "tadpole-frontend-v02.netlify.app",
       aDescription: `
@@ -1738,6 +1762,7 @@ The application will effectively showcase Tadpole Organisation's identity, proje
     });
 
     const adminProjectInstance05 = await AdminProjectModel.create({
+      aImage: adminProjectImage15.url,
       aTitle: "Acrux Application",
       aSubtitle: "acrux-frontend-v02.netlify.app",
       aDescription: `
@@ -1782,6 +1807,7 @@ The application will effectively showcase Acrux Enterprise's identity, projects,
     });
 
     const adminProjectInstance06 = await AdminProjectModel.create({
+      aImage: adminProjectImage16.url,
       aTitle: "Anser Application",
       aSubtitle: "anser-frontend-v02.netlify.app",
       aDescription: `
@@ -1826,6 +1852,7 @@ The application will effectively showcase Anser Enterprise's identity, projects,
     });
 
     const adminProjectInstance07 = await AdminProjectModel.create({
+      aImage: adminProjectImage17.url,
       aTitle: "Aquila Application",
       aSubtitle: "aquila-frontend-v02.netlify.app",
       aDescription: `
@@ -1870,6 +1897,7 @@ The application will effectively showcase Aquila Enterprise's identity, projects
     });
 
     const adminProjectInstance08 = await AdminProjectModel.create({
+      aImage: adminProjectImage18.url,
       aTitle: "Bellatrix Application",
       aSubtitle: "bellatrix-frontend-v02.netlify.app",
       aDescription: `
@@ -1914,6 +1942,7 @@ The application will effectively showcase Bellatrix Enterprise's identity, proje
     });
 
     const adminProjectInstance09 = await AdminProjectModel.create({
+      aImage: adminProjectImage19.url,
       aTitle: "Capella Application",
       aSubtitle: "capella-frontend-v02.netlify.app",
       aDescription: `
@@ -2366,6 +2395,7 @@ The Beta Galaxy can be reached through the following communication channels:
 
     // --- Create Project ---
     const projectInstance01 = await ProjectModel.create({
+      aImage: projectImage11.url,
       aTitle: "Beehive Application",
       aSubtitle: "beehive-frontend-v02.netlify.app",
       aDescription: `
@@ -2410,6 +2440,7 @@ The application will effectively showcase Beehive Corporation's identity, projec
     });
 
     const projectInstance02 = await ProjectModel.create({
+      aImage: projectImage12.url,
       aTitle: "Andromeda Application",
       aSubtitle: "andromeda-frontend-v02.netlify.app",
       aDescription: `
@@ -2454,6 +2485,7 @@ The application will effectively showcase Andromeda Organisation's identity, pro
     });
 
     const projectInstance03 = await ProjectModel.create({
+      aImage: projectImage13.url,
       aTitle: "Pinwheel Application",
       aSubtitle: "pinwheel-frontend-v02.netlify.app",
       aDescription: `
@@ -2498,6 +2530,7 @@ The application will effectively showcase Pinwheel Organisation's identity, proj
     });
 
     const projectInstance04 = await ProjectModel.create({
+      aImage: projectImage14.url,
       aTitle: "Tadpole Application",
       aSubtitle: "tadpole-frontend-v02.netlify.app",
       aDescription: `
@@ -2542,6 +2575,7 @@ The application will effectively showcase Tadpole Organisation's identity, proje
     });
 
     const projectInstance05 = await ProjectModel.create({
+      aImage: projectImage15.url,
       aTitle: "Acrux Application",
       aSubtitle: "acrux-frontend-v02.netlify.app",
       aDescription: `
@@ -2586,6 +2620,7 @@ The application will effectively showcase Acrux Enterprise's identity, projects,
     });
 
     const projectInstance06 = await ProjectModel.create({
+      aImage: projectImage16.url,
       aTitle: "Anser Application",
       aSubtitle: "anser-frontend-v02.netlify.app",
       aDescription: `
@@ -2630,6 +2665,7 @@ The application will effectively showcase Anser Enterprise's identity, projects,
     });
 
     const projectInstance07 = await ProjectModel.create({
+      aImage: projectImage17.url,
       aTitle: "Aquila Application",
       aSubtitle: "aquila-frontend-v02.netlify.app",
       aDescription: `
@@ -2674,6 +2710,7 @@ The application will effectively showcase Aquila Enterprise's identity, projects
     });
 
     const projectInstance08 = await ProjectModel.create({
+      aImage: projectImage18.url,
       aTitle: "Bellatrix Application",
       aSubtitle: "bellatrix-frontend-v02.netlify.app",
       aDescription: `
@@ -2718,6 +2755,7 @@ The application will effectively showcase Bellatrix Enterprise's identity, proje
     });
 
     const projectInstance09 = await ProjectModel.create({
+      aImage: projectImage19.url,
       aTitle: "Capella Application",
       aSubtitle: "capella-frontend-v02.netlify.app",
       aDescription: `

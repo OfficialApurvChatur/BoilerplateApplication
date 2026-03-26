@@ -176,6 +176,48 @@ const seeder = async () => {
     const applicationImage14 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/NodeMailer_Logo.png", "project");
     const applicationImage15 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Netlify_Logo.png", "project");
     const applicationImage16 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Render_Logo.png", "project");
+    
+    const adminBranchImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Acrux/1.png", "adminproject");
+    const adminBranchImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Anser/1.png", "adminproject");
+    const adminBranchImage31 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Aquila/1.png", "adminproject");
+    const adminBranchImage32 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Bellatrix/1.png", "adminproject");
+    const adminBranchImage33 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Capella/1.png", "adminproject");
+    
+    const adminProjectImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Beehive/2.png", "adminproject");
+    const adminProjectImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Andromeda/2.png", "adminproject");
+    const adminProjectImage13 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Pinwheel/2.png", "adminproject");
+    const adminProjectImage14 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Tadpole/2.png", "adminproject");
+    const adminProjectImage15 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Acrux/2.png", "adminproject");
+    const adminProjectImage16 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Anser/2.png", "adminproject");
+    const adminProjectImage17 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Aquila/2.png", "adminproject");
+    const adminProjectImage18 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Bellatrix/2.png", "adminproject");
+    const adminProjectImage19 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Capella/2.png", "adminproject");
+    const adminProjectImage21 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Arion/2.png", "adminproject");
+    const adminProjectImage22 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Ankas/2.png", "adminproject");
+    const adminProjectImage23 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Abol/2.png", "adminproject");
+    const adminProjectImage31 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Boilerplate/2.png", "adminproject");
+    const adminProjectImage32 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Chattrix/2.png", "adminproject");
+
+    const branchImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Acrux/1.png", "branch");
+    const branchImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Anser/1.png", "branch");
+    const branchImage31 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Aquila/1.png", "branch");
+    const branchImage32 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Bellatrix/1.png", "branch");
+    const branchImage33 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Capella/1.png", "branch");
+
+    const projectImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Beehive/2.png", "project");
+    const projectImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Andromeda/2.png", "project");
+    const projectImage13 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Pinwheel/2.png", "project");
+    const projectImage14 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Tadpole/2.png", "project");
+    const projectImage15 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Acrux/2.png", "project");
+    const projectImage16 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Anser/2.png", "project");
+    const projectImage17 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Aquila/2.png", "project");
+    const projectImage18 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Bellatrix/2.png", "project");
+    const projectImage19 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Capella/2.png", "project");
+    const projectImage21 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Arion/2.png", "project");
+    const projectImage22 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Ankas/2.png", "project");
+    const projectImage23 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Abol/2.png", "project");
+    const projectImage31 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Boilerplate/2.png", "project");
+    const projectImage32 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Chattrix/2.png", "project");
 
     console.log("✅ Images Prepared");
 
@@ -1555,6 +1597,7 @@ The Sigma Cluster can be reached through the following communication channels:
 
     // --- Create Admin Branch ---
     const adminBranchInstance1 = await AdminBranchModel.create({
+      aImage: adminBranchImage11.url,
       aTitle: "Acrux Enterprise",
       aSubtitle: "Feeling Ambitions, Igniting Growth",
       aDescription: "A proficient enterprise specializing in crafting sophisticated development tools tailored for diverse web applications, under Beehive Corporation.",
@@ -1595,6 +1638,7 @@ The Sigma Cluster can be reached through the following communication channels:
     });
 
     const adminBranchInstance2 = await AdminBranchModel.create({
+      aImage: adminBranchImage12.url,
       aTitle: "Anser Enterprise",
       aSubtitle: "Building Bridges, Creating Values",
       aDescription: "A proficient enterprise specializing in crafting sophisticated communication tools tailored for diverse web applications, under Beehive Corporation.",
@@ -1635,6 +1679,7 @@ The Sigma Cluster can be reached through the following communication channels:
     });
 
     const adminBranchInstance3 = await AdminBranchModel.create({
+      aImage: adminBranchImage31.url,
       aTitle: "Aquila Enterprise",
       aSubtitle: "Elevating Success Together",
       aDescription: "A proficient organization specializing in developing bespoke web applications for clients with Beehive Corporation.",
@@ -1675,6 +1720,7 @@ The Sigma Cluster can be reached through the following communication channels:
     });
 
     const adminBranchInstance4 = await AdminBranchModel.create({
+      aImage: adminBranchImage32.url,
       aTitle: "Bellatrix Enterprise",
       aSubtitle: "Navigating Beyond Horizon",
       aDescription: "A proficient organization specializing in developing bespoke web applications for fostering personal innovation with Beehive Corporation.",
@@ -1715,6 +1761,7 @@ The Sigma Cluster can be reached through the following communication channels:
     });
 
     const adminBranchInstance5 = await AdminBranchModel.create({
+      aImage: adminBranchImage33.url,
       aTitle: "Capella Enterprise",
       aSubtitle: "Innovating Bright Stars",
       aDescription: "A proficient organization specializing in developing bespoke web applications for engaging in collaborative projects with Beehive Corporation.",
@@ -1939,6 +1986,7 @@ The Sigma Cluster can be reached through the following communication channels:
     
     // --- Create Admin Project ---
     const adminProjectInstance01 = await AdminProjectModel.create({
+      aImage: adminProjectImage11.url,
       aTitle: "Beehive Application",
       aSubtitle: "beehive-frontend-v02.netlify.app",
       aDescription: `
@@ -1983,6 +2031,7 @@ The application will effectively showcase Beehive Corporation's identity, projec
     });
 
     const adminProjectInstance02 = await AdminProjectModel.create({
+      aImage: adminProjectImage12.url,
       aTitle: "Andromeda Application",
       aSubtitle: "andromeda-frontend-v02.netlify.app",
       aDescription: `
@@ -2027,6 +2076,7 @@ The application will effectively showcase Andromeda Organisation's identity, pro
     });
 
     const adminProjectInstance03 = await AdminProjectModel.create({
+      aImage: adminProjectImage13.url,
       aTitle: "Pinwheel Application",
       aSubtitle: "pinwheel-frontend-v02.netlify.app",
       aDescription: `
@@ -2071,6 +2121,7 @@ The application will effectively showcase Pinwheel Organisation's identity, proj
     });
 
     const adminProjectInstance04 = await AdminProjectModel.create({
+      aImage: adminProjectImage14.url,
       aTitle: "Tadpole Application",
       aSubtitle: "tadpole-frontend-v02.netlify.app",
       aDescription: `
@@ -2115,6 +2166,7 @@ The application will effectively showcase Tadpole Organisation's identity, proje
     });
 
     const adminProjectInstance05 = await AdminProjectModel.create({
+      aImage: adminProjectImage15.url,
       aTitle: "Acrux Application",
       aSubtitle: "acrux-frontend-v02.netlify.app",
       aDescription: `
@@ -2159,6 +2211,7 @@ The application will effectively showcase Acrux Enterprise's identity, projects,
     });
 
     const adminProjectInstance06 = await AdminProjectModel.create({
+      aImage: adminProjectImage16.url,
       aTitle: "Anser Application",
       aSubtitle: "anser-frontend-v02.netlify.app",
       aDescription: `
@@ -2203,6 +2256,7 @@ The application will effectively showcase Anser Enterprise's identity, projects,
     });
 
     const adminProjectInstance07 = await AdminProjectModel.create({
+      aImage: adminProjectImage17.url,
       aTitle: "Aquila Application",
       aSubtitle: "aquila-frontend-v02.netlify.app",
       aDescription: `
@@ -2247,6 +2301,7 @@ The application will effectively showcase Aquila Enterprise's identity, projects
     });
 
     const adminProjectInstance08 = await AdminProjectModel.create({
+      aImage: adminProjectImage18.url,
       aTitle: "Bellatrix Application",
       aSubtitle: "bellatrix-frontend-v02.netlify.app",
       aDescription: `
@@ -2291,6 +2346,7 @@ The application will effectively showcase Bellatrix Enterprise's identity, proje
     });
 
     const adminProjectInstance09 = await AdminProjectModel.create({
+      aImage: adminProjectImage19.url,
       aTitle: "Capella Application",
       aSubtitle: "capella-frontend-v02.netlify.app",
       aDescription: `
@@ -2335,6 +2391,7 @@ The application will effectively showcase Capella Enterprise's identity, project
     });
 
     const adminProjectInstance10 = await AdminProjectModel.create({
+      aImage: adminProjectImage21.url,
       aTitle: "Arion Application",
       aSubtitle: "arion-frontend-v02.netlify.app",
       aDescription: `
@@ -2379,6 +2436,7 @@ The application will effectively showcase Arion's identity, projects, and more, 
     });
 
     const adminProjectInstance11 = await AdminProjectModel.create({
+      aImage: adminProjectImage22.url,
       aTitle: "Ankas Application",
       aSubtitle: "ankas-frontend-v02.netlify.app",
       aDescription: `
@@ -2423,6 +2481,7 @@ The application will effectively showcase Ankas's identity, projects, and more, 
     });
 
     const adminProjectInstance12 = await AdminProjectModel.create({
+      aImage: adminProjectImage23.url,
       aTitle: "Abol Application",
       aSubtitle: "abol-frontend-v02.netlify.app",
       aDescription: `
@@ -2467,6 +2526,7 @@ The application will effectively showcase Abol's identity, projects, and more, e
     });
 
     const adminProjectInstance13 = await AdminProjectModel.create({
+      aImage: adminProjectImage31.url,
       aTitle: "Boilerplate Application",
       aSubtitle: "boilerplate-frontend-v02.netlify.app",
       aDescription: `
@@ -2511,6 +2571,7 @@ The application will effectively showcase Boilerplate's identity, projects, and 
     });
 
     const adminProjectInstance14 = await AdminProjectModel.create({
+      aImage: adminProjectImage32.url,
       aTitle: "Chattrix Application",
       aSubtitle: "chattrix-frontend-v02.netlify.app",
       aDescription: `
@@ -3216,6 +3277,7 @@ The Sigma Cluster can be reached through the following communication channels:
 
     // --- Create Branch ---
     const branchInstance1 = await BranchModel.create({
+      aImage: branchImage11.url,
       aTitle: "Acrux Enterprise",
       aSubtitle: "Feeling Ambitions, Igniting Growth",
       aDescription: "A proficient enterprise specializing in crafting sophisticated development tools tailored for diverse web applications, under Beehive Corporation.",
@@ -3256,6 +3318,7 @@ The Sigma Cluster can be reached through the following communication channels:
     });
 
     const branchInstance2 = await BranchModel.create({
+      aImage: branchImage12.url,
       aTitle: "Anser Enterprise",
       aSubtitle: "Building Bridges, Creating Values",
       aDescription: "A proficient enterprise specializing in crafting sophisticated communication tools tailored for diverse web applications, under Beehive Corporation.",
@@ -3296,6 +3359,7 @@ The Sigma Cluster can be reached through the following communication channels:
     });
 
     const branchInstance3 = await BranchModel.create({
+      aImage: branchImage31.url,
       aTitle: "Aquila Enterprise",
       aSubtitle: "Elevating Success Together",
       aDescription: "A proficient organization specializing in developing bespoke web applications for clients with Beehive Corporation.",
@@ -3336,6 +3400,7 @@ The Sigma Cluster can be reached through the following communication channels:
     });
 
     const branchInstance4 = await BranchModel.create({
+      aImage: branchImage32.url,
       aTitle: "Bellatrix Enterprise",
       aSubtitle: "Navigating Beyond Horizon",
       aDescription: "A proficient organization specializing in developing bespoke web applications for fostering personal innovation with Beehive Corporation.",
@@ -3376,6 +3441,7 @@ The Sigma Cluster can be reached through the following communication channels:
     });
 
     const branchInstance5 = await BranchModel.create({
+      aImage: branchImage33.url,
       aTitle: "Capella Enterprise",
       aSubtitle: "Innovating Bright Stars",
       aDescription: "A proficient organization specializing in developing bespoke web applications for engaging in collaborative projects with Beehive Corporation.",
@@ -3600,6 +3666,7 @@ The Sigma Cluster can be reached through the following communication channels:
 
     // --- Create Project ---
     const projectInstance01 = await ProjectModel.create({
+      aImage: projectImage11.url,
       aTitle: "Beehive Application",
       aSubtitle: "beehive-frontend-v02.netlify.app",
       aDescription: `
@@ -3644,6 +3711,7 @@ The application will effectively showcase Beehive Corporation's identity, projec
     });
 
     const projectInstance02 = await ProjectModel.create({
+      aImage: projectImage12.url,
       aTitle: "Andromeda Application",
       aSubtitle: "andromeda-frontend-v02.netlify.app",
       aDescription: `
@@ -3688,6 +3756,7 @@ The application will effectively showcase Andromeda Organisation's identity, pro
     });
 
     const projectInstance03 = await ProjectModel.create({
+      aImage: projectImage13.url,
       aTitle: "Pinwheel Application",
       aSubtitle: "pinwheel-frontend-v02.netlify.app",
       aDescription: `
@@ -3732,6 +3801,7 @@ The application will effectively showcase Pinwheel Organisation's identity, proj
     });
 
     const projectInstance04 = await ProjectModel.create({
+      aImage: projectImage14.url,
       aTitle: "Tadpole Application",
       aSubtitle: "tadpole-frontend-v02.netlify.app",
       aDescription: `
@@ -3776,6 +3846,7 @@ The application will effectively showcase Tadpole Organisation's identity, proje
     });
 
     const projectInstance05 = await ProjectModel.create({
+      aImage: projectImage15.url,
       aTitle: "Acrux Application",
       aSubtitle: "acrux-frontend-v02.netlify.app",
       aDescription: `
@@ -3820,6 +3891,7 @@ The application will effectively showcase Acrux Enterprise's identity, projects,
     });
 
     const projectInstance06 = await ProjectModel.create({
+      aImage: projectImage16.url,
       aTitle: "Anser Application",
       aSubtitle: "anser-frontend-v02.netlify.app",
       aDescription: `
@@ -3864,6 +3936,7 @@ The application will effectively showcase Anser Enterprise's identity, projects,
     });
 
     const projectInstance07 = await ProjectModel.create({
+      aImage: projectImage17.url,
       aTitle: "Aquila Application",
       aSubtitle: "aquila-frontend-v02.netlify.app",
       aDescription: `
@@ -3908,6 +3981,7 @@ The application will effectively showcase Aquila Enterprise's identity, projects
     });
 
     const projectInstance08 = await ProjectModel.create({
+      aImage: projectImage18.url,
       aTitle: "Bellatrix Application",
       aSubtitle: "bellatrix-frontend-v02.netlify.app",
       aDescription: `
@@ -3952,6 +4026,7 @@ The application will effectively showcase Bellatrix Enterprise's identity, proje
     });
 
     const projectInstance09 = await ProjectModel.create({
+      aImage: projectImage19.url,
       aTitle: "Capella Application",
       aSubtitle: "capella-frontend-v02.netlify.app",
       aDescription: `
@@ -3996,6 +4071,7 @@ The application will effectively showcase Capella Enterprise's identity, project
     });
 
     const projectInstance10 = await ProjectModel.create({
+      aImage: projectImage21.url,
       aTitle: "Arion Application",
       aSubtitle: "arion-frontend-v02.netlify.app",
       aDescription: `
@@ -4040,6 +4116,7 @@ The application will effectively showcase Arion's identity, projects, and more, 
     });
 
     const projectInstance11 = await ProjectModel.create({
+      aImage: projectImage22.url,
       aTitle: "Ankas Application",
       aSubtitle: "ankas-frontend-v02.netlify.app",
       aDescription: `
@@ -4084,6 +4161,7 @@ The application will effectively showcase Ankas's identity, projects, and more, 
     });
 
     const projectInstance12 = await ProjectModel.create({
+      aImage: projectImage23.url,
       aTitle: "Abol Application",
       aSubtitle: "abol-frontend-v02.netlify.app",
       aDescription: `
@@ -4128,6 +4206,7 @@ The application will effectively showcase Abol's identity, projects, and more, e
     });
 
     const projectInstance13 = await ProjectModel.create({
+      aImage: projectImage31.url,
       aTitle: "Boilerplate Application",
       aSubtitle: "boilerplate-frontend-v02.netlify.app",
       aDescription: `
@@ -4172,6 +4251,7 @@ The application will effectively showcase Boilerplate's identity, projects, and 
     });
 
     const projectInstance14 = await ProjectModel.create({
+      aImage: projectImage32.url,
       aTitle: "Chattrix Application",
       aSubtitle: "chattrix-frontend-v02.netlify.app",
       aDescription: `

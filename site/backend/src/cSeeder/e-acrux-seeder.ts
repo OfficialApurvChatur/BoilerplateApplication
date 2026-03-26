@@ -177,6 +177,14 @@ const seeder = async () => {
     const applicationImage15 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Netlify_Logo.png", "project");
     const applicationImage16 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Render_Logo.png", "project");
 
+    const adminProjectImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Arion/2.png", "adminproject");
+    const adminProjectImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Ankas/2.png", "adminproject");
+    const adminProjectImage13 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Abol/2.png", "adminproject");
+
+    const projectImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Arion/2.png", "project");
+    const projectImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Ankas/2.png", "project");
+    const projectImage13 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Abol/2.png", "project");
+
     console.log("✅ Images Prepared");
 
     // --- Create Initial User ---
@@ -1564,6 +1572,7 @@ The Alpha Star can be reached through the following communication channels:
     
     // --- Create Admin Project ---
     const adminProjectInstance10 = await AdminProjectModel.create({
+      aImage: adminProjectImage11.url,
       aTitle: "Arion Application",
       aSubtitle: "arion-frontend-v02.netlify.app",
       aDescription: `
@@ -1608,6 +1617,7 @@ The application will effectively showcase Arion's identity, projects, and more, 
     });
 
     const adminProjectInstance11 = await AdminProjectModel.create({
+      aImage: adminProjectImage12.url,
       aTitle: "Ankas Application",
       aSubtitle: "ankas-frontend-v02.netlify.app",
       aDescription: `
@@ -1652,6 +1662,7 @@ The application will effectively showcase Ankas's identity, projects, and more, 
     });
 
     const adminProjectInstance12 = await AdminProjectModel.create({
+      aImage: adminProjectImage13.url,
       aTitle: "Abol Application",
       aSubtitle: "abol-frontend-v02.netlify.app",
       aDescription: `
@@ -2100,6 +2111,7 @@ The Alpha Star can be reached through the following communication channels:
 
     // --- Create Project ---
     const projectInstance10 = await ProjectModel.create({
+      aImage: projectImage11.url,
       aTitle: "Arion Application",
       aSubtitle: "arion-frontend-v02.netlify.app",
       aDescription: `
@@ -2144,6 +2156,7 @@ The application will effectively showcase Arion's identity, projects, and more, 
     });
 
     const projectInstance11 = await ProjectModel.create({
+      aImage: projectImage12.url,
       aTitle: "Ankas Application",
       aSubtitle: "ankas-frontend-v02.netlify.app",
       aDescription: `
@@ -2188,6 +2201,7 @@ The application will effectively showcase Ankas's identity, projects, and more, 
     });
 
     const projectInstance12 = await ProjectModel.create({
+      aImage: projectImage13.url,
       aTitle: "Abol Application",
       aSubtitle: "abol-frontend-v02.netlify.app",
       aDescription: `
