@@ -124,13 +124,13 @@ const seeder = async () => {
     const adminHeroLogoImage = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Chattrix_Logo.png", "adminhero");
     const adminHeroSideImage1 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Beehive_Logo.png", "adminproject");
     const adminHeroSideImage2 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/bee.png", "adminproject");
-    const adminHeroSideImage3 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Arion_Logo.png", "adminproject");
+    const adminHeroSideImage3 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Boilerplate_Logo.png", "adminproject");
     const adminHeroSideImage4 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Andromeda_Logo.png", "adminproject");
-    const adminHeroSideImage5 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Pinwheel_Logo.png", "adminproject");
-    const adminHeroSideImage6 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Ankas_Logo.png", "adminproject");
+    const adminHeroSideImage5 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Anser_Logo.png", "adminproject");
+    const adminHeroSideImage6 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/bee.png", "adminproject");
     const adminHeroSideImage7 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/bee.png", "adminproject");
     const adminHeroSideImage8 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/bee.png", "adminproject");
-    const adminHeroSideImage9 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Abol_Logo.png", "adminproject");
+    const adminHeroSideImage9 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Chattrix_Logo.png", "adminproject");
     
     const adminApplicationImage01 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/MongoDB_Logo.png", "adminproject");
     const adminApplicationImage02 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/ExpressJS_Logo.png", "adminproject");
@@ -152,13 +152,13 @@ const seeder = async () => {
     const heroLogoImage = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Chattrix_Logo.png", "hero");
     const heroSideImage1 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Beehive_Logo.png", "project");
     const heroSideImage2 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/bee.png", "project");
-    const heroSideImage3 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Arion_Logo.png", "project");
+    const heroSideImage3 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Boilerplate_Logo.png", "project");
     const heroSideImage4 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Andromeda_Logo.png", "project");
-    const heroSideImage5 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Pinwheel_Logo.png", "project");
-    const heroSideImage6 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Ankas_Logo.png", "project");
+    const heroSideImage5 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Anser_Logo.png", "project");
+    const heroSideImage6 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/bee.png", "project");
     const heroSideImage7 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/bee.png", "project");
     const heroSideImage8 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/bee.png", "project");
-    const heroSideImage9 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Abol_Logo.png", "project");
+    const heroSideImage9 = await uploadImage("C:/Users/LENOVO/Downloads/No_BG_Logo/Chattrix_Logo.png", "project");
 
     const applicationImage01 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/MongoDB_Logo.png", "project");
     const applicationImage02 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/ExpressJS_Logo.png", "project");
