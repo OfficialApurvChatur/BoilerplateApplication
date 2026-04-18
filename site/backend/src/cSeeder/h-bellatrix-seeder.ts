@@ -1249,7 +1249,7 @@ const seeder = async () => {
         },
         {
           aLinkTitle: "Visit Backend",
-          bLinkURL: "https://bellatrix-backend-v02.netlify.app/"
+          bLinkURL: "https://bellatrix-backend-v02.onrender.com/"
         }
       ],
       dGalleryImages: [
@@ -1326,7 +1326,7 @@ Bellatrix Application is structured around three core applications:
     - [bellatrix-admin-v02.netlify.app](https://bellatrix-admin-v02.netlify.app)
 3. Backend Application — 
     - The brain powering logic, data, and communication 
-    - [bellatrix-backend-v02.netlify.app](https://bellatrix-backend-v02.netlify.app)
+    - [bellatrix-backend-v02.onrender.com](https://bellatrix-backend-v02.onrender.com)
 
 Each app is independently deployable, yet designed to feel like one organism. 
       `,
@@ -1438,7 +1438,7 @@ It handles business logic, authentication, authorization, database interactions,
 This service exposes RESTful APIs, manages real-time events using SocketIO (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. 
 It is designed for scalability, modularity, and high availability. 
 
-[bellatrix-backend-v02.netlify.app](https://bellatrix-backend-v02.netlify.app)
+[bellatrix-backend-v02.onrender.com](https://bellatrix-backend-v02.onrender.com)
 
 ### 🔧 TECH STACK
 - NodeJS + TypeScript
@@ -1647,7 +1647,7 @@ The Beta Star can be reached through the following communication channels:
         },
         {
           aLinkTitle: "Visit Backend",
-          bLinkURL: "https://bellatrix-backend-v02.netlify.app/"
+          bLinkURL: "https://bellatrix-backend-v02.onrender.com/"
         }
       ],
       dGalleryImages: [
@@ -1724,7 +1724,7 @@ Bellatrix Application is structured around three core applications:
     - [bellatrix-admin-v02.netlify.app](https://bellatrix-admin-v02.netlify.app)
 3. Backend Application — 
     - The brain powering logic, data, and communication 
-    - [bellatrix-backend-v02.netlify.app](https://bellatrix-backend-v02.netlify.app)
+    - [bellatrix-backend-v02.onrender.com](https://bellatrix-backend-v02.onrender.com)
 
 Each app is independently deployable, yet designed to feel like one organism. 
       `,
@@ -1836,7 +1836,7 @@ It handles business logic, authentication, authorization, database interactions,
 This service exposes RESTful APIs, manages real-time events using SocketIO (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. 
 It is designed for scalability, modularity, and high availability. 
 
-[bellatrix-backend-v02.netlify.app](https://bellatrix-backend-v02.netlify.app)
+[bellatrix-backend-v02.onrender.com](https://bellatrix-backend-v02.onrender.com)
 
 ### 🔧 TECH STACK
 - NodeJS + TypeScript

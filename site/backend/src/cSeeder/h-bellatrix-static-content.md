@@ -27,7 +27,7 @@
 
     - **Visit Frontend :** [https://bellatrix-frontend.netlify.app/](https://bellatrix-frontend.netlify.app/)
     - **Visit Admin :** [https://bellatrix-admin.netlify.app/](https://bellatrix-admin.netlify.app/)  
-    - **Visit Backemd :** [https://bellatrix-backend.onrender.com/](https://bellatrix-backend.onrender.com/)
+    - **Visit Backemd :** [https://bellatrix-backend-v02.onrender.com/](https://bellatrix-backend-v02.onrender.com/)
 
   - **Gallery Images:**
       

@@ -1249,7 +1249,7 @@ const seeder = async () => {
         },
         {
           aLinkTitle: "Visit Backend",
-          bLinkURL: "https://chattrix-backend-v02.netlify.app/"
+          bLinkURL: "https://chattrix-backend-v02.onrender.com/"
         }
       ],
       dGalleryImages: [
@@ -1324,7 +1324,7 @@ Chattrix Application is structured around three core applications:
     - [chattrix-admin-v02.netlify.app](https://chattrix-admin-v02.netlify.app)
 3. Backend Application — 
     - The brain powering logic, data, and communication 
-    - [chattrix-backend-v02.netlify.app](https://chattrix-backend-v02.netlify.app)
+    - [chattrix-backend-v02.onrender.com](https://chattrix-backend-v02.onrender.com)
 
 Each app is independently deployable, yet designed to feel like one organism. 
       `,
@@ -1436,7 +1436,7 @@ It handles business logic, authentication, authorization, database interactions,
 This service exposes RESTful APIs, manages real-time events using SocketIO (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. 
 It is designed for scalability, modularity, and high availability. 
 
-[chattrix-backend-v02.netlify.app](https://chattrix-backend-v02.netlify.app)
+[chattrix-backend-v02.onrender.com](https://chattrix-backend-v02.onrender.com)
 
 ### 🔧 TECH STACK
 - NodeJS + TypeScript
@@ -1695,7 +1695,7 @@ The Beta Planet can be reached through the following communication channels:
         },
         {
           aLinkTitle: "Visit Backend",
-          bLinkURL: "https://chattrix-backend-v02.netlify.app/"
+          bLinkURL: "https://chattrix-backend-v02.onrender.com/"
         }
       ],
       dGalleryImages: [
@@ -1770,7 +1770,7 @@ Chattrix Application is structured around three core applications:
     - [chattrix-admin-v02.netlify.app](https://chattrix-admin-v02.netlify.app)
 3. Backend Application — 
     - The brain powering logic, data, and communication 
-    - [chattrix-backend-v02.netlify.app](https://chattrix-backend-v02.netlify.app)
+    - [chattrix-backend-v02.onrender.com](https://chattrix-backend-v02.onrender.com)
 
 Each app is independently deployable, yet designed to feel like one organism. 
       `,
@@ -1882,7 +1882,7 @@ It handles business logic, authentication, authorization, database interactions,
 This service exposes RESTful APIs, manages real-time events using SocketIO (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. 
 It is designed for scalability, modularity, and high availability. 
 
-[chattrix-backend-v02.netlify.app](https://chattrix-backend-v02.netlify.app)
+[chattrix-backend-v02.onrender.com](https://chattrix-backend-v02.onrender.com)
 
 ### 🔧 TECH STACK
 - NodeJS + TypeScript

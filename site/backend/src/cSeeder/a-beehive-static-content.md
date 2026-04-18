@@ -27,7 +27,7 @@
 
     - **Visit Frontend :** [https://beehive-frontend.netlify.app/](https://beehive-frontend.netlify.app/)
     - **Visit Admin :** [https://beehive-admin.netlify.app/](https://beehive-admin.netlify.app/)  
-    - **Visit Backend :** [https://beehive-backend.onrender.com/](https://beehive-backend.onrender.com/)
+    - **Visit Backend :** [https://beehive-backend-v02.onrender.com/](https://beehive-backend-v02.onrender.com/)
 
   - **Gallery Images:**
       

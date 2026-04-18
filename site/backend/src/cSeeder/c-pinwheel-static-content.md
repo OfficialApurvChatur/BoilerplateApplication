@@ -27,7 +27,7 @@
 
     - **Visit Frontend :** [https://pinwheel-frontend.netlify.app/](https://pinwheel-frontend.netlify.app/)
     - **Visit Admin :** [https://pinwheel-admin.netlify.app/](https://pinwheel-admin.netlify.app/)  
-    - **Visit Backemd :** [https://pinwheel-backend.onrender.com/](https://pinwheel-backend.onrender.com/)
+    - **Visit Backemd :** [https://pinwheel-backend-v02.onrender.com/](https://pinwheel-backend-v02.onrender.com/)
 
   - **Gallery Images:**
       

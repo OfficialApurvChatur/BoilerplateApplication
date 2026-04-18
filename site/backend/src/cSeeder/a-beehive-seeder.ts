@@ -1291,7 +1291,7 @@ const seeder = async () => {
         },
         {
           aLinkTitle: "Visit Backend",
-          bLinkURL: "https://beehive-backend-v02.netlify.app/"
+          bLinkURL: "https://beehive-backend-v02.onrender.com/"
         }
       ],
       dGalleryImages: [
@@ -1370,7 +1370,7 @@ Beehive Application is structured around three core applications:
     - [beehive-admin-v02.netlify.app](https://beehive-admin-v02.netlify.app)
 3. Backend Application — 
     - The brain powering logic, data, and communication 
-    - [beehive-backend-v02.netlify.app](https://beehive-backend-v02.netlify.app)
+    - [beehive-backend-v02.onrender.com](https://beehive-backend-v02.onrender.com)
 
 Each app is independently deployable, yet designed to feel like one organism. 
       `,
@@ -1482,7 +1482,7 @@ It handles business logic, authentication, authorization, database interactions,
 This service exposes RESTful APIs, manages real-time events using SocketIO (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. 
 It is designed for scalability, modularity, and high availability. 
 
-[beehive-backend-v02.netlify.app](https://beehive-backend-v02.netlify.app)
+[beehive-backend-v02.onrender.com](https://beehive-backend-v02.onrender.com)
 
 ### 🔧 TECH STACK
 - NodeJS + TypeScript
@@ -2971,7 +2971,7 @@ The application will effectively showcase Chattrix's identity, projects, and mor
         },
         {
           aLinkTitle: "Visit Backend",
-          bLinkURL: "https://beehive-backend-v02.netlify.app/"
+          bLinkURL: "https://beehive-backend-v02.onrender.com/"
         }
       ],
       dGalleryImages: [
@@ -3050,7 +3050,7 @@ Beehive Application is structured around three core applications:
     - [beehive-admin-v02.netlify.app](https://beehive-admin-v02.netlify.app)
 3. Backend Application — 
     - The brain powering logic, data, and communication 
-    - [beehive-backend-v02.netlify.app](https://beehive-backend-v02.netlify.app)
+    - [beehive-backend-v02.onrender.com](https://beehive-backend-v02.onrender.com)
 
 Each app is independently deployable, yet designed to feel like one organism. 
       `,
@@ -3162,7 +3162,7 @@ It handles business logic, authentication, authorization, database interactions,
 This service exposes RESTful APIs, manages real-time events using SocketIO (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. 
 It is designed for scalability, modularity, and high availability. 
 
-[beehive-backend-v02.netlify.app](https://beehive-backend-v02.netlify.app)
+[beehive-backend-v02.onrender.com](https://beehive-backend-v02.onrender.com)
 
 ### 🔧 TECH STACK
 - NodeJS + TypeScript

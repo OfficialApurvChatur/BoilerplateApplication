@@ -27,7 +27,7 @@
 
     - **Visit Frontend :** [https://chattrix-frontend.netlify.app/](https://chattrix-frontend.netlify.app/)
     - **Visit Admin :** [https://chattrix-admin.netlify.app/](https://chattrix-admin.netlify.app/)  
-    - **Visit Backemd :** [https://chattrix-backend.onrender.com/](https://chattrix-backend.onrender.com/)
+    - **Visit Backemd :** [https://chattrix-backend-v02.onrender.com/](https://chattrix-backend-v02.onrender.com/)
 
   - **Gallery Images:**
       

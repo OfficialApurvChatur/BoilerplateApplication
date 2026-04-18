@@ -1269,7 +1269,7 @@ const seeder = async () => {
         },
         {
           aLinkTitle: "Visit Backend",
-          bLinkURL: "https://pinwheel-backend-v02.netlify.app/"
+          bLinkURL: "https://pinwheel-backend-v02.onrender.com/"
         }
       ],
       dGalleryImages: [
@@ -1360,7 +1360,7 @@ Pinwheel Application is structured around three core applications:
     - [pinwheel-admin-v02.netlify.app](https://pinwheel-admin-v02.netlify.app)
 3. Backend Application — 
     - The brain powering logic, data, and communication 
-    - [pinwheel-backend-v02.netlify.app](https://pinwheel-backend-v02.netlify.app)
+    - [pinwheel-backend-v02.onrender.com](https://pinwheel-backend-v02.onrender.com)
 
 Each app is independently deployable, yet designed to feel like one organism. 
       `,
@@ -1472,7 +1472,7 @@ It handles business logic, authentication, authorization, database interactions,
 This service exposes RESTful APIs, manages real-time events using SocketIO (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. 
 It is designed for scalability, modularity, and high availability. 
 
-[pinwheel-backend-v02.netlify.app](https://pinwheel-backend-v02.netlify.app)
+[pinwheel-backend-v02.onrender.com](https://pinwheel-backend-v02.onrender.com)
 
 ### 🔧 TECH STACK
 - NodeJS + TypeScript
@@ -2082,7 +2082,7 @@ The application will effectively showcase Capella Enterprise's identity, project
         },
         {
           aLinkTitle: "Visit Backend",
-          bLinkURL: "https://pinwheel-backend-v02.netlify.app/"
+          bLinkURL: "https://pinwheel-backend-v02.onrender.com/"
         }
       ],
       dGalleryImages: [
@@ -2173,7 +2173,7 @@ Pinwheel Application is structured around three core applications:
     - [pinwheel-admin-v02.netlify.app](https://pinwheel-admin-v02.netlify.app)
 3. Backend Application — 
     - The brain powering logic, data, and communication 
-    - [pinwheel-backend-v02.netlify.app](https://pinwheel-backend-v02.netlify.app)
+    - [pinwheel-backend-v02.onrender.com](https://pinwheel-backend-v02.onrender.com)
 
 Each app is independently deployable, yet designed to feel like one organism. 
       `,
@@ -2285,7 +2285,7 @@ It handles business logic, authentication, authorization, database interactions,
 This service exposes RESTful APIs, manages real-time events using SocketIO (if required), integrates with MongoDB through Mongoose, and ensures optimized performance with features like Redis caching, middleware pipelines, and structured error handling. 
 It is designed for scalability, modularity, and high availability. 
 
-[pinwheel-backend-v02.netlify.app](https://pinwheel-backend-v02.netlify.app)
+[pinwheel-backend-v02.onrender.com](https://pinwheel-backend-v02.onrender.com)
 
 ### 🔧 TECH STACK
 - NodeJS + TypeScript

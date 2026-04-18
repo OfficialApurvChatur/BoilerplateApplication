@@ -27,7 +27,7 @@
 
     - **Visit Frontend :** [https://capella-frontend.netlify.app/](https://capella-frontend.netlify.app/)
     - **Visit Admin :** [https://capella-admin.netlify.app/](https://capella-admin.netlify.app/)  
-    - **Visit Backemd :** [https://capella-backend.onrender.com/](https://capella-backend.onrender.com/)
+    - **Visit Backemd :** [https://capella-backend-v02.onrender.com/](https://capella-backend-v02.onrender.com/)
 
   - **Gallery Images:**
       
