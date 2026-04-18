@@ -27,7 +27,7 @@
 
     - **Visit Frontend :** [https://andromeda-frontend.netlify.app/](https://andromeda-frontend.netlify.app/)
     - **Visit Admin :** [https://andromeda-admin.netlify.app/](https://andromeda-admin.netlify.app/)  
-    - **Visit Backemd :** [https://andromeda-backend.netlify.app/](https://andromeda-backend.netlify.app/)
+    - **Visit Backemd :** [https://andromeda-backend.onrender.com/](https://andromeda-backend.onrender.com/)
 
   - **Gallery Images:**
       

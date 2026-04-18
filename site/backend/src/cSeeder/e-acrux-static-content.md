@@ -27,7 +27,7 @@
 
     - **Visit Frontend :** [https://acrux-frontend.netlify.app/](https://acrux-frontend.netlify.app/)
     - **Visit Admin :** [https://acrux-admin.netlify.app/](https://acrux-admin.netlify.app/)  
-    - **Visit Backemd :** [https://acrux-backend.netlify.app/](https://acrux-backend.netlify.app/)
+    - **Visit Backemd :** [https://acrux-backend.onrender.com/](https://acrux-backend.onrender.com/)
 
   - **Gallery Images:**
       
