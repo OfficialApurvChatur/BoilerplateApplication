@@ -177,6 +177,36 @@ const seeder = async () => {
     const applicationImage15 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Netlify_Logo.png", "project");
     const applicationImage16 = await uploadImage("C:/Users/LENOVO/Downloads/Tech_Logo/Render_Logo.png", "project");
 
+    const adminProjectImage01 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Beehive/5.png", "adminproject");
+    const adminProjectImage02 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Andromeda/5.png", "adminproject");
+    const adminProjectImage03 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Pinwheel/5.png", "adminproject");
+    const adminProjectImage04 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Tadpole/5.png", "adminproject");
+    const adminProjectImage05 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Acrux/5.png", "adminproject");
+    const adminProjectImage06 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Anser/5.png", "adminproject");
+    const adminProjectImage07 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Aquila/5.png", "adminproject");
+    const adminProjectImage08 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Bellatrix/5.png", "adminproject");
+    const adminProjectImage09 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Capella/5.png", "adminproject");
+    const adminProjectImage10 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Arion/5.png", "adminproject");
+    const adminProjectImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Ankas/5.png", "adminproject");
+    const adminProjectImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Abol/5.png", "adminproject");
+    const adminProjectImage13 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Boilerplate/5.png", "adminproject");
+    const adminProjectImage14 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Chattrix/5.png", "adminproject");
+
+    const projectImage01 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Beehive/5.png", "project");
+    const projectImage02 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Andromeda/5.png", "project");
+    const projectImage03 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Pinwheel/5.png", "project");
+    const projectImage04 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Tadpole/5.png", "project");
+    const projectImage05 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Acrux/5.png", "project");
+    const projectImage06 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Anser/5.png", "project");
+    const projectImage07 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Aquila/5.png", "project");
+    const projectImage08 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Bellatrix/5.png", "project");
+    const projectImage09 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Capella/5.png", "project");
+    const projectImage10 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Arion/5.png", "project");
+    const projectImage11 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Ankas/5.png", "project");
+    const projectImage12 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Abol/5.png", "project");
+    const projectImage13 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Boilerplate/5.png", "project");
+    const projectImage14 = await uploadImage("C:/Users/LENOVO/Downloads/Application_Poster/Chattrix/5.png", "project");
+
     console.log("✅ Images Prepared");
 
     // --- Create Initial User ---
@@ -1569,8 +1599,724 @@ The Alpha Planet can be reached through the following communication channels:
     // --- Create Admin Branch Section ---
     console.log("❌ None Admin Branch Section Created");
     
+    const BeehiveConst = "Beehive-beehive"
+    const AndromedaConst = "Andromeda-andromeda"
+    const PinwheelConst = "Pinwheel-pinwheel"
+    const TadpoleConst = "Tadpole-tadpole"
+    const AcruxConst = "Acrux-acrux"
+    const AnserConst = "Anser-anser"
+    const AquilaConst = "Aquila-aquila"
+    const BellatrixConst = "Bellatrix-bellatrix"
+    const CapellaConst = "Capella-capella"
+    const ArionConst = "Arion-arion"
+    const AnkasConst = "Ankas-ankas"
+    const AbolConst = "Abol-abol"
+    const BoilerplateConst = "Boilerplate-boilerplate"
+    const ChattrixConst = "Chattrix-chattrix"
+
+
     // --- Create Admin Project ---
-    console.log("❌ None Admin Project Created");
+    const adminProjectInstance01 = await AdminProjectModel.create({
+      aImage: adminProjectImage01.url,
+      aTitle: `Beehive Application (Admin)`,
+      aSubtitle: `${BeehiveConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${BeehiveConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${BeehiveConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${BeehiveConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${BeehiveConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance02 = await AdminProjectModel.create({
+      aImage: adminProjectImage02.url,
+      aTitle: `Andromeda Application (Admin)`,
+      aSubtitle: `${AndromedaConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${AndromedaConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${AndromedaConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${AndromedaConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${AndromedaConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance03 = await AdminProjectModel.create({
+      aImage: adminProjectImage03.url,
+      aTitle: `Pinwheel Application (Admin)`,
+      aSubtitle: `${PinwheelConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${PinwheelConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${PinwheelConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${PinwheelConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${PinwheelConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance04 = await AdminProjectModel.create({
+      aImage: adminProjectImage04.url,
+      aTitle: `Tadpole Application (Admin)`,
+      aSubtitle: `${TadpoleConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${TadpoleConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${TadpoleConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${TadpoleConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${TadpoleConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance05 = await AdminProjectModel.create({
+      aImage: adminProjectImage05.url,
+      aTitle: `Acrux Application (Admin)`,
+      aSubtitle: `${AcruxConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${AcruxConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${AcruxConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${AcruxConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${AcruxConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance06 = await AdminProjectModel.create({
+      aImage: adminProjectImage06.url,
+      aTitle: `Anser Application (Admin)`,
+      aSubtitle: `${AnserConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${AnserConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${AnserConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${AnserConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${AnserConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance07 = await AdminProjectModel.create({
+      aImage: adminProjectImage07.url,
+      aTitle: `Aquila Application (Admin)`,
+      aSubtitle: `${AquilaConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${AquilaConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${AquilaConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${AquilaConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${AquilaConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance08 = await AdminProjectModel.create({
+      aImage: adminProjectImage08.url,
+      aTitle: `Bellatrix Application (Admin)`,
+      aSubtitle: `${BellatrixConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${BellatrixConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${BellatrixConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${BellatrixConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${BellatrixConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance09 = await AdminProjectModel.create({
+      aImage: adminProjectImage09.url,
+      aTitle: `Capella Application (Admin)`,
+      aSubtitle: `${CapellaConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${CapellaConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${CapellaConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${CapellaConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${CapellaConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance10 = await AdminProjectModel.create({
+      aImage: adminProjectImage10.url,
+      aTitle: `Arion Application (Admin)`,
+      aSubtitle: `${ArionConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${ArionConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${ArionConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${ArionConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${ArionConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance11 = await AdminProjectModel.create({
+      aImage: adminProjectImage11.url,
+      aTitle: `Ankas Application (Admin)`,
+      aSubtitle: `${AnkasConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${AnkasConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${AnkasConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${AnkasConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${AnkasConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance12 = await AdminProjectModel.create({
+      aImage: adminProjectImage12.url,
+      aTitle: `Abol Application (Admin)`,
+      aSubtitle: `${AbolConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${AbolConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${AbolConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${AbolConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${AbolConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance13 = await AdminProjectModel.create({
+      aImage: adminProjectImage13.url,
+      aTitle: `Boilerplate Application (Admin)`,
+      aSubtitle: `${BoilerplateConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${BoilerplateConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${BoilerplateConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${BoilerplateConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${BoilerplateConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const adminProjectInstance14 = await AdminProjectModel.create({
+      aImage: adminProjectImage14.url,
+      aTitle: `${ChattrixConst.split("-")[0]} Application (Admin)`,
+      aSubtitle: `${ChattrixConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${ChattrixConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${ChattrixConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${ChattrixConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${ChattrixConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    console.log("✅ Admin Project Created");
 
     // --- Create Admin Project Group ---
     console.log("❌ None Admin Project Group Created");
@@ -1582,7 +2328,22 @@ The Alpha Planet can be reached through the following communication channels:
       aDescription: "A proficient platform specializing in developing administrative applications tailored for Beehive Corporation's diverse range of web applications, streamlining their management processes effectively.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
-      cProjects: [],
+      cProjects: [
+        adminProjectInstance01._id,
+        adminProjectInstance02._id,
+        adminProjectInstance03._id,
+        adminProjectInstance04._id,
+        adminProjectInstance05._id,
+        adminProjectInstance06._id,
+        adminProjectInstance07._id,
+        adminProjectInstance08._id,
+        adminProjectInstance09._id,
+        adminProjectInstance10._id,
+        adminProjectInstance11._id,
+        adminProjectInstance12._id,
+        adminProjectInstance13._id,
+        adminProjectInstance14._id,
+      ],
       dSocialLinks: [
         {
           aLinkTitle: "Instagram",
@@ -1977,7 +2738,707 @@ The Alpha Planet can be reached through the following communication channels:
     console.log("❌ None Branch Section Created");
 
     // --- Create Project ---
-    console.log("❌ None Project Created");
+    const projectInstance01 = await ProjectModel.create({
+      aImage: projectImage01.url,
+      aTitle: `Beehive Application (Admin)`,
+      aSubtitle: `${BeehiveConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${BeehiveConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${BeehiveConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${BeehiveConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${BeehiveConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance02 = await ProjectModel.create({
+      aImage: projectImage02.url,
+      aTitle: `Andromeda Application (Admin)`,
+      aSubtitle: `${AndromedaConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${AndromedaConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${AndromedaConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${AndromedaConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${AndromedaConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance03 = await ProjectModel.create({
+      aImage: projectImage03.url,
+      aTitle: `Pinwheel Application (Admin)`,
+      aSubtitle: `${PinwheelConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${PinwheelConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${PinwheelConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${PinwheelConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${PinwheelConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance04 = await ProjectModel.create({
+      aImage: projectImage04.url,
+      aTitle: `Tadpole Application (Admin)`,
+      aSubtitle: `${TadpoleConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${TadpoleConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${TadpoleConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${TadpoleConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${TadpoleConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance05 = await ProjectModel.create({
+      aImage: projectImage05.url,
+      aTitle: `Acrux Application (Admin)`,
+      aSubtitle: `${AcruxConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${AcruxConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${AcruxConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${AcruxConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${AcruxConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance06 = await ProjectModel.create({
+      aImage: projectImage06.url,
+      aTitle: `Anser Application (Admin)`,
+      aSubtitle: `${AnserConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${AnserConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${AnserConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${AnserConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${AnserConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance07 = await ProjectModel.create({
+      aImage: projectImage07.url,
+      aTitle: `Aquila Application (Admin)`,
+      aSubtitle: `${AquilaConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${AquilaConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${AquilaConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${AquilaConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${AquilaConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance08 = await ProjectModel.create({
+      aImage: projectImage08.url,
+      aTitle: `Bellatrix Application (Admin)`,
+      aSubtitle: `${BellatrixConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${BellatrixConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${BellatrixConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${BellatrixConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${BellatrixConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance09 = await ProjectModel.create({
+      aImage: projectImage09.url,
+      aTitle: `Capella Application (Admin)`,
+      aSubtitle: `${CapellaConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${CapellaConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${CapellaConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${CapellaConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${CapellaConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance10 = await ProjectModel.create({
+      aImage: projectImage10.url,
+      aTitle: `Arion Application (Admin)`,
+      aSubtitle: `${ArionConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${ArionConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${ArionConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${ArionConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${ArionConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance11 = await ProjectModel.create({
+      aImage: projectImage11.url,
+      aTitle: `Ankas Application (Admin)`,
+      aSubtitle: `${AnkasConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${AnkasConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${AnkasConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${AnkasConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${AnkasConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance12 = await ProjectModel.create({
+      aImage: projectImage12.url,
+      aTitle: `Abol Application (Admin)`,
+      aSubtitle: `${AbolConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${AbolConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${AbolConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${AbolConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${AbolConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance13 = await ProjectModel.create({
+      aImage: projectImage13.url,
+      aTitle: `Boilerplate Application (Admin)`,
+      aSubtitle: `${BoilerplateConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${BoilerplateConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${BoilerplateConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${BoilerplateConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${BoilerplateConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    const projectInstance14 = await ProjectModel.create({
+      aImage: projectImage14.url,
+      aTitle: `${ChattrixConst.split("-")[0]} Application (Admin)`,
+      aSubtitle: `${ChattrixConst.split("-")[1]}-admin-v02.netlify.app`,
+      aDescription: `
+${ChattrixConst.split("-")[0]} Admin Application is a dedicated ReactJS dashboard designed for managing platform-wide data and configurations.
+This panel enables administrators to control users, roles, permissions, content, analytics, and operational workflows.
+Built with reusable React components, secure routes, and state management (Redux Toolkit / RTK Query), it offers a fast, responsive, and intuitive interface.
+The admin panel communicates with the backend through protected API endpoints, ensuring that sensitive operations remain secure and traceable.
+      `,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Visit Admin Panel",
+          bLinkURL: `https://${ChattrixConst.split("-")[1]}-admin-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Application",
+          bLinkURL: `https://${ChattrixConst.split("-")[1]}-frontend-v02.netlify.app/`
+        },
+        {
+          aLinkTitle: "Visit Codebase",
+          bLinkURL: `https://github.com/OfficialApurvChatur/${ChattrixConst.split("_")[0]}ApplicationNew/tree/develop/site/admin`
+        }
+      ],
+    });
+    
+    console.log("✅ Project Created");
 
     // --- Create Project Group ---
     console.log("❌ None Project Group Created");
@@ -1989,7 +3450,22 @@ The Alpha Planet can be reached through the following communication channels:
       aDescription: "A proficient platform specializing in developing administrative applications tailored for Beehive Corporation's diverse range of web applications, streamlining their management processes effectively.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
-      cProjects: [],
+      cProjects: [
+        projectInstance01._id,
+        projectInstance02._id,
+        projectInstance03._id,
+        projectInstance04._id,
+        projectInstance05._id,
+        projectInstance06._id,
+        projectInstance07._id,
+        projectInstance08._id,
+        projectInstance09._id,
+        projectInstance10._id,
+        projectInstance11._id,
+        projectInstance12._id,
+        projectInstance13._id,
+        projectInstance14._id,
+      ],
       dSocialLinks: [
         {
           aLinkTitle: "Instagram",

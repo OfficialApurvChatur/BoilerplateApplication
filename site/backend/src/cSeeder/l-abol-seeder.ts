@@ -1536,7 +1536,202 @@ The Gamma Planet can be reached through the following communication channels:
     console.log("❌ None Admin Branch Section Created");
     
     // --- Create Admin Project ---
-    console.log("❌ None Admin Project Created");
+    const adminProjectInstance01 = await AdminProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `Zero Factor Auth (α Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+        
+    const adminProjectInstance02 = await AdminProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `One Factor Auth (Email) (β Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+        
+    const adminProjectInstance03 = await AdminProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `One Factor Auth (Mobile) (γ Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+        
+    const adminProjectInstance04 = await AdminProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `One Factor Auth (Email || Mobile) (δ Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+        
+    const adminProjectInstance05 = await AdminProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `Two Factor Auth (Email && Mobile) (ε Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+        
+    console.log("✅ Admin Project Created");
 
     // --- Create Admin Project Group ---
     console.log("❌ None Admin Project Group Created");
@@ -1548,7 +1743,13 @@ The Gamma Planet can be reached through the following communication channels:
       aDescription: "A proficient platform specializing in developing authentication models tailored for Beehive Corporation's diverse web platforms, ensuring secure access across their entire ecosystem.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
-      cProjects: [],
+      cProjects: [
+        adminProjectInstance01._id,
+        adminProjectInstance02._id,
+        adminProjectInstance03._id,
+        adminProjectInstance04._id,
+        adminProjectInstance05._id,
+      ],
       dSocialLinks: [
         {
           aLinkTitle: "Instagram",
@@ -1909,7 +2110,202 @@ The Gamma Planet can be reached through the following communication channels:
     console.log("❌ None Branch Section Created");
 
     // --- Create Project ---
-    console.log("❌ None Project Created");
+    const projectInstance01 = await ProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `Zero Factor Auth (α Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+        
+    const projectInstance02 = await ProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `One Factor Auth (Email) (β Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+        
+    const projectInstance03 = await ProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `One Factor Auth (Mobile) (γ Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+        
+    const projectInstance04 = await ProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `One Factor Auth (Email || Mobile) (δ Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+        
+    const projectInstance05 = await ProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `Two Factor Auth (Email && Mobile) (ε Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+        
+    console.log("✅ Project Created");
 
     // --- Create Project Group ---
     console.log("❌ None Project Group Created");
@@ -1921,7 +2317,13 @@ The Gamma Planet can be reached through the following communication channels:
       aDescription: "A proficient platform specializing in developing authentication models tailored for Beehive Corporation's diverse web platforms, ensuring secure access across their entire ecosystem.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
-      cProjects: [],
+      cProjects: [
+        projectInstance01._id,
+        projectInstance02._id,
+        projectInstance03._id,
+        projectInstance04._id,
+        projectInstance05._id,
+      ],
       dSocialLinks: [
         {
           aLinkTitle: "Instagram",

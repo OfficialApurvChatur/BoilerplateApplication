@@ -1528,7 +1528,85 @@ The Alpha Planet can be reached through the following communication channels:
     console.log("❌ None Admin Branch Section Created");
     
     // --- Create Admin Project ---
-    console.log("❌ None Admin Project Created");
+    const adminProjectInstance01 = await AdminProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `Boilerplate v01 (α Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+        
+    const adminProjectInstance02 = await AdminProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `Boilerplate v02 (β Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+
+    console.log("✅ Admin Project Created");
 
     // --- Create Admin Project Group ---
     console.log("❌ None Admin Project Group Created");
@@ -1540,7 +1618,10 @@ The Alpha Planet can be reached through the following communication channels:
       aDescription: "A proficient platform specializing in developing production-ready foundations tailored for Beehive Corporation’s diverse web platforms, ensuring standardized architectures, preconfigured tooling, and scalable systems across the entire ecosystem.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
-      cProjects: [],
+      cProjects: [
+        adminProjectInstance01._id,
+        adminProjectInstance02._id,
+      ],
       dSocialLinks: [
         {
           aLinkTitle: "Instagram",
@@ -1893,7 +1974,85 @@ The Alpha Planet can be reached through the following communication channels:
     console.log("❌ None Branch Section Created");
 
     // --- Create Project ---
-    console.log("❌ None Project Created");
+    const projectInstance01 = await ProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `Boilerplate v01 (α Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+        
+    const projectInstance02 = await ProjectModel.create({
+      aTitle: `Working on it...`,
+      aSubtitle: `Boilerplate v02 (β Model)`,
+      bCreatedAt: new Date(Date.now()),
+      bCreatedBy: shraddha._id,
+      dSocialLinks: [
+        {
+          aLinkTitle: "Instagram",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "X (Twitter)",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "Threads",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "LinkedIn",
+          bLinkURL: "https://www.google.com/"
+        },
+        {
+          aLinkTitle: "GitHub",
+          bLinkURL: "https://www.google.com/"
+        }
+      ],
+      dWebLinks: [
+        {
+          aLinkTitle: "Some Link 01",
+          bLinkURL: `https://www.google.com/`
+        },
+        {
+          aLinkTitle: "Some Link 02",
+          bLinkURL: `https://www.google.com/`
+        },
+      ],
+    });
+
+    console.log("✅ Project Created");
 
     // --- Create Project Group ---
     console.log("❌ None Project Group Created");
@@ -1905,7 +2064,10 @@ The Alpha Planet can be reached through the following communication channels:
       aDescription: "A proficient platform specializing in developing production-ready foundations tailored for Beehive Corporation’s diverse web platforms, ensuring standardized architectures, preconfigured tooling, and scalable systems across the entire ecosystem.",
       bCreatedAt: new Date(Date.now()),
       bCreatedBy: shraddha._id,
-      cProjects: [],
+      cProjects: [
+        projectInstance01._id,
+        projectInstance02._id,
+      ],
       dSocialLinks: [
         {
           aLinkTitle: "Instagram",
