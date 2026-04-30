@@ -21,7 +21,7 @@ const contactPageController = (Model= "ContactPageModel", Label= "ContactPageMod
 
       const contactInfo = await ContactInfoModel
         .findOne()
-        .sort({ createdAt: -1 })
+        .sort({ bCreatedAt: -1 })
         .select("aImage aTitle aSubtitle aDetail")
         .lean();
 

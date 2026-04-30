@@ -21,7 +21,7 @@ const adminProjectPageController = (Model= "AdminProjectPageModel", Label= "Admi
 
       const projectSection = await AdminProjectSectionModel
         .findOne()
-        .sort({ createdAt: -1 })
+        .sort({ bCreatedAt: -1 })
         .select("aTitle aSubtitle aDescription")
         .populate({
           path: "cProjectGroups",

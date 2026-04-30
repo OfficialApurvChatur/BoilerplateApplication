@@ -21,7 +21,7 @@ const adminContactPageController = (Model= "AdminContactPageModel", Label= "Admi
 
       const contactInfo = await AdminContactInfoModel
         .findOne()
-        .sort({ createdAt: -1 })
+        .sort({ bCreatedAt: -1 })
         .select("aImage aTitle aSubtitle aDetail")
         .lean();
 

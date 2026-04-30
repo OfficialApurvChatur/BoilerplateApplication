@@ -21,7 +21,7 @@ const adminAboutApplicationPageController = (Model= "AdminAboutApplicationPageMo
 
       const aboutApplication = await AdminAboutApplicationModel
         .find()
-        .sort({ createdAt: -1 })
+        .sort({ bCreatedAt: -1 })
         .select("aImage aTitle aSubtitle aDescription aDetail dTechIcon dWebLinks dGalleryImages")
         .limit(4)
         .lean();

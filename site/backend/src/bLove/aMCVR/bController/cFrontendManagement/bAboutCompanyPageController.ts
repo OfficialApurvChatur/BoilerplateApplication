@@ -21,13 +21,13 @@ const aboutCompanyPageController = (Model= "AboutCompanyPageModel", Label= "Abou
 
       const aboutCompanyTruly = await AboutCompanyModel
         .findOne({ dTag: "truly" })
-        .sort({ createdAt: -1 })
+        .sort({ bCreatedAt: -1 })
         .select("aImage aTitle aSubtitle aDescription aDetail dTag")
         .lean();
 
       const aboutCompanyRelatively = await AboutCompanyModel
         .findOne({ dTag: "relatively" })
-        .sort({ createdAt: -1 })
+        .sort({ bCreatedAt: -1 })
         .select("aImage aTitle aSubtitle aDescription aDetail dTag")
         .lean();
 

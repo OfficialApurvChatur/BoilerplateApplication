@@ -21,7 +21,7 @@ const adminBranchGroupPageController = (Model= "AdminBranchGroupPageModel", Labe
 
       const branchSection = await AdminBranchSectionModel
         .findOne()
-        .sort({ createdAt: -1 })
+        .sort({ bCreatedAt: -1 })
         .select("aTitle aSubtitle aDescription")
         .populate({
           path: "cBranchGroups",

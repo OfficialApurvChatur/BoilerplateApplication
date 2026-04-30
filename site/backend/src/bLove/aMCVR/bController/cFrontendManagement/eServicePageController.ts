@@ -21,14 +21,14 @@ const servicePageController = (Model= "ServicePageModel", Label= "ServicePageMod
 
       const service = await ServiceModel
         .find()
-        .sort({ createdAt: -1 })
+        .sort({ bCreatedAt: -1 })
         .limit(4)
         .select("aImage aTitle aSubtitle aDescription dLinks dIcon")
         .lean();
 
       const counter = await CounterModel
         .find()
-        .sort({ createdAt: -1 })
+        .sort({ bCreatedAt: -1 })
         .limit(3)
         .select("aImage aTitle aSubtitle aDescription")
         .lean();
