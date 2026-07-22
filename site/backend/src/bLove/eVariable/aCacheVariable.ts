@@ -428,18 +428,45 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminHeroModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminHeroModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminHeroModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminHeroModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   adminAboutCompanyModel: {
@@ -447,18 +474,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminAboutCompanyModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminAboutCompanyPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminAboutCompanyModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminAboutCompanyModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminAboutCompanyPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminAboutCompanyModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminAboutCompanyPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   adminAboutApplicationModel: {
@@ -466,18 +523,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminAboutApplicationModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminAboutApplicationPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminAboutApplicationModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminAboutApplicationModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminAboutApplicationPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminAboutApplicationModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminAboutApplicationPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   adminContactFormModel: {
@@ -485,18 +572,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminContactFormModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminContactPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminContactFormModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminContactFormModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminContactPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminContactFormModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminContactPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   adminContactInfoModel: {
@@ -504,18 +621,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminContactInfoModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminContactPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminContactInfoModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminContactInfoModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminContactPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminContactInfoModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminContactPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   adminCounterModel: {
@@ -523,18 +670,45 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminCounterModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminCounterModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminCounterModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminCounterModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   adminServiceModel: {
@@ -542,18 +716,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminServiceModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminServicePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminServiceModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminServiceModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminServicePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminServiceModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminServicePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   adminBranchSectionModel: {
@@ -561,18 +765,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminBranchSectionModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminBranchSectionPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminBranchSectionModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminBranchSectionModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminBranchSectionPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminBranchSectionModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminBranchSectionPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   adminBranchGroupModel: {
@@ -580,18 +814,51 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminBranchGroupModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminBranchSectionPageModel::retrieve`,
+      `AdminBranchGroupPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminBranchGroupModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminBranchGroupModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminBranchSectionPageModel::retrieve`,
+      `AdminBranchGroupPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminBranchGroupModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminBranchSectionPageModel::retrieve`,
+      `AdminBranchGroupPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     listMini: ({ Label= "AdminBranchGroupModel" }: listType) => (
      `${Label}::list-mini`
@@ -602,18 +869,54 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminBranchModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminBranchSectionPageModel::retrieve`,
+      `AdminBranchGroupPageModel::retrieve`,
+      `AdminBranchPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminBranchModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminBranchModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminBranchSectionPageModel::retrieve`,
+      `AdminBranchGroupPageModel::retrieve`,
+      `AdminBranchPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminBranchModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminBranchSectionPageModel::retrieve`,
+      `AdminBranchGroupPageModel::retrieve`,
+      `AdminBranchPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     listMini: ({ Label= "AdminBranchModel" }: listType) => (
      `${Label}::list-mini`
@@ -624,18 +927,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminProjectSectionModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminProjectSectionPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminProjectSectionModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminProjectSectionModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminProjectSectionPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminProjectSectionModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminProjectSectionPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   adminProjectGroupModel: {
@@ -643,18 +976,51 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminProjectGroupModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminProjectSectionPageModel::retrieve`,
+      `AdminProjectGroupPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminProjectGroupModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminProjectGroupModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminProjectSectionPageModel::retrieve`,
+      `AdminProjectGroupPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminProjectGroupModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminProjectSectionPageModel::retrieve`,
+      `AdminProjectGroupPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     listMini: ({ Label= "AdminProjectGroupModel" }: listType) => (
      `${Label}::list-mini`
@@ -665,18 +1031,54 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AdminProjectModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminProjectSectionPageModel::retrieve`,
+      `AdminProjectGroupPageModel::retrieve`,
+      `AdminProjectPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AdminProjectModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AdminProjectModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminProjectSectionPageModel::retrieve`,
+      `AdminProjectGroupPageModel::retrieve`,
+      `AdminProjectPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AdminProjectModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `AdminHomePageModel::retrieve`,
+      `AdminProjectSectionPageModel::retrieve`,
+      `AdminProjectGroupPageModel::retrieve`,
+      `AdminProjectPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     listMini: ({ Label= "AdminProjectModel" }: listType) => (
      `${Label}::list-mini`
@@ -687,18 +1089,45 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "HeroModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "HeroModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "HeroModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "HeroModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   aboutCompanyModel: {
@@ -706,18 +1135,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AboutCompanyModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `AboutCompanyPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AboutCompanyModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AboutCompanyModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `AboutCompanyPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AboutCompanyModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `AboutCompanyPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   aboutApplicationModel: {
@@ -725,18 +1184,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "AboutApplicationModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `AboutApplicationPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "AboutApplicationModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "AboutApplicationModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `AboutApplicationPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "AboutApplicationModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `AboutApplicationPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   contactFormModel: {
@@ -744,18 +1233,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "ContactFormModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ContactPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "ContactFormModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "ContactFormModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ContactPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "ContactFormModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ContactPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   contactInfoModel: {
@@ -763,18 +1282,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "ContactInfoModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ContactPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "ContactInfoModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "ContactInfoModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ContactPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "ContactInfoModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ContactPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   counterModel: {
@@ -782,18 +1331,45 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "CounterModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "CounterModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "CounterModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "CounterModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   serviceModel: {
@@ -801,18 +1377,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "ServiceModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ServicePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "ServiceModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "ServiceModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ServicePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "ServiceModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ServicePageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   branchSectionModel: {
@@ -820,18 +1426,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "BranchSectionModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `BranchSectionPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "BranchSectionModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "BranchSectionModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `BranchSectionPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "BranchSectionModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `BranchSectionPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   branchGroupModel: {
@@ -839,18 +1475,51 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "BranchGroupModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `BranchSectionPageModel::retrieve`,
+      `BranchGroupPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "BranchGroupModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "BranchGroupModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `BranchSectionPageModel::retrieve`,
+      `BranchGroupPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "BranchGroupModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `BranchSectionPageModel::retrieve`,
+      `BranchGroupPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     listMini: ({ Label= "BranchGroupModel" }: listType) => (
      `${Label}::list-mini`
@@ -861,18 +1530,54 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "BranchModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `BranchSectionPageModel::retrieve`,
+      `BranchGroupPageModel::retrieve`,
+      `BranchPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "BranchModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "BranchModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `BranchSectionPageModel::retrieve`,
+      `BranchGroupPageModel::retrieve`,
+      `BranchPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "BranchModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `BranchSectionPageModel::retrieve`,
+      `BranchGroupPageModel::retrieve`,
+      `BranchPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     listMini: ({ Label= "BranchModel" }: listType) => (
      `${Label}::list-mini`
@@ -883,18 +1588,48 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "ProjectSectionModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ProjectSectionPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "ProjectSectionModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "ProjectSectionModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ProjectSectionPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "ProjectSectionModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ProjectSectionPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
   },
   projectGroupModel: {
@@ -902,18 +1637,51 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "ProjectGroupModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ProjectSectionPageModel::retrieve`,
+      `ProjectGroupPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "ProjectGroupModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "ProjectGroupModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ProjectSectionPageModel::retrieve`,
+      `ProjectGroupPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "ProjectGroupModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ProjectSectionPageModel::retrieve`,
+      `ProjectGroupPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     listMini: ({ Label= "ProjectGroupModel" }: listType) => (
      `${Label}::list-mini`
@@ -924,18 +1692,54 @@ const cacheVariable = {
      `${Label}::list`
     ),
     create: ({ Label= "ProjectModel" }: createType) => [ 
-      `${Label}::list`
+      `${Label}::list`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ProjectSectionPageModel::retrieve`,
+      `ProjectGroupPageModel::retrieve`,
+      `ProjectPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     retrieve: ({ Label= "ProjectModel", request }: retrieveType) => (
       `${Label}::retrieve:${request.params.id}`
     ),
     update: ({ Label= "ProjectModel", request }: updateType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ProjectSectionPageModel::retrieve`,
+      `ProjectGroupPageModel::retrieve`,
+      `ProjectPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     delete: ({ Label= "ProjectModel", request }: deleteType) => [ 
       `${Label}::list`, 
-      `${Label}::retrieve:${request.params.id}`
+      `${Label}::retrieve:${request.params.id}`,
+
+      // Realational Cache (like one-to-one, many-to-one, etc)
+      // ...
+
+      // Dependent Cache (like home-page, about-page, etc)
+      `HomePageModel::retrieve`,
+      `ProjectSectionPageModel::retrieve`,
+      `ProjectGroupPageModel::retrieve`,
+      `ProjectPageModel::retrieve`,
+     
+      // Other Cache (like list-mini, etc)
+      // ...
     ],
     listMini: ({ Label= "ProjectModel" }: listType) => (
      `${Label}::list-mini`

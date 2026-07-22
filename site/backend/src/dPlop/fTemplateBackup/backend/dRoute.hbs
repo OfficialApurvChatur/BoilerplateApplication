@@ -1,0 +1,60 @@
+import express from 'express';
+
+import rateLimiterMiddleware from '../../../../bMiddleware/cRateLimiterMiddleware';
+import authenticationMiddleware from '../../../../bMiddleware/dAuthenticationMiddleware';
+import authorizationMiddleware from '../../../../bMiddleware/eAuthorizationMiddleware';
+import checkCacheMiddleware from '../../../../bMiddleware/fCheckCacheMiddleware';
+import validatorMiddleware from '../../../../bMiddleware/gValidationMiddleware';
+import personalInfoMiddleware from '../../../../bMiddleware/hPersonalInfoMiddleware';
+
+import {{ camelCase model }}Validation from '../../../cValidation/{{ game }}/{{ manager }}/{{ name }}Validation';
+import {{ camelCase model }}Contorller from '../../../bController/{{ game }}/{{ manager }}/{{ name }}Controller';
+
+
+const router = express.Router();
+
+router.route("/list").get(
+  rateLimiterMiddleware({ key:"{{ model }}Model::list", time: 60, limit: 10 }),
+  authenticationMiddleware,
+  authorizationMiddleware({ menu: "{{ model }}", accessPoint: ["List"] }),
+  checkCacheMiddleware({ key:"{{ model }}Model::list", label: "{{ model }}", name: "List" }), 
+  {{ camelCase model }}Validation.list(), validatorMiddleware, 
+  {{ camelCase model }}Contorller().list
+)
+
+router.route("/create").post(
+  rateLimiterMiddleware({ key:"{{ model }}Model::create", time: 60, limit: 10 }),
+  authenticationMiddleware,
+  authorizationMiddleware({ menu: "{{ model }}", accessPoint: ["Create"] }),
+  {{ camelCase model }}Validation.create(), validatorMiddleware,
+  personalInfoMiddleware({ type: "created" }),
+  {{ camelCase model }}Contorller().create
+)
+
+router.route("/retrieve/:id").get(
+  rateLimiterMiddleware({ key:"{{ model }}Model::retrieve", time: 60, limit: 10 }),
+  authenticationMiddleware,
+  authorizationMiddleware({ menu: "{{ model }}", accessPoint: ["Retrieve"] }),
+  checkCacheMiddleware({ key:"{{ model }}Model::retrieve", label: "{{ model }}", name: "Retrieve" }), 
+  {{ camelCase model }}Validation.retrieve(), validatorMiddleware, 
+  {{ camelCase model }}Contorller().retrieve
+)
+
+router.route("/update/:id").put(
+  rateLimiterMiddleware({ key:"{{ model }}Model::update", time: 60, limit: 10 }),
+  authenticationMiddleware,
+  authorizationMiddleware({ menu: "{{ model }}", accessPoint: ["Update"] }),
+  {{ camelCase model }}Validation.update(), validatorMiddleware, 
+  personalInfoMiddleware({ type: "updated" }),
+  {{ camelCase model }}Contorller().update
+)
+
+router.route("/delete/:id").delete(
+  rateLimiterMiddleware({ key:"{{ model }}Model::delete", time: 60, limit: 10 }),
+  authenticationMiddleware,
+  authorizationMiddleware({ menu: "{{ model }}", accessPoint: ["Delete"] }),
+  {{ camelCase model }}Validation.delete(), validatorMiddleware, 
+  {{ camelCase model }}Contorller().delete
+)
+
+export const {{ camelCase model }}Route = router

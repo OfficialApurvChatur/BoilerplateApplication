@@ -1,5 +1,6 @@
 import express from "express";
 import loggerConnection from "../../aConnection/bLoggerConnection";
+import appConnection from "../../aConnection/dAppConnection";
 
 
 type eventCreateMiddlewareType = {
@@ -21,7 +22,7 @@ type eventCreateMiddlewareType = {
 
 const eventCreateMiddleware = ({ Label, data, eventList, request }: eventCreateMiddlewareType) => {
   try {
-    const io = (request as any).app.get("io");
+    const io = appConnection.get("io");
 
     if (data && io) {
       for (const each of eventList) {

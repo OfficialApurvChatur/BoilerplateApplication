@@ -1,0 +1,156 @@
+import queueUtility from '../../../../../bLove/cUtility/gQueueUtility';
+
+import cacheVariable from '../../../../../bLove/eVariable/aCacheVariable';
+import eventVariable from '../../../../../bLove/eVariable/bEventVariable';
+import emailToCompanyVariable from '../../../../../bLove/eVariable/cEmailToCompanyVariable';
+import emailToUserVariable from '../../../../../bLove/eVariable/dEmailToUserVariable';
+
+
+interface LcrudType {
+  handler: string;
+  Label: string;
+  request: any;
+}
+
+interface ListType extends LcrudType {
+  list: any;
+}
+
+interface CreateType extends LcrudType {
+  create: any;
+}
+
+interface RetrieveType extends LcrudType {
+  retrieve: any;
+}
+
+interface UpdateType extends LcrudType {
+  update: any;
+}
+
+interface DeleteType extends LcrudType {
+  delete_object: any;
+}
+
+const {{ camelCase model }}Service = {
+  async list({ handler, list, Label, request }: ListType) {
+    console.log(handler);
+  },
+
+  async create({ handler, create, Label, request }: CreateType) {
+    console.log(handler);
+
+    await queueUtility.cacheQueue.add("delete", {
+      keyList: cacheVariable.{{ camelCase model }}Model.create({ 
+        Label  
+      })
+    });
+
+    await queueUtility.eventQueue.add("create", {
+      Label,
+      data: create,
+      eventList: eventVariable.{{ camelCase model }}Model.create({
+        Label, 
+      }),
+      request
+    });
+
+    await queueUtility.emailQueue.add("both", {
+      Label,
+      data: create,
+      textMessageToCompany: emailToCompanyVariable.{{ camelCase model }}Model.create({
+        Label, 
+        request 
+      }),
+      textMessageToUser: emailToUserVariable.{{ camelCase model }}Model.create({
+        Label, 
+        request 
+      }),
+      request
+    });
+    
+  },
+
+  async retrieve({ handler, retrieve, Label, request }: RetrieveType) {
+    console.log(handler);
+  },
+
+  async update({ handler, update, Label, request }: UpdateType) {
+    console.log(handler);
+
+    await queueUtility.cacheQueue.add("delete", {
+      keyList: cacheVariable.{{ camelCase model }}Model.update({ 
+        Label, 
+        request 
+      })
+    });
+
+    await queueUtility.eventQueue.add("create", {
+      Label,
+      data: update,
+      eventList: eventVariable.{{ camelCase model }}Model.update({
+        Label, 
+        request 
+      }),
+      request
+    });
+
+    await queueUtility.emailQueue.add("both", {
+      Label,
+      data: update,
+      textMessageToCompany: emailToCompanyVariable.{{ camelCase model }}Model.update({
+        Label, 
+        request 
+      }),
+      textMessageToUser: emailToUserVariable.{{ camelCase model }}Model.update({
+        Label, 
+        request 
+      }),
+      request
+    });
+
+  },  
+
+  async delete({ handler, delete_object, Label, request }: DeleteType) {
+    console.log(handler);
+
+    await queueUtility.imageQueue.add("delete", {
+      Label,
+      data: delete_object
+    });
+
+    await queueUtility.cacheQueue.add("delete", {
+      keyList: cacheVariable.{{ camelCase model }}Model.delete({ 
+        Label, 
+        request 
+      }), 
+    });
+
+    await queueUtility.eventQueue.add("create", {
+      Label,
+      data: delete_object,
+      eventList: eventVariable.{{ camelCase model }}Model.delete({
+        Label, 
+        request 
+      }),
+      request
+    });
+
+    await queueUtility.emailQueue.add("both", {
+      Label,
+      data: delete_object,
+      textMessageToCompany: emailToCompanyVariable.{{ camelCase model }}Model.delete({
+        Label, 
+        request 
+      }),
+      textMessageToUser: emailToUserVariable.{{ camelCase model }}Model.delete({
+        Label, 
+        request 
+      }),
+      request
+    });
+
+  },  
+};
+
+export default {{ camelCase model }}Service;

@@ -1,0 +1,38 @@
+import validatorUtility from "../../../../cUtility/cValidatorUtility";
+import { {{ model }}Model } from '../../../aModel/{{ game }}/{{ manager }}/{{ name }}Model';
+
+
+const {{ camelCase model }}Validation = {
+  list: () => [],
+
+  create: () => [
+    ...validatorUtility.aImage(),
+    ...validatorUtility.aTitle({ Model: {{ model }}Model, label: "{{ model }}Model", mode: "create" }),
+    ...validatorUtility.aSubtitle(),
+    ...validatorUtility.aDescription(),
+    ...validatorUtility.aDetail(),
+    ...validatorUtility.aStatus(),
+    ...validatorUtility.aState(),
+  ],
+
+  retrieve: () => [
+    ...validatorUtility.idParam({ Model: {{ model }}Model, label: "{{ model }}Model" })
+  ],
+
+  update: () => [
+    ...validatorUtility.aImage(),
+    ...validatorUtility.aTitle({ Model: {{ model }}Model, label: "{{ model }}Model", mode: "update" }),
+    ...validatorUtility.aSubtitle(),
+    ...validatorUtility.aDescription(),
+    ...validatorUtility.aDetail(),
+    ...validatorUtility.aStatus(),
+    ...validatorUtility.aState(),
+    ...validatorUtility.idParam({ Model: {{ model }}Model, label: "{{ model }}Model" })
+  ],
+
+  delete: () => [
+    ...validatorUtility.idParam({ Model: {{ model }}Model, label: "{{ model }}Model" })
+  ],
+};
+
+export default {{ camelCase model }}Validation;

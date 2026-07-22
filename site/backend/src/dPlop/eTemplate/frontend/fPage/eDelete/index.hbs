@@ -1,0 +1,71 @@
+import React, { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/aConnection/dReduxConnection";
+
+import globalSlice from "@/bLove/bRedux/aGlobalSlice";
+
+import {{ camelCase model }}APIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/{{ manager }}API/{{ name }}API";
+
+import {{ model }}DeleteComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/{{ manager }}Component/{{ name }}Component/eDeleteComponent";
+
+import pageHeader from "./extra/aPageHeader";
+import pageData from "./extra/bPageData";
+import apiHandler from "./extra/cAPIHandler";
+
+import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
+import { useSocket } from "@/aConnection/fSocketConnection";
+import eventVariable from "@/bLove/jVariable/aEventVariable";
+
+import isAllowedUtility, { isAllowedConstant } from "@/bLove/dUtility/bIsAllowdUtility";
+import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/component/dUnauthorizedAccessComponent";
+
+
+const {{ model }}DeletePage = () => {
+  // Variable
+  const { id } = useParams();
+  const socket = useSocket();
+  const navigate = useNavigate();
+  const retrieveAPIResponse = {{ camelCase model }}APIEndpoint.use{{ model }}RetrieveAPIQuery({ params: { _id: id } });
+  const [ deleteAPITrigger, deleteAPIResponse ] = {{ camelCase model }}APIEndpoint.use{{ model }}DeleteAPIMutation();
+
+  // Redux Call
+  const reduxCall = {
+    state: useSelector((state: RootState) => state.globalSlice),
+    dispatch: useDispatch(),
+    action: globalSlice.actions
+  }
+  
+  // API Call
+  const apiCall = {
+    retrieveAPIResponse,
+    deleteAPITrigger,
+    deleteAPIResponse
+  }
+
+  // Listening Socket Events
+  useSocketEventHook(socket, {
+    [eventVariable.{{ camelCase model }}Model.retrieve({id})]: () => apiCall.retrieveAPIResponse.refetch()
+  })
+  
+  // All Render
+  // 1. Success Render
+  useEffect(() => {
+    apiHandler.retrieveAPIHandler(apiCall.retrieveAPIResponse)
+  }, [apiCall.retrieveAPIResponse])
+  
+  // JSX
+  return (!isAllowedUtility(reduxCall, isAllowedConstant.{{ camelCase model }}, "Delete") ? <UnauthorizedAccessComponent /> :
+    <React.Fragment>
+      {/* {{ model }}DeletePage */}
+      <{{ model }}DeleteComponent
+        pageHeader={pageHeader()} 
+        pageData={pageData({ retrieveAPIResponse: apiCall.retrieveAPIResponse })} 
+        apiHandler={apiHandler.deleteAPIHandler(apiCall.deleteAPITrigger)(navigate)({ id: id })} 
+        apiCall={apiCall} 
+      />
+    </React.Fragment>
+  )
+}
+
+export default {{ model }}DeletePage;

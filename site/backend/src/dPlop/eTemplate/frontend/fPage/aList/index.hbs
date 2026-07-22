@@ -1,0 +1,67 @@
+import React, { useEffect } from "react";
+import { z } from "zod";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/aConnection/dReduxConnection";
+
+import globalSlice from "@/bLove/bRedux/aGlobalSlice";
+
+import {{ camelCase model }}APIEndpoint from "@/bLove/aAPI/aGlobalAPI/bProtectedAPI/bAuthorizedAPI/bSidebarAPI/{{ manager }}API/{{ name }}API";
+
+import {{ model }}ListComponent from "@/bLove/cComponent/aGlobalComponent/outlet/bProtectedComponent/outlet/bAuthorizedComponent/outlet/bSidebarComponent/children/{{ manager }}Component/{{ name }}Component/aListComponent";
+
+import listHeader from "./extra/aListHeader";
+import listSchema from "./extra/bListSchema";
+import listColumn from "./extra/cListColumn";
+import apiHandler from "./extra/dAPIHandler";
+
+import { useSocketEventHook } from "@/bLove/iHook/aSocketEventHook";
+import { useSocket } from "@/aConnection/fSocketConnection";
+import eventVariable from "@/bLove/jVariable/aEventVariable";
+
+import isAllowedUtility, { isAllowedConstant } from "@/bLove/dUtility/bIsAllowdUtility";
+import UnauthorizedAccessComponent from "@/bLove/cComponent/aGlobalComponent/component/dUnauthorizedAccessComponent";
+
+
+const {{ model }}ListPage = () => {
+  // Variable
+	const socket = useSocket();
+  const listAPIResponse = {{ camelCase model }}APIEndpoint.use{{ model }}ListAPIQuery(null);
+
+  // Redux Call
+  const reduxCall = {
+    state: useSelector((state: RootState) => state.globalSlice),
+    dispatch: useDispatch(),
+    action: globalSlice.actions
+  }
+  
+  // API Call
+  const apiCall = {
+    listAPIResponse
+  }
+  
+  // Listening Socket Events
+  useSocketEventHook(socket, {
+    [eventVariable.{{ camelCase model }}Model.list()]: () => apiCall.listAPIResponse.refetch()
+  })
+
+  // All Render
+  // 1. Success Render
+  useEffect(() => {
+    apiHandler.listAPIHandler(apiCall.listAPIResponse)
+  }, [apiCall.listAPIResponse])
+
+  // JSX
+  return (!isAllowedUtility(reduxCall, isAllowedConstant.{{ camelCase model }}, "List") ? <UnauthorizedAccessComponent /> :
+    <React.Fragment>
+      {/* {{ model }}ListPage */}
+      <{{ model }}ListComponent 
+        listHeader={listHeader({ listAPIResponse: apiCall.listAPIResponse })} 
+        listColumn={listColumn} 
+        listData={z.array(listSchema).parse(apiCall.listAPIResponse?.data?.list || [])} 
+        apiCall={apiCall}
+      />
+    </React.Fragment>
+  )
+}
+
+export default {{ model }}ListPage;

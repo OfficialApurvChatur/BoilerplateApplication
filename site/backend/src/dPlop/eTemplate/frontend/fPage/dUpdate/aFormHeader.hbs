@@ -1,0 +1,16 @@
+import { RefreshCcw } from "lucide-react";
+import fullRoute from "@/bLove/gRoute/bFullRoute";
+
+
+const formHeader = ({ id, retrieveAPIResponse }: { id: string, retrieveAPIResponse: any }) => ({
+  title: "{{ model }} Update",
+  subtitle: "This is just some subtitle for the {{ kebabCase model }} update",
+  actions: [
+    { text: "Refetch", icon: RefreshCcw, onClick: retrieveAPIResponse.refetch },
+  ],
+  links: [
+    { text: "Delete {{ model }}", to: `${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.{{ manager }}Route.{{ name }}Route.eDeleteRoute}/${id}` },
+  ]
+})
+
+export default formHeader;

@@ -1,0 +1,60 @@
+import apiConnection from "@/aConnection/cAPIConnection";
+
+
+const {{ camelCase model }}APIEndpoint = apiConnection.injectEndpoints({
+  endpoints: (builder) => ({
+
+    {{ camelCase model }}ListAPI: builder.query({
+      query: () => ({
+        url: `/{{ kebabCase model }}/list/`,
+        method: "GET",
+      }),
+      providesTags: ["{{ camelCase model }}List"]
+    }),
+
+    {{ camelCase model }}CreateAPI: builder.mutation({
+      query: (data: { body: any }) => ({
+        url: `/{{ kebabCase model }}/create/`,
+        method: "POST",
+        body: data.body
+      }),
+      invalidatesTags: ["{{ camelCase model }}List"]
+    }),
+
+    {{ camelCase model }}RetrieveAPI: builder.query({
+      query: (data: { params: any }) => ({
+        url: `/{{ kebabCase model }}/retrieve/${data.params._id}`,
+        method: "GET",
+      }),
+      providesTags: (_result: any, _error: any, data: { params: any }) => [
+        { type: "{{ camelCase model }}Retrieve", id: data.params._id }
+      ]
+    }),
+
+    {{ camelCase model }}UpdateAPI: builder.mutation({
+      query: (data: { params: any, body: any }) => ({
+        url: `/{{ kebabCase model }}/update/${data.params._id}`,
+        method: "PUT",
+        body: data.body
+      }),
+      invalidatesTags: (_result: any,_error: any, data: { params: any }) => [
+        { type: "{{ camelCase model }}List" },
+        { type: "{{ camelCase model }}Retrieve", id: data.params._id }
+      ]
+    }),
+
+    {{ camelCase model }}DeleteAPI: builder.mutation({
+      query: (data: { params: any }) => ({
+        url: `/{{ kebabCase model }}/delete/${data.params._id}`,
+        method: "DELETE"
+      }),
+      invalidatesTags: (_result: any, _error: any, data: { params: any }) => [
+        { type: "{{ camelCase model }}List" },
+        { type: "{{ camelCase model }}Retrieve", id: data.params._id }
+      ]
+    })
+
+  })
+})
+
+export default {{ camelCase model }}APIEndpoint;

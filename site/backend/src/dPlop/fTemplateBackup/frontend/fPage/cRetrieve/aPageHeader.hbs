@@ -1,0 +1,17 @@
+import { RefreshCcw } from "lucide-react";
+import fullRoute from "@/bLove/gRoute/bFullRoute";
+
+
+const pageHeader = ({ id, retrieveAPIResponse }: { id: string, retrieveAPIResponse: any }) => ({
+  title: "{{ model }} Retrieve",
+  subtitle: "This is just some subtitle for the {{ kebabCase model }} retrieve",
+  actions: [
+    { text: "Refetch", icon: RefreshCcw, onClick: retrieveAPIResponse.refetch },
+  ],
+  links: [
+    { text: "Update {{ model }}", to: `${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.{{ manager }}Route.{{ name }}Route.dUpdateRoute}/${id}` },
+    { text: "Delete {{ model }}", to: `${fullRoute.aGlobalRoute.bProtectedRoute.bAuthorizedRoute.bSidebarRoute.{{ manager }}Route.{{ name }}Route.eDeleteRoute}/${id}` },
+  ]
+})
+
+export default pageHeader;

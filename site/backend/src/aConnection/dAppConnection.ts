@@ -91,6 +91,16 @@ import { projectSectionPageRoute } from "../bLove/aMCVR/dRoute/cFrontendManageme
 import { projectGroupPageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/jProjectGroupPageRoute";
 import { projectPageRoute } from "../bLove/aMCVR/dRoute/cFrontendManagement/kProjectPageRoute";
 
+import { automationRoute } from "../eAutomation/eAutomationRoute";
+
+import "../bLove/fWorker/aCRUDWorker";
+import "../bLove/fWorker/bCacheWorker";
+import "../bLove/fWorker/cEventWorker";
+import "../bLove/fWorker/dEmailWorker";
+import "../bLove/fWorker/eImageWorker";
+import "../bLove/fWorker/fSearchWorker";
+import "../bLove/fWorker/gAutomationWorker";
+
 
 loggerConnection().info({ 
   message: "✅ Great... App Connected",
@@ -119,6 +129,8 @@ appConnection.use(express.static("public"));
 appConnection.get("/ping", (_request: express.Request, response: express.Response) => {
   response.send("pong");
 })
+
+appConnection.use("/api/v1/automation/", automationRoute);
 
 appConnection.use("/api/v1/base/", baseRoute);
 appConnection.use("/api/v1/activity-log/", activityLogRoute);
